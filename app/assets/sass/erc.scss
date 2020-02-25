@@ -14,3 +14,34 @@ $govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", san
 $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
+
+$erc-text-blue : #004269; 
+$erc-logo-blue: #0071BA;
+$erc-green-border: #008000;
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+//---------------------------------------- HEADER ------------------------------------------------//
+
+.govuk-header__container {
+    border-bottom: 0px;
+}
+.erc-service-name {
+    font-size: 24px;
+    color: white; 
+    background-color: $erc-logo-blue;
+    padding: 4px 10px;
+    font-weight: 600;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+//---------------------------------------- FOOTER ------------------------------------------------//
+.govuk-footer {
+    font-size: 16px;
+    background-color: $erc-logo-blue;
+    p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
+        color:  white;
+    }
+}
+
+
