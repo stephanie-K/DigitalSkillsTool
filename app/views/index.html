@@ -1,35 +1,46 @@
 
-{% extends "layout.html" %}
+{% extends "layout_erc.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Home - Digital Skills Tool
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">
+            Improving digital skills      
+        </h1>
+
+        <h2 class="govuk-heading-l">About this website</h2>
+        <p>
+          This is a website which will support IT classes organised by the <a href="https://www.eastrenfrewshire.gov.uk/" target="_blank" rel="noopener">East Renfrewshire Council</a> in collaboration with <a href="https://www.scottish-enterprise.com/" target="_blank" rel="noopener">Scottish Enterprise</a>. 
+        </p>
+        <p>This is a work in progress.</p>
+
+        
+      <h3 class="govuk-heading-m"><a href="project-outline.html">See the project outline</a></h3>
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+        <h2 class="govuk-heading-l">GOV.UK Protoype Kit</h2>
+
+      <h3 class="govuk-heading-s">
+        We are using the GOV.UK Prototype Kit
+        <span class="govuk-caption-s">{{releaseVersion}}</span>
+      </h3>{{releaseVersion | log }}
       <p>
         This kit lets you rapidly create HTML prototypes of GOV.UK services.
       </p>
-
       <p>
         It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
       </p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+      <h3 class="govuk-heading-s">About this page</h3>
+      <p>You can change the service name for GOV.UK branded pages by editing the file '/app/config.js'.</p>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
+      <h3 class="govuk-heading-s">Examples and documentation</h3>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
         <li>
@@ -38,6 +49,8 @@
           </a>
         </li>
       </ul>
+
+
     </div>
 </div>
 
