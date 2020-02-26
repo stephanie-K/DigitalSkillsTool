@@ -1,0 +1,46 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Equality and diversity 
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        <h2 class="govuk-heading-m">
+                This questionnaire is optional
+        </h2>
+
+        <p>Your answers are anonymous. We’ll only use information you give for statistics.</p> 
+     
+    
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/ethnic-origin2.html"
+        }) }}
+
+
+    </div>
+</div>
+<br>
+<br>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li><strong> Ethnic group question is the first question now</strong></li>
+    <li>ask for identity next - but say nationality instead. Is this really needed?</li>
+    <li>add straight to the option Heterosexual</li>
+    <li>see the version I tested before this one <a href="/forms/equal-opportunities/start1">start page</a></li>
+    <li>see an example on the  <a href="https://volunteer.samaritans.org/volunteer/other-support/birmingham/enquire-non-pilot" target="_blank">Samaritans Website</a></li>
+    </ul>
+</div>
+
+{% endblock %}

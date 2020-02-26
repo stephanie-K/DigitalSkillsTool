@@ -1,0 +1,87 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Sexual orientation - Equality and diversity
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire 
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "orien",
+          name: "orien",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Describe sexual orientation"
+          }
+        }) }}
+        {% endset -%}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "orientation-conditional",
+          name: "orientation",
+          fieldset: {
+            legend: {
+              text: "Sexual orientation",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Bisexual",
+              text: "Bisexual"
+            },
+            {
+              value: "Gay or lesbian",
+              text: "Gay or lesbian"
+            },
+            {
+              value: "Heterosexual",
+              text: "Heterosexual/Straight"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: otherHtml
+              }
+            },
+            {
+              value: "Prefer not to say",
+              text: "Prefer not to say"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/religion1.html"
+        }) }}
+
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>sorted in alphabetical order - Added Straight to Heterosexual option as it can be a more common term for some users</li>
+    </ul>
+  </div>
+  <div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>no validation at all, just a textbox opens if select: Other</li>
+    </ul>
+  </div>
+
+{% endblock %}

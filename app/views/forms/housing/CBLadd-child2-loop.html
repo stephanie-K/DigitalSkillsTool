@@ -1,0 +1,169 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Add child
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <p class="govuk-body-l">Enter each child spending part of their time living with you.</p>
+
+      <h2 class="govuk-heading-m">
+          Child 2:
+      </h2>
+      
+      <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name-child2",
+        name: "first-name-child2",
+        value: data['first-name-child2'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name-child2",
+        name: "last-name-child2",
+        value: data['last-name-child2'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukDateInput({
+        id: "dob-child2",
+        namePrefix: "dob-child2",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items:[
+            {
+            name: 'day',
+            value: data['dob-child2-day'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'month',
+            value: data['dob-child2-month'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'year',
+            value: data['dob-child2-year'],
+            classes: "govuk-input--width-4"
+            }
+            ]
+      }) }}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {% set genderHtml %}
+      {{ govukInput({
+        id: "gender-child-desc2",
+        name: "gender-child-desc2",
+        value: data['gender-child-desc2'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "Describe gender in another way (optional)"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "gender-child2",
+        name: "gender-child2",
+        fieldset: {
+          legend: {
+            text: "Gender",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "female",
+          text: "Female",
+          checked: checked ("gender-child2", "female")
+        },
+        {
+          value: "male",
+          text: "Male",
+          checked: checked ("gender-child2", "male")
+        },
+        {
+          value: "Other",
+          text: "Other",
+          checked: checked ("gender-child2", "Other"),
+          conditional: {
+            html: genderHtml
+          }
+        }
+      ]
+    }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Relationship to you"
+        },
+        id: "child-relationship2",
+        name: "child-relationship2",
+        value: data['child-relationship2'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Enter their address. Include postcode if you know it."
+        },
+        id: "child-add2",
+        name: "child-add2",
+        value: data ['child-add2'],
+        classes: "govuk-input--width-30"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+      
+      <h2 class="govuk-heading-m">
+          Tell us about anyone else you didn't add yet (if applicable)
+      </h2>
+      {{ govukTextarea({
+        name: "more-children-to-add",
+        id: "more-children-to-add",
+        value: data['more-children-to-add'],
+        label: {
+          text: "Name, date of birth, gender, relationship to you, address"
+        }
+      }) }}
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+
+    </form>
+    </div>
+</div>
+
+
+{% endblock %}

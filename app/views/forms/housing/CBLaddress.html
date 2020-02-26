@@ -1,0 +1,50 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Address
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+          Current address
+      </h2>
+      <form class="form" method="post">
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        
+   
+        {{ govukTextarea({
+          id: "postcode",
+          name: "postcode",
+          value: data['postcode'],
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Enter address. Include postcode if you know it."
+          }
+        }) }}
+
+        
+              {{ govukButton({
+                text: "Continue",
+                classes: "button-primary"
+              }) }}
+      </form>
+    </div>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes: </h3>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>text for address, mentions postcode now</li>
+  <li>validation: <span class="govuk-error-message">Enter current address including postcode</span></li>
+  </ul>
+</div>
+
+{% endblock %}

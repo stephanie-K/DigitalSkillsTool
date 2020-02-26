@@ -1,0 +1,134 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Address
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <form class="form" method="post">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+  
+        {% set emailHtml %}
+        {{ govukInput({
+          label: {
+            text: "Enter email"
+          },
+          id: "emailadd",
+          name: "emailadd",
+          value: data['emailadd'],
+          classes: "govuk-input--width-20"
+        }) }}
+        {% endset -%}
+            
+        {% set attorneyHtml %}
+        {{ govukTextarea({
+          id: "contact-att",
+          name: "contact-att",
+          value: data['contact-att'],
+          label: {
+            text: "Enter the contact details of your advocate or power of attorney, including name, phone and address"
+          }
+        }) }}
+        {% endset -%}
+        
+        {% set otheraddHtml %}
+        {{ govukTextarea({
+          id: "other-add",
+          name: "other-add",
+          value: data['other-add'],
+          label: {
+            text: "Enter other address. Include postcode if you know it."
+          }
+        }) }}
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+          fieldset: {
+            legend: {
+              text: "How would you prefer us to contact you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "We may still contact you in another way if we can't reach you."
+          },
+          items: [
+            {
+              value: "email",
+              text: "Email",
+              checked: checked ("how-contacted", "email"),
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "Phone",
+              text: "Phone",
+              checked: checked ("how-contacted", "Phone")
+            },
+            {
+              value: "Post at my current address",
+              text: "Post at my current address",
+              checked: checked ("how-contacted", "Post current")
+            },
+            {
+              value: "Post at a different address",
+              text: "Post at a different address",
+              checked: checked ("how-contacted", "Post else"),
+              conditional: {
+                html: otheraddHtml
+              }
+            },
+            {
+              value: "I have an advocate or power of attorney",
+              text: "I have an advocate or power of attorney",
+              checked: checked ("how-contacted", "I have an advocate or power of attorney"),
+              conditional: {
+                html: attorneyHtml
+              }
+            }
+          ]
+        }) }}
+    
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+          </form>
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <p>One feedback about phone was to be able to have a landline or a mobile (would impact previous screen as we just ask for Phone)</p>
+    <p>Accessibility: if mobile, then a deaf person will feel better selecting phone if we ask if they prefer calls or text</p>
+</div>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">UR notes:</h3>
+    <p>We want the person to be able to add a different address if for whatever reason they don't want to use their home address</p>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>new field to ask for another address if option selected - two buttons have wording changed</li>
+    <li>email now shown all the time and if selected we asked them to enter it</li>
+    <li>test the email is well formed if provided <span class="govuk-error-message">Enter valid email address</span></li>
+    <li>Validation: <span class="govuk-error-message">Confirm preferred way to contact you</span> (if none selected)<span class="govuk-error-message">Enter other address - Enter contact details of advocate or power of attorney</span> (for attorney textbox) </li>
+    </ul>
+</div>
+
+{% endblock %}

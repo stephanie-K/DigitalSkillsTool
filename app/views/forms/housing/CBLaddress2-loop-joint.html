@@ -1,0 +1,214 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Add address Joint applicant
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <p class="govuk-body-l">Enter the addresses your joint applicant lived at for the last 5 years.</p>
+
+
+    <h2 class="govuk-heading-m">
+        Address 2:
+    </h2>
+
+    <form class="form" method="post">
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter address. Include postcode if you know it."
+          },
+          id: "addr2-joint",
+          name: "addr2-joint",
+          value: data['addr2-joint'],
+          classes: "govuk-!-width-three-quarters"
+        }) }}
+  
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+<br>
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "type2-other-joint",
+          id: "type2-other-joint",
+          classes: "govuk-!-width-two-thirds",
+          value: data['type2-other-joint'],
+          label: {
+            text: "Give details about occupant type"
+          }
+        }) }}
+        {% endset -%}
+        {{ govukRadios({
+          
+          idPrefix: "type2-joint",
+          name: "type2-joint",
+          fieldset: {
+            legend: {
+              text: "Which were they?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "tenant",
+              text: "Tenant",
+              checked: checked ("type2-joint", "tenant")
+            },
+            {
+              value: "Living with parents",
+              text: "Living with parents",
+              checked: checked ("type2-joint", "Living with parents")
+            },
+            {
+              value: "Owner",
+              text: "Owner",
+              checked: checked ("type2-joint", "Owner")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked ("type2", "Other"),
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+<br>
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved in",
+            classes: 'govuk-!-font-size-24'
+          },
+          hint: {
+            text: "If you don’t know give an estimated date. "
+          },
+          id: "in2-joint",
+          name: "in2-joint",
+          value: data['in2-joint'],
+          classes: "govuk-input--width-10"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved out",
+            classes: 'govuk-!-font-size-24'
+          },
+          hint: {
+            text: "If you don’t know give an estimated date. "
+          },
+          id: "out2-joint",
+          name: "out2-joint",
+          value: data['out2-joint'],
+          classes: "govuk-input--width-10"
+        }) }}
+<br>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "reason2-joint-other",
+          id: "reason2-joint-other",
+          classes: "govuk-!-width-two-thirds",
+          value: data['reason2-joint-other'],
+          label: {
+            text: "Give details"
+          }
+        }) }}
+      {% endset -%}
+
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "leave2-joint-conditional",
+          name: "leave2-joint",
+          fieldset: {
+            legend: {
+              text: "Reason for leaving",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+          {
+            value: "Eviction: rent arrears",
+            text: "Eviction: rent arrears",
+            checked: checked("leave2-joint", "Eviction: rent arrears")
+          },
+          {
+            value: "Eviction: other reason",
+            text: "Eviction: other reason",
+            checked: checked("leave2-joint", "Eviction: other reason")
+          },
+          {
+            value: "Asked or told to leave",
+            text: "Asked or told to leave",
+            checked: checked("leave2-joint", "Asked or told to leave")
+          },
+          {
+            value: "Relationship or family breakdown",
+            text: "Relationship or family breakdown",
+            checked: checked("leave2-joint", "Relationship or family breakdown")
+          },
+          {
+            value: "End of lease",
+            text: "End of lease",
+            checked: checked("leave2-joint", "End of lease")
+          },
+          {
+            value: "House sale",
+            text: "House sale",
+            checked: checked("leave2-joint", "House sale")
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked("leave2-joint", "Other"),
+            conditional: {
+              html: otherHtml
+            }
+          }
+          ]
+        }) }}
+
+
+             
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+    <h2 class="govuk-heading-m">
+        Add other past addresses here (if applicable)
+    </h2>
+    {{ govukTextarea({
+      name: "more-address-to-add",
+      id: "more-address-to-add",
+      label: {
+        text: "Address, type of residence, date move in, date move out, reason for leaving"
+      }
+    }) }}
+
+
+    
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+
+    </form>
+    </div>
+</div>
+
+
+{% endblock %}

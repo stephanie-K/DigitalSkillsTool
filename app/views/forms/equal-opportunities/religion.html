@@ -1,0 +1,106 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Religion - Equality and diversity
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {% set otherHtml %}
+        {{ govukInput({
+          id: "rel",
+          name: "rel",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Describe your religion"
+          }
+        }) }}
+        {% endset -%}
+  
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "religion-conditional",
+          name: "status",
+          fieldset: {
+            legend: {
+              text: "What is your religion?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "None",
+              text: "None"
+            },
+            {
+              value: "Church of Scotland",
+              text: "Church of Scotland"
+            },
+            {
+              value: "Roman Catholic",
+              text: "Roman Catholic"
+            },
+            {
+              value: "Other Christian",
+              text: "Other Christian"
+            },
+            {
+              value: "Muslim",
+              text: "Muslim"
+            },
+            {
+              value: "Buddhist",
+              text: "Buddhist"
+            },
+            {
+              value: "Sikh",
+              text: "Sikh"
+            },
+            {
+              value: "Jewish",
+              text: "Jewish"
+            },
+            {
+              value: "Hindu",
+              text: "Hindu"
+            },
+            {
+              value: "Pagan",
+              text: "Pagan"
+            },
+            {
+              value: "Another",
+              text: "Another religion",
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/thankyou.html"
+        }) }}
+
+    </div>
+</div>
+<div class="design-notes-box">
+  <h3 class="govuk-heading-s">Design notes:</h3>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>see changed <a href="/forms/equal-opportunities/religion1">version</a></li>
+  </ul>
+</div>
+
+{% endblock %}

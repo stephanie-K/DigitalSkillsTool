@@ -1,0 +1,196 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Add person
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <p class="govuk-body-l">Enter each person who will be living with you.</p>
+
+      <h2 class="govuk-heading-m">
+          Person 2:
+      </h2>
+      
+      <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name-person2",
+        name: "first-name-person2",
+        value: data['first-name-person2'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name-person2",
+        name: "last-name-person2",
+        value: data['last-name-person2'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukDateInput({
+        id: "dob-person2",
+        namePrefix: "dob-person2",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items:[
+            {
+            name: 'day',
+            value: data['dob-person2-day'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'month',
+            value: data['dob-person2-month'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'year',
+            value: data['dob-person2-year'],
+            classes: "govuk-input--width-4"
+            }
+            ]
+      }) }}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {% set genderHtml %}
+      {{ govukInput({
+        id: "gender-desc2",
+        name: "gender-desc2",
+        value: data['gender-desc2'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "Describe gender in another way (optional)"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "gender2",
+        name: "gender2",
+        fieldset: {
+          legend: {
+            text: "Gender",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "female",
+          text: "Female",
+          checked: checked ("gender2", "female")
+        },
+        {
+          value: "male",
+          text: "Male",
+          checked: checked ("gender2", "male")
+        },
+        {
+          value: "Other",
+          text: "Other",
+          checked: checked ("gender2", "Other"),
+          conditional: {
+            html: genderHtml
+          }
+        }
+      ]
+    }) }}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "live-with2",
+        name: "live-with2",
+        fieldset: {
+          legend: {
+            text: "Do they live with you now?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "yes",
+          text: "Yes",
+          checked: checked ("live-with2", "yes")
+        },
+        {
+          value: "no",
+          text: "No",
+          checked: checked ("live-with2", "no")
+        }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Relationship to you"
+        },
+        id: "relationship2",
+        name: "relationship2",
+        value: data['relationship2'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+      
+      {{ govukRadios({
+        idPrefix: "add-person3",
+        name: "add-person3",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: "Do you need to add another person?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked ("add-person3", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked ("add-person3", "no")
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+
+    </form>
+    </div>
+</div>
+
+
+{% endblock %}

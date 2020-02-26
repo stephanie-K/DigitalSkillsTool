@@ -1,0 +1,80 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Age - Equality and diversity
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  
+        <form class="form" method="post">
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "age",
+          name: "age",
+          fieldset: {
+            legend: {
+              text: "Age group",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "0-15",
+              text: "0 to 15"
+            },
+            {
+              value: "16-24",
+              text: "16 to 24"
+            },
+            {
+              value: "25-39",
+              text: "25 to 39"
+            },
+            {
+              value: "40-49",
+              text: "40 to 49"
+            },
+            {
+              value: "50-59",
+              text: "50 to 59"
+            },
+            {
+              value: "60-over",
+              text: "60 or over"
+            },
+            {
+              value: "no say",
+              text: "Prefer not to say"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+      </form>
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>As this should probably be a form for any situation, I've added 0-15 age group. But if they select this, then we might not want to show the relationship status question and the one about sexual orientation? might just jump to the religion question instead</li>
+  </div>
+  <div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>no validation but if '0 to 15' is selected then jump two screens ahead and take the user directly to the religion screen</li>
+        <li>No validation of the radio buttons</li>
+    </ul>
+  </div>
+{% endblock %}

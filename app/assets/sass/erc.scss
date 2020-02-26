@@ -21,6 +21,7 @@ $erc-green-border: #008000;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+
 //---------------------------------------- HEADER ------------------------------------------------//
 
 .govuk-header__container {
@@ -44,4 +45,206 @@ $erc-green-border: #008000;
     }
 }
 
+//---------------------------------------- BODY------------------------------------------------//
 
+body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table {
+    color: $erc-text-blue;
+}
+
+// ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
+
+// back button/link
+.govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
+    color: $erc-text-blue;
+    margin-bottom: 2em;
+}
+
+.govuk-textarea, .govuk-input{
+    border: 2px solid $erc-text-blue;
+}
+
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .erc-text-blue , table{
+    color: $erc-text-blue;
+}
+
+
+.govuk-link, a, .govuk-link:link, a:link {
+    color: 	#0000ee;
+}
+#logo-erc:focus{
+    background-color: 	#fff; // was putting a thick yellow layer at the bottom of the ERC logo
+}
+
+
+.govuk-error-message, .govuk-error-summary, .govuk-input--error {
+    color: #B30000 
+}
+.govuk-form-group--error {
+    border-left: 5px solid #B30000;
+}
+
+
+
+// -------------------------------------------- Helpers ------------------------------------------------- //
+
+
+.validated {
+    border: 2px solid #008000;
+}
+
+.input-read-only {
+    background: #ececec;
+}
+
+.govuk-tag {
+    padding: 10px;
+    margin-right: 10px;
+}
+.govuk-tag.black {
+    padding: 10px 10px 10px 60px;
+    background: url(../images/govuk-crown.png) 10px center no-repeat #000;
+}
+.tag-print {
+    padding: 10px 10px 10px 60px;
+    background: url(../images/printer-icon.png) 10px center no-repeat #fff;
+    text-decoration: underline;
+    color: #551A8B ; // $erc-text-blue;
+    font-weight: 400;
+    //font-size : 19px;
+}
+
+.UR-tag {
+margin-left: 20px;
+padding: 5px;
+color: white;
+font-weight: 600;
+font-size:16px;
+font-family: nta;
+}
+.UR-tag.ok {
+    background-color: #518418;
+   // display: none
+}
+.UR-tag.amber {
+    background-color: orange;
+    color: black;
+  //  display: none
+}
+.UR-tag.red {
+    background-color: #b30000;
+  //  display: none
+}
+.UR-tag.no {
+    background-color: #cccccc;
+    color: black;
+  //  display: none
+}
+
+
+.govuk-tag.info {
+    background-color: $erc-logo-blue;
+    text-transform: none;
+    font-family: nta;
+    padding: 5px;
+ 
+}
+
+.govuk-tag.red {
+    background-color: #b10e1e;
+    margin-left: 10px;
+    padding: 5px;
+
+}
+
+// this is to delete info that could be at the bottom of views - Ideally we need to remove these notes from the views, instead of display none
+
+
+.design-notes-box{
+    border: solid 1px #ebcccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px -10px -10px -10px;
+    color: #a94442 ;
+    background-color: #f2dede;
+    p, h3, li {
+        color: #a94442;
+    }
+    display: none;
+}
+.IT-notes-box{
+    border: solid 1px #bcdff1;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px -10px -10px -10px;
+    color: #31708f ;
+    background-color: #d9edf7;
+    p, h3, li {
+        color: #31708f;
+    }
+     display: none;
+}
+.content-notes-box{
+    border: solid 1px#faf2cc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px -10px -10px -10px;
+    color: #8a6d3b ;
+    background-color: #fcf8e3;
+    p, h3, li {
+        color: #8a6d3b;
+    }
+     display: none;
+}
+.UR-notes-box{
+    border: solid 1px#d0e9c6;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px -10px -10px -10px;
+    color: #3c763d;
+    background-color: #dff0d8;
+    p, h3, li {
+        color: #3c763d;
+    }
+     display: none;
+}
+.alt-notes-box{
+    border: solid 1px #dddddd;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px -10px -10px -10px;
+    color: #dddddd;
+    background-color: #efefef;
+    p, h3, li, a {
+        color: #dddddd;
+    }
+    // display: none;
+}
+
+// -------------------------------------------- CBL------------------------------------------------- //
+
+#CBLperson2, #CBLperson3, #CBLperson4, #CBLperson5, #CBLperson6, #CBLchild2, #CBLchild3 {
+    display: none;
+}
+hr.erc {
+    border-top: 2px solid $erc-text-blue;
+}
+
+//tables for person data
+.no-border {
+    border: 0px;
+}
+
+
+.half-width {
+    max-width: 100%;
+    @media only screen and (min-width: 750px) { 
+        width : 50%;
+    }
+}
+
+.govuk-table__cell, .govuk-table__header{
+    padding: 4px 20px 4px 0;
+}
+th {
+    white-space: nowrap;
+}

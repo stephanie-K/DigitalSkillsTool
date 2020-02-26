@@ -1,0 +1,66 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  5 years of addresses
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <p class="govuk-body-l">We need to know about all the UK addresses you lived at for the last 5 years.</p>
+        
+        <form class="form" method="post">
+     
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    
+            {{ govukRadios({
+              idPrefix: "add-address",
+              name: "add-address",
+              fieldset: {
+                legend: {
+                  text: "Do you need to add a past address?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes",
+                  checked: checked ("add-address", "yes")
+                },
+                {
+                  value: "no",
+                  text: "No",
+                  checked: checked ("add-address", "no")
+                }
+              ]
+            }) }}
+    
+    
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          <br>
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+        </form>
+
+    </div>
+</div>
+
+
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes: </h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>Validation: <span class="govuk-error-message">Confirm if need to add past address</span> </li>
+    <li>if yes, goes to ask first previous address</li>
+    <li>if no, then if there is no joint applicant, goes to the legal questions, if there is one then ask about same addresses for the joint or not</li>
+    </ul>
+</div>
+
+{% endblock %}

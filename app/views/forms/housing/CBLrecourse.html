@@ -1,0 +1,69 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Recourse to public fonds
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "is-recourse",
+        name: "is-recourse",
+        fieldset: {
+          legend: {
+            text: "Have you been told you have no recourse to public funds?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },      
+        hint: {
+          text: "This applies to some people under immigration control. It means you're not entitled to benefits, home office asylum support or public housing."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked("is-recourse", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked("is-recourse", "no")
+          },
+          {
+            value: "I don't know",
+            text: "I don't know",
+            checked: checked("is-recourse", "I don't know")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      <form class="form" method="post">
+    </div>
+</div>
+<div class="design-notes-box">
+  <h3 class="govuk-heading-s">Design notes:</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Housing would follow up with the applicant if they said "I don't know", but we let them go through</li>
+  </ul>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:</h3>
+  <p>Routing: Yes takes you out, No and I don't know is taking you through.</p>
+  <p>validation: <span class="govuk-error-message">Confirm if no recourse to public funds</span></p>
+  <p>they only see this question if they say yes to the previous one (immigration) and in the guidance "someone" is now "some people"</p>
+</div>
+{% endblock %}

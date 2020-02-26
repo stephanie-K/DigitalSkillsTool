@@ -1,0 +1,57 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <form class="form" method="post">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        
+        {{ govukRadios({
+          idPrefix: "know-erc",
+          name: "know-erc",
+          fieldset: {
+            legend: {
+              text: " Are you an employee of, or related to, an employee of East Renfrewshire Council or to a Councillor?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+      </form>
+    </div>
+</div>
+
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+
+    <li>this is now just a yes no question, if yes, goes to another screen where we will collect more details, and no goes to abuse question</li>
+    <li>validation: <span class="govuk-error-message">Confirm if employee or councillor or related to</span></li>
+    </ul>
+</div>
+
+{% endblock %}

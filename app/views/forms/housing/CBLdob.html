@@ -1,0 +1,70 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Date of Birth
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <form class="form" method="post" novalidate>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukDateInput({
+        id: "dob-applicant",
+        namePrefix: "dob-applicant",
+        fieldset: {
+          legend: {
+            text: "Your date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 11 08 1980"
+        },
+        items:[
+            {
+            name: 'day',
+            value: data['dob-applicant-day'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'month',
+            value: data['dob-applicant-month'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'year',
+            value: data['dob-applicant-year'],
+            classes: "govuk-input--width-4"
+            }
+            ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+</form>
+    </div>
+</div>
+
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>validation: 3 fields are not empty - <span class="govuk-error-message">Enter date of birth</span></li>
+      <li>validation: 3 fields are numbers - <span class="govuk-error-message">Enter valid date of birth</span></li>
+      <li>ideally also check it's a real date (no 31 April) but Housing will check anyway so not essential</li>
+    </ul>
+</div>
+
+{% endblock %}

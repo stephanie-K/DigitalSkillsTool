@@ -1,0 +1,85 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  National Insurance Number
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing<span class="UR-tag red">still under discussion</span>
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set niHtml %}
+{{ govukInput({
+  id: "ni",
+  name: "ni",
+  value: data['ni'],
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "Enter your National Insurance number"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "ni-nb-conditional",
+  name: "ni-nb",
+  fieldset: {
+    legend: {
+      text: "Do you have a National Insurance number?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: checked("ni-nb", "yes"),
+      conditional: {
+        html: niHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: checked("ni-nb", "no")
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+    </div>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>pattern agreed by housing</li>
+      <li>they need the NI to provide the service</li>
+      <li>GOVUK guidance <a href="https://design-system.service.gov.uk/patterns/national-insurance-numbers/" target="_blank" rel="noopener" >about using the NI</a>: <strong>You shouldn’t use National Insurance numbers to verify a user’s identity.</strong></li>
+    </ul>
+  </div>
+
+  <div class="IT-notes-box">
+      <h3 class="govuk-heading-s">IT notes:</h3>
+      <p>pattern agreed by Housing, can be coded but NI use still under discussion with Legal</p>
+      <p>validation: <span class="govuk-error-message">Confirm have National Insurance number</span></p>
+      <p>validation if yes: <span class="govuk-error-message">Enter National Insurance number</span></p>
+    </div>
+
+{% endblock %}

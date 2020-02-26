@@ -1,0 +1,66 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  CBL start
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <p><img src="{{ asset_path }}images/ERC/housing-logo.PNG" alt="Housing logo" style="height:95px; width:250px"></p>
+
+
+      <h2 class="govuk-heading-m erc-text-blue">Before you start</h2>
+      <p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>this form takes most people around 20 to 30 minutes to complete</li>
+            <li>you cannot save the form and go back to it</li>
+            <li>you need addresses for the last 5 years for you and your joint applicant if you have one</li>
+          </ul>
+      </p>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Start now",
+        href: "/forms/housing/CBLstart-warning.html",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+ 
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-3">Related information </h2>
+      <ul class="govuk-list">
+        <li><a href="/forms/housing/CBLwhat-next.html" target="_blank">What happen next</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/article/1628/Homelessness" target="_blank">Homelessness</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/young-persons-housing-service" target="_blank">Young person's housing support service</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/sheltered-housing" target="_blank">Sheltered housing</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/about-housing" target="_blank">About housing services</a></li>
+        <li><a href="https://www.eastrenfrewshire.gov.uk/article/9717/How-we-allocate-our-council-houses" target="_blank">How we allocate our council houses</a></li>
+        </ul>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-6">Contact</h2>
+        <ul class="govuk-list">
+        <li>Phone: 0141 577 3001</li>
+        <li>Email: <a href="mailto:housingallocationenquiries@eastrenfrewshire.gov.uk">housingallocationenquiries@eastrenfrewshire.gov.uk</a></li>
+        </ul>
+
+      <p class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+          You can find out more about how we handle this information and your rights in respect of it by going to <a href="http://www.eastrenfrewshire.gov.uk/housing-service-standards">http://www.eastrenfrewshire.gov.uk/housing-service-standards</a>
+      </p>
+    </div>
+</div>
+<div class="design-notes-box">
+  <h3 class="govuk-heading-s">Design notes:</h3>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>original paper form: <a href="https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=13165&p=0" target="_blank">https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=13165&p=0</a></li>
+    <li>See the logic of some parts of the journey <a href="{{ asset_path }}/images/CBL-flow3-logic.pdf" target="_blank">as a PDF</a></li>
+  </ul>
+</div>
+
+
+
+{% endblock %}

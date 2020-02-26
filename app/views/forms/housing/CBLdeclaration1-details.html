@@ -1,0 +1,122 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        
+        {% set personHtml %}
+        {{ govukInput({
+            label: {
+              text: "Their first name"
+            },
+            id: "first-name-erc",
+            name: "first-name-erc",
+            value: data['first-name-erc'],
+            classes: "govuk-input--width-20"
+          }) }}
+    
+          {{ govukInput({
+            label: {
+              text: "Their last name"
+            },
+            id: "last-name-erc",
+            name: "last-name-erc",
+            value: data['last-name-erc'],
+            classes: "govuk-input--width-20"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Their job title"
+            },
+            id: "job-title",
+            name: "job-title",
+            value: data['job-title'],
+            classes: "govuk-input--width-20"
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Relationship to you"
+            },
+            id: "rel",
+            name: "rel",
+            value: data['rel'],
+            classes: "govuk-input--width-20"
+          }) }}
+        {% endset -%}
+        
+        {% set jobHtml %}
+        {{ govukInput({
+          label: {
+            text: "Enter your job title"
+          },
+          id: "job-title",
+          name: "job-title",
+          value: data['job-title'],
+          classes: "govuk-input--width-20"
+        }) }}
+        {% endset %}
+
+        
+        {{ govukRadios({
+          idPrefix: "erc-conditional",
+          name: "erc",
+          fieldset: {
+            legend: {
+              text: "Which are you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "employee",
+              text: "I'm an employee of East Renfrewshire Council",
+              conditional: {
+                html: jobHtml
+              }
+            },
+            {
+              value: "councillor",
+              text: "I'm a councillor"
+            },
+            {
+              value: "related",
+              text: "I'm related to an employee of East Renfrewshire Council or to a Councillor ",
+              conditional: {
+                html: personHtml
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/housing/CBLextra-reason-abuse.html"
+        }) }}
+      
+    </div>
+</div>
+
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+ <li>New, content need to be checked</li>
+ <li>validation: <span class="govuk-error-message">Confirm if employee or councillor or related to / Enter job title / Enter first name / Enter last name / Enter relationship to you</span></li>
+    </ul>
+</div>
+
+{% endblock %}

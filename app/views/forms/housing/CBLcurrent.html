@@ -1,0 +1,106 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Current housing circumstances
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set detailsHtml %}
+{{ govukTextarea({
+  id: "situation-details",
+  name: "situation-details",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukCheckboxes({
+  idPrefix: "situation-conditional",
+  name: "situation",
+  fieldset: {
+    legend: {
+      text: "What is your current living situation?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "ERC",
+      text: "East Renfrewshire Council tenant"
+    },
+    {
+      value: "other-council",
+      text: "Tenant of another council or housing association"
+    },
+    {
+      value: "property-provided",
+      text: "Tenant of property provided as part of my job"
+    },
+    {
+      value: "private",
+      text: "Tenant of a private landlord"
+    },
+    {
+      value: "army",
+      text: "Armed Forces"
+    },
+    {
+      value: "Relative",
+      text: "Living with relatives or friends"
+    },
+    {
+      value: "owner",
+      text: "Homeowner and live in my own home"
+    },
+    {
+      value: "no",
+      text: "No permanent home"
+    },
+    {
+      value: "different",
+      text: "Other",
+      conditional: {
+        html: detailsHtml
+      }
+    }
+  ]
+}) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/CBLproperty-type.html",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+     
+      <li>we need at list one checked, and if open a text box, then it needs not to be empty</li>
+      <li>validation: <span class="govuk-error-message">Select at least one living situation - Give details of other living situation</span> </li>
+    </ul>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Identity - Equality and diversity 
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% set otherIdentityHtml %}
+            {{ govukInput({
+            id: "other-identity",
+            name: "other-identity",
+            value: data['other-identity'],
+            classes: "govuk-!-width-two-thirds",
+            label: {
+                text: "Describe your identity"
+            }
+            }) }}
+        {% endset -%}
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+            idPrefix: "identity",
+            name: "identity",
+            fieldset: {
+                legend: {
+                text: "Identity",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            hint: {
+                text: "Select all that apply."
+              },
+            items: [
+                {
+                value: "British",
+                text: "British"
+                },
+                {
+                value: "English",
+                text: "English"
+                },
+                {
+                value: "irish",
+                text: "Northern Irish"
+                },
+                {
+                value: "scottish",
+                text: "Scottish"
+                },
+                {
+                value: "Welsh",
+                text: "Welsh"
+                },
+                {
+                value: "Other",
+                text: "Other",
+                conditional: {
+                    html: otherIdentityHtml
+                  }
+                },
+                {
+                    value: "no",
+                    text: "Prefer not to say"
+                }
+            ]
+            }) }}
+   
+ 
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/ethnic-origin-simple.html"
+        }) }}
+
+
+    </div>
+</div>
+<br>
+<br>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>alphabetical order is the most neutral, but would need to be tested</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>no validation - they can move on even if they don't select anything</li>
+    <li>Other open a text box, but can stay empty - no validation</li>
+    </ul>
+</div>
+{% endblock %}

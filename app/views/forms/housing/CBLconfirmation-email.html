@@ -1,0 +1,89 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+
+        <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+                Application submitted
+            </h1>
+            <div class="govuk-panel__body">
+                We’ll send you confirmation of this by email to  <strong>applicant.email@gmail.com</strong><br><br>
+                If you don’t get a confirmation email check your spam or junk folder.
+            </div>
+          </div>
+          <p>Thank you for submitting your council house application form. </p>
+
+          {% if data['priority'] == 'no'%}
+          <div class="govuk-warning-text govuk-!-margin-bottom-5">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                Make sure you:
+              </strong>
+            </div>
+            <ul class="govuk-list govuk-list--number">
+              <li><a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download summary of your application</a></li>
+              <li><a href="" download="Medical-Priority-Assessment-Form.pdf">Download Medical Priority Assessment Form</a></li>
+            </ul>
+          {% else %}
+          <div class="govuk-warning-text govuk-!-margin-bottom-5">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              <a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download summary of your application</a>
+            </strong>
+          </div>
+          {% endif%}
+
+              <p class="govuk-!-margin-bottom-9">Could you complete our <a href="/forms/equal-opportunities/start1.html">Equality and diversity questionnaire</a>? (takes less than 1 minute)</p>
+          
+              <h3 class="govuk-heading-m">What happens next</a></h3> 
+              <p>We'll:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>process your application within 21 days of getting all the information we need</li>
+                <li>tell you your priority group </li>
+                <li>explain how to bid for available homes</li>
+                <li>invite you to discuss your chances of getting a house and your options</li>
+              </ul>
+    
+            
+
+        <p class="govuk-!-margin-bottom-1">&nbsp;</p>
+          <h2 class="govuk-heading-m">Contact</h2>
+          <ul class="govuk-list">
+          <li>Phone: 0141 577 3001</li>
+          <li>Email: <a href="mailto:housingallocationenquiries@eastrenfrewshire.gov.uk">housingallocationenquiries@eastrenfrewshire.gov.uk</a></li>
+            </ul>
+
+          <p class="govuk-!-margin-bottom-9">&nbsp;</p>
+    </div>
+</div>
+<div class="alt-notes-box">
+<p><a href="/forms/housing/CBLconfirmation-email">see with an email</a> - - - <a href="/forms/housing/CBLconfirmation-post">see when we send by post</a></p>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:<span class="UR-tag amber">Email text to send</span></h3>
+  <ul class="govuk-list">
+    <li>Thank you for applying for council housing.</li>
+    <li>We’ll write to you within 21 days.</li>
+    <li>The letter will confirm your housing registration number and tell you your priority group.</li>
+    <li>We may contact you sooner if we need extra information.</li>
+    <li>Housing Services</li>
+  </ul>
+</div>
+{% endblock %}
+
+
+

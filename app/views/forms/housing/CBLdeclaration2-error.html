@@ -1,0 +1,76 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Declaration
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <h2 class="govuk-heading-m">
+                Declaration
+        </h2>
+        <p>Applies to you and anyone on the application:</p> 
+        <ul class="govuk-list govuk-list--bullet">
+            <!--li>I’m eligible to apply for housing</li--> 
+            <li>I’ll tell you if my situation changes</li> 
+            <li>I’ll give true information</li> 
+            <li>I understand you’ll cancel my application if I give false information or withhold information</li>
+            <li>I understand you may end my tenancy and evict me if you offer me a house based on false or withheld information</li> 
+        </ul>
+
+        <p><a href="https://www.eastrenfrewshire.gov.uk/housing-service-standards">Housing Services Privacy Notice for GDPR</a></p>
+        <form class="form" method="post">
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+            idPrefix: "declaration2",
+            name: "declaration2",
+            fieldset: {
+                legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+                }
+            },
+            errorMessage: {
+                text: "Check box to confirm you understand and agree "
+              },
+            items: [
+                {
+                value: "has-read",
+                text: "I’ve read statement and agree.",
+                checked: checked ("declaration2", "has-read")
+                }
+            ]
+            }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+      </form>
+
+    </div>
+</div>
+<div class="content-notes-box">
+    <h3 class="govuk-heading-s">Content notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Agreed by housing on the 10/01 meeting</li>
+    </ul>
+</div>
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><strong>Screen moved at the start to avoid losing too much progress if they click on the link to view the GDPR</strong></li>
+    </ul>
+</div>
+    
+
+{% endblock %}

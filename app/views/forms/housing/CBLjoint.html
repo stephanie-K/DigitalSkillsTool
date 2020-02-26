@@ -1,0 +1,78 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Joint applicant
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set jointHtml %}
+{{ govukTextarea({
+  id: "joint-applicant",
+  name: "joint-applicant",
+  value: data['joint-applicant'],
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Enter name"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "is-joint-conditional",
+  name: "is-joint",
+  fieldset: {
+    legend: {
+      text: "Is anyone a joint applicant?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "A joint applicant must be 16 or over."
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: checked ("is-joint", "yes"),
+      conditional: {
+        html: jointHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: checked ("is-joint", "no")
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+    </div>
+</div>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">UR notes:</h3>
+   <p>In some very rare cases, there can be more than one joint applicant on the lease. Most of the time, it's added after the start of the lease. We would catch this as there would be more than one name in the box. We would not ask for extra 5 years of addresses for a 3rd applicant</p>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes: </h3>
+   <p>validation: <span class="govuk-error-message">Confirm if joint applicant</span> if yes, textbox can't be empty - <span class="govuk-error-message">Enter name</span>  </p>
+   <p>WARNING: You only see this screen if the user didn't say they live alone!</p>
+</div>
+{% endblock %}

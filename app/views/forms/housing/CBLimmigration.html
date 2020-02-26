@@ -1,0 +1,75 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Immigration control
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {% set detailsHtml %}
+        {{ govukTextarea({
+          id: "immigration-details",
+          name: "immigration-details",
+          value: data['immigration-details'],
+          label: {
+            text: "Give details"
+          }
+        }) }}
+        {% endset -%}
+
+
+
+        {{ govukRadios({
+          idPrefix: "immigration-conditional",
+          name: "immigration",
+          fieldset: {
+            legend: {
+              text: "Are you or anyone who will live with you under immigration control?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("immigration", "yes"),
+              conditional: {
+                html: detailsHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("immigration", "no")
+            }
+          ]
+        }) }}
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      </form>
+    </div>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes: </h3>
+
+  <p>validation: <span class="govuk-error-message">Confirm if anyone under immigration control </span> </p>
+  <p>+ if yes and empty<span class="govuk-error-message">Give details about anyone under immigration control </span> </p>
+  <p>Edit: 06/12, if they say no they don't see the next question about recourse to public funds</p>
+</div>
+{% endblock %}

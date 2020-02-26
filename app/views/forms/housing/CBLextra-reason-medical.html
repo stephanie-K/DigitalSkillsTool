@@ -1,0 +1,91 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Health, care, social and support needs
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing 
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <form class="form" method="post">
+        {% set medicalFormHtml %}
+        <p>You’ll need to complete a separate medical priority application form.</p>
+        <p>We’ll give you a link to it once you submit this form.</p>
+        {% endset %}
+
+        {% set medicalHtml %}
+        {{ govukRadios({
+            idPrefix: "priority-conditional",
+            name: "priority",
+            fieldset: {
+                legend: {
+                text: "Have you completed a medical priority application?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                value: "yes",
+                text: "Yes"
+                },
+                {
+                value: "no",
+                text: "No",
+                conditional: {
+                    html: medicalFormHtml
+                  }
+                }
+            ]
+            }) }}
+        {% endset -%}
+        
+        
+        {{ govukRadios({
+        idPrefix: "medical-conditional",
+        name: "medical",
+        fieldset: {
+            legend: {
+            text: "Do you or anyone who will be living with you have any medical condition which is affected by your housing circumstances? ",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        hint: {
+            text: "This includes mental health conditions."
+          },
+        items: [
+            {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+                html: medicalHtml
+              }
+            },
+            {
+            value: "no",
+            text: "No"
+            }
+        ]
+        }) }}
+
+ 
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+    </form>
+
+    </div>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <p>routing changed now after the abuse question - so it's closer to the end and the guidance is still in mind.</p>
+    <p>validation: <span class="govuk-error-message">Confirm if physical or mental health need / Confirm if medical priority application completed</span></p>
+</div>
+{% endblock %}

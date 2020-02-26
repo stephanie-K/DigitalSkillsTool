@@ -1,0 +1,139 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Legal action
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+          Legal action
+      </h2>
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set breakingHtml %}
+{{ govukTextarea({
+  id: "breaking-details",
+  name: "breaking-details",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "is-breaking-conditional",
+  name: "is-breaking",
+  fieldset: {
+    legend: {
+      text: "Have you or anyone living with you had legal action taken against you for breaking your tenancy agreement?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: breakingHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+{% set asboHtml %}
+{{ govukTextarea({
+  id: "asbo-details",
+  name: "asbo-details",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "is-asbo-conditional",
+  name: "is-asbo",
+  fieldset: {
+    legend: {
+      text: "Have you been given an anti-social behaviour order (ASBO) within the last 3 years?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: asboHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+{{ govukRadios({
+  idPrefix: "is-sex-offender-conditional",
+  name: "is-sex-offender",
+  fieldset: {
+    legend: {
+      text: "Do you or anyone who lives with you have to register with the police under the Sex Offenders Act 1977?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: "<p>This will affect where we can offer you a property</p>"
+      }
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/housing/CBLother-properties.html",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>validation: <span class="govuk-error-message">Confirm if legal action taken for breaking tenancy agreement / Give details of legal action</span> </li>
+      <li>validation: <span class="govuk-error-message">Confirm if ASBO given  / Give details of ASBO</span> </li>
+      <li>validation: <span class="govuk-error-message">Confirm if need to register with police under Sex Offenders Act</span> </li>
+    </ul>
+</div>
+{% endblock %}

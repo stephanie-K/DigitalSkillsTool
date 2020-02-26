@@ -1,0 +1,30 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Email text
+{% endblock %}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">
+            Text of email we will send:
+        </h2>
+      <ul class="govuk-list">
+        <li>Thank you for applying for council housing.</li>
+        <li>We’ll write to you within 21 days.</li>
+        <li>The letter will confirm your housing registration number and tell you your priority group.</li>
+        <li>We may contact you sooner if we need extra information.</li>
+        <li>Housing Services</li>
+      </ul>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+

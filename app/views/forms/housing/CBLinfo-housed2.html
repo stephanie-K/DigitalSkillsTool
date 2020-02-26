@@ -1,0 +1,63 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Who will be living with you
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <h2 class="govuk-heading-m">
+            We need to know who'll be living with you
+          </h2>
+          <p class="govuk-!-margin-bottom-6">In the next questions, only add children who live with you all the time. You can add children later who live with you sometimes. </p>
+         
+          <form class="form" method="post">
+              {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    
+              {{ govukRadios({
+                idPrefix: "need-add",
+                name: "need-add",
+                fieldset: {
+                  legend: {
+                    text: "Do you need to add adults or children living with you all the time?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes",
+                    checked: checked ("need-add", "yes")
+                  },
+                  {
+                    value: "no",
+                    text: "No",
+                    checked: checked ("need-add", "no")
+                  }
+                ]
+              }) }}
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+          </form>
+    </div>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>NEW PAGE! </li>
+      <li>Yes takes you to the first page to enter a person, No takes you to the page to add children living with you sometimes</li>
+      <li>need to be content checked - Housing approved and an error message: Confirm need to add person living with you all the time (?)</li>
+    </ul>
+</div>
+
+{% endblock %}

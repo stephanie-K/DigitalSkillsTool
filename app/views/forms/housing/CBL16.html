@@ -1,0 +1,54 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Over 16
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "is-16",
+        name: "is-16",
+        fieldset: {
+          legend: {
+            text: "Are you 16 or over?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked("is-16", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked("is-16", "no")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      <form class="form" method="post">
+    </div>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>validation: <span class="govuk-error-message">Confirm if you’re 16 or over</span> </li>
+    </ul>
+</div>
+
+{% endblock %}

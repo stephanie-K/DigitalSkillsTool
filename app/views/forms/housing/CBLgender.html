@@ -1,0 +1,82 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Gender
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <form class="form" method="post">
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set genderHtml %}
+        {{ govukInput({
+          id: "gender-desc",
+          name: "gender-desc",
+          value: data['gender-desc'],
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Describe gender in another way (optional)"
+          }
+        }) }}
+        {% endset -%}
+  
+  
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "gender-applicant",
+          name: "gender-applicant",
+          fieldset: {
+            legend: {
+              text: "Your gender",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "female",
+              text: "Female",
+              checked: checked ("gender-applicant", "female")
+            },
+            {
+              value: "male",
+              text: "Male",
+              checked: checked ("gender-applicant", "male")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked ("gender-applicant", "Other"),
+              conditional: {
+                html: genderHtml
+              }
+            }
+          ]
+        }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+    </div>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Text to describe gender is not mandatory - in summary on further screens we will display the description if provided, or just display "Other" if not</li>
+      <li>Validation: none on the description - if no selection: <span class="govuk-error-message">Enter gender</span></li>
+    </ul>
+</div>
+
+{% endblock %}

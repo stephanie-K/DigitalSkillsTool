@@ -1,0 +1,71 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Information helper
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        <form class="form" method="post">
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+            name: "info-who-help",
+            id: "info-who-help",
+            label: {
+            text: "Tell us who you are and your relationship to the person applying. Include your contact details if we can contact you about the application. ",
+            classes: "govuk-!-font-size-24"
+            }
+        }) }}
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+            idPrefix: "permission",
+            name: "permission",
+            fieldset: {
+                legend: {
+                text: "",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+                }
+            },
+            items: [
+                {
+                value: "agreed",
+                text: "I have permission to apply for this person.",
+                checked: checked ("permission", "agreed")
+                }
+            ]
+            }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+      </form>
+
+    </div>
+</div>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">UR notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Support workers told us it would be useful to be able to mention they are helping the person so we can get back to them and keep them in the loop</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>validation <span class="govuk-error-message">Check box to confirm you have permission to apply for this person</span></li>
+    </ul>
+</div>
+    
+
+{% endblock %}

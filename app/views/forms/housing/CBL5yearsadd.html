@@ -1,0 +1,237 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  5 years of addresses
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing 
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <p class="govuk-body-l">Tell us the UK addresses you’ve lived at for the past 5 years. </p>
+        <h2 class="govuk-heading-m">
+            Address 1:
+        </h2>
+        
+        <form class="form" method="post">
+  
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Enter address. Include postcode if you know it."
+          },
+          id: "addr1",
+          name: "addr1",
+          value: data['addr1'],
+          classes: "govuk-!-width-three-quarters"
+        }) }}
+  
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+<br>
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "type1-other",
+          id: "type1-other",
+          classes: "govuk-!-width-two-thirds",
+          value: data['type1-other'],
+          label: {
+            text: "Give details about occupant type"
+          }
+        }) }}
+        {% endset -%}
+        {{ govukRadios({
+          
+          idPrefix: "type1",
+          name: "type1",
+          fieldset: {
+            legend: {
+              text: "Which were you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "tenant",
+              text: "Tenant",
+              checked: checked ("type1", "tenant")
+            },
+            {
+              value: "Living with parents",
+              text: "Living with parents",
+              checked: checked ("type1", "Living with parents")
+            },
+            {
+              value: "Owner",
+              text: "Owner",
+              checked: checked ("type1", "Owner")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked ("type1", "Other"),
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+<br>
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved in",
+            classes: 'govuk-!-font-size-24'
+          },
+          hint: {
+            text: "If you don’t know give an estimated date. "
+          },
+          id: "in1",
+          name: "in1",
+          value: data['in1'],
+          classes: "govuk-input--width-10"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          label: {
+            text: "Date moved out",
+            classes: 'govuk-!-font-size-24'
+          },
+          hint: {
+            text: "If you don’t know give an estimated date. "
+          },
+          id: "out1",
+          name: "out1",
+          value: data['out1'],
+          classes: "govuk-input--width-10"
+        }) }}
+      
+ <br>
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        {% set otherHtml %}
+        {{ govukTextarea({
+          name: "reason1-other",
+          id: "reason1-other",
+          classes: "govuk-!-width-two-thirds",
+          value: data['reason1-other'],
+          label: {
+            text: "Give details"
+          }
+        }) }}
+      {% endset -%}
+
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        {{ govukCheckboxes({
+          idPrefix: "leave1-conditional",
+          name: "leave1",
+          fieldset: {
+            legend: {
+              text: "Reason for leaving",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select all that apply."
+          },
+          items: [
+            {
+              value: "Eviction: rent arrears",
+              text: "Eviction: rent arrears",
+              checked: checked("leave1", "Eviction: rent arrears")
+            },
+            {
+              value: "Eviction: other reason",
+              text: "Eviction: other reason",
+              checked: checked("leave1", "Eviction: other reason")
+            },
+            {
+              value: "Asked or told to leave",
+              text: "Asked or told to leave",
+              checked: checked("leave1", "Asked or told to leave")
+            },
+            {
+              value: "Relationship or family breakdown",
+              text: "Relationship or family breakdown",
+              checked: checked("leave1", "Relationship or family breakdown")
+            },
+            {
+              value: "End of lease",
+              text: "End of lease",
+              checked: checked("leave1", "End of lease")
+            },
+            {
+              value: "House sale",
+              text: "House sale",
+              checked: checked("leave1", "House sale")
+            },
+            {
+              value: "Other",
+              text: "Other",
+              checked: checked("leave1", "Other"),
+              conditional: {
+                html: otherHtml
+              }
+            }
+          ]
+        }) }}
+
+        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+        {{ govukRadios({
+          idPrefix: "add-address2",
+          name: "add-address2",
+          fieldset: {
+            legend: {
+              text: "Do you need to add a past address?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked ("add-address2", "yes")
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked ("add-address2", "no")
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary"
+        }) }}
+      
+
+    </div>
+</div>
+
+
+<div class="design-notes-box">
+    <h3 class="govuk-heading-s">Design notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>need 5 addresses and textbox on the last one if the applicant need to add more addresses I only coded 2</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+    <ul class="govuk-list govuk-list--bullet">
+    <li>For the first previous address, date needs to be provided but can be estimated - so just need not to be empty</li>
+    <li>need to enter an address (textbox not empty) + need to pick a type + need at least one reason for leaving (if Other then need a description)</li>
+    <li>Validation: <span class="govuk-error-message">Enter address / Confirm occupant type / Give details about occupant type / Enter date moved in / Enter date moved out / Select reason for leaving</span></li>
+    <li>Validation: <span class="govuk-error-message">Confirm if need to add past address </span></li>
+    </ul>
+</div>
+
+{% endblock %}

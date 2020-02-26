@@ -1,0 +1,77 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Gender - Equality and diversity
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {% set genderHtml %}
+        {{ govukInput({
+          id: "gender-description",
+          name: "gender-description",
+          value: data['gender-description'],
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Describe gender in another way"
+          }
+        }) }}
+        {% endset -%}
+  
+  
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "gender",
+          name: "gender",
+          fieldset: {
+            legend: {
+              text: "Gender",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "female",
+              text: "Female"
+            },
+            {
+              value: "male",
+              text: "Male"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: genderHtml
+              }
+            },
+            {
+              value: "no",
+              text: "Prefer not to say"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/equal-opportunities/disability.html"
+        }) }}
+
+
+    </div>
+</div>
+<div class="content-notes-box">
+    <h3 class="govuk-heading-s">Content notes:</h3>
+    <p>Instead of'Other' the Samaritans are using: <strong>Prefer to self-describe</strong> - they also talk about Gender identity</p>
+</div>
+{% endblock %}

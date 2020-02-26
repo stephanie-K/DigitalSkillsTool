@@ -1,0 +1,54 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  applicant
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "is-applicant",
+        name: "is-applicant",
+        fieldset: {
+          legend: {
+            text: "Are you the person applying?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked("is-applicant", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked("is-applicant", "no")
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      <form class="form" method="post">
+    </div>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>validation: <span class="govuk-error-message">Confirm you’re the person applying</span></li>
+    </ul>
+</div>
+
+{% endblock %}

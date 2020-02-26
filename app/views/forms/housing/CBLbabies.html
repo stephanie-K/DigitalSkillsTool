@@ -1,0 +1,70 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Pregnancy
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+<form class="form" method="post">
+{% set babyHtml %}
+{{ govukTextarea({
+  id: "baby",
+  name: "baby",
+  value: data['baby'],
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Enter each name and due date"
+  }
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "is-pregnant-conditional",
+  name: "is-pregnant",
+  fieldset: {
+    legend: {
+      text: "Is anyone on the application pregnant?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      checked: checked ("is-pregnant", "yes"),
+      conditional: {
+        html: babyHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      checked: checked ("is-pregnant", "no")
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+    </div>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+   <p>validation: <span class="govuk-error-message">Confirm if anyone pregnant</span> if yes, textbox can't be empty - <span class="govuk-error-message">Enter name and due date</span></p>
+</div>
+
+{% endblock %}

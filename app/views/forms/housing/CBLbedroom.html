@@ -1,0 +1,134 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Bedrooms
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+        We need to know about the bedrooms at your current address
+      </h2>
+<br><br>
+      <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "double",
+        name: "double",
+        fieldset: {
+          legend: {
+            text: "How many are double?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "You can fit in a double bed, a wardrobe and a chest of drawers."
+        },
+        items: [
+          {
+            value: "0",
+            text: "0"
+          },
+          {
+            value: "1",
+            text: "1"
+          },
+          {
+            value: "2",
+            text: "2"
+          },
+          {
+            value: "3",
+            text: "3"
+          },
+          {
+            value: "4 or more",
+            text: "4 or more"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "single",
+        name: "single",
+        fieldset: {
+          legend: {
+            text: "How many are single?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "You cannot fit in a double bed, a wardrobe and a chest of drawers."
+        },
+        items: [
+          {
+            value: "0",
+            text: "0"
+          },
+          {
+            value: "1",
+            text: "1"
+          },
+          {
+            value: "2",
+            text: "2"
+          },
+          {
+            value: "3",
+            text: "3"
+          },
+          {
+            value: "4 or more",
+            text: "4 or more"
+          }
+        ]
+      }) }}
+
+<br><br>
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "Tell us anything else you want to know about sleeping arrangements",
+          classes:"govuk-!-font-size-24"
+        },
+        hint: {
+          text: "For example, someone sleeping on the sofa or a parent sharing with a child. "
+        }
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      </form>
+
+    </div>
+</div>
+
+
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+   <p>Routing: If they said they were sharing with other not moving with them on a previous screen, then they will see another question about beds used, if not they move to reasons for leaving</p>
+   <p>validation: <span class="govuk-error-message">Confirm how many double bedrooms / Confirm how many single bedrooms</span></p>
+   <p>There is no validation in the last big textbox, it's optional and can stay empty. We just don't mention "optional" anymore as some users would not even read if they see "optional"</p>
+</div>
+
+{% endblock %}

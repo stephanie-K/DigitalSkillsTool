@@ -1,0 +1,87 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  About you
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+        About you
+      </h2>
+      <form class="form" method="post" novalidate>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Title"
+        },
+        id: "title-applicant",
+        name: "title-applicant",
+        value: data['title-applicant'],
+        classes: "govuk-input--width-4"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name-applicant",
+        name: "first-name-applicant",
+        value: data['first-name-applicant'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name-applicant",
+        name: "last-name-applicant",
+        value: data['last-name-applicant'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Phone"
+        },
+        id: "telephone-number",
+        name: "telephone-number",
+        value: data['telephone-number'],
+        type: "tel",
+        classes: "govuk-input--width-10"
+      }) }}
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+      </form>
+    </div>
+</div>
+<div class="UR-notes-box">
+    <h3 class="govuk-heading-s">UR notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>title is needed to send letters - internal backend system makes this field mandatory</li>
+      <li>this was hard to use for Syrian participants because they don't use this normally</li>
+      <li>email is removed as a lot of users don't have an email or don't want to give it. This was optional but some user didn't know what "optional" meant - we are now asking for it on the next page</li>
+    </ul>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes: <span class="UR-tag red">Email removed</span></h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>accept spaces in the phone number - if possible check the format - if not entered: <span class="govuk-error-message">Enter phone number</span> - if not valid: <span class="govuk-error-message">Enter valid phone number</span></li>
+      <li><span class="govuk-error-message">Enter first name / Enter last name / Enter title</span></li>
+    </ul>
+</div>
+{% endblock %}

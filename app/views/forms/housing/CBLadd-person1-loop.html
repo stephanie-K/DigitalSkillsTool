@@ -1,0 +1,209 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Add person
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <p class="govuk-body-l">Enter each person who will be living with you.</p>
+      <h2 class="govuk-heading-m">
+          Person 1:
+      </h2>
+      
+      <form class="form" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name-person1",
+        name: "first-name-person1",
+        value: data['first-name-person1'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name-person1",
+        name: "last-name-person1",
+        value: data['last-name-person1'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      {{ govukDateInput({
+        id: "dob-person1",
+        namePrefix: "dob-person1",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items:[
+            {
+            name: 'day',
+            value: data['dob-person1-day'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'month',
+            value: data['dob-person1-month'],
+            classes: "govuk-input--width-2"
+            },
+            {
+            name: 'year',
+            value: data['dob-person1-year'],
+            classes: "govuk-input--width-4"
+            }
+            ]
+      }) }}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {% set genderHtml %}
+      {{ govukInput({
+        id: "gender-desc1",
+        name: "gender-desc1",
+        value: data['gender-desc1'],
+        classes: "govuk-!-width-two-thirds",
+        label: {
+          text: "Describe gender in another way (optional)"
+        }
+      }) }}
+      {% endset -%}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "gender1",
+        name: "gender1",
+        fieldset: {
+          legend: {
+            text: "Gender",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "female",
+            text: "Female",
+            checked: checked ("gender1", "female")
+          },
+          {
+            value: "male",
+            text: "Male",
+            checked: checked ("gender1", "male")
+          },
+          {
+            value: "Other",
+            text: "Other",
+            checked: checked ("gender1", "Other"),
+            conditional: {
+              html: genderHtml
+            }
+          }
+        ]
+      }) }}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "live-with1",
+        name: "live-with1",
+        fieldset: {
+          legend: {
+            text: "Do they live with you now?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked ("live-with1", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked ("live-with1", "no")
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Relationship to you"
+        },
+        id: "relationship1",
+        name: "relationship1",
+        value: data['relationship1'],
+        classes: "govuk-input--width-20"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible erc">
+
+      {{ govukRadios({
+        idPrefix: "add-person2",
+        name: "add-person2",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: "Do you need to add another person?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: checked ("add-person2", "yes")
+          },
+          {
+            value: "no",
+            text: "No",
+            checked: checked ("add-person2", "no")
+          }
+        ]
+      }) }}
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <br>
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+    </form>
+
+    </div>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Validation - name, relation are not empty: <span class="govuk-error-message">Enter first name - Enter last name  - Enter relationship</span></li>
+      <li>dob, 3 fields not empty: <span class="govuk-error-message">Enter date of Birth</span> - and if possible is a valid date (not the 31 of April) - <span class="govuk-error-message">Enter valid date</span></li>
+      
+      <li>need to pick one Gender, but description if Other is optional - <span class="govuk-error-message">Enter gender</span></li>
+      <li>pick yes or no living with you - <span class="govuk-error-message">Confirm if live with you now</span></li>
+      <li>Validation - <span class="govuk-error-message">Confirm if need to add another person</span></li>
+      <li>same for all other screen for person 2 etc....</li>
+      <li><strong>we need to be able to enter 10 people</strong> potentially. On the 10th at the bottom, we need an open textbox with label: Tell us about anyone else you didn't add yet (if applicable) <a href="/forms/housing/CBLadd-person3-loop">to see an example</a></li>
+    </ul>
+</div>
+
+
+{% endblock %}

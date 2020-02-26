@@ -1,0 +1,85 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Who is not moving with you
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        
+        {% set movingDetailsHtml %}
+        {{ govukTextarea({
+          id: "actual-details",
+          name: "actual-details",
+          value: data['actual-details'],
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Give details of your situation"
+          }
+        }) }}
+        {{ govukTextarea({
+          id: "people-details",
+          name: "people-details",
+          value: data['people-details'],
+          label: {
+            text: "Give details of anyone not moving with you. Tell us their name and relationship to you. Include their date of birth if you know it."
+          }
+        }) }}
+        {% endset %}
+
+        {{ govukRadios({
+          idPrefix: "who-not-moving-conditional",
+          name: "who-not-moving",
+          fieldset: {
+            legend: {
+              text: "Do you live with people who won’t be moving with you?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "For example shared accommodation, living with family or friends."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked("who-not-moving", "yes"),
+              conditional: {
+                html: movingDetailsHtml
+              }
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked("who-not-moving", "no")
+            }
+          ]
+        }) }}
+        
+              {{ govukButton({
+                text: "Continue",
+                classes: "button-primary"
+              }) }}
+      </form>
+    </div>
+</div>
+<div class="IT-notes-box">
+  <h3 class="govuk-heading-s">IT notes:</h3>
+  <ul class="govuk-list govuk-list--bullet">
+  <li>if yes, then we need information in textboxes display</li>
+  <li>validation: <span class="govuk-error-message"> Confirm if you live with people who won’t be moving with you / Give details of situation / Give details of anyone not moving</span> </li>
+  </ul>
+</div>
+
+{% endblock %}

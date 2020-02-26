@@ -1,0 +1,59 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Joint applicant
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing 
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+         You told us you have a joint applicant
+        </h2>
+        <p class="govuk-!-margin-bottom-6">We need the addresses they lived at for the past 5 years too.</p>
+       
+        <form class="form" method="post">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+
+{{ govukRadios({
+  idPrefix: "same-addresses",
+  name: "same-addresses",
+  fieldset: {
+    legend: {
+      text: "The joint applicant lived at the same addresses as myself for the last 5 years",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+<div class="IT-notes-box">
+    <h3 class="govuk-heading-s">IT notes:</h3>
+
+   <p>validation <span class="govuk-error-message">Confirm if joint applicant at same addresses</span></p>
+</div>
+{% endblock %}
