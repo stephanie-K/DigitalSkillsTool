@@ -1,0 +1,27 @@
+
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+  Example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        My example page
+      </h1>
+      <p>
+        You can add your own content now
+      </p>
+
+
+      {{ govukButton({
+        text: "Next",
+        classes: "button-primary",
+        href: "/forms/sss-forms/not-ready.html",
+        isStartButton: true
+      }) }}
+
+{% endblock %}

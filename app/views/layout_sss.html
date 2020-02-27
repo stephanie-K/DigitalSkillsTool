@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/SG/sss.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/sss.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html"><image src="{{ asset_path }}/images/SG/social-security-scotland-logo.png" alt="my gov scot Logo" width="325" height="102"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+        <span class="sss-service-name">
+          This is a training website
+        </span>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo">
+<div class="feedback">
+    <div class="govuk-width-container">
+      <p><strong>Service feedback</strong></p>
+      <p><a href="/forms/sss-forms/feedback.html">Report a problem</a> with this online form</p>
+      </div>
+</div>
+<div class="govuk-width-container">
+  <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <ul class="govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/not-ready.html">Accessiblity</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/not-ready.html">Contact us</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/not-ready.html">Privacy</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/not-ready.html">Social Security Corporate Site</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr class="govuk-footer__section-break">
+    <p>mygov.scot is the place for people in Scotland to access public services that are easy to find and simple to use. </p>  
+    <div>
+     <image src="{{ asset_path }}/images/SG/govscot-footer.png" alt="my gov scot Logo"></image>
+  </div>
+  <br>
+  <br>
+
+
+  </div>
+</footer>
+{% endblock %}

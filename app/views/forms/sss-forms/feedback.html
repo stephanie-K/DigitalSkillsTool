@@ -1,0 +1,59 @@
+
+
+
+
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/SG/sss.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/sss.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+{% endblock %}
+
+{% block pageTitle %}
+  Feeback
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body">
+    <h1 style="color: #606060; font-size: 33px; font-family: 'Open Sans', sans-serif; font-weight: 400;">Social Security Scotland | Report a problem with this online form </h1>
+    <p style="color: #505050; font-size:14px">The purpose of this is to gather information about any problems with the online application form.</p>
+    <p style="color: #505050;font-size:14px">Please do NOT enter any of your personal details in the comments box below. You will not receive a reply. If you need help use the 'contact us' link. Your feedback will only be used to improve the quality of our service.</p>
+    <hr style="color: #808080; margin: 20px 0">
+    <p style="font-size:14px"><strong>Please tell us more about the problem you experienced so that we can look into it</strong></p>
+  </div>
+
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  {{ govukTextarea({
+    name: "more-detail",
+    id: "more-detail",
+    label: {
+      text: ""
+    },
+    classes: "feedback-text-area"
+  }) }}
+
+  {{ govukButton({
+    text: "Send",
+    classes: "button-primary",
+    href: "/forms/sss-forms/not-ready.html"
+  }) }}
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

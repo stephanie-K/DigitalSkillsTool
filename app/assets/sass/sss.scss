@@ -15,9 +15,10 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
-$erc-text-blue : #004269; 
-$erc-logo-blue: #0071BA;
-$erc-green-border: #008000;
+$sss-blue : #0065bd; 
+$sss-pink: #e5007c;
+$sss-text: #333;
+
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -27,87 +28,102 @@ $erc-green-border: #008000;
 .govuk-header__container {
     border-bottom: 0px;
 }
-.erc-service-name {
+.sss-service-name {
     font-size: 24px;
     color: white; 
-    background-color: $erc-logo-blue;
+    background-color: $sss-pink;
     padding: 4px 10px;
-    font-weight: 600;
+    font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
 }
 .govuk-header__content {
-    @media only screen and (min-width: 169px) { 
+    @media only screen and (min-width: 999px) { 
     border: 30px solid #fff;
     }
 }
 
+
 //---------------------------------------- FOOTER ------------------------------------------------//
 .govuk-footer {
     font-size: 16px;
-    background-color: $erc-logo-blue;
+    background-color: $sss-blue;
+    border-top: 1px solid #eee;
     p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
         color:  white;
+
+    }
+    padding-top: 0;
+}
+.govuk-footer__meta {
+    padding-top: 40px;
+}
+.feedback {
+    background-color: white;
+    padding: 50px 0 10px 0;
+    p {
+        color: $sss-text;
     }
 }
 
 //---------------------------------------- BODY------------------------------------------------//
 
-body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table {
-    color: $erc-text-blue;
+body p, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-heading-xl, .govuk-heading-m,.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table {
+    color: $sss-text;
+    font-family: 'Roboto', Arial;
 }
 
 // ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
-    color: $erc-text-blue;
+    color: $sss-text;
     margin-bottom: 2em;
 }
 
-.govuk-textarea, .govuk-input{
-    border: 2px solid $erc-text-blue;
+.govuk-button {
+    background-color: $sss-blue;
+    font-size: 18px;
+    padding: 15px 25px;
+    box-shadow: none;
 }
 
-.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .erc-text-blue , table{
-    color: $erc-text-blue;
+.govuk-button:hover, .govuk-button:focus, .govuk-button:active {
+    background-color: #00437e;
 }
 
+.govuk-button__start-icon {
+    margin-left:40px;
+}
 
 .govuk-link, a, .govuk-link:link, a:link {
-    color: 	#0000ee;
+    color: 	$sss-blue;
 }
-#logo-erc:focus{
+#logo-sss:focus{
     background-color: 	#fff; // was putting a thick yellow layer at the bottom of the ERC logo
 }
 
 
 .govuk-error-message, .govuk-error-summary, .govuk-input--error {
-    color: #B30000 
+    color: #d32205
 }
 .govuk-form-group--error {
-    border-left: 5px solid #B30000;
+    border-left: 5px solid #d32205;
 }
 
+body, p, li, ul, h1, h2, h3 {
+    line-height: 2;
+}
+.govuk-form-group {
+    padding-top: 2em;
+}
 
 
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
-
-.validated {
-    border: 2px solid #008000;
-}
-
-.input-read-only {
-    background: #ececec;
-}
-
-.govuk-tag {
-    padding: 10px;
-    margin-right: 10px;
-}
-.govuk-tag.black {
-    padding: 10px 10px 10px 60px;
-    background: url(../images/govuk-crown.png) 10px center no-repeat #000;
+.feedback-text-area {
+    border: 1px solid #d0d0d0;
+    background-color: #fafafa;
 }
 .tag-print {
     padding: 10px 10px 10px 60px;
@@ -118,75 +134,3 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
     //font-size : 19px;
 }
 
-.UR-tag {
-margin-left: 20px;
-padding: 5px;
-color: white;
-font-weight: 600;
-font-size:16px;
-font-family: nta;
-}
-.UR-tag.ok {
-    background-color: #518418;
-   // display: none
-}
-.UR-tag.amber {
-    background-color: orange;
-    color: black;
-  //  display: none
-}
-.UR-tag.red {
-    background-color: #b30000;
-  //  display: none
-}
-.UR-tag.no {
-    background-color: #cccccc;
-    color: black;
-  //  display: none
-}
-
-
-.govuk-tag.info {
-    background-color: $erc-logo-blue;
-    text-transform: none;
-    font-family: nta;
-    padding: 5px;
- 
-}
-
-.govuk-tag.red {
-    background-color: #b10e1e;
-    margin-left: 10px;
-    padding: 5px;
-
-}
-
-
-// -------------------------------------------- CBL------------------------------------------------- //
-
-#CBLperson2, #CBLperson3, #CBLperson4, #CBLperson5, #CBLperson6, #CBLchild2, #CBLchild3 {
-    display: none;
-}
-hr.erc {
-    border-top: 2px solid $erc-text-blue;
-}
-
-//tables for person data
-.no-border {
-    border: 0px;
-}
-
-
-.half-width {
-    max-width: 100%;
-    @media only screen and (min-width: 750px) { 
-        width : 50%;
-    }
-}
-
-.govuk-table__cell, .govuk-table__header{
-    padding: 4px 20px 4px 0;
-}
-th {
-    white-space: nowrap;
-}
