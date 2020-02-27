@@ -1,0 +1,92 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Type of Property
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <form class="form" method="post">
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+          {% set otherHtml %}
+          {{ govukInput({
+            id: "other-type",
+            name: "other-type",
+            value: data['other-type'],
+            label: {
+              text: "Give details"
+            }
+          }) }}
+          {% endset -%}
+
+
+          {{ govukRadios({
+            idPrefix: "property-conditional",
+            name: "property",
+            value: data['property'],
+            fieldset: {
+              legend: {
+                text: "What type of property do you currently live in?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            items: [
+              {
+                value: "house",
+                text: "House or cottage"
+              },
+              {
+                value: "flat",
+                text: "Flat"
+              },
+              {
+                value: "Maisonette",
+                text: "Maisonette"
+              },
+              {
+                value: "shelter",
+                text: "Sheltered housing"
+              },
+              {
+                value: "Mobile home or caravan",
+                text: "Mobile home or caravan"
+              },
+              {
+                value: "bedsit",
+                text: "Bedsit"
+              },
+              {
+                value: "other",
+                text: "Other",
+                conditional: {
+                  html: otherHtml
+                }
+              }
+            ]
+          }) }}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/erc-forms/housing/CBLbedroom.html",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+
+
+{% endblock %}

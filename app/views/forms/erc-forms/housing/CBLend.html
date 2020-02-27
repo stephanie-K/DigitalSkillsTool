@@ -1,0 +1,41 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Last page
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      
+      <h2 class="govuk-heading-m">
+          You're about to submit your application
+      </h2>
+    
+      <p class="govuk-!-font-weight-bold govuk-!-margin-top-5">On the next page you can download your application summary and save it. </p>
+ 
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+      {{ govukWarningText({
+        html: "We won’t send you the summary by letter or email.  ",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p class="govuk-!-margin-top-5">&nbsp;</p>
+   
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Submit your application",
+        href: "/forms/erc-forms/housing/CBLconfirmation.html",
+        classes: "button-primary"
+      }) }}
+    </div>
+</div>
+
+
+{% endblock %}

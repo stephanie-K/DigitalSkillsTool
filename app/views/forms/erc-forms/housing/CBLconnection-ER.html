@@ -1,0 +1,115 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Connection to East Ren
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{% set detailsHtml %}
+{{ govukTextarea({
+  id: "connection-details",
+  name: "connection-details",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Give details"
+  }
+}) }}
+{% endset -%}
+
+{% set addressHtml %}
+{{ govukTextarea({
+  id: "connection-details",
+  name: "connection-details",
+  classes: "govuk-!-width-two-thirds",
+  label: {
+    text: "Tell us the name of this person, their relationship to you and their address including postcode"
+  }
+}) }}
+{% endset -%}
+
+
+{{ govukCheckboxes({
+  idPrefix: "reason-conditional",
+  name: "reason",
+  fieldset: {
+    legend: {
+      text: "What's your connection to East Renfrewshire?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    {
+      value: "I live in East Renfrewshire",
+      text: "I live in East Renfrewshire"
+    },
+    {
+      value: "job",
+      text: "I have a job in the area"
+    },
+    {
+      value: "offered-job",
+      text: "I've been offered a job in the area"
+    },
+    {
+      value: "looking-for-job",
+      text: "I'm looking for a job in the area"
+    },
+    {
+      value: "support",
+      text: "Support from or for East Renfrewshire resident",
+      conditional: {
+        html: addressHtml
+      }
+    },
+    {
+      value: "social",
+      text: "Social or medical reason to live in the area including disability and mental health"
+    },
+    {
+      value: "Relative",
+      text: "Relative lives in East Renfrewshire",
+      conditional: {
+        html: addressHtml
+      }
+    },
+    {
+      value: "Other",
+      text: "Other reason",
+      conditional: {
+        html: detailsHtml
+      }
+    },
+    {
+      value: "I have no connection to East Renfrewshire",
+      text: "I have no connection to East Renfrewshire"
+    }
+  ]
+}) }}
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/erc-forms/housing/CBLcurrent.html",
+        classes: "button-primary"
+      }) }}
+
+    </div>
+</div>
+
+
+{% endblock %}

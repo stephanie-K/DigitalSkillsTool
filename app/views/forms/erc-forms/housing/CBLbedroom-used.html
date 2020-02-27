@@ -1,0 +1,108 @@
+
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Bedrooms used
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+          Apply online for council housing
+      </h1>
+      <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+      <h2 class="govuk-heading-m">
+          You told us that you are currently living with people who won't be moving with you
+      </h2>
+<br><br>
+      <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "double-other",
+        name: "double-other",
+        fieldset: {
+          legend: {
+            text: "How many double bedrooms are used by people not moving with you?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "0",
+            text: "0"
+          },
+          {
+            value: "1",
+            text: "1"
+          },
+          {
+            value: "2",
+            text: "2"
+          },
+          {
+            value: "3",
+            text: "3"
+          },
+          {
+            value: "4 or more",
+            text: "4 or more"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "single-other",
+        name: "single-other",
+        fieldset: {
+          legend: {
+            text: "How many single bedrooms are used by people not moving with you?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "0",
+            text: "0"
+          },
+          {
+            value: "1",
+            text: "1"
+          },
+          {
+            value: "2",
+            text: "2"
+          },
+          {
+            value: "3",
+            text: "3"
+          },
+          {
+            value: "4 or more",
+            text: "4 or more"
+          }
+        ]
+      }) }}
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/erc-forms/housing/CBLreasons.html",
+        classes: "button-primary"
+      }) }}
+      </form>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

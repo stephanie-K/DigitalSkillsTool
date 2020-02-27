@@ -1,0 +1,84 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Health, care, social and support needs
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing 
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        {% set policeGuidanceHtml %}
+        <p>We will contact you for more details and will confirm with the police once we have the reporting details.</p>
+        {% endset %}
+        {% set policeHtml %}
+        {{ govukRadios({
+            idPrefix: "police-conditional",
+            name: "police",
+            fieldset: {
+                legend: {
+                text: "Have you told the police?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+                }
+            },
+            items: [
+                {
+                value: "yes",
+                text: "Yes",
+                conditional: {
+                    html: policeGuidanceHtml
+                    }
+                },
+                {
+                value: "no",
+                text: "No"
+                }
+            ]
+            }) }}
+        {% endset -%}
+
+
+        {{ govukRadios({
+        idPrefix: "abuse",
+        name: "abuse",
+        fieldset: {
+            legend: {
+            text: "Do you or anyone who will be living with you need to move because you’re being harassed, threatened or abused?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+                html: policeHtml
+              }
+            },
+            {
+            value: "no",
+            text: "No"
+            }
+        ]
+        }) }}
+ 
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/erc-forms/housing/CBLextra-reason-medical.html"
+        }) }}
+      </form>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

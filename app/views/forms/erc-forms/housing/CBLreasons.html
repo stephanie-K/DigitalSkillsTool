@@ -1,0 +1,148 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Reasons for applying
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Apply online for council housing 
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+        
+        {% set detailsHtml %}
+        {{ govukTextarea({
+          id: "reason-details",
+          name: "reason-details",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Give details of other reason"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set poorHtml %}
+        {{ govukTextarea({
+          id: "reason2-details",
+          name: "reason2-details",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Give details of poor condition "
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukCheckboxes({
+            idPrefix: "reason-conditional",
+            name: "reason",
+            fieldset: {
+              legend: {
+                text: "Why are you applying for housing?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "Select any that apply."
+            },
+            items: [
+              {
+                value: "Homelessness or at risk of homelessness ",
+                text: "Homelessness or at risk of homelessness "
+              },
+              {
+                value: "Leaving prison",
+                text: "Leaving prison"
+              },
+              {
+                value: "Leaving hospital",
+                text: "Leaving hospital"
+              },
+              {
+                value: "Leaving HM Armed Forces",
+                text: "Leaving HM Armed Forces"
+              },
+              {
+                value: "Relationship problems",
+                text: "Relationship or family problems"
+              },
+              {
+                value: "Domestic abuse",
+                text: "Domestic abuse"
+              },
+              {
+                value: "Harassment or violence in my area",
+                text: "Harassment or violence in my area"
+              },
+              {
+                value: "Home being repossessed as can’t pay mortgage",
+                text: "Home being repossessed as can’t pay mortgage"
+              },
+              {
+                value: "Can’t afford to pay rent",
+                text: "Can’t afford to pay rent"
+              },
+              {
+                value: "Home in poor condition",
+                text: "Home in poor condition",
+                conditional: {
+                  html: poorHtml
+                }
+              },
+              {
+                value: "Home declared Below Tolerable Standard or has a closing order",
+                text: "Home declared Below Tolerable Standard or has a closing order"
+              },
+              {
+                value: "Medical condition made worse by my current housing",
+                text: "Medical condition made worse by my current housing"
+              },
+              {
+                value: "Problems getting around my home due to disability",
+                text: "Problems getting around my home due to disability"
+              },
+              {
+                value: "Home is overcrowded",
+                text: "Home is overcrowded"
+              },
+              {
+                value: "Home is too big for me",
+                text: "Home is too big for me"
+              },
+              {
+                value: "To be nearer family",
+                text: "To be nearer family"
+              },
+              {
+                value: "Social or cultural reasons",
+                text: "Social or cultural reasons"
+              },
+              {
+                value: "Other",
+                text: "Other reason",
+                conditional: {
+                  html: detailsHtml
+                }
+              }
+            ]
+          }) }}
+
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/erc-forms/housing/CBLhouse-type.html"
+        }) }}
+      
+
+    </div>
+</div>
+
+
+
+{% endblock %}

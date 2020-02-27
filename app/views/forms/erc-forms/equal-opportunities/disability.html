@@ -1,0 +1,71 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Disability - Equality and diversity
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Equality and diversity questionnaire
+        </h1>
+        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  
+        {% set whoHtml %}
+        {{ govukRadios({
+            idPrefix: "who",
+            name: "who",
+            items: [
+                    {
+                    value: "me",
+                    text: "Me"
+                    },
+                    {
+                    value: "other",
+                    text: "Someone living with me"
+                    }
+                ]
+            }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "disability-conditional",
+          name: "disability",
+          fieldset: {
+            legend: {
+              text: "Do you or anyone living with you have a disability or mental health condition?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "no say",
+              text: "Prefer not to say"
+            }
+          ]
+        }) }}
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary",
+          href: "/forms/erc-forms/equal-opportunities/age.html"
+        }) }}
+
+
+    </div>
+</div>
+
+{% endblock %}
