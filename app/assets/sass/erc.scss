@@ -156,69 +156,6 @@ font-family: nta;
 
 }
 
-// this is to delete info that could be at the bottom of views - Ideally we need to remove these notes from the views, instead of display none
-
-
-.design-notes-box{
-    border: solid 1px #ebcccc;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px -10px -10px -10px;
-    color: #a94442 ;
-    background-color: #f2dede;
-    p, h3, li {
-        color: #a94442;
-    }
-    display: none;
-}
-.IT-notes-box{
-    border: solid 1px #bcdff1;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px -10px -10px -10px;
-    color: #31708f ;
-    background-color: #d9edf7;
-    p, h3, li {
-        color: #31708f;
-    }
-     display: none;
-}
-.content-notes-box{
-    border: solid 1px#faf2cc;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px -10px -10px -10px;
-    color: #8a6d3b ;
-    background-color: #fcf8e3;
-    p, h3, li {
-        color: #8a6d3b;
-    }
-     display: none;
-}
-.UR-notes-box{
-    border: solid 1px#d0e9c6;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px -10px -10px -10px;
-    color: #3c763d;
-    background-color: #dff0d8;
-    p, h3, li {
-        color: #3c763d;
-    }
-     display: none;
-}
-.alt-notes-box{
-    border: solid 1px #dddddd;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px -10px -10px -10px;
-    color: #dddddd;
-    background-color: #efefef;
-    p, h3, li, a {
-        color: #dddddd;
-    }
-    // display: none;
-}
 
 // -------------------------------------------- CBL------------------------------------------------- //
 

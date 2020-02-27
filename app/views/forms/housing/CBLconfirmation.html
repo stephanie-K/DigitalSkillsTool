@@ -39,7 +39,7 @@
               </strong>
             </div>
             <ul class="govuk-list govuk-list--number">
-              <li><a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download summary of your application</a></li>
+              <li><a href="{{ asset_path }}images/ERC/application-info.pdf" download="housing-application.pdf">Download summary of your application</a></li>
               <li><a href="" download="Medical-Priority-Assessment-Form.pdf">Download Medical Priority Assessment Form</a></li>
             </ul>
           {% else %}
@@ -47,12 +47,12 @@
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-warning-text__assistive">Warning</span>
-              <a href="{{ asset_path }}images/application-info.pdf" download="housing-application.pdf">Download summary of your application</a>
+              <a href="{{ asset_path }}images/ERC/application-info.pdf" download="housing-application.pdf">Download summary of your application</a>
             </strong>
           </div>
           {% endif%}
 
-          <p class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">Could you complete our <a href="/forms/equal-opportunities/start1.html">Equality and diversity questionnaire</a>? (takes less than 1 minute)</p>
+          <p class="govuk-!-margin-bottom-9 govuk-!-margin-top-9">Could you complete our <a href="/forms/equal-opportunities/start.html">Equality and diversity questionnaire</a>? (takes less than 1 minute)</p>
 
           <h3 class="govuk-heading-m">What happens next</a></h3> 
           <p>We'll:</p>
@@ -73,25 +73,8 @@
           <p class="govuk-!-margin-bottom-9">&nbsp;</p>
     </div>
 </div>
-<div class="alt-notes-box">
-<p><a href="/forms/housing/CBLconfirmation-email">see with an email</a> - - - <a href="/forms/housing/CBLconfirmation-post">see when we send by post</a> - - - - <a href="/forms/housing/CBLemail-text">see text of email</a></p>
-</div>
-<div class="UR-notes-box">
-    <h3 class="govuk-heading-s">UR notes:</h3>
-    <p>We need a message for them to check their spam / junk forlder</p>
-</div>
 
 
-<div class="IT-notes-box">
-  <h3 class="govuk-heading-s">IT notes:<span class="UR-tag amber">Email text to send</span></h3>
-  <ul class="govuk-list">
-    <li>Thank you for applying for council housing.</li>
-    <li>We’ll write to you within 21 days.</li>
-    <li>The letter will confirm your housing registration number and tell you your priority group.</li>
-    <li>We may contact you sooner if we need extra information.</li>
-    <li>Housing Services</li>
-  </ul>
-</div>
 
 {% endblock %}
 
