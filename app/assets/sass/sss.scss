@@ -41,7 +41,11 @@ $sss-text: #333;
     @media only screen and (min-width: 999px) { 
     border: 30px solid #fff;
     }
+    a {
+        text-decoration: none;
+    }
 }
+
 
 
 //---------------------------------------- FOOTER ------------------------------------------------//

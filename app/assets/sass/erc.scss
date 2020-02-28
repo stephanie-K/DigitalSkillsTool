@@ -32,12 +32,15 @@ $erc-green-border: #008000;
     color: white; 
     background-color: $erc-logo-blue;
     padding: 4px 10px;
-    font-weight: 600;
+    font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 }
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
     border: 30px solid #fff;
+    }
+    a {
+        text-decoration: none;
     }
 }
 

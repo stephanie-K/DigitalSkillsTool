@@ -1,0 +1,44 @@
+
+
+
+
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/SG/sss.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/sss.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+    <div class="govuk-header__content">
+        <a href="/index.html">
+          <span class="sss-service-name">
+            This is a training website
+          </span>
+        </a>  
+    </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+  Feeback
+{% endblock %}
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body">
+    <p style="color: #505050; font-size:14px">Thank you for submitting your feedback. We will review your comments in order to improve the user experience.</p>
+  </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

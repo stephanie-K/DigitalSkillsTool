@@ -19,6 +19,15 @@
 
 
 {% block header %}
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+    <div class="govuk-header__content">
+      <a href="/index.html">
+        <span class="sss-service-name">
+          This is a training website
+        </span>
+      </a>  
+    </div>
+</div>
 {% endblock %}
 
 {% block pageTitle %}
@@ -49,7 +58,7 @@
   {{ govukButton({
     text: "Send",
     classes: "button-primary",
-    href: "/forms/sss-forms/not-ready.html"
+    href: "/forms/sss-forms/feedback-sent.html"
   }) }}
 
 
