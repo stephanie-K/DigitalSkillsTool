@@ -1,57 +1,70 @@
 
-{% extends "layout_erc.html" %}
+{% extends "layout_tool.html" %}
 
 {% block pageTitle %}
-  Home - Digital Skills Tool
+  Home - Digital skills tool
 {% endblock %}
+
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-two-full">
 
-        <h1 class="govuk-heading-xl">
-            Improving digital skills      
-        </h1>
+      <h1 class="govuk-heading-xl">
+          Improving digital skills      
+      </h1>
 
-        <h2 class="govuk-heading-l">About this website</h2>
-        <p>
-          This is a website which will support IT classes organised by the <a href="https://www.eastrenfrewshire.gov.uk/" target="_blank" rel="noopener">East Renfrewshire Council</a> in collaboration with <a href="https://www.scottish-enterprise.com/" target="_blank" rel="noopener">Scottish Enterprise</a>. 
-        </p>
-        <p>This is a work in progress.</p>
+      <h2 class="govuk-heading-l">About this website</h2>
+      <p>
+        This is a website which will support IT classes organised by the <a href="https://www.eastrenfrewshire.gov.uk/" target="_blank" rel="noopener">East Renfrewshire Council</a> in collaboration with <a href="https://www.scottish-enterprise.com/" target="_blank" rel="noopener">Scottish Enterprise</a>. 
+      </p>
 
-        
-      <h3 class="govuk-heading-m"><a href="project-outline.html">Project outline</a></h3>
-      <h3 class="govuk-heading-m"><a href="forms-menu.html">See the forms</a></h3>
       
+      <h3 class="govuk-heading-s"><a href="project-outline.html">Learn more about the project</a></h3>
+      <h3 class="govuk-heading-s"><a href="prototype-info.html">Using the GOV.UK Prototype</a></h3>
+      <p class="govuk-tag red govuk-!-margin-top-5">This is a work in progress</p>
 
-        <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-        <h2 class="govuk-heading-l">GOV.UK Protoype Kit</h2>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-9">
+        Forms menu
+      </h2>
 
-      <h3 class="govuk-heading-s">
-        We are using the GOV.UK Prototype Kit
-        <span class="govuk-caption-s">{{releaseVersion}}</span>
-      </h3>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-
-      <h3 class="govuk-heading-s">Examples and documentation</h3>
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">
+          East Renfrewshire Council forms
+      </h3>
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
-        <li>
-          <a href="https://design-system.service.gov.uk">
-            GOV.UK Design System
-          </a>
-        </li>
+        <li><a href="/forms/erc-forms/equal-opportunities/start">Equality and diversity questionnaire</a></li>
+        <li><a href="/forms/erc-forms/housing/CBLstart">Apply online for council housing</a></li>
+        <li>Report a housing repair (Not ready)</li>
+        <li>Pay for rent (Not ready)</li>
+        <li>Bidding for properties (Not ready)</li>
+        <li>Council tax online (Not ready)</li>
+        <li>Change of circumstances (Not ready)</li>
       </ul>
 
 
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">
+          GOV.UK forms
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Universal Credit (Not ready)</li>
+        <li>Warm Home Discount (Not ready)</li>
+        <li>Apply for provisional driving licence (Not ready)</li>
+        <li>Book your theory test (Not ready)</li>
+        <li>Book your driving test (Not ready)</li>
+        <li>Register to vote (Not ready and not needed for initial courses)</li>
+      </ul>
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">
+          Scottish Government forms
+      </h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/forms/sss-forms/best-start/BS-start">Best Start Grant and Best Start Foods</a> (Not ready)</li>
+      </ul>
     </div>
-</div>
+  </div>
+
 
 {% endblock %}

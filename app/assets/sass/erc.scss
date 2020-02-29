@@ -44,13 +44,37 @@ $erc-green-border: #008000;
     }
 }
 
+// ----- specific to the home page ----- //
+
+#logo-se-home {
+    width: 50%;
+    @media only screen and (min-width: 775px) { 
+    border: 30px solid #fff;
+    }
+
+}
+#tagline-home {
+    border: 0 solid #fff ; 
+    padding: 10px 0;
+}
+
 //---------------------------------------- FOOTER ------------------------------------------------//
 .govuk-footer {
-    font-size: 16px;
+    font-size: 1em;
     background-color: $erc-logo-blue;
     p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
         color:  white;
     }
+}
+.govuk-footer__link{
+    font-size: 1em;
+    font-weight: 500;
+}
+.govuk-footer__inline-list-item{
+    padding: 1em;
+}
+.govuk-footer__meta-item {
+    margin-bottom: 0;
 }
 
 //---------------------------------------- BODY------------------------------------------------//
@@ -159,8 +183,9 @@ font-family: nta;
 
 .govuk-tag.red {
     background-color: #b10e1e;
-    margin-left: 10px;
+   // margin-left: 10px;
     padding: 5px;
+    text-transform: none;
 
 }
 

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/erc.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/erc.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html" id="logo-erc"><image src="{{ asset_path }}/images/ERC/erclogo.png" alt="East Renfrewshire Council Logo" width="190" height="101"></image></a>
+        </span>
+
+    </div>
+    <div class="govuk-header__logo" id="logo-se-home">
+        <span class="govuk-header__logotype" >
+            <image src="{{ asset_path }}/images/logoSE.png" alt="Scottish Enterprise Logo" width="330" height="57"></image>
+        </span>
+    </div>
+    <div class="govuk-header__content"  id="tagline-home">
+        <span class="erc-service-name">
+            This is a training website
+          </span>
+    </div>
+
+</div>
+{% endblock %}
+
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo">
+<div class="govuk-width-container">
+  <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <ul class="govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/index.html">Home</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/project-outline.html">Project outline</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/prototype-info.html">Prototype kit</a>
+          </li>
+        </ul>
+        <br>
+      </div>
+    </div>
+    
+    <hr class="govuk-footer__section-break"> 
+    <p>
+        This website is the result of a collaboration between the <a href="https://www.eastrenfrewshire.gov.uk/" target="_blank" rel="noopener" class="govuk-footer__link">East Renfrewshire Council</a> and  <a href="https://www.scottish-enterprise.com/" target="_blank" rel="noopener" class="govuk-footer__link" >Scottish Enterprise</a>. 
+    </p>
+   
+  </div>
+</footer>
+{% endblock %}

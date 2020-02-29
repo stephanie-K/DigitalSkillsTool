@@ -1,0 +1,41 @@
+
+{% extends "layout_tool.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype info
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">GOV.UK Protoype Kit</h1>
+
+      <h2 class="govuk-heading-s">
+        We are using the GOV.UK Prototype Kit
+        <span class="govuk-caption-s">{{releaseVersion}}</span>
+      </h2>{{releaseVersion | log }}
+      <p>
+        This kit lets you rapidly create HTML prototypes of GOV.UK services.
+      </p>
+      <p>
+        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+      </p>
+
+
+      <h2 class="govuk-heading-s">Examples and documentation</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
+        <li>
+          <a href="https://design-system.service.gov.uk">
+            GOV.UK Design System
+          </a>
+        </li>
+      </ul>
+
+
+    </div>
+</div>
+
+{% endblock %}
