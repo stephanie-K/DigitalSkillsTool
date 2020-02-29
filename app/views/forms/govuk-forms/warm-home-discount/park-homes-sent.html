@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/PH.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+    <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+      <div class="govuk-header__logo">
+          <span class="govuk-header__logotype">
+              <a href="/index.html"><image src="{{ asset_path }}/images/PAHLogo.png" alt="Parl Homes Logo" width="320" height="100"></image></a>
+          </span>
+      </div>
+    <div class="govuk-header__content">
+      <a href="/index.html">
+        <span class="park-home-service-name">
+          This is a training website
+        </span>
+      </a>  
+    </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Park Homes - Warm Home Discount
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row park-home">
+    <div class="govuk-grid-column-one-quarter park-home-orange-block">
+      <h1>Warm Home Discount</h1>
+      <p>The government and energy suppliers are running a scheme to help those at risk from fuel poverty in England, Scotland and Wales get a rebate from their electricity bill. If you are eligible, the Warm Home Discount will offer you a benefit of £140 (inclusive of VAT) against your electricity bill in 2020/21.</p>
+    </div>
+    <div class="govuk-grid-column-two-thirds park-home-black-block">
+      <h2>The Park Homes scheme for 2019/20 is now closed.</h2>
+      <p>We anticipate the scheme will reopen in Autumn 2020. If you would like to be informed when the scheme opens please leave your details below. <br>
+        Please note, this scheme is only available to residents who permanently live in a Park Home.</p>
+      <h3>Register Your Interest...</h3>
+      <p style="font-size: 12px; margin-bottom: 0;">All questions marked with an asterisk (*) are mandatory</p>
+      <h4>Consent</h4>
+      <p>I understand that Charis Grants Ltd will store my details in accordance with GDPR legislation, and they will contact me prior to the scheme reopening. I declare that the information I have given on this form is complete and correct to the best of my knowledge.</p>
+      <p>I have read the privacy policy that can be found via the link at the foot of this page.</p>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "consent",
+        name: "consent",
+        fieldset: {
+          legend: {
+            text: "",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "consenting",
+            text: "I confirm I have read and agree to the above statement *"
+          }
+        ]
+      }) }}
+      <hr>
+
+  
+          {{ govukButton({
+            text: "Submit",
+            classes: "ph-button",
+            href: "/forms/govuk-forms/warm-home-discount/park-homes-submitted.html"
+          }) }}
+
+    </div>
+  </div>
+
+<br><br>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

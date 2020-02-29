@@ -1,0 +1,193 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/PH.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+    <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+      <div class="govuk-header__logo">
+          <span class="govuk-header__logotype">
+              <a href="/index.html"><image src="{{ asset_path }}/images/PAHLogo.png" alt="Parl Homes Logo" width="320" height="100"></image></a>
+          </span>
+      </div>
+    <div class="govuk-header__content">
+      <a href="/index.html">
+        <span class="park-home-service-name">
+          This is a training website
+        </span>
+      </a>  
+    </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Park Homes - Warm Home Discount
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row park-home">
+    <div class="govuk-grid-column-one-quarter park-home-orange-block">
+      <h1>Warm Home Discount</h1>
+      <p>The government and energy suppliers are running a scheme to help those at risk from fuel poverty in England, Scotland and Wales get a rebate from their electricity bill. If you are eligible, the Warm Home Discount will offer you a benefit of £140 (inclusive of VAT) against your electricity bill in 2020/21.</p>
+    </div>
+    <div class="govuk-grid-column-two-thirds park-home-black-block">
+      <h2>The Park Homes scheme for 2019/20 is now closed.</h2>
+      <p>We anticipate the scheme will reopen in Autumn 2020. If you would like to be informed when the scheme opens please leave your details below. <br>
+        Please note, this scheme is only available to residents who permanently live in a Park Home.</p>
+      <h3>Register Your Interest...</h3>
+      <p style="font-size: 12px; margin-bottom: 0;">All questions marked with an asterisk (*) are mandatory</p>
+      <h4>Name</h4>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Title *
+        </label>
+        <select class="govuk-select ph-input" id="sort" name="sort">
+          <option value="updated" selected>Select Title</option>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Ms">Ms</option>
+          <option value="Miss">Miss</option>
+          <option value="Mx">Mx</option>
+        </select>
+      </div>
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        <label class="govuk-label" for="first-name">
+          First Name *
+        </label>
+        <input class="govuk-input ph-input" id="first-name" name="first-name" type="text" placeholder="First Name">
+      </div>
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        <label class="govuk-label" for="Last-name">
+          Last Name *
+        </label>
+        <input class="govuk-input ph-input" id="Last-name" name="Last-name" type="text" placeholder="Last Name">
+      </div>
+      <hr>
+
+      <h4>Contact</h4>
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        <label class="govuk-label" for="phone">
+          Phone Number * 
+        </label>
+        <input class="govuk-input ph-input" id="phone" name="phone" type="text" placeholder="Phone Number">
+      </div>
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+          <label class="govuk-label" for="email">
+            Email Address
+          </label>
+          <span id="email-hint" class="govuk-hint" style="margin-bottom: 0;">
+              We will use your email details to contact you if we require further information
+            </span>
+          <input class="govuk-input ph-input" id="email" name="email" type="text" placeholder="Email Address">
+        </div>
+        <hr>
+
+        <h4>Address</h4>
+        <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+          <label class="govuk-label" for="postcode">
+            Postcode * 
+          </label>
+          <input class="govuk-input ph-input" id="postcode" name="postcode" type="text" placeholder="Postcode">
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+          <label class="govuk-label" for="line1">
+            Line 1 *
+          </label>
+          <input class="govuk-input ph-input" id="line1" name="line1" type="text" placeholder="Line 1">
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+          <label class="govuk-label" for="line2">
+            Line 2 
+          </label>
+          <input class="govuk-input ph-input" id="line2" name="line2" type="text" placeholder="Line 2">
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+          <label class="govuk-label" for="town">
+            Town/City *
+          </label>
+          <input class="govuk-input ph-input" id="town" name="town" type="text" placeholder="Town or City">
+        </div>
+        <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+          <label class="govuk-label" for="county">
+            County
+          </label>
+          <input class="govuk-input ph-input" id="county" name="line2" type=county" placeholder="County">
+        </div>
+        <hr>
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "billed",
+            name: "billed",
+            fieldset: {
+              legend: {
+                text: "Are you billed for your electricity by your Park Site owner? *",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+              How did you hear about the scheme? *
+            </label>
+            <select class="govuk-select ph-input" id="hear" name="hear">
+              <option value="select" selected>Select</option>
+              <option value="dwp">Department for Work and Pensions (DWP)</option>
+              <option value="iphas">Independent Park Home Advisory Service (IPHAS)</option>
+              <option value="cgw">Charis Grants website</option>
+              <option value="friend">Friend, family or neighbour</option>
+              <option value="la">Local Authority</option>
+              <option value="post">By post</option>
+              <option value="naphr">National Association of Park Home Residents (NAPHR)</option>
+              <option value="Citizen">Citizens Advice</option>
+              <option value="letstalk">Lets Talk Website</option>
+              <option value="previous">Lets Talk Website</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          {{ govukButton({
+            text: "Next",
+            classes: "ph-button",
+            href: "/forms/govuk-forms/warm-home-discount/park-homes-sent.html"
+          }) }}
+
+    </div>
+  </div>
+
+<br><br>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

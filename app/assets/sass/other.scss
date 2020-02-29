@@ -1,0 +1,130 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/templates/blank-unbranded
+
+// Import settings first so we can override them before importing all of GOV.UK Frontend
+// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
+@import "node_modules/govuk-frontend/govuk/settings/all";
+
+// Override the default GOV.UK Frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "application";
+
+
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+//---------------------------------------- HEADER ------------------------------------------------//
+
+.govuk-header__container {
+    border-bottom: 0px;
+}
+.park-home-service-name {
+    font-size: 24px;
+    color: white; 
+    background-color: #f47522;
+    padding: 4px 10px;
+    font-weight: 500;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+}
+.govuk-header__content {
+    @media only screen and (min-width: 999px) { 
+    border: 30px solid #fff;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+
+
+//---------------------------------------- FOOTER ------------------------------------------------//
+
+
+//---------------------------------------- BODY------------------------------------------------//
+
+.park-home {
+    margin-right:1em;
+    p, h1, h2, h3, h4, .govuk-fieldset__legend--s, .govuk-label, .govuk-hint {
+        color: #fff;
+        font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        padding: 10px;
+    }
+    hr {
+        background-color: #e6e6e6; 
+        border: none;
+        display: block;
+        height: 2px;
+        margin: 2rem 0;
+    }
+    .govuk-hint{
+        font-size: 12px; 
+    }
+}
+.park-home-orange-block{
+    background-color: #f47522;
+    margin-right: 15px;
+    h1 {
+        font-size: 32px;
+        font-weight: 200; 
+        line-height: 1.125;
+    }
+    p {
+        font-weight: 400;
+        font-size: 1.25rem;
+    }
+}
+
+.park-home-black-block{
+    background-color: #000c;
+    padding: 10px 30px;
+    h2 {
+        font-size: 1.75em;
+        font-weight: 300; 
+        line-height: 1.125;
+    }
+    p {
+        font-size: 1rem;
+    }
+    h3{
+        margin: 0.8em 0;
+        line-height: 1.125;
+        font-size: 2rem;
+        font-weight: 200; 
+    }
+    h4 {
+        font-size: 1.5em;
+        font-weight: 400; 
+        margin-bottom: 0;
+        line-height: 1.125;
+        margin-top: 0;
+    }
+}
+.ph-input {
+    border-radius: 4px;
+    border-color: #dbdbdb;
+}
+.govuk-button.ph-button:link, .govuk-button.ph-button:visited, .govuk-button.ph-button:active, .govuk-button.ph-button:hover{
+color: #000;
+background-color: #fff;
+border-radius: 4px;
+border-color: #dbdbdb;
+padding: 10px 20px;
+margin-top:30px;
+}
+
+// ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
+
+
+
+// -------------------------------------------- Helpers ------------------------------------------------- //
+
+
+
