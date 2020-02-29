@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Warm Home Discount Scheme - GOV.UK
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+        Warm Home Discount Scheme
+    </h1>
+
+
+    <h2 class="govuk-heading-s">
+      Contents
+    </h2>
+
+    <ul class="govuk-list contents-list__list-item--dashed">
+      <li>— &nbsp;&nbsp;<a href="warm-home-start">Overview</a></li>
+      <li>— &nbsp;&nbsp;<a href="guarantee-pension-credit">If you get the Guarantee Credit element of Pension Credit</a></li>
+      <li>— &nbsp;&nbsp;If you're on a low income</li>
+      <li>— &nbsp;&nbsp;<a href="energy-suppliers">Energy Suppliers</a></li>
+    </ul>
+  </div>
+
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="border-top: 1px solid #b1b4b6; padding-top:20px">
+          If you’re on a low income
+      </h2>
+
+      <p>You may be able to apply directly to your electricity supplier for help if you do not get the Guarantee Credit element of Pension Credit but:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+          <li>your <a href="energy-suppliers">energy supplier is part of the scheme</a></li>
+          <li>you’re on a low income</li>
+          <li>you get certain means-tested benefits</li>
+      </ul>
+      
+      <p>This is known as being in the ‘broader group’.</p>
+
+      <p>To get the discount you’ll need to stay with your supplier until it’s paid.</p>
+
+      <h2 class="govuk-heading-l">
+          How to apply
+      </h2>
+      <p>Your electricity supplier decides who can get the discount - check with your supplier to see if you’re eligible and how to apply.</p>
+
+      <p>Check with your supplier as early as possible. The number of discounts suppliers can give are limited.</p>
+      
+      <p>Your electricity supplier will apply the discount to your bill by 31 March 2020.</p>
+
+
+
+      <div>
+        <ul class="stepped-pagination__list">
+          <li class="stepped-pagination__item stepped-pagination__item--previous">
+            <a href="guarantee-pension-credit" class="stepped-pagination__link" rel="prev">
+                <span class="stepped-pagination__link-title">
+                <svg class="stepped-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                    <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                </svg>
+                Previous
+                </span>
+                <span class="stepped-pagination__link-label">If you get the Guarantee Credit element of Pension Credit</span>
+            </a>
+          </li>
+          <li class="stepped-pagination__item stepped-pagination__item--next">
+          <a href="energy-suppliers" class="stepped-pagination__link" rel="next">
+              <span class="stepped-pagination__link-title">
+              <svg class="stepped-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                  <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+              Next
+              </span>
+              <span class="stepped-pagination__link-label">Energy Suppliers</span>
+          </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+ 
+    <div class="govuk-grid-column-one-third sidebar">
+        <h2 class="govuk-heading-s" style="border-top: 2px solid #1d70b8; padding-top:19px">
+            Related content
+        </h2>
+        <ul class="govuk-list">
+          <li><a href="cold-weather-payment">Cold Weather Payment</a></li>
+          <li><a href="winter-fuel-payment">Winter Fuel Payment</a></li>
+          <li><a href="pension-credit">Pension Credit</a></li>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}
