@@ -10,9 +10,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l">GOV.UK Protoype Kit</h1>
+      <h1 class="govuk-heading-xl">GOV.UK Prototype Kit</h1>
 
-      <h2 class="govuk-heading-s">
+      <h2 class="govuk-heading-l">
         We are using the GOV.UK Prototype Kit
         <span class="govuk-caption-s">{{releaseVersion}}</span>
       </h2>{{releaseVersion | log }}
@@ -24,7 +24,7 @@
       </p>
 
 
-      <h2 class="govuk-heading-s">Examples and documentation</h2>
+      <h3 class="govuk-heading-m">Some GOV.UK resources to use the kit</h3>
       <ul class="govuk-list govuk-list--bullet">
         <li><a href="/docs/tutorials-and-examples">Example pages and documentation</a></li>
         <li>
@@ -34,6 +34,46 @@
         </li>
       </ul>
 
+
+      <h2 class="govuk-heading-l">How we are using it</h2>
+      <p>Different forms are needed to support the classes. Some are Council forms, some are GOVUK form and others are Scottish Government forms.</p>
+      <p>Different layouts have to be created for each and even among each category, there is a variety of layouts:<br>
+         For example, the DVLA have a different layout and style compared to HMRC, or the Social Security Scotland have it's own style.</p>
+
+      <h2 class="govuk-heading-l">Important files and paths</h2>
+      <p>Our code can be found in this <a href="https://github.com/scotentSD/DigitalSkillsTool" target="_blank" rel="noopener">Github repository</a></p>
+      
+      <h3 class="govuk-heading-m">Layout files <code>in app>views></code></h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><strong>layout.html</strong> - default GOV.UK layout</li>
+        <li><strong>layout_erc.html</strong> - customised for Council forms</li>
+        <li><strong>layout_sss.htm</strong>l - customised for Social Scurity Scotland</li>
+        <li><strong>layout_tool.html</strong> - look like the council one but for high level pages of the tool, like the one you are looking at just now</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">CSS/SASS files <code>in app>assests>sass></code></h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><strong>application.scss</strong> - default GOV.UK css plus some we added for GOVUK forms</li>
+        <li><strong>erc.scss</strong> - styles to support the  council forms</li>
+        <li><strong>sss.scss</strong> - style to support the Social Security Scotland forms</li>
+        <li><strong>other.scss</strong> - style for other forms</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Example pages <code>app>views></code></h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="example-govuk">GOV.UK</a>  - basic standart page</li>
+        <li><a href="forms/govuk-forms/template-govuk-explanation-page">GOV.UK</a>  - template of a page with a lot of content</li>
+        <li><a href="example-erc">Council</a> - basic example</li>
+        <li><a href="example-sss">Social Security Scotland</a> - basic example</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Each form has a folder <code>app>views>forms></code></h3>
+
+
+      <h3 class="govuk-heading-m">Route.js <code>app></code></h3>
+      <p>This file is key to introduce logic and validation to the forms. It is shared by all the forms.</p>
 
     </div>
 </div>

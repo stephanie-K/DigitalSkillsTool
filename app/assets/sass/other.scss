@@ -20,20 +20,12 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 
-//---------------------------------------- HEADER ------------------------------------------------//
+//---------------------------------------- HEADER for any forms ------------------------------------------------//
 
 .govuk-header__container {
     border-bottom: 0px;
 }
-.park-home-service-name {
-    font-size: 24px;
-    color: white; 
-    background-color: #f47522;
-    padding: 4px 10px;
-    font-weight: 500;
-    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
-}
 .govuk-header__content {
     @media only screen and (min-width: 999px) { 
     border: 30px solid #fff;
@@ -44,11 +36,17 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 
+//----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//
 
-//---------------------------------------- FOOTER ------------------------------------------------//
+.park-home-service-name {
+    font-size: 24px;
+    color: white; 
+    background-color: #f47522;
+    padding: 4px 10px;
+    font-weight: 500;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
-
-//---------------------------------------- BODY------------------------------------------------//
+}
 
 .park-home {
     margin-right:1em;
@@ -120,11 +118,11 @@ padding: 10px 20px;
 margin-top:30px;
 }
 
-// ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
+// -------------------------------------------   ------------------------------------------------ //
 
 
 
-// -------------------------------------------- Helpers ------------------------------------------------- //
+// --------------------------------------------   ------------------------------------------------ //
 
 
 

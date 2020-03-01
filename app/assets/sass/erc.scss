@@ -83,6 +83,14 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
     color: $erc-text-blue;
 }
 
+.govuk-heading-l {
+   margin-top: 50px; 
+}
+
+.govuk-heading-m {
+    margin-top: 30px; 
+ }
+
 // ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
 
 // back button/link
@@ -191,7 +199,10 @@ font-family: nta;
 .govuk-panel {
     background-color: #28a197;
 }
-
+code {
+    font-weight: 400;
+    padding-left: 0.5em;
+}
 // -------------------------------------------- CBL------------------------------------------------- //
 
 hr.erc {
