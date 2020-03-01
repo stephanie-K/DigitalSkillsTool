@@ -1,0 +1,118 @@
+{% extends "layout_sg.html" %}
+
+{% block pageTitle %}
+Best Start Grant and Best Start Foods - mygov.scot
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <div class="govuk-body">
+            <h1 class="govuk-heading-xl">
+                Best Start Grant and Best Start Foods
+            </h1>
+        <p><strong>You can get Best Start Grant and Best Start Foods:</strong></p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>if your child is the right age for a payment</li>
+            <li>whether you're in work or not, as long as you're on certain payments or benefits</li>
+            <li>as long as you're the parent of a child, or the main person looking after the child</li>
+        </ul>
+
+        <h2 class="govuk-heading-l">If you can get more than one payment at the same time</h2>
+
+        <p>You only need to fill in the Best Start Grant and Best Start Foods form once to apply for all the payments you can get now.</p>
+        <p>If you can get one payment now and another in the future, you'll need to fill in a new form each time you apply.</p>
+
+        <hr>
+        <p style="line-height: 1.5;"><image src="{{ asset_path }}/images/SG/note.png" alt="information"></image>
+          <span style="font-size:17px; padding-left:10px;">You can still get the Pregnancy and Baby Payment part of Best Start Grant for a baby that's stillborn or died after they were born. If you're paid when you're pregnant, and your baby is stillborn or dies later, you will not need to pay any money back. If you apply after a stillbirth or death, you can apply up to 6 months after the baby's birth date.</span></p>
+        <hr class="govuk-!-margin-bottom-9">
+ 
+        <h2 class="govuk-heading-l">Best Start Grant and Best Start Foods payments</h2>
+        <p>Best Start Grant is 3 cash payments. Each payment can only be paid once per child.</p>
+
+        <h2 class="govuk-heading-l">What affects whether you can apply</h2>
+        <p>If you're under 18, you do not need to be on any payments or benefits to apply for Best Start Grant or Best Start Foods.</p>
+        <p>If you're a parent over 18, you can apply whether you're in work or not, as long as you're getting one of these:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Universal Credit</li>
+            <li>Child Tax Credit</li>
+            <li>Working Tax Credit</li>
+            <li>Housing Benefit</li>
+            <li>Income Support</li>
+            <li>Pension Credit</li>
+            <li>Income-based Jobseekers Allowance (JSA)</li>
+            <li>Income-related Employment and Support Allowance (ESA)</li>
+        </ul>
+        <p>You cannot get Best Start Grant or Best Start Foods if you only get Child Benefit. You must still be getting one of the benefits or payments from this list to be able to get Best Start Grant or Best Start Foods.</p>
+        <p>For Best Start Grant, we do not need to know about your income. For Best Start Foods, some of the benefits have an income limit.</p>
+
+        <hr>
+        <p style="line-height: 1.5;"><image src="{{ asset_path }}/images/SG/note.png" alt="information"></image>
+          <span style="font-size:17px; padding-left:10px;">If you're not getting any of these benefits or payments, but have applied for one, you can still apply for Best Start Grant and Best Start Foods. If you've already been paid the Sure Start Maternity Grant for a baby, you cannot be paid the Pregnancy and Baby Payment for the same baby.</span></p>
+        <hr class="govuk-!-margin-bottom-9">
+
+        <h2 class="govuk-heading-l">You and your data</h2>
+        <p>If you want to know more about how Social Security Scotland use your data, you can read the <a href="/forms/sss-forms/not-ready-sg">privacy notice</a> about Best Start Grant and Best Start Foods.</p>
+        
+        <h2 class="govuk-heading-l">Apply online now</h2>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What you need to apply
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>You'll need:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li>your name, date of birth and address</li>
+                <li>if you have a partner, their name and date of birth</li>
+                <li>your bank, credit union or building society account details - you can be paid the Pregnancy and Baby Payment in the same way you're paid for your other benefits if you do not have one of these accounts - if you want to request this call 0800 182 2222 (freephone, 8am to 6pm, Monday to Friday)</li>
+                <li>details of any children you have or care for</li>
+            </ul>
+            <p>If we need you to send us a certificate or anything else, we'll tell you this when you're filling in your online form. </p>
+            <p>You should also give your National Insurance number when you apply. If you do not give your National Insurance number to Social Security Scotland it could cause a delay.</p>
+            <p><a href="https://www.gov.uk/lost-national-insurance-number">Find out what you can do if you do not know your National Insurance number.</a></p>
+            <hr>
+            <p style="line-height: 1.5;"><image src="{{ asset_path }}/images/SG/note.png" alt="information"></image>
+              <span style="font-size:17px; padding-left:10px;">The 10 sections of the form should take about 10-20 minutes to complete.</span></p>
+            <hr class="govuk-!-margin-bottom-9">
+          </div>
+        </details>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              If you need help or you want to apply by phone
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>If you need help, or you'd prefer to apply by phone, you can call 0800 182 2222.</p>
+            <p>You can also apply by <a href="BS-grant-form">downloading a paper form</a> and posting it to Social Security Scotland.</p>
+          </div>
+        </details>
+  
+
+
+        {{ govukButton({
+          text: "Start",
+          classes: "button-primary",
+          href: "/forms/sss-forms/best-start/BS-start.html",
+          isStartButton: true
+        }) }}
+
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-quarter" style="padding-left: 30px">
+    <p><image src="{{ asset_path }}/images/SG/social-security-scotland-logo-bis.png" alt="Social Security Scotland Logo" width="278" height="90"></image></p>
+    <h3 class="govuk-heading-m">RELATED ITEMS</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/forms/sss-forms/not-ready-sg" style="font-size:17px">After you've applied for Best Start Grant and Foods</a></li>
+      <li><a href="/forms/sss-forms/not-ready-sg" style="font-size:17px">Contact Social Security Scotland</a></li>
+      <li><a href="/forms/sss-forms/not-ready-sg" style="font-size:17px">Get help to apply for Best Start Grant and Foods</a></li>
+    </ul>
+    </div>
+</div>
+
+
+{% endblock %}
