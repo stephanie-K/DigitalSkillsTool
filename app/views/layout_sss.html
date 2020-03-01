@@ -6,7 +6,7 @@
 
 {% block head %}
   <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-  <!--[if gt IE 8]><!--><link href="/public/stylesheets/sss.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/sg.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
 
   {% for stylesheetUrl in extensionConfig.stylesheets %}
     <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
@@ -17,7 +17,7 @@
 <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
     <div class="govuk-header__logo">
         <span class="govuk-header__logotype">
-            <a href="/index.html"><image src="{{ asset_path }}/images/SG/social-security-scotland-logo.png" alt="my gov scot Logo" width="325" height="102"></image></a>
+            <a href="/index.html"><image src="{{ asset_path }}/images/SG/social-security-scotland-logo.png" alt="Social Security Scotland Logo" width="325" height="102"></image></a>
         </span>
     </div>
     <div class="govuk-header__content">
@@ -28,6 +28,7 @@
         </a>  
     </div>
 </div>
+
 {% endblock %}
 
 {% block footer %}
@@ -35,26 +36,26 @@
 <div class="feedback">
     <div class="govuk-width-container">
       <p><strong>Service feedback</strong></p>
-      <p><a href="/forms/sss-forms/feedback.html">Report a problem</a> with this online form</p>
+      <p><a href="/forms/sss-forms/feedback.html">Report a problem <image src="{{ asset_path }}/images/SG/ext_arrow_text_17px.png" alt="going to open a new tab"></image></a> with this online form</p>
       </div>
 </div>
 <div class="govuk-width-container">
   <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-        <ul class="govuk-footer__inline-list">
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="/forms/sss-forms/not-ready.html">Accessiblity</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="/forms/sss-forms/not-ready.html">Contact us</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="/forms/sss-forms/not-ready.html">Privacy</a>
-          </li>
-          <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="/forms/sss-forms/not-ready.html">Social Security Corporate Site</a>
-          </li>
-        </ul>
+          <ul class="govuk-footer__inline-list">
+              <li class="govuk-footer__inline-list-item ">
+                <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready.html">Accessiblity</a>
+              </li>
+              <li class="govuk-footer__inline-list-item ">
+                <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready.html">Contact us</a>
+              </li>
+              <li class="govuk-footer__inline-list-item ">
+                <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready.html">Privacy</a>
+              </li>
+              <li class="govuk-footer__inline-list-item ">
+                <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready.html">Social Security Corporate Site</a>
+              </li>
+            </ul>
       </div>
     </div>
     <hr class="govuk-footer__section-break">

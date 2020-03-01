@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/SG/mg.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/sg.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+    <div class="govuk-header__logo sg-logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html"><image src="{{ asset_path }}/images/SG/mygovscot-logo.png" alt="my gov scot Logo" width="195" height="42"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content sg-tagline">
+        <a href="/index.html">
+          <span class="sg-service-name">
+            This is a training website
+          </span>
+        </a>  
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo">
+<div class="feedback">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+              {{ govukRadios({
+                classes: "govuk-radios--inline govuk-radios--small",
+                idPrefix: "feedback",
+                name: "feedback",
+                fieldset: {
+                  legend: {
+                    text: "Was this helpful?",
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes"
+                  },        
+                  {
+                    value: "no",
+                    text: "No"
+                  },
+                  {
+                    value: "but",
+                    text: "Yes, but"
+                  }
+                ]
+              }) }}
+              <p><strong>Note:</strong> Your feedback will help us make improvements on this site. Please don't provide any <a href="/forms/sss-forms/feedback.html">personal information</a> <image src="{{ asset_path }}/images/SG/ext_arrow_text_17px.png" alt="going to open a new tab"></image></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="govuk-width-container">
+  <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <ul class="govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item ">
+              <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready-sg.html">About</a>
+          </li>
+          <li class="govuk-footer__inline-list-item ">
+            <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready-sg.html">Accessiblity</a>
+          </li>
+          <li class="govuk-footer__inline-list-item ">
+            <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready-sg.html">Cookies</a>
+          </li>
+          <li class="govuk-footer__inline-list-item ">
+              <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready-sg.html">Feedback</a>
+          </li>
+          <li class="govuk-footer__inline-list-item ">
+            <a class="govuk-footer__link small-footer" href="/forms/sss-forms/not-ready-sg.html">Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <hr class="govuk-footer__section-break">
+    <p>mygov.scot is the place for people in Scotland to access public services that are easy to find and simple to use. </p>  
+    <div>
+     <image src="{{ asset_path }}/images/SG/govscot-footer.png" alt="my gov scot Logo"></image>
+  </div>
+  <br>
+  <br>
+
+
+  </div>
+</footer>
+{% endblock %}

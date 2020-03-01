@@ -15,7 +15,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
-$sss-blue : #0065bd; 
+$sg-blue : #0065bd; 
 $sss-pink: #e5007c;
 $sss-text: #333;
 
@@ -26,7 +26,8 @@ $sss-text: #333;
 //---------------------------------------- HEADER ------------------------------------------------//
 
 .govuk-header__container {
-    border-bottom: 0px;
+    border-bottom: 1px solid #ddd;
+
 }
 .sss-service-name {
     font-size: 24px;
@@ -35,8 +36,17 @@ $sss-text: #333;
     padding: 4px 10px;
     font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
-
 }
+
+.sg-service-name {
+    font-size: 24px;
+    color: white; 
+    background-color: $sg-blue;
+    padding: 4px 10px;
+    font-weight: 500;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
 .govuk-header__content {
     @media only screen and (min-width: 999px) { 
     border: 30px solid #fff;
@@ -46,12 +56,23 @@ $sss-text: #333;
     }
 }
 
+.govuk-header__content.sg-tagline {
+    @media only screen and (min-width: 999px) { 
+    border: 5px solid #fff;
+    }
+    a {
+        text-decoration: none;
+    }
+}
 
+.govuk-header__logo.sg-logo {
+    border: 15px solid #fff;
+}
 
 //---------------------------------------- FOOTER ------------------------------------------------//
 .govuk-footer {
     font-size: 16px;
-    background-color: $sss-blue;
+    background-color: $sg-blue;
     border-top: 1px solid #eee;
     p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
         color:  white;
@@ -64,12 +85,16 @@ $sss-text: #333;
 }
 .feedback {
     background-color: white;
-    padding: 50px 0 10px 0;
+    padding: 10px 0;
     p {
         color: $sss-text;
     }
 }
-
+.small-footer {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 0 1em;
+}
 //---------------------------------------- BODY------------------------------------------------//
 
 body p, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-heading-xl, .govuk-heading-m,.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table {
@@ -86,10 +111,27 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-heading-xl, .
 }
 
 .govuk-button {
-    background-color: $sss-blue;
+    background-color: $sg-blue;
     font-size: 18px;
     padding: 15px 25px;
     box-shadow: none;
+}
+
+.govuk-button-back {
+    background-color: #fff;
+    font-size: 18px;
+    padding: 16px 45px;
+    box-shadow: none;
+    border: 2px solid #000;
+}
+
+.govuk-button-back:link, .govuk-button-back:visited{
+    color: #000;
+    font-weight: 600;
+}
+
+.govuk-button.govuk-button-back:hover, .govuk-button.govuk-button-back:focus, .govuk-button.govuk-button-back:active{
+    background-color: #eee;
 }
 
 .govuk-button:hover, .govuk-button:focus, .govuk-button:active {
@@ -101,7 +143,7 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-heading-xl, .
 }
 
 .govuk-link, a, .govuk-link:link, a:link {
-    color: 	$sss-blue;
+    color: 	$sg-blue;
 }
 #logo-sss:focus{
     background-color: 	#fff; // was putting a thick yellow layer at the bottom of the ERC logo
