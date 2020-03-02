@@ -16,6 +16,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 @import "application";
 
 $erc-text-blue : #004269; 
+$erc-alt-text-blue : #225369; 
 $erc-logo-blue: #0071BA;
 $erc-green-border: #008000;
 
@@ -203,6 +204,177 @@ code {
     font-weight: 400;
     padding-left: 0.5em;
 }
+
+//-------------------------------------------- Buttons --------------------------------------------------- //
+
+.button-primary {
+    background-color : #518418; 
+  }
+  
+  .govuk-button:hover.button-primary, .govuk-button:focus.button-primary  {
+    background-color : #436c14;
+  }
+  
+  
+  .button-secondary , .govuk-button:active.button-secondary, .govuk-button:link.button-secondary, .govuk-button:visited.button-secondary {
+    background-color :  #cecece ;
+    color: black;
+  }
+  
+  .govuk-button:hover.button-secondary, .govuk-button:focus.button-secondary  {
+    background-color : #dddddd;
+    color: black;
+  }
+  
+  
+  .button-warning {
+    background-color : #b10e1e  ;
+  }
+  
+  .govuk-button:hover.button-warning, .govuk-button:focus.button-warning  {
+    background-color : #df3034  ;
+  }
+
+
+  //--------------------------------------- message boxes and panels-----------------------------------------------//
+
+.panel-warning {
+    background-color: #c67f0f;
+}
+
+.panel-information {
+  background-color: #005ea5;
+  }
+
+  .panel-error {
+      background-color: #B30000;
+  }
+
+  .panel-warning {
+      background-color: #c67f0f;
+  }
+
+  .panel-info {
+      background-color: #005ea5;
+  }
+
+.ercError,
+.ercInformation,
+.ercSuccess,
+.ercWarning {
+  display: block;
+  margin: 15px !important;
+  padding: 15px 10px 15px 50px !important;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  overflow: auto;
+}
+.ercInformation {
+  color: #004269;
+  background: url(../images/ERC/erc_information.gif) 10px center no-repeat #bde5f8;
+  border: 1px solid #004269;
+}
+.ercSuccess {
+  color: #2d4f2a;
+  background: url(../images/ERC/erc_success.gif) 10px center no-repeat #dff2bf;
+  border: 1px solid #2d4f2a;
+}
+.ercWarning {
+  color: #782a06;
+  background: url(../images/ERC/erc_warning.gif) 10px center no-repeat #feefb3;
+  border: 1px solid #782a06;
+}
+.ercError {
+  color: #333333;
+  background: url(../images/ERC/erc_error.gif) 10px center no-repeat #ffbaba;
+  border: 1px solid #d8000c;
+}
+
+// -------------------------------------------- alternative headings and buttons ------------------------------------------------- //
+
+h1.erc-alt {
+    color: $erc-alt-text-blue;
+    font-size: 24px;
+    border-top: 1px solid $erc-alt-text-blue;
+    border-bottom: 1px solid $erc-alt-text-blue;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+}
+
+h2.erc-alt {
+    background-color: $erc-alt-text-blue;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+    color: #fff;
+    border: 1px #25404d solid;
+    border-radius: 5px;
+    text-shadow: #444 0 1px 1px;
+    box-shadow: inset 0 0 10px #2a4551;
+    font-size: 14px;
+}
+
+h3.erc-alt {
+    background: #ccc;
+    color: #000;
+    font-weight: bold;
+    border: 1px #7e7e7e solid;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px #888888;
+    font-size: 14px;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+}
+
+h4.erc-alt {
+    margin: 0 0 7px;
+    padding: 7px;
+    background: #e0e0e0;
+    color: #444;
+    font-size: 14px;
+}
+
+button.erc-alt {
+    background-color: $erc-alt-text-blue;
+    border: 1px solid #23408E;
+    color: #fff;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 8px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #000;
+}
+button.erc-alt:hover {
+    text-decoration: underline;
+}
+
+button.erc-alt:active {
+    text-decoration: underline;
+    background-color: #568BA3;
+    border-color: #888;
+}
+
+button.erc-alt.disco {
+    background-color: #444;
+    border: 1px solid #444;
+    color:  #2cf3f3;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 130%;
+    font-weight: 700;
+}
+
+button.erc-alt.disco:visited {
+    color:  #b9ff06;
+
+}
+
+button.erc-alt.disco:visited {
+    color:  #fff;
+    text-decoration: underline;
+}
+
 // -------------------------------------------- CBL------------------------------------------------- //
 
 hr.erc {

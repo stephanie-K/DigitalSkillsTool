@@ -13,8 +13,71 @@
         My example page
       </h1>
       <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-      <p>
-        You can add your own content now
-      </p>
+   
+      <h2 class="govuk-heading-l">
+          Example of message boxes
+      </h2>
+      <div>
+          <p class="ercInformation">I'm an information message box</p>
+          <p class="ercSuccess">I'm a success message box</p>
+          <p class="ercWarning">I'm a warning message box</p>
+          <p class="ercError">I'm an error message box</p>
+      </div>
+
+      <h2 class="govuk-heading-l">
+          Example of buttons
+      </h2>    
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+          text: "Primary Button",
+          classes: "button-primary"
+        }) }}
+
+        {{ govukButton({
+          text: "Secondary Button",
+          classes: "button-secondary"
+        }) }}
+
+        {{ govukButton({
+          text: "Warning Button",
+          classes: "button-warning"
+        }) }}
+
+        <h2 class="govuk-heading-l">
+            Example of different headings and buttons
+        </h2>
+  
+        <h1 class="govuk-heading-l erc-alt">
+            Council Tax Online
+        </h1> 
+<br>
+        <h2 class="govuk-heading-s erc-alt">
+            This is a different main heading on some forms using h2
+        </h2> 
+<br>
+        <h3 class="govuk-heading-s erc-alt">
+            This is a different secondary heading - subtitle -  on some forms unsing h3
+        </h3> 
+<br>
+        <h4 class="govuk-heading-s erc-alt">
+            This is a different secondary heading - intro-  on some forms using h4
+        </h4> 
+<br><br>
+        {{ govukButton({
+          text: "<< Back",
+          classes: "button-primary erc-alt"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary erc-alt"
+        }) }}
+        <br>
+        
+        {{ govukButton({
+          text: "Disco start button",
+          classes: "button-primary erc-alt disco"
+        }) }}
 
 {% endblock %}
