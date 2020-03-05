@@ -335,6 +335,20 @@ h4.erc-alt {
     font-size: 14px;
 }
 
+h5.erc-alt {
+    background-color: #f3f6fb;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #444;
+    padding: 5px 10px;
+    margin: 4px 0 8px;
+    box-shadow: inset 0 0 10px #d5d9dc;
+    line-height: 22px;
+    border: 1px solid #a6b3bb;
+    border-radius: 5px;
+}
+
 button.erc-alt {
     background-color: $erc-alt-text-blue;
     border: 1px solid #23408E;
@@ -344,17 +358,18 @@ button.erc-alt {
     text-decoration: none;
     text-shadow: 0 1px 0 #000;
 }
-button.erc-alt:hover {
+button.button-primary.erc-alt:hover {
     text-decoration: underline;
+    background-color: #424242 ;    
 }
 
-button.erc-alt:active {
+button.button-primary.erc-alt:active {
     text-decoration: underline;
     background-color: #568BA3;
     border-color: #888;
 }
 
-button.erc-alt.disco {
+button.button-primary.erc-alt.disco {
     background-color: #444;
     border: 1px solid #444;
     color:  #2cf3f3;
@@ -365,15 +380,38 @@ button.erc-alt.disco {
     font-weight: 700;
 }
 
-button.erc-alt.disco:visited {
-    color:  #b9ff06;
 
-}
-
-button.erc-alt.disco:visited {
+button.button-primary.erc-alt.disco:hover, button.button-primary.erc-alt.disco:active, button.button-primary.erc-alt.disco:focus {
     color:  #fff;
     text-decoration: underline;
+    background-color: #444;
 }
+
+button.button-primary.erc-alt.disco:visited {
+    color:  #b9ff06;
+}
+
+button.button-primary.erc-alt.submission, button.button-primary.erc-alt.submission:focus  {
+    background-color: #43A047;
+    border: 1px solid #43A047;
+}
+
+button.button-primary.erc-alt.submission:after{
+    content: "\2714";
+    font-size: 10pt;
+    width: 1em;
+}
+
+button.button-primary.erc-alt.submission:hover {
+    text-decoration: underline;
+}
+
+button.button-primary.erc-alt.submission:active, button.button-primary.erc-alt.submission:focus {
+    background-color: #424242;
+    color: #fff;
+
+}
+
 
 // -------------------------------------------- CBL------------------------------------------------- //
 

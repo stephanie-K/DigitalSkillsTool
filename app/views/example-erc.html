@@ -61,8 +61,12 @@
         </h3> 
 <br>
         <h4 class="govuk-heading-s erc-alt">
-            This is a different secondary heading - intro-  on some forms using h4
+            This is a different secondary heading - intro -  on some forms using h4
         </h4> 
+<br>
+        <h5 class="govuk-heading-s erc-alt">
+            This is a another secondary heading-  on some forms using h5
+        </h5> 
 <br><br>
         {{ govukButton({
           text: "<< Back",
@@ -72,6 +76,11 @@
         {{ govukButton({
           text: "Continue",
           classes: "button-primary erc-alt"
+        }) }}
+
+        {{ govukButton({
+          text: "Submit",
+          classes: "button-primary erc-alt submission"
         }) }}
         <br>
 
