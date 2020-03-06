@@ -28,7 +28,7 @@ $erc-green-border: #008000;
 .govuk-header__container {
     border-bottom: 0px;
 }
-.erc-service-name {
+.erc-tagline {
     font-size: 24px;
     color: white; 
     background-color: $erc-logo-blue;
@@ -154,34 +154,6 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
     //font-size : 19px;
 }
 
-.UR-tag {
-margin-left: 20px;
-padding: 5px;
-color: white;
-font-weight: 600;
-font-size:16px;
-font-family: nta;
-}
-.UR-tag.ok {
-    background-color: #518418;
-   // display: none
-}
-.UR-tag.amber {
-    background-color: orange;
-    color: black;
-  //  display: none
-}
-.UR-tag.red {
-    background-color: #b30000;
-  //  display: none
-}
-.UR-tag.no {
-    background-color: #cccccc;
-    color: black;
-  //  display: none
-}
-
-
 .govuk-tag.info {
     background-color: $erc-logo-blue;
     text-transform: none;
@@ -292,7 +264,7 @@ code {
 
 // -------------------------------------------- alternative headings and buttons ------------------------------------------------- //
 
-h1.erc-alt {
+.erc-alt-double-lines {
     color: $erc-alt-text-blue;
     font-size: 24px;
     border-top: 1px solid $erc-alt-text-blue;
@@ -303,7 +275,7 @@ h1.erc-alt {
     margin: 4px 0 8px 0;
 }
 
-h2.erc-alt {
+.erc-alt-dark-blue-bg {
     background-color: $erc-alt-text-blue;
     padding: 5px 10px;
     margin: 4px 0 8px 0;
@@ -313,9 +285,10 @@ h2.erc-alt {
     text-shadow: #444 0 1px 1px;
     box-shadow: inset 0 0 10px #2a4551;
     font-size: 14px;
+    font-weight:bold;
 }
 
-h3.erc-alt {
+.erc-alt-dark-grey-round {
     background: #ccc;
     color: #000;
     font-weight: bold;
@@ -327,15 +300,16 @@ h3.erc-alt {
     margin: 4px 0 8px 0;
 }
 
-h4.erc-alt {
+.erc-alt-dark-grey {
     margin: 0 0 7px;
     padding: 7px;
     background: #e0e0e0;
     color: #444;
     font-size: 14px;
+    font-weight:bold;
 }
 
-h5.erc-alt {
+.erc-alt-light-grey {
     background-color: #f3f6fb;
     font-size: 14px;
     margin-top: 10px;
@@ -369,7 +343,7 @@ button.button-primary.erc-alt:active {
     border-color: #888;
 }
 
-button.button-primary.erc-alt.disco {
+button.button-primary.erc-alt-disco {
     background-color: #444;
     border: 1px solid #444;
     color:  #2cf3f3;
@@ -378,35 +352,40 @@ button.button-primary.erc-alt.disco {
     text-decoration: none;
     font-size: 130%;
     font-weight: 700;
+    border-radius: 5px 5px 5px 5px;
+    text-shadow: 0 1px 0 #000;
 }
 
 
-button.button-primary.erc-alt.disco:hover, button.button-primary.erc-alt.disco:active, button.button-primary.erc-alt.disco:focus {
+button.button-primary.erc-alt-disco:hover, button.button-primary.erc-alt-disco:active, button.button-primary.erc-alt-disco:focus {
     color:  #fff;
     text-decoration: underline;
     background-color: #444;
 }
 
-button.button-primary.erc-alt.disco:visited {
+button.button-primary.erc-alt-disco:visited{
     color:  #b9ff06;
 }
 
-button.button-primary.erc-alt.submission, button.button-primary.erc-alt.submission:focus  {
+button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submission:focus  {
     background-color: #43A047;
     border: 1px solid #43A047;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 8px;
+    text-shadow: 0 1px 0 #000;
 }
 
-button.button-primary.erc-alt.submission:after{
+button.button-primary.erc-alt-submission:after{
     content: "\2714";
     font-size: 10pt;
     width: 1em;
 }
 
-button.button-primary.erc-alt.submission:hover {
+button.button-primary.erc-alt-submission:hover {
     text-decoration: underline;
 }
 
-button.button-primary.erc-alt.submission:active, button.button-primary.erc-alt.submission:focus {
+button.button-primary.erc-alt-submission:active, button.button-primary.erc-alt-submission:focus {
     background-color: #424242;
     color: #fff;
 
