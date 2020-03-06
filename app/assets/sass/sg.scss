@@ -117,7 +117,7 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-heading-xl, .
     box-shadow: none;
 }
 
-.govuk-button-back {
+.sg-button-back {
     background-color: #fff;
     font-size: 18px;
     padding: 16px 45px;
@@ -125,13 +125,30 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-heading-xl, .
     border: 2px solid #000;
 }
 
-.govuk-button-back:link, .govuk-button-back:visited{
+.sg-button-back:link, .sg-button-back:visited{
     color: #000;
     font-weight: 600;
 }
 
-.govuk-button.govuk-button-back:hover, .govuk-button.govuk-button-back:focus, .govuk-button.govuk-button-back:active{
+.govuk-button.sg-button-back:hover, .govuk-button.sg-button-back:focus, .govuk-button.sg-button-back:active{
     background-color: #eee;
+}
+
+.sg-button-empty {
+    background-color: #fff;
+    font-size: 18px;
+    padding: 16px 45px;
+    box-shadow: none;
+    border: 2px solid #00437e;
+}
+.sg-button-empty:link, .sg-button-empty:visited{
+    color: #00437e;
+    font-weight: 600;
+}
+
+.govuk-button.sg-button-empty:hover, .govuk-button.sg-button-empty:focus, .govuk-button.sg-button-empty:active{
+    background-color:#e5f0f8;
+    border: 3px solid #00437e;
 }
 
 .govuk-button:hover, .govuk-button:focus, .govuk-button:active {
@@ -164,6 +181,95 @@ body, p, li, ul, h1, h2, h3 {
     padding-top: 2em;
 }
 
+.sensitive-content {
+    max-width: 330px;
+    a, p {
+        font-size: 14px;
+        line-height: 1.2;
+        max-width: 330px;
+    }
+    a {
+        font-weight: bold;
+    }
+}
+
+.sg-button-sensitive, .sg-button-sensitive:hover{
+    background-color: #4e9d52;  
+    border-top: 1px solid #fff;
+    margin: 0 0 10px 0;
+    width: 100%;
+}
+
+.sg-button-sensitive:active{
+    background-color: #d9effc;
+    color: #ffffffa6;
+    outline: 0;
+    transition-duration: 0s;
+}
+
+.sg-button-sensitive:focus{
+    background-color: #00437e !important;
+    color: #fff !important;
+}
+
+// -------------------------------------------- Accordions changes ------------------------------------------------- //
+.govuk-accordion__section-button.sg{
+    color: #333;
+    font-size: 19px;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight:700;
+    text-decoration: none;
+}
+
+.govuk-accordion__section-button.sg:hover, .govuk-accordion__section-button.sg:hover:not(:focus){
+   color: #00437e;
+   text-decoration: none;
+}
+
+
+.govuk-accordion__section--expanded .govuk-accordion__section-header{
+    background-color: #e5f0f8;
+}
+
+.govuk-accordion__section-header:hover, .govuk-accordion__section-header:hover:not(:focus){
+    background-color: #f8f8f8;
+    .govuk-accordion__icon{
+        background-color: #f8f8f8;
+    }
+}
+
+.govuk-accordion__icon{
+    background: url(../images/SG/arrow_down_blue_35px.png) 10px center no-repeat #fff;
+    padding: 5px 10px 0 30px;
+}
+.js-enabled .govuk-accordion__icon{
+ top: 18px;
+ width: 0;
+}
+
+.govuk-accordion__section--expanded {
+    .govuk-accordion__icon{
+        background: url(../images/SG/arrow_up_blue_35px.png) 10px center no-repeat #fff;
+        padding: 5px 10px 0 30px;
+        top: 30%;
+        background-color: #e5f0f8;
+    }
+}
+
+.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before  {
+background-color: transparent;
+}
+
+.govuk-accordion__controls {
+    display: none;
+}
+.govuk-accordion__section-header{
+    padding: 0 0 0 10px;
+}
+
+.js-enabled .govuk-accordion__section-header {
+    padding-right: 10px;
+}
 
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
@@ -174,9 +280,5 @@ body, p, li, ul, h1, h2, h3 {
 .tag-print {
     padding: 10px 10px 10px 60px;
     background: url(../images/printer-icon.png) 10px center no-repeat #fff;
-    text-decoration: underline;
-    color: #551A8B ; // $erc-text-blue;
-    font-weight: 400;
-    //font-size : 19px;
 }
 
