@@ -381,9 +381,10 @@ button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submissi
 }
 
 button.button-primary.erc-alt-submission:after{
-    content: "\2714";
+    content: "\2713";
     color: #fff;
-    font-size: 10pt;
+    font-size: 12pt;
+    font-weight: bold;
     width: 1em;
 }
 
