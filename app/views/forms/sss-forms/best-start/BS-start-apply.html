@@ -57,41 +57,45 @@ Best Start Grant and Best Start Foods - mygov.scot
         <p>If you want to know more about how Social Security Scotland use your data, you can read the <a href="/forms/sss-forms/not-ready-sg">privacy notice</a> about Best Start Grant and Best Start Foods.</p>
         
         <h2 class="govuk-heading-l">Apply online now</h2>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              What you need to apply
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <p>You'll need:</p>
-            <ul class="govuk-list govuk-list--bullet">
-                <li>your name, date of birth and address</li>
-                <li>if you have a partner, their name and date of birth</li>
-                <li>your bank, credit union or building society account details - you can be paid the Pregnancy and Baby Payment in the same way you're paid for your other benefits if you do not have one of these accounts - if you want to request this call 0800 182 2222 (freephone, 8am to 6pm, Monday to Friday)</li>
-                <li>details of any children you have or care for</li>
-            </ul>
-            <p>If we need you to send us a certificate or anything else, we'll tell you this when you're filling in your online form. </p>
-            <p>You should also give your National Insurance number when you apply. If you do not give your National Insurance number to Social Security Scotland it could cause a delay.</p>
-            <p><a href="https://www.gov.uk/lost-national-insurance-number">Find out what you can do if you do not know your National Insurance number.</a></p>
-            <hr>
-            <p style="line-height: 1.5;"><image src="{{ asset_path }}/images/SG/note.png" alt="information"></image>
-              <span style="font-size:17px; padding-left:10px;">The 10 sections of the form should take about 10-20 minutes to complete.</span></p>
-            <hr class="govuk-!-margin-bottom-9">
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button sg" id="accordion-default-heading-1">
+                    What you need to apply
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              <p>You'll need:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>your name, date of birth and address</li>
+                  <li>if you have a partner, their name and date of birth</li>
+                  <li>your bank, credit union or building society account details - you can be paid the Pregnancy and Baby Payment in the same way you're paid for your other benefits if you do not have one of these accounts - if you want to request this call 0800 182 2222 (freephone, 8am to 6pm, Monday to Friday)</li>
+                  <li>details of any children you have or care for</li>
+              </ul>
+              <p>If we need you to send us a certificate or anything else, we'll tell you this when you're filling in your online form. </p>
+              <p>You should also give your National Insurance number when you apply. If you do not give your National Insurance number to Social Security Scotland it could cause a delay.</p>
+              <p><a href="https://www.gov.uk/lost-national-insurance-number">Find out what you can do if you do not know your National Insurance number.</a></p>
+              <hr>
+              <p style="line-height: 1.5;"><image src="{{ asset_path }}/images/SG/note.png" alt="information"></image>
+                <span style="font-size:17px; padding-left:10px;">The 10 sections of the form should take about 10-20 minutes to complete.</span></p>
+            </div>
           </div>
-        </details>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              If you need help or you want to apply by phone
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <p>If you need help, or you'd prefer to apply by phone, you can call 0800 182 2222.</p>
-            <p>You can also apply by <a href="BS-grant-form">downloading a paper form</a> and posting it to Social Security Scotland.</p>
+          <div class="govuk-accordion__section ">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button sg" id="accordion-default-heading-1">
+                  If you need help or you want to apply by phone
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              <p>If you need help, or you'd prefer to apply by phone, you can call 0800 182 2222.</p>
+              <p>You can also apply by <a href="BS-grant-form">downloading a paper form</a> and posting it to Social Security Scotland.</p>
+            </div>
           </div>
-        </details>
-  
+        </div>
 
 
         {{ govukButton({
@@ -101,7 +105,7 @@ Best Start Grant and Best Start Foods - mygov.scot
           isStartButton: true
         }) }}
 
-        </div>
+      </div>
     </div>
     <div class="govuk-grid-column-one-quarter" style="padding-left: 30px">
     <p><image src="{{ asset_path }}/images/SG/social-security-scotland-logo-bis.png" alt="Social Security Scotland Logo" width="278" height="90"></image></p>
@@ -111,7 +115,7 @@ Best Start Grant and Best Start Foods - mygov.scot
       <li><a href="/forms/sss-forms/not-ready-sg" style="font-size:17px">Contact Social Security Scotland</a></li>
       <li><a href="/forms/sss-forms/not-ready-sg" style="font-size:17px">Get help to apply for Best Start Grant and Foods</a></li>
     </ul>
-    </div>
+  </div>
 </div>
 
 

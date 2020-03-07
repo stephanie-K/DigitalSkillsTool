@@ -16,19 +16,17 @@
 
 {% block header %}
 <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
-    <div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
-      <div class="govuk-header__logo">
-          <span class="govuk-header__logotype">
-              <a href="/index.html"><image src="{{ asset_path }}/images/PAHLogo.png" alt="Parl Homes Logo" width="320" height="100"></image></a>
-          </span>
-      </div>
-    <div class="govuk-header__content">
-      <a href="/index.html">
-        <span class="park-home-tagline">
-          This is a training website
-        </span>
-      </a>  
-    </div>
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/PAHLogo.png" alt="Parl Homes Logo" width="320" height="100"></image></a>
+      </span>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/index.html">
+      <span class="park-home-tagline">
+        This is a training website
+      </span>
+    </a>  
   </div>
 </div>
 {% endblock %}
@@ -181,7 +179,7 @@ Park Homes - Warm Home Discount
           }) }}
 
     </div>
-  </div>
+</div>
 
 <br><br>
 
