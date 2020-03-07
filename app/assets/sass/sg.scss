@@ -95,6 +95,11 @@ $sss-text: #333;
     font-weight: 600;
     padding: 0 1em;
 }
+
+.govuk-footer__link:focus{
+    background-color: $sg-blue;
+    outline: 3px solid #fd0;
+}
 //---------------------------------------- BODY------------------------------------------------//
 
 body p, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-heading-xl, .govuk-heading-m,.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table {
@@ -269,6 +274,11 @@ background-color: transparent;
 
 .js-enabled .govuk-accordion__section-header {
     padding-right: 10px;
+}
+
+.js-enabled .govuk-accordion__section-button:focus {
+    background-color: #f8f8f8;
+    box-shadow: 0 -2px #f8f8f8, 0 4px #f8f8f8;
 }
 
 // -------------------------------------------- Helpers ------------------------------------------------- //

@@ -77,6 +77,11 @@ $erc-green-border: #008000;
 .govuk-footer__meta-item {
     margin-bottom: 0;
 }
+.govuk-footer__link:focus{
+    background-color: $erc-logo-blue;
+    outline: 3px solid #fd0;
+}
+
 
 //---------------------------------------- BODY------------------------------------------------//
 
@@ -377,6 +382,7 @@ button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submissi
 
 button.button-primary.erc-alt-submission:after{
     content: "\2714";
+    color: #fff;
     font-size: 10pt;
     width: 1em;
 }
