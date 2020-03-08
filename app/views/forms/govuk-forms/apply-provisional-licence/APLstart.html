@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        <div class="orange-block">
+          <h2 class="govuk-heading-s orange-heading">Step by step</h2>
+          <p>Follow our easy step by step process to help you fill this form in quickly and accurately.</p>
+          <ol class="govuk-list govuk-list--number">
+            <li><strong>Authentication</strong></li>
+            <ul class="govuk-list">
+                <li><strong>Authentication</strong></li>
+                <li>Security of your data</li>
+                <li>Your details</li>
+                <li>Your addresses</li>
+                <li>Security details</li>
+                <li>National Insurance number</li>
+                <li>UK passport number</li>
+              </ul>
+              <li><strong>Application</strong></li>
+              <li><strong>Summary</strong></li>
+              <li><strong>Payment</strong></li>
+              <li><strong>Confirmation</strong></li>
+            </ol>
+        </div>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-m">
+            Apply for a provisional licence
+        </h1>
+        <h2 class="govuk-heading-s yellow-heading">Authentication</h2>
+        <div class="small-font">
+          <p><strong>During your transaction:</strong></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Please don't use the buttons on your browser (e.g. 'back', 'forward', 'refresh' etc.), you should only use the buttons on the bottom of each page and you should click these only once</li>
+            <li>Please have all your documents to hand as the service will timeout when not in use</li>
+            <li>Please ensure the details you enter are your own. You cannot apply for a driving licence for someone else</li>
+          </ul>
+          <hr>
+        </div>
+        {{ govukButton({
+          text: "Cancel",
+          classes: "button-primary dvla-cancel-button",
+          href: "/forms/govuk-forms/apply-provisional-licence/cancel-DVLA-apply-form.html"
+        }) }}
+        {{ govukButton({
+          text: "Next",
+          classes: "button-primary dvla-next-button",
+          href: "/forms/govuk-forms/not-ready.html"
+        }) }}
+
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

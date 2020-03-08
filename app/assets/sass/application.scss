@@ -32,7 +32,14 @@ $govuk-assets-path: '/govuk/assets/';
     padding-top: 10px;
 }
 
+// making the fact that this is a training website more obvious
+.govuk-header__link--service-name:link, .govuk-header__link--service-name:visited, .govuk-header__link--service-name:focus {
+  color: #ffdd00;
+}
 
+.govuk-header__link--service-name:focus {
+  color: #000;
+}
 // added the CSS for the pagination at the bottom of the stepped guide - do not exist yet in the govuk-design-system - the code commented would restore the previous on the left anf next on the right 
 .stepped-pagination{
     display:block;

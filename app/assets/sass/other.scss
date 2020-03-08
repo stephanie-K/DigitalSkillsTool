@@ -35,7 +35,85 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
     }
 }
 
+// ---------------------------- Apply for provisional licence --------------------------------------------//
 
+.red-dvla-link:link,  .red-dvla-link:visited,  .red-dvla-link:active,  .red-dvla-link:focus{
+    color: #C00;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: .8em;
+    background: #FFF url(../images/DVLA/helpArrowInPage.gif) no-repeat top left;
+}
+
+.apply-DVLA-tagline {
+    font-size: 24px;
+    color: #fff;
+    background-color: #cc0000;
+    padding: 4px 10px;
+    font-weight: 500;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    margin: 0 20px;
+}
+.orange-heading {
+    background-color: #ff9900; 
+    color: #fff;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+.orange-block {
+    border: .1em solid #F90;
+    padding-bottom:1em;
+    p, li {
+        font-size: 14px;
+        margin: 0.7em;
+    }
+    li {
+        color: #666;
+        line-height:0.8;
+    }
+}
+
+
+.yellow-heading {
+    background-color: #ffe581; 
+    padding: 3px 10px;
+    font-weight: bold;
+}
+
+.small-font {
+    p, li {
+        font-size: 14px;
+    }
+}
+
+.govuk-button.dvla-cancel-button:link, .govuk-button.dvla-cancel-button:visited, .govuk-button.dvla-cancel-button:active, .govuk-button.dvla-cancel-button:hover{
+    border-radius: 4px;
+    margin-top:10px;
+    background: #999 url(../images/DVLA/butCancel.gif) no-repeat right;
+    padding: .4em 2.3em .5em .5em;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: right;
+    border: none;
+    width: 6em;
+    }
+
+    .govuk-button.dvla-next-button:link, .govuk-button.dvla-next-button:visited, .govuk-button.dvla-next-button:active, .govuk-button.dvla-next-button:hover{
+        border-radius: 4px;
+        margin-top:10px;
+        background: #C00 url(../images/DVLA/butArrowRight.gif) no-repeat right;
+        padding: .4em 2.3em .5em .5em;
+        color: #FFF;
+        text-decoration: none;
+        font-weight: bold;
+        text-align: right;
+        border: none;
+        width: 7em;
+        }
+
+
+    
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//
 
 .park-home-tagline {
