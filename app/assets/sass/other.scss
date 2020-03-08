@@ -73,7 +73,6 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
     }
 }
 
-
 .yellow-heading {
     background-color: #ffe581; 
     padding: 3px 10px;
@@ -90,29 +89,49 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
     border-radius: 4px;
     margin-top:10px;
     background: #999 url(../images/DVLA/butCancel.gif) no-repeat right;
-    padding: .4em 2.3em .5em .5em;
+    padding: .4em 1.5em .5em .5em;
     color: #FFF;
     text-decoration: none;
     font-weight: bold;
     text-align: right;
     border: none;
     width: 6em;
-    }
+}
 
-    .govuk-button.dvla-next-button:link, .govuk-button.dvla-next-button:visited, .govuk-button.dvla-next-button:active, .govuk-button.dvla-next-button:hover{
-        border-radius: 4px;
-        margin-top:10px;
-        background: #C00 url(../images/DVLA/butArrowRight.gif) no-repeat right;
-        padding: .4em 2.3em .5em .5em;
-        color: #FFF;
-        text-decoration: none;
-        font-weight: bold;
-        text-align: right;
-        border: none;
-        width: 7em;
-        }
+.govuk-button.dvla-next-button:link, .govuk-button.dvla-next-button:visited, .govuk-button.dvla-next-button:active, .govuk-button.dvla-next-button:hover{
+    border-radius: 4px;
+    margin-top:10px;
+    background: #C00 url(../images/DVLA/butArrowRight.gif) no-repeat right;
+    padding: .4em 1.3em .5em .5em;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: right;
+    border: none;
+    width: 7em;
+}
 
+.govuk-button.dvla-previous-button:link, .govuk-button.dvla-previous-button:visited, .govuk-button.dvla-previous-button:active, .govuk-button.dvla-previous-button:hover{
+    border-radius: 4px;
+    margin-top:10px;
+    background: #C00 url(../images/DVLA/butArrowLeft.gif) no-repeat left;
+    padding: .4em .5em .5em 1.3em;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+    width: 7em;
 
+}
+
+.govuk-tag.red {
+    background-color: #b10e1e;
+   // margin-left: 10px;
+    padding: 5px;
+    text-transform: none;
+
+}
     
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//
 

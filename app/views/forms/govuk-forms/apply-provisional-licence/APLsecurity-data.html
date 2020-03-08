@@ -41,8 +41,8 @@ Motoring
           <ol class="govuk-list govuk-list--number">
             <li><strong>Authentication</strong></li>
             <ul class="govuk-list">
-                <li><strong>Authentication</strong></li>
-                <li>Security of your data</li>
+                <li>Authentication</li>
+                <li><strong>Security of your data</strong></li>
                 <li>Your details</li>
                 <li>Your addresses</li>
                 <li>Security details</li>
@@ -60,16 +60,20 @@ Motoring
         <h1 class="govuk-heading-m">
             Apply for a provisional licence
         </h1>
-        <h2 class="govuk-heading-s yellow-heading">Authentication</h2>
+        <h2 class="govuk-heading-s yellow-heading">Security of your data</h2>
         <div class="small-font">
-          <p><strong>During your transaction:</strong></p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Please don't use the buttons on your browser (e.g. 'back', 'forward', 'refresh' etc.), you should only use the buttons on the bottom of each page and you should click these only once</li>
-            <li>Please have all your documents to hand as the service will timeout when not in use</li>
-            <li>Please ensure the details you enter are your own. You cannot apply for a driving licence for someone else</li>
-          </ul>
+          <p>DVLA are committed to upholding the security of your data. We use industry standard security technology and practices to safeguard your data from any unauthorised access. So that you can be confident in using our service, we have prepared some information on the security of your online transactions which you can view now by clicking the link below.<br>
+             You will also find this link on the log on page.</p>
+          <p><a href="/forms/govuk-forms/apply-provisional-licence/APLsecurity-help.html" class="red-dvla-link">Ensuring your online transactions are safe and secure</a></p>
+          <p>To continue, click 'Next'.</p>
+
           <hr>
         </div>
+        {{ govukButton({
+          text: "Previous",
+          classes: "button-primary dvla-previous-button",
+          href: "/forms/govuk-forms/apply-provisional-licence/APLstart.html"
+        }) }}
         {{ govukButton({
           text: "Cancel",
           classes: "button-primary dvla-cancel-button",
@@ -78,7 +82,7 @@ Motoring
         {{ govukButton({
           text: "Next",
           classes: "button-primary dvla-next-button",
-          href: "/forms/govuk-forms/apply-provisional-licence/APLsecurity-data.html"
+          href: "/forms/govuk-forms/apply-provisional-licence/APLdetails.html"
         }) }}
 
     </div>

@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container {{ params.containerClasses | default('govuk-width-container') }}">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+    <h1 class="govuk-heading-l">
+        Ensuring your online transactions are safe and secure
+    </h1>
+  <h2 class="govuk-heading-m">What we do about security</h2>
+  <h3 class="govuk-heading-s">Secure connections and encryption</h3>
+  <p>When you visit this website, all information that you send and receive is transferred through a Secure Socket Layer
+    connection (SSL). SSL creates a secure link between your browser and our server. We use SSL with 128-bit encryption
+    which is widely accepted as the industry standard.</p>
+  <p>SSL encrypts your personal information before it leaves your computer and guarantees that: <ul class="govuk-list govuk-list--bullet">
+      <li>it is not altered between your computer and our server</li>
+      <li>unauthorised users cannot read it</li>
+    </ul>
+  </p>
+  <p>You will always know when you are using a secure connection because a padlock icon is displayed on the status bar of
+    your browser and the address will begin with 'https'. Depending on your browser setting, a pop-up window can appear to
+    notify you that you will be entering a secured page.</p>
+  <h3 class="govuk-heading-s">Session time-out</h3>
+  <p>If you remain inactive for a period of time during a session, then our system will automatically time you out. This
+    is to minimise the risk of someone else using your session on a shared computer. You should, however, also remember to
+    close the browser at the end of your online session.</p>
+  <h3 class="govuk-heading-s">Technology</h3>
+  <p>We use many layers of security - for obvious reasons we cannot disclose all of them, but the following are typically
+    used: <ul class="govuk-list govuk-list--bullet">
+      <li>All our operating systems are immediately updated with the latest security patches</li>
+      <li>Our anti-virus software is updated regularly</li>
+      <li>Our systems have firewalls to prevent unauthorised intruders</li>
+    </ul>
+  </p>
+  <h2 class="govuk-heading-m">What you can do about security</h2>
+  <p>There are some simple things you can do to get the most protection for the least effort. By following these you will
+    greatly increase your PC's protection, not just when you use our online services but when you use the internet
+    generally.</p>
+  <p>These are not all the measures you can take, but are an excellent start. They are equally applicable to business
+    owners and to private individuals.</p>
+  <h3 class="govuk-heading-s">Update your operating system &amp; browser on a regular basis</h3>
+  <p>From time to time vulnerabilities are discovered in these programs. The publisher will then release a 'patch' or
+    'security update' to correct this weakness. These weaknesses are regularly exploited by virus writers and hackers to
+    gain unauthorised access to those PC's that have not been updated. To check for updates you should visit the
+    publisher's website, typically in their Download section, or use your operating system's automatic update feature.</p>
+  <h3 class="govuk-heading-s">Use and regularly update your anti-virus software</h3>
+  <p>You may already be using anti-virus software but to be effective the software should make sure it has the latest
+    virus definition files each time you connect to the internet. (If you are unsure how to configure this, you should
+    refer to the software's Help function.)</p>
+  <p>It is also possible to obtain free anti-virus protection. A search for 'free anti-virus' on a search engine will
+    provide a list of the most popular products.</p>
+  <h3 class="govuk-heading-s">Use a 'personal firewall'</h3>
+  <p>A firewall is another small program that helps protect your computer and its contents from outsiders on the internet.
+    When installed it stops unauthorised traffic to and from your PC. Enter 'personal firewall' on a search engine for
+    information on products.</p>
+  <h3 class="govuk-heading-s">Emails</h3>
+  <p>Email is a great way to communicate, but unfortunately fraudsters also use the medium to target victims.</p>
+  <p>We will <strong>never</strong> ask you to confirm your personal information by email.</p>
+  <p>Don't open emails from unknown senders. If you are in doubt about the source of an email, for example if you don't
+    recognise the sender, it's advisable to delete it. Emails are often used to spread viruses, or download software that
+    will allow unauthorised access to your PC. It is advisable to never open unexpected attachments and to never follow
+    links to internet sites you're not familiar with.</p>
+  <h3 class="govuk-heading-s">Accessing our website</h3>
+  <p>Only access our website using the links from the DVLA website or the Directgov motoring home page; any other links
+    could take you to a phoney website that may look exactly like ours.</p>
+  <h3 class="govuk-heading-s">Autocomplete</h3>
+  <p>If you have 'autocomplete' set on your browser your computer will store and remember data you have entered in the
+    past. You should turn autocomplete off to protect your data. You can also clear the history of data that has been
+    saved in the past - please refer to your browser help for details on how to do this.</p>
+
+    <br><br>
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

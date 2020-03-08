@@ -41,9 +41,9 @@ Motoring
           <ol class="govuk-list govuk-list--number">
             <li><strong>Authentication</strong></li>
             <ul class="govuk-list">
-                <li><strong>Authentication</strong></li>
+                <li>Authentication</li>
                 <li>Security of your data</li>
-                <li>Your details</li>
+                <li><strong>Your details</strong></li>
                 <li>Your addresses</li>
                 <li>Security details</li>
                 <li>National Insurance number</li>
@@ -60,16 +60,39 @@ Motoring
         <h1 class="govuk-heading-m">
             Apply for a provisional licence
         </h1>
-        <h2 class="govuk-heading-s yellow-heading">Authentication</h2>
+        <h2 class="govuk-heading-s yellow-heading">Your details</h2>
         <div class="small-font">
-          <p><strong>During your transaction:</strong></p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>Please don't use the buttons on your browser (e.g. 'back', 'forward', 'refresh' etc.), you should only use the buttons on the bottom of each page and you should click these only once</li>
-            <li>Please have all your documents to hand as the service will timeout when not in use</li>
-            <li>Please ensure the details you enter are your own. You cannot apply for a driving licence for someone else</li>
-          </ul>
+          <p>Please complete your personal details.</p>
+          <p><em>Please note: * indicates that an answer is required.</em></p>
+          <div class="govuk-form-group">
+              <label class="govuk-label" for="sort">
+                Title *
+              </label>
+              <p><em>If you have a title that does not appear in the list, select 'Other'.</em></p>
+              <select class="govuk-select ph-input" id="sort" name="sort">
+                <option value="updated" selected></option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Ms">Ms</option>
+                <option value="Miss">Miss</option>
+                <option value="Dr">Doctor</option>
+                <option value="rev">Rev</option>
+                <option value="no-title">No Title</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <p class="govuk-tag red govuk-!-margin-top-5">Page under construction - not finished</p>
+
+          <p>If all the details are correct please click 'Next'.</p>
+          <p>Do not click the previous/next button more than once.</p>
           <hr>
         </div>
+        {{ govukButton({
+          text: "Previous",
+          classes: "button-primary dvla-previous-button",
+          href: "/forms/govuk-forms/apply-provisional-licence/APLsecurity-data.html"
+        }) }}
         {{ govukButton({
           text: "Cancel",
           classes: "button-primary dvla-cancel-button",
@@ -78,7 +101,7 @@ Motoring
         {{ govukButton({
           text: "Next",
           classes: "button-primary dvla-next-button",
-          href: "/forms/govuk-forms/apply-provisional-licence/APLsecurity-data.html"
+          href: "/forms/govuk-forms/not-ready.html"
         }) }}
 
     </div>

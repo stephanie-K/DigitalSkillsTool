@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  cookies
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+        This is a work in progress for the cookies
+    </h1>
+    <div class="govuk-grid-row">
+        <div class=" govuk-grid-column-two-thirds">
+          <div class="cookie-banner__message">
+            <span class="govuk-heading-m">Tell us whether you accept cookies</span>
+            <p class="govuk-body">We use <a class="govuk-link" href="cookie-help">cookies to collect information</a> about how you use GOV.UK. We use this information to make the website work as well as possible and improve government services.</p>
+          </div>
+          <div class="cookie-banner__buttons">
+            <div class="cookie-banner__button cookie-banner__button-accept govuk-grid-column-full govuk-grid-column-one-half-from-desktop">
+              <button class="button govuk-button button--inline" type="submit" data-module="track-click" data-accept-cookies="true" data-track-category="cookieBanner" data-track-action="Cookie banner accepted">Accept all cookies</button>
+            </div>
+            <div class="cookie-banner__button cookie-banner__button-settings govuk-grid-column-full govuk-grid-column-one-half-from-desktop">
+                <a class="button govuk-button button--inline" role="button" data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner settings clicked" href="cookie-help">Set cookie preferences</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+{% endblock %}
