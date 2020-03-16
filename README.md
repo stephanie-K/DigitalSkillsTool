@@ -44,36 +44,38 @@ This file is key to introduce logic and validation to the forms. It is shared by
 
 ### A GOV.UK page - desktop view
 ![screenshot of a GOV.UK page - desktop view](/app/assets/images/document-the-tool/screen-desktop-govuk.png)
-# 
+
+<br><hr><br>
+
 ### A GOV.UK page - mobile view
 ![screenshot of a GOV.UK page - mobileview](/app/assets/images/document-the-tool/screen-mobile-govuk.png)
 
-# 
+<br><hr><br>
 
 ### A basic council form
 ![screenshot of a council page](/app/assets/images/document-the-tool/screen-council.png)
 
-# 
+<br><hr><br>
 
 ### A basic Scottish Government page
 ![screenshotof a Scottish Government page](/app/assets/images/document-the-tool/screen-sg.png)
 
-# 
+<br><hr><br>
 
 ### A basic Social Security page - desktop view
 ![screenshot of Social Security - desktop vie](/app/assets/images/document-the-tool/screen-desktop-sss.png)
 
-# 
+<br><hr><br>
 
 ### A basic Social Security page - mobile view
 ![screenshot of Social Security - mobile view](/app/assets/images/document-the-tool/screen-mobile-sss.png)
 
-# 
+<br><hr><br>
 
 ### An example of a DVLA page to apply for a provisional driving licence
 ![screenshot of applying for a provisional licence](/app/assets/images/document-the-tool/screen-DVLA-1.png)
 
-# 
+<br><hr><br>
 
 ### The start page for: Apply for a provisional driving licence
 ![screenshot of applying for a provisional licence - start page](/app/assets/images/document-the-tool/screen-DVLA-2.png)
