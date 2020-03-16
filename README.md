@@ -43,39 +43,48 @@ This file is key to introduce logic and validation to the forms. It is shared by
 ## Examples of template page
 
 ### A GOV.UK page - desktop view
+<br><br>
+
 ![screenshot of a GOV.UK page - desktop view](/app/assets/images/document-the-tool/screen-desktop-govuk.png)
 
-<br><hr><br>
+<br><hr>
 
 ### A GOV.UK page - mobile view
+<br><br>
+
 ![screenshot of a GOV.UK page - mobileview](/app/assets/images/document-the-tool/screen-mobile-govuk.png)
 
-<br><hr><br>
+<br><hr>
 
 ### A basic council form
+<br><br>
+
 ![screenshot of a council page](/app/assets/images/document-the-tool/screen-council.png)
 
-<br><hr><br>
+<br><hr>
 
 ### A basic Scottish Government page
+<br><br>
+
 ![screenshotof a Scottish Government page](/app/assets/images/document-the-tool/screen-sg.png)
 
-<br><hr><br>
+<br><hr>
 
 ### A basic Social Security page - desktop view
+<br><br>
+
 ![screenshot of Social Security - desktop vie](/app/assets/images/document-the-tool/screen-desktop-sss.png)
 
-<br><hr><br>
+<br><hr>
 
 ### A basic Social Security page - mobile view
-![screenshot of Social Security - mobile view](/app/assets/images/document-the-tool/screen-mobile-sss.png)
+<br><br>
 
-<br><hr><br>
-
-### An example of a DVLA page to apply for a provisional driving licence
 ![screenshot of applying for a provisional licence](/app/assets/images/document-the-tool/screen-DVLA-1.png)
 
-<br><hr><br>
+<br><hr>
 
 ### The start page for: Apply for a provisional driving licence
+<br><br>
+
 ![screenshot of applying for a provisional licence - start page](/app/assets/images/document-the-tool/screen-DVLA-2.png)
