@@ -34,7 +34,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Apply for your first provisional licence
+Book your driving test
 {% endblock %}
 
 {% block header %}
@@ -63,63 +63,83 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-        Apply for your first provisional driving licence
+        Book your driving test
     </h1>
     <p>
-      Get your first provisional driving licence for a moped, motorbike and car from DVLA online. To apply you must:
+      Book your practical driving test for:
     </p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>be at least 15 years and 9 months old</li>
-      <li>be able to <a href="/forms/govuk-forms/learn-to-drive/eyesight-rules.html">read a number plate from 20 metres away</a></li>
+        <li>cars</li>
+        <li>motorcycles</li>
+        <li>lorries, buses and coaches</li>
+        <li>approved driving instructor (ADI) part 2 and 3 tests</li>
     </ul>
-    <p>If you already have a provisional licence, you do not need to apply again to drive a car.</p>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       text: "Start now",
-      href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLstart.html",
+      href: "/forms/govuk-forms/learn-to-drive/book-driving-test/BDTstart.html",
       isStartButton: true
     }) }}
 
     <div id="before-you-start">
-        <h2 class="govuk-heading-m">Before you start</h2>
-        <p>It costs £34 to apply online. You can pay by MasterCard, Visa, Electron or Delta debit or credit card.</p>
-        <p>You’ll need to provide:</p>    
-        <ul class="govuk-list govuk-list--bullet">
-          <li>an <a href="/forms/govuk-forms/learn-to-drive/id-needed.html">identity document</a> unless you have a valid UK biometric passport</li>
-          <li>addresses where you’ve lived over the last 3 years</li>
-          <li>your National Insurance number if you know it</li>
-        </ul>
-        <p>You’ll get a confirmation email from DVLA after you’ve applied. You might be asked to take part in research by email, but you can opt out.</p>
-        <p>Your licence should arrive within one week if you apply online. It may take longer if DVLA need to make additional checks.</p>
-        
-        <h2 class="govuk-heading-m">When you can drive with a provisional licence</h2>
-        <p>There are different rules depending on your age and the type of vehicle. <a href="/forms/govuk-forms/learn-to-drive/vehicules.html">Check what vehicles you can drive and when</a> before you start to learn.</p>
-        
-        <h2 class="govuk-heading-m">Other ways to apply</h2>   
-        <p>You can apply by post. Fill in form D1 available from the <a href="/forms/govuk-forms/learn-to-drive/order-forms.html">DVLA form ordering service</a> and certain Post Office branches.</p>
-        <p>It costs £43 to apply by post. Make your cheque or postal order payable to DVLA (do not send cash). Damaged or altered cheques will not be accepted.</p>
-        <p>You’ll also need to include:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>an <a href="/forms/govuk-forms/learn-to-drive/identity-documents.html">identity document</a> unless you have a valid UK biometric passport</li>
-          <li>a colour <a href="/forms/govuk-forms/learn-to-drive/passport-photo.html">passport-style photograph</a>
-        </li>
-        </ul>
-        
-        {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
-
-        {{ govukInsetText({
-          text: "You must send original documents."
-        }) }}
-        
-        <p>Send your application and payment to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>DVLA, Swansea, SA99 1AD - if all your documents are from the UK</li>
-          <li>DVLA, Swansea, SA99 1AF - if any of your documents are from outside the UK</li>
-        </ul>
-        
-        <p>Your provisional licence should arrive within 3 weeks. <a href="/forms/govuk-forms/learn-to-drive/contactDVLA.html">Contact DVLA</a> if it has not arrived by then.</p>
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <div>
+          
+      <p>You need your:</p>
+      
+      <ul class="govuk-list govuk-list--bullet">
+        <li>UK driving licence number</li>
+        <li>credit or debit card</li>
+        <li>driving instructor’s personal reference number if you want to check they’re available</li>
+      </ul>
+      
+      <p>You can check the cost of your driving test before you start.</p>
+      
+      <p>You must have lived in England, Wales or Scotland for at least 185 days in the last 12 months before the day you take your test.</p>
+    
+      
+      <p>You can check for earlier appointments after you’ve booked. These are sometimes called ‘cancellation appointments’.</p>
+      
+      <h2 class="govuk-heading-m">Book a test to upgrade your licence</h2>
+      
+      <p>You must call the Driver and Vehicle Standards Agency (DVSA) if you need an ‘upgrade’ test, such as automatic to manual car, or medium-sized lorry to a large lorry.</p>
+      
+      <div class="contact">
+      <p><strong>DVSA driving test booking support</strong><br>
+      Telephone: 0300 200 1122<br>
+      Monday to Friday, 8am to 4pm<br>
+     Find out about call charges</p>
+      </div>
+      
+      <h2 class="govuk-heading-m">When you do not need a theory test</h2>
+      <p>You must usually have passed your theory test before booking.</p>
+      
+      <p>You do not need a theory test to book a:</p>
+      
+      <ul class="govuk-list govuk-list--bullet">
+        <li>tractor test</li>
+        <li>test to upgrade from automatic to manual</li>
+        <li>test to progress through the motorcycle categories (progressive access)</li>
+        <li>car and trailer test</li>
+        <li>lorry and trailer test</li>
+        <li>bus and trailer test</li>
+        <li>large lorry test, when you’ve got a medium lorry licence</li>
+        <li>large bus test, when you’ve got a medium bus licence</li>
+      </ul>
+      
+      <h2 class="govuk-heading-m">Help with your booking</h2>
+      <p>Contact DVSA to get help booking your test.</p>
+      
+      <div class="contact">
+      <p><strong>DVSA driving test booking support</strong><br>
+      customerservices@dvsa.gov.uk<br>
+      Telephone: 0300 200 1122<br>
+      Monday to Friday, 8am to 4pm<br>
+      </p>
+      </div>
+      </div>
     </div>
   </div>
 
@@ -136,7 +156,7 @@
 
     <div id="step-by-step-navigation" data-module="gemstepnav" class="app-step-nav  app-step-nav--active" data-show-text="show" data-hide-text="hide" data-show-all-text="Show all" data-hide-all-text="Hide all"><div class="app-step-nav__controls"><button aria-expanded="false" class="app-step-nav__button app-step-nav__button--controls js-step-controls-button" aria-controls="step-panel-check-youre-allowed-to-drive-1">Show all</button></div>
     <ol class="app-step-nav__steps">
-      <li class="app-step-nav__step js-step" data-show="" id="check-youre-allowed-to-drive">
+      <li class="app-step-nav__step js-step"  id="check-youre-allowed-to-drive">
         <div class="app-step-nav__header js-toggle-panel" data-position="1">
           <h3 class="app-step-nav__title">
             <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -316,7 +336,7 @@
         </div>
 
       </li>
-      <li class="app-step-nav__step js-step app-step-nav__step--active" id="book-and-manage-your-driving-test">
+      <li class="app-step-nav__step js-step app-step-nav__step--active"  data-show="" id="book-and-manage-your-driving-test">
         <div class="app-step-nav__header js-toggle-panel" data-position="6">
           <h3 class="app-step-nav__title">
             <span class="app-step-nav__circle app-step-nav__circle--number">
@@ -420,6 +440,12 @@
   {% block scripts %}
     {% include "includes/scripts.html" %}
     {% block pageScripts %}{% endblock %}
+    <script src="/public/javascripts/step-by-step-nav.js"></script>
+    <script type="text/javascript">
+      var $element = $('#step-by-step-navigation')
+      var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+      stepByStepNavigation.start($element)
+    </script>
   {% endblock %}
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
   {% endblock %}
