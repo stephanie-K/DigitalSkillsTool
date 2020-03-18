@@ -182,6 +182,29 @@ code {
     padding-left: 0.5em;
 }
 
+.ready-tag {
+    background: #cce2d8;
+    color: #005a30;
+    font-size: 0.8rem;
+    margin: 5px 0;
+    padding: 5px;
+  }
+  .started-tag {
+    color: #594d00;
+    background: #fff7bf;
+    font-size: 0.8rem;
+    margin: 5px 0;
+    padding: 5px;
+  }
+
+  .todo-tag {
+    color: #942514;
+    background: #f6d7d2;
+    font-size: 0.8rem;
+    margin: 5px 0;
+    padding: 5px;
+  }
+
 //-------------------------------------------- Buttons --------------------------------------------------- //
 
 .button-primary {
