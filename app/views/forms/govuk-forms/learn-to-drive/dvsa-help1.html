@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container dvsa-theory-header">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVSA_logo_masthead.png" alt="DVSA Logo" width="423" height="35"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Pearson VUE
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m" style="text-align: center">
+            Help understanding a driving licence
+        </h1>
+        <div class="dvsa-grey-container">
+          <div class="dvsa-white-container">
+          <p><strong>First and middle name(s)</strong></p>
+          <p>You should enter your first and middle names as they appear at Section 2 of your driving licence. You don’t need to include Miss, Mr or Mrs.</p>
+          <p>
+            <image class="dvsa" src="{{ asset_path }}/images/DVLA/english_dsa-firstnames.jpg" alt="DVSA example for first name"></image>
+          </p>
+          </div>
+          <div class="dvsa-white-container">
+              <p><strong>Surname</strong></p>
+              <p>Section 1 of your licence.</p>
+              <p>
+                <image class="dvsa" src="{{ asset_path }}/images/DVLA/english_dsa-surname.jpg" alt="DVSA example for surname"></image>
+              </p>
+          </div>
+          <div class="dvsa-white-container">
+              <p><strong>Driving licence number</strong></p>
+              <p>Your driving licence number is shown at Section 5 of your licence. You only need to enter the first 16 characters. In this example you would enter MORGA657054SM9IJ.</p>
+              <p>
+                <image  class="dvsa" src="{{ asset_path }}/images/DVLA/english_dsa-licence.jpg" alt="DVSA example for licence number"></image>
+              </p>
+          </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

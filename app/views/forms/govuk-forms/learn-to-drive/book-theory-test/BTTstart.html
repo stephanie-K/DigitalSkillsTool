@@ -1,27 +1,92 @@
 {% extends "layout.html" %}
 
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container dvsa-theory-header">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVSA_logo_masthead.png" alt="DVSA Logo" width="423" height="35"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
 {% block pageTitle %}
-  Not ready
+Candidate log in
 {% endblock %}
 
 
 {% block content %}
-<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
-    <h1 class="govuk-heading-xl">
-        This page is not ready ... Sorry!
-    </h1>
-    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m" style="text-align: center">
+            Book, check, change or cancel your theory driving test online
+        </h1>
+        <h2 class="govuk-heading-l" style="text-align: center; font-weight:400;">
+            Candidate log in
+        </h2>
+        <div class="dvsa-grey-container">
+          <p>It should take you around 10 minutes to complete your booking online.</p>
+          <p>All information must be entered as it appears on the test candidate’s driving licence.</p>
+          <p>Required information is marked with an asterisk (*)</p>
+          <div class="dvsa-white-container">
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="first-name">
+                    First and middle name(s):
+                  </label>
+                  <span id="first-name-hint" class="govuk-hint">
+                      Include all first names and middle names if applicable.<br>
+                      Do not include your title. <a href="/forms/govuk-forms/learn-to-drive/dvsa-help1.html" target="_blank">See example</a>
+                  </span>
+                  <input class="govuk-input govuk-input--width-20" id="first-name" name="first-name" type="text" aria-describedby="first-name-hint">
+              </div>
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="surname">
+                    Surname:
+                  </label>
+                  <span id="surname-hint" class="govuk-hint">
+                  <a href="/forms/govuk-forms/learn-to-drive/dvsa-help1.html" target="_blank">See example</a>
+                  </span>
+                  <input class="govuk-input govuk-input--width-20" id="surname" name="surname" type="text" aria-describedby="surname-hint">
+              </div>
+              <div class="govuk-form-group">
+                  <label class="govuk-label" for="licence-number">
+                    Driving licence number:
+                  </label>
+                  <span id="licence-number-hint" class="govuk-hint">
+                    Enter the first 16 characters of your licence.<br>
+                    Entries are not case sensitive.<a href="/forms/govuk-forms/learn-to-drive/dvsa-help1.html" target="_blank">See example</a>
+                  </span>
+                  <input class="govuk-input govuk-input--width-20" id="licence-number" name="licence-number" type="text" aria-describedby="licence-number-hint">
+              </div>
+              {{ govukButton({
+                text: "Log in",
+                classes: "button-primary",
+                href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTTlogged.html"
+              }) }}
 
-  </div>
+          </div>
+        <p><strong>Please note:</strong> do not use the browser back button to navigate the site.</p>
+      </div>
+    </div>
+</div>
+{% endblock %}
 
+{% block footer %}
 {% endblock %}
