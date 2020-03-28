@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container dvsa-theory-header">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVSA_logo_masthead.png" alt="DVSA Logo" width="423" height="35"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Find a test centre near you
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m" style="text-align: center">
+            Book, check, change or cancel your theory driving test online
+        </h1>
+        <h2 class="govuk-heading-l" style="text-align: center; font-weight:400;">
+            Find a test centre near you
+        </h2>
+        <div class="dvsa-grey-container">
+          <p style="text-align: center;"><a href="#" style="text-decoration:none">Car : Car</a></p>
+          <hr>
+          <p><strong>Required information is marked with an asterisk (*)</strong></p>
+          <div class="dvsa-white-container">
+            <div class="govuk-form-group govuk-!-margin-bottom-0">
+                <input class="govuk-input govuk-!-width-two-thirds" id="address" name="address" type="text" placeholder="Eastwood Park Rouken Glen Road Giffnock">
+                <button class="govuk-button govuk-!-margin-bottom-0" data-module="govuk-button">
+                    Search
+                </button>
+              </div>
+          </div>
+          <p>You can select up to three centres to compare availability</p>
+          <div class="dvsa-info-container">
+            <p><strong>Helpful hints:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>The test centre information link may provide directions, parking, wheelchair support or other physical access considerations.</li>
+              <li>Distance (mi/km) is a straight line calculated from the centre point of your search criteria and does not reflect driving distance.</li>
+            </ul>
+          </div>
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
+                  <div class="dvsa-white-container">
+                      <table class="govuk-table">
+                          <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                              <th scope="col" class="govuk-table__header"></th>
+                              <th scope="col" class="govuk-table__header small-font-dvsa">Test centre</th>
+                              <th scope="col" class="govuk-table__header small-font-dvsa">Distance</th>
+                            </tr>
+                          </thead>
+                          <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                              <td class="govuk-table__cell">
+                                <div class="govuk-checkboxes govuk-checkboxes--small">
+                                  <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="centre1" name="centre1" type="checkbox" value="centre1">
+                                    <label class="govuk-label govuk-checkboxes__label" for="centre1"></label>
+                                  </div>
+                                </div>
+                                <br><br><span class="dvsa-map-number small-font-dvsa">1</span>
+                              </td>
+                              <td class="govuk-table__cell small-font-dvsa">
+                                <strong>Pearson Centre - Glasgow</strong><br>
+                                Suite 325, Pentagon Centre,<br>
+                                36-38 Washington Street<br>
+                                Glasgow<br>
+                                G3 8AZ<br>
+                                <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTTcentre-glasgow" class="small-font-dvsa">Test centre information</a>
+                              </td>
+                              <td class="govuk-table__cell small-font-dvsa">4.4 mi</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                                    <div class="govuk-checkboxes__item">
+                                      <input class="govuk-checkboxes__input" id="centre2" name="centre2" type="checkbox" value="centre2">
+                                      <label class="govuk-label govuk-checkboxes__label" for="centre2"></label>
+                                    </div>
+                                  </div>
+                                  <br><br><span class="dvsa-map-number small-font-dvsa">2</span>
+                                </td>
+                                <td class="govuk-table__cell small-font-dvsa">
+                                  <strong>Pearson Centre - Clydebank</strong><br>
+                                  1st floor<br>
+                                  Erskine House<br>
+                                  North Avenue<br>
+                                  Clydebank<br>
+                                  G81 2DR<br>
+                                  <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTTcentre-clydebank" class="small-font-dvsa">Test centre information</a>
+                                </td>
+                                <td class="govuk-table__cell small-font-dvsa">8.3 mi</td>
+                              </tr>
+                          </tbody>
+                        </table>
+                  </div>
+                  {{ govukButton({
+                    text: "Previous",
+                    classes: "govuk-button--secondary",
+                    href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support"
+                  }) }}
+                  {{ govukButton({
+                    text: "Next",
+                    classes: "button-primary",
+                    href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTT5appointment"
+                  }) }}
+              </div>
+              <div class="govuk-grid-column-one-third">
+                  <image src="{{ asset_path }}/images/DVLA/map-glasgow-centre.png" alt="Google map" style="width:100%"></image>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

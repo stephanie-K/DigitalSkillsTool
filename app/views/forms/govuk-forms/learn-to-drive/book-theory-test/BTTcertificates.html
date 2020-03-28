@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container dvsa-theory-header">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVSA_logo_masthead.png" alt="DVSA Logo" width="423" height="35"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Check pass certificate
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m" style="text-align: center">
+            Book, check, change or cancel your theory driving test online
+        </h1>
+        <h2 class="govuk-heading-l" style="text-align: center; font-weight:400;">
+            Check pass certificate
+        </h2>
+        <div class="dvsa-grey-container">
+          <p>Your theory test pass certificate runs out two years after you have passed your test.</p>
+          <p>If you have not passed your practical test by then, you will need to take and passe the theoru test again. For lorry and bus candidates, your pass certificate will be availabe after you have passed both theory tests.</p>
+          <div class="dvsa-white-container">
+            <p>You do not currently have any pass certificates.</p>
+          </div>
+          {{ govukButton({
+            text: "Booking home",
+            classes: "button-primary",
+            href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTTdashboard"
+          }) }}
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

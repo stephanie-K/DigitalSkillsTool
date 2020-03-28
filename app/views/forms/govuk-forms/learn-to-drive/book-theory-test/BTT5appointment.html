@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container dvsa-theory-header">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVSA_logo_masthead.png" alt="DVSA Logo" width="423" height="35"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Choose appointment
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m" style="text-align: center">
+            Book, check, change or cancel your theory driving test online
+        </h1>
+        <h2 class="govuk-heading-l" style="text-align: center; font-weight:400;">
+            Choose appointment
+        </h2>
+        <div class="dvsa-grey-container">
+          <p style="text-align: center;"><a href="#" style="text-decoration:none">Car : Car</a></p>
+          <hr>
+          <br>
+          <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <div class="dvsa-white-container">
+                  <p class="small-font-dvsa"><strong>Pearson Centre - Glasgow</strong><br>
+                    Suite 325, Pentagon Centre,<br>
+                    36-38 Washington Street<br>
+                    Glasgow<br>
+                    G3 8AZ<br>
+                  </p>
+                  <hr>
+                  <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT4select-centre" class="small-font-dvsa">Change test centres</a>
+                  <br><br><br>
+                  <br><br><br>
+                  <br><br><br>
+                            
+                  </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <div class="dvsa-white-container">
+                  <p>Select date</p>
+                  <p><a href="#" class="small-font-dvsa">Why can't I find an available appointment?</a></p>
+                  <br><br><br>
+                  <p><em>date picker to add here, once a date is selected, you can pick a time and then once you pick time, this <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT6my-booking">takes you to the next page</a> to view your booking</em></p>
+                  <br><br><br>
+                  <p class="small-font-dvsa">Select a date from the calendar. Only available dates can be selected</p>
+                  <p>The average test length is 60 minutes</p>
+                </div>
+              </div>
+          </div>
+          {{ govukButton({
+            text: "Previous",
+            classes: "govuk-button--secondary",
+            href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTT4select-centre"
+          }) }}
+      </div>
+
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

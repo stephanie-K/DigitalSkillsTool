@@ -45,7 +45,42 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 .dvsa-grey-container {
     border-top: 1px solid #e4e4e4; 
     background-color: #fafafa; 
+    padding: 1em 3em;
+    @media only screen and (max-width: 490px) { 
+        padding: 1em;
+    }
+}
+
+.dvsa-info-container {
+    border: 1px solid #005ea5; 
+    border-left: 8px solid #005ea5;
+    background-color: #fff;
+    margin-bottom:20px;
     padding: 1em;
+    p, li {
+        font-size: 14px;
+    }
+}
+
+.dvsa-help-container {
+    border: 1px solid #db6a00; 
+    border-left: 8px solid #db6a00;
+    background-color: #fff;
+    padding: 1em;
+}
+
+.dvsa-error-container {
+    border: 1px solid #DB0020; 
+    border-left: 8px solid #DB0020;
+    background-color: #fff;
+    padding: 1em;
+}
+
+.dvsa-map-number {
+    background-color: #1161fb;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 0.2em 0.4em;
 }
 
 .dvsa-white-container {
@@ -63,7 +98,12 @@ img.dvsa, image.dvsa  {
         width:100%;
     }
 }
-// ---------------------------- Apply for provisional licence --------------------------------------------//
+
+.small-font-dvsa{
+        font-size: 14px;
+}
+
+// -------------------------- Apply for provisional licence --------------------------------------------//
 
 .red-dvla-link:link,  .red-dvla-link:visited,  .red-dvla-link:active,  .red-dvla-link:focus{
     color: #C00;

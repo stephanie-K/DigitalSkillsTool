@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container dvsa-theory-header">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVSA_logo_masthead.png" alt="DVSA Logo" width="423" height="35"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Booking home page
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m" style="text-align: center">
+            Book, check, change or cancel your theory driving test online
+        </h1>
+        <h2 class="govuk-heading-l" style="text-align: center; font-weight:400;">
+            Booking home page
+        </h2>
+        <div class="dvsa-grey-container">
+          <div class="dvsa-white-container">
+            <h2 class="govuk-heading-m">Select a test</h2>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                  <table class="govuk-table">
+                      <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                          <th scope="col" class="govuk-table__header">Test name</th>
+                          <th scope="col" class="govuk-table__header">Price</th>
+                        </tr>
+                      </thead>
+                      <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                          <td scope="row" class="govuk-table__cell"><a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT1language.html">Car (Category B)</a></td>
+                          <td class="govuk-table__cell">GBP 23.00</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                          <td scope="row" class="govuk-table__cell"><a href="#">Motorcycle (Category A/P/AM)</a></td>
+                          <td class="govuk-table__cell">GBP 23.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+            <br>
+            <p><a href="/forms/govuk-forms/learn-to-drive/vehicles.html">Vehicle categories explained</a></p>
+            <p>If the test you require is not available to book, please email <a href="#">customercare@pearson.com</a> for advice and guidance.</p>
+          </div>
+          <div class="dvsa-white-container">
+              <h2 class="govuk-heading-m">My account</h2>
+              <ul class="govuk-list">
+                <li><a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTTcertificates.html">Check pass certificate</a></li>
+                <li><a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTTtest-history.html">Test history</a></li>
+              </ul>
+          </div>
+       
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
