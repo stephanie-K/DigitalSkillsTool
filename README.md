@@ -4,6 +4,8 @@ This is the code for a website to support classes to help refugees and other par
 
 This is a work in progress.
 
+**There is about 1 in 7 people in Scotland who can’t get online** (that’s about 800,000 people)
+
 The course is developed by **East Renfrewshire Council** in collaboration with **Scottish Enterprise** who provides the tool to support it.
 
 This is using the [**GOV.UK Prototype kit**](https://govuk-prototype-kit.herokuapp.com/docs)

@@ -46,28 +46,109 @@ Support with your test
           <hr>
           <p><strong>Required information is marked with an asterisk (*)</strong></p>
           <div class="dvsa-white-container">
-            {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-            {{ govukRadios({
-              classes: "govuk-radios--small",
-              idPrefix: "support",
-              name: "support",
-              fieldset: {
-                legend: {
-                  text: "Do you need support while taking your theory test?"
-                }
-              },
-              items: [
-                {
-                  value: "yes",
-                  text: "Yes"
-                },
-                {
-                  value: "no",
-                  text: "No"
-                }
-              ]
-            }) }}
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="type-of-supports-hint">
+                <legend class="govuk-fieldset__legend">* Do you need support while taking your theory test?</legend>
+                <span id="type-of-supports-hint" class="govuk-hint">
+                  <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTTtypes-of-support">What types of support are available</a>
+                </span>
+                <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="support" name="support" type="radio" value="yes" data-aria-controls="conditional-need-support-conditional">
+                    <label class="govuk-label govuk-radios__label" for="support">Yes</label>    
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="support" name="support" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="support-2">No</label>
+                  </div>
+
+                  <!-- Enf of if answer yes to need support then this block will be shown -->
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-need-support-conditional">
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend">* I need to see the questions and answers signed in British Sign Language on screen.</legend>
+                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="support-bsl-yes" name="support-bsl" type="radio" value="yes-bsl">
+                              <label class="govuk-label govuk-radios__label" for="support-bsl-yes">Yes</label>    
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="support-bsl-no" name="support-bsl-no" type="radio" value="no-bsl">
+                              <label class="govuk-label govuk-radios__label" for="support-bsl-no">No</label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                
+                      <div class="govuk-form-group">
+                          <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend">* I need to hear the questions and answers read to me in a language voiceover.</legend>
+                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="support-voice-yes" name="support-voice" type="radio" value="yes-voice">
+                                <label class="govuk-label govuk-radios__label" for="support-voice-yes">Yes</label>    
+                              </div>
+                              <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="support-voice-no" name="support-voice-no" type="radio" value="no-voice">
+                                <label class="govuk-label govuk-radios__label" for="support-voice-no">No</label>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+                        
+                        <div class="govuk-form-group">
+                            <fieldset class="govuk-fieldset" aria-describedby="other-supports-hint">
+                              <legend class="govuk-fieldset__legend">* Do you need any other type of support?</legend>
+                              <p id="other-supports-hint">
+                                  If so, you won't be able to complete your booking online.<a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTTwhat-to-expect">What to expect</a>
+                              </p>
+                              <div class="govuk-radios govuk-radios--small govuk-radios--conditional" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="support-other" name="support-other" type="radio" value="yes-other" data-aria-controls="conditional-need-other-support-conditional">
+                                  <label class="govuk-label govuk-radios__label" for="support-other">Yes</label>    
+                                </div>
+                                <div class="govuk-radios__item">
+                                  <input class="govuk-radios__input" id="support-other" name="support-other" type="radio" value="no-other">
+                                  <label class="govuk-label govuk-radios__label" for="support-other">No</label>
+                                </div>
+
+                                <!-- if answer yes to need other type of support then this block will be shown -->
+                                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-need-other-support-conditional">
+                                    <p>Name:<br>
+                                    {{ data ['first-name'] or "Jo"}} {{ data ['surname'] or "McTest"}}</p>
+                                    <p>Driving licence number:<br>
+                                      {{ data ['licence-number'] or "MCTEST593800ATZ"}}</p>
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label" for="contact-number">
+                                        * Enter a contact phone number:
+                                      </label>
+                                      <input class="govuk-input" id="contact-number" name="contact-number" type="text">
+                                    </div>
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label" for="email-add">
+                                        * Enter a contact email:
+                                      </label>
+                                      <input class="govuk-input" id="email-add" name="email-add" type="text">
+                                    </div>
+                                    <div class="govuk-form-group">
+                                      <label class="govuk-label" for="email-conf">
+                                        * What kind of support do you need?
+                                      </label>
+                                      <textarea class="govuk-textarea" id="email-conf" name="email-conf" rows="5"></textarea>
+                                    </div>
+
+                                </div>
+                                  <!-- Enf of if answer yes to need other type of support then this block will be shown -->
+                              </div>
+                            </fieldset>
+                          </div>
+                          <!-- Enf of if answer yes to need support then this block will be shown -->
+                      </div>
+                </div>
+              </fieldset>
+            </div>
           </div>
           <p>When you search for your test centre you can find out what support is available for disabled candidates. For example, you can find out whether a test centre can offer help with your wheelchair, or has parking spaces for disabled drivers.</p>
           {{ govukButton({
