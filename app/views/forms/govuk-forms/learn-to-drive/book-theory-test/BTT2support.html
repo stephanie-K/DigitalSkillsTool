@@ -41,6 +41,7 @@ Support with your test
         <h2 class="govuk-heading-l" style="text-align: center; font-weight:400;">
             Support with your test
         </h2>
+        <form class="form" method="post">
         <div class="dvsa-grey-container">
           <p style="text-align: center;"><a href="#" style="text-decoration:none">Car : Car</a></p>
           <hr>
@@ -126,6 +127,18 @@ Support with your test
                                       </label>
                                       <input class="govuk-input" id="contact-number" name="contact-number" type="text">
                                     </div>
+
+                                    <div class="govuk-form-group">
+                                      <div class="govuk-checkboxes govuk-checkboxes--small">
+                                        <div class="govuk-checkboxes__item">
+                                          <input class="govuk-checkboxes__input" id="textphone" name="textphone" type="checkbox" value="textphone">
+                                          <label class="govuk-label govuk-checkboxes__label" for="centre2">I have hearing difficulties and would prefer you to contact me by Textphone.</label>
+                                        </div>
+                                      </div>
+                                    </div>
+
+
+
                                     <div class="govuk-form-group">
                                       <label class="govuk-label" for="email-add">
                                         * Enter a contact email:
@@ -158,10 +171,10 @@ Support with your test
           }) }}
           {{ govukButton({
             text: "Next",
-            classes: "button-primary",
-            href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTT3find-centre"
+            classes: "button-primary"
           }) }}
       </div>
+      </form>
     </div>
 </div>
 {% endblock %}

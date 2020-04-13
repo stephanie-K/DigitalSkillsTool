@@ -8,7 +8,15 @@ module.exports = router
 
 //  enter your new routes here *****************************************************************
 
+// book a theory test - if other support is needed and selected, then we stop and don't do the rest of the form - we show a Thank you screen.
 
+router.post('/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support', function (req, res) {
+  var otherSupport = req.session.data['support-other']
+  if (otherSupport === 'yes-other') {
+      return res.redirect('/forms/govuk-forms/learn-to-drive/book-theory-test/BTTthankyou')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/book-theory-test/BTT3find-centre')
+})
 
 
 

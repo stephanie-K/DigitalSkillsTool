@@ -25,7 +25,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-What to expect if you need any other type of support
+Book, check, change or cancel your theory driving test online
 {% endblock %}
 
 
@@ -35,25 +35,24 @@ What to expect if you need any other type of support
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l" style="text-align: center; font-weight:400;">
-            What to expect if you need any other type of support
+        <h1 class="govuk-heading-m" style="text-align: center">
+          Book, check, change or cancel your theory driving test online
         </h1>
         <div class="dvsa-grey-container">
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-full">
-                <p>Once you give us your contact details, our call centre team will contact you to discuss your needs and book your test, usually within 24 hours. (This may take a bit longer if you contact us on a bank holiday or outside the team’s normal working hours.) We might ask for evidence to back up your request, such as a letter from a teacher or a doctor.</p>
-              </div>
+          <h2 class="govuk-heading-l" style="font-weight:400;">
+            Thank you
+          </h2>
+          <div class="dvsa-white-container">
+            <p>Your request has been sent.</p>
+            <p>Our call centre team will contact you, usually within 24 hours, to talk about what help you need and book your test. This can take longer at weekends and bank holidays.</p>
+            <p>You might need to give evidence of your reading difficulty, disability or health condition so our call centre can provide the right help.</p>
           </div>
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">               
-              {{ govukButton({
-                text: "Back",
-                classes: "govuk-button--secondary",
-                href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support"
-              }) }}
-            </div>
-          </div>
-        </div>
+          {{ govukButton({
+            text: "Log out",
+            classes: "button-primary",
+            href: "https://www.gov.uk/browse/driving"
+          }) }}
+      </div>
     </div>
 </div>
 {% endblock %}
