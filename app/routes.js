@@ -18,7 +18,10 @@ router.post('/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support', fu
   res.redirect('/forms/govuk-forms/learn-to-drive/book-theory-test/BTT3find-centre')
 })
 
-
+router.get('forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support', function (req, res) {
+  req.session.otherSupport = null // this is set to null when we render the page to clear the data of this variable if we are coming back to that page with a value already set for it
+  return res.render('forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support')
+})
 
 
 
