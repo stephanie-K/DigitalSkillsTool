@@ -1,0 +1,39 @@
+{% extends "layout_tool.html" %}
+
+{% block pageTitle %}
+  About this form
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+        About this form
+    </h1>
+    <a class="govuk-back-link" href="javascript: history.go(-1)">Back to the forms menu</a>
+<p>It looks like the real form but it's a bit different and simplified</p>
+<h2 class="govuk-heading-m">
+  Please note:
+</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>you can only do the car booking (booking for a motorcyle is very similar so not done here)</li>
+  <li>you cannot chose a centre: whatever postcode you enter, ii will only show you 2 centres and always assumed you picked the Glasgow one</li>
+  <li>you cannot chose a date or chose a time, it's too much work to reproduce</li>
+  <li>the support options have been simplified</li>
+  <li>you cannot proceed to the payment page - we didn't have access to these pages so could not reproduce</li>
+  <li>there is no validation: if you forget to add some required field for example, the form will still let you through</li>
+</ul>
+
+<h2 class="govuk-heading-s">
+  At any time, selecting the logo at the top left will take you back to the start (forms menu)
+</h2>
+  {{ govukButton({
+    text: "Start the form",
+    classes: "button-primary button-info",
+    href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTThome"
+  }) }}
+
+
+  </div>
+
+{% endblock %}
