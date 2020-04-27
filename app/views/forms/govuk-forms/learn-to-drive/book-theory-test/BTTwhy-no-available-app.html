@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container dvsa-theory-header">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVSA_logo_masthead.png" alt="DVSA Logo" width="423" height="35"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Why can't I find an available appointment?
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-m" style="text-align: center">
+          Why can't I find an available appointment?
+        </h1>
+        <div class="dvsa-grey-container">
+          <div class="dvsa-white-container">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>The test centre chosen has no available appointment times or is not open. Select a different test centre.</li>
+              <li>The exam delivery dates are not available. Check another month.</li>
+              <li>The exam authorisation window is not applicable for the month being search. Check another month.</li>
+            </ul>
+          </div>
+          {{ govukButton({
+            text: "Close window",
+            classes: "govuk-button--secondary",
+            href: "javascript: history.go(-1)"
+          }) }}
+      </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
