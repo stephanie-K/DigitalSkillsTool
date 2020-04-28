@@ -1,0 +1,1384 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en">
+
+
+
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="DCSext.CLIENT_CODE" content="DSA" />
+		<meta name="format-detection" content="telephone=no" />
+
+		
+		<link rel="stylesheet" type="text/css" href="/webresources/testtaker/bootstrap-grid.min.css" />
+        
+        <link rel="stylesheet" type="text/css" href="/webresources/testtaker/bootstrap-grid.min.css" />
+        <link rel="stylesheet" type="text/css" href="/webresources/testtaker/rwd.css?build=1.2003.0.135" />
+				
+				<link rel="stylesheet" type="text/css" href="/webresources/testtaker/dsa/dsa_liquid.css?build=1.2003.0.135" />
+
+				
+				<link rel="stylesheet" class="component" href="/webresources/testtaker/jquery-ui-base-liquid.css?build=1.2003.0.135" />
+
+				<link rel="stylesheet" type="text/css" href="/webresources/testtaker/font-awesome-pro/css/all.css?build=1.2003.0.135" /><!--[if lte IE 7]><link href="/webresources/testtaker/ie.css" rel="stylesheet" type="text/css" /><![endif]-->
+		<style type="text/css">
+			.warningDialogButton {
+				float: center;
+				margin: .5em .4em .5em 0;
+				cursor: pointer;
+				padding: .2em .6em .3em .6em;
+				line-height: 1.4em;
+				width: auto;
+				overflow: visible;
+			}
+		</style>
+
+		<title>Choose appointment
+		</title><script type="text/javascript" src="/javax.faces.resource/jsf.js.htm?ln=javax.faces"></script>
+			
+
+			<script type="text/javascript" src="/webresources/js/jquery/3.3.1/jquery-3.3.1.js"></script>
+			<script type="text/javascript" src="/webresources/js/jquery/ui/1.12.1/all/jquery-ui.js"></script>
+
+		<script type="text/javascript" src="/webresources/js/non-deferred-all.js"></script>
+
+
+		<link rel="stylesheet" href="/c/cookiemsg.css" />
+		<link rel="stylesheet" href="/c/unsupported_browser.css" />
+			<style type="text/css">
+				.outOfTheWay {
+					display: none;
+					visibility:hidden;
+					clear:both;
+				}
+			</style>
+			<script type="text/javascript">
+				var timeoutInSeconds = 1800;
+				var warnPeriodMinutes = 5;
+				var sessionTimeoutPage = "/testtaker/common/SessionExpired.htm?clientCode=DSA";
+				var sessionWarningModalTitle = "Timeout warning";
+				var timeoutWarningOKButtonText = "I need more time";
+			</script>
+
+			<script type="text/javascript" src="/webresources/js/template/ie9patch.js" defer="defer"></script>
+
+			<div class="outOfTheWay">
+				<div id="warnOfSessionExpiring" aria-describedby="warnOfSessionExpiring">
+					<p>Your login session is about to expire. Do you need more time?</p>
+				</div>
+			</div>
+
+		<script type="text/javascript" charset="UTF-8" src="/webresources/js/jquery/ui/1.12.1/all/jquery-ui.js"></script>
+		<script type="text/javascript" src="/webresources/js/a11yCalendar.js"></script>
+			<script type="text/javascript" charset="UTF-8" src="/webresources/js/jquery/datepicker-i18n/jquery.ui.datepicker-en-GB.js"></script>
+
+
+		<script type="text/javascript">
+			var $$ = jQuery.noConflict();
+			var linkClicked = false;
+			$$(document).ready(function() {
+				// from defaultFormActionButton.js:
+				// this needs to be done before registering the "please wait" dialog
+				// so the default button will also trigger the dialog on form submit
+				if (enableDefaultButton) {
+					enableDefaultButton();
+				}
+
+			enableConfirmDialog('.showConfirm',
+					"Are you sure you want to leave this page? You have unsaved changes that will be lost.  Would you like to continue?", "",
+					"Yes",
+					"No",
+					"Confirm",
+					"Please wait...",
+					"Processing request");
+
+
+			// This code below was included to prevent double click action.
+			// on all html input element with 'type' = 'submit', meaning it
+			// it will prevent double cilck only on buttons.
+			$$('form').submit(function(){
+				$$(':submit', this).click(function() {
+					return false;
+				});
+			});
+
+							$$('.btn, .btn_link, .href_link, .btn_edit, .btn_cart, .btn_info, .btn_select, .personalInfo_link, .btnPositive').not('.disable-progress-dialog').click(function() {
+								progressDialog("Please wait...",
+											   "Processing request");
+							});
+			
+				/*var elements = $$('.sidebar', '#page-header');
+				Stickyfill.add(elements);
+				Stickyfill.forceSticky();*/
+			});
+			// prevent double click on an anchor link as well as selection of another link if one
+			// has already been selected.
+			function preventSecondClick(evt) {
+				if(!linkClicked){
+					progressDialog("Please wait...",
+								   "Processing request");
+					linkClicked = true;
+				} else {
+					if (evt.preventDefault) {
+						evt.preventDefault();
+					} else {
+						evt.keyCode = 0;
+						evt.returnValue = false;
+					}
+				}
+			}
+			/*<![CDATA[*/
+				// /testtaker/Template.xhtml
+				function doFocus(x,y) {
+				//				var oDiv = x.parentNode.parentNode;
+				//				oDiv.className = (y) ? 'tableRowFocus ' : 'tableRow';
+				}
+
+				function doFocusMultiple(x,y) {
+				//				var oDiv = x.parentNode.parentNode.parentNode;
+				//				oDiv.className = (y) ? 'tableRowFocus ' : 'tableRow';
+				}
+			/*]]>*/
+		</script>
+		<script type="text/javascript" src="/webresources/js/sidebar.js"></script><script type="text/javascript" src="/org.richfaces.resources/javax.faces.resource/org.richfaces.staticResource/4.5.17.Final/PackedCompressed/packed/packed.js"></script><script id="_org_richfaces_queue" type="text/javascript">RichFaces.queue.setQueueOptions({"j_id_2t_2_1v":{"queueId":"calendarQueue"} ,"j_id_2t_2_1y":{"queueId":"calendarQueue"} ,"j_id_2t_2_21":{"queueId":"calendarQueue"} });</script></head>
+	<body class="user-authenticated pageflow-examflow weborder-schedule pagename-calendarappointmentsearchpage" id="">
+			<a id="skiplink" href="#skipToMainContent" class="skip" title="Go to the main content" tabindex="0" onclick="document.getElementById('#skipToMainContent').focus();">
+					Go to the main content
+			</a>
+                <div class="unsupported-browser-wrapper" style="display: none">
+                    <div class="unsupported-browser-container">
+                        <p><i class="fa fa-exclamation-triangle"></i>Unfortunately, your browser does not meet our security requirements. You need to <a id="supportedBrowserPageLink" href="/testtaker/common/UnsupportedBrowserHelp.htm?clientCode=DSA" target="_blank">upgrade your browser</a> to the newest version to avoid any interruption in accessing PearsonVUE.com.
+                        </p>
+                        <span class="unsupported-browser-btns buttonArea">
+                            <input type="submit" id="acceptUnSupportedBrowserPolicyId" class="btn_nojs" value="I understand" />
+                        </span>
+                    </div>
+                </div>
+            <script src="/webresources/js/modernizr/modernizr.min.js" type="text/javascript" defer="defer"></script>
+            <script src="/webresources/js/unsupportedBrowser.js" type="text/javascript" defer="defer"></script>
+		<div id="cookieMsgContainer"></div>
+
+		<div id="maincontent-wrapper">
+			<header>
+				<div id="topnav" role="banner">
+					<div class="container-fluid">
+					<div class="row align-items-center">
+							<div class="clientlogo col">
+            <img src="/pvueImages/webII/logos/DSA.gif" alt="DVSA logo" />
+							</div>
+	
+
+						<div class="cart">
+						</div>
+					</div>
+					</div>
+				</div>
+			</header>
+			<div class="sticky-container">
+
+
+        <div class="hamburger-container" aria-expanded="false">
+            <a id="hamburger-button"><i class="fa fa-bars hamburger toggleButton" data-action="toggle" data-side="left" tabindex="0"></i></a>
+        </div>
+
+        <div id="sidebar" class="sidebar left menu collapsed" data-sidebar-open="false" role="navigation" aria-expanded="false">
+            <div class="logo-container">
+                <div class="toggle-container">
+                    <a id="sidebar-button" class="fa fa-angle-double-left arrow arrow-left toggleButton" data-action="toggle" data-side="left" tabindex="0"></a>
+                </div>
+                <div class="overflow-container menu-dropdown">
+                            <span class="current"><div id="candidateInfoSection" class="ccid">
+                                    <a>
+                                        <span class="icon"><i class="fa fa-user-circle" aria-hidden="true"></i></span>
+                                        <span class="screenreaderHint">Edit my profile</span>
+                                        <span class="sidebar-text"><span id="idLoggedInAsNumber">ZOE ANNE CATHERINE KRUS</span>
+                                            <br /><span id="idLabel">Driving licence number</span><span id="idColon">: </span><span id="idNumber" dir="rtl">KRUS9952117ZA9TE</span>
+                                        </span>
+                                    </a></div>
+                            </span>
+            <div>
+                <ul>
+		<li class="first"><a href="/testtaker/registration/Dashboard/DSA" id="homeLinkOnMastHead" name="homeLinkOnMastHead" class="href_link"><span class="icon"><i class="far fa-sitemap" aria-hidden="true"></i></span> <span class="sidebar-text">Booking home</span></a>
+		</li>
+			<script type="text/javascript">
+
+				var deliveryBrowser = new DeliveryBrowserStrategyChain();
+
+				$$(document).ready(function() {
+					if(deliveryBrowser.isBrowserRunning()) {
+                        if(isiPad()) {
+                            $$('#closeMobileAppDeliveryBrowserMastHead').attr('class', 'returnToApp');
+                            $$('#closeMobileAppDeliveryBrowserLinkMastHead').attr('class', 'returnToApp');
+                        } else {
+                            $$('#closeDeliveryBrowserMastHead').attr('class', '');
+                            $$('#closeDeliveryBrowserLinkMastHead').attr('class', '');
+                        }
+					}
+				});
+			</script>
+
+			<li id="closeDeliveryBrowserMastHead" class="outOfTheWay">
+                <a id="closeDeliveryBrowserLinkMastHead" class="outOfTheWay" href="javascript:deliveryBrowser.closeWindow();">
+                    <span class="icon">
+                        <i class="far fa-window-close" aria-hidden="true"></i>
+                    </span>
+                    <span class="sidebar-text">Close browser</span>
+                </a>
+			</li>
+            <li id="closeMobileAppDeliveryBrowserMastHead" class="outOfTheWay">
+                <a id="closeMobileAppDeliveryBrowserLinkMastHead" class="outOfTheWay" href="javascript:deliveryBrowser.closeWindow();">
+                    <span class="icon">
+                        <i class="far fa-undo" aria-hidden="true"></i>
+                    </span>
+                    <span class="sidebar-text">Return to the App Menu</span>
+                </a>
+            </li>
+        <li class="signout"><a href="/testtaker/common/SessionExpired.htm?signOut" id="liquidLogoutLinkOnMastHead" name="liquidLogoutLinkOnMastHead" class="href_link " title="Log out and go to DVSA online shop">
+					<span id="signout" class="icon"><i class="far fa-sign-out" aria-hidden="true"></i></span><span class="sidebar-text">Log out</span></a>
+        </li>
+        <li>
+            <a href="#" class="optanon-toggle-display" data-ignore-geolocation="true">
+                <span class="icon">
+                    <i class="far fa-lock" aria-hidden="true"></i>
+                </span>
+                <span class="sidebar-text">Privacy Settings</span>
+            </a>
+        </li>
+                </ul>
+            </div>
+
+                </div>
+                <div id="logoBuffer"></div>
+                        <div id="logo"></div>
+            </div>
+        </div><form id="toggleForm" name="toggleForm" method="post" action="/testtaker/registration/CalendarAppointmentSearchPage/DSA/2986475" enctype="application/x-www-form-urlencoded"><span id="toggleForm:j_id_1z" style="display: none;"><script type="text/javascript">sideBarToggle=function(){RichFaces.ajax("toggleForm:j_id_1z",null,{"incId":"1"} )};</script></span><input autocomplete="off" id="toggleForm:sideBarToggle" name="toggleForm:sideBarToggle" type="text" value="collapsed" class="hidden" /><input type="hidden" name="toggleForm_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:1" value="1lR3YKDFpugeCOwPE6BQ3iiH03KRbmu+odwhRiYXfiixsiEN" autocomplete="off" /></form>
+
+					<div id="maincontent" class="maincontent-sidebar collapsed" role="main">
+			<a name="skipToMainContent" id="skipToMainContent" tabindex="-1" aria-label="Main Content"></a><div id="pseudoHeader" class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col"><div id="pseudoHeadingDiv" class="serviceName">Book, check, change or cancel your theory driving test online</div>
+						</div>
+					</div></div>
+				<div class="container-fluid" id="">
+					<div class="row align-items-center">
+						<div class="col">
+						</div>
+					</div>
+				</div>
+    <div class="container-fluid" id="page-header">
+        <div class="row align-items-center">
+            <div class="col">
+                    <h1>Choose appointment</h1><form id="genericPreviousForm1" name="genericPreviousForm1" method="post" action="/testtaker/registration/CalendarAppointmentSearchPage/DSA/2986475" enctype="application/x-www-form-urlencoded">
+                        <div class="prev">
+                            <div class="icon"><a href="#" onclick="return myfaces.oam.submitForm('genericPreviousForm1','j_id_2n_3');" title="Previous Header" style="text-decoration: none" class="href_link far fa-arrow-left"></a>
+                                <span class="screenreaderHint">Previous page</span>
+                            </div>
+                        </div><input type="hidden" name="genericPreviousForm1_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:2" value="1lR3YKDFpugeCOwPE6BQ3iiH03KRbmu+odwhRiYXfiixsiEN" autocomplete="off" /></form>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+    /*<![CDATA[*/
+    $$(document).ready(function () {
+        var expand, errorArea, errorExists = false,
+            isBackToBack = eval('false'),
+            isExamSeriesBlock = eval('true');
+
+        if (isBackToBack) {
+            var len =  eval('1');
+            if (isExamSeriesBlock) len++;
+
+            for (var i=0; i < len; i++) {
+                var TagAlongLink = $$('#TagAlongLink'+ i)[0];
+                if ("false" == 'true') {
+                    showTagalongArea(TagAlongLink);
+                }else{
+                    hideTagalongArea(TagAlongLink);
+                }
+            }
+        }
+        else {
+            var TagAlongLink = $$('#TagAlongLink')[0];
+            if ("false" == 'true') {
+                showTagalongArea(TagAlongLink);
+            }else{
+                hideTagalongArea(TagAlongLink);
+            }
+        }
+
+    });
+
+    function toggleDisplayOfTagAlong(e) {
+
+        if (e === undefined) return false;
+
+        var MAX_LENGTH_TAGALONG_LINK = 12;
+        var targetLinkId = e.id;
+        var idx = eval(targetLinkId.substring(MAX_LENGTH_TAGALONG_LINK));
+        var TagAlongLink = (idx === undefined) ? $$('#TagAlongLink') : $$('#TagAlongLink'+ idx);
+        var TagAlongArea = (idx === undefined) ? $$('#TagAlongArea') : $$('#TagAlongArea'+ idx);
+
+        if (TagAlongLink && TagAlongArea) {
+            if (TagAlongArea.css('display') === 'none') {
+                showTagalongArea(e)
+            } else {
+                hideTagalongArea(e)
+            }
+        }
+    }
+
+    function showTagalongArea(e){
+
+        if (e === undefined) return false;
+
+        var MAX_LENGTH_TAGALONG_LINK = 12;
+        var targetLinkId = e.id;
+        var idx = eval(targetLinkId.substring(MAX_LENGTH_TAGALONG_LINK));
+        var TagAlongLink = (idx === undefined) ? $$('#TagAlongLink') : $$('#TagAlongLink'+ idx);
+        var TagAlongArea = (idx === undefined) ? $$('#TagAlongArea') : $$('#TagAlongArea'+ idx);
+
+        TagAlongLink.attr('class', 'accordion open');
+        TagAlongArea.css('display', '');
+        TagAlongLink.attr('aria-expanded', 'true');
+    }
+
+    function hideTagalongArea(e){
+
+        if (e === undefined) return false;
+
+        var MAX_LENGTH_TAGALONG_LINK = 12;
+        var targetLinkId = e.id;
+        var idx = eval(targetLinkId.substring(MAX_LENGTH_TAGALONG_LINK));
+        var TagAlongLink = (idx === undefined) ? $$('#TagAlongLink') : $$('#TagAlongLink'+ idx);
+        var TagAlongArea = (idx === undefined) ? $$('#TagAlongArea') : $$('#TagAlongArea'+ idx);
+
+        TagAlongLink.attr('class','accordion closed');
+        TagAlongArea.css('display','none');
+        TagAlongLink.attr('aria-expanded', 'false');
+    }
+
+    function initConfirmDialog() {
+        enableConfirmDialog('#changeExamButton',
+            "Are you sure you want to change the test?", "",
+            "Yes",
+            "No",
+            "Confirm",
+            "Please wait...",
+            "Processing request"
+        );
+    }
+
+    initConfirmDialog();
+
+    /*]]>*/
+</script><form id="tagalongForm" name="tagalongForm" method="post" action="/testtaker/registration/CalendarAppointmentSearchPage/DSA/2986475" enctype="application/x-www-form-urlencoded">
+            <div class="container-fluid tag-along" id="tag-along">
+                <div class="row align-items-center">
+                    <div class="col"><a href="javascript:void(0);" id="TagAlongLink" name="TagAlongLink" onclick="toggleDisplayOfTagAlong(this)" class="accordion closed">
+                                    <span class="examSelectionDetails">Car: Car</span></a>
+                                <div id="TagAlongArea" class="TagAlongArea">
+                                    <span class="changeExam"><a href="#" onclick="return myfaces.oam.submitForm('tagalongForm','changeExamButton');" id="changeExamButton" class="btn_link_dialog">
+                                                    Change test
+                                        </a>
+                                    </span>
+
+                                    <span class="additionalExamSelectionDetails">Language: English</span>
+
+                                    <div class="detailsExamModulesChange">
+                                    </div>
+
+                                    <span class="additionalExamSelectionDetails">Additional support: BritSignLan(BSL):On-screen video</span>
+		<div id="accommodationLink" class="confirmDecision-dialog">
+			<a id="openModalAccommodationDetails_accommodationDisplayComponent_accommodationsDetailsLinkModalDiv" name="openModalAccommodationDetails" href="#" onclick="openDetailsDialog(); return false;">View Additional Support Details</a>
+		</div>
+
+		<div class="outOfTheWay JustADumbDivToHideThisModalDivOnPageLoad">
+			<div id="accommodationDisplayComponent_accommodationsDetailsLinkModalDiv">
+	<table class="examDetailsModal" id="unRestrictedPreApprovedTableForModal" summary="This table lists the special requirements, along with a description of each special requirement." aria-describedby="accommodationDisplayTableDescription">
+		<caption class="access">Additional Support Details</caption>
+		<thead>
+		<tr>
+			<th scope="col">Additional Support</th>
+			<th scope="col">Description</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>BritSignLan(BSL):On-screen video</td>
+				<td>An on-screen video of the test being signed in British Sign Language (BSL) is provided</td>
+			</tr>
+		</tbody>
+	</table>
+			</div>
+		</div>
+		<script type="text/javascript">
+
+		/*<![CDATA[*/
+		var $$ = jQuery.noConflict();
+		var detailsModal;
+		$$(document).ready( function() {
+			initializeModal();
+		});
+		function openDetailsDialog() {
+			if (!detailsModal) {
+				initializeModal();
+			}
+			detailsModal.dialog( "open" );
+		}
+
+		function initializeModal() {
+			detailsModal = $$("#accommodationDisplayComponent_accommodationsDetailsLinkModalDiv").dialog({
+				title:"Additional Support Details",
+				width: 550,
+				height: 320,
+				autoOpen: false,
+				position: { at: "center" } ,
+				resizable: true,
+				bgiframe: true,
+				modal: true,
+				closeOnEscape: true,
+				buttons: [{ text: "Close window",
+					click: function() {
+						$$(this).dialog("close");
+					},
+					id: "accommodationDetailsDivForModal_close_btn_modal"
+				}]
+			});
+		}
+		/*]]>*/
+
+		</script>
+
+                                </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                /*<![CDATA[*/
+                var $$ = jQuery.noConflict();
+                $$(document).ready(function(){
+                    initConfirmDialog();
+                });
+                /*]]>*/
+            </script><input type="hidden" name="tagalongForm_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:3" value="1lR3YKDFpugeCOwPE6BQ3iiH03KRbmu+odwhRiYXfiixsiEN" autocomplete="off" /></form>
+					<div class="container"><form id="calendarForm" name="calendarForm" method="post" action="/testtaker/registration/CalendarAppointmentSearchPage/DSA/2986475" enctype="application/x-www-form-urlencoded">
+			<div class="row">
+
+				<div class="headblock container">
+					<div id="impossibleRegistrationMessageDiv">
+					</div>
+					<div id="availableDayErrorMessageDiv"></div>
+					<div id="selectApptTimeErrorMessageDiv">
+					</div>
+
+					<div id="preferredDateNotAvailableWarning"></div>
+
+					<div id="allModulesWaivedWarningDiv"><span id="allModulesWaivedWarning"><span id="allModulesWaivedWarningMsg2"></span></span>
+					</div>
+
+					<div id="calendarAdvancedMessageDiv" style="display: none">
+						<div class="advisory">
+						</div>
+					</div>
+				</div>
+					<div id="selectedCentersArea" class="col-md-6 col-sm-12">
+						<fieldset id="multiTestCenterFieldset">
+							<legend id="multiTestCenterLegend" style="padding: 0;">
+								<h2>Test centre</h2>
+							</legend>
+							<table cellspacing="0" id="selectedCentersTable" role="presentation">
+									<tr class="tableRowClickEffect">
+										<td>
+											<p class="tc_name" id="tc_name_48909">Pearson Centre - Glasgow</p>
+											<div class="tc_address" id="tc_address_48909">Suite 325, Pentagon Centre,<br/>36-38 Washington Street<br/>Glasgow<br/>G3 8AZ
+											</div>
+										</td>
+									</tr>
+							</table>
+								<p><input role="link" id="changeTestCenterLink" name="changeTestCenterLink" type="submit" value="Change test centres" class="btn_link" /></p>
+						</fieldset>
+					</div>
+				
+
+				<div id="calendarArea" class=" col-md-6 col-sm-12">
+					<div class="">
+						<div id="calendarDiv">
+							<h2>
+								Select date
+								<span class="normal">
+								<a id="noAvailDateLink" href="#" onclick="openAvailableDateDialog(); return false;"> Why can't I find an available appointment?</a>
+							</span>
+							</h2>
+							<div id="a11yCalendar"></div>
+							<p>Select a date from the calendar. Only available dates can be selected.</p>
+						</div>
+					</div>
+						<div class="averageTestLength"><span id="averageTestLength">The average test length is 60 minutes</span>
+						</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div id="chooseAppointments" class="expanded col-md-6 col-sm-12  offset-md-6"></div>
+			</div>
+
+
+			<div id="invalidWaiverWarningDiv"><div id="invalidWaiverWarning"></div>
+			</div>
+
+			<div style="visibility:hidden; clear:both;">
+				<div id="availableDateDialog"><span id="availableDateDialogTable"><span id="availableDateDialogContent"><ul>
+<li>The test centre chosen has no available appointment times or is not open. Select a different test centre.<br/><br/></li>
+<li>The exam delivery dates are not available. Check another month.<br/><br/></li>
+<li>The exam authorisation window is not applicable for the month being searched. Check another month.<br/><br/></li>
+</ul></span></span>
+				</div>
+			</div>
+
+			<div class="btn-container">
+				<div class="row">
+					<div class="col"><input id="backButton" name="backButton" type="submit" value="Previous" role="button" class="btn-secondary btn_link returnHomeBtn" />
+						<div id="registerNowBtnDiv"><span id="registerNowBtnGroup"></span>
+						</div>
+					</div>
+				</div>
+			</div><input id="selectAppointmentButton" name="selectAppointmentButton" type="submit" onclick="var cf = function(){checkApptSelectionBtnClicked(event)};var oamSF = function(){};return (cf.apply(this, [])==false)? false : oamSF.apply(this, []); " style="visibility: hidden;" /><input type="hidden" id="selectedAppointmentId" name="selectedAppointmentId" value="" /><span id="j_id_2t_2_1s" style="display: none;"><script type="text/javascript">getAvailableDaysAjax=function(year,month){RichFaces.ajax("j_id_2t_2_1s",null,{"queueId":"j_id_2t_2_1v","incId":"1","parameters":{"year":year,"month":month} } )};</script></span><span id="j_id_2t_2_1w" style="display: none;"><script type="text/javascript">getAppointmentTimesForDayAjax=function(selectedDate){RichFaces.ajax("j_id_2t_2_1w",null,{"queueId":"j_id_2t_2_1y","incId":"1","parameters":{"selectedDate":selectedDate} } )};</script></span><span id="j_id_2t_2_1z" style="display: none;"><script type="text/javascript">validateWaivers=function(selectedDate){RichFaces.ajax("j_id_2t_2_1z",null,{"queueId":"j_id_2t_2_21","incId":"1","parameters":{"selectedDate":selectedDate} } )};</script></span><span id="j_id_2t_2_22" style="display: none;"><script type="text/javascript">setHourValueAjax=function(isHour12){RichFaces.ajax("j_id_2t_2_22",null,{"incId":"1","parameters":{"isHour12":isHour12} } )};</script></span><span id="j_id_2t_2_24" style="display: none;"><script type="text/javascript">timeZoneSelectionChangedAjax=function(timeZoneID){RichFaces.ajax("j_id_2t_2_24",null,{"incId":"1","parameters":{"timeZoneID":timeZoneID} } )};</script></span><input type="hidden" name="calendarForm_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="j_id__v_0:javax.faces.ViewState:4" value="1lR3YKDFpugeCOwPE6BQ3iiH03KRbmu+odwhRiYXfiixsiEN" autocomplete="off" /></form>
+
+
+		<script type="text/javascript">
+            /*<![CDATA[*/
+
+            var $$ = jQuery.noConflict();
+
+            var datepicker = null;
+
+            var defaultDate = new Date(1586322000000);
+            var maxDate = '07/07/2020';
+
+            var availableDates = [];
+            var currentYear;
+            var currentMonth;
+
+            var refreshErrorMessageDiv = false;
+
+            var calendarAdvancedMessageDisplayedOnce = false;
+
+            var isReschedule = false;
+            var autoSelectDay = defaultDate;
+            var autoSelectDayOnLoad = false;
+            var isRegistrationImpossible = false;
+            var apptSelectionBtnClicked = false;
+            var changeButtonToggeled = false;
+            var alreadyShownPreferredDateUnavailableWarning = false;
+			var calAdvanceMsgNotEmpty = false;
+			var preferredDate = new Date("");
+			var preferredDateRequested = false;
+			var preferredDateRequestedViaSSO = false;
+
+            function checkApptSelectionBtnClicked(evt) {
+                if (!apptSelectionBtnClicked) {
+                    apptSelectionBtnClicked = true;
+                } else {
+                    evt = (evt) ? evt : ((event) ? event : null);
+                    if (evt.preventDefault) {
+                        evt.preventDefault();
+                    }
+                    else {
+                        evt.keyCode = 0;
+                        evt.returnValue = false;
+                    }
+                }
+            }
+
+            function shouldShowPreferredDateUnavailableWarning() {
+				if (preferredDateRequested && preferredDate.getMonth() + 1 === currentMonth
+						&& !alreadyShownPreferredDateUnavailableWarning && availableDates.length > 0
+						&& preferredDateRequestedViaSSO && !calAdvanceMsgNotEmpty) {
+
+				    if ("false") {
+                        var acctID = "UA-2550497-4";
+                        var eventfields =["PostSeatSearch", "LostAppointment"];
+                        var customMetaPrefixList = [
+                            {id:"cd7", value:"48909"}
+                        ];
+
+                        new GoogleAnalyticsFacade(acctID).postEvent("DCSext",eventfields, customMetaPrefixList);
+					}
+
+					$$("#preferredDateNotAvailableWarning").html("<span class='advisory'>The appointment you selected is no longer available.</span>");
+					alreadyShownPreferredDateUnavailableWarning = true;
+				}
+			}
+
+            $$(document).ready(function() {
+				$$("#a11yCalendar").show();
+
+                if(!$$('#selectedCentersArea').length){
+                    $$('#calendarArea').addClass('noSelectedCenters');
+                    $$('#chooseAppointments').addClass('noSelectedCenters');
+                }
+
+                $$("#invalidWaiverWarningDiv").dialog(
+                        {
+                            stack: false,
+                            width: 540,
+                            resizable: true,
+                            autoOpen: false,
+                            bgiframe: true,
+                            fontSize:15,
+                            closeOnEscape: true,
+                            modal: true ,
+                            buttons: { "Close window": function() {
+                                    $$(this).dialog("close");
+                                }}
+                        });
+
+                $$("#availableDateDialog").dialog(
+                        {
+                            title: "Why can't I find an available appointment?",
+                            stack: false,
+                            width: 540,
+                            resizable: true,
+                            autoOpen: false,
+                            bgiframe: true,
+                            fontSize: 15,
+                            closeOnEscape: true,
+                            modal: true,
+                            buttons: [
+                                {text:"Close window", id:"availableDateDialogCloseButton", click: function() {closeAvailableDateDialog();}}
+                            ]
+                        });
+                // set up the date picker
+                datepicker = $$('#a11yCalendar').datepicker({
+                    defaultDate: defaultDate,
+                    minDate: '+0d',
+                    maxDate: maxDate,
+                    numberOfMonths: 1,
+                    dateFormat: 'mm/dd/yy',
+                    onChangeMonthYear: function(year, month, datepicker) {
+                        currentYear = year;
+                        currentMonth = month;
+                        refreshErrorMessageDiv = true;
+
+                        getAvailableDays(currentYear, currentMonth);
+
+                        if (calendarAdvancedMessageDisplayedOnce) {
+                            $$('#calendarAdvancedMessageDiv').css("display", "none");
+                        }
+                    },
+                    onSelect: function(selectedDate, datepicker) {
+                        selectAppointmentDay(selectedDate);
+                    },
+                    beforeShowDay: function(date) {
+                        if (isRegistrationImpossible) {
+                            return [false];
+                        }
+
+                        var dateString = dateToMMDDYYYY(date);
+                        var dateAvailable = $$.inArray(dateString, availableDates) != -1;
+                        return [dateAvailable];
+                    },
+                    hijriEnabled: false
+                });
+
+				initializeA11yCalendar(["noAvailDateLink"],["changeTimeZone","replaceTimeZone","hour24","hour12","calendarForm:backButton","calendarForm:cancel"]);
+
+                // Datepicker must initialize/load available days on page load.
+                var datepickerDiv = $$('#a11yCalendar');
+                var onChangeMonthYear = datepickerDiv.datepicker("option", "onChangeMonthYear");
+                onChangeMonthYear(defaultDate.getFullYear(), defaultDate.getMonth() + 1, datepickerDiv); //expects a non-zero-based month
+
+                // Deselect the automatically-selected day, unless we're auto-selecting on load.
+                if (!autoSelectDayOnLoad) {
+                    $$.datepicker._getInst($$('#a11yCalendar')[0]).currentDay = null;
+                }
+
+                // Show the "calendar advance" message (if there is one).
+                if (calAdvanceMsgNotEmpty) {
+                    $$('#calendarAdvancedMessageDiv').css("display", "block");
+                    calendarAdvancedMessageDisplayedOnce = true;
+                }
+
+                // Hover and click css effects for test center list
+                $$('#selectedCentersTable tr').hover(
+                        function() {
+                            $$(this).addClass("tableRollOverEffect");
+                        },
+                        function() {
+                            $$(this).removeClass("tableRollOverEffect");
+                        }
+                );
+
+                // Attach a click event to the test center table rows to set the css style of the selected center and update the calendar
+                $$('#selectedCentersTable tr').click(function() {
+                    var testCenterRadioButton = $$(this).find('input:radio');
+
+                    if (!testCenterRadioButton.prop('checked')) {
+                        testCenterRadioButton.prop('checked', 'checked');
+                        var testCentersRows = $$('#selectedCentersTable tr');
+
+                        for (var i = 0; i < testCentersRows.length; i++) {
+                            var testCenterRow = $$(testCentersRows[i]);
+                            var testCenterRadio = testCenterRow.find('input:radio');
+                            if (testCenterRadio.prop('checked')) {
+                                if (!testCenterRow.hasClass("tableRowClickEffect")) {
+                                    testCenterRow.addClass("tableRowClickEffect");
+                                    resetCalendar();
+                                }
+                            }
+                            else {
+                                testCenterRow.removeClass("tableRowClickEffect");
+                            }
+                        }
+                    }
+                });
+
+                $$('input:radio').click(function() {
+                    var testCenterRadioButton = $$(this).find('input:radio');
+
+                    if (!testCenterRadioButton.prop('checked')) {
+                        testCenterRadioButton.prop('checked', 'checked');
+                        var testCentersRows = $$('#selectedCentersTable tr');
+
+                        for (var i = 0; i < testCentersRows.length; i++) {
+                            var testCenterRow = $$(testCentersRows[i]);
+                            var testCenterRadio = testCenterRow.find('input:radio');
+                            if (testCenterRadio.prop('checked')) {
+                                if (!testCenterRow.hasClass("tableRowClickEffect")) {
+                                    testCenterRow.addClass("tableRowClickEffect");
+                                    resetCalendar();
+                                }
+                            }
+                            else {
+                                testCenterRow.removeClass("tableRowClickEffect");
+                            }
+                        }
+                    }
+                } );
+                // remove fieldset and legend around test center heading when single test center selected
+				var isMultiTestCenter = false;
+				if (!isMultiTestCenter){
+					removeFieldsetAndLegend();
+				}
+				// NOTE: Commented this out to avoid double initialization.  The enableConfirmDialog is initialize in TagAlongTemplate.xhtml.
+				// By: vjaspji
+				// 12/03/2019 10:39am
+				//
+                // enableConfirmDialog('#changeExamButton',
+                //         "Are you sure you want to change the test?", "",
+                //         "Yes",
+                //         "No",
+                //         "Confirm",
+                //         "Please wait...",
+                //         "Processing request"
+                // );
+
+                showSelectADateMessage();
+            });
+
+            function getAvailableDays(year, month) {
+                // clear out error messages
+                progressDialog("Please wait...",
+                        "Processing request");
+                getAvailableDaysAjax(year, month);
+            }
+
+            function selectAppointmentDay(selectedDate) {
+                 refreshErrorMessageDiv = true;
+                $$('#selectApptTimeErrorMessageDiv').html("");
+				$$("#preferredDateNotAvailableWarning").html("");
+                shouldShowPreferredDateUnavailableWarning();
+                getAppointmentTimesForDay(selectedDate);
+            }
+
+            function getAppointmentTimesForDay(selectedDate) {
+                // Reset choose appointments for arrival of new data.
+                // As of Jan 2013, this must occur before the progressDialog modal is placed,
+                // or the modal appears intermittently.
+                $$('#chooseAppointments').html('');
+
+                // Display modal.
+                progressDialog("Please wait...",
+                        "Processing request");
+
+                validateWaivers(selectedDate);
+                getAppointmentTimesForDayAjax(selectedDate);
+            }
+
+            function isDateOccursNextMonth(date) {
+                var now = new Date();
+                var startOfNextMonth;
+                if (now.getMonth() == 11) {
+                    startOfNextMonth = new Date(now.getFullYear() + 1, 0, 1);
+                } else {
+                    startOfNextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+                }
+
+                return date.getMonth() == startOfNextMonth.getMonth() && date.getFullYear() == startOfNextMonth.getFullYear();
+            }
+
+            //Causing a defect if the date is passed as is to the datepicker in some locales. So constructing a JS date object again
+            //before setting it on to jQuery - Giri
+            function getDateFromString(dateString) {
+                var dateParts = dateString.match(/(\d+)/g);
+                var dateObject = new Date();
+                dateObject.setFullYear(dateParts[2], dateParts[0] - 1, dateParts[1]);
+                return dateObject;
+            }
+
+            function processAvailableDayJson(availableDatesJsArray) {
+
+                var responseObject = eval('(' + availableDatesJsArray + ')');
+                availableDates = responseObject.availableDates;
+                refreshDatePicker();
+                renderAvailableDayErrors(responseObject);
+                shouldShowPreferredDateUnavailableWarning();
+
+                closeDialog('#progressDialog', 0);
+                $$('a.ui-state-default').first().focus();
+
+                // Note: the call to getAppointmentTimesForDay will be responsible for restoring the Please Wait modal.
+                if (autoSelectDayOnLoad) {
+                    autoSelectDayOnLoad = false;
+
+                    // if a date is selected by default, get the appointments for that date
+                    var dateString = (autoSelectDay.getMonth() + 1) + "/" + autoSelectDay.getDate() + "/" + autoSelectDay.getFullYear();
+                    refreshErrorMessageDiv = false;
+                    getAppointmentTimesForDay(dateString);
+                }
+                initFirstMessageFocus();
+            }
+
+            function focus(){
+                $$("#apptTable input.btn_select").parent(":visible").children().first().focus();
+            }
+
+            function setupHourDisplay(isHour12) {
+                if (isHour12 === 'true') {
+                    $$('#hour12').hide();
+                    $$('#displayMorningAppts').find('td').find('span').filter(".hour24TimesAMSpan").hide();
+                    $$('#displayMorningAppts').find('td').find('span').filter(".hour12TimesAMSpan").show();
+                    $$('#displayAfternoonAppts').find('td').find('span').filter(".hour24TimesPMSpan").hide();
+                    $$('#displayAfternoonAppts').find('td').find('span').filter(".hour12TimesPMSpan").show();
+                } else {
+                    $$('#hour24').hide();
+                    $$('#displayMorningAppts').find('td').find('span').filter(".hour12TimesAMSpan").hide();
+                    $$('#displayMorningAppts').find('td').find('span').filter(".hour24TimesAMSpan").show();
+                    $$('#displayAfternoonAppts').find('td').find('span').filter(".hour12TimesPMSpan").hide();
+                    $$('#displayAfternoonAppts').find('td').find('span').filter(".hour24TimesPMSpan").show();
+                }
+
+                registerHourEvents();
+            }
+            // Registering click events for Time toggle.
+            function registerHourEvents() {
+                $$('#hour12').click(function (event) {
+                    event.preventDefault();
+                    $$('#hour12').hide();
+                    $$('#hour24').show().focus();
+                    $$('#displayMorningAppts').find('td').find('span').filter(".hour12TimesAMSpan").show();
+                    $$('#displayMorningAppts').find('td').find('span').filter(".hour24TimesAMSpan").hide();
+                    $$('#displayAfternoonAppts').find('td').find('span').filter(".hour12TimesPMSpan").show();
+                    $$('#displayAfternoonAppts').find('td').find('span').filter(".hour24TimesPMSpan").hide();
+                    setHourValueAjax(true);
+                });
+                $$('#changeTimeZone').click(function (event) {
+                    event.preventDefault();
+                    changeButtonToggeled = true;
+                   //  console.log(" changeTimeZone  "+$$('#timeZoneLabel').html())
+                    $$('#filterInputTimeZone').val($$('#timeZoneLabel').html());
+                    $$('#filterInputTimeZone').attr('value', $$('#timeZoneLabel').html());
+                    //console.log(" changeTimeZone 2 "+$$('#filterInputTimeZone').val());
+                    $$('#timezone_seperator').hide();
+                    $$('#timeZoneLabel').hide();
+                    $$('#changeTimeZone').hide();
+
+                    setTimeout(function() { $$('#filterInputTimeZone').focus();
+                        $$('#filterInputTimeZone').keydown(function(event) {
+                            //13 is the ENTER key
+                            console.log(" filterInputTimeZone  keydown "+event.keyCode);
+                            if (event.keyCode == '13') {
+                                event.preventDefault();
+                             }
+                        });
+
+                    }, 1);
+                    $$('#replaceTimeZone').html($$('#searchTimeZoneComponent_home').html());
+                    $$('#searchTimeZoneComponent_home').html('');
+                });
+
+
+                $$('#hour24').click(function (event) {
+                    event.preventDefault();
+                    $$('#hour24').hide();
+                    $$('#hour12').show().focus();
+                    $$('#displayMorningAppts').find('td').find('span').filter(".hour24TimesAMSpan").show();
+                    $$('#displayMorningAppts').find('td').find('span').filter(".hour12TimesAMSpan").hide();
+                    $$('#displayAfternoonAppts').find('td').find('span').filter(".hour24TimesPMSpan").show();
+                    $$('#displayAfternoonAppts').find('td').find('span').filter(".hour12TimesPMSpan").hide();
+                    setHourValueAjax(false);
+                });
+            }
+
+            function processAppointmentJson(availableAppointmentsJson) {
+                if (availableAppointmentsJson != '') {
+                    var jsonData = eval('(' + availableAppointmentsJson + ')');
+                    if ((Array.isArray(jsonData.appointmentsAM) && jsonData.appointmentsAM.length > 0)
+                            || (Array.isArray(jsonData.appointmentsPM) && jsonData.appointmentsPM.length > 0)) {
+                        var selectedDateDisplayString = jsonData.selectedDateFormatted;
+                        var availableAppointmentForSelectedDate = jsonData.messageAvailableAppointmentForSelectedDate;
+                        var availableStartTimes = jsonData.messageAvailableStartTimes;
+                        var at = jsonData.messageAt;
+                        var timesShownIn = jsonData.messageTimesShownIn;
+                        var labelShow12Hour = jsonData.messageLabelShow12Hour;
+                        var labelShow24Hour = jsonData.messageLabelShow24Hour;
+                        var morning = jsonData.messageMorning;
+                        var noneAvailable = jsonData.messageNoneAvailable;
+                        var afternoon = jsonData.messageAfternoon;
+
+                        // Build and render appointment table HTML.
+                        var html = '';
+                        html += "<table id =\"apptTable\" cellspacing=\"0\" tabIndex=\"-1\" summary=\"" + availableAppointmentForSelectedDate + "\">";
+                        html += '<thead>';
+                        html += '<tr>';
+                        html += '<th id="outerHeading" colspan="2"> ';
+                        html += availableStartTimes;
+                        if (selectedDateDisplayString) {
+                            html += ' ' + selectedDateDisplayString;
+                        }
+                        if (jsonData.testCenterName != null) {
+                            html += ' ' + at + ' <span class="centerName">' + jsonData.testCenterName + '</span>';
+                        }
+                        if (null != jsonData.timeZone) {
+                            html += '<br/>';
+                            html += timesShownIn + '  <span  id="timeZoneLabel" class="centerName">' + jsonData.timeZone + '</span>';
+                           	if(jsonData.isOnlineProtor === "true"){
+                           	   // html += '<a id="changeTimeZone" class="btn_link_dialog" href="javascript:void(0);"> New Change </a> <span id="replaceTimeZone" ></span>';
+                                html += '  <a id="changeTimeZone"  class="btn_link_dialog" href="javascript:void(0);" >'+jsonData.changeLinkLabel+'</a> <span id="timezone_seperator">|</span><span id="replaceTimeZone"></span>';
+                            }
+                        }
+                        html += '  <a id="hour12" class="btn_link_dialog" href="javascript:void(0);">' + labelShow12Hour + '</a>';
+                        html += '<a id="hour24" class="btn_link_dialog" href="javascript:void(0);">' + labelShow24Hour + '</a>';
+
+                        html += '</th>';
+                        html += '</tr>';
+                        html += '</thead>';
+
+                        html += '<tbody>';
+                        html += '<tr>';
+                        html += '<td>';
+                        html += '<table cellspacing="0" id="displayMorningAppts">';
+                        html += '<thead>';
+                        html += '<tr>';
+                        html += '<th id="amHeading" scope="col"> ';
+                        html += morning;
+                        html += '</th>';
+                        html += '</tr>';
+                        html += '</thead>';
+                        html += '<tbody>';
+                        var seatSearchMode = jsonData.readOnlyApptTimes;
+
+                        if (jsonData.appointmentsAM == null || jsonData.appointmentsAM.length == 0) {
+                            html += '<tr><td headers="amHeading">';
+                            html += noneAvailable;
+                            html += '</td></tr>';
+                        } else {
+                            for (var i = 0; i < jsonData.appointmentsAM.length; i++) {
+                                var appt = jsonData.appointmentsAM[i];
+                                var hour12Time = appt.hour12Time;
+                                var hour24Time = appt.hour24Time;
+                                var startTimeMillis = appt.timeMillis;
+                                var testCenterId = appt.testCenterId;
+
+                                html += '<tr>';
+                                html += '<td headers="amHeading">';
+                                html += '<span class="hour12TimesAMSpan">';
+                                if (seatSearchMode == 'true') {
+                                    html += hour12Time;
+                                } else {
+                                    html += ' <input id="';
+                                    html += startTimeMillis;
+                                    html += ':';
+                                    html += testCenterId;
+                                    html += ':12AM';
+                                    html += '"';
+                                    html += ' name="test" ';
+                                    html += ' onclick="selectAppointmentTime(\'' + startTimeMillis + ':' + testCenterId + '\')" class="btn_select" type="button" value="' + hour12Time + '"';
+									html += '/>';
+                                }
+                                html += '</span>';
+                                html += '<span class="hour24TimesAMSpan">';
+                                if (seatSearchMode == 'true') {
+                                    html += hour24Time;
+                                } else {
+                                    html += ' <input id="';
+                                    html += startTimeMillis;
+                                    html += ':';
+                                    html += testCenterId;
+                                    html += ':24AM';
+                                    html += '"';
+                                    html += ' name="test" ';
+                                    html += ' onclick="selectAppointmentTime(\'' + startTimeMillis + ':' + testCenterId + '\')" class="btn_select" type="button" value="' + hour24Time + '"';
+									html += '/>';
+                                }
+                                html += '</span>';
+                                html += '</td>';
+                                html += '</tr>';
+                            }
+                        }
+                        html += '</tbody>';
+                        html += '</table>';
+                        html += '</td>';
+
+                        html += '<td>';
+                        html += '<table cellspacing="0" id="displayAfternoonAppts">';
+                        html += '<thead>';
+                        html += '<tr>';
+                        html += '<th id="pmHeading" scope="col"> ';
+                        html += afternoon;
+                        html += '</th>';
+                        html += '</tr>';
+                        html += '</thead>';
+                        html += '<tbody>';
+                        if (jsonData.appointmentsPM == null || jsonData.appointmentsPM.length == 0) {
+                            html += '<tr><td headers="pmHeading">';
+                            html += noneAvailable;
+                            html += '</td></tr>';
+                        } else {
+                            for (var i = 0; i < jsonData.appointmentsPM.length; i++) {
+                                var appt = jsonData.appointmentsPM[i];
+                                var hour12Time = appt.hour12Time;
+                                var hour24Time = appt.hour24Time;
+                                var startTimeMillis = appt.timeMillis;
+                                var testCenterId = appt.testCenterId;
+
+                                html += '<tr>';
+                                html += '<td headers="pmHeading">';
+                                html += '<span class="hour12TimesPMSpan">';
+                                if (seatSearchMode == 'true') {
+                                    html += hour12Time;
+                                } else {
+                                    html += ' <input id="';
+                                    html += startTimeMillis;
+                                    html += ':';
+                                    html += testCenterId;
+                                    html += ':12PM';
+                                    html += '"';
+                                    html += ' name="test" ';
+                                    html += ' onclick="selectAppointmentTime(\'' + startTimeMillis + ':' + testCenterId + '\')" class="btn_select" type="button" value="' + hour12Time + '"';
+									html += '/>';
+                                }
+                                html += '</span>';
+                                html += '<span class="hour24TimesPMSpan">';
+                                if (seatSearchMode == 'true') {
+                                    html += hour24Time;
+                                } else {
+                                    html += ' <input id="';
+                                    html += startTimeMillis;
+                                    html += ':';
+                                    html += testCenterId;
+                                    html += ':24PM';
+                                    html += '"';
+                                    html += ' name="test" ';
+                                    html += ' onclick="selectAppointmentTime(\'' + startTimeMillis + ':' + testCenterId + '\')" class="btn_select" type="button" value="' + hour24Time + '"';
+									html += '/>';
+                                }
+                                html += '</span>';
+                                html += '</td>';
+                                html += '</tr>';
+                            }
+                        }
+
+                        html += '</tbody>';
+                        html += '</table>';
+                        html += '</td>';
+
+                        html += '</tr>';
+                        html += '</tbody>';
+
+                        html += '</table>';
+
+                        $$('#chooseAppointments').html(html);
+                        focus();
+                        // Initial setup for Time toggle.
+                        setupHourDisplay(jsonData.isHour12Format);
+                        renderAvailableAppointmentErrors(availableAppointmentsJson);
+                    }
+
+                }
+
+                closeDialog('#progressDialog', 0);
+                focus();
+            }
+
+            // Refresh the datepicker. This involves a little extra work beyond the simple provided method,
+            // because our use of datepicker's defaultDate will cause that day to potentially have
+            // a style appended that we don't want.
+            function refreshDatePicker() {
+                $$('#a11yCalendar').datepicker('refresh');
+                $$.datepicker._getInst($$('#a11yCalendar')[0]).dpDiv.find('.ui-state-hover').removeClass('ui-state-hover');
+            }
+
+            function renderAvailableDayErrors(responseObject) {
+                var message = responseObject.errorMessages == null ? '' : responseObject.errorMessages;
+
+                if (message != '') {
+                    var messageHtml = '<span class="warning">' + message + '</span>';
+                    $$('#availableDayErrorMessageDiv').html(messageHtml);
+                } else {
+                    $$('#availableDayErrorMessageDiv').html("");
+                }
+            }
+
+            function renderAvailableAppointmentErrors(responseObject) {
+                var message = responseObject.errorMessages == null ? '' : responseObject.errorMessages;
+
+                if (refreshErrorMessageDiv) {
+                    if (message != '') {
+                        var messageHtml = '<span class="warning">' + message + '</span>';
+                        $$('#selectApptTimeErrorMessageDiv').html(messageHtml);
+                    } else {
+                        $$('#selectApptTimeErrorMessageDiv').html("");
+                    }
+                }
+            }
+
+            function renderWaiverWarning(invalidWaiverDate) {
+                if (invalidWaiverDate) {
+                    $$('#invalidWaiverWarningDiv').dialog('open');
+                }
+            }
+
+            function selectAppointmentTime(appointmentId) {
+
+                progressDialog("Please wait...",
+                        "Processing request");
+                $$('#selectedAppointmentId').val(appointmentId);
+                $$('#selectAppointmentButton').click();
+
+                return false;
+            }
+
+            function resetCalendar() {
+                showSelectADateMessage();
+                // leave the month and year the same but deselect the currently selected day
+                $$.datepicker._getInst($$('#a11yCalendar')[0]).currentDay = null;
+
+                getAvailableDays(currentYear, currentMonth);
+            }
+
+            function dateToMMDDYYYY(date) {
+                var month1To12 = date.getMonth() + 1;
+                return zeroPad(month1To12) + '/' + zeroPad(date.getDate()) + '/' + date.getFullYear();
+            }
+
+            function zeroPad(num) {
+                if (num.toString().length == 1) {
+                    return "0" + num.toString();
+                }
+
+                return num.toString();
+            }
+
+            function closeAvailableDateDialog() {
+                $$('#availableDateDialog').dialog('close');
+                return false;
+            }
+
+            function showCalendar(isUserChoiceDropdown) {
+                trackCandidateCalendarChoice(isUserChoiceDropdown);
+                if(isUserChoiceDropdown){
+                    $$("#a11yCalendar").hide();
+                    $$("#accessibleCalendarDiv").show();
+                    $$('#calendarTypeToggleLink').text("Display the calendar widget");
+                    $$('#calendarTypeToggleLink').prop('aria-hidden', true);
+                }
+                else{
+                    $$("#accessibleCalendarDiv").hide();
+                    $$("#a11yCalendar").show();
+                    $$('#calendarTypeToggleLink').text("Display the accessible calendar");
+                    $$('#calendarTypeToggleLink').prop('aria-hidden', false);
+                }
+            }
+
+            function openAvailableDateDialog() {
+                $$('#availableDateDialog').dialog('open');
+                return false;
+            }
+
+            function trackCandidateCalendarChoice(isUserChoiceDropdown){
+                var acctID = "UA-2550497-4";
+                var eventLabel;
+                if(isUserChoiceDropdown){
+                    eventLabel = "AccessibleDropdown";
+                }
+                else{
+                    eventLabel = "CalendarWidget";
+                }
+                var eventCategory = "CandidateCalendarChoice";
+                var eventfields =[eventLabel, eventCategory];
+                new GoogleAnalyticsFacade(acctID).postEvent("DCSext",eventfields);
+            }
+
+            function showSelectADateMessage() {
+                var html ='';
+                $$('#chooseAppointments').html(html);
+            }
+            function timeZoneSelectionChanged(strVal){
+                progressDialog("Please wait...",
+                        "Processing request");
+                showTimeZoneChangeLabel();
+                timeZoneSelectionChangedAjax(strVal);
+            }
+            function updateAppointments(dateString){
+				var date = getDateFromString(dateString);
+				selectAppointmentDay(dateString);
+			}
+			function externalCompLostFocus(dateString){
+                   showTimeZoneChangeLabel()
+			}
+
+			function showTimeZoneChangeLabel(){
+				if(changeButtonToggeled === true){
+                    $$('#timezone_seperator').show();
+                    $$('#timeZoneLabel').show();
+                    $$('#changeTimeZone').show();
+                    $$('#searchTimeZoneComponent_home').html($$('#replaceTimeZone').html());
+                    $$('#replaceTimeZone').html('');
+                    changeButtonToggeled = false;
+				}
+
+			}
+			function removeFieldsetAndLegend() {
+				var fieldsetElement = document.getElementById('multiTestCenterFieldset');
+				var fieldsetParent = fieldsetElement.parentElement;
+				var legendElement = document.getElementById('multiTestCenterLegend');
+				var header = document.createElement("h2");
+				header.innerHTML = legendElement.innerText;
+				fieldsetElement.replaceChild(header, legendElement);
+				fieldsetParent.innerHTML = fieldsetElement.innerHTML;
+			}
+            /*]]>*/
+		</script>
+					</div>
+    <script type="text/javascript" src="/webresources/js/googleAnalyticsFacade.js" defer="defer"></script>
+    <script type="text/javascript" src="/webresources/js/vueAnalyticsFacade.js" defer="defer"></script>
+
+        <script type="text/javascript">
+            var $$ = jQuery.noConflict();
+            $$(document).ready(function(){
+                var acctID = "UA-2550497-4";
+                var displayFeatures = false;
+                var postPLT = true;
+                new GoogleAnalyticsFacade(acctID).post("DCSext", displayFeatures, postPLT);
+           })
+
+        </script>
+					</div>
+			<div id="RHC">
+				<div class="providedBy">
+                    <h2>Service provided by</h2>
+                    <div class="providedByLogo">
+                        </div>
+				</div>
+
+                <div class="helpModule">
+                    <h2><span id="showHelpModuleContentDSA" class="displayMobileOnlyView">Help with this service</span><span id="displayDesktopOnlyView" class="displayDesktopOnlyView">Help with this service</span></h2>
+                    <div id="helpModuleContentDSA" class="displayDesktopOnlyView"><span id="helpContent"><p>If you experience problems when using this service, please contact DVSA customer service team</p><ul><li><a title="Opens in a new window" href="/dsa/contact" target="_blank">Theory test contact details<span title="Opens new window" class="extimg"><span class="access"> - opens new window</span></span></a></li><li><a href="mailto:customercare@pearson.com">Email the DVSA customer service team</a></li><li><a  title="Opens in a new window" href="/dsa/redirect/theorytest/
+"  target="_blank">What happens in a theory test?<span title="Opens new window" class="extimg"><span class="access"> - opens new window</span></span></a></li></ul></span>
+                    </div>
+                </div>
+			</div>
+
+            <script type="text/javascript">
+                $$(document).ready(function() {
+                    $$('#showHelpModuleContentDSA').click(
+                            function() {
+                                $$('#helpModuleContentDSA').toggle();
+                            }
+                    )
+                });
+            </script>
+			</div>
+
+			<div role="contentinfo">
+			<div id="copyright" style="clear: both;">
+                <span class="copyrightTextHolder">
+					<a href="/dsa/redirect/privacy/" id="privacyLink" target="_blank" title="Opens in a new window">Privacy<span class="access"> - Opens in a new window</span></a>
+					| <a href="/dsa/redirect/cookies/" id="cookieLink" target="_blank" title="Opens in a new window">Cookies<span class="access"> - Opens in a new window</span></a>
+					| <a href="/dsa/accessibility/" id="accessibilityLink" target="_blank" title="Opens in a new window">Accessibility<span class="access"> - Opens in a new window</span></a>
+					| <a href="/dsa/redirect/copyright/" id="copyrightTextLink" target="_blank" title="Opens in a new window">&copy; Crown copyright<span class="access"> - Opens in a new window</span></a>
+					| <a href="/dsa/contact/" id="contactUsLink" target="_blank" title="Opens in a new window">Contact us<span class="access"> - Opens in a new window</span></a>
+			<script type="text/javascript">
+
+				var deliveryBrowser = new DeliveryBrowserStrategyChain();
+
+				$$(document).ready(function() {
+					if(deliveryBrowser.isBrowserRunning()) {
+                        if(isiPad()) {
+                            $$('#closeMobileAppDeliveryBrowserFooter').attr('class', '');
+                        } else {
+
+                            $$('#closeDeliveryBrowserFooter').attr('class', '');
+                        }
+					}
+				});
+			</script>
+			<div class="closeWindow">
+				<a id="closeDeliveryBrowserFooter" class="outOfTheWay" href="javascript:deliveryBrowser.closeWindow();">Close browser</a>
+			</div>
+            <div class="closeWindow">
+                <a id="closeMobileAppDeliveryBrowserFooter" class="outOfTheWay" href="javascript:deliveryBrowser.closeWindow();">Return to the App Menu</a>
+            </div>
+                </span>
+			</div><img src="/webresources/testtaker/images/ajax-loader.gif" alt="" height="0" width="0" />
+			</div>
+
+			<script type="text/javascript">
+				//<![CDATA[
+				// This is the context check javascript
+				var $$ = jQuery.noConflict();
+				function isMobileContext() {
+					return ($$(".displayMobileOnlyView").length > 0) && ($$(".displayMobileOnlyView").css("display") != 'none');
+				}
+
+				function isiPad() {
+
+					return navigator.userAgent.match(/iPad/i) != null;
+				}
+
+				function isiPhone() {
+
+					return navigator.userAgent.match(/iPhone/i) != null;
+				}
+
+				//]]>
+			</script>
+				<script type="text/javascript" src="/webresources/js/firstMessageFocus.js" defer="defer"></script>
+				<script type="text/javascript" src="/webresources/js/firstFieldFocus.js" defer="defer"></script>
+				<script src="https://optanon.blob.core.windows.net/consent/6a2d34d0-9819-484c-bd6b-bb04b8592a70.js" type="text/javascript" charset="UTF-8"></script>
+				<script type="text/javascript">
+                    function OptanonWrapper() {
+                        Optanon.BlockGoogleAnalytics("UA-2550497-4", 2);
+                        Optanon.BlockGoogleAnalytics("UA-4756563-63", 2);
+                        Optanon.BlockGoogleAnalytics("UA-41064294-1", 2);
+
+                        var newRelicEnabled = "true";
+                        if (newRelicEnabled) {
+                            window.newRelicBrowserLicenseKey = "de034016a0";
+                            window.newRelicBrowserApplicationID = "340165705";
+                            Optanon.InsertScript('/webresources/js/newrelic.js', 'head', null, null, 2);
+                        }
+                    }
+				</script>
+
+			<script src="/webresources/js/cookiemsg.js" type="text/javascript"></script>
+			<script type="text/javascript" src="/webresources/js/deferred-all.js" defer="defer"></script>
+
+			
+		</div>
+	</body>
+</html>
