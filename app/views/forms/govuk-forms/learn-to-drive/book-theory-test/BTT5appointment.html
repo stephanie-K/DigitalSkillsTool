@@ -66,9 +66,7 @@ Choose appointment
                 <div class="dvsa-white-container">
                   <p>Select date</p>
                   <p><a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTTwhy-no-available-app" class="small-font-dvsa">Why can't I find an available appointment?</a></p>
-                  <br><br><br>
-                  <p><em>date picker to add here, once a date is selected, you can pick a time and then once you pick time, this <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT6my-booking">takes you to the next page</a> to view your booking</em></p>
-                  <br><br><br>
+                  <p><image src="{{ asset_path }}/images/DVLA/calendar-june2020-annoted.png" alt="calendar for June for illustration but this doesn't work - use the Next button to continue" width="100%""></image></p>
                   <p class="small-font-dvsa">Select a date from the calendar. Only available dates can be selected</p>
                   <p>The average test length is 60 minutes</p>
                 </div>
@@ -79,8 +77,13 @@ Choose appointment
             classes: "govuk-button--secondary",
             href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTT4select-centre"
           }) }}
+          {{ govukButton({
+            text: "Next",
+            classes: "button-primary",
+            href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTT6my-booking"
+          }) }}
       </div>
-
+      <p><em style="color: #B30000;"><strong>Note:</strong> The date picker doesn't work. On the real form, once a date is selected, you can pick a time and then once you pick the time, this takes you to the next page</em></p>
     </div>
 </div>
 {% endblock %}
