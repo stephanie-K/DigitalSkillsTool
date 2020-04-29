@@ -1,0 +1,85 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+  Bid for a council house
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Bid for a council house
+    </h1>
+    <p><img src="{{ asset_path }}images/ERC/housing-logo.PNG" alt="Housing logo" style="height:95px; width:250px"></p>
+    <p>The closing date is Tuesday 2nd June at 9am.</p>
+    <p>You're entitled to bid only on properties that are open to your Priority Pass and bedroom entitlement. </p>
+    <p>Before you continue, please ensure that you know your Priority Pass and bedroom entitlement. This information is available on the registration letter you received.</p>
+    <p class="govuk-!-margin-bottom-9">Your bid will only be accepted if you meet the criteria for the property. <br>
+      Please do not bid unless you're eligible. </p>
+    <h2 class="govuk-heading-l">86D Divernia Way, Barrhead (Available for immediate let) - 2 bedroom property - open to Priority Pass A, B, C, D, E</h2>
+    <hr style="height:20px; color: #dddddd; border-width:0; background-color: #dddddd;" class="govuk-!-margin-bottom-5">
+    <p><img src="{{ asset_path }}images/ERC/property86D.png" alt="picture of the flat" width="50%"></p>
+    <h3 class="govuk-heading-m">Bids open to Priority Pass A, B, C, D, E</h3>
+    <p>A, B, C, D, E</p>
+    <h3 class="govuk-heading-m">Area</h3>
+    <p>Upper Auchenback</p>
+    <h3 class="govuk-heading-m">Number of bedrooms</h3>
+    <p>2</p>
+    <h3 class="govuk-heading-m">Maximum number of people</h3>
+    <p>4</p>
+    <h3 class="govuk-heading-m">Type of property</h3>
+    <p>Tenement Flat</p>
+    <h3 class="govuk-heading-m">Floor level</h3>
+    <p>First floor</p>
+    <h3 class="govuk-heading-m">Weekly rent</h3>
+    <p>£80.84</p>
+    <h3 class="govuk-heading-m">Heating</h3>
+    <p>Gas Central Heating</p>
+
+    <p>Property available for immediate let</p>
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Bid for this property</h3>
+    <h4 class="govuk-heading-m">Reference number</h4>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          You’ll find this on your housing registration letter or card.<br>Phone 0141 577 3001 if you need help with this.
+        </label>
+        <input class="govuk-input" id="event-name" name="event-name" type="text">
+      </div>
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "firstname",
+        name: "firstname"
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "lastname",
+        name: "lastname"
+      }) }}
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          Property
+        </label>
+        <input class="govuk-input" id="event-name" name="event-name" type="text" placeholder="86D Divernia Way, Barrhead (Available for immediate let)" style="background-color: #eeeeee">
+      </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Submit",
+        classes: "govuk-button button-primary",
+        href: "/forms/erc-forms/bidding-properties/thankyou"
+      }) }}
+  
+      <hr>
+      <p class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"><span class="tag-print"></span> <a href="#">Print this page</a></p>
+    </div>
+  </div>
+
+{% endblock %}

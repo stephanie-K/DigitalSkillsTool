@@ -23,6 +23,41 @@ router.get('forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support', func
   return res.render('forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support')
 })
 
+// bidding properties - so we can route to the right house depedning on what the user select
+
+router.post('/forms/erc-forms/bidding-properties/bidding-available-properties', function (req, res) {
+  var propertySelected = req.session.data['property']
+  if (propertySelected  === '86D') {
+      return res.redirect('/forms/erc-forms/bidding-properties/property86D')
+  }
+  if (propertySelected  === '54E') {
+    return res.redirect('/forms/erc-forms/bidding-properties/property54E')
+  }
+  if (propertySelected  === '37A') {
+    return res.redirect('/forms/erc-forms/bidding-properties/property37A')
+  }
+  res.redirect('/forms/erc-forms/bidding-properties/no-property-chosen')
+})
+
+router.get('/forms/erc-forms/bidding-properties/bidding-available-properties', function (req, res) {
+  req.session.data ['property'] = null // this is set to null when we render the page to clear the data of this variable if we are coming back to that page with a value already set for it
+  return res.render('forms/erc-forms/bidding-properties/bidding-available-properties')
+})
+
+router.post('/forms/erc-forms/bidding-properties/no-property-chosen', function (req, res) {
+  var propertySelected = req.session.data['property']
+  if (propertySelected  === '86D') {
+      return res.redirect('/forms/erc-forms/bidding-properties/property86D')
+  }
+  if (propertySelected  === '54E') {
+    return res.redirect('/forms/erc-forms/bidding-properties/property54E')
+  }
+  if (propertySelected  === '37A') {
+    return res.redirect('/forms/erc-forms/bidding-properties/property37A')
+  }
+  res.redirect('/forms/erc-forms/bidding-properties/no-property-chosen')
+})
+
 
 
 
