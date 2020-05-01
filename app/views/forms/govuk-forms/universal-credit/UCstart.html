@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Universal credit online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+        Universal credit online
+    </h1>
+    <p>Use this service to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>create a Universal Credit account</li>
+    <li>make a claim</li>
+    <li>join your partner's claim</li>
+    </ul>
+    <p>You must have an email address. You will also need access to your mobile phone (if you have one).</p>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Start",
+      href: "/forms/govuk-forms/universal-credit/UCdisabilityBenefits"
+    }) }}
+    <h2 class="govuk-heading-m">
+      Already got a Universal Credit account?
+    </h2>
+    <p><a href="#">Sign in</a> if you already have a Universal Credit account. You can return to a claim or make a new one.</p>
+  </div>
+
+{% endblock %}
