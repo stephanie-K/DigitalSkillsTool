@@ -1,28 +1,30 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Disability benefits
+Severe disability premium
 {% endblock %}
 
 
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
     <h1 class="govuk-heading-xl">
-      Disability benefits
+      Severe disability premium
     </h1>
     <form class="form" method="post">
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "getting-disability-benefits",
-      name: "getting-disability-benefits",
+      idPrefix: "severe",
+      name: "severe",
       fieldset: {
         legend: {
-          text: "Are you getting any disability benefits?",
+          text: "Did you get or were you entitled to the severe disability premium?",
           isPageHeading: true,
-          classes: "govuk-fieldset__legend--l"
+          classes: "govuk-fieldset__legend--m"
         }
+      },
+      hint: {
+        text: "This is extra money added to your Housing Benefit because you have a disability."
       },
       items: [
         {
@@ -32,6 +34,10 @@ Disability benefits
         {
           value: "no",
           text: "No"
+        },
+        {
+          value: "dontknow",
+          text: "I don't know"
         }
       ]
     }) }}

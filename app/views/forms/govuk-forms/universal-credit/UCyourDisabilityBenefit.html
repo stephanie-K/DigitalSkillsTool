@@ -1,37 +1,48 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Disability benefits
+Your disability benefit
 {% endblock %}
 
 
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
     <h1 class="govuk-heading-xl">
-      Disability benefits
+      Your disability benefit
     </h1>
     <form class="form" method="post">
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "getting-disability-benefits",
-      name: "getting-disability-benefits",
+      idPrefix: "your-disability-benefit",
+      name: "your-disability-benefit",
       fieldset: {
         legend: {
-          text: "Are you getting any disability benefits?",
+          text: "Do you get one of these disability benefits?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--l"
         }
       },
       items: [
         {
-          value: "yes",
-          text: "Yes"
+          value: "dla",
+          text: "Disability Living Allowance (DLA)"
+        },
+        {
+          value: "pip",
+          text: "Personal Independence Payment (PIP)"
+        },
+        {
+          value: "attendance",
+          text: "Attendance Allowance or Constant Attendance Allowance"
+        },
+        {
+          value: "armed",
+          text: "Armed Forces Independence Payment"
         },
         {
           value: "no",
-          text: "No"
+          text: "No, none of them"
         }
       ]
     }) }}

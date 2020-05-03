@@ -58,7 +58,50 @@ router.post('/forms/erc-forms/bidding-properties/no-property-chosen', function (
   res.redirect('/forms/erc-forms/bidding-properties/no-property-chosen')
 })
 
+// Universal Credit ***************************************************************************
 
+router.post('/forms/govuk-forms/universal-credit/UCdisabilityBenefits', function (req, res) {
+  var gettingDisabilityBenefits = req.session.data['getting-disability-benefits']
+  if (gettingDisabilityBenefits === 'no') {
+      return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
+  }
+  res.redirect('/forms/govuk-forms/universal-credit/UCyourDisabilityBenefit')
+})
+
+router.post('/forms/govuk-forms/universal-credit/UCyourDisabilityBenefit', function (req, res) {
+  var yourDisabilityBenefit = req.session.data['your-disability-benefit']
+  if (yourDisabilityBenefit === 'no') {
+      return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
+  }
+  res.redirect('/forms/govuk-forms/universal-credit/UCyourPartner')
+})
+
+router.post('/forms/govuk-forms/universal-credit/UCyourPartner', function (req, res) {
+  var yourPartner = req.session.data['your-partner']
+  if (yourPartner === 'yes') {
+      return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
+  }
+  res.redirect('/forms/govuk-forms/universal-credit/UCotherBenefits')
+})
+
+router.post('/forms/govuk-forms/universal-credit/UCotherBenefits', function (req, res) {
+  var otherBenefits = req.session.data['other-benefits']
+  if (otherBenefits === 'no') {
+      return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
+  }
+  res.redirect('/forms/govuk-forms/universal-credit/UCsevere')
+})
+
+router.post('/forms/govuk-forms/universal-credit/UCsevere', function (req, res) {
+  var severe= req.session.data['severe']
+  if (severe === 'no') {
+      return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
+  }
+  if (severe === 'dontknow') {
+    return res.redirect('/forms/govuk-forms/universal-credit/UCcontactus')
+}
+  res.redirect('/forms/govuk-forms/universal-credit/UCcannotClaim')
+})
 
 
 // Equality and diversity form *****************************************************************
