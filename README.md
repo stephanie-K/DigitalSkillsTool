@@ -10,11 +10,15 @@ The course is developed by **East Renfrewshire Council** in collaboration with *
 
 This is using the [**GOV.UK Prototype kit**](https://govuk-prototype-kit.herokuapp.com/docs)
 
-![East Renfrewshire Council Logo](/app/assets/images/ERC/erclogo.png)  ![Scottish Enterprise Logo](/app/assets/images/logoSE.png) 
-
 You can visit the website here: [**https://erc-tool.herokuapp.com/**](https://erc-tool.herokuapp.com/) you will be asked for a username and password, both are: erc-tool
 
 You can also [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/05/06/improving-digital-skills-building-a-tool-with-the-govuk-prototype-kit)
+
+
+
+![East Renfrewshire Council Logo](/app/assets/images/ERC/erclogo.png)  ![Scottish Enterprise Logo](/app/assets/images/logoSE.png) 
+
+
 
 ## How we are using the tool
 
