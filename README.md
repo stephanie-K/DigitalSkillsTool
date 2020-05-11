@@ -12,6 +12,10 @@ This is using the [**GOV.UK Prototype kit**](https://govuk-prototype-kit.herokua
 
 ![East Renfrewshire Council Logo](/app/assets/images/ERC/erclogo.png)  ![Scottish Enterprise Logo](/app/assets/images/logoSE.png) 
 
+You can visit the website here: [**https://erc-tool.herokuapp.com/**](https://erc-tool.herokuapp.com/) you will be asked for a username and password, both are: erc-tool
+
+You can also [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/05/06/improving-digital-skills-building-a-tool-with-the-govuk-prototype-kit)
+
 ## How we are using the tool
 
 Different forms are needed to support the classes. Some are Council forms, some are GOVUK form and others are Scottish Government forms.
