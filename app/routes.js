@@ -63,6 +63,7 @@ router.post('/forms/erc-forms/bidding-properties/no-property-chosen', function (
 router.post('/forms/govuk-forms/universal-credit/UCdisabilityBenefits', function (req, res) {
   var gettingDisabilityBenefits = req.session.data['getting-disability-benefits']
   if (gettingDisabilityBenefits === 'no') {
+    req.session.uc_create_account_1st_time = true // this is set to true when we render the page the first time
       return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
   }
   res.redirect('/forms/govuk-forms/universal-credit/UCyourDisabilityBenefit')
@@ -71,6 +72,7 @@ router.post('/forms/govuk-forms/universal-credit/UCdisabilityBenefits', function
 router.post('/forms/govuk-forms/universal-credit/UCyourDisabilityBenefit', function (req, res) {
   var yourDisabilityBenefit = req.session.data['your-disability-benefit']
   if (yourDisabilityBenefit === 'no') {
+    req.session.uc_create_account_1st_time = true // this is set to true when we render the page the first time
       return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
   }
   res.redirect('/forms/govuk-forms/universal-credit/UCyourPartner')
@@ -79,6 +81,7 @@ router.post('/forms/govuk-forms/universal-credit/UCyourDisabilityBenefit', funct
 router.post('/forms/govuk-forms/universal-credit/UCyourPartner', function (req, res) {
   var yourPartner = req.session.data['your-partner']
   if (yourPartner === 'yes') {
+    req.session.uc_create_account_1st_time = true // this is set to true when we render the page the first time
       return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
   }
   res.redirect('/forms/govuk-forms/universal-credit/UCotherBenefits')
@@ -87,6 +90,7 @@ router.post('/forms/govuk-forms/universal-credit/UCyourPartner', function (req, 
 router.post('/forms/govuk-forms/universal-credit/UCotherBenefits', function (req, res) {
   var otherBenefits = req.session.data['other-benefits']
   if (otherBenefits === 'no') {
+    req.session.uc_create_account_1st_time = true // this is set to true when we render the page the first time
       return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
   }
   res.redirect('/forms/govuk-forms/universal-credit/UCsevere')
@@ -95,12 +99,64 @@ router.post('/forms/govuk-forms/universal-credit/UCotherBenefits', function (req
 router.post('/forms/govuk-forms/universal-credit/UCsevere', function (req, res) {
   var severe= req.session.data['severe']
   if (severe === 'no') {
+    req.session.uc_create_account_1st_time = true // this is set to true when we render the page the first time
       return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
   }
   if (severe === 'dontknow') {
     return res.redirect('/forms/govuk-forms/universal-credit/UCcontactus')
 }
   res.redirect('/forms/govuk-forms/universal-credit/UCcannotClaim')
+})
+
+router.get('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req, res) {
+  if (req.session.uc_create_account_1st_time) {// first time we render the page, don't display any errors yet
+  return res.render('forms/govuk-forms/universal-credit/UCcreateAccount', {error: false})
+} else {
+  var regExpUsername = 'r/[a-zA-Z0-9]{6,30}/g'
+  var refExpEmail = 'r/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/g'
+  var create_username = req.session.data ['username']
+  var create_password = req.session.data ['password']
+  var create_answwer1 = req.session.data ['answer1']
+  var create_answwer2 = req.session.data ['answer2']
+  var select_q1 = req.session.data ['question1']
+  var select_q2 = req.session.data ['question2']
+  var password_match = (req.session.data ['password2'] === create_password)
+  var uc_error_create_account = ( // receive the value of all the potential errors on that page 
+    create_username === '' ||
+    create_password === '' ||
+    create_answwer1 === '' ||
+    create_answwer2 === '' ||
+    select_q1 === 'Please select a question' ||
+    select_q2 === 'Please select a question' ||
+    !password_match
+  )
+  return res.render('forms/govuk-forms/universal-credit/UCcreateAccount', {error: uc_error_create_account})
+}
+})
+
+router.post('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req, res) {
+  req.session.uc_create_account_1st_time = false; // we have render that page once, we need to check if there is any errors now
+  var create_username = req.session.data ['username']
+  var create_password = req.session.data ['password']
+  var create_answwer1 = req.session.data ['answer1']
+  var create_answwer2 = req.session.data ['answer2']
+  var select_q1 = req.session.data ['question1']
+  var select_q2 = req.session.data ['question2']
+  var password_match = (req.session.data ['password2'] === create_password)
+  var uc_error_create_account = ( // receive the value of all the potential errors on that page 
+    create_username === '' ||
+    create_password === '' ||
+    create_answwer1 === '' ||
+    create_answwer2 === '' ||
+    select_q1 === 'Please select a question' ||
+    select_q2 === 'Please select a question' ||
+    !password_match
+  )
+  if (uc_error_create_account){
+    return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
+  } else {
+    return res.redirect('/forms/govuk-forms/universal-credit/UCaccountCreated')
+  } 
 })
 
 

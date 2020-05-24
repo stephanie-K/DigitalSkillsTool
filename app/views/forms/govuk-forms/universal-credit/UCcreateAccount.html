@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Create an account
+{% if error %} Error - {% endif %}Create an account
 {% endblock %}
 
 
@@ -10,9 +10,34 @@ Create an account
     <h1 class="govuk-heading-xl">
       Create an account
     </h1>
+    {% set regExpEmail = r/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/g %}
+    {% set regExpUsername = r/[a-zA-Z0-9]{6,30}/g %}
+    
+    {% if error %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-UC-create-account">
+        Fix the following
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          {% if data ['password'] !== data ['password2'] %}         <li><a href="#password">Password and confirmed password do not match</a></li>{% endif%}
+          {% if data ['username'] === '' %}                        <li><a href="#username">Create username</a></li>
+          {% else %}  {% if (data ['username'] !== undefined) and (not(regExpUsername.test(data ['username'])))%}  <li><a href="#username">Username invalid</a></li>{% endif%}{% endif%}
+          {% if data ['password'] === '' %}                        <li><a href="#password">Create password</a></li>
+          {% else %}  {% if (data ['password'] !== undefined) and (not(regExpEmail.test(data ['password'])))%}  <li><a href="#password">Password invalid</a></li>{% endif%}{% endif%}
+          {% if data ['question1'] === 'Please select a question' %} <li><a href="#question1">Question 1</a></li>{% endif%}
+          {% if data ['answer1'] === '' %}                         <li><a href="#answer1">Answer 1</a></li>{% endif%}
+          {% if data ['question2'] === 'Please select a question' %} <li><a href="#question2">Question 2</a></li>{% endif%}
+          {% if data ['answer2'] === '' %}                         <li><a href="#answer2">Answer 2</a></li>{% endif%}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
     <p class="govuk-body-l">You'll need your username and password when you sign in online, so make them memorable.</p>
-    <form class="form" method="post">
-      <div class="govuk-form-group">
+    <form class="form" method="post" novalidate>
+
+      <div class="govuk-form-group  {% if (data ['username'] === '') or  (data ['username'] !== undefined) and (not(regExpUsername.test(data ['username']))) %}   govuk-form-group--error {% endif %}">
         <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
           Create username
         </label>
@@ -23,13 +48,36 @@ Create an account
           <span id="username-hint2" class="govuk-hint"><li>at least 6 characters</li></span>
           <span id="username-hint3" class="govuk-hint"><li>no more than 30 characters</li></span>
           <span id="username-hint4" class="govuk-hint"><li>made from letters or numbers</li></span>
-        </ul>  
-        <input class="govuk-input govuk-input--width-20" id="username" name="username" type="text" maxlength="30" minlength="6" pattern="^[a-zA-Z0-9]*$">
+        </ul>
+        {% if data ['username'] === '' %}
+        <span id="UC-create-account-username-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> A username must be provided
+        </span>
+        {% else %}
+        {% if (data ['username'] !== undefined) and (not(regExpUsername.test(data ['username']))) %}
+        <span id="UC-create-account-password-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Username invalid, please try again
+        </span>
+        {% endif%}
+    {% endif%}
+        <input class="govuk-input govuk-input--width-20  {% if data ['username'] === '' or  ((data ['username'] !== undefined) and (not(regExpUsername.test(data ['username'])))) %}govuk-input--error {% endif%}" id="username" name="username" type="text"  value="{{ data ['username']}}">
       </div>  
-      <div class="govuk-form-group">
+
+      <div class="govuk-form-group {% if (data ['password'] === '' or (data ['password'] !== data ['password2'])) or ((data ['password'] !== undefined) and (not(regExpEmail.test(data ['password']))))%} govuk-form-group--error {% endif %}">
         <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="password">
           Create password
         </label>
+        {% if data ['password'] === ''  or  ((data ['password'] !== undefined) and (not(regExpEmail.test(data ['password'])))) %}
+        <span id="UC-create-account-password-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Password invalid, please try again
+        </span>
+        {% else %}
+            {% if data ['password'] !== data ['password2'] %}
+            <span id="UC-create-account-password-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Password and confirmed password do not match, please try again
+            </span>
+            {% endif%}
+        {% endif%}
         <span id="password-hint" class="govuk-hint">
           This must contain at least:
         </span>
@@ -40,24 +88,31 @@ Create an account
           <span id="passwordhint5" class="govuk-hint"><li>8 characters</li></span>
         </ul>  
         <span id="passwordhint6" class="govuk-hint">Do not use a username, common word like 'password' or sequence like '123'</span>
-        <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password"  minlength="8"  maxlength="256" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <input class="govuk-input govuk-input--width-20 {% if data ['password'] === '' or (data ['password'] !== data ['password2']) %} govuk-input--error {% endif%}" id="password" name="password" type="password" value="{{ data ['password']}}">
       </div>  
+      
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="password">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="password2">
           Re-type your password
         </label>
-        <input class="govuk-input govuk-input--width-20" id="password" name="password" type="password"  minlength="8"  maxlength="256" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <input class="govuk-input govuk-input--width-20" id="password2" name="password2" type="password">
       </div>
+
       <h2 class="govuk-heading-l">
         Security questions
       </h2>
       <p>Answer these questions carefully. When you sign in to your account you'll need to spell your answers exactly as you enter them below.</p>
       <p>If you phone us, we will ask you these questions. Do not choose answers that are likely to be offensive.</p>
-      <div class="govuk-form-group">
+      <div class="govuk-form-group {% if data ['question1'] === 'Please select a question' %} govuk-form-group--error {% endif %}">
         <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="question1">
           Question 1
         </label>
-        <select class="govuk-select"  id="question1" name="question1">
+        {% if data ['question1'] === 'Please select a question' %}
+        <span id="UC-create-account-security1-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> A security question must be selected from the first list
+        </span>
+        {% endif %}
+        <select class="govuk-select"  id="question1" name="question1" value="{{ data ['question1']}}">
           <option>Please select a question</option>
           <option value="Q1">Where were you born?</option>
           <option value="Q2">What colour was your first car?</option>
@@ -67,31 +122,46 @@ Create an account
           <option value="Q6">What was your first job?</option>
         </select>
       </div>
-      <div class="govuk-form-group">
+      <div class="govuk-form-group {% if data ['answer1'] === '' %} govuk-form-group--error {% endif %}">
         <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="answer1">
           Answer 1
         </label>
-        <input class="govuk-input govuk-input--width-20" id="answer1" name="answer1">
+        {% if data ['answer1'] === '' %}  
+        <span id="UC-create-account-answer1-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> An answer must be provided for the first security question
+        </span>
+        {% endif %}
+        <input class="govuk-input govuk-input--width-20 {% if data ['answer1'] === '' %} govuk-input--error {% endif%}" id="answer1" name="answer1" value="{{data ['answer1']}}">
       </div>
-      <div class="govuk-form-group">
+      <div class="govuk-form-group {% if data ['question2'] === 'Please select a question' %} govuk-form-group--error {% endif %}">
         <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="question2">
           Question 2
         </label>
+        {% if data ['question2'] === 'Please select a question' %}
+        <span id="UC-create-account-security2-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> A security question must be selected from the second list
+        </span>
+        {% endif %}
         <select class="govuk-select" id="question2" name="question2">
           <option>Please select a question</option>
-          <option value="Q7">What was the first film you saw at the cinema?</option>
-          <option value="Q8">What was the name of your first pet?</option>
-          <option value="Q9">Where was your first holiday?</option>
-          <option value="Q10">What was the surname of your best friend from childhood?</option>
-          <option value="Q11">What is or was your mother's main job?</option>
-          <option value="Q12">What was the make of your first car?</option>
+          <option >What was the first film you saw at the cinema?</option>
+          <option >What was the name of your first pet?</option>
+          <option >Where was your first holiday?</option>
+          <option >What was the surname of your best friend from childhood?</option>
+          <option >What is or was your mother's main job?</option>
+          <option >What was the make of your first car?</option>
         </select>
       </div>
-      <div class="govuk-form-group">
+      <div class="govuk-form-group {% if data ['answer2'] === '' %} govuk-form-group--error {% endif %}">
         <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="answer2">
           Answer 2
         </label>
-        <input class="govuk-input govuk-input--width-20" id="answer2" name="answer2">
+        {% if data ['answer2'] === '' %}  
+        <span id="UC-create-account-answer2-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> An answer must be provided for the secont security question
+        </span>
+        {% endif %}
+        <input class="govuk-input govuk-input--width-20 {% if data ['answer2'] === '' %}govuk-input--error {% endif%}" id="answer2" name="answer2" value="{{data ['answer2']}}">
       </div>
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
