@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Username sent
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Username sent
+    </h1>
+
+    <p class="govuk-body-l">If an account was found, your username will have been sent to <strong>{{ data ['email-to-resend-username'] or "jo@gmail.com"}}</strong></p>
+
+    <p>If you can't find the email check:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>it's the same email address you used to create your account</li>
+      <li>your junk email folder</li>
+      <li>you've typed your address correctly</li>
+    </ul>
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Back to Sign in",
+      href: "/forms/govuk-forms/universal-credit/UCsignIn"
+    }) }}
+ <p><a href="javascript: history.go(-1)">Back</a></p>
+   
+  </div>
+
+{% endblock %}

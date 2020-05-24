@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Error - Forgotten username
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Forgotten username
+    </h1>
+
+    <p class="govuk-body-l">Enter the email address you used to create your account.</p>
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-UC-forgot-username">
+        Fix the following:
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+         <li><a href="#email-to-resend-username">Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+      <form class="form" method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="email-to-resend-username">
+        Email
+      </label>
+      {% set regExpEmail = r/^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/g %}
+      {% if data ['email-to-resend-username'] === '' %}
+      <span id="UC-email-error" class="govuk-error-message">
+        Email should not be empty
+      </span>
+      {% else %}
+        {% if  not regExpEmail.test(data ['email-to-resend-username'])%}
+        <span id="UC-email-error" class="govuk-error-message">
+          Email is not valid
+        </span>
+        {% endif%}
+      {% endif%}
+
+      <input class="govuk-input govuk-input--width-20 govuk-input--error" id="email-to-resend-username" name="email-to-resend-username" value="{{data ['email-to-resend-username']}}">
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Send username"
+    }) }}
+
+    </form>
+
+ <p><a href="javascript: history.go(-1)">Back</a></p>
+   
+  </div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Sign in to your Universal Credit account
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Sign in to your Universal Credit account
+    </h1>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username1">
+        Username
+      </label>
+      <input class="govuk-input govuk-input--width-20" id="username1" name="username1" value="{{data ['username1']}}">
+    </div>
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="password1">
+        Password
+      </label>
+      <input class="govuk-input govuk-input--width-20" id="password1" name="password1" value="{{data ['password1']}}">
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Sign in",
+      href: "/forms/govuk-forms/not-ready.html"
+    }) }}
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Problems signing in?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>You cannot sign in with your 'Find a job' (previously Universal Jobmatch) user ID and password.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/forms/govuk-forms/universal-credit/UCforgotUsername">Forgotten your username?</a></li>
+          <li><a href="/forms/govuk-forms/universal-credit/UCforgotPassword">Forgotten your password?</a></li>
+          </ul>
+      </div>
+    </details>
+
+    <h2 class="govuk-heading-m">
+      Do not have an online Universal Credit account?
+    </h2>
+    <p>You may be able to use the <a href="/forms/govuk-forms/universal-credit/UCstart">Universal Credit online service</a> to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>create a Universal Credit account</li>
+      <li>make a claim</li>
+      <li>join your partner's claim</li>
+    </ul>
+
+
+    <h2 class="govuk-heading-m">
+      Used GOV.UK Verify to confirm your identity?
+    </h2>
+    <p>If you have an online Universal Credit account, you can also <a href="#">sign in with GOV.UK Verify</a></p>
+  </div>
+
+{% endblock %}

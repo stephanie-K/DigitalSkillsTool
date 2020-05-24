@@ -165,6 +165,25 @@ router.post('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req
   } 
 })
 
+router.post('/forms/govuk-forms/universal-credit/UCforgotUsername', function (req, res) {
+  var emailAddress = req.session.data['email-to-resend-username']
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  if (emailAddress === '' || !regExpEmail.test(emailAddress)) 
+  {
+    return res.redirect('/forms/govuk-forms/universal-credit/UCforgotUsernameError')
+  }
+  res.redirect('/forms/govuk-forms/universal-credit/UCforgotUsernameSent')
+})
+
+router.post('/forms/govuk-forms/universal-credit/UCforgotUsernameError', function (req, res) {
+  var emailAddress = req.session.data['email-to-resend-username']
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  if (emailAddress === '' || !regExpEmail.test(emailAddress)) 
+  {
+    return res.redirect('/forms/govuk-forms/universal-credit/UCforgotUsernameError')
+  }
+  res.redirect('/forms/govuk-forms/universal-credit/UCforgotUsernameSent')
+})
 
 // Equality and diversity form *****************************************************************
 

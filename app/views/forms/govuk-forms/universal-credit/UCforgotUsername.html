@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Forgotten username
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Forgotten username
+    </h1>
+
+    <p class="govuk-body-l">Enter the email address you used to create your account.</p>
+    <form class="form" method="post">
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="email-to-resend-username">
+        Email
+      </label>
+      <input class="govuk-input govuk-input--width-20" id="email-to-resend-username" name="email-to-resend-username" value="{{data ['email-to-resend-username']}}">
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Send username"
+    }) }}
+
+    </form>
+
+ <p><a href="javascript: history.go(-1)">Back</a></p>
+   
+  </div>
+
+{% endblock %}
