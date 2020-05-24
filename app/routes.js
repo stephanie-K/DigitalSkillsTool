@@ -112,8 +112,8 @@ router.get('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req,
   if (req.session.uc_create_account_1st_time) {// first time we render the page, don't display any errors yet
   return res.render('forms/govuk-forms/universal-credit/UCcreateAccount', {error: false})
 } else {
-  var regExpUsername = 'r/[a-zA-Z0-9]{6,30}/g'
-  var refExpEmail = 'r/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/g'
+  var regExpUsername = /[a-zA-Z0-9]{6,30}/;
+  var regExpPassword= /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
   var create_username = req.session.data ['username']
   var create_password = req.session.data ['password']
   var create_answwer1 = req.session.data ['answer1']
@@ -128,7 +128,9 @@ router.get('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req,
     create_answwer2 === '' ||
     select_q1 === 'Please select a question' ||
     select_q2 === 'Please select a question' ||
-    !password_match
+    !password_match ||
+    !regExpUsername.test(create_username)||
+    !regExpPassword.test(create_password)
   )
   return res.render('forms/govuk-forms/universal-credit/UCcreateAccount', {error: uc_error_create_account})
 }
@@ -136,6 +138,8 @@ router.get('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req,
 
 router.post('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req, res) {
   req.session.uc_create_account_1st_time = false; // we have render that page once, we need to check if there is any errors now
+  var regExpUsername = /[a-zA-Z0-9]{6,30}/;
+  var regExpPassword= /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
   var create_username = req.session.data ['username']
   var create_password = req.session.data ['password']
   var create_answwer1 = req.session.data ['answer1']
@@ -150,7 +154,9 @@ router.post('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req
     create_answwer2 === '' ||
     select_q1 === 'Please select a question' ||
     select_q2 === 'Please select a question' ||
-    !password_match
+    !password_match ||
+    !regExpUsername.test(create_username)||
+    !regExpPassword.test(create_password)
   )
   if (uc_error_create_account){
     return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
