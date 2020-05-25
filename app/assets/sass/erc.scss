@@ -129,7 +129,12 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
     border-left: 5px solid #B30000;
 }
 
-
+.govuk-accordion__section-heading {
+    color: #004269 ;
+}
+.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
+    background-color: #004269 ;
+}
 
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
