@@ -6,7 +6,13 @@ This is a work in progress.
 
 **There is about 1 in 7 people in Scotland who can’t get online** (that’s about 800,000 people)
 
-The course is developed by **East Renfrewshire Council** in collaboration with **Scottish Enterprise** who provides the tool to support it.
+The course is developed for the **East Renfrewshire Council** and the website supporting the classes is the result of the work of many people who either: mapped the forms, coded them, or tested them:
+- Alexandria Rocks
+- Anastasia Moneva
+- [Craig Barrat](https://www.linkedin.com/in/craig-barratt-softdev/)
+- [Paul Marshall](https://www.linkedin.com/in/paulkmarshall/)
+
+
 
 This is using the [**GOV.UK Prototype kit**](https://govuk-prototype-kit.herokuapp.com/docs)
 
@@ -16,7 +22,7 @@ You can also [**learn more about the project in this blog post**](https://blog.c
 
 
 
-![East Renfrewshire Council Logo](/app/assets/images/ERC/erclogo.png)  ![Scottish Enterprise Logo](/app/assets/images/logoSE.png) 
+![East Renfrewshire Council Logo](/app/assets/images/ERC/erclogo.png)
 
 
 
