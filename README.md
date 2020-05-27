@@ -8,8 +8,8 @@ This is a work in progress.
 
 The course is developed for the **East Renfrewshire Council** and the website supporting the classes is the result of the work of many people who either: mapped the forms, coded them, or tested them:
 - Alexandria Rocks
-- Anastasia Moneva
-- [Craig Barrat](https://www.linkedin.com/in/craig-barratt-softdev/)
+- [Anastasia Moneva](https://www.linkedin.com/in/anastasia-moneva-6b192189/)
+- [Craig Barratt](https://www.linkedin.com/in/craig-barratt-softdev/)
 - [Paul Marshall](https://www.linkedin.com/in/paulkmarshall/)
 
 
