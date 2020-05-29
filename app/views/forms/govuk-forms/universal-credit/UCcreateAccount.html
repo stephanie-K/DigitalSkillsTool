@@ -170,6 +170,12 @@
       text: "Continue"
     }) }}
     </form>
+
+    {% if error %}
+    <div class="student-notes-box"> 
+      <p>If you had already selected the security questions, you will have to select one for each again</p>
+    </div>
+     {% endif %}
   </div>
 
 {% endblock %}
