@@ -356,7 +356,7 @@ code {
     border-radius: 5px;
 }
 
-button.erc-alt {
+button.erc-alt, a.erc-alt{
     background-color: $erc-alt-text-blue;
     border: 1px solid #23408E;
     color: #fff;
@@ -365,18 +365,18 @@ button.erc-alt {
     text-decoration: none;
     text-shadow: 0 1px 0 #000;
 }
-button.button-primary.erc-alt:hover {
+button.button-primary.erc-alt:hover, a.button-primary.erc-alt:hover {
     text-decoration: underline;
     background-color: #424242 ;    
 }
 
-button.button-primary.erc-alt:active {
+button.button-primary.erc-alt:active, a.button-primary.erc-alt:active {
     text-decoration: underline;
     background-color: #568BA3;
     border-color: #888;
 }
 
-button.button-primary.erc-alt-disco {
+a.button-primary.erc-alt-disco, button.button-primary.erc-alt-disco {
     background-color: #444;
     border: 1px solid #444;
     color:  #2cf3f3;
@@ -390,17 +390,19 @@ button.button-primary.erc-alt-disco {
 }
 
 
-button.button-primary.erc-alt-disco:hover, button.button-primary.erc-alt-disco:active, button.button-primary.erc-alt-disco:focus {
+button.button-primary.erc-alt-disco:hover, button.button-primary.erc-alt-disco:active, button.button-primary.erc-alt-disco:focus,
+a.button-primary.erc-alt-disco:hover, a.button-primary.erc-alt-disco:active, a.button-primary.erc-alt-disco:focus {
     color:  #fff;
     text-decoration: underline;
     background-color: #444;
 }
 
-button.button-primary.erc-alt-disco:visited{
+a.button-primary.erc-alt-disco:visited, button.button-primary.erc-alt-disco:visited{
     color:  #b9ff06;
 }
 
-button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submission:focus  {
+button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submission:focus,
+a.button-primary.erc-alt-submission, a.button-primary.erc-alt-submission:focus   {
     background-color: #43A047;
     border: 1px solid #43A047;
     border-radius: 5px 5px 5px 5px;
@@ -408,7 +410,7 @@ button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submissi
     text-shadow: 0 1px 0 #000;
 }
 
-button.button-primary.erc-alt-submission:after{
+button.button-primary.erc-alt-submission:after, a.button-primary.erc-alt-submission:after{
     content: "\2713";
     color: #fff;
     font-size: 12pt;
@@ -416,11 +418,12 @@ button.button-primary.erc-alt-submission:after{
     width: 1em;
 }
 
-button.button-primary.erc-alt-submission:hover {
+button.button-primary.erc-alt-submission:hover , a.button-primary.erc-alt-submission:hover {
     text-decoration: underline;
 }
 
-button.button-primary.erc-alt-submission:active, button.button-primary.erc-alt-submission:focus {
+button.button-primary.erc-alt-submission:active, button.button-primary.erc-alt-submission:focus,
+a.button-primary.erc-alt-submission:active, a.button-primary.erc-alt-submission:focus {
     background-color: #424242;
     color: #fff;
 

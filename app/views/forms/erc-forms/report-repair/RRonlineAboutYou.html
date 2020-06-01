@@ -1,0 +1,45 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Report a housing repair - About you
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Repairs</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Please give us some details</p> 
+    <p class="erc-alt-dark-grey-round">About you</p> 
+    <p class="govuk-!-font-size-14">You can find out how we use your information in our <a href="https://www.eastrenfrewshire.gov.uk/privacy#skiptocontent" target="_blank" rel="noopener">privacy statement</a> on our website</p>
+
+<p>To be continued!</p>
+
+
+    {{ govukButton({
+      text: "<< Back",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRonlineStart"
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "button-primary erc-alt"
+    }) }}
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  
