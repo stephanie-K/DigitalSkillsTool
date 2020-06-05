@@ -211,20 +211,36 @@ code {
   }
 
   .centred-input-fields {
-    .govuk-summary-list__row {
+    .govuk-summary-list__row, dt.govuk-summary-list__key, dd.govuk-summary-list__value,  dd.govuk-summary-list__actions, label {
         border-bottom: 0px;
-    }
-    dt.govuk-summary-list__key, label {
         font-size: 14px;
+    }
+    label, dt.govuk-summary-list__key  {
         font-weight: 400;
-        border-bottom: 0px;
+    }
+    dt.govuk-summary-list__key {
+        @media (min-width: 40.0625em) {
+            width: 30%;
+            }
     }
     dd.govuk-summary-list__value {
-        font-size: 14px;
-        border-bottom: 0px;
         textarea.govuk-textarea, input.govuk-input, select.govuk-select{
             border: 1px solid #A6B3BB;
             font-size: 14px;
+        }
+        @media (min-width: 40.0625em) {
+        width: 40%;
+        }
+    } 
+    dd.govuk-summary-list__actions {
+        text-align: left;
+        @media (min-width: 40.0625em) {
+        width: 30%;
+        }
+        .error {
+            color: red; 
+            border: 1px solid red; 
+            padding: 5px;
         }
     }
   }
@@ -310,7 +326,7 @@ code {
   border: 1px solid #782a06;
 }
 .ercError {
-  color: #333333;
+  color: #D8000C;
   background: url(../images/ERC/erc_error.gif) 10px center no-repeat #ffbaba;
   border: 1px solid #d8000c;
 }
