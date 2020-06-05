@@ -210,6 +210,26 @@ code {
     padding: 5px;
   }
 
+  .centred-input-fields {
+    .govuk-summary-list__row {
+        border-bottom: 0px;
+    }
+    dt.govuk-summary-list__key, label {
+        font-size: 14px;
+        font-weight: 400;
+        border-bottom: 0px;
+    }
+    dd.govuk-summary-list__value {
+        font-size: 14px;
+        border-bottom: 0px;
+        textarea.govuk-textarea, input.govuk-input, select.govuk-select{
+            border: 1px solid #A6B3BB;
+            font-size: 14px;
+        }
+    }
+  }
+
+
 //-------------------------------------------- Buttons --------------------------------------------------- //
 
 .button-primary {
