@@ -1,0 +1,141 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Report a housing repair
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Repairs</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Repair details</p> 
+    <p class="erc-alt-dark-grey-round">Where is the repair required?</p> 
+
+    <form class="form" method="post">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-location">Location:<span style="color: red"> *</span></label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <select class="govuk-select govuk-!-width-two-thirds" id="repair-location" name="repair-location">
+          <option value="Please select from the list" title="Attic">Please select from the list</option>
+          <option value="Attic" title="Attic">Attic</option>
+          <option value="Bathroom" title="Bathroom">Bathroom</option>
+          <option value="Kitchen" title="Kitchen">Kitchen</option>
+          <option value="Living room" title="Living room">Living room</option>
+          <option value="Front bedroom" title="Front bedroom">Front bedroom</option>
+          <option value="Back bedroom" title="Back bedroom">Back bedroom</option>
+          <option value="Hallway" title="Hallway">Hallway</option>
+          <option value="Whole house" title="Whole house">Whole house</option>
+          <option value="Roof (front elevation)" title="Roof (front elevation)">Roof (front elevation)</option>
+          <option value="Roof (side elevation)" title="Roof (side elevation)">Roof (side elevation)</option>
+          <option value="Roof (rear elevation)" title="Roof (rear elevation)">Roof (rear elevation)</option>
+          <option value="Close" title="Close">Close</option>
+          <option value="Garden (front)" title="Garden (front)">Garden (front)</option>
+          <option value="Garden (rear)" title="Garden (rear)">Garden (rear)</option>
+          <option value="Garden (side)" title="Garden (side)">Garden (side)</option>
+          <option value="Other (please specify)" title="Other (please specify)">Other (please specify)</option>
+        </select>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-location2">Please tell us where the problem is:</label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <input class="govuk-input govuk-!-width-two-thirds" id="repair-location2" name="repair-location2" type="text">
+      </dd>
+    </div>
+    </dl>
+
+    <p class="erc-alt-dark-grey-round">Type of tradesperson required</p>   
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-person">Type of tradesperson required:<span style="color: red"> *</span></label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <select class="govuk-select govuk-!-width-two-thirds" id="repair-person" name="repair-person">
+            <option value="" title="Joiner"></option>
+            <option value="Joiner" title="Joiner">Joiner</option>
+            <option value="Electrician" title="Electrician">Electrician</option>
+            <option value="Plumber" title="Plumber">Plumber</option>
+            <option value="Roofer" title="Roofer">Roofer</option>
+            <option value="Other (please specify)" title="Other (please specify)">Other (please specify)</option>
+        </select>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-person2">What tradesperson(s) do you require?</label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <input class="govuk-input govuk-!-width-two-thirds" id="repair-person2" name="repair-person2" type="text">
+      </dd>
+    </div>
+    </dl>
+
+    <p class="erc-alt-dark-grey-round">Repair required</p>   
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-details">Description of repair: <span style="color: red"> *</span></label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <textarea class="govuk-textarea govuk-!-width-two-thirds" id="repair-details" name="repair-details" rows="10" aria-describedby="repair-details-hint"></textarea>
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-other">Other information:</label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <textarea class="govuk-textarea govuk-!-width-two-thirds" id="repair-other" name="repair-other" rows="5" aria-describedby="repair-address-hint"></textarea>
+      </dd>
+    </div>
+    </dl>
+   
+    <p class="erc-alt-dark-grey-round">Attach a photo</p>   
+    <p class="govuk-!-font-size-14">If you have a photo of the problem (jpeg or jpg), you can attach it here. Please note that the file size must not exceed 2MB.</p>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-photo">Attach photo:</label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <input class="govuk-file-upload govuk-!-font-size-14" id="repair-photo" name="repair-photo" type="file">
+      </dd>
+    </div>
+    </dl>
+
+
+
+    {{ govukButton({
+      text: "<< Back",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRonlineAboutYou"
+    }) }}
+
+    {{ govukButton({
+      text: "Request repair",
+      classes: "button-primary erc-alt"
+    }) }}
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  

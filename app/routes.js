@@ -8,6 +8,8 @@ module.exports = router
 
 //  enter your new routes here *****************************************************************
 
+
+
 // book a theory test - if other support is needed and selected, then we stop and don't do the rest of the form - we show a Thank you screen.
 
 router.post('/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support', function (req, res) {
@@ -184,6 +186,17 @@ router.post('/forms/govuk-forms/universal-credit/UCforgotUsernameError', functio
   }
   res.redirect('/forms/govuk-forms/universal-credit/UCforgotUsernameSent')
 })
+
+// Report a repair
+
+router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, res) {
+  res.redirect('/forms/erc-forms/report-repair/RRonlineRepairDetails')
+})
+
+router.post('/forms/erc-forms/report-repair/RRonlineRepairDetails', function (req, res) {
+  res.redirect('/forms/erc-forms/report-repair/RRonlineConfirmation')
+})
+
 
 // Equality and diversity form *****************************************************************
 

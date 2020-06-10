@@ -1,0 +1,50 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Report a housing repair
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Housing Repair</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Request submitted</p> 
+    <p class="ercSuccess govuk-!-font-size-14">Your request has been successfully submitted. Case number(s) 101002242566</p>
+    <p class="erc-alt-dark-grey-round">Thank you for contacting East Renfrewshire Council</p> 
+    <p class="govuk-!-font-size-14">A confirmation email will have been sent to you if you have provided an email address. If you require an update, please contact Customer Services and quote the above reference number.</p> 
+    <p class="govuk-!-font-size-14">E-mail: <a href="mailto:customerservices@eastrenfrewshire.gov.uk" target="_blank" rel="noopener">customerservices@eastrenfrewshire.gov.uk</a></p>
+    <p class="govuk-!-font-size-14"><a href="https://www.eastrenfrewshire.gov.uk/house-repair#skiptocontent" target="_blank" rel="noopener">More information on how we will deal with your request</a></p>
+    <p class="erc-alt-dark-grey-round">Equality Survey</p> 
+    <p class="govuk-!-font-size-14">Filling in this survey will help us to make sure that we treat everyone who lives in East Renfrewshire fairly and equally.</p> 
+ 
+
+
+    {{ govukButton({
+      text: "Take equality survey",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRsurveyStart"
+    }) }}
+
+    {{ govukButton({
+      text: "Finish",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRonlineFinish"
+    }) }}
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  
