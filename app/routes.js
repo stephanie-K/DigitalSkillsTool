@@ -215,9 +215,9 @@ router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, re
 
 
 router.post('/forms/erc-forms/report-repair/RRonlineRepairDetails', function (req, res) {
-  var location_entered = req.session.data ['repair-location']
+  var location_entered = req.session.data ['repair-location'] !== 'L0'
   var person_entered = req.session.data ['repair-person']
-  var details_entered = req.session.data ['repair-details']
+  var details_entered = req.session.data ['repair-details'] !== 'P0'
   var all_entered2 = location_entered && person_entered && details_entered
   if (all_entered2) {
     res.redirect('/forms/erc-forms/report-repair/RRonlineConfirmation')
