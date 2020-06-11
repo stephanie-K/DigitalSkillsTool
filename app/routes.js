@@ -188,7 +188,6 @@ router.post('/forms/govuk-forms/universal-credit/UCforgotUsernameError', functio
 })
 
 router.post('/forms/govuk-forms/universal-credit/UCsignIn', function (req, res) {
-  //req.session.uc_create_account_1st_time = false; // we have render that page once, we need to check if there is any errors now
   var username_entered = req.session.data ['username-sign-in']
   var password_entered = req.session.data ['password-sign-in']
 
@@ -202,11 +201,29 @@ router.post('/forms/govuk-forms/universal-credit/UCsignIn', function (req, res) 
 // Report a repair ******************************************************************************
 
 router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, res) {
-  res.redirect('/forms/erc-forms/report-repair/RRonlineRepairDetails')
+  var name_entered = req.session.data ['repair-name']
+  var address_entered = req.session.data ['repair-address']
+  var phone_entered = req.session.data ['repair-phone']
+  var email_entered = req.session.data ['repair-email']
+  var all_entered = name_entered && address_entered && phone_entered && email_entered
+  if (all_entered) {
+    res.redirect('/forms/erc-forms/report-repair/RRonlineRepairDetails')
+  } else {
+    res.redirect('/forms/erc-forms/report-repair/RRonlineAboutYou')
+  }
 })
 
+
 router.post('/forms/erc-forms/report-repair/RRonlineRepairDetails', function (req, res) {
-  res.redirect('/forms/erc-forms/report-repair/RRonlineConfirmation')
+  var location_entered = req.session.data ['repair-location']
+  var person_entered = req.session.data ['repair-person']
+  var details_entered = req.session.data ['repair-details']
+  var all_entered2 = location_entered && person_entered && details_entered
+  if (all_entered2) {
+    res.redirect('/forms/erc-forms/report-repair/RRonlineConfirmation')
+  } else {
+    res.redirect('/forms/erc-forms/report-repair/RRonlineRepairDetails')
+  }
 })
 
 

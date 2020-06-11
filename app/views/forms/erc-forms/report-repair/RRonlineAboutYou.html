@@ -11,6 +11,15 @@ Report a housing repair - About you
     <h1 class="govuk-heading-l">
       Do it online
     </h1>
+
+    {% if (data ['repair-name'] === '') or  
+          (data ['repair-address'] === '') or
+          (data ['repair-phone'] === '') or
+          (data ['repair-email'] === '')
+           %}
+    <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
+    {% endif %}
+
     <h2 class="govuk-heading-l erc-alt-double-lines">Repairs</h2> 
 
     <p class="erc-alt-dark-blue-bg">Please give us some details</p> 
@@ -25,8 +34,15 @@ Report a housing repair - About you
         <label class="govuk-label" for="repair-name">Name:<span style="color: red"> *</span></label>
       </dt>
       <dd class="govuk-summary-list__value">
-        <input class="govuk-input govuk-!-width-two-thirds" id="repair-name" name="repair-name" type="text">
+        <input class="govuk-input govuk-!-width-full" id="repair-name" name="repair-name" type="text" value="{{ data ['repair-name']}}">
       </dd>
+      {% if (data ['repair-name'] === '') %}
+      <dd class="govuk-summary-list__actions">
+        <span class="error"> *</span>
+      </dd>
+      {% else%}
+      <dd class="govuk-summary-list__actions"></dd>
+      {% endif %}
     </div>
     <div class="govuk-summary-list__row">
       <dt class="govuk-summary-list__key">
@@ -35,24 +51,45 @@ Report a housing repair - About you
         </label>
       </dt>
       <dd class="govuk-summary-list__value">
-        <textarea class="govuk-textarea govuk-!-width-two-thirds" id="repair-address" name="repair-address" rows="5" aria-describedby="repair-address-hint"></textarea>
+        <textarea class="govuk-textarea govuk-!-width-full" id="repair-address" name="repair-address" rows="5" >{{ data ['repair-address']}}</textarea>
       </dd>
+      {% if (data ['repair-address'] === '') %}
+      <dd class="govuk-summary-list__actions">
+        <span class="error"> *</span>
+      </dd>
+      {% else%}
+      <dd class="govuk-summary-list__actions"></dd>
+      {% endif %}
     </div>
     <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         <label class="govuk-label" for="repair-phone">Contact telephone number:<span style="color: red"> *</span></label>
       </dt>
       <dd class="govuk-summary-list__value">
-        <input class="govuk-input govuk-!-width-two-thirds" id="repair-phone" name="repair-phone" type="text">
+        <input class="govuk-input govuk-!-width-full" id="repair-phone" name="repair-phone" type="text" value="{{ data ['repair-phone']}}">
       </dd>
+      {% if (data ['repair-phone'] === '') %}
+      <dd class="govuk-summary-list__actions">
+        <span class="error"> *</span>
+      </dd>
+      {% else%}
+      <dd class="govuk-summary-list__actions"></dd>
+      {% endif %}
     </div>
     <div class="govuk-summary-list__row ">
       <dt class="govuk-summary-list__key">
         <label class="govuk-label" for="repair-email">Email address:<span style="color: red"> *</span></label>
       </dt>
       <dd class="govuk-summary-list__value">
-        <input class="govuk-input govuk-!-width-two-thirds" id="repair-email" name="repair-email" type="text">
+        <input class="govuk-input govuk-!-width-full" id="repair-email" name="repair-email" type="text" value="{{ data ['repair-email']}}">
       </dd>
+      {% if (data ['repair-email'] === '') %}
+      <dd class="govuk-summary-list__actions">
+        <span class="error"> *</span>
+      </dd>
+      {% else%}
+      <dd class="govuk-summary-list__actions"></dd>
+      {% endif %}
     </div>
   </dl>
 
