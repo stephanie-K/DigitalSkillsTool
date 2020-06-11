@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Sign in to your Universal Credit account
+{% if (data ['username-sign-in'] === '') or  (data ['password-sign-in'] === '') %} Error - {% endif %}Sign in to your Universal Credit account
 {% endblock %}
 
 
@@ -11,25 +11,53 @@ Sign in to your Universal Credit account
       Sign in to your Universal Credit account
     </h1>
 
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username1">
+
+    {% if (data ['username-sign-in'] === '') or  (data ['password-sign-in'] === '') %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-UC-create-account">
+        Fix the following:
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          {% if data ['username-sign-in'] === '' %}   <li><a href="#username-sign-in">Username</a></li>{% endif%}
+          {% if data ['password-sign-in'] === '' %}   <li><a href="#password-sign-in">Password</a></li>{% endif%}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+
+    <form class="form" method="post" novalidate>
+    <div class="govuk-form-group {% if data ['username-sign-in'] === '' %} govuk-form-group--error {% endif %}">
+      <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username-sign-in">
         Username
       </label>
-      <input class="govuk-input govuk-input--width-20" id="username1" name="username1" value="{{data ['username1']}}">
+      {% if data ['username-sign-in'] === '' %}
+      <span id="UC-create-account-username-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Username should not be empty
+      </span>
+      {% endif %}
+      <input class="govuk-input govuk-input--width-20 {% if data ['username-sign-in'] === '' %} govuk-input--error {% endif%}" id="username-sign-in" name="username-sign-in" value="{{data ['username-sign-in']}}">
     </div>
 
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="password1">
+    <div class="govuk-form-group {% if data ['password-sign-in'] === '' %} govuk-form-group--error {% endif %}">
+      <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="password-sign-in">
         Password
       </label>
-      <input class="govuk-input govuk-input--width-20" id="password1" name="password1" value="{{data ['password1']}}">
+      {% if data ['password-sign-in'] === '' %}
+      <span id="UC-create-account-username-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Password should not be empty
+      </span>
+      {% endif %}
+      <input class="govuk-input govuk-input--width-20 {% if data ['password-sign-in'] === ''%} govuk-input--error {% endif%}" id="password-sign-in" name="password-sign-in" value="{{data ['password-sign-in']}}">
     </div>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Sign in",
-      href: "/forms/govuk-forms/not-ready.html"
+      text: "Sign in"
     }) }}
+  </form>
+
 
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">

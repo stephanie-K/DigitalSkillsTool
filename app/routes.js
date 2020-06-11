@@ -187,7 +187,19 @@ router.post('/forms/govuk-forms/universal-credit/UCforgotUsernameError', functio
   res.redirect('/forms/govuk-forms/universal-credit/UCforgotUsernameSent')
 })
 
-// Report a repair
+router.post('/forms/govuk-forms/universal-credit/UCsignIn', function (req, res) {
+  //req.session.uc_create_account_1st_time = false; // we have render that page once, we need to check if there is any errors now
+  var username_entered = req.session.data ['username-sign-in']
+  var password_entered = req.session.data ['password-sign-in']
+
+  if (username_entered && password_entered){
+    return res.redirect('/forms/govuk-forms/universal-credit/UCsignedIn')
+  } else {
+    return res.redirect('/forms/govuk-forms/universal-credit/UCsignIn')
+  } 
+})
+
+// Report a repair ******************************************************************************
 
 router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, res) {
   res.redirect('/forms/erc-forms/report-repair/RRonlineRepairDetails')
