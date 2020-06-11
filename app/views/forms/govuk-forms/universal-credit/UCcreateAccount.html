@@ -114,14 +114,14 @@
           <span class="govuk-visually-hidden">Error:</span> A security question must be selected from the first list
         </span>
         {% endif %}
-        <select class="govuk-select"  id="question1" name="question1" value="{{ data ['question1']}}">
-          <option>Please select a question</option>
-          <option value="Q1">Where were you born?</option>
-          <option value="Q2">What colour was your first car?</option>
-          <option value="Q3">What is or was your father's main job?</option>
-          <option value="Q4">What was the first concert or gig you went to?</option>
-          <option value="Q5">What was the name of the street you grew up on?</option>
-          <option value="Q6">What was your first job?</option>
+        <select class="govuk-select"  id="question1" name="question1">
+          <option value="Q0" {% if data ['question1'] === 'Q0' %} selected="true" {% endif %} >Please select a question</option>
+          <option value="Q1" {% if data ['question1'] === 'Q1' %} selected="true" {% endif %}>Where were you born?</option>
+          <option value="Q2" {% if data ['question1'] === 'Q2' %} selected="true" {% endif %}>What colour was your first car?</option>
+          <option value="Q3" {% if data ['question1'] === 'Q3' %} selected="true" {% endif %}>What is or was your father's main job?</option>
+          <option value="Q4" {% if data ['question1'] === 'Q4' %} selected="true" {% endif %}>What was the first concert or gig you went to?</option>
+          <option value="Q5" {% if data ['question1'] === 'Q5' %} selected="true" {% endif %}>What was the name of the street you grew up on?</option>
+          <option value="Q6" {% if data ['question1'] === 'Q6' %} selected="true" {% endif %}>What was your first job?</option>
         </select>
       </div>
       <div class="govuk-form-group {% if data ['answer1'] === '' %} govuk-form-group--error {% endif %}">
@@ -145,13 +145,13 @@
         </span>
         {% endif %}
         <select class="govuk-select" id="question2" name="question2">
-          <option>Please select a question</option>
-          <option >What was the first film you saw at the cinema?</option>
-          <option >What was the name of your first pet?</option>
-          <option >Where was your first holiday?</option>
-          <option >What was the surname of your best friend from childhood?</option>
-          <option >What is or was your mother's main job?</option>
-          <option >What was the make of your first car?</option>
+          <option value="Q7" {% if data ['question2'] === 'Q7' %} selected="true" {% endif %}>Please select a question</option>
+          <option value="Q8" {% if data ['question2'] === 'Q8' %} selected="true" {% endif %}>What was the first film you saw at the cinema?</option>
+          <option value="Q9" {% if data ['question2'] === 'Q9' %} selected="true" {% endif %}>What was the name of your first pet?</option>
+          <option value="Q10" {% if data ['question2'] === 'Q10' %} selected="true" {% endif %}>Where was your first holiday?</option>
+          <option value="Q11" {% if data ['question2'] === 'Q11' %} selected="true" {% endif %}>What was the surname of your best friend from childhood?</option>
+          <option value="Q12" {% if data ['question2'] === 'Q12' %} selected="true" {% endif %}>What is or was your mother's main job?</option>
+          <option value="Q13" {% if data ['question2'] === 'Q13' %} selected="true" {% endif %}>What was the make of your first car?</option>
         </select>
       </div>
       <div class="govuk-form-group {% if data ['answer2'] === '' %} govuk-form-group--error {% endif %}">
@@ -171,11 +171,6 @@
     }) }}
     </form>
 
-    {% if error %}
-    <div class="student-notes-box"> 
-      <p>If you had already selected the security questions, you will have to select one for each again</p>
-    </div>
-     {% endif %}
   </div>
 
 {% endblock %}
