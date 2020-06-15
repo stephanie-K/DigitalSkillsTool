@@ -1,33 +1,31 @@
 
-{% extends "layout.html" %}
+{% extends "layout_tool.html" %}
 
 {% block pageTitle %}
   Clear data? - GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-      "text": "Back",
-      "href": "javascript: window.history.go(-1)"
-    }) 
-  }}
-{% endblock %}
 
 {% block content %}
 
+{{ govukBackLink({
+  "text": "Back",
+  "href": "javascript: window.history.go(-1)"
+}) 
+}}
 <form method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Clear data?
+      <h1 class="govuk-heading-l">
+        Do you want to clear data?
       </h1>
       {{ govukWarningText({
-        text: "This will clear all of the data entered in this session",
+        text: "This will clear all of the data entered in the forms during this session",
         iconFallbackText: "Warning"
       }) }}
 
       {{ govukButton({
-        text: "Clear the data"
+        text: "Yes, clear the data"
       }) }}
     </div>
   </div>
