@@ -38,30 +38,10 @@ router.post('/forms/erc-forms/bidding-properties/bidding-available-properties', 
   if (propertySelected  === '37A') {
     return res.redirect('/forms/erc-forms/bidding-properties/property37A')
   }
-  // no property were selected, we render the same page with an error message (see code in the htmp for the error message)
+  // no property were selected, we render the same page with an error message (see code in the html for the error message)
   req.session.data['property'] = 'error';
   res.redirect('/forms/erc-forms/bidding-properties/bidding-available-properties')
 })
-
-
-// router.get('/forms/erc-forms/bidding-properties/bidding-available-properties', function (req, res) {
-//   req.session.data ['property'] = null // this is set to null when we render the page to clear the data of this variable if we are coming back to that page with a value already set for it
-//   return res.render('forms/erc-forms/bidding-properties/bidding-available-properties')
-// })
-
-// router.post('/forms/erc-forms/bidding-properties/no-property-chosen', function (req, res) {
-//   var propertySelected = req.session.data['property']
-//   if (propertySelected  === '86D') {
-//       return res.redirect('/forms/erc-forms/bidding-properties/property86D')
-//   }
-//   if (propertySelected  === '54E') {
-//     return res.redirect('/forms/erc-forms/bidding-properties/property54E')
-//   }
-//   if (propertySelected  === '37A') {
-//     return res.redirect('/forms/erc-forms/bidding-properties/property37A')
-//   }
-//   res.redirect('/forms/erc-forms/bidding-properties/no-property-chosen')
-// })
 
 // Universal Credit ***************************************************************************
 
