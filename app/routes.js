@@ -188,8 +188,9 @@ router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, re
   var address_entered = req.session.data ['repair-address']
   var phone_entered = req.session.data ['repair-phone']
   var email_entered = req.session.data ['repair-email']
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
   var all_entered = name_entered && address_entered && phone_entered && email_entered
-  if (all_entered) {
+  if (all_entered && regExpEmail.test(email_entered)) {
     res.redirect('/forms/erc-forms/report-repair/RRonlineRepairDetails')
   } else {
     res.redirect('/forms/erc-forms/report-repair/RRonlineAboutYou')
