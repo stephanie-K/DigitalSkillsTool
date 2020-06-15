@@ -99,13 +99,13 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
 
 .govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
 color: white; 
-background-color: #004269; 
+background-color:#0071BA; 
 padding: 5px;
 box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 }
 
 .js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
-    background-color: #004269 ;
+    background-color: #0071BA;
 }
 
 

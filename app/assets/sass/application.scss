@@ -37,6 +37,11 @@ $govuk-assets-path: '/govuk/assets/';
   color: #ffdd00;
 }
 
+// added this so all the logo don't change briefly when we click on them, they used to have a yellow band and black border on focus
+.govuk-header__logo a:focus {
+  background-color:#0000 ;
+  box-shadow: 0 0 0 0;
+}
 .govuk-header__link--service-name:focus {
   color: #000;
 }
