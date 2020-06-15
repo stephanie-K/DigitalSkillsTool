@@ -12,8 +12,8 @@ Report a housing repair
       Do it online
     </h1>
 
-    {% if (data ['repair-location'] === '') or  
-    (data ['repair-person'] === '') or  
+    {% if (data ['repair-location'] === 'L0') or  
+    (data ['repair-person'] === 'P0') or  
     (data ['repair-details'] === '')
      %}
     <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
