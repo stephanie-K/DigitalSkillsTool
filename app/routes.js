@@ -45,6 +45,16 @@ router.post('/forms/erc-forms/bidding-properties/bidding-available-properties', 
 
 // Universal Credit ***************************************************************************
 
+router.post('/forms/govuk-forms/universal-credit/UCalreadyGetBenefit', function (req, res) {
+  var hasRead = req.session.data['ucread']
+  if (hasRead == "read") {
+      return res.redirect('/forms/govuk-forms/universal-credit/UCyourDisabilityBenefit')
+  }
+  req.session.data['ucread'] = 'error'
+  res.redirect('/forms/govuk-forms/universal-credit/UCalreadyGetBenefit')
+})
+
+
 router.post('/forms/govuk-forms/universal-credit/UCdisabilityBenefits', function (req, res) {
   var gettingDisabilityBenefits = req.session.data['getting-disability-benefits']
   if (gettingDisabilityBenefits === 'no') {
