@@ -19,7 +19,7 @@ Report a housing repair - About you
           (data ['repair-address'] === '') or
           (data ['repair-phone'] === '') or
           (data ['repair-email'] === '') or
-          not validEmail
+          (data ['repair-email'] and not validEmail)
            %}
     <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
     {% endif %}
@@ -90,7 +90,7 @@ Report a housing repair - About you
       <dd class="govuk-summary-list__actions">
       {% if (data ['repair-email'] === '') %}
         <span class="error"> *</span>
-      {% elseif not validEmail%}
+      {% elseif (data ['repair-email'] and not validEmail)%}
         <span class="error">* Enter a valid email address.</span>
       {% else %}
       {% endif %}
