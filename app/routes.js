@@ -220,6 +220,52 @@ router.post('/forms/erc-forms/report-repair/RRonlineRepairDetails', function (re
   }
 })
 
+// Council tax form - register *****************************************************************
+
+router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart', function (req, res) {
+  var hasRead = req.session.data['rctread']
+  if (hasRead == "read") {
+      return res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress')
+  }
+  req.session.data['rctread'] = 'error'
+  res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart')
+})
+
+router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress', function (req, res) {
+  var email_entered = req.session.data ['registering-email']
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  if (email_entered && regExpEmail.test(email_entered)) {
+    res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTconfirmCode')
+  } else {
+    res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress')
+  }
+})
+
+// Council tax form - sign up *****************************************************************
+
+router.post('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart', function (req, res) {
+  var username_entered = req.session.data ['sign-in-username']
+  if (username_entered) {
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTsignedIn')
+  } else {
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart')
+  }
+})
+
+
+router.post('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBoth', function (req, res) {
+  var name_entered = req.session.data ['ct-sign-name']
+  var address_entered = req.session.data ['ct-sign-address']
+  var phone_entered = req.session.data ['ct-sign-phone']
+  var email_entered = req.session.data ['ct-sign-email']
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  var all_entered = name_entered && address_entered && phone_entered && email_entered
+  if (all_entered && regExpEmail.test(email_entered)) {
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBothSent')
+  } else {
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBoth')
+  }
+})
 
 // Equality and diversity form *****************************************************************
 
