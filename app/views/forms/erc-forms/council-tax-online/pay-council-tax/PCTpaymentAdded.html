@@ -34,7 +34,7 @@ Council Tax Payment
       {% if (data ['ct-name'] === '') %}      <li>A Name must be entered</li>                                         {% endif %}
       {% if (data ['ct-street'] === '') %}    <li>A street must be entered</li>                                       {% endif %}
       {% if (data ['ct-town'] === '') %}      <li>A town must be entered</li>                                         {% endif %}
-      {% if (data ['ct-postcode'] === '') %}  <li>A postcode must be entered</li>                                     {% endif %}
+      {% if (data ['ct-postcode'] === '')%}     <li>A postcode must be entered</li>                                     {% endif %}
     </ol>
     </div>
     {% endif %}
@@ -51,9 +51,6 @@ Council Tax Payment
         <p><a href="#">Planning services</a></p>
         <p><a href="#">Housing Benefit Overpayment</a></p>
       </div>
-
-      <form class="form" method="post">
-
       <div class="govuk-grid-column-two-thirds payment">
         <p class="erc-payment-blue-bg">Payment entry</p>
         <p>Please enter the reference of the account you wish to pay</p>
@@ -61,51 +58,31 @@ Council Tax Payment
           <label class="govuk-label" for="ct-reference">
             Reference *
           </label>
-          {% if (data ['ct-reference'] === '')%}
-          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-10" id="ct-reference" name="ct-reference" type="text">
-          {% else %}
-          <input class="govuk-input govuk-input--width-10" id="ct-reference" name="ct-reference" type="text" value="{{data['ct-reference']}}">
-          {% endif %}
+          <input class="govuk-input govuk-input--width-10" id="ct-reference" name="ct-reference" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="ct-amount">
             Amount (£)*
           </label>
-          {% if (data ['ct-amount'] === '')%}
-          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-5" id="ct-amount" name="ct-amount" type="text">
-          {% else %}
-          <input class="govuk-input govuk-input--width-5" id="ct-amount" name="ct-amount" type="text" value="{{data['ct-amount']}}">
-          {% endif %}
+          <input class="govuk-input govuk-input--width-5" id="ct-amount" name="ct-amount" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="ct-name">
             Name *
           </label>
-          {% if (data ['ct-name'] === '')%}
-          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-20" id="ct-name" name="ct-name" type="text">
-          {% else %}
-          <input class="govuk-input govuk-input--width-20" id="ct-name" name="ct-name" type="text" value="{{data['ct-name']}}">
-          {% endif %}
+          <input class="govuk-input govuk-input--width-20" id="ct-name" name="ct-name" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="ct-houseno">
             House No OR House Name *
           </label>
-          {% if (data ['ct-houseno'] === '')%}
-          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-5" id="ct-houseno" name="ct-houseno" type="text">
-          {% else %}
-          <input class="govuk-input govuk-input--width-5" id="ct-houseno" name="ct-houseno" type="text" value="{{data['ct-houseno']}}">
-          {% endif %}
+          <input class="govuk-input govuk-input--width-5" id="ct-houseno" name="ct-houseno" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="ct-street">
             Street *
           </label>
-          {% if (data ['ct-street'] === '')%}
-          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-20" id="ct-street" name="ct-street" type="text">
-          {% else %}
-          <input class="govuk-input govuk-input--width-20" id="ct-street" name="ct-street" type="text" value="{{data['ct-street']}}">
-          {% endif %}
+          <input class="govuk-input govuk-input--width-20" id="ct-street" name="ct-street" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="ct-area">
@@ -117,11 +94,7 @@ Council Tax Payment
           <label class="govuk-label" for="ct-town">
             Town *
           </label>
-          {% if (data ['ct-town'] === '')%}
-          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-20" id="ct-town" name="ct-town" type="text">
-          {% else %}
-          <input class="govuk-input govuk-input--width-20" id="ct-town" name="ct-town" type="text" value="{{data['ct-town']}}">
-          {% endif %}
+          <input class="govuk-input govuk-input--width-20" id="ct-town" name="ct-town" type="text">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="ct-county">
@@ -133,27 +106,26 @@ Council Tax Payment
           <label class="govuk-label" for="ct-postcode">
             Postcode *
           </label>
-          {% if (data ['ct-postcode'] === '')%}
-          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-5" id="ct-postcode" name="ct-postcode" type="text">
-          {% else %}
-          <input class="govuk-input govuk-input--width-5" id="ct-postcode" name="ct-postcode" type="text" value="{{data['ct-postcode']}}">
-          {% endif %}
+          <input class="govuk-input govuk-input--width-5" id="ct-postcode" name="ct-postcode" type="text">
         </div>
         <br>
         {{ govukButton({
           text: "Add to list",
-          classes: "button-primary erc-payment"
+          classes: "button-primary erc-payment",
+          href: "#"
         }) }}
     
-        <a class="govuk-button button-primary erc-payment" data-module="govuk-button" href="/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry?usedcancel=true" >
+        <button class="govuk-button button-primary erc-payment" data-module="govuk-button">
           Cancel
-        </a>
+        </button>
 
         {{ govukButton({
           text: "Back to top",
           classes: "button-primary erc-payment",
           href: "#"
         }) }}
+
+        <form class="form" method="post">
 
         <h2 class="govuk-heading-m" style="color: #0051B8;">
           Payment Review
@@ -177,22 +149,24 @@ Council Tax Payment
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
   
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell"></td>
-                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell">individual</td>
+                <td class="govuk-table__cell">{{data['ct-amount']}}</td>
+                <td class="govuk-table__cell">council tax payment</td>
+                <td class="govuk-table__cell">{{data['ct-reference']}}</td>
+                <td class="govuk-table__cell">10.00</td>
+                <td class="govuk-table__cell"><a href="/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry"><u>Modify</u></a></td>
+                <td class="govuk-table__cell"><a href="/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry"><u>Remove</u></a></td>
               </tr>
             </tbody>
           </table>
         </div>
 
 
+
         {{ govukButton({
           text: "Pay",
-          classes: "button-primary erc-payment"
+          classes: "button-primary erc-payment",
+          href: "/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentProcessedWait"
         }) }}
 
         {{ govukButton({
@@ -200,18 +174,18 @@ Council Tax Payment
           classes: "button-primary erc-payment",
           href: "#"
         }) }}
+        </form>
+
+        <p class="govuk-tag red govuk-!-margin-top-1 govuk-!-margin-bottom-1">just assuming it's something like that - would need to see the screen</p>
 
       </div>
-
-      </form>
     </div>
-    <div class="student-notes-box"> 
-      <p>At the moment, the Cancel button only works if you select it twice</p>
-    </div>
+   
     </div> 
   </div>
 
 {% endblock %}
+
 
 
 

@@ -267,6 +267,39 @@ router.post('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBo
   }
 })
 
+// Council tax form - pay *****************************************************************
+
+
+router.get('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry', function (req, res) {
+  var used_cancel = req.session.data ['usedcancel']
+  if (used_cancel) {
+    // delete all session data
+    req.session.data = {} 
+  }
+   res.render('forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry')
+})
+
+
+
+router.post('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry', function (req, res) {
+  req.session.data ['ct-payment-entry-cancelled'] = false
+  var reference_entered = req.session.data ['ct-reference']
+  var amount_entered = req.session.data ['ct-amount']
+  var name_entered = req.session.data ['ct-name']
+  var houseno_entered = req.session.data ['ct-houseno']
+  var street_entered = req.session.data ['ct-street']
+  var town_entered = req.session.data ['ct-town']
+  var postcode_entered = req.session.data ['ct-postcode']
+  var all_entered = reference_entered && amount_entered && name_entered && houseno_entered && street_entered && town_entered && postcode_entered
+  if (all_entered) {
+    res.redirect('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentAdded')
+  } else {
+    req.session.data ['usedcancel'] = false
+    res.redirect('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry')
+  }
+})
+
+
 // Equality and diversity form *****************************************************************
 
 router.post('/forms/erc-forms/equal-opportunities/age', function (req, res) {
