@@ -399,6 +399,73 @@ code {
     border-radius: 5px;
 }
 
+.erc-payment-blue-bg {
+    background-color: #0051B8;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight:bold;
+}
+
+.payment {
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+    p, label {
+        font-size: 14px;
+        margin-bottom: 0;
+    }    
+    p.selected {
+        background-color: #D1CEE1;
+        a {
+            text-decoration: underline;
+        }
+    }  
+    .govuk-table__header {
+        background-color: #0051B8;
+        color: #fff;
+        font-size: 14px;
+        border: 1px solid #808080;
+        padding-left: 5px;
+    }  
+    .govuk-table__cell {
+        border-bottom: 0;
+    }
+    .govuk-form-group {
+        margin-bottom: 5px;
+    }
+    .govuk-input {
+        height: 1.5rem;
+        border: 1px solid #004269;
+    }
+}
+
+div.payment-error{
+    li {
+        font-size: 14px;
+        color: red;
+    }
+}
+
+button.erc-payment, a.erc-payment{
+    background-color: #0051B8;
+    border: 1px solid #0051B8;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 0 0 ;
+    font-size: 14px;
+    padding: 3px 6px;
+}
+
+button.erc-payment:hover, a.erc-payment:hover{
+    background-color: #ffffff !important;
+    border: 1px solid #0051B8;
+    color: #0051B8;
+}
+
 button.erc-alt, a.erc-alt{
     background-color: $erc-alt-text-blue;
     border: 1px solid #23408E;

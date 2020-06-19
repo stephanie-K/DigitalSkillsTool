@@ -7,19 +7,165 @@ Council Tax Payment
 
 {% block content %}
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">
       Council Tax Payment
     </h1>
-    <p>Please note - information on this page will time-out after 15 minutes of inactivity<br>
-      * = Mandatory Field</p>
-
-      <h2 class="govuk-heading-l">
-        To be continued
-      </h2>
-   
-    </div>
+    <p class="govuk-!-font-size-14">Please note - information on this page will time-out after 15 minutes of inactivity<br>
+      <strong>*</strong> = Mandatory Field</p>
     
+    {%if true %}
+    <h2 class="govuk-heading-m" style="color: #0051B8;">
+      Please check the following
+    </h2>
+    <div class="payment-error">
+    <ol class="govuk-list govuk-list--number ">
+      <li>Please enter a reference</li>
+      <li>Please enter a valid amount, e.g. £50 must be entered as 50.00</li>
+      <li>A building name/number must be entered</li>
+      <li>A Name must be entered</li>
+      <li>A street must be entered</li>
+      <li>A town must be entered</li>
+      <li>A postcode must be entered</li>
+    </ol>
+    </div>
+    {% endif %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third payment">
+        <p class="erc-payment-blue-bg">Payment type</p>
+        <p class="selected"><a href="#">Council Tax</a></p>
+        <p><a href="#">Rents</a></p>
+        <p><a href="#">ER Culture and Leisure Invoice</a></p>
+        <p><a href="#">Invoice Payments</a></p>
+        <p><a href="#">Building Standards Services</a></p>
+        <p><a href="#">Planning services</a></p>
+        <p><a href="#">Housing Benefit Overpayment</a></p>
+      </div>
+      <div class="govuk-grid-column-two-thirds payment">
+        <p class="erc-payment-blue-bg">Payment entry</p>
+        <p>Please enter the reference of the account you wish to pay</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-reference">
+            Reference *
+          </label>
+          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-10" id="ct-reference" name="ct-reference" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-amount">
+            Amount (£)*
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="ct-amount" name="ct-amount" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-name">
+            Name *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="ct-name" name="ct-name" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-houseno">
+            House No OR House Name *
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="ct-houseno" name="ct-houseno" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-street">
+            Street *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="ct-street" name="ct-street" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-area">
+            Area
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="ct-area" name="ct-area" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-town">
+            Town *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="ct-town" name="ct-town" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-county">
+            County
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="ct-county" name="ct-county" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="ct-postcode">
+            Postcode *
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="ct-postcode" name="ct-postcode" type="text">
+        </div>
+        <br>
+        {{ govukButton({
+          text: "Add to list",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+    
+        {{ govukButton({
+          text: "Cancel",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+
+        {{ govukButton({
+          text: "Back to top",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+
+        <h2 class="govuk-heading-m" style="color: #0051B8;">
+          Payment Review
+        </h2>
+        <div class="payment">
+          <p class="govuk-!-margin-bottom-4">To modify a payment click the Modify link. To remove a payment click the Delete link<br>
+          To make a payment, click Pay. You will be redirected to a holding page while your request is processed. You will then be directed to the next step in the payment process</p>
+
+          <table class="govuk-table" style="overflow: auto;">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Account Type</th>
+                <th scope="col" class="govuk-table__header">Amount (£)</th>
+                <th scope="col" class="govuk-table__header">Description</th>
+                <th scope="col" class="govuk-table__header">Reference</th>
+                <th scope="col" class="govuk-table__header">VAT</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+  
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+                <td class="govuk-table__cell"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        {{ govukButton({
+          text: "Pay",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+
+        {{ govukButton({
+          text: "Back to top",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+
+      </div>
+    </div>
+   
+    </div> 
   </div>
 
 {% endblock %}
