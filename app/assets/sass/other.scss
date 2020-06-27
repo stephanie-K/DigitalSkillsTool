@@ -121,6 +121,9 @@ img.dvsa, image.dvsa  {
     font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     margin: 0 20px;
+    @media only screen and (max-width: 340px) {
+        font-size:18px;
+    }
 }
 .orange-heading {
     background-color: #ff9900; 
@@ -210,6 +213,9 @@ img.dvsa, image.dvsa  {
     padding: 4px 10px;
     font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    @media only screen and (max-width: 340px) {
+        font-size:18px;
+    }
 
 }
 
