@@ -7,6 +7,7 @@ This is a work in progress.
 **There is about 1 in 7 people in Scotland who can’t get online** (that’s about 800,000 people)
 
 The course is developed for the **East Renfrewshire Council** and the website supporting the classes is the result of the work of many people who either: mapped the forms, coded them, or tested them:
+
 - [Alexandria Rocks](https://www.linkedin.com/in/alexandria-rocks/)
 - [Anastasia Moneva](https://www.linkedin.com/in/anastasia-moneva-6b192189/)
 - [Craig Barratt](https://www.linkedin.com/in/craig-barratt-softdev/)

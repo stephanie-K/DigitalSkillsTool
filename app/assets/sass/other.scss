@@ -27,7 +27,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 .govuk-header__content {
-    @media only screen and (min-width: 999px) { 
+    @media only screen and (min-width: 999px) {
     border: 30px solid #fff;
     }
     a {
@@ -43,16 +43,16 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 .dvsa-grey-container {
-    border-top: 1px solid #e4e4e4; 
-    background-color: #fafafa; 
+    border-top: 1px solid #e4e4e4;
+    background-color: #fafafa;
     padding: 1em 3em;
-    @media only screen and (max-width: 490px) { 
+    @media only screen and (max-width: 490px) {
         padding: 1em;
     }
 }
 
 .dvsa-info-container {
-    border: 1px solid #005ea5; 
+    border: 1px solid #005ea5;
     border-left: 8px solid #005ea5;
     background-color: #fff;
     margin-bottom:20px;
@@ -63,14 +63,14 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 .dvsa-help-container {
-    border: 1px solid #db6a00; 
+    border: 1px solid #db6a00;
     border-left: 8px solid #db6a00;
     background-color: #fff;
     padding: 1em;
 }
 
 .dvsa-error-container {
-    border: 1px solid #DB0020; 
+    border: 1px solid #DB0020;
     border-left: 8px solid #DB0020;
     background-color: #fff;
     padding: 1em;
@@ -94,7 +94,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 img.dvsa, image.dvsa  {
-    @media only screen and (max-width: 490px) { 
+    @media only screen and (max-width: 490px) {
         width:100%;
     }
 }
@@ -126,7 +126,7 @@ img.dvsa, image.dvsa  {
     }
 }
 .orange-heading {
-    background-color: #ff9900; 
+    background-color: #ff9900;
     color: #fff;
     padding: 3px 10px;
     font-weight: bold;
@@ -145,7 +145,7 @@ img.dvsa, image.dvsa  {
 }
 
 .yellow-heading {
-    background-color: #ffe581; 
+    background-color: #ffe581;
     padding: 3px 10px;
     font-weight: bold;
 }
@@ -203,12 +203,12 @@ img.dvsa, image.dvsa  {
     text-transform: none;
 
 }
-    
+
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//
 
 .park-home-tagline {
     font-size: 24px;
-    color: white; 
+    color: white;
     background-color: #f47522;
     padding: 4px 10px;
     font-weight: 500;
@@ -227,29 +227,26 @@ img.dvsa, image.dvsa  {
         padding: 10px;
     }
     hr {
-        background-color: #e6e6e6; 
+        background-color: #e6e6e6;
         border: none;
         display: block;
         height: 2px;
         margin: 2rem 0;
     }
     .govuk-hint{
-        font-size: 12px; 
+        font-size: 12px;
     }
-    @media only screen and (max-width: 640px) { 
+    @media only screen and (max-width: 640px) {
         margin: 0 0.1em;
     }
 }
-
-
-
 
 .park-home-orange-block{
     background-color: #f47522;
     margin-right: 15px;
     h1 {
         font-size: 32px;
-        font-weight: 200; 
+        font-weight: 200;
         line-height: 1.125;
     }
     p {
@@ -263,7 +260,7 @@ img.dvsa, image.dvsa  {
     padding: 10px 30px;
     h2 {
         font-size: 1.75em;
-        font-weight: 300; 
+        font-weight: 300;
         line-height: 1.125;
     }
     p {
@@ -273,11 +270,11 @@ img.dvsa, image.dvsa  {
         margin: 0.8em 0;
         line-height: 1.125;
         font-size: 2rem;
-        font-weight: 200; 
+        font-weight: 200;
     }
     h4 {
         font-size: 1.5em;
-        font-weight: 400; 
+        font-weight: 400;
         margin-bottom: 0;
         line-height: 1.125;
         margin-top: 0;
@@ -300,7 +297,475 @@ margin-top:30px;
 
 
 
-// --------------------------------------------   ------------------------------------------------ //
+/* --------------------------------- PATIENT ACCESS HOMEPAGE----------------------------------------- */
+
+.govuk-header__logotype {
+  margin: 22.5px;
+}
+
+#pat-acc-logo-clean:focus {
+  background-color: white;
+  box-shadow: none;
+}
+
+.govuk-header__content {
+  border: none;
+}
+
+.pat-acc-tagline {
+    font-size: 24px;
+    color: white;
+    background-color: #32325d;
+    padding: 4px 10px;
+    margin: 22.5px 22.5px 22.5px 0px;
+    float: left;
+    font-weight: 500;
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+.pat-acc-header-button-container {
+  width: 49%;
+  float: right;
+}
+
+.pat-acc-header-sign-in-button, .pat-acc-header-register-button {
+  padding: 12px 32px;
+  margin: 15px 7px 15px;
+	border-radius: 25px;
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  text-decoration: none;
+  background-color: white;
+  float: left;
+}
+
+.pat-acc-header-register-button {
+  border: solid 1px #4768FD;
+  a{
+    color: #4768FD;
+  }
+}
+
+.pat-acc-header-sign-in-button {
+  border: solid 1px #D3368A;
+  a {
+    color: #D3368A;
+  }
+}
+
+.pat-acc-header-sign-in-button:hover {
+  background-color: #D3368A;
+  color: white;
+  opacity: 70%;
+}
+
+.pat-acc-header-register-button:hover {
+  background-color: #4768FD;
+  color: white;
+  opacity: 70%;
+}
+
+.pat-acc-header-sign-in-button:focus {
+  background-color: #D3368A;
+  color: white;
+  box-shadow: none;
+}
+
+.pat-acc-header-register-button:focus {
+  background-color: #4768FD;
+  color: white;
+  box-shadow: none;
+}
+
+.pat-acc-block {
+  background-image: url('../images/PA/take-control.png');
+  background-size: cover;
+}
+
+.pat-acc-fullscreen-header {
+  width: 100%;
+  height: 76px;
+  box-shadow: 2px 4px #EAE9EE;
+  position: fixed;
+}
+
+.pat-acc-hero-button-container {
+  height: 59px;
+  width: 600px;
+  margin-top: 350px;
+  a {
+    color: white;
+  }
+}
+
+.pat-acc-sign-in-button, .pat-acc-register-button {
+  padding: 12px 32px;
+  margin: 0px 7px 15px;
+	border-radius: 25px;
+  font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  text-decoration: none;
+  color: #FFF;
+  float: left;
+}
+
+.pat-acc-register-button {
+  background-color: #4768FD;
+}
+
+.pat-acc-sign-in-button {
+  background-color: #D3368A;
+}
+
+.pat-acc-sign-in-button:hover, .pat-acc-register-button:hover {
+  opacity: 70%;
+}
+
+.pat-acc-sign-in-button:focus {
+  background-color: #D3368A;
+  box-shadow: 2px 2px 4px #D3368A;
+}
+
+.pat-acc-register-button:focus {
+  background-color: #4768FD;
+  box-shadow: 2px 2px 4px #4768FD;
+}
+
+.pat-acc-footer {
+  background-color: #32325d;
+}
+
+/* ---------------------------------HOMEPAGE END----------------------------------------- */
 
 
+/* ---------------------------------PATIENT ACCESS SIGN IN PAGE  / REGISTER----------------------------------------- */
 
+.pat-acc-signin-block {
+  background-color: #F7F7FA;
+  display: block;
+  text-align: center;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+
+.pat-acc-signin-centre{
+  display: inline-block;
+}
+
+.pat-acc-signin-to-acc {
+  color: #32325d;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 0px;
+  margin: 0px;
+}
+
+.pat-acc-signin-err-acc {
+  font-size: 14px;
+  padding: 0;
+  margin: 0px;
+  color: #6f6f8c;
+  a {
+    color: #D3368A;
+  }
+}
+
+.pat-acc-signin-err-reg {
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.pat-acc-signin-form-container {
+  width: 355px;
+  height: auto;
+  padding: 40px 56px;
+  margin-top: 20px;
+  border-radius: 3%;
+  border: solid 1px #EAE9EE;
+  box-shadow: 0px 0px 18px #EAE9EE;
+  background-color: white;
+  color: #32325d;
+}
+
+#pat-acc-label {
+  color: #32325d;
+  float: left;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0;
+}
+
+#pat-acc-label-dob {
+  color: #32325d;
+  float: left;
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0;
+}
+
+#pat-acc-input {
+  padding: 9px 15px;
+  width: 100%;
+  float: left;
+}
+
+#pat-acc-input:focus {
+  outline: none;
+}
+
+#pat-acc-input::placeholder {
+  color: #b0b0b7;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pat-acc-signin-button-form {
+  margin-top: 40px;
+}
+
+.signin-button-signin-page-container {
+  display: inline-block;
+  a {
+    color: white;
+  }
+}
+
+.signin-button-signin-page {
+  padding: 10px 140px;
+	border-radius: 25px;
+}
+
+.pat-acc-signin-form-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+#pat-acc-select-reg {
+  padding: 9px 40px 9px 15px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #b0b0b7;
+  width: 100%;
+}
+
+#pat-acc-form-group {
+  margin: 10px 0px;
+}
+
+.pat-acc-dob {
+  padding: 0;
+}
+
+#pat-acc-select-reg-year, #pat-acc-select-reg-month, #pat-acc-select-reg-day  {
+  padding: 9px 15px;
+  font-size: 14px;
+  border-color: #d3d3d3;
+  color: #676767;
+}
+
+#pat-acc-select-reg-year, #pat-acc-select-reg-day {
+  width: 25%;
+  margin: 0px 15px 0px 15px;
+}
+
+#pat-acc-select-reg-month {
+  width: 30%;
+}
+
+#pat-acc-support-centre {
+  color: #676767;
+  margin: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  float: right;
+}
+
+#pat-acc-support-centre:focus {
+  background-color: white;
+  box-shadow: none;
+}
+
+.pat-acc-why-we-ask {
+  background-color: #32325d;
+  opacity: 0.9;
+  padding: 50px;
+}
+
+#pat-why-we-ask-container {
+  box-shadow: none;
+  opacity: 1;
+  width: 450px;
+}
+
+.pat-why-we-ask-font-align {
+  text-align: left;
+  padding-top: 20px;
+}
+
+.pat-why-we-ask-font {
+  font-size: 24x;
+}
+
+.pat-why-we-ask-font-sub {
+  font-size: 18px;
+  color: #676767;
+}
+
+#pat-why-we-ask-container {
+  margin-top: 35px;
+  margin-left: 0px;
+}
+/* ---------------------------------PATIENT ACCESS SIGN IN PAGE / REGISTER END----------------------------------------- */
+
+/* ---------------------------------PATIENT ACCESS REGISTER2----------------------------------------- */
+
+.pat-acc-enter-details-cont {
+  text-align: left;
+}
+
+.pat-acc-enter-details-back-cont {
+  text-align: left;
+  font-weight: 700;
+}
+
+.pat-acc-enter-details-back {
+  margin-right: 50px;
+  color: #D3368A;
+}
+
+.pat-acc-enter-details {
+  font-size: 18px;
+  color: #32325d;
+  font-weight: 700;
+}
+
+#pat-acc-password-reqs {
+  font-size: 16px;
+  color: #6F6F8C;
+}
+
+
+.pat-acc-checkboxes {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pat-acc-checkboxes input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.pat-acc-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.pat-acc-checkboxes:hover input ~ .pat-acc-checkmark {
+  background-color: #ccc;
+}
+
+.pat-acc-checkboxes input:checked ~ .pat-acc-checkmark {
+  background-color: blue;
+}
+
+.pat-acc-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the pat-acc-checkmark when checked */
+.pat-acc-checkboxes input:checked ~ .pat-acc-checkmark:after {
+  display: block;
+}
+
+/* Style the pat-acc-checkmark/indicator */
+.pat-acc-checkboxes .pat-acc-checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.pat-acc-terms-cond {
+  color: #D3368A;
+}
+
+.pat-acc-register2-create {
+  padding: 10px 112px;
+  margin-top: 15px;
+}
+
+/* ---------------------------------PATIENT ACCESS REGISTER2 END----------------------------------------- */
+
+/* ---------------------------------PATIENT ACCESS SUCCESS----------------------------------------- */
+
+.pat-acc-success-cont {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.pat-acc-success-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.pat-acc-success-subtitle {
+  font-size: 16px;
+}
+
+.pat-acc-success-skip-ver {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 30px;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #D3368A;
+  }
+}
+
+.pat-acc-success-email {
+  font-weight: 700;
+}
+
+/* ---------------------------------PATIENT ACCESS SUCCESS END----------------------------------------- */
+
+/* ---------------------------------PATIENT ACCESS LINK GP----------------------------------------- */
+
+.pat-acc-link-gp-body {
+  text-align: left;
+}
+
+.pat-acc-link-gp-cont {
+  padding: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+.pat-acc-link-gp-body {
+  width: 500px;
+  height: 500px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
