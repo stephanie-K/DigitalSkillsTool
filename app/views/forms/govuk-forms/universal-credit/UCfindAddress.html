@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if error %} Error - {% endif %}Create an account
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Find Address
+    </h1>
+
+    <form class="form" method="post" novalidate>
+
+    <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+            Enter postcode
+          </label>
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        </legend>
+
+      </fieldset>
+
+    </div>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I do not have a postcode
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>
+          If you are in temporary accomodation such as a long term hostel, use
+          the postcode of where you are currently living. You can also use the
+          postcode of your jobcentre.
+        </p>
+        <p>
+          If you cannot fiind your postcode on a letter, try searching online
+          using your address.
+        </p>
+      </div>
+    </details>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <button class="govuk-button" data-module="govuk-button">
+          Find address
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Enter address manually
+        </button>
+      </div>
+    </div>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
