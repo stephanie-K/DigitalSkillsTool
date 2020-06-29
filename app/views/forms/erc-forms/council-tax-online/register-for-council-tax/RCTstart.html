@@ -1,0 +1,82 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+{%if data['rctread'] === 'error' %}Error - {% endif %} Council Tax Online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Important Information</p> 
+
+    <p class="ercInformation govuk-!-font-size-14">Self Service Plus users - update your profile to Council Tax Online and keep your login details by selecting to Sign In</p>
+    <div class="govuk-heading-s erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">The Council Tax Online service enables residents of East Renfrewshire to manage their own personal Council Tax details online. You can check your bill, request a copy bill, see what payments you have made and make further payments. To sign up for Council Tax Online, you need to</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li class="govuk-!-font-size-14">Have an email address</li>
+        <li class="govuk-!-font-size-14">Confirm your identity to us</li>
+        <li class="govuk-!-font-size-14">Have a Council Tax bill for your current property</li>
+      </ul>
+      <p class="govuk-!-font-size-14">We take the security of your data seriously and need to have proof of your identity before you can access personal information. You'll be required to produce 2 forms of identification</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li class="govuk-!-font-size-14">One photographic, such as a passport and</li>
+        <li class="govuk-!-font-size-14">One other, such as a current utility bill</li>
+        <li class="govuk-!-font-size-14"></li>
+      </ul>
+      <p class="govuk-!-font-size-14">Once you have proved your identity, you will be able to use your Council Tax bill to get access to your billing and payment details.</p>
+      <p class="govuk-!-font-size-14">All fields marked <span style="color: red; ">*</span> are mandatory and must be completed.</p>
+    </div>
+
+    <p class="erc-alt-dark-blue-bg">Terms and Conditions</p> 
+    <div class="govuk-heading-s erc-alt-light-grey">
+    <p class="govuk-!-font-size-14">Please read our <a href="https://www.eastrenfrewshire.gov.uk/privacy" target="_blank" rel="noopener">Terms and Conditions<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a>. You need to agree to these before you can carry out certain online transactions with the Council.</p>
+    </div>
+
+    <form class="form" method="post">
+   
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="rctread" name="rctread" type="checkbox" value="read">
+              <label class="govuk-label govuk-checkboxes__label govuk-!-font-size-14" for="read">
+                I have read and understand the Terms and Conditions
+              </label>
+            </div>
+          </div>
+          {%if data['rctread'] === 'error' %}
+          <span id="rctread-error" class="govuk-error-message govuk-!-font-size-14">
+            <span class="govuk-visually-hidden">Error:</span> You must accept the terms and conditions before proceeding
+          </span>
+          {% endif %}
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Sign In",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart"
+      }) }}
+
+      {{ govukButton({
+        text: "Exit",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/CTstart"
+      }) }}
+  
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary erc-alt"
+      }) }}
+
+    </form>
+
+    </div>
+  </div>
+{% endblock %}

@@ -37,6 +37,11 @@ $govuk-assets-path: '/govuk/assets/';
   color: #ffdd00;
 }
 
+// added this so all the logo don't change briefly when we click on them, they used to have a yellow band and black border on focus
+.govuk-header__logo a:focus {
+  background-color:#0000 ;
+  box-shadow: 0 0 0 0;
+}
 .govuk-header__link--service-name:focus {
   color: #000;
 }
@@ -137,14 +142,61 @@ $govuk-assets-path: '/govuk/assets/';
    // display: none
   }
 
-  .student-notes-box{
-    border: solid 1px #bcdff1;
-    margin: 20px 0;
-    padding: 25px 15px;
-    border-radius: 10px;
-    color: #31708f ;
-    background-color: #d9edf7;
-    p, h3, li {
-        color: #31708f;
-    }
+
+.uc-to-do-list-blue {
+  text-align: center; 
+  background-color:#005ea5 ;
+  padding: 10px 15px; 
+  a {
+    color: white; 
+    font-weight: 700;
+    text-decoration: none;
+  }
+  a:hover, a:focus, a:active {
+    text-decoration: underline;
+  }
+}
+
+.uc-to-do-list-grey {
+  text-align: center; 
+  background-color:#dee0e2 ;
+  padding: 10px 15px;
+  a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+  a:hover, a:focus, a:active {
+    text-decoration: underline;
+  }
+}
+
+.uc-to-do-list-red {
+  border-left: 10px solid #b10e1e;
+  background-color: #fceaeb;
+  padding: 15px;
+  p {
+    padding: 5px 0 10px 0;
+  }
+}
+
+
+
+.uc-to-do-list {
+  border-left: 3px solid #0b0c0c; 
+  border-bottom: #bfc1c3 ; 
+  background-color: #f8f8f8; 
+  padding: 15px; 
+  margin-top: 10px;
+}
+
+.student-notes-box{
+  border: solid 1px #bcdff1;
+  margin: 20px 0;
+  padding: 25px 15px;
+  border-radius: 10px;
+  color: #31708f ;
+  background-color: #d9edf7;
+  p, h3, li {
+      color: #31708f;
+  }
 }

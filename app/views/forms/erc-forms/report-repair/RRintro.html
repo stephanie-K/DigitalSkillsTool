@@ -1,0 +1,34 @@
+{% extends "layout_tool.html" %}
+
+{% block pageTitle %}
+  About this form
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+        About this form
+    </h1>
+    <a class="govuk-back-link" href="/">Back to the forms menu</a>
+
+<h2 class="govuk-heading-m">
+  Please note:
+</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>there are two parts: the report itself and a short optional equality survey</li>
+  <li>missing required fields and invalid format for an email address will generate an error</li>
+  <li>if a document is uploaded, the extension and file size are not checked and won't show an error message</li>
+</ul>
+
+<h2 class="govuk-heading-s">
+  At any time, selecting the logo at the top left will take you back to the start (forms menu)
+</h2>
+  {{ govukButton({
+    text: "Start the form",
+    classes: "button-primary button-info",
+    href: "/forms/erc-forms/report-repair/RRstart"
+  }) }}
+</div>
+
+{% endblock %}

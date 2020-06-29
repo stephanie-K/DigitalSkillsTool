@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Apply for Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Apply for Universal Credit
+      </h1>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <p>You can apply for Universal Credit online.</p>
+        <p>Before you apply, check if you’re eligible and what you can get if you live:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>in <a href="#">England, Scotland and Wales</a></li>
+            <li>in <a href="#">Northern Ireland</a></li>
+        </ul>
+        <div class="govuk-inset-text">
+        You cannot claim Universal Credit and tax credits at the same time. If you get tax credits, they will stop when you or your partner applies for Universal Credit. 
+        <a href="#">Check how tax credits and Universal Credit affect each other</a>.
+      </div>
+      <p>You might also need to book and attend an interview at your local Jobcentre Plus. You’ll be told if you need to after you apply.</p>
+      <p>You’ll get your first payment around 5 weeks after applying online if your application is successful. When you apply, you can ask for an advance if you need help sooner.</p>
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Start now",
+          href: "/forms/govuk-forms/universal-credit/UCstart",
+          isStartButton: true
+        }) }}
+        <h2 class="govuk-heading-m">What you need to know</h2>
+        <p>Call the helpline to get help making your claim online.</p>
+        <div class="contact">
+          <p><strong>Universal Credit helpline</strong> <br>
+          Telephone: 0800 328 5644<br>
+          Welsh language: 0800 328 1744   <br>
+          Textphone: 0800 328 1344 <br>
+          Monday to Friday, 8am to 6pm <br>
+          <a href="#">Find out about call charges</a></p>
+          </div>
+
+        <h2 class="govuk-heading-s govuk-!-margin-top-9" style="border-top: 2px solid #1d70b8; padding-top:19px">Explore the topic</h2>
+        <p><a href="/forms/govuk-forms/universal-credit/UCgoingTogovukPage">Universal Credit</a></p>
+        </div>
+        <div class="govuk-grid-column-one-third sidebar">
+          <h2 class="govuk-heading-s" style="border-top: 2px solid #1d70b8; padding-top:19px">
+              Related content
+          </h2>
+          <ul class="govuk-list">
+            <li><a href="/forms/govuk-forms/universal-credit/UCgoingTogovukPage">Universal Credit</a></li>
+            <li><a href="/forms/govuk-forms/universal-credit/UChomepage">Sign in to your Universal Credit account</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

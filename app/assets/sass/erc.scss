@@ -35,10 +35,13 @@ $erc-green-border: #008000;
     padding: 4px 10px;
     font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    @media only screen and (max-width: 340px) {
+        font-size:18px;
+    }
 }
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
-    border: 30px solid #fff;
+    border: 10px solid #fff;
     }
     a {
         text-decoration: none;
@@ -85,7 +88,7 @@ $erc-green-border: #008000;
 
 //---------------------------------------- BODY------------------------------------------------//
 
-body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table {
+body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text  {
     color: $erc-text-blue;
 }
 
@@ -96,6 +99,20 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
 .govuk-heading-m {
     margin-top: 30px; 
  }
+
+.govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
+color: white; 
+background-color:#0071BA; 
+padding: 5px;
+box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
+}
+
+.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
+    background-color: #0071BA;
+}
+
+
+
 
 // ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
 
@@ -127,13 +144,6 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
 }
 .govuk-form-group--error {
     border-left: 5px solid #B30000;
-}
-
-.govuk-accordion__section-heading {
-    color: #004269 ;
-}
-.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
-    background-color: #004269 ;
 }
 
 // -------------------------------------------- Helpers ------------------------------------------------- //
@@ -209,6 +219,42 @@ code {
     margin: 5px 0;
     padding: 5px;
   }
+
+  .centred-input-fields {
+    .govuk-summary-list__row, dt.govuk-summary-list__key, dd.govuk-summary-list__value,  dd.govuk-summary-list__actions, label {
+        border-bottom: 0px;
+        font-size: 14px;
+    }
+    label, dt.govuk-summary-list__key  {
+        font-weight: 400;
+    }
+    dt.govuk-summary-list__key {
+        @media (min-width: 40.0625em) {
+            width: 30%;
+            }
+    }
+    dd.govuk-summary-list__value {
+        textarea.govuk-textarea, input.govuk-input, select.govuk-select{
+            border: 1px solid #A6B3BB;
+            font-size: 14px;
+        }
+        @media (min-width: 40.0625em) {
+        width: 40%;
+        }
+    } 
+    dd.govuk-summary-list__actions {
+        text-align: left;
+        @media (min-width: 40.0625em) {
+        width: 30%;
+        }
+        .error {
+            color: red; 
+            border: 1px solid red; 
+            padding: 5px;
+        }
+    }
+  }
+
 
 //-------------------------------------------- Buttons --------------------------------------------------- //
 
@@ -290,7 +336,7 @@ code {
   border: 1px solid #782a06;
 }
 .ercError {
-  color: #333333;
+  color: #D8000C;
   background: url(../images/ERC/erc_error.gif) 10px center no-repeat #ffbaba;
   border: 1px solid #d8000c;
 }
@@ -356,7 +402,76 @@ code {
     border-radius: 5px;
 }
 
-button.erc-alt {
+.erc-payment-blue-bg {
+    background-color: #0051B8;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight:bold;
+}
+
+.payment {
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+    p, label {
+        font-size: 14px;
+        margin-bottom: 0;
+    }    
+    p.selected {
+        background-color: #D1CEE1;
+        a {
+            text-decoration: underline;
+        }
+    }  
+    .govuk-table__header {
+        background-color: #0051B8;
+        color: #fff;
+        font-size: 14px;
+        border: 1px solid #808080;
+        padding-left: 5px;
+    }  
+    .govuk-table__cell {
+        border-bottom: 0;
+        font-size: 14px;
+    }
+    .govuk-form-group {
+        margin-bottom: 5px;
+    }
+    .govuk-input {
+        height: 1.5rem;
+        border: 1px solid #004269;
+        font-size: 14px;
+    }
+}
+
+div.payment-error{
+    li {
+        font-size: 14px;
+        color: red;
+    }
+}
+
+button.erc-payment, a.erc-payment{
+    background-color: #0051B8;
+    border: 1px solid #0051B8;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 0 0 ;
+    font-size: 14px;
+    padding: 3px 6px;
+}
+
+button.erc-payment:hover, a.erc-payment:hover{
+    background-color: #ffffff !important;
+    border: 1px solid #0051B8;
+    color: #0051B8;
+}
+
+button.erc-alt, a.erc-alt{
     background-color: $erc-alt-text-blue;
     border: 1px solid #23408E;
     color: #fff;
@@ -365,18 +480,18 @@ button.erc-alt {
     text-decoration: none;
     text-shadow: 0 1px 0 #000;
 }
-button.button-primary.erc-alt:hover {
+button.button-primary.erc-alt:hover, a.button-primary.erc-alt:hover {
     text-decoration: underline;
     background-color: #424242 ;    
 }
 
-button.button-primary.erc-alt:active {
+button.button-primary.erc-alt:active, a.button-primary.erc-alt:active {
     text-decoration: underline;
     background-color: #568BA3;
     border-color: #888;
 }
 
-button.button-primary.erc-alt-disco {
+a.button-primary.erc-alt-disco, button.button-primary.erc-alt-disco {
     background-color: #444;
     border: 1px solid #444;
     color:  #2cf3f3;
@@ -390,17 +505,19 @@ button.button-primary.erc-alt-disco {
 }
 
 
-button.button-primary.erc-alt-disco:hover, button.button-primary.erc-alt-disco:active, button.button-primary.erc-alt-disco:focus {
+button.button-primary.erc-alt-disco:hover, button.button-primary.erc-alt-disco:active, button.button-primary.erc-alt-disco:focus,
+a.button-primary.erc-alt-disco:hover, a.button-primary.erc-alt-disco:active, a.button-primary.erc-alt-disco:focus {
     color:  #fff;
     text-decoration: underline;
     background-color: #444;
 }
 
-button.button-primary.erc-alt-disco:visited{
+a.button-primary.erc-alt-disco:visited, button.button-primary.erc-alt-disco:visited{
     color:  #b9ff06;
 }
 
-button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submission:focus  {
+button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submission:focus,
+a.button-primary.erc-alt-submission, a.button-primary.erc-alt-submission:focus   {
     background-color: #43A047;
     border: 1px solid #43A047;
     border-radius: 5px 5px 5px 5px;
@@ -408,7 +525,7 @@ button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submissi
     text-shadow: 0 1px 0 #000;
 }
 
-button.button-primary.erc-alt-submission:after{
+button.button-primary.erc-alt-submission:after, a.button-primary.erc-alt-submission:after{
     content: "\2713";
     color: #fff;
     font-size: 12pt;
@@ -416,11 +533,12 @@ button.button-primary.erc-alt-submission:after{
     width: 1em;
 }
 
-button.button-primary.erc-alt-submission:hover {
+button.button-primary.erc-alt-submission:hover , a.button-primary.erc-alt-submission:hover {
     text-decoration: underline;
 }
 
-button.button-primary.erc-alt-submission:active, button.button-primary.erc-alt-submission:focus {
+button.button-primary.erc-alt-submission:active, button.button-primary.erc-alt-submission:focus,
+a.button-primary.erc-alt-submission:active, a.button-primary.erc-alt-submission:focus {
     background-color: #424242;
     color: #fff;
 
@@ -451,4 +569,48 @@ hr.erc {
 }
 th {
     white-space: nowrap;
+}
+
+// -------------------------- Council Tax - do it online ---------------------------------------------- //@extend
+.module {
+    border-radius: 10px;
+    color: #004269;
+    background-color: #fff;
+    width: 225px;
+    height: 315px;
+    margin: 0 15px 14px 0;
+    overflow: hidden;
+    text-align: center;
+    border-left: 1px solid #d4e6a8;
+    border-top: 1px solid #000000;
+}
+
+.moduleImage {
+    height:136px;
+    border-top: 1px solid #d4e6a8;
+}
+
+.moduleInfo {
+    border: 1px solid #d4e6a8;
+    border-radius: 0px 0px 10px 10px;
+    color: #004269;
+    background-color: #d4e6a8;
+    height: 178px;
+    overflow: auto;
+}
+
+.moduleHeader {
+    font-weight: bold;
+    padding: .5em;
+    a {
+        text-decoration: none;
+        color: #004269;
+    }
+}
+.moduleText {
+    line-height: normal;
+    padding: 0 0.5em 0.5em;
+    p {
+        font-size: 14px;
+    }
 }

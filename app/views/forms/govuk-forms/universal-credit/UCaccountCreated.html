@@ -12,5 +12,10 @@ Account created
     </h1>
 <p>the end for now</p>
   </div>
-
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Return to the form menu",
+    href: "/"
+  }) }}
+  
 {% endblock %}

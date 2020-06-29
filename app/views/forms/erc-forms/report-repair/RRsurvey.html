@@ -1,0 +1,181 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Equality monitoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Equality monitoring</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Please take our survey</p> 
+    <p class="erc-alt-dark-grey-round">East Renfrewshire Council ask for the following information so that we can ensure that we offer the most suitable services</p> 
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+          <dl class="govuk-summary-list centred-input-fields">
+            <div class="govuk-summary-list__row ">
+              <dt class="govuk-summary-list__key">
+                <label class="govuk-label">Which gender describes you best?</label>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input govuk-!-width-two-thirds" id="survey-gender" name="survey-gender" type="radio" value="Male">
+                    <label class="govuk-label govuk-radios__label" for="survey-gender">
+                      Male
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input govuk-!-width-two-thirds" id="survey-gender2" name="survey-gender" type="radio" value="Female">
+                    <label class="govuk-label govuk-radios__label" for="survey-gender2">
+                      Female
+                    </label>
+                  </div>
+                </div>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row govuk-!-margin-top-4">
+        <div class="govuk-grid-column-full">
+          <dl class="govuk-summary-list centred-input-fields">
+            <div class="govuk-summary-list__row ">
+              <dt class="govuk-summary-list__key">
+                <label class="govuk-label" for="survey-age">What age are you?</label>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <select class="govuk-select govuk-!-width-two-thirds" id="survey-age" name="survey-age">
+                  <option value="" ></option>
+                  <option value="under 21" >under 21</option>
+                  <option value="21 - 25" >21 - 25</option>
+                  <option value="26 - 30" >26 - 30</option>
+                  <option value="31 - 35" >31 - 35</option>
+                  <option value="36 - 45" >36 - 45</option>
+                  <option value="46 - 55" >46 - 55</option>
+                  <option value="56 - 65" >56 - 65</option>
+                  <option value="65 plus" >65 plus</option>
+                </select>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row govuk-!-margin-top-4">
+        <div class="govuk-grid-column-full">
+          <dl class="govuk-summary-list centred-input-fields">
+            <div class="govuk-summary-list__row ">
+            <dt class="govuk-summary-list__key">
+              <label class="govuk-label">Do you consider yourself disabled or to have additional support needs (ASN)?</label>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <div class="govuk-radios govuk-radios--inline govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input govuk-!-width-two-thirds" id="survey-disabled" name="survey-disabled" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="survey-disabled">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input govuk-!-width-two-thirds" id="survey-disabled2" name="survey-disabled" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="survey-disabled2">
+                    No
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input govuk-!-width-two-thirds" id="survey-disabled3" name="survey-disabled" type="radio" value="prefernot">
+                  <label class="govuk-label govuk-radios__label" for="survey-disabled3">
+                    Prefer not to say
+                  </label>
+                </div>
+              </div>
+            </dd>
+          </div>
+        </dl>  
+        </div>
+      </div>
+
+      <div class="govuk-grid-row govuk-!-margin-top-4">
+        <div class="govuk-grid-column-full">
+          <dl class="govuk-summary-list centred-input-fields">
+            <div class="govuk-summary-list__row ">
+              <dt class="govuk-summary-list__key">
+                <label class="govuk-label" for="survey-ethnic">What is your ethnic origin?</label>
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <select class="govuk-select govuk-!-width-two-thirds" id="survey-age" name="survey-ethnic">
+                  <option value="" ></option>      
+                  <option value="Equality_Ethnicity.OthWhiteBrit" title="Other White British">Other White British</option>
+                  <option value="Equality_Ethnicity.WhiteIrish" title="White Irish">White Irish</option>
+                  <option value="Equality_Ethnicity.OtherWhite" title="Other White">Other White</option>
+                  <option value="Equality_Ethnicity.Indian" title="Indian">Indian</option>
+                  <option value="Equality_Ethnicity.Pakistani" title="Pakistani">Pakistani</option>
+                  <option value="Equality_Ethnicity.Bangladeshi" title="Bangladeshi">Bangladeshi</option>
+                  <option value="Equality_Ethnicity.OthSouthAsian" title="Other South Asian">Other South Asian</option>
+                  <option value="Equality_Ethnicity.Chinese" title="Chinese">Chinese</option>
+                  <option value="Equality_Ethnicity.Caribbean" title="Caribbean">Caribbean</option>
+                  <option value="Equality_Ethnicity.African" title="African">African</option>
+                  <option value="Equality_Ethnicity.BlackScottish" title="Black Scottish">Black Scottish</option>
+                  <option value="Equality_Ethnicity.Mixed" title="Mixed">Mixed</option>
+                  <option value="Equality_Ethnicity.Other" title="Other ethnic group">Other ethnic group</option>
+                </select>
+              </dd>
+            </div>
+            </dl>
+        </div>
+      </div>
+
+      <div class="govuk-grid-row govuk-!-margin-top-4">
+        <div class="govuk-grid-column-full">
+          <dl class="govuk-summary-list centred-input-fields">
+            <div class="govuk-summary-list__row ">
+            <dt class="govuk-summary-list__key">
+              <label class="govuk-label" for="survey-religion">What is your religion or belief?</label>
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <select class="govuk-select govuk-!-width-two-thirds" id="survey-religion" name="survey-religion">
+                <option value="" ></option>
+                <option value="Equality_Religion.ChurchScotland" title="Church of Scotland">Church of Scotland</option>
+                <option value="Equality_Religion.RomanCatholic" title="Roman Catholic">Roman Catholic</option>
+                <option value="Equality_Religion.OtherChristian" title="Other Christian">Other Christian</option>
+                <option value="Equality_Religion.Muslim" title="Muslim">Muslim</option>
+                <option value="Equality_Religion.Buddhist" title="Buddhist">Buddhist</option>
+                <option value="Equality_Religion.Sikh" title="Sikh">Sikh</option>
+                <option value="Equality_Religion.Jewish" title="Jewish">Jewish</option>
+                <option value="Equality_Religion.Hindu" title="Hindu">Hindu</option>
+                <option value="Equality_Religion.Other" title="Other">Other</option>
+              </select>
+            </dd>
+            </div>
+        </dl>
+      </div>
+    </div>
+
+
+
+    {{ govukButton({
+      text: "Submit survey",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRsurveyFinish"
+    }) }}
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  

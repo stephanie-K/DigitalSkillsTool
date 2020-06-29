@@ -1,0 +1,51 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Report a housing repair - Start
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Repairs</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Report a non-emergency repair</p> 
+    <p class="govuk-!-font-size-14">This process is for you to report a repair for your Council house. We aim to contact you within 5 working days to discuss your request. Further details on our service are available on our <a href="https://www.eastrenfrewshire.gov.uk/house-repair#skiptocontent" target="_blank" rel="noopener">Housing Repairs page</a>.</p>
+    <p class="erc-alt-dark-grey-round">Emergencies</p> 
+    <div class="ercWarning">
+      <p class="govuk-!-font-size-14" style="color: #782a06;">Please do not use this service for any emergency repair, for example, a burst water pipe that may cause flooding; instead contact us by telephone.</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li class="govuk-!-font-size-14" style="color: #782a06;">During Office Hours 0141 577 3700 (Monday to Friday 8.45-4.45pm)</li>
+          <li class="govuk-!-font-size-14" style="color: #782a06;">Out of Hours 08080 031601</li>
+      <p class="govuk-!-font-size-14" style="color: #782a06;">For issues relating to Gas repairs or servicing, please contact our contractor SALTIRE on 0800 0428 2710 (free 24-hour service)</p>
+    </div>
+
+
+    {{ govukButton({
+      text: "Cancel",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRstart"
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRonlineAboutYou"
+    }) }}
+
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+You are signed in
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      You are signed in
+    </h1>
+<p>The end for this part as it's about creating your account not for applying.</p>
+  </div>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Return to the form menu",
+    href: "/"
+  }) }}
+{% endblock %}

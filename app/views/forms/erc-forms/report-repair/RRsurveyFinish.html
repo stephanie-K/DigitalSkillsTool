@@ -1,0 +1,37 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Equality monitoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Equality monitoring</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Thank you</p> 
+    <p class="ercSuccess govuk-!-font-size-14">Survey submitted</p>
+
+    <p class="govuk-!-font-size-14">Filling in this survey will help us to make sure that we treat everyone who lives in East Renfrewshire fairly and equally.</p>
+
+    {{ govukButton({
+      text: "Finish",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRonlineFinish"
+    }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  

@@ -1,0 +1,83 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Sign in to council tax online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+
+    {% if (data ['sign-in-username'] === '')%}
+    <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
+    {% endif %}
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Please enter your username and password</p> 
+    <p class="govuk-!-font-size-14">You can find out how we use your information in our <a href="https://www.eastrenfrewshire.gov.uk/privacy" target="_blank" rel="noopener">privacy statement<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a> on our website</p>
+    <p class="govuk-!-font-size-14">Your password is case sensitive - <strong>'ABC12345'</strong> is not the same as <strong>'Abc12345'</strong>. Please type carefully.</p>
+    <p class="govuk-!-font-size-14">If you know your username but cannot remember your password, please fill in your username, select the 'Forgotten password?' button below and we'll email a new password to you.</p>
+    <p class="govuk-!-font-size-14">If you have forgotten both your username <strong>and</strong> password, select the 'Forgotten both?' button below - we'll take your details and get back to you.</p>
+
+    <form class="form" method="post">
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="sign-in-username">Username:<span style="color: red"> *</span></label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <input class="govuk-input govuk-!-width-full" id="sign-in-username" name="sign-in-username" type="text" value="{{ data ['sign-in-username']}}">
+      </dd>
+      {% if (data ['sign-in-username'] === '') %}
+      <dd class="govuk-summary-list__actions">
+        <span class="error"> *</span>
+      </dd>
+      {% else%}
+      <dd class="govuk-summary-list__actions"></dd>
+      {% endif %}
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="sign-in-pwd">
+        Password:
+        </label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <input class="govuk-input govuk-!-width-full" id="sign-in-pwd" name="sign-in-pwd"  type="text" value="{{ data ['sign-in-pwd']}}">
+      </dd>
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+  </dl>
+
+
+    {{ govukButton({
+      text: "Forgotten password?",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotPassword"
+    }) }}
+
+    {{ govukButton({
+      text: "Forgotten both?",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBoth"
+    }) }}
+
+
+    {{ govukButton({
+      text: "Sign In",
+      classes: "button-primary erc-alt"
+    }) }}
+
+    </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

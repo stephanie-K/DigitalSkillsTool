@@ -1,0 +1,174 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Report a housing repair
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+
+    {% if (data ['repair-location'] === 'L0') or  
+    (data ['repair-person'] === 'P0') or  
+    (data ['repair-details'] === '')
+     %}
+    <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
+    {% endif %}
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Repairs</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Repair details</p> 
+    <p class="erc-alt-dark-grey-round">Where is the repair required?</p> 
+
+    <form class="form" method="post">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-location">Location:<span style="color: red"> *</span></label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <select class="govuk-select govuk-!-width-full" id="repair-location" name="repair-location">
+          <option value="L0" {% if data ['repair-location'] === 'L0' %} selected="true" {% endif %}></option>
+          <option value="L1" {% if data ['repair-location'] === 'L1' %} selected="true" {% endif %}>Attic</option>
+          <option value="L2" {% if data ['repair-location'] === 'L2' %} selected="true" {% endif %}>Bathroom</option>
+          <option value="L3" {% if data ['repair-location'] === 'L3' %} selected="true" {% endif %}>Kitchen</option>
+          <option value="L4" {% if data ['repair-location'] === 'L4' %} selected="true" {% endif %}>Living room</option>
+          <option value="L5" {% if data ['repair-location'] === 'L5' %} selected="true" {% endif %}>Front bedroom</option>
+          <option value="L6" {% if data ['repair-location'] === 'L6' %} selected="true" {% endif %}>Back bedroom</option>
+          <option value="L7" {% if data ['repair-location'] === 'L7' %} selected="true" {% endif %}>Hallway</option>
+          <option value="L8" {% if data ['repair-location'] === 'L8' %} selected="true" {% endif %}>Whole house</option>
+          <option value="L9" {% if data ['repair-location'] === 'L9' %} selected="true" {% endif %}>Roof (front elevation)</option>
+          <option value="L10" {% if data ['repair-location'] === 'L10' %} selected="true" {% endif %}>Roof (side elevation)</option>
+          <option value="L11" {% if data ['repair-location'] === 'L11' %} selected="true" {% endif %}>Roof (rear elevation)</option>
+          <option value="L12" {% if data ['repair-location'] === 'L12' %} selected="true" {% endif %}>Close</option>
+          <option value="L13" {% if data ['repair-location'] === 'L13' %} selected="true" {% endif %}>Garden (front)</option>
+          <option value="L14" {% if data ['repair-location'] === 'L14' %} selected="true" {% endif %}>Garden (rear)</option>
+          <option value="L15" {% if data ['repair-location'] === 'L15' %} selected="true" {% endif %}>Garden (side)</option>
+          <option value="L16" {% if data ['repair-location'] === 'L16' %} selected="true" {% endif %}>Other (please specify)</option>
+        </select>
+      </dd>
+      {% if (data ['repair-location'] === 'L0') %}
+      <dd class="govuk-summary-list__actions">
+        <span class="error"> *</span>
+      </dd>
+      {% else%}
+      <dd class="govuk-summary-list__actions"></dd>
+      {% endif %}
+    </div>
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-location2">Please tell us where the problem is:</label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <input class="govuk-input govuk-!-width-full" id="repair-location2" name="repair-location2" type="text" value="{{ data ['repair-location2']}}">
+      </dd>
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    </dl>
+
+    <p class="erc-alt-dark-grey-round">Type of tradesperson required</p>   
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-person">Type of tradesperson required:<span style="color: red"> *</span></label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <select class="govuk-select govuk-!-width-full" id="repair-person" name="repair-person">
+            <option value="P0" {% if data ['repair-person'] === 'P0' %} selected="true" {% endif %}></option>
+            <option value="P1" {% if data ['repair-person'] === 'P1' %} selected="true" {% endif %}>Joiner</option>
+            <option value="P2" {% if data ['repair-person'] === 'P2' %} selected="true" {% endif %}>Electrician</option>
+            <option value="P3" {% if data ['repair-person'] === 'P3' %} selected="true" {% endif %}>Plumber</option>
+            <option value="P4" {% if data ['repair-person'] === 'P4' %} selected="true" {% endif %}>Roofer</option>
+            <option value="P5" {% if data ['repair-person'] === 'P5' %} selected="true" {% endif %}>Other (please specify)</option>
+        </select>
+      </dd>
+      {% if (data ['repair-person'] === 'P0') %}
+      <dd class="govuk-summary-list__actions">
+        <span class="error"> *</span>
+      </dd>
+      {% else%}
+      <dd class="govuk-summary-list__actions"></dd>
+      {% endif %}
+    </div>
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-person2">What tradesperson(s) do you require?</label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <input class="govuk-input govuk-!-width-full" id="repair-person2" name="repair-person2" type="text" value="{{ data ['repair-person2']}}">
+      </dd>
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    </dl>
+
+    <p class="erc-alt-dark-grey-round">Repair required</p>   
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-details">Description of repair: <span style="color: red"> *</span></label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <textarea class="govuk-textarea govuk-!-width-full" id="repair-details" name="repair-details" rows="10">{{ data ['repair-details']}}</textarea>
+      </dd>
+      {% if (data ['repair-details'] === '') %}
+      <dd class="govuk-summary-list__actions">
+        <span class="error"> *</span>
+      </dd>
+      {% else%}
+      <dd class="govuk-summary-list__actions"></dd>
+      {% endif %}
+    </div>
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-other">Other information:</label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <textarea class="govuk-textarea govuk-!-width-full" id="repair-other" name="repair-other" rows="5">{{ data ['repair-other']}}</textarea>
+      </dd>
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    </dl>
+   
+    <p class="erc-alt-dark-grey-round">Attach a photo</p>   
+    <p class="govuk-!-font-size-14">If you have a photo of the problem (jpeg or jpg), you can attach it here. Please note that the file size must not exceed 2MB.</p>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+    <div class="govuk-summary-list__row ">
+      <dt class="govuk-summary-list__key">
+        <label class="govuk-label" for="repair-photo">Attach photo:</label>
+      </dt>
+      <dd class="govuk-summary-list__value">
+        <input class="govuk-file-upload govuk-!-font-size-14" id="repair-photo" name="repair-photo" type="file">
+      </dd>
+      <dd class="govuk-summary-list__actions"></dd>
+    </div>
+    </dl>
+
+
+
+    {{ govukButton({
+      text: "<< Back",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/report-repair/RRonlineAboutYou"
+    }) }}
+
+    {{ govukButton({
+      text: "Request repair",
+      classes: "button-primary erc-alt"
+    }) }}
+
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  
