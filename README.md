@@ -10,6 +10,7 @@ The course is developed for the **East Renfrewshire Council** and the website su
 
 - [Alexandria Rocks](https://www.linkedin.com/in/alexandria-rocks/)
 - [Anastasia Moneva](https://www.linkedin.com/in/anastasia-moneva-6b192189/)
+- [Ashir Qureshi](https://www.linkedin.com/in/ashir-qureshi/)
 - [Craig Barratt](https://www.linkedin.com/in/craig-barratt-softdev/)
 - [Paul Marshall](https://www.linkedin.com/in/paulkmarshall/)
 
