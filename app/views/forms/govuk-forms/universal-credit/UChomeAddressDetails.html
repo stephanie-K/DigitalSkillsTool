@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if error %} Error - {% endif %}Create an account
+Home address details
 {% endblock %}
 
 
@@ -11,53 +11,55 @@
       Home address details
     </h1>
 
-    <form class="form" method="post" novalidate>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            What is your address?
-          </h1>
-        </legend>
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is your address?
+            </h1>
+          </legend>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-1">
-            Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
-          </label>
-          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
-        </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="UCaddress-line-1">
+              Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
+            </label>
+            <input class="govuk-input" id="UCaddress-line-1" name="UCaddress-line-1" type="text">
+          </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-line-2">
-            <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
-          </label>
-          <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
-        </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="UCaddress-line-2">
+              <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+            </label>
+            <input class="govuk-input" id="UCaddress-line-2" name="UCaddress-line-2" type="text">
+          </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-town">
-            Town or city
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
-        </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="UCaddress-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="UCaddress-town" name="UCaddress-town" type="text">
+          </div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="address-postcode">
-            Postcode
-          </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
-        </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="UCaddress-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="UCaddress-postcode" name="UCaddress-postcode" type="text">
+          </div>
 
-      </fieldset>
+        </fieldset>
 
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-    </form>
-    <a href="#" class="govuk-back-link">Back</a>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        href:"/forms/govuk-forms/universal-credit/UCpreviousAddress"
+      }) }}
 
-
+      <p><a href="javascript: history.go(-1)">Back</a></p>
+      </div>
+    </div>
   </div>
 
 {% endblock %}

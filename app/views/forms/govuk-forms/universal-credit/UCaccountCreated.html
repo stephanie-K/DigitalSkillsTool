@@ -19,7 +19,7 @@ Account created
           <p class="govuk-body">You may need details of:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>housing costs and any rent agreement</li>
-            <li>any savings and income, including other benifits</li>
+            <li>any savings and income, including other benefits</li>
             <li>people who live with you</li>
           </ul>
           <p>You can still start your claim if you do not have all of the details.
@@ -41,16 +41,15 @@ Account created
       {{ govukButton({
         text: "Start claim"
       }) }}
-
-
     </main>
   </div>
 
-</div>
+  <p><a href="/">Return to the form menu</a></p>
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{{ govukButton({
-  text: "Return to the form menu",
-  href: "/"
-}) }}
+  <div class="student-notes-box"> 
+    <p>This is the end of the exercice where you create an account for now.</p>
+    <p>There is another part about applying. You can start from the sign in page <a href="/forms/govuk-forms/universal-credit-apply/UCAsignIn">here</a> or return to the form menu instead</p>
+  </div>
+
+</div>
 {% endblock %}

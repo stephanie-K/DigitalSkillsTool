@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if error %} Error - {% endif %}Create an account
+Previous address
 {% endblock %}
 
 
@@ -11,25 +11,25 @@
       Previous address
     </h1>
 
-    <form class="form" method="post" novalidate>
+
     <div class="govuk-form-group">
 
-      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <fieldset class="govuk-fieldset" aria-describedby="UCpreviousAddress-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+          <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="UCpreviousAddress">
             Have you changed your UK address in the last six months?
           </label>
         </legend>
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changed-name">
+            <input class="govuk-radios__input" id="UCpreviousAddress" name="UCpreviousAddress" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="UCpreviousAddress">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changed-name-2">
+            <input class="govuk-radios__input" id="UCpreviousAddress-2" name="UCpreviousAddress" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="UCpreviousAddress-2">
               No
             </label>
           </div>
@@ -40,9 +40,12 @@
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      href:"/forms/govuk-forms/universal-credit/UCaccountCreated"
     }) }}
-    </form>
+    <div class="student-notes-box"> 
+      <p>We have simplified, but on the real form if you say 'Yes' you changed address in the last six months, you would be asked for previous addresses</p>
+    </div>
   </div>
 
 {% endblock %}

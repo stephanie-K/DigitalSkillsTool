@@ -156,7 +156,7 @@ router.post('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req
   if (uc_error_create_account){
     return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
   } else {
-    return res.redirect('/forms/govuk-forms/universal-credit/UCaccountCreated')
+    return res.redirect('/forms/govuk-forms/universal-credit/UCaboutYou')
   } 
 })
 
@@ -189,6 +189,11 @@ router.post('/forms/govuk-forms/universal-credit/UCsignIn', function (req, res) 
   } else {
     return res.redirect('/forms/govuk-forms/universal-credit/UCsignIn')
   } 
+})
+
+// this is just so the value of the email address if entered can be stored and re-used on the next page
+router.post('/forms/govuk-forms/universal-credit/UCaboutYou', function (req, res) {
+  return res.redirect('/forms/govuk-forms/universal-credit/UCconfirmEmail')
 })
 
 // Report a repair ******************************************************************************

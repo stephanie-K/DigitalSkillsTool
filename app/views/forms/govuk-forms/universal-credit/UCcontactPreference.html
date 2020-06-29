@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if error %} Error - {% endif %}Create an account
+Contact preference
 {% endblock %}
 
 
@@ -11,29 +11,28 @@
       Contact preference
     </h1>
 
-    <form class="form" method="post" novalidate>
     <p>There are some things we will always email you about. We will use your preferred method whenever we can.</p>
-    <p>We will never send links or ask for your details in our emauls or text messages.</p>
+    <p>We will never send links or ask for your details in our emails or text messages.</p>
 
     <div class="govuk-form-group">
 
-      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+      <fieldset class="govuk-fieldset" aria-describedby="UCcontactchoice-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+          <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="UCcontactchoice">
             How do you want to be contacted
           </label>
         </legend>
         <div class="govuk-radios govuk-radios--inline">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changed-name">
+            <input class="govuk-radios__input" id="UCcontactchoice" name="UCcontactchoice" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="UCcontactchoice">
               Contact me via email
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changed-name-2">
-              Contact me va SMS text message
+            <input class="govuk-radios__input" id="UCcontactchoice-2" name="UCcontactchoice" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="UCcontactchoice-2">
+              Contact me via SMS text message
             </label>
           </div>
         </div>
@@ -43,9 +42,10 @@
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      href:"/forms/govuk-forms/universal-credit/UCfindAddress"
     }) }}
-    </form>
+
   </div>
 
 {% endblock %}
