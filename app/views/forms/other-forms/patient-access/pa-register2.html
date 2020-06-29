@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+<link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+<!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+    <span class="govuk-header__logotype">
+      <a id="pat-acc-logo-clean" href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="Patient Access Logo" width="250" height="30"></image></a>
+    </span>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/index.html">
+      <span class="pat-acc-tagline">
+        This is a training website
+      </span>
+    </a>
+    <a id="pat-acc-support-centre" href="https://support.patientaccess.com/">
+      <image src="{{ asset_path }}images/PA/pa-acc-support.png?0.18.3p" width="20">
+        <span>
+          Support Centre
+        </span>
+      </a>
+    </div>
+  </div>
+  {% endblock %}
+
+  {% block pageTitle %}
+  Patient Access - Sign in
+  {% endblock %}
+
+
+  {% block content %}
+
+  <div class="govuk-grid-row park-home">
+    <div class="park-home-black-block pat-acc-signin-block">
+      <div class="pat-acc-signin-centre">
+        <span class="pat-acc-signin-to-acc">Create your Patient Access account</span>
+        <br>
+        <br>
+        <span class="pat-acc-signin-err-acc">Already have an account?<span><a id="pat-acc-logo-clean" class="pat-acc-signin-err-reg" href="./pa-signin">Sign in to Patient Access</a></span></span>
+        <div class="pat-acc-signin-form-container pat-acc-enter-details-cont">
+          <div class="signin-button-signin-page-container">
+            <div class="pat-acc-enter-details-back-cont ">
+              <a  id="pat-acc-logo-clean" href="./pa-register"><span class="pat-acc-signin-err-acc pat-acc-enter-details-back"> &lt; Back<span></a><span class="pat-acc-enter-details">Enter account details</span>
+            </div>
+            <form action="index.html" method="post">
+              <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+                <label id="pat-acc-label" class="govuk-label" for="email">
+                  Email address
+                </label>
+                <input id="pat-acc-input" class="govuk-input ph-input" id="email" name="email" type="text" placeholder="name@example.com">
+              </div>
+              <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+                <label id="pat-acc-label" class="govuk-label" for="password">
+                  Password
+                </label>
+                <input id="pat-acc-input" class="govuk-input ph-input" id="password" name="password" type="text" placeholder="Password">
+              </div>
+              <span id="pat-acc-password-reqs" class="pat-acc-signin-err-acc pat-why-we-ask-font-sub">Your new password must be at least 12 characters long with a mix of numbers, uppercase and lowercase letters and should not have been previously used.</span>
+              <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+                <label id="pat-acc-label" class="govuk-label" for="mobile">
+                  Mobile number (optional)
+                </label>
+                <input id="pat-acc-input" class="govuk-input ph-input" id="mobile" name="mobile" type="text" placeholder="Mobile number">
+              </div>
+              <label class="pat-acc-checkboxes">I accept the <span><a id="pat-acc-logo-clean" class="pat-acc-signin-err-reg" style="color:#D3368A; font-weight:700; margin:0;" href="https://support.patientaccess.com/terms-of-use">Terms and Conditions</a></span>
+                <input type="checkbox">
+                <span class="pat-acc-checkmark "></span>
+              </label>
+              <label class="pat-acc-checkboxes">I’d like to receive marketing communications (emails, surveys and partner content) to enhance my experience of Patient Access.
+                <input type="checkbox">
+                <span class="pat-acc-checkmark "></span>
+              </label>
+                <a href="./pa-success" class="pat-acc-sign-in-button signin-button-signin-page pat-acc-register2-create"><span>Create Account</span></a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
