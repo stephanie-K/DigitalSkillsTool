@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if error %} Error - {% endif %}Create an account
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      About you
+    </h1>
+
+    <p class="govuk-body-l">Enter your name as it appears on your passport or official documents.</p>
+    <form class="form" method="post" novalidate>
+
+      <div class="govuk-form-group {% if not validUsername and error %} govuk-form-group--error {% endif %}">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+          First name
+        </label>
+
+        <input class="govuk-input govuk-input--width-20  {% if not validUsername and error %} govuk-input--error {% endif%}" id="username" name="username" type="text"  value="{{ data ['username']}}">
+      </div>
+
+      <div class="govuk-form-group {% if not validUsername and error %} govuk-form-group--error {% endif %}">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+          Middle names
+        </label>
+
+        <input class="govuk-input govuk-input--width-20  {% if not validUsername and error %} govuk-input--error {% endif%}" id="username" name="username" type="text"  value="{{ data ['username']}}">
+      </div>
+
+      <div class="govuk-form-group {% if not validUsername and error %} govuk-form-group--error {% endif %}">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+          Last name
+        </label>
+
+        <input class="govuk-input govuk-input--width-20  {% if not validUsername and error %} govuk-input--error {% endif%}" id="username" name="username" type="text"  value="{{ data ['username']}}">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+              Date of birth
+            </label>
+          </legend>
+          <span id="passport-issued-hint" class="govuk-hint">
+            For example, 18 9 2012
+          </span>
+          <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group {% if not validUsername and error %} govuk-form-group--error {% endif %}">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+          Email address
+        </label>
+        <span id="other-benefits-hint" class="govuk-hint">
+          We will send you a code to confirm it is your email address.
+        </span>
+        <input class="govuk-input govuk-input--width-20  {% if not validUsername and error %} govuk-input--error {% endif%}" id="username" name="username" type="text"  value="{{ data ['username']}}">
+      </div>
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+    </form>
+
+  </div>
+
+{% endblock %}

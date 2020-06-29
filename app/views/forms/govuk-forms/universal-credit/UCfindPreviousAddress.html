@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{% if error %} Error - {% endif %}Create an account
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Find previous address
+    </h1>
+
+    <form class="form" method="post" novalidate>
+
+    <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+            Enter postcode
+          </label>
+          <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+        </legend>
+
+      </fieldset>
+
+    </div>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I cannot find the postcode
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>
+          If you cannot fiind your previous postcode on a letter, try searching online
+          using the address.
+        </p>
+      </div>
+    </details>
+
+      <div class="govuk-form-group">
+        <button style="display: block" class="govuk-button" data-module="govuk-button">
+          Find address
+        </button>
+        <button style="display: block" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Enter address manually
+        </button>
+        <a href="#" class="govuk-back-link">Back</a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
