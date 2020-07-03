@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/sac.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html" id="logo-erc"><image src="{{ asset_path }}/images/saclogo.png" alt="South Ayrshire Council Logo" width="130" height="75"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+        <a href="/index.html">
+          <span class="erc-tagline">
+            This is a training website
+          </span>
+        </a>  
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo" style="padding-top: 0; border-top: solid 5px #00559c;">
+  <div style="background-color: #e5e5e5; text-align: center; padding: 10px">
+    <a href="#" class="govuk-footer__link">Back to top</a>
+  </div>
+<div class="govuk-width-container">
+
+    <p style="margin-top: 20px">We would add your icons for twitter and other social media here like on your website</p>
+
+    
+    <hr class="govuk-footer__section-break">
+
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <ul class="govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/index.html">Home</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/project-outline.html">Project outline</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/prototype-info.html">Prototype kit</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+          </li>
+          <li class="govuk-footer__inline-list-item ">
+            <a class="govuk-footer__link" href="/prototype-admin/clear-data">Clear prototype data</a>
+          </li>
+        </ul>
+        <br>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
