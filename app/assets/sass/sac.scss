@@ -15,25 +15,92 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
-$erc-text-blue : #004269; 
+$sac-text : #0b0c0c; 
 $sac-blue: #00559c;
+$sac-yellow:#ffc300;
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+/* South Ayrshire Council (https://www.south-ayrshire.gov.uk) - taken from their website to have the correct font and the social media icons */
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Noto Sans"), local("NotoSans"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.woff2")
+      format("woff2"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.woff")
+      format("woff"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.ttf")
+      format("truetype"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.svg#NotoSans")
+      format("svg");
+  src: url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.eot");
+  unicode-range: U+000-5FF;
+}
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Noto Sans Bold"), local("NotoSans-Bold"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.woff2") format("woff2"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.woff") format("woff"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.ttf") format("truetype"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.svg#NotoSans")
+      format("svg");
+  src: url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.eot");
+  unicode-range: U+000-5FF;
+}
+@font-face {
+  font-family: "Noto Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.eot");
+  src: local("Noto Serif"), local("NotoSerif"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.woff2")
+      format("woff2"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.woff")
+      format("woff"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.ttf")
+      format("truetype"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.svg#NotoSerif")
+      format("svg");
+}
+@font-face {
+  font-family: "Noto Serif";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.eot");
+  src: local("Noto Serif Bold"), local("NotoSerif-Bold"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.woff2") format("woff2"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.woff") format("woff"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.ttf")
+      format("truetype"),
+    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.svg#NotoSerif")
+      format("svg");
+} 
 
 //---------------------------------------- HEADER ------------------------------------------------//
 
 .govuk-header__container {
     border-bottom: 0px;
 }
-.erc-tagline {
+.sac-tagline {
     font-size: 24px;
-    color: black; 
-    background-color: #ffc300;
+    color:$sac-text; 
+    font-family: "Noto Sans", Arial, sans-serif;
+    background-color: $sac-yellow;
     padding: 4px 10px;
     font-weight: 500;
-    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     @media only screen and (max-width: 340px) {
         font-size:18px;
     }
@@ -49,17 +116,42 @@ $sac-blue: #00559c;
 
 // ----- specific to the home page ----- //
 
-#logo-se-home {
-    width: 50%;
-    @media only screen and (min-width: 775px) { 
-    border: 30px solid #fff;
-    }
-
-}
 #tagline-home {
     border: 0 solid #fff ; 
     padding: 10px 0;
 }
+
+//---------------------------------------- BODY------------------------------------------------//
+
+body p, ul, li , a, span, .govuk-link, 
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
+.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
+    color: $sac-text;
+    font-family: "Noto Sans", Arial, sans-serif ;
+}
+
+.govuk-heading-l {
+   margin-top: 50px; 
+}
+
+.govuk-heading-m {
+    margin-top: 30px; 
+ }
+
+ /* Accordion:  will need to be revisited - TODO */
+.govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
+color: white; 
+background-color:#0071BA; 
+padding: 5px;
+box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
+}
+
+.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
+    background-color: #0071BA;
+}
+
+
 
 //---------------------------------------- FOOTER ------------------------------------------------//
 .govuk-footer {
@@ -84,11 +176,43 @@ $sac-blue: #00559c;
     outline: 3px solid #fd0;
 }
 
+.back-to-top{
+    background-color: #e5e5e5; 
+    text-align: center; 
+    padding: 10px;
+}
+
+.footer-icon span{
+    font-family: FontAwesome !important;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 2em;
+    color: #464a4c;
+    margin: 0 2vw;
+    @media (min-width: 0) and (max-width: 767px) {
+        display: inline-block;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        margin: 0;
+      }
+}
+
+.footer-icon {
+    text-align: center;
+}
+
+
 
 //---------------------------------------- BODY------------------------------------------------//
 
-body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text  {
-    color: $erc-text-blue;
+body p, ul, li , a, span, .govuk-link, 
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
+.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
+    color: $sac-text;
+    font-family: "Noto Sans", Arial, sans-serif !important;
 }
 
 .govuk-heading-l {
@@ -99,6 +223,7 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
     margin-top: 30px; 
  }
 
+ /* Accordion:  will need to be revisited - TODO */
 .govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
 color: white; 
 background-color:#0071BA; 
@@ -110,30 +235,50 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     background-color: #0071BA;
 }
 
-
+.govuk-tag.red-sac {
+    background-color: #b10e1e;
+   // margin-left: 10px;
+    padding: 20px;
+    text-transform: none;
+    font-size: 1.5em;
+  }
 
 
 // ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
-    color: $erc-text-blue;
+    color: $sac-text;
     margin-bottom: 2em;
 }
 
 .govuk-textarea, .govuk-input{
-    border: 2px solid $erc-text-blue;
+    border: 2px solid $sac-text;
 }
 
-.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .erc-text-blue , table{
-    color: $erc-text-blue;
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .sac-text , table{
+    color: $sac-text;
 }
-
 
 .govuk-link, a, .govuk-link:link, a:link {
-    color: 	#0000ee;
+    color: 	#2a5db0;
 }
-#logo-erc:focus{
+
+.govuk-link:visited, a:visited{
+    color: 	#609;
+}
+
+.govuk-link:hover, a:hover{
+    color: 	#1a0dab;
+}
+.govuk-link:focus, a:focus {
+    color: #464a4c;;
+    background-color: #f5f5f5;
+    box-shadow: 0 -2px #f5f5f5, 0 4px #fff;
+    text-decoration: underline;
+}
+
+#logo-sac:focus{
     background-color: 	#fff; // was putting a thick yellow layer at the bottom of the ERC logo
 }
 
@@ -148,96 +293,5 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
 
-.validated {
-    border: 2px solid #008000;
-}
-
-.input-read-only {
-    background: #ececec;
-}
-
-.govuk-tag {
-    padding: 10px;
-    margin-right: 10px;
-}
-.govuk-tag.black {
-    padding: 10px 10px 10px 60px;
-    background: url(../images/govuk-crown.png) 10px center no-repeat #000;
-}
-.tag-print {
-    padding: 10px 10px 10px 60px;
-    background: url(../images/printer-icon.png) 10px center no-repeat #fff;
-    text-decoration: underline;
-    color: #551A8B ; // $erc-text-blue;
-    font-weight: 400;
-    //font-size : 19px;
-}
-
-.govuk-tag.info {
-    background-color: $sac-blue;
-    text-transform: none;
-    font-family: nta;
-    padding: 5px;
- 
-}
-
-.govuk-tag.red {
-    background-color: #b10e1e;
-   // margin-left: 10px;
-    padding: 5px;
-    text-transform: none;
-
-}
-.govuk-panel {
-    background-color: #28a197;
-}
-code {
-    font-weight: 400;
-    padding-left: 0.5em;
-}
-
-.ready-tag {
-    background: #cce2d8;
-    color: #005a30;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
-  .started-tag {
-    color: #594d00;
-    background: #fff7bf;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
-
-  .todo-tag {
-    color: #942514;
-    background: #f6d7d2;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
-
-
 
 //-------------------------------------------- Buttons --------------------------------------------------- /
-
-  //--------------------------------------- message boxes and panels-----------------------------------------------//
-
-
-
-.half-width {
-    max-width: 100%;
-    @media only screen and (min-width: 750px) { 
-        width : 50%;
-    }
-}
-
-.govuk-table__cell, .govuk-table__header{
-    padding: 4px 20px 4px 0;
-}
-th {
-    white-space: nowrap;
-}
-

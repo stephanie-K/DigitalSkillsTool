@@ -50,13 +50,6 @@ $erc-green-border: #008000;
 
 // ----- specific to the home page ----- //
 
-#logo-se-home {
-    width: 50%;
-    @media only screen and (min-width: 775px) { 
-    border: 30px solid #fff;
-    }
-
-}
 #tagline-home {
     border: 0 solid #fff ; 
     padding: 10px 0;
@@ -157,69 +150,6 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     background: #ececec;
 }
 
-.govuk-tag {
-    padding: 10px;
-    margin-right: 10px;
-}
-.govuk-tag.black {
-    padding: 10px 10px 10px 60px;
-    background: url(../images/govuk-crown.png) 10px center no-repeat #000;
-}
-.tag-print {
-    padding: 10px 10px 10px 60px;
-    background: url(../images/printer-icon.png) 10px center no-repeat #fff;
-    text-decoration: underline;
-    color: #551A8B ; // $erc-text-blue;
-    font-weight: 400;
-    //font-size : 19px;
-}
-
-.govuk-tag.info {
-    background-color: $erc-logo-blue;
-    text-transform: none;
-    font-family: nta;
-    padding: 5px;
- 
-}
-
-.govuk-tag.red {
-    background-color: #b10e1e;
-   // margin-left: 10px;
-    padding: 5px;
-    text-transform: none;
-
-}
-.govuk-panel {
-    background-color: #28a197;
-}
-code {
-    font-weight: 400;
-    padding-left: 0.5em;
-}
-
-.ready-tag {
-    background: #cce2d8;
-    color: #005a30;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
-  .started-tag {
-    color: #594d00;
-    background: #fff7bf;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
-
-  .todo-tag {
-    color: #942514;
-    background: #f6d7d2;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
-
   .centred-input-fields {
     .govuk-summary-list__row, dt.govuk-summary-list__key, dd.govuk-summary-list__value,  dd.govuk-summary-list__actions, label {
         border-bottom: 0px;
@@ -266,7 +196,6 @@ code {
     background-color : #436c14;
   }
   
-  
   .button-secondary , .govuk-button:active.button-secondary, .govuk-button:link.button-secondary, .govuk-button:visited.button-secondary {
     background-color :  #cecece ;
     color: black;
@@ -276,7 +205,6 @@ code {
     background-color : #dddddd;
     color: black;
   }
-  
   
   .button-warning {
     background-color : #b10e1e  ;
