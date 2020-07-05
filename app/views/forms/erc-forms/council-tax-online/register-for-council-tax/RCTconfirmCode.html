@@ -1,0 +1,52 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Create your online profile
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      Do it online
+    </h1>
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+    <p class="erc-alt-dark-blue-bg">Confirmation Code</p> 
+    <div class="govuk-heading-s erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">An email has been sent to <strong>{{ data ['registering-email']}}</strong>. You should now either type or copy and paste the confirmation code from the email into the box below.</p>
+      <p class="govuk-!-font-size-14">If you have entered an incorrect email address, please use the 'Wrong email' button and try again</p>
+    </div>
+   
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="confirmation-code">Confirmation code <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="confirmation-code" name="confirmation-code" type="text" value="{{ data ['confirmation-code']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
+        <p class="govuk-!-font-size-14">After your code has been validated, you will not need it again</p>
+      </div>
+      {{ govukButton({
+        text: "wrong email",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress"
+      }) }}
+  
+      {{ govukButton({
+        text: "Validate confirmation code",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTnameAddress"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

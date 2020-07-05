@@ -45,6 +45,9 @@ $sss-text: #333;
     padding: 4px 10px;
     font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    @media only screen and (max-width: 340px) {
+        font-size:18px;
+    }
 }
 
 .govuk-header__content {

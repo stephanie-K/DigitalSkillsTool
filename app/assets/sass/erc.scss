@@ -35,10 +35,13 @@ $erc-green-border: #008000;
     padding: 4px 10px;
     font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    @media only screen and (max-width: 340px) {
+        font-size:18px;
+    }
 }
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
-    border: 30px solid #fff;
+    border: 10px solid #fff;
     }
     a {
         text-decoration: none;
@@ -47,13 +50,6 @@ $erc-green-border: #008000;
 
 // ----- specific to the home page ----- //
 
-#logo-se-home {
-    width: 50%;
-    @media only screen and (min-width: 775px) { 
-    border: 30px solid #fff;
-    }
-
-}
 #tagline-home {
     border: 0 solid #fff ; 
     padding: 10px 0;
@@ -85,7 +81,7 @@ $erc-green-border: #008000;
 
 //---------------------------------------- BODY------------------------------------------------//
 
-body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table {
+body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text  {
     color: $erc-text-blue;
 }
 
@@ -96,6 +92,20 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
 .govuk-heading-m {
     margin-top: 30px; 
  }
+
+.govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
+color: white; 
+background-color:#0071BA; 
+padding: 5px;
+box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
+}
+
+.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
+    background-color: #0071BA;
+}
+
+
+
 
 // ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
 
@@ -129,13 +139,6 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
     border-left: 5px solid #B30000;
 }
 
-.govuk-accordion__section-heading {
-    color: #004269 ;
-}
-.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
-    background-color: #004269 ;
-}
-
 // -------------------------------------------- Helpers ------------------------------------------------- //
 
 
@@ -146,69 +149,6 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-label, .govuk-fieldset, .govuk-
 .input-read-only {
     background: #ececec;
 }
-
-.govuk-tag {
-    padding: 10px;
-    margin-right: 10px;
-}
-.govuk-tag.black {
-    padding: 10px 10px 10px 60px;
-    background: url(../images/govuk-crown.png) 10px center no-repeat #000;
-}
-.tag-print {
-    padding: 10px 10px 10px 60px;
-    background: url(../images/printer-icon.png) 10px center no-repeat #fff;
-    text-decoration: underline;
-    color: #551A8B ; // $erc-text-blue;
-    font-weight: 400;
-    //font-size : 19px;
-}
-
-.govuk-tag.info {
-    background-color: $erc-logo-blue;
-    text-transform: none;
-    font-family: nta;
-    padding: 5px;
- 
-}
-
-.govuk-tag.red {
-    background-color: #b10e1e;
-   // margin-left: 10px;
-    padding: 5px;
-    text-transform: none;
-
-}
-.govuk-panel {
-    background-color: #28a197;
-}
-code {
-    font-weight: 400;
-    padding-left: 0.5em;
-}
-
-.ready-tag {
-    background: #cce2d8;
-    color: #005a30;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
-  .started-tag {
-    color: #594d00;
-    background: #fff7bf;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
-
-  .todo-tag {
-    color: #942514;
-    background: #f6d7d2;
-    font-size: 0.8rem;
-    margin: 5px 0;
-    padding: 5px;
-  }
 
   .centred-input-fields {
     .govuk-summary-list__row, dt.govuk-summary-list__key, dd.govuk-summary-list__value,  dd.govuk-summary-list__actions, label {
@@ -256,7 +196,6 @@ code {
     background-color : #436c14;
   }
   
-  
   .button-secondary , .govuk-button:active.button-secondary, .govuk-button:link.button-secondary, .govuk-button:visited.button-secondary {
     background-color :  #cecece ;
     color: black;
@@ -266,7 +205,6 @@ code {
     background-color : #dddddd;
     color: black;
   }
-  
   
   .button-warning {
     background-color : #b10e1e  ;
@@ -392,6 +330,75 @@ code {
     border-radius: 5px;
 }
 
+.erc-payment-blue-bg {
+    background-color: #0051B8;
+    padding: 5px 10px;
+    margin: 4px 0 8px 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight:bold;
+}
+
+.payment {
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+    p, label {
+        font-size: 14px;
+        margin-bottom: 0;
+    }    
+    p.selected {
+        background-color: #D1CEE1;
+        a {
+            text-decoration: underline;
+        }
+    }  
+    .govuk-table__header {
+        background-color: #0051B8;
+        color: #fff;
+        font-size: 14px;
+        border: 1px solid #808080;
+        padding-left: 5px;
+    }  
+    .govuk-table__cell {
+        border-bottom: 0;
+        font-size: 14px;
+    }
+    .govuk-form-group {
+        margin-bottom: 5px;
+    }
+    .govuk-input {
+        height: 1.5rem;
+        border: 1px solid #004269;
+        font-size: 14px;
+    }
+}
+
+div.payment-error{
+    li {
+        font-size: 14px;
+        color: red;
+    }
+}
+
+button.erc-payment, a.erc-payment{
+    background-color: #0051B8;
+    border: 1px solid #0051B8;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 0 0 ;
+    font-size: 14px;
+    padding: 3px 6px;
+}
+
+button.erc-payment:hover, a.erc-payment:hover{
+    background-color: #ffffff !important;
+    border: 1px solid #0051B8;
+    color: #0051B8;
+}
+
 button.erc-alt, a.erc-alt{
     background-color: $erc-alt-text-blue;
     border: 1px solid #23408E;
@@ -490,4 +497,48 @@ hr.erc {
 }
 th {
     white-space: nowrap;
+}
+
+// -------------------------- Council Tax - do it online ---------------------------------------------- //@extend
+.module {
+    border-radius: 10px;
+    color: #004269;
+    background-color: #fff;
+    width: 225px;
+    height: 315px;
+    margin: 0 15px 14px 0;
+    overflow: hidden;
+    text-align: center;
+    border-left: 1px solid #d4e6a8;
+    border-top: 1px solid #000000;
+}
+
+.moduleImage {
+    height:136px;
+    border-top: 1px solid #d4e6a8;
+}
+
+.moduleInfo {
+    border: 1px solid #d4e6a8;
+    border-radius: 0px 0px 10px 10px;
+    color: #004269;
+    background-color: #d4e6a8;
+    height: 178px;
+    overflow: auto;
+}
+
+.moduleHeader {
+    font-weight: bold;
+    padding: .5em;
+    a {
+        text-decoration: none;
+        color: #004269;
+    }
+}
+.moduleText {
+    line-height: normal;
+    padding: 0 0.5em 0.5em;
+    p {
+        font-size: 14px;
+    }
 }

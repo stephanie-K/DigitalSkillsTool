@@ -1,0 +1,66 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Pay council tax
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Pay council tax
+    </h1>
+    <p class="erc-alt-dark-grey">Set up a direct debit or find out other ways you can pay your council tax.</p> 
+    <h2 class="govuk-heading-m">Direct debit</h2>
+    <p>The easiest way to pay your council tax is by direct debit. You can pay in 10 monthly instalments and choose the date you'd like to pay.</p>
+    <p>Call 0141 577 3002 to set up a direct debit over the phone.</p>
+
+    <p><img src="{{ asset_path }}images/ERC/pdficon.gif" style="border: none; vertical-align: middle;" alt="pdf icon"
+      title="">&nbsp;<a href="https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=1945&amp;p=0" title="This form should be completed if you want to pay your council tax by direct debit." target="_blank" rel="noopener">Download Direct Debit application form [243kb]</a></p>
+
+
+  <h2 class="govuk-heading-m">Pay online by card</h2>
+  <p>You'll need your council tax reference number. </p>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Pay online",
+        classes: "button-primary erc-alt-disco",
+        href: "/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry"
+      }) }}
+
+      <h2 class="govuk-heading-m">Automated telephone line</h2>
+      <p>Call 0141 577 3030 to pay by card. You'll need your council tax reference number.</p>
+
+      <h2 class="govuk-heading-m">Post office or PayPoint</h2>
+      <p>Pay at any post office or PayPoint using the barcode on your bill.</p>
+      <p><a href="https://consumer.paypoint.com/" target="_blank" rel="noopener">Find your nearest PayPoint store</a></p>
+
+      <h2 class="govuk-heading-m">Post or in person</h2>
+      <p>Make cheques payable to East Renfrewshire Council.  Make sure you write your property address and reference number on the back.</p>
+      <p>Your payment should reach us by the first day of every month.</p>
+      <p>If you come into council offices, opening times are 9.00am until 4.15pm, Monday to Friday</p>
+      <p>Between 1.00pm and 2.00pm, only debit or credit card payments can be taken.</p>
+
+      <h2 class="govuk-heading-m">Contact Council Tax</h2>
+      <h3 class="govuk-heading-m">Email</h3>
+      <p><a href="mailto:ctax@eastrenfrewshire.gov.uk">ctax@eastrenfrewshire.gov.uk</a></p>
+
+      <h3 class="govuk-heading-s">Call</h3>
+      <p>0141 577 3002</p>
+
+      <hr>
+      <p class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"><span class="tag-print"></span> <a href="#">Print this page</a></p>
+    </div>
+    
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  

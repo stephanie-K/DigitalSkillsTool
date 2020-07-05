@@ -37,6 +37,11 @@ $govuk-assets-path: '/govuk/assets/';
   color: #ffdd00;
 }
 
+// added this so all the logo don't change briefly when we click on them, they used to have a yellow band and black border on focus
+.govuk-header__logo a:focus {
+  background-color:#0000 ;
+  box-shadow: 0 0 0 0;
+}
 .govuk-header__link--service-name:focus {
   color: #000;
 }
@@ -137,14 +142,126 @@ $govuk-assets-path: '/govuk/assets/';
    // display: none
   }
 
-  .student-notes-box{
-    border: solid 1px #bcdff1;
-    margin: 20px 0;
-    padding: 25px 15px;
-    border-radius: 10px;
-    color: #31708f ;
-    background-color: #d9edf7;
-    p, h3, li {
-        color: #31708f;
-    }
+/* ------------------------ specific to Universal credit  - application part ---------------------------- */
+
+.uc-to-do-list-blue {
+  text-align: center; 
+  background-color:#005ea5 ;
+  padding: 10px 15px; 
+  a {
+    color: white; 
+    font-weight: 700;
+    text-decoration: none;
+  }
+  a:hover, a:focus, a:active {
+    text-decoration: underline;
+  }
+}
+
+.uc-to-do-list-grey {
+  text-align: center; 
+  background-color:#dee0e2 ;
+  padding: 10px 15px;
+  a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+  a:hover, a:focus, a:active {
+    text-decoration: underline;
+  }
+}
+
+.uc-to-do-list-red {
+  border-left: 10px solid #b10e1e;
+  background-color: #fceaeb;
+  padding: 15px;
+  p {
+    padding: 5px 0 10px 0;
+  }
+}
+
+
+.uc-to-do-list {
+  border-left: 3px solid #0b0c0c; 
+  border-bottom: #bfc1c3 ; 
+  background-color: #f8f8f8; 
+  padding: 15px; 
+  margin-top: 10px;
+}
+
+/* ----------------------------------------------------------------------- Helpers ---------------------------------------------- */
+.student-notes-box{
+  border: solid 1px #bcdff1;
+  margin: 20px 0;
+  padding: 25px 15px;
+  border-radius: 10px;
+  color: #31708f ;
+  background-color: #d9edf7;
+  p, h3, li {
+      color: #31708f;
+  }
+}
+
+.govuk-tag {
+  padding: 10px;
+  margin-right: 10px;
+}
+.govuk-tag.black {
+  padding: 10px 10px 10px 60px;
+  background: url(../images/govuk-crown.png) 10px center no-repeat #000;
+}
+.tag-print {
+  padding: 10px 10px 10px 60px;
+  background: url(../images/printer-icon.png) 10px center no-repeat #fff;
+  text-decoration: underline;
+  color: #551A8B ; // $sac-text;
+  font-weight: 400;
+  //font-size : 19px;
+}
+
+.govuk-tag.info {
+  background-color: #00559c;
+  text-transform: none;
+  font-family: nta;
+  padding: 5px;
+
+}
+
+.govuk-tag.red {
+  background-color: #b10e1e;
+ // margin-left: 10px;
+  padding: 5px;
+  text-transform: none;
+
+}
+
+.govuk-panel {
+  background-color: #28a197;
+}
+code {
+  font-weight: 400;
+  padding-left: 0.5em;
+}
+
+.ready-tag {
+  background: #cce2d8;
+  color: #005a30;
+  font-size: 0.8rem;
+  margin: 5px 0;
+  padding: 5px;
+}
+.started-tag {
+  color: #594d00;
+  background: #fff7bf;
+  font-size: 0.8rem;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.todo-tag {
+  color: #942514;
+  background: #f6d7d2;
+  font-size: 0.8rem;
+  margin: 5px 0;
+  padding: 5px;
 }

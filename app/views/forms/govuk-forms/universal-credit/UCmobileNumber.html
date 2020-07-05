@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-{% if error %} Error - {% endif %}Create an account
+Mobile number
 {% endblock %}
 
 
@@ -13,18 +13,17 @@
 
     <p>We will send a text message with a code to confirm it's your number.</p>
     <p>We use your mobile number to help protect your account. We might also contact you about your Universal Credit.</p>
-    <form class="form" method="post" novalidate>
 
-      <div class="govuk-form-group {% if not validUsername and error %} govuk-form-group--error {% endif %}">
-        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="username">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="UCmobile">
           Enter your mobile number
         </label>
 
-        <input class="govuk-input govuk-input--width-20  {% if not validUsername and error %} govuk-input--error {% endif%}" id="username" name="username" type="text"  value="{{ data ['username']}}">
+        <input class="govuk-input govuk-input--width-20" id="UCmobile" name="UCmobile" type="text"  value="{{ data ['UCmobile']}}">
 
       </div>
       <div class="govuk-form-group">
-        <a href="#">I do not have my own mobile phone</a>
+        <a href="/forms/govuk-forms/universal-credit/UCcontactPreference">I do not have my own mobile phone</a>
       </div>
 
 
@@ -32,9 +31,10 @@
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit/UCcontactNumber"
     }) }}
-    </form>
+
   </div>
 
 {% endblock %}

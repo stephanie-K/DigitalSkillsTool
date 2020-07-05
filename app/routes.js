@@ -38,29 +38,22 @@ router.post('/forms/erc-forms/bidding-properties/bidding-available-properties', 
   if (propertySelected  === '37A') {
     return res.redirect('/forms/erc-forms/bidding-properties/property37A')
   }
-  res.redirect('/forms/erc-forms/bidding-properties/no-property-chosen')
-})
-
-router.get('/forms/erc-forms/bidding-properties/bidding-available-properties', function (req, res) {
-  req.session.data ['property'] = null // this is set to null when we render the page to clear the data of this variable if we are coming back to that page with a value already set for it
-  return res.render('forms/erc-forms/bidding-properties/bidding-available-properties')
-})
-
-router.post('/forms/erc-forms/bidding-properties/no-property-chosen', function (req, res) {
-  var propertySelected = req.session.data['property']
-  if (propertySelected  === '86D') {
-      return res.redirect('/forms/erc-forms/bidding-properties/property86D')
-  }
-  if (propertySelected  === '54E') {
-    return res.redirect('/forms/erc-forms/bidding-properties/property54E')
-  }
-  if (propertySelected  === '37A') {
-    return res.redirect('/forms/erc-forms/bidding-properties/property37A')
-  }
-  res.redirect('/forms/erc-forms/bidding-properties/no-property-chosen')
+  // no property were selected, we render the same page with an error message (see code in the html for the error message)
+  req.session.data['property'] = 'error';
+  res.redirect('/forms/erc-forms/bidding-properties/bidding-available-properties')
 })
 
 // Universal Credit ***************************************************************************
+
+router.post('/forms/govuk-forms/universal-credit/UCalreadyGetBenefit', function (req, res) {
+  var hasRead = req.session.data['ucread']
+  if (hasRead == "read") {
+      return res.redirect('/forms/govuk-forms/universal-credit/UCyourDisabilityBenefit')
+  }
+  req.session.data['ucread'] = 'error'
+  res.redirect('/forms/govuk-forms/universal-credit/UCalreadyGetBenefit')
+})
+
 
 router.post('/forms/govuk-forms/universal-credit/UCdisabilityBenefits', function (req, res) {
   var gettingDisabilityBenefits = req.session.data['getting-disability-benefits']
@@ -163,7 +156,7 @@ router.post('/forms/govuk-forms/universal-credit/UCcreateAccount', function (req
   if (uc_error_create_account){
     return res.redirect('/forms/govuk-forms/universal-credit/UCcreateAccount')
   } else {
-    return res.redirect('/forms/govuk-forms/universal-credit/UCaccountCreated')
+    return res.redirect('/forms/govuk-forms/universal-credit/UCaboutYou')
   } 
 })
 
@@ -198,6 +191,11 @@ router.post('/forms/govuk-forms/universal-credit/UCsignIn', function (req, res) 
   } 
 })
 
+// this is just so the value of the email address if entered can be stored and re-used on the next page
+router.post('/forms/govuk-forms/universal-credit/UCaboutYou', function (req, res) {
+  return res.redirect('/forms/govuk-forms/universal-credit/UCconfirmEmail')
+})
+
 // Report a repair ******************************************************************************
 
 router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, res) {
@@ -205,8 +203,9 @@ router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, re
   var address_entered = req.session.data ['repair-address']
   var phone_entered = req.session.data ['repair-phone']
   var email_entered = req.session.data ['repair-email']
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
   var all_entered = name_entered && address_entered && phone_entered && email_entered
-  if (all_entered) {
+  if (all_entered && regExpEmail.test(email_entered)) {
     res.redirect('/forms/erc-forms/report-repair/RRonlineRepairDetails')
   } else {
     res.redirect('/forms/erc-forms/report-repair/RRonlineAboutYou')
@@ -215,14 +214,93 @@ router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, re
 
 
 router.post('/forms/erc-forms/report-repair/RRonlineRepairDetails', function (req, res) {
-  var location_entered = req.session.data ['repair-location'] !== 'L0'
-  var person_entered = req.session.data ['repair-person']
-  var details_entered = req.session.data ['repair-details'] !== 'P0'
-  var all_entered2 = location_entered && person_entered && details_entered
-  if (all_entered2) {
-    res.redirect('/forms/erc-forms/report-repair/RRonlineConfirmation')
-  } else {
+  var location_missing = req.session.data['repair-location'] === 'L0';
+  var person_missing = req.session.data['repair-person'] === 'P0';
+  var details_missing = req.session.data['repair-details'] === '';
+  var something_mising =  person_missing || details_missing || location_missing;
+  if (something_mising) {
     res.redirect('/forms/erc-forms/report-repair/RRonlineRepairDetails')
+  } else {
+    res.redirect('/forms/erc-forms/report-repair/RRonlineConfirmation')
+  }
+})
+
+// Council tax form - register *****************************************************************
+
+router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart', function (req, res) {
+  var hasRead = req.session.data['rctread']
+  if (hasRead == "read") {
+      return res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress')
+  }
+  req.session.data['rctread'] = 'error'
+  res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart')
+})
+
+router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress', function (req, res) {
+  var email_entered = req.session.data ['registering-email']
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  if (email_entered && regExpEmail.test(email_entered)) {
+    res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTconfirmCode')
+  } else {
+    res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress')
+  }
+})
+
+// Council tax form - sign up *****************************************************************
+
+router.post('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart', function (req, res) {
+  var username_entered = req.session.data ['sign-in-username']
+  if (username_entered) {
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTsignedIn')
+  } else {
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart')
+  }
+})
+
+
+router.post('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBoth', function (req, res) {
+  var name_entered = req.session.data ['ct-sign-name']
+  var address_entered = req.session.data ['ct-sign-address']
+  var phone_entered = req.session.data ['ct-sign-phone']
+  var email_entered = req.session.data ['ct-sign-email']
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  var all_entered = name_entered && address_entered && phone_entered && email_entered
+  if (all_entered && regExpEmail.test(email_entered)) {
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBothSent')
+  } else {
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBoth')
+  }
+})
+
+// Council tax form - pay *****************************************************************
+
+
+router.get('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry', function (req, res) {
+  var used_cancel = req.session.data ['usedcancel']
+  if (used_cancel) {
+    // delete all session data
+    req.session.data = {} 
+  }
+   res.render('forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry')
+})
+
+
+
+router.post('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry', function (req, res) {
+  req.session.data ['ct-payment-entry-cancelled'] = false
+  var reference_entered = req.session.data ['ct-reference']
+  var amount_entered = req.session.data ['ct-amount']
+  var name_entered = req.session.data ['ct-name']
+  var houseno_entered = req.session.data ['ct-houseno']
+  var street_entered = req.session.data ['ct-street']
+  var town_entered = req.session.data ['ct-town']
+  var postcode_entered = req.session.data ['ct-postcode']
+  var all_entered = reference_entered && amount_entered && name_entered && houseno_entered && street_entered && town_entered && postcode_entered
+  if (all_entered) {
+    res.redirect('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentAdded')
+  } else {
+    req.session.data ['usedcancel'] = false
+    res.redirect('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry')
   }
 })
 

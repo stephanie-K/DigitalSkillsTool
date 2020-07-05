@@ -12,10 +12,14 @@ Report a housing repair - About you
       Do it online
     </h1>
 
+    {% set regExpEmail = r/^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/g %}
+    {% set validEmail = regExpEmail.test(data ['repair-email']) %}
+
     {% if (data ['repair-name'] === '') or  
           (data ['repair-address'] === '') or
           (data ['repair-phone'] === '') or
-          (data ['repair-email'] === '')
+          (data ['repair-email'] === '') or
+          (data ['repair-email'] and not validEmail)
            %}
     <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
     {% endif %}
@@ -83,13 +87,14 @@ Report a housing repair - About you
       <dd class="govuk-summary-list__value">
         <input class="govuk-input govuk-!-width-full" id="repair-email" name="repair-email" type="text" value="{{ data ['repair-email']}}">
       </dd>
-      {% if (data ['repair-email'] === '') %}
       <dd class="govuk-summary-list__actions">
+      {% if (data ['repair-email'] === '') %}
         <span class="error"> *</span>
-      </dd>
-      {% else%}
-      <dd class="govuk-summary-list__actions"></dd>
+      {% elseif (data ['repair-email'] and not validEmail)%}
+        <span class="error">* Enter a valid email address.</span>
+      {% else %}
       {% endif %}
+      </dd>
     </div>
   </dl>
 
