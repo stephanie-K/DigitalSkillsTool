@@ -162,13 +162,24 @@ body p, ul, li , a, span, .govuk-link,
     margin-top: 30px; 
  }
 
-.govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
+.govuk-accordion__section-header {
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.govuk-accordion__section-button, .govuk-accordion__section-heading, 
+.js-enabled .govuk-accordion__section-button:focus, .js-enabled .govuk-accordion__section-button {
 color: white; 
+font-size: 20px;
+font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 background-color:$erc-green; 
 padding: 5px;
 box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 }
 
+.govuk-accordion__section-heading {
+    margin-right: 10px;
+}
 .js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
     background-color: $erc-green;
 }
@@ -322,6 +333,33 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     box-shadow: inset 0 0 20em rgba(0,0,0,0.2);
   }
 
+  .govuk-button.erc-long-button{
+    color: #005ea5; 
+    font-weight: bold; 
+    background-color: #ffffff; 
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 0;
+    width: 400px;
+    @media only screen and (max-width: 400px) {
+        width: 300px;
+    }
+    span {
+        text-align: left; 
+        width: 370px; 
+        color: #005ea5;
+        @media only screen and (max-width: 400px) {
+            width: 270px;
+        }
+    }
+  }
+
+  .govuk-button.erc-long-button:focus:not(:active):not(:hover){
+    color: $erc-text;
+    background-color: #f5f5f5; 
+    border-bottom: 1px solid #cccccc;
+    box-shadow: 0 2px 0 #0064FF;
+    border-color: #0064FF;
+  }
 
   //--------------------------------------- message boxes and panels-----------------------------------------------//
 
@@ -596,46 +634,3 @@ th {
     white-space: nowrap;
 }
 
-// -------------------------- Council Tax - do it online ---------------------------------------------- //@extend
-.module {
-    border-radius: 10px;
-    color: #1a1a1a;
-    background-color: #fff;
-    width: 225px;
-    height: 315px;
-    margin: 0 15px 14px 0;
-    overflow: hidden;
-    text-align: center;
-    border-left: 1px solid #d4e6a8;
-    border-top: 1px solid #000000;
-}
-
-.moduleImage {
-    height:136px;
-    border-top: 1px solid #d4e6a8;
-}
-
-.moduleInfo {
-    border: 1px solid #d4e6a8;
-    border-radius: 0px 0px 10px 10px;
-    color: #1a1a1a;
-    background-color: #d4e6a8;
-    height: 178px;
-    overflow: auto;
-}
-
-.moduleHeader {
-    font-weight: bold;
-    padding: .5em;
-    a {
-        text-decoration: none;
-        color: #1a1a1a;
-    }
-}
-.moduleText {
-    line-height: normal;
-    padding: 0 0.5em 0.5em;
-    p {
-        font-size: 14px;
-    }
-}

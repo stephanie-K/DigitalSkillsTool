@@ -1,117 +1,74 @@
 {% extends "layout_erc.html" %}
 
 {% block pageTitle %}
-Council tax onlines services
+Council tax  - East Renfrewshire
 {% endblock %}
 
 
 {% block content %}
+
+<h1 class="govuk-heading-xl heading-title">
+  Council tax
+</h1>
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <h1 class="govuk-heading-l">
-      Council tax onlines services
-    </h1>
-    <p class="erc-alt-dark-grey">Payments, log on to your account or sign up for an account.</p> 
-    <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p class="heading-intro">
+      Pay your council tax, find out how your council tax is spent, or let us know about a change in circumstances.
+    </p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    <br>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-heading-m">
+      Articles in this section
+    </h2>
+    <a href="/forms/erc-forms/council-tax-online/pay-council-tax/PCTstart" role="button" draggable="false" class="govuk-button govuk-button--start  erc-long-button" data-module="govuk-button">
+      <span>Pay your council tax</span>
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false" >
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+    <a href="/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart" role="button" draggable="false" class="govuk-button govuk-button--start  erc-long-button" data-module="govuk-button">
+      <span>Register for council tax online</span>
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false" >
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+    <a href="/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart" role="button" draggable="false" class="govuk-button govuk-button--start  erc-long-button" data-module="govuk-button">
+      <span>Sign in to council tax online</span>
+      <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false" >
+        <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+      </svg>
+    </a>
+  </div>
+  <div class="govuk-grid-column-one-quarter">
+    <br>
+  </div>
+</div>
 
-      <div class="govuk-grid-column-one-third">
-        <div class="module">
-          <div class ="moduleImage">
-            <a href=/forms/erc-forms/council-tax-online/pay-council-tax/PCTstart><img src="{{ asset_path }}images/ERC/council-tax-pay.jpg" width="223" height="136" alt="go to Pay Council tax"></a>
-          </div>
-          <div class="moduleInfo">
-            <div class="moduleHeader">
-              <a href="/forms/erc-forms/council-tax-online/pay-council-tax/PCTstart">Pay Council tax</a>
-            </div>
-            <div class="moduleText">
-              <p>You will need your council tax reference number.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
 
-      <div class="govuk-grid-column-one-third">
-        <div class="module">
-          <div class ="moduleImage">
-            <a href=#><img src="{{ asset_path }}images/ERC/moving_address.jpg" width="223" height="136" alt="do not work"></a>
-          </div>
-          <div class="moduleInfo">
-            <div class="moduleHeader">
-              <a href="#">Moving address</a>
-            </div>
-            <div class="moduleText">
-              <p>Tell us if you are moving address or if you have a change of tenants.</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="govuk-grid-column-one-third">
-        <div class="module">
-          <div class ="moduleImage">
-            <a href="/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart"><img src="{{ asset_path }}images/ERC/coucil-tax-register.jpg" width="223" height="136" alt="go to Register for Council Tax Online"></a>
-          </div>
-          <div class="moduleInfo">
-            <div class="moduleHeader">
-              <a href="/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart">Register for Council Tax Online<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a>
-            </div>
-            <div class="moduleText">
-              <p>Once you have registered for Council Tax, you will be required to bring ID into our offices.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+  <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-third">
+      <br>
     </div>
-
-    <div class="govuk-grid-row govuk-!-margin-bottom-5">
-
-      <div class="govuk-grid-column-one-third">
-        <div class="module">
-          <div class ="moduleImage">
-            <a href=/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart><img src="{{ asset_path }}images/ERC/council-tax-signup.jpg" width="223" height="136" alt="go to Sign in to Council Tax Online"></a>
-          </div>
-          <div class="moduleInfo">
-            <div class="moduleHeader">
-              <a href="/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart">Sign in to Council Tax Online <img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a>
-            </div>
-            <div class="moduleText">
-              <p>View your balance, check payments and request copy bills. You don't need to register for an online account to pay your Council Tax.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="govuk-grid-column-one-third">
-        <div class="module">
-          <div class ="moduleImage">
-            <a href=#><img src="{{ asset_path }}images/ERC/single_person_discount.jpg" width="223" height="136" alt="go to Apply for single person discount<"></a>
-          </div>
-          <div class="moduleInfo">
-            <div class="moduleHeader">
-              <a href="#">Apply for single person discount</a>
-            </div>
-            <div class="moduleText">
-              <p>Apply for single person discount online.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="govuk-grid-column-one-third">
+      <p>Share this page 
+        <image src="{{ asset_path }}/images/ERC/facebook.png" alt="facebook" width="32" height="32" style="vertical-align:middle; padding-left: 10px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/twitter.png" alt="twitter" width="32" height="32" style="vertical-align:middle; padding-left: 5px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/email.png" alt="email" width="32" height="32" style="vertical-align:middle; padding-left: 5px; padding-right: 40px;" ></image>
+      </p>
     </div>
-
-    {{ govukButton({
-      text: "Can't find what you need?",
-      classes: "govuk-button--secondary",
-      href: "/forms/erc-forms/council-tax-online/CTcant-find"
-    }) }}
-
-
-
-      <hr>
-      <p class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"><span class="tag-print"></span> <a href="#">Print this page</a></p>
+    <div class="govuk-grid-column-one-third">
+      <p>Print 
+        <image src="{{ asset_path }}/images/ERC/print.png" alt="print" width="32" height="32" style="vertical-align:middle; padding-left: 5px; padding-right: 10px;" ></image>
+      </p>
     </div>
-    
   </div>
 
 {% endblock %}
