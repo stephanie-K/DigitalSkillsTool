@@ -1,0 +1,40 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+37A Graham Street, Barrhead
+{% endblock %}
+
+
+{% block content %}
+<h1 class="govuk-heading-xl heading-title">
+  37A Graham Street, Barrhead
+</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p><a href="/forms/erc-forms/bidding-properties/property37A">Back to 37A Graham Street, Barrhead</a></p>
+    <p>Thank you for registering an interest in 37A Graham Street, Barrhead.</p>
+    <p>If you’ve been successful, we’ll contact you within 2 days of the closing date.</p>
+    <p>If you don’t hear from us in that time please bid for more homes.</p>
+    <p>Housing Team</p>
+  </div>
+</div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-third">
+      <br>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Share this page 
+        <image src="{{ asset_path }}/images/ERC/facebook.png" alt="facebook" width="32" height="32" style="vertical-align:middle; padding-left: 10px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/twitter.png" alt="twitter" width="32" height="32" style="vertical-align:middle; padding-left: 5px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/email.png" alt="email" width="32" height="32" style="vertical-align:middle; padding-left: 5px; padding-right: 40px;" ></image>
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Print 
+        <image src="{{ asset_path }}/images/ERC/print.png" alt="print" width="32" height="32" style="vertical-align:middle; padding-left: 5px; padding-right: 10px;" ></image>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

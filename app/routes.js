@@ -25,23 +25,6 @@ router.get('forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support', func
   return res.render('forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support')
 })
 
-// bidding properties - so we can route to the right house depedning on what the user select
-
-router.post('/forms/erc-forms/bidding-properties/bidding-available-properties', function (req, res) {
-  var propertySelected = req.session.data['property']
-  if (propertySelected  === '86D') {
-      return res.redirect('/forms/erc-forms/bidding-properties/property86D')
-  }
-  if (propertySelected  === '54E') {
-    return res.redirect('/forms/erc-forms/bidding-properties/property54E')
-  }
-  if (propertySelected  === '37A') {
-    return res.redirect('/forms/erc-forms/bidding-properties/property37A')
-  }
-  // no property were selected, we render the same page with an error message (see code in the html for the error message)
-  req.session.data['property'] = 'error';
-  res.redirect('/forms/erc-forms/bidding-properties/bidding-available-properties')
-})
 
 // Universal Credit ***************************************************************************
 

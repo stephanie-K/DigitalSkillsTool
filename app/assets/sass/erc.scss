@@ -194,6 +194,9 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     padding-top: 0;
 }
 
+.govuk-fieldset__legend--m {
+    font-size: 1.5em;
+}
 
 // ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
 
@@ -204,7 +207,7 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 }
 
 .govuk-textarea, .govuk-input{
-    border: 2px solid $erc-text;
+    border: 1px solid #999999;
 }
 
 .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .erc-text-blue , table{
