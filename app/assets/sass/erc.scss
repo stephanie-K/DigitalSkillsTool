@@ -22,10 +22,14 @@ $erc-green-border: #008000;
 $erc-green: #008062;
 $erc-grey-bg: #e5e5e5;
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap");
+
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 
 //---------------------------------------- HEADER ------------------------------------------------//
+
 
 .govuk-header__container {
     border-bottom: 0px;
@@ -41,10 +45,36 @@ $erc-grey-bg: #e5e5e5;
     margin: 4px 10px;
     font-weight: 500;
     font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
-    @media only screen and (max-width: 340px) {
+    @media only screen and (max-width: 395px) {
         font-size:18px;
     }
 }
+
+
+.govuk-header__container.erc-old {
+    background-color: #ffffff;
+    border-top: 20px solid #ffffff;
+    .govuk-header__content {
+        @media only screen and (min-width: 169px) { 
+        border: 10px solid #ffffff;
+        }
+    }
+}
+.erc-tagline-old {
+    font-size: 24px;
+    color: white; 
+    background-color: $erc-logo-blue;
+    padding: 4px 10px;
+    margin: 4px 10px;
+    font-weight: 500;
+    font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    @media only screen and (max-width: 395px) {
+        font-size:18px;
+    }
+}
+
+
+
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
     border: 10px solid $erc-green;
@@ -114,6 +144,16 @@ body p, ul, li , a, span, .govuk-link,
     font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 }
 
+body p, ul, li , a, span, .govuk-link, 
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
+    font-size: 16px;
+}
+
+.do-it-online {
+    color: $erc-alt-text-blue !important;
+    text-align: right;
+}
+
 .govuk-heading-l {
    margin-top: 50px; 
 }
@@ -136,7 +176,19 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 .heading-title {
     background-color: $erc-grey-bg;
     font-size: 60px;
-    padding: 60px 20px;
+    font-weight: 800;
+    padding: 60px 20px 30px 20px;
+    @media only screen and (max-width: 395px) {
+        font-size:40px;
+    }
+}
+
+.heading-intro {
+    font-size: 28px;
+    font-weight: 700;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: solid 3px $erc-green;
 }
 .govuk-main-wrapper--auto-spacing:first-child {
     padding-top: 0;
@@ -238,6 +290,7 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     background-color : $erc-green; 
     box-shadow: 0 2px 0 #0000;
     font-weight:bold;
+    font-size: 16px;
   }
   
   .govuk-button:hover.button-primary, .govuk-button:focus.button-primary  {
@@ -484,17 +537,6 @@ a.button-primary.erc-alt-disco, button.button-primary.erc-alt-disco {
     text-shadow: 0 1px 0 #000;
 }
 
-
-button.button-primary.erc-alt-disco:hover, button.button-primary.erc-alt-disco:active, button.button-primary.erc-alt-disco:focus,
-a.button-primary.erc-alt-disco:hover, a.button-primary.erc-alt-disco:active, a.button-primary.erc-alt-disco:focus {
-    color:  #fff;
-    text-decoration: underline;
-    background-color: #444;
-}
-
-a.button-primary.erc-alt-disco:visited, button.button-primary.erc-alt-disco:visited{
-    color:  #b9ff06;
-}
 
 button.button-primary.erc-alt-submission, button.button-primary.erc-alt-submission:focus,
 a.button-primary.erc-alt-submission, a.button-primary.erc-alt-submission:focus   {
