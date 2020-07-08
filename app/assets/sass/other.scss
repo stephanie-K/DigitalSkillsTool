@@ -934,6 +934,7 @@ button#pat-acc-register2-create {
 .pat-acc-success-cont {
   margin: 0;
   margin-bottom: 40px;
+  display: inline-block;
 }
 
 .pat-acc-success-title {
@@ -942,6 +943,7 @@ button#pat-acc-register2-create {
 }
 
 .pat-acc-success-image-cont {
+  display: block;
   text-align: center;
 }
 
@@ -964,6 +966,22 @@ button#pat-acc-register2-create {
   font-weight: 700;
 }
 
+.pa-acc-success-message-cont {
+  width: 80%;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+@media screen and (max-width: 387px) {
+  .pa-acc-success-message-cont {
+    width: 100%;
+  }
+}
+
+.pa-acc-success-message {
+  color: #32325d;
+  font-size: 26px;
+}
 /* ---------------------------------PATIENT ACCESS SUCCESS END----------------------------------------- */
 
 /* ---------------------------------PATIENT ACCESS ABOUT----------------------------------------- */
