@@ -56,12 +56,12 @@
             <div class="pat-acc-enter-details-back-cont ">
               <a  id="pat-acc-logo-clean" href="./pa-register"><span class="pat-acc-signin-err-acc pat-acc-enter-details-back"> &lt; Back<span></a><span class="pat-acc-enter-details">Enter account details</span>
             </div>
-            <form action="index.html" method="post">
+            <form method="post">
               <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
                 <label id="pat-acc-label" class="govuk-label" for="email">
-                  Email address
+                  Email address *
                 </label>
-                <input id="pat-acc-input" class="govuk-input ph-input" id="email" name="email" type="text" placeholder="name@example.com">
+                <input id="pat-acc-input" class="govuk-input ph-input" id="email" name="email" type="text" placeholder="name@example.com" required>
               </div>
               <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
                 <label id="pat-acc-label" class="govuk-label" for="password">
@@ -84,7 +84,7 @@
                 <input type="checkbox">
                 <span class="pat-acc-checkmark "></span>
               </label>
-                <a href="./pa-success" class="pat-acc-sign-in-button signin-button-signin-page pat-acc-register2-create"><span>Create Account</span></a>
+                <button id="pat-acc-register2-create" class="pat-acc-sign-in-button signin-button-signin-page" type="submit"><span>Create Account</span></button>
             </form>
           </div>
         </div>

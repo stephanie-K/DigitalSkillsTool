@@ -913,9 +913,11 @@ margin-top:30px;
   color: #D3368A;
 }
 
-.pat-acc-register2-create {
-  padding: 10px 112px;
+button#pat-acc-register2-create {
+  padding: 10px 10px;
+  width: 100%;
   margin-top: 15px;
+  border: none;
 }
 
 @media screen and (max-width: 815px) {
@@ -924,12 +926,6 @@ margin-top:30px;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .pat-acc-register2-create {
-    padding: 10px 10px;
-    width: 90%;
-  }
-}
 
 /* ---------------------------------PATIENT ACCESS REGISTER2 END----------------------------------------- */
 
