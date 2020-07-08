@@ -576,6 +576,28 @@ margin-top:30px;
   color: #32325d;
 }
 
+
+@media screen and (max-width: 580px) {
+  .pat-acc-signin-form-container {
+    width: 100%;
+    padding: 0px;
+    background-color: #F7F7FA;
+    border: none;
+    box-shadow: none;
+  }
+  .pat-acc-signin-block {
+    width: 100%;
+    padding: 1px;
+    text-align: left;
+  }
+  .pat-acc-signin-centre{
+    width: 100%;
+  }
+  .pat-acc-signin-err-acc {
+    width: 100%;
+  }
+}
+
 #pat-acc-label {
   color: #32325d;
   float: left;
@@ -624,6 +646,31 @@ margin-top:30px;
 	border-radius: 25px;
 }
 
+@media screen and (max-width: 770px) {
+  .signin-button-signin-page {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .signin-button-signin-page {
+    padding: 10px 125px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .signin-button-signin-page {
+    padding: 10px 115px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .signin-button-signin-page {
+    padding: 10px 105px;
+  }
+}
+
+
 .pat-acc-signin-form-title {
   font-size: 18px;
   font-weight: 700;
@@ -669,6 +716,12 @@ margin-top:30px;
   float: right;
 }
 
+@media screen and (max-width: 990px) {
+  #pat-acc-support-centre {
+    display: none;
+  }
+}
+
 #pat-acc-support-centre:focus {
   background-color: white;
   box-shadow: none;
@@ -704,6 +757,7 @@ margin-top:30px;
   margin-top: 35px;
   margin-left: 0px;
 }
+
 /* ---------------------------------PATIENT ACCESS SIGN IN PAGE / REGISTER END----------------------------------------- */
 
 /* ---------------------------------PATIENT ACCESS REGISTER2----------------------------------------- */
