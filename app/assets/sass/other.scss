@@ -594,7 +594,13 @@ margin-top:30px;
     width: 100%;
   }
   .pat-acc-signin-err-acc {
-    width: 100%;
+    display: none;
+  }
+  .pat-acc-signin-to-acc {
+    display: none;
+  }
+  .pat-acc-signin-form-container {
+    margin-top: 0px
   }
 }
 
@@ -797,7 +803,6 @@ margin-top:30px;
   color: #6F6F8C;
 }
 
-
 .pat-acc-checkboxes {
   display: block;
   position: relative;
@@ -868,6 +873,19 @@ margin-top:30px;
 .pat-acc-register2-create {
   padding: 10px 112px;
   margin-top: 15px;
+}
+
+@media screen and (max-width: 815px) {
+  .pat-acc-register2-create {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pat-acc-register2-create {
+    padding: 10px 10px;
+    width: 90%;
+  }
 }
 
 /* ---------------------------------PATIENT ACCESS REGISTER2 END----------------------------------------- */
