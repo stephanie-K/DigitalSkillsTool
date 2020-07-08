@@ -52,6 +52,9 @@ $erc-grey-bg: #e5e5e5;
     a {
         text-decoration: none;
     }
+    @media only screen and (min-width: 770px) { 
+        margin-top: 25px;
+    }
 }
 
 .govuk-header__logotype {
