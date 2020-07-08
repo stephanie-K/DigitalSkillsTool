@@ -970,21 +970,36 @@ margin-top:30px;
 
 /* ---------------------------------PATIENT ACCESS SUCCESS END----------------------------------------- */
 
-/* ---------------------------------PATIENT ACCESS LINK GP----------------------------------------- */
+/* ---------------------------------PATIENT ACCESS ABOUT----------------------------------------- */
 
-.pat-acc-link-gp-body {
-  text-align: left;
+.pa-about-block {
+  background-color: white;
 }
 
-.pat-acc-link-gp-cont {
-  padding: 0;
+.pat-acc-about-cont {
   width: 100%;
-  overflow: auto;
 }
 
-.pat-acc-link-gp-body {
-  width: 500px;
-  height: 500px;
-  padding-left: 10px;
-  padding-right: 10px;
+.pat-acc-about-content-cont {
+  margin:40px 0px 40px 0px;
+  text-align:left;
+  width:85%;
+}
+
+@media screen and (max-width: 770px) {
+  .pat-acc-about-button {
+    width:75%;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .pat-acc-about-button {
+    width:65%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pat-acc-about-button {
+    width:55%;
+  }
 }
