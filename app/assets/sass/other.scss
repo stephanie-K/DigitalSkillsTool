@@ -708,6 +708,16 @@ margin-top:30px;
   width: 30%;
 }
 
+
+@media screen and (max-width: 380px) {
+  #pat-acc-select-reg-year, #pat-acc-select-reg-month, #pat-acc-select-reg-day  {
+    font-size: 10px;
+  }
+  #pat-acc-select-reg-year, #pat-acc-select-reg-day {
+    margin: 0px 5px 0px 5px;
+  }
+}
+
 #pat-acc-support-centre {
   color: #676767;
   margin: 25px;
