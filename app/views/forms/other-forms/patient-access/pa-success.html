@@ -16,7 +16,7 @@
 
 {% block header %}
 <div class="govuk-header__container govuk-width-container">
-  <div class="govuk-header__logo pat-acc-logo-cont">
+  <div class="govuk-header__logo">
     <span class="govuk-header__logotype">
       <a id="pat-acc-logo-clean" href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="Patient Access Logo" width="250" height="30"></image></a>
     </span>
@@ -49,7 +49,7 @@
       <div class="pat-acc-signin-centre">
         <div class="pat-acc-success-image-cont">
           <div>
-            <image  src="{{ asset_path }}images/PA/pa-success.png?0.18.3p" alt="Patient Access Success" width="40" height="40">
+            <image  src="{{ asset_path }}images/PA/greentick.png" alt="success" width="30" height="30">
             </div>
             <div class="pa-acc-success-message-cont">
               <span class="pat-acc-success-title pa-acc-success-message">Your account has been successfully created</span>
@@ -67,7 +67,8 @@
         </div>
       </div>
     </div>
-    {% endblock %}
 
-    {% block footer %}
-    {% endblock %}
+  {% endblock %}
+
+  {% block footer %}
+  {% endblock %}
