@@ -559,6 +559,24 @@ margin-top:30px;
   }
 }
 
+.pat-acc-signin-to-acc2 {
+  color: #32325d;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 0px;
+  margin: 0px;
+}
+
+.pat-acc-signin-err-acc2 {
+  font-size: 14px;
+  padding: 0;
+  margin: 0px;
+  color: #6f6f8c;
+  a {
+    color: #D3368A;
+  }
+}
+
 .pat-acc-signin-err-reg {
   margin-left: 10px;
   text-decoration: none;
@@ -593,10 +611,10 @@ margin-top:30px;
   .pat-acc-signin-centre{
     width: 100%;
   }
-  .pat-acc-signin-err-acc {
+  .pat-acc-signin-err-acc2 {
     display: none;
   }
-  .pat-acc-signin-to-acc {
+  .pat-acc-signin-to-acc2 {
     display: none;
   }
   .pat-acc-signin-form-container {
@@ -749,11 +767,18 @@ margin-top:30px;
   padding: 50px;
 }
 
+.pat-acc-close-button {
+  margin: 0px 0px 20px 0px;
+}
+
 #pat-why-we-ask-container {
   box-shadow: none;
   opacity: 1;
   width: 450px;
+  margin-top: 35px;
+  margin-left: 0px;
 }
+
 
 .pat-why-we-ask-font-align {
   text-align: left;
@@ -769,11 +794,29 @@ margin-top:30px;
   color: #676767;
 }
 
-#pat-why-we-ask-container {
-  margin-top: 35px;
-  margin-left: 0px;
+@media screen and (max-width: 770px) {
+  #pat-why-we-ask-container {
+    padding: 20px;
+    width: 60%;
+  }
+  .pat-acc-why-we-ask {
+    width: 100%;
+    padding: 25px;
+  }
 }
 
+@media screen and (max-width: 660px) {
+  #pat-why-we-ask-container {
+    padding: 20px;
+    width: 80%;
+  }
+  .pat-why-we-ask-font {
+    padding: 10px
+  }
+  .pat-why-we-ask-font-sub {
+    padding: 10px
+  }
+}
 /* ---------------------------------PATIENT ACCESS SIGN IN PAGE / REGISTER END----------------------------------------- */
 
 /* ---------------------------------PATIENT ACCESS REGISTER2----------------------------------------- */
