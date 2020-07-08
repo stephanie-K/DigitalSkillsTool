@@ -48,21 +48,26 @@
     <div class="park-home-black-block pat-acc-signin-block">
       <div class="pat-acc-signin-centre">
         <div class="pat-acc-success-image-cont">
-          <image src="{{ asset_path }}images/PA/pa-success.png?0.18.3p" alt="Patient Access Success" width="250" height="160">
-        </div>
-        <div class="pat-acc-signin-form-container pat-acc-enter-details-cont pat-acc-success-cont">
-          <span class="pat-acc-success-title">Check your email inbox now</span>
-          <br>
-          <br>
-          <span class="pat-acc-success-subtitle">We’ve sent you a verification link to your email address <span class="pat-acc-success-email">{{data['email']}}</span>. Please check your email inbox and verify your email address.</span>
-          <div class="pat-acc-success-skip-ver">
-            <a id="pat-acc-logo-clean" href="./pa-complete"><span>Skip verification for now</span></a>
+          <div>
+            <image  src="{{ asset_path }}images/PA/pa-success.png?0.18.3p" alt="Patient Access Success" width="40" height="40">
+            </div>
+            <div class="pa-acc-success-message-cont">
+              <span class="pat-acc-success-title pa-acc-success-message">Your account has been successfully created</span>
+            </div>
+          </div>
+          <div class="pat-acc-signin-form-container pat-acc-enter-details-cont pat-acc-success-cont">
+            <span class="pat-acc-success-title">Check your email inbox now</span>
+            <br>
+            <br>
+            <span class="pat-acc-success-subtitle">We’ve sent you a verification link to your email address <span class="pat-acc-success-email">{{data['email']}}</span>. Please check your email inbox and verify your email address.</span>
+            <div class="pat-acc-success-skip-ver">
+              <a id="pat-acc-logo-clean" href="./pa-complete"><span>Skip verification for now</span></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  {% endblock %}
+    {% endblock %}
 
-  {% block footer %}
-  {% endblock %}
+    {% block footer %}
+    {% endblock %}
