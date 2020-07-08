@@ -8,17 +8,17 @@
 
 {% block content %}
 
+<h1 class="govuk-heading-xl heading-title">
+  Do you want to clear data?
+</h1>
 {{ govukBackLink({
-  "text": "Back",
+  "text": "No I want to go back",
   "href": "javascript: window.history.go(-1)"
 }) 
 }}
 <form method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
-        Do you want to clear data?
-      </h1>
       {{ govukWarningText({
         text: "This will clear all of the data entered in the forms during this session",
         iconFallbackText: "Warning"

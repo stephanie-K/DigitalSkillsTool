@@ -128,7 +128,7 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 .heading-title {
     background-color: $erc-grey-bg;
     font-size: 60px;
-    padding: 60px 5px;
+    padding: 60px 20px;
 }
 .govuk-main-wrapper--auto-spacing:first-child {
     padding-top: 0;
@@ -226,7 +226,7 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 
 //-------------------------------------------- Buttons --------------------------------------------------- //
 
-.button-primary {
+.button-primary, .govuk-button {
     background-color : $erc-green; 
     box-shadow: 0 2px 0 #0000;
     font-weight:bold;
