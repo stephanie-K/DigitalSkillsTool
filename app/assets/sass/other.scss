@@ -328,6 +328,19 @@ margin-top:30px;
   float: right;
 }
 
+@media screen and (max-width: 990px) {
+  .pat-acc-header-button-container {
+    display: none;
+  }
+  .pat-acc-logo-cont {
+    width: 100%;
+  }
+  .pat-acc-tagline {
+    margin: 0px;
+  }
+}
+
+
 .pat-acc-header-sign-in-button, .pat-acc-header-register-button {
   padding: 12px 32px;
   margin: 15px 7px 15px;
@@ -378,8 +391,44 @@ margin-top:30px;
 }
 
 .pat-acc-block {
-  background-image: url('../images/PA/take-control.png');
+  background-image: url('../images/PA/take-control.jpg');
   background-size: cover;
+  position: relative;
+}
+
+.pat-acc-homepage-content-container {
+  width: 50%;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+}
+
+.pat-acc-homepage-content-title {
+  font-size: 40px;
+  color: #32325d;
+  font-family: "Merriweather", "Times", sans-serif;
+  font-weight: 700;
+}
+
+.pat-acc-homepage-content-tagline-cont {
+  margin: 15px 0px 0px;
+}
+
+.pat-acc-homepage-content-tagline {
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  color: #6f6f8c;
+}
+
+
+.pat-acc-homepage-content-body-cont {
+  margin: 15px 0px 0px;
+}
+
+.pat-acc-homepage-content-body {
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  color: #6f6f8c;
 }
 
 .pat-acc-fullscreen-header {
@@ -390,8 +439,8 @@ margin-top:30px;
 }
 
 .pat-acc-hero-button-container {
-  height: 59px;
-  width: 600px;
+  height: auto;
+  width: 100%;
   margin-top: 350px;
   a {
     color: white;
@@ -400,7 +449,7 @@ margin-top:30px;
 
 .pat-acc-sign-in-button, .pat-acc-register-button {
   padding: 12px 32px;
-  margin: 0px 7px 15px;
+  margin: 0px 14px 15px 0px;
 	border-radius: 25px;
   font-family: 'Lato', sans-serif;
   font-size: 17px;
@@ -418,7 +467,7 @@ margin-top:30px;
 }
 
 .pat-acc-sign-in-button:hover, .pat-acc-register-button:hover {
-  opacity: 70%;
+  opacity: 0.7;
 }
 
 .pat-acc-sign-in-button:focus {
@@ -431,8 +480,49 @@ margin-top:30px;
   box-shadow: 2px 2px 4px #4768FD;
 }
 
-.pat-acc-footer {
-  background-color: #32325d;
+
+@media screen and (max-width: 770px) {
+  .pat-acc-sign-in-button, .pat-acc-register-button {
+    width: 95%;
+    text-align: center;
+    margin: 0px 0px 7px 0px;
+  }
+  .pat-acc-block {
+    padding: 5px;
+  }
+  .pat-acc-block {
+    background-image: none;
+    background-color: white;
+  }
+  .pat-acc-homepage-content-container {
+    width: 100%;
+    text-align: center;
+  }
+  .pat-acc-homepage-content-title {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .pat-acc-sign-in-button, .pat-acc-register-button {
+    width: 90%;
+    text-align: center;
+    margin: 0px 0px 7px 0px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .pat-acc-sign-in-button, .pat-acc-register-button {
+    width: 80%;
+    text-align: center;
+    margin: 0px 0px 7px 0px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .pat-acc-homepage-content-body {
+    font-size: 16px;
+  }
 }
 
 /* ---------------------------------HOMEPAGE END----------------------------------------- */
@@ -469,6 +559,24 @@ margin-top:30px;
   }
 }
 
+.pat-acc-signin-to-acc2 {
+  color: #32325d;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 0px;
+  margin: 0px;
+}
+
+.pat-acc-signin-err-acc2 {
+  font-size: 14px;
+  padding: 0;
+  margin: 0px;
+  color: #6f6f8c;
+  a {
+    color: #D3368A;
+  }
+}
+
 .pat-acc-signin-err-reg {
   margin-left: 10px;
   text-decoration: none;
@@ -484,6 +592,34 @@ margin-top:30px;
   box-shadow: 0px 0px 18px #EAE9EE;
   background-color: white;
   color: #32325d;
+}
+
+
+@media screen and (max-width: 580px) {
+  .pat-acc-signin-form-container {
+    width: 100%;
+    padding: 0px;
+    background-color: #F7F7FA;
+    border: none;
+    box-shadow: none;
+  }
+  .pat-acc-signin-block {
+    width: 100%;
+    padding: 1px;
+    text-align: left;
+  }
+  .pat-acc-signin-centre{
+    width: 100%;
+  }
+  .pat-acc-signin-err-acc2 {
+    display: none;
+  }
+  .pat-acc-signin-to-acc2 {
+    display: none;
+  }
+  .pat-acc-signin-form-container {
+    margin-top: 0px
+  }
 }
 
 #pat-acc-label {
@@ -534,6 +670,31 @@ margin-top:30px;
 	border-radius: 25px;
 }
 
+@media screen and (max-width: 770px) {
+  .signin-button-signin-page {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .signin-button-signin-page {
+    padding: 10px 125px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .signin-button-signin-page {
+    padding: 10px 115px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .signin-button-signin-page {
+    padding: 10px 105px;
+  }
+}
+
+
 .pat-acc-signin-form-title {
   font-size: 18px;
   font-weight: 700;
@@ -571,12 +732,28 @@ margin-top:30px;
   width: 30%;
 }
 
+
+@media screen and (max-width: 380px) {
+  #pat-acc-select-reg-year, #pat-acc-select-reg-month, #pat-acc-select-reg-day  {
+    font-size: 10px;
+  }
+  #pat-acc-select-reg-year, #pat-acc-select-reg-day {
+    margin: 0px 5px 0px 5px;
+  }
+}
+
 #pat-acc-support-centre {
   color: #676767;
   margin: 25px;
   font-size: 16px;
   font-weight: 700;
   float: right;
+}
+
+@media screen and (max-width: 990px) {
+  #pat-acc-support-centre {
+    display: none;
+  }
 }
 
 #pat-acc-support-centre:focus {
@@ -590,11 +767,18 @@ margin-top:30px;
   padding: 50px;
 }
 
+.pat-acc-close-button {
+  margin: 0px 0px 20px 0px;
+}
+
 #pat-why-we-ask-container {
   box-shadow: none;
   opacity: 1;
   width: 450px;
+  margin-top: 35px;
+  margin-left: 0px;
 }
+
 
 .pat-why-we-ask-font-align {
   text-align: left;
@@ -610,9 +794,28 @@ margin-top:30px;
   color: #676767;
 }
 
-#pat-why-we-ask-container {
-  margin-top: 35px;
-  margin-left: 0px;
+@media screen and (max-width: 770px) {
+  #pat-why-we-ask-container {
+    padding: 20px;
+    width: 60%;
+  }
+  .pat-acc-why-we-ask {
+    width: 100%;
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  #pat-why-we-ask-container {
+    padding: 20px;
+    width: 80%;
+  }
+  .pat-why-we-ask-font {
+    padding: 10px
+  }
+  .pat-why-we-ask-font-sub {
+    padding: 10px
+  }
 }
 /* ---------------------------------PATIENT ACCESS SIGN IN PAGE / REGISTER END----------------------------------------- */
 
@@ -642,7 +845,6 @@ margin-top:30px;
   font-size: 16px;
   color: #6F6F8C;
 }
-
 
 .pat-acc-checkboxes {
   display: block;
@@ -711,10 +913,19 @@ margin-top:30px;
   color: #D3368A;
 }
 
-.pat-acc-register2-create {
-  padding: 10px 112px;
+button#pat-acc-register2-create {
+  padding: 10px 10px;
+  width: 100%;
   margin-top: 15px;
+  border: none;
 }
+
+@media screen and (max-width: 815px) {
+  .pat-acc-register2-create {
+    width: 40%;
+  }
+}
+
 
 /* ---------------------------------PATIENT ACCESS REGISTER2 END----------------------------------------- */
 
@@ -728,6 +939,10 @@ margin-top:30px;
 .pat-acc-success-title {
   font-size: 18px;
   font-weight: 700;
+}
+
+.pat-acc-success-image-cont {
+  text-align: center;
 }
 
 .pat-acc-success-subtitle {
@@ -751,21 +966,36 @@ margin-top:30px;
 
 /* ---------------------------------PATIENT ACCESS SUCCESS END----------------------------------------- */
 
-/* ---------------------------------PATIENT ACCESS LINK GP----------------------------------------- */
+/* ---------------------------------PATIENT ACCESS ABOUT----------------------------------------- */
 
-.pat-acc-link-gp-body {
-  text-align: left;
+.pa-about-block {
+  background-color: white;
 }
 
-.pat-acc-link-gp-cont {
-  padding: 0;
+.pat-acc-about-cont {
   width: 100%;
-  overflow: auto;
 }
 
-.pat-acc-link-gp-body {
-  width: 500px;
-  height: 500px;
-  padding-left: 10px;
-  padding-right: 10px;
+.pat-acc-about-content-cont {
+  margin:40px 0px 40px 0px;
+  text-align:left;
+  width:85%;
+}
+
+@media screen and (max-width: 770px) {
+  .pat-acc-about-button {
+    width:75%;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .pat-acc-about-button {
+    width:65%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .pat-acc-about-button {
+    width:55%;
+  }
 }
