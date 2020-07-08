@@ -300,7 +300,7 @@ router.post('/forms/erc-forms/equal-opportunities/age', function (req, res) {
 
   // CBL form **********************************************************************************
 
-router.post('/forms/erc-forms/housing/CBLapplicant', function (req, res) {
+router.post('/forms/erc-forms/housing/CBLstart', function (req, res) {
     var isApplicant = req.session.data['is-applicant']
     if (isApplicant === 'no') {
         return res.redirect('/forms/erc-forms/housing/CBLrep-info')

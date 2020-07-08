@@ -11,7 +11,7 @@
         <h1 class="govuk-heading-l">
             Apply online for council housing
         </h1>
-        <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+        <a class=" button-secondary govuk-button" href="javascript: history.go(-1)">Back</a>
 
         <form class="form" method="post">
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
@@ -21,7 +21,7 @@
             id: "info-who-help",
             label: {
             text: "Tell us who you are and your relationship to the person applying. Include your contact details if we can contact you about the application.",
-            classes: "govuk-!-font-size-24"
+            classes: "govuk-!-font-weight-bold"
             }
         }) }}
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
