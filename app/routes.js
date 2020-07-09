@@ -192,22 +192,13 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAsecurityQuestion', fun
 })
 
 router.post('/forms/govuk-forms/universal-credit-apply/UCAnationality', function (req, res) {
-  // we update the 1st display variable as it's not the 1st time any more so = false
-  // we create a session variable to say nationality is done = true
-  // we update the session variable for green to display when we load the to do list page
+  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAnationalityCheck')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAnationalityCheck', function (req, res) {
   req.session.data['nationality-done'] = true
   req.session.data['1st-display'] = false
   req.session.data['green-to-display'] = "nationality"
-  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAincome', function (req, res) {
-  // we update the 1st display variable as it's not the 1st time any more so = false
-  // we create a session variable to say income is done = true
-  // we update the session variable for green to display when we load the to do list page
-  req.session.data['income-done'] = true
-  req.session.data['1st-display'] = false
-  req.session.data['green-to-display'] = "income"
   return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
 
@@ -239,6 +230,54 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAbank', function (req, 
   req.session.data['1st-display'] = false
   req.session.data['green-to-display'] = "bank"
   return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAhousing', function (req, res) {
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive', function (req, res) {
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments', function (req, res) {
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation', function (req, res) {
+  req.session.data['housing-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "housing"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAwith', function (req, res) {
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAwithChildDetails')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAwithChildDetails', function (req, res) {
+  req.session.data['withyou-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "withyou"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAsavings', function (req, res) {
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAsavingsValue')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAsavingsValue', function (req, res) {
+  req.session.data['saving-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "saving"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAincome', function (req, res) {
+  req.session.data['income-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "income"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
 
 
@@ -619,53 +658,4 @@ router.post('/forms/erc-forms/housing/CBLextra-reason-medical', function (req, r
 router.post('/forms/other-forms/patient-access/pa-register2', function (req, res) {
   const email = req.session.data['email']
   res.redirect('/forms/other-forms/patient-access/pa-success')
-})
-
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAhousing', function (req, res) {
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive', function (req, res) {
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments', function (req, res) {
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation', function (req, res) {
-  req.session.data['housing-done'] = true
-  req.session.data['1st-display'] = false
-  req.session.data['green-to-display'] = "housing"
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAwith', function (req, res) {
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAwithChildDetails')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAwithChildDetails', function (req, res) {
-  req.session.data['withyou-done'] = true
-  req.session.data['1st-display'] = false
-  req.session.data['green-to-display'] = "withyou"
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAsavings', function (req, res) {
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAsavingsValue')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAsavingsValue', function (req, res) {
-  req.session.data['saving-done'] = true
-  req.session.data['1st-display'] = false
-  req.session.data['green-to-display'] = "saving"
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAincome', function (req, res) {
-  req.session.data['income-done'] = true
-  req.session.data['1st-display'] = false
-  req.session.data['green-to-display'] = "income"
-  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
