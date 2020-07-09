@@ -295,3 +295,40 @@ background-color: transparent;
     background: url(../images/printer-icon.png) 10px center no-repeat #fff;
 }
 
+// -----------------------------  Summary of answer for SSS ------------------------------------------ //
+
+.sss-summary {
+    div.govuk-summary-list__row.heading-summary {
+        background-color: #E4F3FB ;
+        font-size: 1.18rem;
+        .govuk-summary-list__key {
+            font-weight:700;
+            @media (min-width: 641px){
+                padding-left: 20px;
+            }
+        }
+        a {
+            text-decoration: none;
+        }
+    }
+    div.govuk-summary-list__row {
+        background-color: #F4f4f4 ;
+        font-size: 0.9rem;
+        .govuk-summary-list__key {
+            font-weight:500;
+            @media (min-width: 641px){
+                padding-left: 20px;
+            }
+        }
+        .govuk-summary-list__actions {
+            font-weight:700;
+            color: #00437e;
+            @media (min-width: 641px){
+                padding-right: 20px;
+            }
+        }
+    }
+    dl {
+        margin-bottom: 0;
+    }    
+}
