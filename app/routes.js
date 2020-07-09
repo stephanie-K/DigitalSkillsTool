@@ -640,3 +640,14 @@ router.post('/forms/erc-forms/housing/CBLstart', function (req, res) {
     req.session.data['green-to-display'] = "housing"
     res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
   })
+
+  router.post('/forms/govuk-forms/universal-credit-apply/UCAwith', function (req, res) {
+    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAwithChildDetails')
+  })
+
+  router.post('/forms/govuk-forms/universal-credit-apply/UCAwithChildDetails', function (req, res) {
+    req.session.data['withyou-done'] = true
+    req.session.data['1st-display'] = false
+    req.session.data['green-to-display'] = "withyou"
+    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+  })
