@@ -180,6 +180,13 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.uc-to-do-list-green {
+  border-left: 10px solid #34a393;
+  background-color: #e7f1f0;
+  padding: 15px;
+  margin: 15px 0;
+
+}
 
 .uc-to-do-list {
   border-left: 3px solid #0b0c0c; 

@@ -179,6 +179,39 @@ router.post('/forms/govuk-forms/universal-credit/UCaboutYou', function (req, res
   return res.redirect('/forms/govuk-forms/universal-credit/UCconfirmEmail')
 })
 
+
+
+// Universal credit - apply ******************************************************************************
+
+// this is just so the value of the email address if entered can be stored and re-used on the next page
+router.post('/forms/govuk-forms/universal-credit-apply/UCAsecurityQuestion', function (req, res) {
+  //we create a session variable to know it's the first visit and another one to say we need to display green message about Previous address
+  req.session.data['1st-display'] = true
+  req.session.data['green-to-display'] = "previous-address"
+  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAeducation', function (req, res) {
+  // we update the 1st display variable as it's not the 1st time any more so = false
+  // we create a session variable to say education is done = true
+  // we update the session variable for green to display when we load the to do list page
+  req.session.data['education-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "education"
+  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAcaring', function (req, res) {
+  // we update the 1st display variable as it's not the 1st time any more so = false
+  // we create a session variable to say caring is done = true
+  // we update the session variable for green to display when we load the to do list page
+  req.session.data['caring-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "caring"
+  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+
 // Report a repair ******************************************************************************
 
 router.post('/forms/erc-forms/report-repair/RRonlineAboutYou', function (req, res) {
