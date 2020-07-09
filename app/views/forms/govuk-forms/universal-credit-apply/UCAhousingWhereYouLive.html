@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Housing - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third uc-to-do-list-blue" style="margin-right:10px;">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAtoDoList">To-do list</a>
+    </div>
+    <div class="govuk-grid-column-one-third uc-to-do-list-grey">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">Journal</a>
+    </div>
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    Tell us where you live
+  </h1>
+  <form class="form" method="post">
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {{ govukRadios({
+      idPrefix: "nationality-check",
+      name: "nationality-check",
+      fieldset: {
+        legend: {
+          text: "Where do you live now?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+      {
+        value: "rentFromCouncil",
+        text: "I rent from a council or housing association"
+      },
+      {
+        value: "rentFromPrivateLandlord",
+        text: "I rent from a private landlord"
+      },
+      {
+        value: "ownProperty",
+        text: "I live in a property I own (with or without a mortgage)"
+      },
+      {
+        value: "sharedOwnership",
+        text: "I rent-buy through a shared ownership scheme"
+      },
+      {
+        value: "tempAcc",
+        text: "I'm in temporary accommodation"
+      },
+      {
+        value: "shelteredAcc",
+        text: "I'm in supported or sheltered accommodation"
+      },
+      {
+        value: "stayWithRelatives",
+        text: "I live with close relatives - for example, my parents or my partner's parents"
+      },
+      {
+        value: "otherType",
+        text: "I'm in another type of housing"
+      }
+      ]
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+<p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
+</div>
+<div class="student-notes-box">
+  <p></p>
+</div>
+
+{% endblock %}

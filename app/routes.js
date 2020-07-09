@@ -620,3 +620,23 @@ router.post('/forms/erc-forms/housing/CBLstart', function (req, res) {
     const email = req.session.data['email']
     res.redirect('/forms/other-forms/patient-access/pa-success')
   })
+
+
+  router.post('/forms/govuk-forms/universal-credit-apply/UCAhousing', function (req, res) {
+    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive')
+  })
+
+  router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive', function (req, res) {
+    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments')
+  })
+
+  router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments', function (req, res) {
+    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation')
+  })
+
+  router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation', function (req, res) {
+    req.session.data['housing-done'] = true
+    req.session.data['1st-display'] = false
+    req.session.data['green-to-display'] = "housing"
+    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+  })
