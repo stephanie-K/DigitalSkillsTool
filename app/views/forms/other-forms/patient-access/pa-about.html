@@ -1,76 +1,37 @@
-{% extends "layout.html" %}
-
-{% block headIcons %}
-<link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
-{% endblock %}
-
-{% block head %}
-<!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-
-{% for stylesheetUrl in extensionConfig.stylesheets %}
-<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
-{% endfor %}
-{% endblock %}
-
-
-{% block header %}
-<div class="govuk-header__container govuk-width-container">
-  <div class="govuk-header__logo pat-acc-logo-cont">
-    <span class="govuk-header__logotype">
-      <a id="pat-acc-logo-clean" href=""><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="Patient Access Logo" width="250" height="30"></image></a>
-    </span>
-  </div>
-  <div class="govuk-header__content">
-    <a href="/index.html">
-      <span class="pat-acc-tagline">
-        This is a training website
-      </span>
-    </a>
-  </div>
-</div>
-{% endblock %}
+{% extends "layout_tool.html" %}
 
 {% block pageTitle %}
-Patient Access
+  About this form
 {% endblock %}
 
 
 {% block content %}
 
-<div class="govuk-grid-row park-home">
-  <div class="park-home-black-block pa-about-block">
-    <div class="pat-acc-homepage-content-container pat-acc-about-cont">
-      <div class="pat-acc-about-content-cont">
-        <span class="pat-acc-homepage-content-title">About this form</span>
-        <br>
-        <a class="govuk-back-link" href="/index.html">Back to the forms menu</a>
-        <br>
-        <div class="pat-acc-homepage-content-body-cont">
-          <span class="pat-acc-homepage-content-body">It looks like the real form but it's a bit different and simplified</span>
-        </div>
-        <br>
-        <span class="pat-acc-homepage-content-title" style="font-size:22px;">Please note:</span>
-        <br>
-        <div class="pat-acc-homepage-content-body-cont">
-          <ul class="pat-acc-homepage-content-body">
-            <li>Practice the Patient Access registration process</li>
-            <li>The sign in feature is not currently active</li>
-            <li>Select regitser to begin form</li>
-          </ul>
-        </div>
-        <div class="pat-acc-homepage-content-body-cont">
-          <span class="pat-acc-homepage-content-body">At any time, selecting the logo at the top left will take you back to the start (forms menu)</span>
-        </div>
-      </div>
-      <div class="pat-acc-hero-button-container" style="margin:0;">
-        <a href="./pa-homepage.html" class="pat-acc-sign-in-button pat-acc-about-button">Start Form</a>
-      </div>
-    </div>
+<h1 class="govuk-heading-xl heading-title">
+  About this form
+</h1>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
 
-  </div>
+  <a class=" button-secondary govuk-button" href="/">Back to the forms menu</a>
+
+  <p>It looks like the real form but it's a bit different and simplified</p>
+  <h2 class="govuk-heading-m">
+    Please note:
+  </h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Practice the Patient Access registration process</li>
+  <li>The sign in feature is not currently active</li>
+  <li>Select regitser to begin form</li>
+</ul>
+
+<h2 class="govuk-heading-s">
+  At any time, selecting the logo at the top left will take you back to the start (forms menu)
+</h2>
+  {{ govukButton({
+    text: "Start the form",
+    classes: "button-primary button-info",
+    href: "./pa-homepage.html"
+  }) }}
 </div>
-{% endblock %}
 
-{% block footer %}
 {% endblock %}
