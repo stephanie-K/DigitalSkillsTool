@@ -191,6 +191,26 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAsecurityQuestion', fun
   return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
 
+router.post('/forms/govuk-forms/universal-credit-apply/UCAnationality', function (req, res) {
+  // we update the 1st display variable as it's not the 1st time any more so = false
+  // we create a session variable to say nationality is done = true
+  // we update the session variable for green to display when we load the to do list page
+  req.session.data['nationality-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "nationality"
+  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAincome', function (req, res) {
+  // we update the 1st display variable as it's not the 1st time any more so = false
+  // we create a session variable to say income is done = true
+  // we update the session variable for green to display when we load the to do list page
+  req.session.data['income-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "income"
+  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
 router.post('/forms/govuk-forms/universal-credit-apply/UCAeducation', function (req, res) {
   // we update the 1st display variable as it's not the 1st time any more so = false
   // we create a session variable to say education is done = true
@@ -208,6 +228,16 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAcaring', function (req
   req.session.data['caring-done'] = true
   req.session.data['1st-display'] = false
   req.session.data['green-to-display'] = "caring"
+  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAbank', function (req, res) {
+  // we update the 1st display variable as it's not the 1st time any more so = false
+  // we create a session variable to say bank is done = true
+  // we update the session variable for green to display when we load the to do list page
+  req.session.data['bank-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "bank"
   return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
 
