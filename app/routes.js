@@ -297,7 +297,7 @@ router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTema
 router.post('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart', function (req, res) {
   var username_entered = req.session.data ['sign-in-username']
   if (username_entered) {
-    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTsignedIn')
+    res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTsigned-in')
   } else {
     res.redirect('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart')
   }
