@@ -156,6 +156,10 @@ $govuk-assets-path: '/govuk/assets/';
   a:hover, a:focus, a:active {
     text-decoration: underline;
   }
+  @media (max-width: 640px){
+    max-width: 280px ;
+    margin: 5px 5px 5px 20px;
+  }
 }
 
 .uc-to-do-list-grey {
@@ -168,6 +172,10 @@ $govuk-assets-path: '/govuk/assets/';
   }
   a:hover, a:focus, a:active {
     text-decoration: underline;
+  }
+  @media (max-width: 640px){
+    max-width: 280px ;
+    margin: 5px 5px 5px 20px;
   }
 }
 
