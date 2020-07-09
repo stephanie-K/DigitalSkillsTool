@@ -662,3 +662,10 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAsavingsValue', functio
   req.session.data['green-to-display'] = "saving"
   res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAincome', function (req, res) {
+  req.session.data['income-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "income"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
