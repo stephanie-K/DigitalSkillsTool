@@ -22,37 +22,37 @@ Nationaly - Universal Credit
 <form class="form" method="post">
   <form class="form" method="post">
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+      <fieldset class="govuk-fieldset" aria-describedby="other-benefits-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
             What's your nationality?
           </h2>
         </legend>
-        <span id="nationality-hint" class="govuk-hint">
+        <span id="other-benefits-hint" class="govuk-hint">
           Select all that apply.
         </span>
         <div class="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british">
-            <label class="govuk-label govuk-checkboxes__label" for="nationality">
+            <input class="govuk-checkboxes__input" id="other-benefits" name="other-benefits" type="checkbox" value="esa">
+            <label class="govuk-label govuk-checkboxes__label" for="other-benefits">
               British
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="nationality-2" name="nationality-2" type="checkbox" value="norhernIrish">
-            <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+            <input class="govuk-checkboxes__input" id="other-benefits-2" name="other-benefits" type="checkbox" value="housing">
+            <label class="govuk-label govuk-checkboxes__label" for="other-benefits-2">
               Northern Irish
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="nationality-3" name="nationality-3" type="checkbox" value="irish">
-            <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+            <input class="govuk-checkboxes__input" id="other-benefits-3" name="other-benefits" type="checkbox" value="jsa">
+            <label class="govuk-label govuk-checkboxes__label" for="other-benefits-3">
               Irish
             </label>
           </div>
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="nationality-4" name="nationality-4" type="checkbox" value="citizenOfADifferentCountry">
-            <label class="govuk-label govuk-checkboxes__label" for="nationality-4">
+            <input class="govuk-checkboxes__input" id="other-benefits-4" name="other-benefits" type="checkbox" value="income">
+            <label class="govuk-label govuk-checkboxes__label" for="other-benefits-4">
               Citizen of a different country
             </label>
           </div>
@@ -62,8 +62,8 @@ Nationaly - Universal Credit
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
     {{ govukRadios({
       classes: "govuk-radios--inline",
-      idPrefix: "outOfUk",
-      name: "outOfUk",
+      idPrefix: "nationality",
+      name: "nationality",
       fieldset: {
         legend: {
           text: "Have you been out of the UK in the last 2 years?",
@@ -82,6 +82,32 @@ Nationaly - Universal Credit
         {
           value: "no",
           text: "No"
+        }
+      ]
+    }) }}
+
+    {{ govukRadios({
+      idPrefix: "nationality-check",
+      name: "nationality-check",
+      fieldset: {
+        legend: {
+          text: "How long have you been out of the UK at a time?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "lessThan2Weeks",
+          text: "Less than 2 weeks"
+        },
+        {
+          value: "twoToFourWeeks",
+          text: "2 to 4 weeks"
+        },
+        {
+          value: "moreThan4Weeks",
+          text: "More than 4 weeks"
         }
       ]
     }) }}
