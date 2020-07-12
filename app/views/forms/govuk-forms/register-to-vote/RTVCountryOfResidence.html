@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Country of Residence
+{% endblock %}
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <form class="form" method="post">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% set abroadHtml %}
+{{ govukRadios({
+    idPrefix: "other-country",
+    name: "other-country",
+    type: "abroad",
+    classes: "govuk-!-width-one-third",
+    fieldset: {
+        legend: {
+        text: "Where did you live before you moved to another country?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items:[
+      {
+        value: "abroad-england",
+        text: "England"
+      },
+      {
+        value: "abroad-scotland",
+        text: "Scotland"
+      },
+      {
+        value: "abroad-wales",
+        text: "Wales"
+      },
+      {
+        value: "abroad-northern-ireland",
+        text: "Northern Ireland"
+      }
+    ]
+  }) }}
+{% endset -%}
+
+{{ govukRadios({
+    idPrefix: "where-do-you-live",
+    name: "where-do-you-live",
+    fieldset: {
+      legend: {
+        text: "Where do you live?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
+      {
+        value: "england",
+        text: "England"
+      },
+      {
+        value: "scotland",
+        text: "Scotland"
+      },
+      {
+        value: "wales",
+        text: "Wales"
+      },
+      {
+        value: "northern-ireland",
+        text: "Northern Ireland"
+      },
+      {
+        divider: "or"
+      },
+      {
+        value: "abroad",
+        text: "British Citizen living in another country",
+        hint: {
+            text: "including the Channel Islands or Isle of Man."
+          },
+          conditional: {
+            html: abroadHtml
+          }
+      }
+    ]
+  }) }}
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Continue"
+  }) }}
+</form>
+<p><a href="javascript: history.go(-1)">Back</a></p>
+</div>
+
+{% endblock %}
