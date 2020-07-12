@@ -192,10 +192,6 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAsecurityQuestion', fun
 })
 
 router.post('/forms/govuk-forms/universal-credit-apply/UCAnationality', function (req, res) {
-  return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAnationalityCheck')
-})
-
-router.post('/forms/govuk-forms/universal-credit-apply/UCAnationalityCheck', function (req, res) {
   req.session.data['nationality-done'] = true
   req.session.data['1st-display'] = false
   req.session.data['green-to-display'] = "nationality"
