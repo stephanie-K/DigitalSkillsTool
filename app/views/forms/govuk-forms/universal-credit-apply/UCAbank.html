@@ -17,18 +17,95 @@ Bank  account details - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Bank  account details
+    Bank account details
   </h1>
+  <p> This is the account your Universal Credit will be paid into.</p>
   <form class="form" method="post">
+
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {{ govukInput({
+      label: {
+        text: "Bank, building society or credit union name",
+        classes: "govuk-label--m"
+      },
+      id: "bank-name",
+      name: "bank-name",
+      classes: "govuk-label--m govuk-input--width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Name or names on account",
+        classes: "govuk-label--m"
+      },
+      hint: {
+        text: "Enter the name as it appears on the bank card, cheque book or statement. Do not include the title, for example Mr or Miss."
+      },
+      id: "account-name",
+      name: "account-name",
+      classes: "govuk-label--m govuk-input--width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Sort code",
+        classes: "govuk-label--m"
+      },
+      id: "sort-number",
+      name: "sort-number",
+      classes: "govuk-label--m govuk-input--width-10"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Account number",
+        classes: "govuk-label--m"
+      },
+      id: "account-number",
+      number: "account-name",
+      classes: "govuk-label--m govuk-input--width-10"
+    }) }}
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What counts as a bank account?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>You can use a:</p>
+        <li>bank account</li>
+        <li>building society account</li>
+        <li>credit union account</li>
+        <br>
+        <p>You may also have to confirm the details at the jobcentre.</p>
+        <p>It must be a UK account.</p>
+      </div>
+    </details>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I don't have any kind of bank account
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>A bank or building society account will make it easier for you to get Universal Credit.</p>
+        <p>If you cannot get one right away, you may be able to use a Post Office card account instead. You will not be able to stay on a card account for long. We will ask you to move to a standard bank account after you have made your claim.</p>
+        <p>If you cannot get any sort of account, call 0800 328 5644 (Textphone: 0800 328 1344). You can call Monday or Friday, 8am to 6pm (closed bank holidays).</p>
+      </div>
+    </details>
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Done"
+      text: "Continue"
     }) }}
   </form>
 </div>
 
-  <div class="student-notes-box"> 
-    <p></p>
-  </div>
+<div class="student-notes-box">
+  <p></p>
+</div>
 
 {% endblock %}
