@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Health - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third uc-to-do-list-blue" style="margin-right:10px;">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAtoDoList">To-do list</a>
+    </div>
+    <div class="govuk-grid-column-one-third uc-to-do-list-grey">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">Journal</a>
+    </div>
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    Hospital stays
+  </h1>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="hospital-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Are you currently in or expecting to go into hospital for more than 24 hours?
+          </h1>
+        </legend>
+        <span id="hospital-hint" class="govuk-hint">
+          This includes residential rehabilitation.
+        </span>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hospital-conditional" name="hospital-check" type="radio" value="yes" data-aria-controls="conditional-hospital-conditional">
+            <label class="govuk-label govuk-radios__label" for="hospital-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="hospital-2" name="hospital-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="hospital-2">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-hospital-conditional">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="admission-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Admission date
+                  </h1>
+                </legend>
+                <span id="admission-hint" class="govuk-hint">
+                  For example, 18 9 2012
+                </span>
+                <div class="govuk-date-input" id="admission">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="admission-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="admission-day" name="admission-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="admission-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="admission-month" name="admission-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="admission-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="admission-year" name="admission-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Do you know what your discharge date is?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="discharge-date-conditional" name="discharge-date-check" type="radio" value="yes" data-aria-controls="conditional-discharge-date-conditional">
+                    <label class="govuk-label govuk-radios__label" for="discharge-date-conditional">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="discharge-date-2" name="discharge-date-check" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="discharge-date-2">
+                      No
+                    </label>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-discharge-date-conditional">
+                    <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset" role="group" aria-describedby="discharge-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Discharge date
+                          </h1>
+                        </legend>
+                        <span id="discharge-hint" class="govuk-hint">
+                          For example, 18 9 2012
+                        </span>
+                        <div class="govuk-date-input" id="discharge">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="discharge-day">
+                                Day
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="discharge-day" name="discharge-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="discharge-month">
+                                Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="discharge-month" name="discharge-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="discharge-year">
+                                Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="discharge-year" name="discharge-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue",
+        href: "/forms/govuk-forms/universal-credit-apply/UCAhealthTreatments"
+      }) }}
+
+    </form>
+    <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
+  </div>
+
+  <div class="student-notes-box">
+    <p></p>
+  </div>
+
+  {% endblock %}

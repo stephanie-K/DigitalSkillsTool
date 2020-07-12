@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Health - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third uc-to-do-list-blue" style="margin-right:10px;">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAtoDoList">To-do list</a>
+    </div>
+    <div class="govuk-grid-column-one-third uc-to-do-list-grey">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">Journal</a>
+    </div>
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    Ability to work
+  </h1>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Do any of your conditions restrict your ability to work or look for work?
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="work-conditional" name="work-check" type="radio" value="yes" data-aria-controls="conditional-work-conditional">
+            <label class="govuk-label govuk-radios__label" for="work-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="work-2" name="work-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="work-2">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-conditional">
+            <div class="govuk-form-group">
+              <label class="govuk-fieldset__legend--m" for="work-input">
+                Do you have a fit note?
+              </label>
+              <span class="govuk-hint" style="margin:10px 0px 0px 0px">
+                You need to get one from your doctor if you're ill for more than 7 days. It may also be called a 'statement of fitness for work'.
+              </span>
+              <div style="margin:15px 0px 0px 0px">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="fit-1" name="fit" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="fit-1">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="fit-2" name="fit" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="fit-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAhealthPregnancy"
+    }) }}
+
+  </form>
+  <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
+</div>
+
+<div class="student-notes-box">
+  <p></p>
+</div>
+
+{% endblock %}
