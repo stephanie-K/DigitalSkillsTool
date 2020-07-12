@@ -256,6 +256,13 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAincome', function (req
   res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
 
+router.post('/forms/govuk-forms/universal-credit-apply/UCAworkEarnings', function (req, res) {
+  req.session.data['work-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "work"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
 
 // Report a repair ******************************************************************************
 

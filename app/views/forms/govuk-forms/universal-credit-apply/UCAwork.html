@@ -17,17 +17,237 @@ Work and earnings - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Work and earnings
+    Work status
   </h1>
-<p>Under construction</p>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Are you currently working?
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="work-1" name="work-check" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="work-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="work-conditional" name="work-check" type="radio" value="no" data-aria-controls="conditional-work-conditional">
+            <label class="govuk-label govuk-radios__label" for="work-conditional">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-conditional">
+            <div class="govuk-form-group">
+              <label class="govuk-fieldset__legend--m" for="work-input">
+                Have you stopped working in the last 9 months?
+              </label>
+              <div style="margin:15px 0px 0px 0px">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="how-long-conditional" name="how-long" type="radio" value="yes" data-aria-controls="conditional-how-long-conditional">
+                    <label class="govuk-label govuk-radios__label" for="how-long-conditional">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="how-long-2" name="how-long" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="how-long-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-long-conditional">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="stop-work-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    What date did you stop work?
+                  </h1>
+                </legend>
+                <span id="stop-work-hint" class="govuk-hint">
+                  For example, 18 9 2012
+                </span>
+                <div class="govuk-date-input" id="stop-work">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="stop-work-day">
+                        Day
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="stop-work-day" name="stop-work-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="stop-work-month">
+                        Month
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="stop-work-month" name="stop-work-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="stop-work-year">
+                        Year
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="stop-work-year" name="stop-work-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="stat-pay-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Are you currently getting any statutory pay from your employer?
+          </h1>
+        </legend>
+        <span id="stat-pay-hint" class="govuk-hint" style="margin:10px 0px 20px 0px">
+          Statutory pay includes:
+          <li style="margin:10px 0px 0px 0px">sick pay</li>
+          <li>maternity pay</li>
+          <li>paternity pay</li>
+          <li>adoption pay</li>
+          <li>shared parental pay</li>
+        </span>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="stat-pay-conditional" name="stat-pay-check" type="radio" value="yes" data-aria-controls="conditional-stat-pay-conditional">
+            <label class="govuk-label govuk-radios__label" for="stat-pay-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="stat-pay-2" name="stat-pay-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="stat-pay-2">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-stat-pay-conditional">
+            <div class="govuk-form-group">
+              <label class="govuk-fieldset__legend--m" for="stat-pay-input">
+                How much statutory pay do you get?
+              </label>
+              <div class="govuk-date-input" id="stat-pay-input" style="margin:10px 0px 0px 0px;">
+                <p style="float:left; margin:7.5px 5px 0px 0px;">£</p>
+                <div style="float:left; margin:0px;" class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="stat-pay-input-pounds" name="stat-pay-input-pounds" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <p style="float:left; margin:7.5px 5px 0px 5px">.</p>
+                <div style="float:left; margin:0px;" class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="stat-pay-pence" name="stat-pay-pence" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-form-group" style="margin:15px 0px 0px 0px">
+                <label class="govuk-label" for="frequency">
+                  How often do you get statutory pay?
+                </label>
+                <select class="govuk-select" id="sort" name="frequency">
+                  <option value="frequency" selected>Frequency</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="fortnightly">Fortnightly</option>
+                  <option value="monthly">Monthly</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Do you currently get maternity allowance?
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mat-pay-conditional" name="mat-pay-check" type="radio" value="yes" data-aria-controls="conditional-mat-pay-conditional">
+            <label class="govuk-label govuk-radios__label" for="mat-pay-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mat-pay-2" name="mat-pay-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="mat-pay-2">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mat-pay-conditional">
+            <div class="govuk-form-group">
+              <label class="govuk-fieldset__legend--m" for="mat-pay-input">
+                How much maternity allowance do you get?
+              </label>
+              <div class="govuk-date-input" id="mat-pay-input" style="margin:10px 0px 0px 0px;">
+                <p style="float:left; margin:7.5px 5px 0px 0px;">£</p>
+                <div style="float:left; margin:0px;" class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="mat-pay-input-pounds" name="mat-pay-input-pounds" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <p style="float:left; margin:7.5px 5px 0px 5px">.</p>
+                <div style="float:left; margin:0px;" class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="mat-pay-pence" name="mat-pay-pence" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-form-group" style="margin:15px 0px 0px 0px">
+                <label class="govuk-label" for="frequency">
+                  How often do you get maternity allowance?
+                </label>
+                <select class="govuk-select" id="sort" name="frequency">
+                  <option value="frequency" selected>Frequency</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="fortnightly">Fortnightly</option>
+                  <option value="fourWeekly">4 Weekly</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAworkStatus"
+    }) }}
+
+  </form>
 </div>
 
-
-
-
-
-  <div class="student-notes-box"> 
-    <p></p>
-  </div>
+<div class="student-notes-box">
+  <p></p>
+</div>
 
 {% endblock %}
