@@ -8,7 +8,17 @@ module.exports = router
 
 //  enter your new routes here *****************************************************************
 
-
+// Register to Vote ****************************************************************************
+router.post('/forms/govuk-forms/register-to-vote/RTVCountryOfResidence', function (req, res) {
+  var wheredoyouliveSelected = req.session.data['where-do-you-live']
+  if (wheredoyouliveSelected  === 'england','scotland','wales', 'northern-ireland') {
+      return res.redirect('/forms/govuk-forms/register-to-vote/RTVNationality')
+  }
+  if (wheredoyouliveSelected  === 'abroad-england','abroad-scotland','abroad-wales', 'abroad-northern-ireland') {
+    return res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
+}
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
+})
 
 // book a theory test - if other support is needed and selected, then we stop and don't do the rest of the form - we show a Thank you screen.
 
