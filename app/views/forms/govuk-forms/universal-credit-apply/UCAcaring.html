@@ -19,74 +19,70 @@ Caring for someone - Universal Credit
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
     Caring for someone
   </h1>
-  <form class="form" method="post">
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-    {% set getBenefitHtml %}
+  <form class="form" method="post">
     <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="getbenefit-hint">
+      <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
-            Does this person get one of the following benefit?
+            Are you caring for someone with a health condition or disability?
           </h1>
         </legend>
-        <div id="getbenefit-hint" class="govuk-hint">
-          <ul class="govuk-list govuk-list--bullet">
-            <span class="govuk-hint"><li>Disability Living Allowance - middle or higher rate </li></span>
-            <span class="govuk-hint"><li>Personal Independance Payment</li></span>
-            <span class="govuk-hint"><li>Armed Force Independance Payment</li></span>
-            <span class="govuk-hint"><li>Attendance Allowance</li></span>
-            <span class="govuk-hint"><li>Constant Attendance Allowance</li></span>
-          </ul>
-          <p class="govuk-hint">Answer 'yes'' if this person has applied but is waiting for an answer.</p>
-        </div>
-        <div class="govuk-radios govuk-radios--inline">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="getbenefit" name="getbenefit" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="getbenefit">
+            <input class="govuk-radios__input" id="caring-conditional" name="caring-check" type="radio" value="yes" data-aria-controls="conditional-caring-conditional">
+            <label class="govuk-label govuk-radios__label" for="caring-conditional">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="getbenefit-2" name="getbenefit" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="getbenefit-2">
+            <input class="govuk-radios__input" id="caring-2" name="caring-check" type="radio" value="no" >
+            <label class="govuk-label govuk-radios__label" for="caring-2">
               No
             </label>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-caring-conditional">
+            <div class="govuk-form-group">
+              <label class="govuk-fieldset__legend--m" for="caring-input">
+                Does this person get one of the following benefits?
+              </label>
+              <span class="govuk-hint" style="margin:10px 0px 0px 0px;">
+                <li>Disability Living Allowance - middle or higher rate </li>
+                <li>Personal Independance Payment</li>
+                <li>Armed Force Independance Payment</li>
+                <li>Attendance Allowance</li>
+                <li>Constant Attendance Allowance</li>
+                <br>
+                <span style="margin:10px 0px 0px 0px;"> Answer 'yes' if this person has applied but is waiting for an answer.</span>
+              </span>
+              <div style="margin:15px 0px 0px 0px">
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="caring-benefits" name="caring-benefits" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="caring-benefits">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="caring-benefits-2" name="caring-benefits" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="caring-benefits-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </fieldset>
     </div>
-    {% endset -%}
-
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "caring-conditional",
-      name: "caring",
-      fieldset: {
-        legend: {
-          text: "Are you caring for someone with a health condition or disability?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-        {
-          value: "yes",
-          text: "Yes",
-          conditional: {
-            html: getBenefitHtml
-          }
-        },
-        {
-          value: "no",
-          text: "No"
-        }
-      ]
-    }) }}
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Done"
+      text: "Continue"
     }) }}
   </form>
 
