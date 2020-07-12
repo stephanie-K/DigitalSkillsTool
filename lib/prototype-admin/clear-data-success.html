@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout_tool.html" %}
 
 {% block pageTitle %}
   Data cleared - GOV.UK Prototype Kit
@@ -6,18 +6,19 @@
 
 {% block content %}
 
-  <h1 class="govuk-heading-m">
-    Data cleared
-  </h1>
+  <h1 class="govuk-heading-xl heading-title">All the data entered during this session has been cleared</h1>
 
-  <p>
-    The session data has been cleared.
-  </p>
 
-  <p>
-    <a href="/">
-      Prototype home page
-    </a>
-  </p>
+
+  <p>You might also want to clear the browser cache if you are not using your own device: some of the data you have entered during the session might still appear in the autocomplete function of your browser.</p>
+  <p>If you are not sure how to do this, you can <a href="https://www.lifewire.com/how-to-clear-cache-2617980" target="_blank" rel="noopener">read this article explaining how to clear the cache of your browser</a></p>
+ 
+  <div class="govuk-!-padding-top-9 govuk-!-padding-bottom-9">
+    {{ govukButton({
+      text: "Go back to the forms menu",
+      href: "/"
+    }) }}
+  </div>
+
 
 {% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+{%if data['rctread'] === 'error' %}Error - {% endif %} Create your online profile
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+
+    {% set regExpEmail = r/^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/g %}
+    {% set validEmail = regExpEmail.test(data ['registering-email']) %}
+
+    {% if (data ['registering-email'] === '') or (data ['registering-email'] and not validEmail)%}
+    <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
+    {% endif %}
+    
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Create your online profile</p> 
+    <p class="govuk-!-font-size-14">You can find out how we use your information in our <a href="https://www.eastrenfrewshire.gov.uk/privacy" class="govuk-!-font-size-14" target="_blank" rel="noopener">privacy statement<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a> on our website</p>
+    <p class="govuk-!-font-size-14">To start to create your online profile you will need to supply your email address. This will allow us to send you a new password if you forget it. <strong>If you do not have access to your email at the moment, please do not attempt to register now.</strong></p>
+      
+    <form class="form" method="post">
+   
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="registering-email">What is your email address? <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="registering-email" name="registering-email" type="text" value="{{ data ['registering-email']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['registering-email'] === '') %}
+            <span class="error"> *</span>
+          {% elseif (data ['registering-email'] and not validEmail)%}
+            <span class="error">* Enter a valid email address.</span>
+          {% else %}
+          {% endif %}
+          </dd>
+        </div>
+      </dl>
+
+      <p class="govuk-!-font-size-14">Once you have entered your email address you should select 'Send my code'. We will send an email containing a one-time confirmation code to you. You will need this code later in the registration process.</p>
+      {{ govukButton({
+        text: "Exit",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/CTstart"
+      }) }}
+  
+      {{ govukButton({
+        text: "Send my code",
+        classes: "button-primary erc-alt"
+      }) }}
+
+    </form>
+
+    <div class="student-notes-box"> 
+      <p>When you select 'Send my code' you will receive an email with a code from: NoReply@eastrenfrewshire.gov.uk</p>
+      <p>It will look like this:</p>
+      <p><img src="{{ asset_path }}images/ERC/email-register.png" style="padding: 0 5px" alt="screenshot of email received with a code"></p>
+    </div>
+  
+
+
+    </div>
+  </div>
+{% endblock %}

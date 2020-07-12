@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-m">GOV.UK Prototype Kit</h1>
+      <h1 class="govuk-heading-xl heading-title">GOV.UK Prototype Kit</h1>
 
       <p>
         We are using the GOV.UK Prototype Kit
@@ -19,8 +19,10 @@
       <p>
         This kit lets you rapidly create HTML prototypes of GOV.UK services.
       </p>
+      <p>The kit contains all you need to prototype anything from simple static pages to complex, data-driven transactions.</p>
+      <p>In the sections below, you will find some information about how we have used the kit to suits our needs. Some of this information is for developers mostly, but not all.</p>
       <p class="govuk-!-padding-bottom-9">
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
+        If you have any question, please <a href="mailto:french@chezleskrus.com?Subject=Digital%20Skills%20Tool%20-%20Get%20in%20touch" target="_blank" rel="noopener"><strong>get in touch</strong></a>.
       </p>
 
 
@@ -68,7 +70,7 @@
             </h2>
           </div>
           <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-            <p>Our code can be found in this <a href="https://github.com/scotentSD/DigitalSkillsTool" target="_blank" rel="noopener">Github repository</a></p>
+            <p>Our code can be found in this <a href="https://github.com/stephanie-K/DigitalSkillsTool/tree/master/app" target="_blank" rel="noopener">Github repository</a></p>
             
             <h3 class="govuk-heading-m">Layout files <code>in app>views></code></h3>
       
@@ -90,6 +92,12 @@
             </ul>
         
             <h3 class="govuk-heading-m">Each form has a folder <code>app>views>forms></code></h3>
+
+            <h3 class="govuk-heading-m">All images should be in <code>app>assets>images></code></h3>
+            <p>From there it can be in another existing folders and you can create a different one</p>
+            <p>In your code, the path will be: <code>	&lcub;&lcub; asset_path 	&rcub;&rcub;images/name-of-your-image-file</code></p>
+            <p>Both the images and the styles are copied in the <code>public</code> folder. <span style="color: #B30000;"><strong>Don't put anything there</strong></span>, it's done automatically for you.</p>
+
       
             <h3 class="govuk-heading-m">Route.js <code>app></code></h3>
             <p>This file is key to introduce logic and validation to the forms. It is shared by all the forms.</p>
@@ -124,12 +132,45 @@
           </div>
           <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
             <h3 class="govuk-heading-m">Validating username and password - error messages</h3>
-            <p class="govuk-body-l"><code>in app>views>forms>govuk-forms>universal-credit>UCcreateAccount.html</code></p>
+            <p><code>in app>views>forms>govuk-forms>universal-credit>UCcreateAccount.html</code></p>
             <p><a href="/forms/govuk-forms/universal-credit/UCcreateAccount">See the html page file</a> and also check the route.js file</p>
 
+            <h3 class="govuk-heading-m">Display an email address back on a confirmation page</h3>
+            <p><code>in app>views>forms>council-tax-online>register-for-council-tax>RCTemailaddress.html</code></p>
+            <p><a href="/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress">See the html page file</a> where we capture the email address, it's displayed on the next one once you select: 'Send code'</p>
+
             <h3 class="govuk-heading-m">Re-use data entered by the user and display it in a summary page</h3>
-            <p class="govuk-body-l"><code>in app>views>forms>govuk-forms>learn-to-drive>book-theory-test>BTT6my-booking.html</code></p>
+            <p><code>in app>views>forms>govuk-forms>learn-to-drive>book-theory-test>BTT6my-booking.html</code></p>
             <p><a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT6my-booking">See the html page file</a></p>
+
+            <h3 class="govuk-heading-m">Radio buttons with a conditional revealing more components</h3>
+            <p><code>in app>views>forms>govuk-forms>learn-to-drive>book-theory-test>BTT2support.html</code></p>
+            <p><a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support">See the html page file</a></p>
+
+            <h3 class="govuk-heading-m">Single checkbox with validation for 'I have read ...'</h3>
+            <p><code>in app>views>forms>erc-forms>council-tax-online>register-for-council-tax>RCTstart.html</code></p>
+            <p><a href="/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart">See the html page file</a> but check the <code>route.js</code> file for it too, or check</p>
+            <p><code>in app>views>forms>govuk-forms>universal-credit>UCalreadyGetBenefit.html</code></p>
+            <p><a href="/forms/govuk-forms/universal-credit/UCalreadyGetBenefit">See the html page file</a> but check the <code>route.js</code> file for it too</p>
+
+          </div>
+        </div>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+                Others files and paths (more advanced)
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+            <h3 class="govuk-heading-m">Modify the 'Clear prototype data' pages</h3>
+            <p>This is a function you can find in every footer. You can change the two pages by going in:</p>
+            <p><code>lib>prototype-admin>clear-data.html</code></p>
+            <p><a href="/prototype-admin/clear-data">See the html page file</a> also check the <code>server.js</code> file, lines 208 to 212 to understand how it works</p>
+
+            <h3 class="govuk-heading-m">Find the macros for the components in the prototype kit</h3>
+            <p><code>in node_modules>govuk_frontend>govuk>components></code></p>
           </div>
         </div>
       </div>

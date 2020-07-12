@@ -8,7 +8,7 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
         My example page
       </h1>
@@ -16,6 +16,20 @@
       <p>
         You can add your own content now
       </p>
+
+      <hr>
+      <p style="line-height: 1.5;"><image src="{{ asset_path }}/images/SG/note.png" alt="information"></image>
+        <span style="font-size:17px; padding-left:10px;">write your notice here</span></p>
+      <hr class="govuk-!-margin-bottom-5">
+
+      <div class="govuk-form-group govuk-!-margin-bottom-9">
+        <label class="govuk-label" for="address">Postcode search</label>
+        <input class="govuk-input govuk-input--width-5" id="address" name="address" type="text" style="height: 52px">
+        <a href="#" role="button" draggable="false" class="govuk-button button-primary govuk-!-margin-bottom-0" data-module="govuk-button" style="width: 160px">
+          Find address
+        </a>
+      </div>
+
 
       {{ govukButton({
         text: " < Back",
@@ -29,6 +43,64 @@
         href: "/forms/sss-forms/not-ready.html",
         isStartButton: true
       }) }}
+
+
+      <div class="govuk-width-container">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+      
+              <h1 class="govuk-heading-l">Summary</h1>
+              <p>Checktrough your answers again to make sure they're correct before you submit your form.</p>
+              <div class="sss-summary">
+                <dl class="govuk-summary-list">
+                  <div class="govuk-summary-list__row heading-summary">
+                    <dt class="govuk-summary-list__key">
+                      Tell us why your are applying
+                    </dt>
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">Change</a>
+                    </dd>
+                  </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Tell us why you want to apply
+                      </dt>
+                      <dd class="govuk-summary-list__actions">
+                        Me or my partner is pregnant
+                      </dd>
+                  </div>
+                </dl>
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row heading-summary">
+                      <dt class="govuk-summary-list__key">
+                        Your details
+                      </dt>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change</a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Name
+                      </dt>
+                      <dd class="govuk-summary-list__actions">
+                        Sarah Philips
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Date of birth
+                      </dt>
+                      <dd class="govuk-summary-list__actions">
+                        5 January 1978
+                      </dd>
+                  </div>
+                </dl>
+              </div>
+          </div>
+        </div>
+      </div>
+
 
     </div>
   </div> 

@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Previous address
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Previous address
+    </h1>
+
+
+    <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset" aria-describedby="UCpreviousAddress-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="UCpreviousAddress">
+            Have you changed your UK address in the last six months?
+          </label>
+        </legend>
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="UCpreviousAddress" name="UCpreviousAddress" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="UCpreviousAddress">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="UCpreviousAddress-2" name="UCpreviousAddress" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="UCpreviousAddress-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+    </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href:"/forms/govuk-forms/universal-credit/UCaccountCreated"
+    }) }}
+    <div class="student-notes-box"> 
+      <p>We have simplified, but on the real form if you say 'Yes' you changed address in the last six months, you would be asked for previous addresses</p>
+    </div>
+  </div>
+
+{% endblock %}

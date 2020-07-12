@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo pat-acc-logo-cont">
+      <span class="govuk-header__logotype">
+          <a id="pat-acc-logo-clean" href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="Patient Access Logo" width="250" height="30"></image></a>
+      </span>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/index.html">
+      <span class="pat-acc-tagline">
+        This is a training website
+      </span>
+    </a>
+    <a id="pat-acc-support-centre" href="https://support.patientaccess.com/">
+      <image src="{{ asset_path }}images/PA/pa-acc-support.png?0.18.3p" width="16">
+      <span>
+        Support Centre
+      </span>
+    </a>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Log in to Patient Access
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row park-home">
+    <div class="park-home-black-block pat-acc-signin-block">
+      <div class="pat-acc-signin-centre">
+        <span class="pat-acc-signin-to-acc">Sign in to your account</span>
+        <br>
+        <br>
+        <span class="pat-acc-signin-err-acc">Don't have an account?<span><a id="pat-acc-logo-clean" class="pat-acc-signin-err-reg" href="./pa-register">Register with Patient Access</a></span></span>
+        <div class="pat-acc-signin-form-container">
+          <div class="signin-button-signin-page-container">
+            <form action="index.html" method="post">
+            <div class="govuk-form-group govuk-!-margin-bottom-2">
+              <label id="pat-acc-label" class="govuk-label" for="Email">
+               Email or User ID
+              </label>
+              <input id="pat-acc-input" class="govuk-input ph-input" id="Email" name="Email" type="text" placeholder="Email Address">
+            </div>
+            <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+              <label id="pat-acc-label" class="govuk-label" for="Password">
+                Password
+              </label>
+              <input id="pat-acc-input" class="govuk-input ph-input" id="Password" name="Password" type="text" placeholder="Password">
+            </div>
+            <div class="pat-acc-signin-button-form">
+              <a href="#" class="pat-acc-sign-in-button signin-button-signin-page">Sign In</a>
+            </div>
+          </form>
+          </div>
+          <br>
+          <span class="pat-acc-signin-err-acc">Forgotten your<span><a id="pat-acc-logo-clean" class="pat-acc-signin-err-reg" href="#">Email, User ID or Password?</a></span></span>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

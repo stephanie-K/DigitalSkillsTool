@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Contact number
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Contact number
+    </h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="UCcontactnumber">
+          Enter a contact phone number
+        </label>
+
+        <input class="govuk-input govuk-input--width-20" id="UCcontactnumber" name="UCcontactnumber" type="text"  value="{{ data ['UCcontactnumber']}}">
+
+      </div>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit/UCcontactPreference"
+    }) }}
+  
+    
+    <p><a href="javascript: history.go(-1)">Back</a></p>
+
+      
+  </div>
+
+{% endblock %}

@@ -1,58 +1,102 @@
 {% extends "layout_erc.html" %}
 
 {% block pageTitle %}
-  Bid for a council house
+Bid for a council house
 {% endblock %}
 
 
 {% block content %}
+<h1 class="govuk-heading-xl heading-title">
+  Bid for a council house 
+</h1>
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">
-      Bid for a council house
-    </h1>
-    <p><img src="{{ asset_path }}images/ERC/housing-logo.PNG" alt="Housing logo" style="height:95px; width:250px"></p>
-    <p>The closing date is Tuesday 2nd June at 9am.</p>
-    <p>You're entitled to bid only on properties that are open to your Priority Pass and bedroom entitlement. </p>
-    <p>Before you continue, please ensure that you know your Priority Pass and bedroom entitlement. This information is available on the registration letter you received.</p>
-    <p class="govuk-!-margin-bottom-9">Your bid will only be accepted if you meet the criteria for the property. <br>
-      Please do not bid unless you're eligible. </p>
-      <form class="form" method="post">
-      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  <div class="govuk-grid-column-full">
+    <p class="heading-intro">
+      Explore our latest properties and bid online
+    </p>
+    <p>You're entitled to bid only on properties that are open to your Priority Pass and bedroom entitlement. Your Priority Pass and bedroom entitlement is available on the registration letter you received.</p>
+    <p>Your bid will only be accepted if you meet the criteria for the property. Please don't bid unless you're eligible.</p> 
+    <p>Before you begin, you should register your interest in council housing so you can receive a reference number. You need this reference number to bid on our properties.</p>
+    
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Register your interest",
+      classes: "govuk-button button-primary",
+      isStartButton: true,
+      href:"/forms/erc-forms/housing/CBLstart"
+    }) }}
 
-      {{ govukRadios({
-        idPrefix: "available-properties",
-        name: "property",
-        fieldset: {
-          legend: {
-            text: "Available properties",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "86D",
-            text: "86D Divernia Way, Barrhead (Available for immediate let) - 2 bedroom property - open to Priority Pass A, B, C, D, E"
-          },
-          {
-            value: "54E",
-            text: "54E Aurs Crescent, Barrhead - 2 bedroom property - open to priority pass A, B, C, D, E"
-          },          {
-            value: "37A",
-            text: "37A Graham Street, Barrhead - 1 Bedroom Sheltered Property - open to priority pass A, B, C, D, E - restricted to applicants aged 60 and over"
-          }
-        ]
-      }) }}
+   <p>Our list of available properties will be added on Wednesday, the 26th of August at 12pm, with bidding closing on Tuesday, the 1st September at 9am.</p>
+   <p class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">There are 3 results</p>
+  </div>
+</div>
 
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-        text: "Next",
-        classes: "govuk-button button-primary"
-      }) }}
-      </form>
-      <hr>
-      <p class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"><span class="tag-print"></span> <a href="#">Print this page</a></p>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third" style="border: solid 1px #cccccc; padding-top: 10px; margin-right: 15px">
+  <p><a href="/forms/erc-forms/bidding-properties/property86D" style="color: #1a1a1a; font-weight: bold">86D Divernia Way, Barrhead</a></p>
+  <p><img src="{{ asset_path }}images/ERC/property86D.png" alt="picture of the flat" width="100%"></p>
+  <p>2 bedroom property - open to Priority Pass A, B, C, D, E</p>
+  <p><strong>Weekly rent:</strong> £80.84</p>
+  <p><strong>End date:</strong> 1 September 2020</p>
+  <p><strong>Bedrooms:</strong> 2 bedrooms</p>
+  <p><strong>Priority pass:</strong> A, B, C, D, E</p>
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Apply",
+    classes: "govuk-button button-primary govuk-!-width-full",
+    href: "/forms/erc-forms/bidding-properties/property86D"
+  }) }}
+</div>
+<div class="govuk-grid-column-one-third" style="border: solid 1px #cccccc; padding-top: 10px; ">
+  <p><a href="/forms/erc-forms/bidding-properties/property54E" style="color: #1a1a1a; font-weight: bold">54E Aurs Crescent, Barrhead</a></p>
+  <p><img src="{{ asset_path }}images/ERC/property54E.png" alt="picture of the flat" width="100%"></p>
+   <p>2 bedroom property - open to Priority Pass A, B, C, D, E</p>
+   <p><strong>Weekly rent:</strong> £88.84</p>
+   <p><strong>End date:</strong> 1 September 2020</p>
+   <p><strong>Bedrooms:</strong> 2 bedrooms</p>
+   <p><strong>Priority pass:</strong> A, B, C, D, E</p>
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Apply",
+    classes: "govuk-button button-primary govuk-!-width-full",
+    href: "/forms/erc-forms/bidding-properties/property54E"
+  }) }}
+</div>
+</div>
+<br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third" style="border: solid 1px #cccccc; padding-top: 10px">
+    <p><a href="/forms/erc-forms/bidding-properties/property37A" style="color: #1a1a1a; font-weight: bold">37A Graham Street, Barrhead</a></p>
+    <p><img src="{{ asset_path }}images/ERC/property37A.png" alt="picture of the flat" width="100%"></p>
+    <p>1 Bedroom Sheltered Property - open to priority pass A, B, C, D, E - restricted to applicants aged 60 and over</p>
+    <p><strong>Weekly rent:</strong> £60.84</p>
+    <p><strong>End date:</strong> 1 September 2020</p>
+    <p><strong>Bedrooms:</strong> 1 bedroom</p>
+    <p><strong>Priority pass:</strong> A, B, C, D, E</p>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Apply",
+      classes: "govuk-button button-primary govuk-!-width-full",
+      href: "/forms/erc-forms/bidding-properties/property37A"
+    }) }}
+  </div>
+</div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-third">
+      <br>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Share this page 
+        <image src="{{ asset_path }}/images/ERC/facebook.png" alt="facebook" width="24" height="24" style="vertical-align:middle; padding-left: 10px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/twitter.png" alt="twitter" width="24" height="24" style="vertical-align:middle; padding-left: 5px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/email.png" alt="email" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 40px;" ></image>
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Print 
+        <image src="{{ asset_path }}/images/ERC/print.png" alt="print" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 10px;" ></image>
+      </p>
     </div>
   </div>
 

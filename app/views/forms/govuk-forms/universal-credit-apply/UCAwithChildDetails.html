@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Children living with you - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third uc-to-do-list-blue" style="margin-right:10px;">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAtoDoList">To-do list</a>
+    </div>
+    <div class="govuk-grid-column-one-third uc-to-do-list-grey">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">Journal</a>
+    </div>
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    Child details
+  </h1>
+  <p style="font-size:22px;">Please tell us about your child</p>
+
+  <form class="form" method="post">
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+    {{ govukInput({
+      label: {
+        text: "First name",
+        classes: "govuk-label--m"
+      },
+      classes: "govuk-input--width-20",
+      id: "first-name",
+      name: "first-name"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Last name",
+        classes: "govuk-label--m"
+      },
+      classes: "govuk-input--width-20",
+      id: "last-name",
+      name: "last-name"
+    }) }}
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "gender",
+      name: "gender",
+      fieldset: {
+        legend: {
+          text: "Gender",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+      {
+        value: "male",
+        text: "Male"
+      },
+      {
+        value: "female",
+        text: "Female"
+      }
+      ]
+    }) }}
+
+    {{ govukDateInput({
+      id: "date-of-birth",
+      namePrefix: "date-of-birth",
+      fieldset: {
+        legend: {
+          text: "Date of birth",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 18 9 2002"
+      }
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+  <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
+</div>
+<div class="student-notes-box">
+  <p></p>
+</div>
+
+{% endblock %}

@@ -17,7 +17,7 @@
 <div class="govuk-header__container govuk-width-container">
     <div class="govuk-header__logo">
         <span class="govuk-header__logotype">
-            <a href="/index.html" id="logo-erc"><image src="{{ asset_path }}/images/ERC/erclogo.png" alt="East Renfrewshire Council Logo" width="188" height="90"></image></a>
+            <a href="/index.html" id="logo-erc"><image src="{{ asset_path }}/images/ERC/erclogo-white.png" alt="East Renfrewshire Council Logo" width="188" height="90"></image></a>
         </span>
     </div>
     <div class="govuk-header__content">
@@ -31,15 +31,14 @@
 {% endblock %}
 
 {% block footer %}
-<footer class="govuk-footer" role="contentinfo">
+<footer class="govuk-footer" role="contentinfo" style="padding-top: 0; border-top: solid 10px #008062">
 <div class="govuk-width-container">
-    <p>Council Headquarters, Eastwood Park, Rouken Glen Road, Giffnock, G46 6UG</p>
-    <p>Opening hours: 8:45am to 4:45pm Monday to Friday (excluding public holidays)</p>
-    
-    <hr class="govuk-footer__section-break">
 
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <span class="govuk-header__logotype">
+          <image src="{{ asset_path }}/images/ERC/erclogo.png" alt="East Renfrewshire Council Logo" width="190" height="101"></image>
+        </span>
         <ul class="govuk-footer__inline-list">
           <li class="govuk-footer__inline-list-item">
             <a class="govuk-footer__link" href="/index.html">Home</a>

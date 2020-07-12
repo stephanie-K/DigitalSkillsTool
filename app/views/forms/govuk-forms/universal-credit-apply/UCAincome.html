@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Income other than earnings - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third uc-to-do-list-blue" style="margin-right:10px;">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAtoDoList">To-do list</a>
+    </div>
+    <div class="govuk-grid-column-one-third uc-to-do-list-grey">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">Journal</a>
+    </div>
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    Income other than earnings
+  </h1>
+  <p>You need to tell us about any money that's not from work.</p>
+
+  <p>Do not include:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>child maintenance paymnets</li>
+    <li>State Pension</li>
+    <li>UK benefits - such as Child Benefit or Disability Living Allowance</li>
+  </ul>
+
+  <p>Do include:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>personal maintenance payments</li>
+    <li>personal or occupational pensions</li>
+    <li>mortgage payment protection</li>
+    <li>insurance payments</li>
+    <li>annuity payments</li>
+    <li>student finance</li>
+  </ul>
+
+  <form class="form" method="post">
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Do you get any money that is not from work, State Pension, child maintenance or UK benefits?
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="other-income-conditional" name="other-income" type="radio" value="yes" data-aria-controls="conditional-other-income-conditional">
+            <label class="govuk-label govuk-radios__label" for="other-income-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="other-income-2" name="other-income" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="other-income-2">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-income-conditional" style="margin:0px 0px 0px 0px;">
+            <div class="govuk-form-group">
+              <label class="govuk-fieldset__legend--m" for="other-income-input">
+                What is the total amount of your other income per month?
+              </label>
+              <div class="govuk-date-input" id="other-income-input" style="margin:10px 0px 0px 0px;">
+                <p style="float:left; margin:7.5px 5px 0px 0px;">£</p>
+                <div style="float:left; margin:0px;" class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="other-income-input-pounds" name="other-income-input-pounds" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+                <p style="float:left; margin:7.5px 5px 0px 5px">.</p>
+                <div style="float:left; margin:0px;" class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="rent-payment-pence" name="rent-payment-pence" type="text" pattern="[0-9]*" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukRadios({
+      classes: "govuk-radios--inline",
+      idPrefix: "armed-forces",
+      name: "armed-forces",
+      fieldset: {
+        legend: {
+          text: "Do you get an Armed Forces Independence Payment?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No"
+      }
+      ]
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+</div>
+
+<div class="student-notes-box">
+  <p></p>
+</div>
+
+{% endblock %}

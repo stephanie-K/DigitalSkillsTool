@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Housing - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third uc-to-do-list-blue" style="margin-right:10px;">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAtoDoList">To-do list</a>
+    </div>
+    <div class="govuk-grid-column-one-third uc-to-do-list-grey">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">Journal</a>
+    </div>
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    Housing: rent payments
+  </h1>
+  <form class="form" method="post">
+    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+    {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+    {{ govukDateInput({
+      id: "housing-address",
+      namePrefix: "housing-address",
+      fieldset: {
+        legend: {
+          text: "When did you move to this address?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "For example, 18 9 2012"
+      }
+    }) }}
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="rent-payment-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            How much rent do you pay?
+          </h1>
+        </legend>
+        <span id="rent-payment-hint" class="govuk-hint">
+          This is the amount of rent you have to pay under your rental agreement. Do not include any service charges shown separately in your rent agreement or any rent arrears payments.
+        </span>
+        <div class="govuk-date-input" id="rent-payment">
+          <p style="float:left; margin:7.5px 5px 0px 0px;">£</p>
+          <div style="float:left; margin:0px;" class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="rent-payment-pounds" name="rent-payment-pounds" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+          <p style="float:left; margin:7.5px 5px 0px 5px">.</p>
+          <div style="float:left; margin:0px;" class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="rent-payment-pence" name="rent-payment-pence" type="text" pattern="[0-9]*" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukSelect({
+      id: "selectRentPayments",
+      name: "selectRentPayments",
+      label: {
+        text: "Select how often you pay rent"
+      },
+      items: [
+      {
+        value: "select",
+        text: "Select",
+        selected: true
+      },
+      {
+        value: "weekly",
+        text: "Weekly"
+      },
+      {
+        value: "fortnightly",
+        text: "Fortnightly"
+      },
+      {
+        value: "fourWeekly",
+        text: "Four Weekly"
+      },
+      {
+        value: "monthly",
+        text: "Monthly"
+      },
+      {
+        value: "quarterly",
+        text: "Quarterly"
+      }
+      ]
+    }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+  <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
+</div>
+<div class="student-notes-box">
+  <p></p>
+</div>
+
+{% endblock %}

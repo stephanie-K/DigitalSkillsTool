@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Security question
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Security question
+    </h1>
+    <p>To protect your account we need to ask you a further security question.</p>
+    <form class="form" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="security-sign-in">
+          Where were you born?
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="security-sign-in" name="security-sign-in" value="{{data ['security-sign-in']}}">
+      </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+  </form>
+    <p><a href="javascript: history.go(-1)">Back</a></p>
+
+
+  <div class="student-notes-box"> 
+    <p>You can enter anything.<br>
+       In the real form, it would be one of the two questions you selected when you created your account.</p>
+  </div>
+
+{% endblock %}

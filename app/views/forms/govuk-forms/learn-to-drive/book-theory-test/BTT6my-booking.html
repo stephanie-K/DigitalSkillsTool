@@ -117,7 +117,9 @@ My booking
                           <p class="small-font-dvsa">Driving licence number:<br>
                             {{ data ['licence-number'] or "MCTEST593800ATZ"}}</p>
                           <p class="small-font-dvsa">Date of birth:<br>
-                          01 January 1990</p>
+                          {% if data ['DOBday'] === "-1" %} 01 {% else %} {{ data ['DOBday']}} {% endif %}
+                          {% if data ['DOBmonth'] === "-1" %} January {% else %} {{ data ['DOBmonth']}}{% endif %} 
+                          {% if data ['DOByear'] === "-1" %} 1990 {% else %} {{ data ['DOByear']}}{% endif %}</p>
                           <div class="govuk-form-group">
                             <label class="govuk-label" for="contact-number">
                               Contact number:

@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Saving and investments - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third uc-to-do-list-blue" style="margin-right:10px;">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAtoDoList">To-do list</a>
+    </div>
+    <div class="govuk-grid-column-one-third uc-to-do-list-grey">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">Journal</a>
+    </div>
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    Savings, investments and other capital
+  </h1>
+  <form class="form" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="savings-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Do you have any savings, investments or other capital?
+          </h1>
+        </legend>
+        <span id="savings-hint" class="govuk-hint" style="margin: 0px 0px 10px 0px">
+          Savings, investments cand capital might include:
+          <ul class="govuk-list govuk-list--bullet" style="margin: 20px 0px 0px 0px; color: grey;">
+            <li>money in savings account</li>
+            <li>money in your current account</li>
+            <li>cash</li>
+            <li>stocks and shares</li>
+            <li>property (but not the home you live in)</li>
+            <li>trusts</li>
+            <li style="margin: 0px 0px 25px 0px">any other savings and investments</li>
+          </ul>
+        </span>
+        <div class="govuk-radios govuk-radios--inline">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="savings" name="savings" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="savings">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="savings-2" name="savings" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="savings-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+  </form>
+</div>
+
+<div class="student-notes-box">
+  <p></p>
+</div>
+
+{% endblock %}

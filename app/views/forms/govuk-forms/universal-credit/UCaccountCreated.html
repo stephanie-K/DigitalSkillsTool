@@ -6,16 +6,50 @@ Account created
 
 
 {% block content %}
-<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
-    <h1 class="govuk-heading-xl">
-      Account created
-    </h1>
-<p>the end for now</p>
+<div class="govuk-body govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">
+            Account created
+          </h1>
+
+          <p class="govuk-body">Make a claim within 28 days or you'll have to create your account again.</p>
+          <p class="govuk-body">You may need details of:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>housing costs and any rent agreement</li>
+            <li>any savings and income, including other benefits</li>
+            <li>people who live with you</li>
+          </ul>
+          <p>You can still start your claim if you do not have all of the details.
+          You will be able to sign in again later to complete your claim.</p>
+
+
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text  govuk-!-margin-left-6">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              You may be prosecuted or need to pay a penalty if you give wrong or incomplete
+              information.
+            </strong>
+          </div>
+        </div>
+      </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Start claim"
+      }) }}
+    </main>
   </div>
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-  {{ govukButton({
-    text: "Return to the form menu",
-    href: "/"
-  }) }}
-  
+
+  <p><a href="/">Return to the form menu</a></p>
+
+  <div class="student-notes-box"> 
+    <p>This is the end of the exercice where you create an account for now.</p>
+    <p>There is another part about applying. You can start from the sign in page <a href="/forms/govuk-forms/universal-credit-apply/UCAsignIn">here</a> or return to the form menu instead</p>
+  </div>
+
+</div>
 {% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Mobile number
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Mobile number
+    </h1>
+
+    <p>We will send a text message with a code to confirm it's your number.</p>
+    <p>We use your mobile number to help protect your account. We might also contact you about your Universal Credit.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="UCmobile">
+          Enter your mobile number
+        </label>
+
+        <input class="govuk-input govuk-input--width-20" id="UCmobile" name="UCmobile" type="text"  value="{{ data ['UCmobile']}}">
+
+      </div>
+      <div class="govuk-form-group">
+        <a href="/forms/govuk-forms/universal-credit/UCcontactPreference">I do not have my own mobile phone</a>
+      </div>
+
+
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit/UCcontactNumber"
+    }) }}
+
+  </div>
+
+{% endblock %}

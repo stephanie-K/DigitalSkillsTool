@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Confirm your email
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Confirm your email
+    </h1>
+
+    <p>A code has been sent to <strong>{{ data ['UCemail'] or "your.email.address@gmail.com" }} </strong>The code will expire at 2:03am.</p>
+    <p>Enter the code to confirm your email address.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="UCemailcode">
+          Email code
+        </label>
+
+        <input class="govuk-input govuk-input--width-10" id="UCemailcode" name="UCemailcode" type="text"  value="{{ data ['UCemailcode']}}">
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            My code does not work
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          You need to <a href="#">request a new code.</a>
+        </div>
+      </details>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I have not received an email
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Check your junk email folder. If the email is not there, you can:
+          <ul>
+            <li><a href="#">request a new code.</a></li>
+            <li><a href="/forms/govuk-forms/universal-credit/UCaboutYou">use a different email address.</a></li>
+          </ul>
+        </div>
+      </details>
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href:"/forms/govuk-forms/universal-credit/UCmobileNumber"
+    }) }}
+
+
+    <p><a href="javascript: history.go(-1)">Back</a></p>
+    <div class="student-notes-box"> 
+      <p>you can enter anything for the code here it doesn't matter, but on the real form, you would receive a code that looks like: <strong>GGHKLP</strong> <br>
+      On the real form you could request a new code that would arrive via email if you didn't receive the first one</p>
+    </div>
+  </div>
+
+{% endblock %}
