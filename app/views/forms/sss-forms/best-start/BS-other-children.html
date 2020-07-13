@@ -8,16 +8,11 @@ Best Start Grand
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
   <h1 class="govuk-heading-xl">
-    Children under 6 you've started looking after
+    Other children between 6 months and 16 years old
   </h1>
-  <p><strong>Tell us about all children under 6 if: </strong></p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>you've taken over looking after them</li>
-    <li>you're not the child's birth mother</li>
-  </ul>
+  <p>We need to know about all your children aged between 6 months and 16 years old so that we can make sure we pay you the right amount of Best Start Grant.</p>
   <p>We'll check whether you can get:</p>
-  <ul class="govuk-list govuk-list--bullet" style="margin:0px 0px 60px">
-    <li>the Pregnancy and Baby Payment for children aged under 1 year old</li>
+  <ul class="govuk-list govuk-list--bullet" style="margin:0px 0px 20px">
     <li>the Early Learning Payment for children aged between 2 years and 3 years 6 months old</li>
     <li>the School Age Payment for children aged around 4 or 5 years old</li>
     <li>the Best Start Foods payment for children under 3 years old</li>
@@ -25,91 +20,117 @@ Best Start Grand
 
   <form class="form" method="post">
 
-    <h1 class="govuk-heading-m">
-      Child
-    </h1>
-
-    <div class="govuk-form-group" style="margin:0; padding:0;">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="child-first-name">
-          First name(s)
-        </label>
-      </h1>
-      <input class="govuk-input" id="child-first-name" name="child-first-name" type="text">
-    </div>
-
-    <div class="govuk-form-group" style="margin:0;">
-      <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="child-last-name">
-          Last name
-        </label>
-      </h1>
-      <input class="govuk-input" id="child-last-name" name="child-last-name" type="text">
-    </div>
-
-    <div class="govuk-form-group" style="margin:0px 0px 0px 0px;">
-      <fieldset class="govuk-fieldset" role="group" aria-describedby="child-under-6year-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-          <h1 class="govuk-fieldset__heading">
-            Date of birth
-          </h1>
-        </legend>
-        <span id="child-under-6year-hint" class="govuk-hint" style="color:black;">
-          Enter like this: 31 10 2018
-        </span>
-        <div class="govuk-date-input" id="child-under-6year">
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="child-under-6year-day">
-                <strong>Day</strong>
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-under-6year-day" name="child-under-6year-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD">
-            </div>
+    <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <p><strong>Do you have any children between 6 months and 16 years old?</strong></p>
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="other-child-conditional" name="other-child-check" type="radio" value="yes" data-aria-controls="conditional-other-child-conditional">
+            <label class="govuk-label govuk-radios__label" for="other-child-conditional">
+              Yes
+            </label>
           </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="child-under-6year-month">
-                <strong>Month</strong>
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-under-6year-month" name="child-under-6year-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM">
-            </div>
+          <div class="govuk-radios__item" style="margin:0px 0px 40px 0px;">
+            <input class="govuk-radios__input" id="other-child-2" name="other-child-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="other-child-2">
+              No
+            </label>
           </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="child-under-6year-year">
-                <strong>Year</strong>
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="child-under-6year-year" name="child-under-6year-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY">
+          <br>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-child-conditional" style="border:none; padding:0px; margin:0px;">
+            <h1 class="govuk-heading-m">
+              Child
+            </h1>
+
+            <div class="govuk-form-group" style="margin:0; padding:0;">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="other-child-first-name">
+                  First name(s)
+                </label>
+              </h1>
+              <input class="govuk-input" id="other-child-first-name" name="other-child-first-name" type="text">
             </div>
+
+            <div class="govuk-form-group" style="margin:0;">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="other-child-last-name">
+                  Last name
+                </label>
+              </h1>
+              <input class="govuk-input" id="other-child-last-name" name="other-child-last-name" type="text">
+            </div>
+
+            <div class="govuk-form-group" style="margin:0px 0px 0px 0px;">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="other-child-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    Date of birth
+                  </h1>
+                </legend>
+                <span id="other-child-hint" class="govuk-hint" style="color:black;">
+                  Enter like this: 31 10 2018
+                </span>
+                <div class="govuk-date-input" id="other-child">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="other-child-day">
+                        <strong>Day</strong>
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="other-child-day" name="other-child-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="other-child-month">
+                        <strong>Month</strong>
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="other-child-month" name="other-child-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="other-child-year">
+                        <strong>Year</strong>
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="other-child-year" name="other-child-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              classes: "govuk-radios--small",
+              idPrefix: "other-child-on-benefits",
+              name: "other-child-on-benefits",
+              fieldset: {
+                legend: {
+                  text: "Is this child named on either your or your partner's Child Benefit, Child Tax Credit, Universal Credit or Pension Credit claim?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+              ]
+            }) }}
+
           </div>
+          <br>
         </div>
       </fieldset>
     </div>
-
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-    {{ govukRadios({
-      classes: "govuk-radios--small",
-      idPrefix: "child-on-benefits",
-      name: "child-on-benefits",
-      fieldset: {
-        legend: {
-          text: "Is this child named on either your or your partner's Child Benefit, Child Tax Credit, Universal Credit or Pension Credit claim?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      items: [
-      {
-        value: "yes",
-        text: "Yes"
-      },
-      {
-        value: "no",
-        text: "No"
-      }
-      ]
-    }) }}
 
     {{ govukButton({
       text: "Back",
@@ -120,7 +141,7 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-other-children",
+      href: "/forms/sss-forms/best-start/BS-contact-you",
       isStartButton: true
     }) }}
 
