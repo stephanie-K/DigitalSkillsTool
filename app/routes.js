@@ -388,7 +388,6 @@ router.post('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTforgotBo
 
 // Council tax form - pay *****************************************************************
 
-
 router.get('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry', function (req, res) {
   var used_cancel = req.session.data ['usedcancel']
   if (used_cancel) {
@@ -397,8 +396,6 @@ router.get('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry'
   }
   res.render('forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry')
 })
-
-
 
 router.post('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry', function (req, res) {
   req.session.data ['ct-payment-entry-cancelled'] = false
@@ -434,6 +431,50 @@ router.post('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpayment', fu
   }
 })
 
+// Pay rent form *****************************************************************
+
+router.get('/forms/erc-forms/pay-rent/PRpaymentEntry', function (req, res) {
+  var used_cancel = req.session.data ['usedcancel']
+  if (used_cancel) {
+    // delete all session data
+    req.session.data = {}
+  }
+  res.render('forms/erc-forms/pay-rent/PRpaymentEntry')
+})
+
+router.post('/forms/erc-forms/pay-rent/PRpaymentEntry', function (req, res) {
+  req.session.data ['pr-payment-entry-cancelled'] = false
+  var reference_entered = req.session.data ['pr-reference']
+  var amount_entered = req.session.data ['pr-amount']
+  var name_entered = req.session.data ['pr-name']
+  var houseno_entered = req.session.data ['pr-houseno']
+  var street_entered = req.session.data ['pr-street']
+  var town_entered = req.session.data ['pr-town']
+  var postcode_entered = req.session.data ['pr-postcode']
+  var all_entered = reference_entered && amount_entered && name_entered && houseno_entered && street_entered && town_entered && postcode_entered
+  if (all_entered) {
+    res.redirect('/forms/erc-forms/pay-rent/PRpaymentAdded')
+  } else {
+    req.session.data ['usedcancel'] = false
+    res.redirect('/forms/erc-forms/pay-rent/PRpaymentEntry')
+  }
+})
+
+router.post('/forms/erc-forms/pay-rent/PRpayment', function (req, res) {
+  var cardnumber_entered = req.session.data ['pr-cardnumber']
+  var code_entered = req.session.data ['pr-security-code']
+  var name_entered = req.session.data ['pr-name-on-card']
+  var houseno_entered = req.session.data ['pr-houseno-on-card']
+  var street_entered = req.session.data ['pr-street-on-card']
+  var town_entered = req.session.data ['pr-town-on-card']
+  var postcode_entered = req.session.data ['pr-postcode-on-card']
+  var all_entered = cardnumber_entered && code_entered && name_entered && houseno_entered && street_entered && town_entered && postcode_entered
+  if (all_entered) {
+    res.redirect('/forms/erc-forms/pay-rent/PRpaymentAccepted')
+  } else {
+    res.redirect('/forms/erc-forms/pay-rent/PRpayment')
+  }
+})
 
 // Equality and diversity form *****************************************************************
 

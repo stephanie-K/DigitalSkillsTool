@@ -14,8 +14,8 @@ Payment
     <p class="govuk-!-font-size-14">Please note - information on this page will time-out after 15 minutes of inactivity<br>
       <strong>*</strong> = Mandatory Field</p>
       {% set regExpMoneyAmount = r/[0-9]+(\.[0-9][0-9])?$/g %}
-      {% set ValidAmount = regExpMoneyAmount.test(data ['ct-amount']) %}
-      <p>Payment Amount: £{% if  ValidAmount %} {{data ['ct-amount'] }} {% else %}50.00 {% endif %}</p>
+      {% set ValidAmount = regExpMoneyAmount.test(data ['pr-amount']) %}
+      <p>Payment Amount: £{% if  ValidAmount %} {{data ['pr-amount'] }} {% else %}50.00 {% endif %}</p>
 
 
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
@@ -27,7 +27,7 @@ Payment
     
   
 
-      <a href="/forms/erc-forms/council-tax-online/CTstart">Go back to Council tax menu</a>
+      <a href="/">Go back to the forms menu</a>
     </div> 
   </div>
 

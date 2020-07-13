@@ -1,7 +1,7 @@
 {% extends "layout_erc-old.html" %}
 
 {% block pageTitle %}
-Council Tax Payment
+Payment
 {% endblock %}
 
 
@@ -15,8 +15,8 @@ Council Tax Payment
       <strong>*</strong> = Mandatory Field</p>
 
       {% set regExpMoneyAmount = r/[0-9]+(\.[0-9][0-9])?$/g %}
-      {% set ValidAmount = regExpMoneyAmount.test(data ['ct-issue-number']) %}
-      <p>Payment Amount: £{% if  ValidAmount %} {{data ['ct-issue-number'] }} {% else %}50.00 {% endif %}</p>
+      {% set ValidAmount = regExpMoneyAmount.test(data ['ct-amount']) %}
+      <p>Payment Amount: £{% if  ValidAmount %} {{data ['ct-amount'] }} {% else %}50.00 {% endif %}</p>
 
       {% if
         (data ['ct-cardnumber'] === '') or
