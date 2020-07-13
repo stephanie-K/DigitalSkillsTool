@@ -8,23 +8,31 @@ Best Start Grand
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
   <h1 class="govuk-heading-xl">
-    About you
+    If you think there is something else we need to know
   </h1>
-  <p>The next section will ask you for information about you. Answer with your own details.</p>
+  <p style="margin:0px;">You only need to add something if you think there's anything we have not covered in the form that we need to know. This might be something like you’re going to be changing address soon, or something else that would be useful for us to know.</p>
   <br>
 
-  {{ govukButton({
-    text: "Back",
-    classes: "sg-button-back",
-    href: "javascript: history.go(-1)"
-  }) }}
+  <form class="form" method="post">
 
-  {{ govukButton({
-    text: "Next",
-    classes: "button-primary",
-    href: "/forms/sss-forms/best-start/BS-your-details",
-    isStartButton: true
-  }) }}
+    <div class="govuk-form-group" style="padding:0px 0px 5px;">
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </div>
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-check-answers",
+      isStartButton: true
+    }) }}
+
+  </form>
 
 </div>
 
