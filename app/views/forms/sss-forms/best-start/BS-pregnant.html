@@ -8,27 +8,56 @@ Best Start Grand
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
   <h1 class="govuk-heading-xl">
-    Have you taken over looking after one or more children under 6 years old?
+    Are you or your partner pregnant?
   </h1>
-  <p>This could be if you're a kinship carer. This does not include if you're the child's birth or step parent.</p>
+  <form class="form" method="post">
+    <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pregnant-conditional" name="pregnant-check" type="radio" value="yes" data-aria-controls="conditional-pregnant-conditional">
+            <label class="govuk-label govuk-radios__label" for="pregnant-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pregnant-2" name="pregnant-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="pregnant-2">
+              No
+            </label>
+          </div>
+          <br>
 
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-  {{ govukRadios({
-    classes: "govuk-radios--small",
-    idPrefix: "child-check",
-    name: "child-check",
-    items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "not",
-      text: "No"
-    }
-    ]
-  }) }}
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pregnant-conditional" style="border:none; padding:0px; margin:0px;">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Who is pregnant?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--small">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">
+                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                      Me
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                      My partner
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <br>
+        </div>
+      </fieldset>
+    </div>
+  </form>
 
 
   {{ govukButton({
