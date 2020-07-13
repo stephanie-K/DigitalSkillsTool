@@ -701,3 +701,14 @@ router.post('/forms/sss-forms/best-start/BS-location', function (req, res) {
   }
 
 })
+
+router.post('/forms/sss-forms/best-start/BS-child-check-3', function (req, res) {
+  var childCheck = req.session.data['pregnant-check'];
+
+  if ((childCheck === 'yesBut')) {
+     res.redirect('/forms/sss-forms/best-start/BS-bad');
+  } else {
+      res.redirect('/forms/sss-forms/best-start/BS-about-you');
+  }
+
+})

@@ -10,6 +10,7 @@ Best Start Grand
   <h1 class="govuk-heading-xl">
     Do you have a child who was born in the last 6 months?
   </h1>
+
   <form class="form" method="post">
     <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
       <fieldset class="govuk-fieldset">
@@ -84,21 +85,19 @@ Best Start Grand
       </div>
     </details>
 
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+
   </form>
-
-
-  {{ govukButton({
-    text: "Back",
-    classes: "sg-button-back",
-    href: "javascript: history.go(-1)"
-  }) }}
-
-  {{ govukButton({
-    text: "Next",
-    classes: "button-primary",
-    href: "/forms/sss-forms/best-start/BS-child-check-3",
-    isStartButton: true
-  }) }}
 
 </div>
 
