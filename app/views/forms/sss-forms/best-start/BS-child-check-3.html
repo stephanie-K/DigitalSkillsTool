@@ -8,7 +8,7 @@ Best Start Grand
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
   <h1 class="govuk-heading-xl">
-    Are you or your partner pregnant?
+    Do you have a child who was born in the last 6 months?
   </h1>
   <form class="form" method="post">
     <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
@@ -26,6 +26,12 @@ Best Start Grand
               No
             </label>
           </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pregnant-2" name="pregnant-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="pregnant-2">
+              Yes, my baby was born within the last 6 months and either died or was stillborn
+            </label>
+          </div>
           <br>
 
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pregnant-conditional" style="border:none; padding:0px; margin:0px;">
@@ -33,7 +39,7 @@ Best Start Grand
               <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                   <h1 class="govuk-fieldset__heading">
-                    Who is pregnant?
+                    Who gave birth?
                   </h1>
                 </legend>
                 <div class="govuk-radios govuk-radios--small">
@@ -49,6 +55,12 @@ Best Start Grand
                       My partner
                     </label>
                   </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">
+                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                      Someone who's not my current partner
+                    </label>
+                  </div>
                 </div>
               </fieldset>
             </div>
@@ -57,6 +69,21 @@ Best Start Grand
         </div>
       </fieldset>
     </div>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If you've given birth to twins or triplets and one baby died
+        </span>
+      </summary>
+      <div class="govuk-details__text" style="border-left: 6px solid #0065bd;">
+        <p>We're sorry to hear your baby died.</p>
+        <p>Unfortunately, you cannot apply online at this time. This is because our online form is unable to do some tasks yet.</p>
+        <p>You can still apply over the phone or by filling in a paper form.</p>
+        <p>Call Social Security Scotland freephone on 0800 182 2222 to work out the best way to apply..</p>
+      </div>
+    </details>
+
   </form>
 
 
