@@ -91,24 +91,20 @@ Nationaly - Universal Credit
                 <label class="govuk-fieldset__legend--m" for="nationality-input">
                   How long have you been out of the UK at a time?
                 </label>
-                <div style="margin:15px 0px 0px 0px">
-                  <div class="govuk-radios">
+                <!--div style="margin:15px 0px 0px 0px" -->
+                  <div class="govuk-radios govuk-!-margin-top-3">
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="how-long" name="how-long" type="radio" value="lessThan2Weeks">
                       <label class="govuk-label govuk-radios__label" for="how-long">
                         Less than 2 weeks
                       </label>
                     </div>
-                    <br>
-                    <br>
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="how-long-2" name="how-long" type="radio" value="twoToFourWeeks">
                       <label class="govuk-label govuk-radios__label" for="how-long-2">
                         2 to 4 weeks
                       </label>
                     </div>
-                    <br>
-                    <br>
                     <div class="govuk-radios__item">
                       <input class="govuk-radios__input" id="how-long-3" name="how-long" type="radio" value="moreThanFourWeeks">
                       <label class="govuk-label govuk-radios__label" for="how-long-3">
@@ -116,7 +112,7 @@ Nationaly - Universal Credit
                       </label>
                     </div>
                   </div>
-                </div>
+                <!--/div-->
               </div>
             </div>
           </div>
@@ -129,9 +125,6 @@ Nationaly - Universal Credit
       }) }}
 
     </form>
-  </div>
-  <div class="student-notes-box">
-    <p></p>
   </div>
 
   {% endblock %}

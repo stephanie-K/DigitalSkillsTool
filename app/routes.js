@@ -238,12 +238,41 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAbank', function (req, 
   return res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
 
+router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive', function (req, res) {
+  var whereYouLive = req.session.data['UC-where-you-live']
+  if ((whereYouLive === 'rentFromCouncil') || 
+      (whereYouLive === 'rentFromPrivateLandlord')
+      ) {
+        res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments')
+      }
+      if (whereYouLive === 'tempAcc'){
+          res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation')
+          } else {
+                  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingNotSure')
+                  }
+})
+
 router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingTempAccommodation', function (req, res) {
   req.session.data['housing-done'] = true
   req.session.data['1st-display'] = false
   req.session.data['green-to-display'] = "housing"
   res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments', function (req, res) {
+  req.session.data['housing-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "housing"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
+router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingNotSure', function (req, res) {
+  req.session.data['housing-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "housing"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+})
+
 
 router.post('/forms/govuk-forms/universal-credit-apply/UCAwithChildDetails', function (req, res) {
   req.session.data['withyou-done'] = true

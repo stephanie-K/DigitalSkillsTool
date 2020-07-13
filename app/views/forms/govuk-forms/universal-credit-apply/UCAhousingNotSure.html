@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Health - Universal Credit
+Housing - Universal Credit
 {% endblock %}
 
 
@@ -17,43 +17,20 @@ Health - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Your health conditions
+    Nearly done
   </h1>
+  <div class="student-notes-box">
+    <p>On the real form you might be asked a bit more questions here, but we are not sure.</p>
+    <p>You can just select 'Continue'</p>
+  </div>
   <form class="form" method="post">
-
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-
-    {{ govukRadios({
-      classes: "govuk-radios--inline",
-      idPrefix: "conditions-name",
-      name: "conditions-name",
-      fieldset: {
-        legend: {
-          text: "Do you have any illnesses, disabilities or ongoing conditions?",
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      items: [
-      {
-        value: "yes",
-        text: "Yes"
-      },
-      {
-        value: "no",
-        text: "No"
-      }
-      ]
-    }) }}
-
-
+    
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue",
-      href: "/forms/govuk-forms/universal-credit-apply/UCAhealthWhatConditions"
+      text: "Continue"
     }) }}
-
   </form>
-  <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
+<p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
 </div>
 
 
