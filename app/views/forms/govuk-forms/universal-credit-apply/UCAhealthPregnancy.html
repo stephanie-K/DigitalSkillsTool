@@ -91,17 +91,20 @@ Health - Universal Credit
             </div>
           </div>
           <br>
+        </div>
+      </fieldset>
+    </div>
 
 
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
-            text: "Continue",
-            href: "/forms/govuk-forms/universal-credit-apply/UCAhealthHospital"
-          }) }}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAhealthHospital"
+    }) }}
 
-        </form>
-        <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
-      </div>
+  </form>
+  <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
+</div>
 
 
-      {% endblock %}
+{% endblock %}
