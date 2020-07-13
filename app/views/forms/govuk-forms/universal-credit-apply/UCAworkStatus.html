@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Housing - Universal Credit
+Work and earnings - Universal Credit
 {% endblock %}
 
 
@@ -17,46 +17,48 @@ Housing - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Housing: temporary accommodation
+    Employment status
   </h1>
+
   <form class="form" method="post">
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
     {{ govukRadios({
-      idPrefix: "temp-accommodation",
-      name: "temp-accommodation",
+      idPrefix: "employment-status",
+      name: "employment-status",
       fieldset: {
         legend: {
-          text: "What type of temporary accommodation are you in?",
-          isPageHeading: true,
+          text: "What is your employment status?",
           classes: "govuk-fieldset__legend--m"
         }
       },
       items: [
       {
-        value: "hostelBnB",
-        text: "The council have put me in temporary accommodation, like a hostel or B&B"
+        value: "employed",
+        text: "Employed"
       },
       {
-        value: "nightShelter",
-        text: "I'm in a night shelter"
+        value: "selfEmployed",
+        text: "Self-employed"
       },
       {
-        value: "refuge",
-        text: "I'm in a refuge"
-      },
-      {
-        value: "bailHostel",
-        text: "I'm in a bail hostel ('approved premises')"
+        value: "both",
+        text: "Both employed and self-employed"
       }
       ]
     }) }}
+
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAworkEarnings"
     }) }}
+
   </form>
   <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
 </div>
+
 <div class="student-notes-box">
   <p></p>
 </div>

@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Housing - Universal Credit
+Health - Universal Credit
 {% endblock %}
 
 
@@ -17,46 +17,53 @@ Housing - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Housing: temporary accommodation
+    Tell us what conditions you have
   </h1>
   <form class="form" method="post">
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-    {{ govukRadios({
-      idPrefix: "temp-accommodation",
-      name: "temp-accommodation",
-      fieldset: {
-        legend: {
-          text: "What type of temporary accommodation are you in?",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
+
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {{ govukInput({
+      label: {
+        text: "Name of condition 1",
+        classes: "govuk-label--m"
       },
-      items: [
-      {
-        value: "hostelBnB",
-        text: "The council have put me in temporary accommodation, like a hostel or B&B"
-      },
-      {
-        value: "nightShelter",
-        text: "I'm in a night shelter"
-      },
-      {
-        value: "refuge",
-        text: "I'm in a refuge"
-      },
-      {
-        value: "bailHostel",
-        text: "I'm in a bail hostel ('approved premises')"
-      }
-      ]
+      id: "condition-name",
+      name: "condition-name",
+      classes: "govuk-input--width-20"
     }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Name of condition 2",
+        classes: "govuk-label--m"
+      },
+      id: "condition2-name",
+      name: "condition2-name",
+      classes: "govuk-input--width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Name of condition 3",
+        classes: "govuk-label--m"
+      },
+      id: "condition3-name",
+      name: "condition3-name",
+      classes: "govuk-input--width-20"
+    }) }}
+
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAhealthAboutConditions"
     }) }}
+
   </form>
   <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
 </div>
+
 <div class="student-notes-box">
   <p></p>
 </div>

@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Caring for someone - Universal Credit
+Health - Universal Credit
 {% endblock %}
 
 
@@ -17,7 +17,7 @@ Caring for someone - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Caring for someone
+    Ability to work
   </h1>
 
   <form class="form" method="post">
@@ -25,50 +25,44 @@ Caring for someone - Universal Credit
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h1 class="govuk-fieldset__heading">
-            Are you caring for someone with a health condition or disability?
+            Do any of your conditions restrict your ability to work or look for work?
           </h1>
         </legend>
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="caring-conditional" name="caring-check" type="radio" value="yes" data-aria-controls="conditional-caring-conditional">
-            <label class="govuk-label govuk-radios__label" for="caring-conditional">
+            <input class="govuk-radios__input" id="work-conditional" name="work-check" type="radio" value="yes" data-aria-controls="conditional-work-conditional">
+            <label class="govuk-label govuk-radios__label" for="work-conditional">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="caring-2" name="caring-check" type="radio" value="no" >
-            <label class="govuk-label govuk-radios__label" for="caring-2">
+            <input class="govuk-radios__input" id="work-2" name="work-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="work-2">
               No
             </label>
           </div>
           <br>
           <br>
           <br>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-caring-conditional">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-work-conditional">
             <div class="govuk-form-group">
-              <label class="govuk-fieldset__legend--m" for="caring-input">
-                Does this person get one of the following benefits?
+              <label class="govuk-fieldset__legend--m" for="work-input">
+                Do you have a fit note?
               </label>
-              <span class="govuk-hint" style="margin:10px 0px 0px 0px;">
-                <li>Disability Living Allowance - middle or higher rate </li>
-                <li>Personal Independance Payment</li>
-                <li>Armed Force Independance Payment</li>
-                <li>Attendance Allowance</li>
-                <li>Constant Attendance Allowance</li>
-                <br>
-                <span style="margin:10px 0px 0px 0px;"> Answer 'yes' if this person has applied but is waiting for an answer.</span>
+              <span class="govuk-hint" style="margin:10px 0px 0px 0px">
+                You need to get one from your doctor if you're ill for more than 7 days. It may also be called a 'statement of fitness for work'.
               </span>
               <div style="margin:15px 0px 0px 0px">
                 <div class="govuk-radios">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="caring-benefits" name="caring-benefits" type="radio" value="yes">
-                    <label class="govuk-label govuk-radios__label" for="caring-benefits">
+                    <input class="govuk-radios__input" id="fit-1" name="fit" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="fit-1">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="caring-benefits-2" name="caring-benefits" type="radio" value="no">
-                    <label class="govuk-label govuk-radios__label" for="caring-benefits-2">
+                    <input class="govuk-radios__input" id="fit-2" name="fit" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="fit-2">
                       No
                     </label>
                   </div>
@@ -80,15 +74,19 @@ Caring for someone - Universal Credit
       </fieldset>
     </div>
 
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAhealthPregnancy"
     }) }}
-  </form>
 
+  </form>
+  <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
 </div>
 
-
-
+<div class="student-notes-box">
+  <p></p>
+</div>
 
 {% endblock %}

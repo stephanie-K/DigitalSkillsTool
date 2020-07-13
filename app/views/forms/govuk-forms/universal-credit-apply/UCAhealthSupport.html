@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Housing - Universal Credit
+Health - Universal Credit
 {% endblock %}
 
 
@@ -17,46 +17,57 @@ Housing - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Housing: temporary accommodation
+    Support at work
   </h1>
+
   <form class="form" method="post">
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
-    {{ govukRadios({
-      idPrefix: "temp-accommodation",
-      name: "temp-accommodation",
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+    {{ govukCheckboxes({
+      idPrefix: "support",
+      name: "support",
       fieldset: {
         legend: {
-          text: "What type of temporary accommodation are you in?",
-          isPageHeading: true,
+          text: "Tell us if you need any special support to help you at work?",
           classes: "govuk-fieldset__legend--m"
         }
       },
       items: [
       {
-        value: "hostelBnB",
-        text: "The council have put me in temporary accommodation, like a hostel or B&B"
+        value: "wheelchair",
+        text: "I have a wheelchair"
       },
       {
-        value: "nightShelter",
-        text: "I'm in a night shelter"
+        value: "hearing",
+        text: "I have a hearing loop"
       },
       {
-        value: "refuge",
-        text: "I'm in a refuge"
-      },
-      {
-        value: "bailHostel",
-        text: "I'm in a bail hostel ('approved premises')"
+        value: "dog",
+        text: "I have an assistance dog"
       }
       ]
     }) }}
+
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "other-support",
+      id: "other-support",
+      label: {
+        text: "I need other support (optional)",
+        classes: "govuk-label--m"
+      }
+    }) }}
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
       text: "Continue"
     }) }}
+
   </form>
   <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
 </div>
+
 <div class="student-notes-box">
   <p></p>
 </div>

@@ -2,7 +2,7 @@
 
 {% block pageTitle %}
 
-Housing - Universal Credit
+Health - Universal Credit
 {% endblock %}
 
 
@@ -17,46 +17,50 @@ Housing - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Housing: temporary accommodation
+    About your health conditions
   </h1>
   <form class="form" method="post">
     {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
     {{ govukRadios({
-      idPrefix: "temp-accommodation",
-      name: "temp-accommodation",
+      idPrefix: "health-name",
+      name: "health-name",
       fieldset: {
         legend: {
-          text: "What type of temporary accommodation are you in?",
-          isPageHeading: true,
+          text: "Has your doctor said you might have less than 6 months to live due to any of your conditions?",
           classes: "govuk-fieldset__legend--m"
         }
       },
+      hint: {
+        text: "This could also be a consultant or specialist nurse."
+      },
       items: [
       {
-        value: "hostelBnB",
-        text: "The council have put me in temporary accommodation, like a hostel or B&B"
+        value: "yes",
+        text: "Yes"
       },
       {
-        value: "nightShelter",
-        text: "I'm in a night shelter"
+        value: "no",
+        text: "No"
       },
       {
-        value: "refuge",
-        text: "I'm in a refuge"
-      },
-      {
-        value: "bailHostel",
-        text: "I'm in a bail hostel ('approved premises')"
+        value: "dontKnow",
+        text: "I do not know"
       }
       ]
     }) }}
+
+
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAhealthAbility"
     }) }}
+
   </form>
   <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
 </div>
+
 <div class="student-notes-box">
   <p></p>
 </div>

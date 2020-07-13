@@ -28,7 +28,7 @@ Saving and investments - Universal Credit
           </h1>
         </legend>
         <span id="savings-hint" class="govuk-hint" style="margin: 0px 0px 10px 0px">
-          Savings, investments cand capital might include:
+          Savings, investments and capital might include:
           <ul class="govuk-list govuk-list--bullet" style="margin: 20px 0px 0px 0px; color: grey;">
             <li>money in savings account</li>
             <li>money in your current account</li>
@@ -57,7 +57,8 @@ Saving and investments - Universal Credit
     </div>
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue"
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAsavingsValue"
     }) }}
   </form>
 </div>
