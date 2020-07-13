@@ -7,54 +7,57 @@ Best Start Grand
 
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
-  <h1 class="govuk-heading-xl">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 20px 0px">
     Do you have one or more children under 6 years old?
   </h1>
-  <p>This includes if you're the child's birth or step parent</p>
+  <p style="margin:0px">This includes if you're the child's birth or step parent</p>
 
-  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  <form class="form" method="post">
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-  {{ govukRadios({
-    classes: "govuk-radios--small",
-    idPrefix: "child-check",
-    name: "child-check",
-    items: [
-    {
-      value: "yes",
-      text: "Yes"
-    },
-    {
-      value: "not",
-      text: "No"
-    }
-    ]
-  }) }}
+    {{ govukRadios({
+      classes: "govuk-radios--small",
+      idPrefix: "child-check",
+      name: "child-check",
+      items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "not",
+        text: "No"
+      }
+      ]
+    }) }}
 
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        If your baby died under 6 months old or was stillborn
-      </span>
-    </summary>
-    <div class="govuk-details__text" style="border-left: 6px solid #0065bd;">
-      <p>We’re sorry to hear your baby died or was stillborn.</p>
-      <p>Select ‘No’ if this was your only child.</p>
-      <p>We'll ask you more questions about this later on.</p>
-    </div>
-  </details>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If your baby died under 6 months old or was stillborn
+        </span>
+      </summary>
+      <div class="govuk-details__text" style="border-left: 6px solid #0065bd;">
+        <p>We’re sorry to hear your baby died or was stillborn.</p>
+        <p>Select ‘No’ if this was your only child.</p>
+        <p>We'll ask you more questions about this later on.</p>
+      </div>
+    </details>
 
-  {{ govukButton({
-    text: "Back",
-    classes: "sg-button-back",
-    href: "javascript: history.go(-1)"
-  }) }}
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
 
-  {{ govukButton({
-    text: "Next",
-    classes: "button-primary",
-    href: "/forms/sss-forms/best-start/BS-child-check-2",
-    isStartButton: true
-  }) }}
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-child-check-2",
+      isStartButton: true
+    }) }}
+
+  </form>
 
 </div>
 

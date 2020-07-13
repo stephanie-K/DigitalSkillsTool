@@ -1,104 +1,107 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-  Best Start Grand
+Best Start Grand
 {% endblock %}
 
 
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
-    <h1 class="govuk-heading-xl">
-        Benefits and payments
-    </h1>
-    <p>Tell us if you or your partner are getting, or have applied for and are waiting on the outcome of, any of these benefits. Someone is your partner if you live together and are a couple, married or civil partners.</p>
+  <h1 class="govuk-heading-xl">
+    Benefits and payments
+  </h1>
+  <p style="margin:0px">Tell us if you or your partner are getting, or have applied for and are waiting on the outcome of, any of these benefits. Someone is your partner if you live together and are a couple, married or civil partners.</p>
 
-{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+  <form class="form" method="post">
+    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-{{ govukCheckboxes({
-  idPrefix: "benefits-payments",
-  name: "benefits-payments",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "Select all that apply:",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "CTC",
-      text: "Child Tax Credit"
-    },
-    {
-      value: "UC",
-      text: "Universal Credit (UC)"
-    },
-    {
-      value: "IS",
-      text: "Income Support"
-    },
-    {
-      value: "PC",
-      text: "Pension Credit"
-    },
-    {
-      value: "WTC",
-      text: "Working Tax Credit"
-    },
-    {
-      value: "HB",
-      text: "Housing Benefit"
-    },
-    {
-      value: "JSA",
-      text: "income-based Job Seeker's Allowance (JSA)"
-    },
-    {
-      value: "ESA",
-      text: "income-related Employment and Support Allowance (ESA)"
-    },
-    {
-      value: "dont-know",
-      text: "I do not know"
-    },
-    {
-      value: "none",
-      text: "None of these"
-    }
-  ]
-}) }}
+    {{ govukCheckboxes({
+      idPrefix: "benefits-payments",
+      name: "benefits-payments",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "Select all that apply:",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+      {
+        value: "CTC",
+        text: "Child Tax Credit"
+      },
+      {
+        value: "UC",
+        text: "Universal Credit (UC)"
+      },
+      {
+        value: "IS",
+        text: "Income Support"
+      },
+      {
+        value: "PC",
+        text: "Pension Credit"
+      },
+      {
+        value: "WTC",
+        text: "Working Tax Credit"
+      },
+      {
+        value: "HB",
+        text: "Housing Benefit"
+      },
+      {
+        value: "JSA",
+        text: "income-based Job Seeker's Allowance (JSA)"
+      },
+      {
+        value: "ESA",
+        text: "income-related Employment and Support Allowance (ESA)"
+      },
+      {
+        value: "dont-know",
+        text: "I do not know"
+      },
+      {
+        value: "none",
+        text: "None of these"
+      }
+      ]
+    }) }}
 
-{{ govukCheckboxes({
-  idPrefix: "declaration",
-  name: "declaration",
-  classes: "govuk-checkboxes--small",
-  fieldset: {
-    legend: {
-      text: "Please tick this box:",
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  items: [
-    {
-      value: "CTC",
-      text: "I declare that my current benefit claim is correct, complete and up to date as far as I know and believe."
-    }
-  ]
-}) }}
+    {{ govukCheckboxes({
+      idPrefix: "declaration",
+      name: "declaration",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "Please tick this box:",
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      items: [
+      {
+        value: "CTC",
+        text: "I declare that my current benefit claim is correct, complete and up to date as far as I know and believe."
+      }
+      ]
+    }) }}
 
-{{ govukButton({
-  text: "Back",
-  classes: "sg-button-back",
-  href: "javascript: history.go(-1)"
-}) }}
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
 
-{{ govukButton({
-  text: "Next",
-  classes: "button-primary",
-  href: "/forms/sss-forms/best-start/BS-child-check",
-  isStartButton: true
-}) }}
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-child-check",
+      isStartButton: true
+    }) }}
 
-  </div>
+  </form>
+
+</div>
 
 {% endblock %}

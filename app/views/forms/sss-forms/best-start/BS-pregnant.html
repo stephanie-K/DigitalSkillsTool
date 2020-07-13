@@ -7,9 +7,10 @@ Best Start Grand
 
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
-  <h1 class="govuk-heading-xl">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 20px 0px">
     Are you or your partner pregnant?
   </h1>
+  
   <form class="form" method="post">
     <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
       <fieldset class="govuk-fieldset">
@@ -57,21 +58,21 @@ Best Start Grand
         </div>
       </fieldset>
     </div>
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-child-check-3",
+      isStartButton: true
+    }) }}
+
   </form>
-
-
-  {{ govukButton({
-    text: "Back",
-    classes: "sg-button-back",
-    href: "javascript: history.go(-1)"
-  }) }}
-
-  {{ govukButton({
-    text: "Next",
-    classes: "button-primary",
-    href: "/forms/sss-forms/best-start/BS-child-check-3",
-    isStartButton: true
-  }) }}
 
 </div>
 
