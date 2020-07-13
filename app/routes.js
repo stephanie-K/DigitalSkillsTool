@@ -240,7 +240,7 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAbank', function (req, 
 
 router.post('/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive', function (req, res) {
   var whereYouLive = req.session.data['UC-where-you-live']
-  if ((whereYouLive === 'rentFromCouncil') || 
+  if ((whereYouLive === 'rentFromCouncil') ||
       (whereYouLive === 'rentFromPrivateLandlord')
       ) {
         res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhousingRentPayments')
@@ -687,4 +687,17 @@ router.post('/forms/erc-forms/housing/CBLextra-reason-medical', function (req, r
 router.post('/forms/other-forms/patient-access/pa-register2', function (req, res) {
   const email = req.session.data['email']
   res.redirect('/forms/other-forms/patient-access/pa-success')
+})
+
+router.post('/forms/sss-forms/best-start/BS-location', function (req, res) {
+  var whereYouLive = req.session.data['BSG-location-name'];
+
+  if ((whereYouLive === 'scotland')) {
+     res.redirect('/forms/sss-forms/best-start/BS-start');
+  } else if (whereYouLive === 'eWNI') {
+      res.redirect('/forms/sss-forms/best-start/BS-england');
+  } else {
+      res.redirect('/forms/sss-forms/best-start/BS-outside');
+  }
+
 })
