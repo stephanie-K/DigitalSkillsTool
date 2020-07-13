@@ -15,7 +15,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
-$sg-blue : #0065bd; 
+$sg-blue : #0065bd;
 $sss-pink: #e5007c;
 $sss-text: #333;
 
@@ -31,7 +31,7 @@ $sss-text: #333;
 }
 .sss-tagline {
     font-size: 24px;
-    color: white; 
+    color: white;
     background-color: $sss-pink;
     padding: 4px 10px;
     font-weight: 500;
@@ -40,7 +40,7 @@ $sss-text: #333;
 
 .sg-tagline {
     font-size: 24px;
-    color: white; 
+    color: white;
     background-color: $sg-blue;
     padding: 4px 10px;
     font-weight: 500;
@@ -51,7 +51,7 @@ $sss-text: #333;
 }
 
 .govuk-header__content {
-    @media only screen and (min-width: 999px) { 
+    @media only screen and (min-width: 999px) {
     border: 30px solid #fff;
     }
     a {
@@ -60,7 +60,7 @@ $sss-text: #333;
 }
 
 .govuk-header__content.sg-tagline {
-    @media only screen and (min-width: 999px) { 
+    @media only screen and (min-width: 999px) {
     border: 5px solid #fff;
     }
     a {
@@ -183,7 +183,7 @@ body p, p.govuk-body-l, .govuk-heading-s, .govuk-heading-l, .govuk-heading-xl, .
 }
 
 body, p, li, ul, h1, h2, h3 {
-    line-height: 2;
+    line-height: 1.5;
 }
 .govuk-form-group {
     padding-top: 2em;
@@ -202,7 +202,7 @@ body, p, li, ul, h1, h2, h3 {
 }
 
 .sg-button-sensitive, .sg-button-sensitive:hover{
-    background-color: #4e9d52;  
+    background-color: #4e9d52;
     border-top: 1px solid #fff;
     margin: 0 0 10px 0;
     width: 100%;
@@ -330,5 +330,14 @@ background-color: transparent;
     }
     dl {
         margin-bottom: 0;
-    }    
+    }
+}
+
+
+// -----------------------------  Best Start Grant -1 ------------------------------------------ //
+
+@media only screen and (max-width: 1000px) {
+  .sg-logo {
+    width: 100%;
+  }
 }

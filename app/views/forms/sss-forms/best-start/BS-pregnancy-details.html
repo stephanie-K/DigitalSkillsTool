@@ -1,0 +1,70 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grand
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 30px 0px">
+    Pregnancy details
+  </h1>
+  <p style="margin:0px;">Your midwife lets you know at your 12-week scan how many babies you should be expecting. If you haven't had this scan yet, you should select 'It’s too early to know', then complete this form.</p>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group" style="padding:0px; margin:40px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <p><strong>How many babies are you expecting?</strong></p>
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pregnant-details-2" name="pregnant-details-check" type="radio" value="one">
+            <label class="govuk-label govuk-radios__label" for="pregnant-details-2">
+              1
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pregnant-details-conditional" name="pregnant-details-check" type="radio" value="moreThanOne" data-aria-controls="conditional-pregnant-details-conditional">
+            <label class="govuk-label govuk-radios__label" for="pregnant-details-conditional">
+              More than 1
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pregnant-details-2" name="pregnant-details-check" type="radio" value="tooEarly">
+            <label class="govuk-label govuk-radios__label" for="pregnant-details-2">
+              It's too early to know
+            </label>
+          </div>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pregnant-details-conditional" style="border:none; padding:0px; margin:0px;">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <p><strong>How many babies are due?</strong></p>
+                <input class="govuk-input" id="babies-due" name="babies-due" type="text">
+              </fieldset>
+            </div>
+          </div>
+          <br>
+        </div>
+      </fieldset>
+    </div>
+    <p style="margin:0px 0px 60px 0px">If you’re pregnant and haven’t told a GP or midwife, you should do this as soon as you can. This is so you can get the right type of care leading up to the birth of your baby. If you do not have a GP, you can <a href="https://www.nhsinform.scot/">find your nearest GP online</a>. If you’re worried and need advice over the phone, you can call NHS 24 on 111.</p>
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-pregnancy-due-date",
+      isStartButton: true
+    }) }}
+
+  </form>
+</div>
+
+{% endblock %}

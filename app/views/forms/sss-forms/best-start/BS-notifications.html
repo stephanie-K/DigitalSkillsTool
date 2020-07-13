@@ -1,0 +1,99 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grand
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px;">
+    Notifications
+  </h1>
+
+  <form class="form" method="post">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Would you like to get text messages from us?
+          </h1>
+        </legend>
+        <p>This is so we can let you know about the progress of your application, our feedback survey, or any other Social Security Scotland benefits you might be able to get.</p>
+        <div class="govuk-radios govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="text-messages" name="text-messages" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="text-messages">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="text-messages-2" name="text-messages" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="text-messages-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Can we use your email address?
+          </h1>
+        </legend>
+        <p>We need to send your email address to allpay to set up your online Best Start Foods account. We'll also use this to let you know about the progress of your application, our feedback survey, or any other Social Security Scotland benefits you might be able to get.</p>
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-email-conditional" name="contact-email-check" type="radio" value="yes" data-aria-controls="conditional-contact-email-conditional">
+            <label class="govuk-label govuk-radios__label" for="contact-email-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item" style="margin:0px 0px 30px 0px;">
+            <input class="govuk-radios__input" id="contact-email-2" name="contact-email-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="contact-email-2">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-email-conditional" style="border:none; padding:0px; margin:0px;">
+
+            <div class="govuk-form-group" style="margin:0; padding:0;">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="email">
+                  Email address
+                </label>
+              </h1>
+              <p>Social Security Scotland will only keep hold of the latest email address you have provided. This will mean any previous email addresses supplied will be replaced. This may affect the communications you get and access to your allpay account.</p>
+              <input class="govuk-input" id="email" name="email" type="text">
+            </div>
+          </div>
+          <br>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-letters",
+      isStartButton: true
+    }) }}
+
+  </form>
+
+</div>
+
+{% endblock %}

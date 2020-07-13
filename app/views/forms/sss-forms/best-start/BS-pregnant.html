@@ -1,0 +1,79 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grand
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 20px 0px">
+    Are you or your partner pregnant?
+  </h1>
+  
+  <form class="form" method="post">
+    <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pregnant-conditional" name="pregnant-check" type="radio" value="yes" data-aria-controls="conditional-pregnant-conditional">
+            <label class="govuk-label govuk-radios__label" for="pregnant-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="pregnant-2" name="pregnant-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="pregnant-2">
+              No
+            </label>
+          </div>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-pregnant-conditional" style="border:none; padding:0px; margin:0px;">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Who is pregnant?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--small">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="who-pregnant" name="who-pregnant" type="radio" value="me">
+                    <label class="govuk-label govuk-radios__label" for="who-pregnant">
+                      Me
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="who-pregnant-2" name="who-pregnant" type="radio" value="partner">
+                    <label class="govuk-label govuk-radios__label" for="who-pregnant-2">
+                      My partner
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <br>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-child-check-3",
+      isStartButton: true
+    }) }}
+
+  </form>
+
+</div>
+
+{% endblock %}
