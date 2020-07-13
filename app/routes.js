@@ -418,6 +418,22 @@ router.post('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry
   }
 })
 
+router.post('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpayment', function (req, res) {
+  var cardnumber_entered = req.session.data ['ct-cardnumber']
+  var code_entered = req.session.data ['ct-security-code']
+  var name_entered = req.session.data ['ct-name-on-card']
+  var houseno_entered = req.session.data ['ct-houseno-on-card']
+  var street_entered = req.session.data ['ct-street-on-card']
+  var town_entered = req.session.data ['ct-town-on-card']
+  var postcode_entered = req.session.data ['ct-postcode-on-card']
+  var all_entered = cardnumber_entered && code_entered && name_entered && houseno_entered && street_entered && town_entered && postcode_entered
+  if (all_entered) {
+    res.redirect('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentAccepted')
+  } else {
+    res.redirect('/forms/erc-forms/council-tax-online/pay-council-tax/PCTpayment')
+  }
+})
+
 
 // Equality and diversity form *****************************************************************
 
