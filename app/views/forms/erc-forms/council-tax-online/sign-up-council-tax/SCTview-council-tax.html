@@ -1,0 +1,83 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Council Tax Online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Your Council Tax accounts</p> 
+
+    <div class="erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">Below is a list of your Council Tax accounts. Please select the account you wish to query.</p>
+      <p class="govuk-!-font-size-14">PAYMENTS - It is not possible to make a payment against an account until the start date for the account has passed. <strong>Please note that any payments made within the last 2 working days may not be shown.</strong>.</p>
+    </div>
+    <p class="govuk-!-font-size-14">Please select the account to query <span style="color: red;">*</span></p>
+ 
+    <div class="ct-account">
+      <table class="govuk-table" style="overflow: auto;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Account Ref</th>
+            <th scope="col" class="govuk-table__header">Start Date</th>
+            <th scope="col" class="govuk-table__header">End Date</th>
+            <th scope="col" class="govuk-table__header">Amount Due</th>
+            <th scope="col" class="govuk-table__header">Payments</th>
+            <th scope="col" class="govuk-table__header">Balance Outstanding</th>
+            <th scope="col" class="govuk-table__header">Start of Address</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell">ERC45H0</td>
+            <td class="govuk-table__cell">01/04/2020</td>
+            <td class="govuk-table__cell">31/03/2021</td>
+            <td class="govuk-table__cell">313.74</td>
+            <td class="govuk-table__cell">-50.00</td>
+            <td class="govuk-table__cell">263.74</td>
+            <td class="govuk-table__cell">4B Test street</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+      {{ govukButton({
+        text: "Log out",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/CTstart"
+      }) }}
+
+      {{ govukButton({
+        text: "Return to Home page",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCThomepage"
+      }) }}
+
+      {{ govukButton({
+        text: "Pay account",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTpay-account"
+      }) }}
+  
+      {{ govukButton({
+        text: "View account",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTview-account"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>On the real form, you might see more than one line and you would have to chose one.</p>
+    <p>You would see your account reference, how much your are still to pay and the start of your real address.</p>
+</div>
+{% endblock %}

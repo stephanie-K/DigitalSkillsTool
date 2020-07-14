@@ -1,0 +1,79 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Council Tax Online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Payments</p> 
+
+    <div class="erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">Below is a list of payments and transaction against Council Tax account ERC45H0 ending 31-MAR-2021</p>
+    </div>
+ 
+    <div class="ct-account">
+      <table class="govuk-table" style="overflow: auto;">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date</th>
+            <th scope="col" class="govuk-table__header">Transaction Type</th>
+            <th scope="col" class="govuk-table__header">Amount</th>
+            <th scope="col" class="govuk-table__header">Source</th>
+            <th scope="col" class="govuk-table__header">Type</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">31/05/2020</td>
+            <td class="govuk-table__cell">PAYMENT</td>
+            <td class="govuk-table__cell">20</td>
+            <td class="govuk-table__cell">ICON CASH RECEIPTING</td>
+            <td class="govuk-table__cell">WEBPAY PUBLIC DEBIT CARD</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">30/05/2020</td>
+            <td class="govuk-table__cell">PAYMENT</td>
+            <td class="govuk-table__cell">30</td>
+            <td class="govuk-table__cell">ICON CASH RECEIPTING</td>
+            <td class="govuk-table__cell">WEBPAY PUBLIC DEBIT CARD</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+      {{ govukButton({
+        text: "Log out",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/CTstart"
+      }) }}
+
+      {{ govukButton({
+        text: "Return to account list",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTview-council-tax"
+      }) }}
+
+      {{ govukButton({
+        text: "Return to account details",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTview-account"
+      }) }}
+  
+
+    </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>On the real form, you might see more than 2 lines or less and it will be the details of your own payments for this account</p>
+    <p>You would see your own account reference at the top</p>
+</div>
+{% endblock %}

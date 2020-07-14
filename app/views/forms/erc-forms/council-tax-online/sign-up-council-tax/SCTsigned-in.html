@@ -13,15 +13,16 @@ Signed In
     </h1>
 
     <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
-    <p class="erc-alt-dark-blue-bg">?</p> 
-   
-    <h3 class="govuk-heading-l">You are signed in!</h3>
-
-    <h3 class="govuk-heading-m">Need to see the screens to be able to code them - need someone with an account</h3>
+    <p class="erc-alt-dark-blue-bg">Succesful</p> 
+    <p class="ercSuccess govuk-!-font-size-14">You have successfully signed in to Council Tax Online</p>
+    <p>Please use the Continue button to take you to your council tax information and to maintain your online profile.</p>
 
 
-
-      <p class="govuk-tag red govuk-!-margin-top-1 govuk-!-margin-bottom-1">This is a work in progress</p>
+    {{ govukButton({
+      text: "Continue",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCThomepage"
+    }) }}
 
     </div>
   </div>

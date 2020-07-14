@@ -1,0 +1,63 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Council Tax Online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Account details</p> 
+
+    <div class="erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">Account reference  <strong>ERC45H0</strong></p>
+      <p class="govuk-!-font-size-14">Property Address is 4B Test Street, Barrhead.</p>
+    </div>
+  
+    <p class="govuk-!-font-size-14 govuk-!-margin-top-5">Start Date : 01-APR-2020<br>
+    End Date : 31-MAR-2021<br>
+    Gross Charge: 1512.82<br>
+    Transitional Relief : 0<br>
+    Exempt : 0 <br>
+    Disabled Relief : 0<br>
+    Discount : 0<br>
+    Benefit : -1100.63<br>
+    Sewerage/Water Reduction : - 98.45<br>
+    Costs : 0<br>
+    Net Amount Due : 313.74<br>
+    Payments: 50.00<br>
+    Balance Outstanding: 263.74</p>
+
+
+      {{ govukButton({
+        text: "Return to account list",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTview-council-tax"
+      }) }}
+
+      {{ govukButton({
+        text: "Post copy bill",
+        classes: "button-primary erc-alt",
+        href: "#"
+      }) }}
+  
+      {{ govukButton({
+        text: "Show payments",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTshow-payment"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>On the real form, you would see the real information for the account you selected on the page before</p>
+    <p>Post copy bill doesn't work yet</p>
+</div>
+{% endblock %}

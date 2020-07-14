@@ -521,6 +521,23 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     }
 }
 
+.ct-account {
+    .govuk-table__header {
+        background-color: #558AA6;
+        color: #fff;
+        font-size: 14px;
+        border: 1px solid #ffffff;
+        padding-left: 5px;
+    }  
+    .govuk-table__cell {
+        Background-color: #E8ECEE;
+        border-bottom: 0;
+        font-size: 14px;
+        border: 1px solid #ffffff;
+        padding: 20px 5px !important;
+    }
+}
+
 div.payment-error{
     li {
         font-size: 14px;
