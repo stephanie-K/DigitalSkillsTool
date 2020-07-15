@@ -1,0 +1,51 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Do I qualify?</p> 
+    <p class="erc-alt-dark-grey-round govuk-!-font-size-14">You qualify for free school meals and a clothing grant of £100 per pupil</p>
+    <p class="govuk-!-font-size-14">We will confirm from our records that you are in receipt of the benefits indicated. If you are not already on our benefit system we may contact you for proof.</p>
+    <p class="govuk-!-font-size-14">If you qualify because you receive support under Part IV of the Immigration and Asylum Act 1999, you will need to send your Home Office letter by scanning and e-mailing it to CCSBusSupportCGFSM@eastrenfrewshire.gov.uk or by free post to</p>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        <div style="border: 1px solid #bbb; border-radius: 0.5em 0.5em 0.5em 0.5em; box-shadow: 1px 1px 5px #B8B8B8; padding: 5px 5px 5px 20px; margin-bottom: 20px" >
+          <p class="govuk-!-font-size-14" >FREEPOST RSRR-HTXY-AZEA <br>
+          East Renfrewshire Council<br>
+          Rouken Glen Road<br>
+          Giffnock<br>
+          G46 6UG</p>
+        </div>
+        <p class="govuk-!-font-size-14">Or call in to our service centres at</p>
+        <p>FORM TO BE CONTINUED.....</p>
+      </div>
+    </div>
+
+
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "javascript: history.go(-1)"
+      }) }}
+
+      {{ govukButton({
+        text: "Apply",
+        classes: "button-primary erc-alt",
+        href: "#"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -538,6 +538,22 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     }
 }
 
+.school-meals {
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+    thead {
+        background-color:#ddd;
+    }
+    th {
+        padding: 5px 5px 20px 5px;
+    }
+    td {
+        padding: 5px;
+    }
+}
+
+
 div.payment-error{
     li {
         font-size: 14px;

@@ -476,6 +476,32 @@ router.post('/forms/erc-forms/pay-rent/PRpayment', function (req, res) {
   }
 })
 
+// Free school meals and clothing grants *****************************************************************
+
+router.post('/forms/erc-forms/free-school-meals/FSMgeneralInfo', function (req, res) {
+  var have_bank_account = req.session.data['have-bank-acc']
+  // we are not testing living in East Renfewshire value because it doesn't change anything for the routing
+  if (have_bank_account === 'yes') {
+    return res.redirect('/forms/erc-forms/free-school-meals/FSMbenefits')
+  }
+  if (have_bank_account === 'no') {
+    return res.redirect('/forms/erc-forms/free-school-meals/FSMnoBankAcc')
+  }
+  res.redirect('/forms/erc-forms/free-school-meals/FSMgeneralInfo')
+})
+
+router.post('/forms/erc-forms/free-school-meals/FSMbenefits', function (req, res) {
+  var benefit = req.session.data['fsm-benefits']
+  var benefitNext = req.session.data['fsm-benefits-next']
+// we test if all checkboxes are empty
+  if (benefit || benefitNext)  {
+    return res.redirect('/forms/erc-forms/free-school-meals/FSMqualify')
+  }
+  res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
+})
+
+
+
 // Equality and diversity form *****************************************************************
 
 router.post('/forms/erc-forms/equal-opportunities/age', function (req, res) {

@@ -1,0 +1,66 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Tax credits and income</p> 
+    <p class="govuk-!-font-size-14">What you receive - please indicate: <span style="color: red"> *</span></p>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="which-tax" name="which-tax" type="radio" value="child-tax-only">
+            <label class="govuk-label govuk-radios__label" for="which-tax">
+              Child Tax Credit only
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="which-tax-2" name="which-tax" type="radio" value="working-tax-too">
+            <label class="govuk-label govuk-radios__label" for="which-tax-2">
+              Working Tax Credit and Child Tax Credit
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="which-tax-2" name="which-tax" type="radio" value="neither">
+            <label class="govuk-label govuk-radios__label" for="which-tax-3">
+              Neither of the above
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">What is your gross household income for year 2019/20 or projected income for year 2020/21? For year 2020/21 this should be the projected annual income for year 2020/21 as assessed on your tax credit award letter for 2020/21 from HM Revenue and Customs (TC602).</p>
+    </div>
+
+    <p>FORM TO BE CONTINUED.....</p>
+
+
+
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "javascript: history.go(-1)"
+      }) }}
+
+      {{ govukButton({
+        text: "Apply",
+        classes: "button-primary erc-alt",
+        href: "#"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
