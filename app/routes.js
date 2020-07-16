@@ -487,6 +487,8 @@ router.post('/forms/erc-forms/free-school-meals/FSMgeneralInfo', function (req, 
   if (have_bank_account === 'no') {
     return res.redirect('/forms/erc-forms/free-school-meals/FSMnoBankAcc')
   }
+  // give the variable a value so we know there is an error to display
+  req.session.data['have-bank-acc'] = 'not-selected'
   res.redirect('/forms/erc-forms/free-school-meals/FSMgeneralInfo')
 })
 
@@ -500,7 +502,53 @@ router.post('/forms/erc-forms/free-school-meals/FSMbenefits', function (req, res
   res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
 })
 
+router.post('/forms/erc-forms/free-school-meals/FSMtaxCredits', function (req, res) {
+  var tax = req.session.data['which-tax']
+  var income = req.session.data['income']
+if (income === 'more'){
+  return res.redirect('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction')
+}
+if (income === 'less' ) {
+  if (tax === 'neither') {
+    return res.redirect('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction')
+  } else {
+    if (tax === 'child-tax-only' || tax === 'working-tax-too') {
+      return res.redirect('/forms/erc-forms/free-school-meals/FSMqualify')
+    }
+    else {
+       // give the variable a value so we know there is an error to display
+        req.session.data['which-tax'] = 'tax-not-selected'
+        res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
+    }  
+  }
+}
+if (income === 'between' ) {
+  if (tax === 'neither') {
+    return res.redirect('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction')
+  } else {
+    if (tax === 'child-tax-only' || tax === 'working-tax-too') {
+      return res.redirect('/forms/erc-forms/free-school-meals/FSMqualify')
+    }
+    else {
+       // give the variable a value so we know there is an error to display
+        req.session.data['which-tax'] = 'tax-not-selected'
+        res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
+    }  
+  }
+}
+// give the variables a value so we know there is an error to display
+req.session.data['income'] = 'income-not-select'
+res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
+})
 
+router.post('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction', function (req, res) {
+  var benefitExtra = req.session.data['fsm-benefits-extra']
+// we test if one of the checkbox at list is checked
+  if (benefitExtra) {
+    return res.redirect('/forms/erc-forms/free-school-meals/FSMqualifyClothingGrant')
+  }
+  res.redirect('/forms/erc-forms/free-school-meals/FSMnoGrant')
+})
 
 // Equality and diversity form *****************************************************************
 
