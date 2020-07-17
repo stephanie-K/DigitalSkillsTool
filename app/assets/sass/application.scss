@@ -206,14 +206,16 @@ $govuk-assets-path: '/govuk/assets/';
 
 /* ----------------------------------------------------------------------- Helpers ---------------------------------------------- */
 .student-notes-box{
-  border: solid 1px #bcdff1;
+  border: solid 1px #008062;
   margin: 20px 0;
   padding: 25px 15px;
   border-radius: 10px;
-  color: #31708f ;
-  background-color: #d9edf7;
-  p, h3, li {
-      color: #31708f;
+  color: #008062 ; //#31708f ;
+  //background-color: #eefdfa; //#d9edf7;
+  background: url(../images/info.png) 10px center no-repeat #eefdfa;
+  p, h3, li, span, a {
+      color:#008062 ; // #31708f;
+      margin-left: 50px;
   }
 }
 
