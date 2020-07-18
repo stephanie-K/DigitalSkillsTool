@@ -17,6 +17,8 @@ $govuk-assets-path: '/govuk/assets/';
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap");
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .contact , .address {
@@ -216,6 +218,8 @@ $govuk-assets-path: '/govuk/assets/';
   p, h3, li, span, a {
       color:#008062 ; // #31708f;
       margin-left: 50px;
+      font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+      font-weight: 600;
   }
 }
 
