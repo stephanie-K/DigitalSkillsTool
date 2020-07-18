@@ -550,6 +550,13 @@ router.post('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction', functio
   res.redirect('/forms/erc-forms/free-school-meals/FSMnoGrant')
 })
 
+// Bulb *****************************************************************
+
+router.post('/forms/other-forms/bulb/bulb-signin', function (req, res) {
+  res.redirect('/forms/other-forms/bulb/bulb-link-sent')
+})
+
+
 // Equality and diversity form *****************************************************************
 
 router.post('/forms/erc-forms/equal-opportunities/age', function (req, res) {

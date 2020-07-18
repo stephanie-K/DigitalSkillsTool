@@ -293,8 +293,208 @@ padding: 10px 20px;
 margin-top:30px;
 }
 
-// -------------------------------------------   ------------------------------------------------ //
 
+
+//------------------------------------------------------ Bulb  ----------------------------------------//
+
+.bulb {
+  background: url(../images/bulb/bulb-paint.png)  no-repeat #036;
+  p, li, span, a, h1, h2, h3{
+    color: #fff ;
+    font-family: "graphik" , "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 52px;
+  }
+}
+
+.bulb-tile {
+  background-color: rgb(0, 171, 85);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding:30px 20px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 10px;
+    p{
+      font-size: 20px;
+      font-weight: 500;
+    }
+    a{
+      text-decoration: none;
+    }
+}
+
+.bulb-white-container {
+  margin:1em auto;
+  border: 1px solid #ddd;
+  padding: 2.5em;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 0.4rem;
+  p, span, h1, h2, li {
+    color: #036;
+    font-family: "graphik" , "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    font-size: 20px;
+  }
+  h1 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 400;
+  }
+  .govuk-label {
+    font-size: 20px; font-weight: 400;
+    color: #036;
+  }  
+  .govuk-input {
+    border: 2px solid #ccc; 
+    border-radius: 0.3rem;
+  }
+}
+
+button.button-bulb, a.button-bulb{
+    background-color: #00ab55;
+    border: 1px solid #00ab55;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 0 0 0 ;
+    width:100%;
+    font-size: 20px;
+    padding: 0.8rem 1rem;
+    font-weight: 700;
+}
+
+button.button-bulb:hover, a.button-bulb:hover{
+  background-color: #00943c;
+  border: 1px solid #00943c;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 ;
+  font-size: 20px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  }
+
+button.button-bulb-clear, a.button-bulb-clear,
+button.button-bulb-clear:link, a.button-bulb-clear:link,
+button.button-bulb-clear:active, a.button-bulb-clear:active,
+button.button-bulb-clear:visited, a.button-bulb-clear:visited {
+  background-color: #fff;
+  border: 2px solid #00ab55;
+  color: #00ab55;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 ;
+  width:100%;
+  font-size: 20px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+}
+
+button.button-bulb-clear:hover, a.button-bulb-clear:hover {
+  background-color: #fff;
+  border: 2px solid #00943c;
+  color: #00943c;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 ;
+  font-size: 20px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+}
+
+
+
+button.button-bulb-magic, a.button-bulb-magic, 
+button.button-bulb-magic:active, a.button-bulb-magic:active, 
+button.button-bulb-magic:link, a.button-bulb-magic:link,
+button.button-bulb-magic:visited, a.button-bulb-magic:visited{
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #00ab55;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 ;
+  width:100%;
+  font-size: 20px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+}
+
+button.button-bulb-magic:hover, a.button-bulb-magic:hover{
+background-color: #fff;
+border: 1px solid #fff;
+color: #00943c;
+border-radius: 5px;
+text-decoration: none;
+box-shadow: 0 0 0 0 ;
+font-size: 20px;
+padding: 0.8rem 1rem;
+font-weight: 700;
+}
+
+button.button-bulb-magic:focus, a.button-bulb-magic:focus{
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #00943c;
+  border-radius: 5px;
+  text-decoration: none;
+  box-shadow: 0 0 0 0 ;
+  font-size: 20px;
+  padding: 0.8rem 1rem;
+  font-weight: 700;
+  outline-offset: 0.25rem;
+  outline: rgb(244, 167, 210) solid 2px;
+  }
+
+.bulb-tagline {
+  font-size: 24px !important;
+  color: white;
+  background-color: #e4228e;
+  padding: 4px 10px;
+  font-weight: 600 !important;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+  @media only screen and (max-width: 340px) {
+      font-size:16px !important;
+  }
+}
+
+.student-notes-box-bulb {
+  background-color: #e4228e;  
+  margin: 20px 0;
+  padding: 25px 15px;
+  border-radius: 10px;
+  border: solid 1px  #e4228e;
+  p, li, span, a{
+    color: #fff ;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
+
+.bulb-table{
+  td, th {
+    border-bottom: 0px solid #b1b4b6;
+    color: #036;
+  }
+}
+
+.bulb-table2{
+  td, th {
+    color: #036;
+  }
+  thead {
+    background-color: #f2f2f2;
+  }
+  th {
+    padding: 20px 0;
+    border-bottom: 1px solid #f2f2f2;
+  }
+}
 
 
 /* --------------------------------- PATIENT ACCESS HOMEPAGE----------------------------------------- */
