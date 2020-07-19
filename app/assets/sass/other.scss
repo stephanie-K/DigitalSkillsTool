@@ -371,6 +371,7 @@ button.button-bulb:hover, a.button-bulb:hover{
   background-color: #00943c;
   border: 1px solid #00943c;
   color: #fff;
+
   border-radius: 5px;
   text-decoration: none;
   box-shadow: 0 0 0 0 ;
@@ -473,6 +474,11 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
     color: #fff ;
     font-weight: 600;
     font-size: 1rem;
+  }
+  image, img, svg{  
+    @media only screen and (max-width: 490px) {
+        width:100%;
+    }
   }
 }
 
