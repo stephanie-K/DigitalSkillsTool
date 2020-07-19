@@ -334,7 +334,7 @@ margin-top:30px;
   overflow: hidden;
   background: #fff;
   border-radius: 0.4rem;
-  p, span, h1, h2, li {
+  p, span, h1, h2, li, .govuk-details__text, a {
     color: #036;
     font-family: "graphik" , "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     font-size: 20px;
@@ -348,9 +348,15 @@ margin-top:30px;
     font-size: 20px; font-weight: 400;
     color: #036;
   }  
-  .govuk-input {
+  .govuk-input, .govuk-select {
     border: 2px solid #ccc; 
     border-radius: 0.3rem;
+  }
+  .govuk-input.bulb-meter {
+    border: 1px solid #036; 
+  }
+  .govuk-input--error {
+    border: 1px solid #e00; 
   }
 }
 
@@ -500,6 +506,20 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
     padding: 20px 0;
     border-bottom: 1px solid #f2f2f2;
   }
+}
+.bulb-meter-disabled {
+  text-align: center !important;
+  background-color: #f2f2f2;
+  color: #8c8c8c;
+  font-size: 1.6rem;
+  width: 15%;
+  height: 70px;
+}
+.bulb-meter {
+  text-align: center !important;
+  font-size: 1.6rem;
+  width: 15%;
+  height: 70px;
 }
 
 

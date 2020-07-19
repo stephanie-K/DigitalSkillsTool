@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template ">
+  <head>
+    <meta charset="utf-8">
+    <title>
+    Bulb - Top up payment
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b0c0c"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/public/images/bulb/favicon-bulb.ico?0.18.3" type="image/x-icon" />
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+    <meta property="og:image" content="/govuk/assets/images/govuk-opengraph-image.png">
+  </head>
+  <body class="govuk-template__body bulb"><script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
+//]]></script>
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+      <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+
+        
+        <div class="govuk-header__container govuk-width-container">
+            <div class="govuk-header__logo">
+                <span class="govuk-header__logotype">
+                    <a href="/index.html"><image src="{{ asset_path }}/images/bulb/bulb-logo-clear.png" alt="go back to homepage" width="220" height="86"></image></a>
+                </span>
+            </div>
+            <div class="govuk-header__content">
+                <a href="/index.html">
+                <span class="bulb-tagline">
+                    This is a training website
+                </span>
+                </a>  
+            </div>
+        </div>
+        <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+            <div class="govuk-grid-row govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+                <div class="govuk-grid-column-full">
+                    <a href="javascript: history.go(-1)" style="color:#00ab55; text-decoration: none; font-weight: 600; font-size: 20px">&lt; Back</a>
+                    <h1>Top up payment</h1>
+                    <div class="bulb-white-container ">
+                      <p class="govuk-!-font-size-27">Current balance</p>
+                      <p class="govuk-!-font-size-48">£34.61</p>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="bulb-top-up">Top up amount</label>
+                        <input class="govuk-input govuk-input--width-5" id="bulb-top-up" name="bulb-top-up" type="text" placeholder="£ 50.00">
+                      </div>
+                      <p>Balance after top up <strong>£84.61</strong></p>
+                      <hr>
+                      <p class="govuk-!-font-size-27">Top up with a card</p>
+                      <p>Card payments are added to your account straight away.</p>
+                      <a href="/forms/other-forms/bulb/bulb-topup-card" role="button" draggable="false" class="govuk-button button-primary button-bulb" data-module="govuk-button" style="width:200px">
+                        Top up with card
+                      </a>
+                      <hr>
+                      <p class="govuk-!-font-size-27">Top up using your Direct Debit</p>
+                      <p>You can use your Direct Debit to make a one-off top up. This won't change your monthly payment.</p>
+                      <p>Direct Debit top up payments take 3-5 working days to show up in your Bulb account.</p>
+                      <div style="background-color: #f2f2f2; padding: 20px">
+                        <div class="govuk-grid-row">
+                          <div class="govuk-grid-column-one-third">
+                            <p style="padding-top: 20px"><image src="{{ asset_path }}/images/bulb/dd.png" alt="go back to homepage" width="149" height="45"></image></p>
+                          </div>
+                          <div class="govuk-grid-column-one-third">
+                            <p><strong>Account holder name</strong></p>
+                            <p>Sam McTest</p>
+                          </div>
+                          <div class="govuk-grid-column-one-third">
+                            <p><strong>Account number</strong></p>
+                            <p>*****702</p>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      <a href="#" role="button" draggable="false" class="govuk-button button-primary button-bulb" data-module="govuk-button" style="width:300px">
+                        Top up with Direct Debit
+                      </a>
+                    </div>
+                </div>
+              </div>
+              <div class="student-notes-box-bulb"> 
+                <p>This is just for illustration - not real values.</p>
+                <p>You can change the top up amount and on the real form, it would top up the announced balance amount - it doesn't work here.</p>
+                <p>If you have installed Direct Debit, then it would be your name here and the end of your account number.</p>
+                <p>The button "Top up with Direct Debit" doesn't work. On the real form, selecting this button would make the payment directly.</p>
+              </div>
+          </main>
+        </div>
+
+<!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+<script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+<script src="/public/javascripts/application.js"></script>
+<script src="/public/javascripts/auto-store-data.js"></script>
+<!-- GOV.UK Prototype Kit v9.5.0 -->
+</body>
+</html>

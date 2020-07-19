@@ -553,6 +553,11 @@ router.post('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction', functio
 // Bulb *****************************************************************
 
 router.post('/forms/other-forms/bulb/bulb-signin', function (req, res) {
+  var email = req.session.data['bulb-email']
+  if (email === '') {
+    req.session.data['bulb-email'] = 'error'
+    res.redirect('/forms/other-forms/bulb/bulb-signin')
+  }
   res.redirect('/forms/other-forms/bulb/bulb-link-sent')
 })
 

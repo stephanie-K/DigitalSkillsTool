@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-    Bulb - account
+        {%if data['bulb-email'] === 'error' %}Error - {% endif %}Bulb - account
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c"> 
@@ -46,10 +46,18 @@
                         <div class="bulb-white-container ">
                             <form class="form" method="post">
                             <h1>Sign in to your Bulb account</h1>
+                            {% if data['bulb-email'] === 'error' %}
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="bulb-email">Email address</label>
+                                <input class="govuk-input govuk-input--error" id="bulb-email" name="bulb-email" type="text">
+                                <p><span style="color: #e00; font-size: 16px">This field can't be blank.</span></p>
+                            </div>
+                            {% else %}
                             <div class="govuk-form-group">
                                 <label class="govuk-label" for="bulb-email">Email address</label>
                                 <input class="govuk-input" id="bulb-email" name="bulb-email" type="text">
                             </div>
+                            {% endif %}
                             <a href="/forms/other-forms/bulb/bulb-signin-with-password" role="button" draggable="false" class="govuk-button button-primary button-bulb" data-module="govuk-button">
                                 Sign in with password
                             </a>
