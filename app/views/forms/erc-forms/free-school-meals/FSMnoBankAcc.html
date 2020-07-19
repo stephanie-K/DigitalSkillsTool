@@ -1,0 +1,32 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2> 
+
+    <p class="erc-alt-dark-blue-bg">No bank details</p> 
+    <p class="ercInformation govuk-!-font-size-14">You cannot apply online unless you have a bank or building society account</p>
+
+    <div class="erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">Please call Customer Services on 0141 577 3001 to request a form.</p>
+    </div>
+    <br>
+      {{ govukButton({
+        text: "Exit",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/free-school-meals/FSMstart"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

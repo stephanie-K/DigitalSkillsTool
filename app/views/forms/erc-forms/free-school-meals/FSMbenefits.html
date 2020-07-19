@@ -1,0 +1,90 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online 
+    </h1>
+  
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Benefits</p> 
+
+    <div class="erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">Please indicate if you receive any of the following. Proof may be required from ERC residents who do not qualify for Housing Benefit or Council Tax Reduction.</p>
+    </div>
+    <!-- We need the from tag because we will need to test the values of the answers to know where to direct the user next-->
+    <form class="form" method="post">
+ 
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="fsm-benefits" name="fsm-benefits" type="checkbox" value="income">
+              <label class="govuk-label govuk-checkboxes__label" for="fsm-benefits">
+                Income Support
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="fsm-benefits-2" name="fsm-benefits" type="checkbox" value="job">
+              <label class="govuk-label govuk-checkboxes__label" for="fsm-benefits-2">
+                Job Seekers Allowance (income based)
+              </label>
+            </div>
+            
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="fsm-benefits-3" name="fsm-benefits" type="checkbox" value="employment">
+              <label class="govuk-label govuk-checkboxes__label" for="fsm-benefits-3">
+                Employment and Support Allowance (Income Related)
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="fsm-benefits-3" name="fsm-benefits" type="checkbox" value="uc">
+              <label class="govuk-label govuk-checkboxes__label" for="fsm-benefits-3">
+                Universal Credit - Maximum monthly income of £610
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <p class="erc-alt-dark-grey-round">Immigration and Asylum Act 1999</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="fsm-benefits-next" name="fsm-benefits-next" type="checkbox" value="immigration">
+              <label class="govuk-label govuk-checkboxes__label" for="fsm-benefits-next">
+                I receive support under Part IV of the Immigration and Asylum Act 1999 (Proof of a Home Office letter is required).
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+ 
+  
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/free-school-meals/FSMgeneralinfo"
+      }) }}
+<!-- the routing for this form will be in route.js file -->
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary erc-alt"
+      }) }}
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

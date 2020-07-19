@@ -1,0 +1,35 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grand
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl">
+    Check your answers before sending your form
+  </h1>
+  <p>Once you’ve checked this page, you'll need to select ‘Next’ to continue the application.</p>
+  <br>
+
+  <form class="form" method="post">
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-your-details",
+      isStartButton: true
+    }) }}
+
+  </form>
+
+</div>
+
+{% endblock %}

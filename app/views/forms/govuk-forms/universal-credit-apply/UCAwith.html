@@ -17,17 +17,55 @@ Children living with you - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Children living with you
+    Children who live with you
   </h1>
-<p>Under construction</p>
+  <p style="font-size:22px;">To apply for Universal Credit for your children you must be the main carer. If you share childcare with an ex-partner, you must agree between you who is the main carer.</p>
+
+  <h2 class="govuk-heading-s" style="margin: 0px 0px 5px 0px;">You can only apply for children who are:</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>living with you</li>
+    <li>under 20 years old</li>
+  </ul>
+
+  <h2 class="govuk-heading-s" style="margin: 0px 0px 5px 0px;">Include:</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>children, step-children and adopted children you are responsible for</li>
+    <li>children whose parents do not live with you</li>
+  </ul>
+
+  <h2 class="govuk-heading-s" style="margin: 0px 0px 5px 0px;">Do not include:</h2>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>foster children</li>
+    <li>children who are away, and who will be away for 6 months or more</li>
+    <li>children whose parents or carers also live with you</li>
+  </ul>
+
+  <form class="form" method="post">
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {{ govukInput({
+      label: {
+        text: "How many children do you want to apply for?",
+        classes: "govuk-label--m"
+      },
+      classes: "govuk-input--width-2",
+      id: "children-number",
+      name: "children-number",
+      inputmode: "numeric",
+      pattern: "[0-9]*",
+      attributes: {
+        spellcheck: "false"
+      }
+    }) }}
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAwithChildDetails"
+    }) }}
+  </form>
 </div>
-
-
-
-
-
-  <div class="student-notes-box"> 
-    <p>On the real form, it would be your name in the last column and you would see all the things you have completed</p>
-  </div>
+<div class="student-notes-box">
+  <p>On the real form, depending on the number of children you enter, you would see something different on the next page</p>
+</div>
 
 {% endblock %}

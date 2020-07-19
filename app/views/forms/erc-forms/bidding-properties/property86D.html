@@ -6,80 +6,135 @@
 
 
 {% block content %}
+<h1 class="govuk-heading-xl heading-title">
+  86D Divernia Way, Barrhead
+</h1>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">
-      Bid for a council house
-    </h1>
-    <p><img src="{{ asset_path }}images/ERC/housing-logo.PNG" alt="Housing logo" style="height:95px; width:250px"></p>
-    <p>The closing date is Tuesday 2nd June at 9am.</p>
-    <p>You're entitled to bid only on properties that are open to your Priority Pass and bedroom entitlement. </p>
-    <p>Before you continue, please ensure that you know your Priority Pass and bedroom entitlement. This information is available on the registration letter you received.</p>
-    <p class="govuk-!-margin-bottom-9">Your bid will only be accepted if you meet the criteria for the property. <br>
-      Please do not bid unless you're eligible. </p>
-    <h2 class="govuk-heading-l">86D Divernia Way, Barrhead (Available for immediate let) - 2 bedroom property - open to Priority Pass A, B, C, D, E</h2>
-    <hr style="height:20px; color: #dddddd; border-width:0; background-color: #dddddd;" class="govuk-!-margin-bottom-5">
+    <p class="heading-intro">
+      (Available for immediate let) - 2 bedroom property - open to priority pass A, B, C, D, E
+    </p>
     <p><img src="{{ asset_path }}images/ERC/property86D.png" alt="picture of the flat" width="50%"></p>
-    <h3 class="govuk-heading-m">Bids open to Priority Pass A, B, C, D, E</h3>
-    <p>A, B, C, D, E</p>
-    <h3 class="govuk-heading-m">Area</h3>
-    <p>Upper Auchenback</p>
-    <h3 class="govuk-heading-m">Number of bedrooms</h3>
-    <p>2</p>
-    <h3 class="govuk-heading-m">Maximum number of people</h3>
-    <p>4</p>
-    <h3 class="govuk-heading-m">Type of property</h3>
-    <p>Tenement Flat</p>
-    <h3 class="govuk-heading-m">Floor level</h3>
-    <p>First floor</p>
-    <h3 class="govuk-heading-m">Weekly rent</h3>
-    <p>£80.84</p>
-    <h3 class="govuk-heading-m">Heating</h3>
-    <p>Gas Central Heating</p>
+    <div class="govuk-grid-row" style="background-color: #efefef ; padding-top: 20px">
+      <div class="govuk-grid-column-one-half">
+        <p><strong>End date:</strong> 1-Sept-2020</p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <p><strong>Weekly rent:</strong> £80.84</p>
+      </div>
+    </div>
+    <br>
+    <div class="govuk-grid-row govuk-!-margin-bottom-9" style="background-color: #efefef ; padding-top: 20px">
+      <div class="govuk-grid-column-one-half">
+        <p><strong>Bedrooms:</strong> 2 bedrooms</p>
+        <p><strong>Priority pass:</strong> A, B, C, D, E</p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <p><strong>Location:</strong> Upper Auchenback</p>
+        <p><strong>Property type:</strong> Tenement flat</p>
+      </div>
+    </div>
 
-    <p>Property available for immediate let</p>
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Bids open to Priority Pass</td>
+          <td class="govuk-table__cell">A, B, C, D, E</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Area</td>
+          <td class="govuk-table__cell">Upper Auchenback</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Number of bedrooms</td>
+          <td class="govuk-table__cell">2</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Maximum number of people</td>
+          <td class="govuk-table__cell">4</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Type of property</td>
+          <td class="govuk-table__cell">Tenement Flat</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Floor level</td>
+          <td class="govuk-table__cell">Third floor</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Weekly rent</td>
+          <td class="govuk-table__cell">£80.84</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Heating</td>
+          <td class="govuk-table__cell">Gas Central Heating</td>
+        </tr>
+      </tbody>
+    </table>
+
+
 
     <h3 class="govuk-heading-m govuk-!-margin-top-9">Bid for this property</h3>
-    <h4 class="govuk-heading-m">Reference number</h4>
+    <h4 class="govuk-heading-s">Reference number</h4>
 
       <div class="govuk-form-group">
-        <label class="govuk-label" for="event-name">
+        <input class="govuk-input" id="event-name" name="event-name" type="text">
+        <label class="govuk-label" for="event-name" style="color: #4e537b">
           You’ll find this on your housing registration letter or card.<br>Phone 0141 577 3001 if you need help with this.
         </label>
-        <input class="govuk-input" id="event-name" name="event-name" type="text">
       </div>
       {% from "govuk/components/input/macro.njk" import govukInput %}
       {{ govukInput({
         label: {
-          text: "First name"
+          text: "First name",
+          classes: "govuk-!-font-weight-bold"
         },
         id: "firstname",
         name: "firstname"
       }) }}
       {{ govukInput({
         label: {
-          text: "Last name"
+          text: "Last name",
+          classes: "govuk-!-font-weight-bold"
         },
         id: "lastname",
         name: "lastname"
       }) }}
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="event-name">
-          Property
-        </label>
-        <input class="govuk-input" id="event-name" name="event-name" type="text" value="86D Divernia Way, Barrhead (Available for immediate let)" style="background-color: #eeeeee">
-      </div>
+
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
         text: "Submit",
         classes: "govuk-button button-primary",
-        href: "/forms/erc-forms/bidding-properties/thankyou"
+        href: "/forms/erc-forms/bidding-properties/thankyou86D"
       }) }}
-  
-      <hr>
-      <p class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"><span class="tag-print"></span> <a href="#">Print this page</a></p>
+
     </div>
   </div>
-
+  <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-third">
+      <br>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Share this page 
+        <image src="{{ asset_path }}/images/ERC/facebook.png" alt="facebook" width="24" height="24" style="vertical-align:middle; padding-left: 10px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/twitter.png" alt="twitter" width="24" height="24" style="vertical-align:middle; padding-left: 5px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/email.png" alt="email" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 40px;" ></image>
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Print 
+        <image src="{{ asset_path }}/images/ERC/print.png" alt="print" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 10px;" ></image>
+      </p>
+    </div>
+  </div>
+  <div class="student-notes-box">
+    <p>You can enter anything here, but on the real form, you need to make sure you enter your reference number correctly</p>
+    <p><strong>Note</strong>: this property is not really available just now, it's only for illustration</p>
+</div>
 {% endblock %}
+
+
+   
+

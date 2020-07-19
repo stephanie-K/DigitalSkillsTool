@@ -1,4 +1,4 @@
-{% extends "layout_erc.html" %}
+{% extends "layout_erc-old.html" %}
 
 {% block pageTitle %}
 {%if data['rctread'] === 'error' %}Error - {% endif %} Create your online profile
@@ -8,7 +8,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">
+    <h1 class="govuk-heading-l do-it-online">
       Do it online
     </h1>
 
@@ -22,7 +22,7 @@
     <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
 
     <p class="erc-alt-dark-blue-bg">Create your online profile</p> 
-    <p class="govuk-!-font-size-14">You can find out how we use your information in our <a href="https://www.eastrenfrewshire.gov.uk/privacy" target="_blank" rel="noopener">privacy statement<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a> on our website</p>
+    <p class="govuk-!-font-size-14">You can find out how we use your information in our <a href="https://www.eastrenfrewshire.gov.uk/privacy" class="govuk-!-font-size-14" target="_blank" rel="noopener">privacy statement<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a> on our website</p>
     <p class="govuk-!-font-size-14">To start to create your online profile you will need to supply your email address. This will allow us to send you a new password if you forget it. <strong>If you do not have access to your email at the moment, please do not attempt to register now.</strong></p>
       
     <form class="form" method="post">

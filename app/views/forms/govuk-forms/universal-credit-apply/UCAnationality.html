@@ -19,15 +19,112 @@ Nationaly - Universal Credit
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
     Nationality
   </h1>
-<p>Under construction</p>
-</div>
+  <form class="form" method="post">
+    <form class="form" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What's your nationality?
+            </h2>
+          </legend>
+          <span id="nationality-hint" class="govuk-hint">
+            Select all that apply.
+          </span>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british">
+              <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                British
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="nationality-2" name="nationality" type="checkbox" value="nothernIrish">
+              <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                Northern Irish
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="irish">
+              <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+                Irish
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="nationality-4" name="nationality" type="checkbox" value="diffCountry">
+              <label class="govuk-label govuk-checkboxes__label" for="nationality-4">
+                Citizen of a different country
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Have you been out of the UK in the last 2 years?
+            </h1>
+          </legend>
+          <span id="nationality-hint" class="govuk-hint">
+            Do not include trips to Ireland.
+          </span>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="nationality-conditional" name="nationality-check" type="radio" value="yes" data-aria-controls="conditional-nationality-conditional">
+              <label class="govuk-label govuk-radios__label" for="nationality-conditional">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="nationality-2" name="nationality-check" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="nationality-2">
+                No
+              </label>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nationality-conditional">
+              <div class="govuk-form-group">
+                <label class="govuk-fieldset__legend--m" for="nationality-input">
+                  How long have you been out of the UK at a time?
+                </label>
+                <!--div style="margin:15px 0px 0px 0px" -->
+                  <div class="govuk-radios govuk-!-margin-top-3">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-long" name="how-long" type="radio" value="lessThan2Weeks">
+                      <label class="govuk-label govuk-radios__label" for="how-long">
+                        Less than 2 weeks
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-long-2" name="how-long" type="radio" value="twoToFourWeeks">
+                      <label class="govuk-label govuk-radios__label" for="how-long-2">
+                        2 to 4 weeks
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="how-long-3" name="how-long" type="radio" value="moreThanFourWeeks">
+                      <label class="govuk-label govuk-radios__label" for="how-long-3">
+                        More than 4 weeks
+                      </label>
+                    </div>
+                  </div>
+                <!--/div-->
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Done"
+      }) }}
 
-
-
-  <div class="student-notes-box"> 
-    <p>On the real form, it would be your name in the last column and you would see all the things you have completed</p>
+    </form>
   </div>
 
-{% endblock %}
+  {% endblock %}

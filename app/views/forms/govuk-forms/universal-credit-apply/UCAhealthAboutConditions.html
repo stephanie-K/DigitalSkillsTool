@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+
+Health - Universal Credit
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third uc-to-do-list-blue" style="margin-right:10px;">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAtoDoList">To-do list</a>
+    </div>
+    <div class="govuk-grid-column-one-third uc-to-do-list-grey">
+      <a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">Journal</a>
+    </div>
+  </div>
+  <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+    About your health conditions
+  </h1>
+  <form class="form" method="post">
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+      idPrefix: "health-name",
+      name: "health-name",
+      fieldset: {
+        legend: {
+          text: "Has your doctor said you might have less than 6 months to live due to any of your conditions?",
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "This could also be a consultant or specialist nurse."
+      },
+      items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No"
+      },
+      {
+        value: "dontKnow",
+        text: "I do not know"
+      }
+      ]
+    }) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue",
+      href: "/forms/govuk-forms/universal-credit-apply/UCAhealthAbility"
+    }) }}
+
+  </form>
+  <p><a href="javascript: history.go(-1)" style="margin:0;padding:0;">Back</a></p>
+</div>
+
+<div class="student-notes-box">
+  <p>You would not see this screen if you have previously answered No when asked about having a health condition or not.</p>
+  <p>You can just select Continue</p>
+</div>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "layout_erc.html" %}
+{% extends "layout_erc-old.html" %}
 
 {% block pageTitle %}
 Council Tax Payment
@@ -166,7 +166,7 @@ Council Tax Payment
         {{ govukButton({
           text: "Pay",
           classes: "button-primary erc-payment",
-          href: "/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentProcessedWait"
+          href: "/forms/erc-forms/council-tax-online/pay-council-tax/PCTpayment"
         }) }}
 
         {{ govukButton({
@@ -175,8 +175,6 @@ Council Tax Payment
           href: "#"
         }) }}
         </form>
-
-        <p class="govuk-tag red govuk-!-margin-top-1 govuk-!-margin-bottom-1">just assuming it's something like that - would need to see the screen</p>
 
       </div>
     </div>

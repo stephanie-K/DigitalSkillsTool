@@ -6,21 +6,15 @@ Report a housing repair
 
 
 {% block content %}
+<h1 class="govuk-heading-xl heading-title">
+  Report a non-emergency housing repair
+</h1>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">
-      Report a housing repair
-    </h1>
-    <p class="erc-alt-dark-grey">Report a housing repair online.</p> 
-    <h2 class="govuk-heading-m">Report an emergency repair</h2>
-    <p>Examples of emergency repairs include:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>flooding you can't stop</li>
-    <li>exposed wiring</li>
-  </ul>
-  <p>Phone 0141 577 3700 during office hours.</p>
-  <p>Phone 08080 031601 outwith office hours.</p>
-  <h2 class="govuk-heading-m">Report a non-emergency repair</h2>
+    <p class="heading-intro">
+      Report a non-emergency council house repair online
+    </p>
+
   <p>Examples of non-emergency repairs include:</p>
   <ul class="govuk-list govuk-list--bullet">
     <li>leaks</li>
@@ -32,50 +26,30 @@ Report a housing repair
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
         text: "Request a non emergency repair",
-        classes: "button-primary erc-alt-disco",
-        href: "/forms/erc-forms/report-repair/RRonlineStart"
+        classes: "button-primary",
+        href: "/forms/erc-forms/report-repair/RRonlineStart",
+        isStartButton: true
       }) }}
 
-
-      <h2 class="govuk-heading-m">Gas breakdown repairs</h2>
-      <p>Phone 0333 202 0708.</p>
-      <p>Lines are open 24 hours a day, 7 days a week.</p>
-      <p><strong>Gas leaks</strong></p>
-      <p>Phone 0800 111 999.</p>
-      <h2 class="govuk-heading-m">Repairs tenants are responsible for</h2>
-      <p>We don't look after all repairs in council homes. You're responsible for some repairs including:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>accidental damage or breakage caused by you, family members or visitors</li>
-        <li>minor plaster work repairs and decoration</li>
-        <li>fixtures and fittings you've installed yourself</li>
-        <li>light bulbs and fluorescent tubes</li>
-      </ul>
-      <h2 class="govuk-heading-m">Right of entry</h2>
-      <p>We have a right to get access to council homes to carry out repairs. We need to make sure our homes are safe and of
-        a good standard.</p>
-      <h2 class="govuk-heading-m">Care and Repair Renfrewshire</h2>
-      <p>You can get help and advice with repairs and adaptations if you're:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>over 60 or disabled</li>
-        <li>live in East Renfrewshire or Renfrewshire</li>
-      </ul>
-
-      <p><a href="https://www.carerepairrenfrewshire.org.uk/" target="_blank" rel="noopener">Find out more about Care and Repair Renfrewshire</a></p>
-      <h2 class="govuk-heading-m">Contact</h2>
-      <p><strong>Email:&nbsp;</strong><a href="mailto:customerfirstrepairs@eastrenfrewshire.gov.uk">customerfirstrepairs@eastrenfrewshire.gov.uk</a><br>
-        <strong>Phone:&nbsp;</strong>0141 577 3700</p>
-      <h2 class="govuk-heading-m">Related information&nbsp;</h2>
-      <p><img src="{{ asset_path }}images/ERC/pdficon.gif" style="border: none; vertical-align: middle;" alt="pdf icon"
-          title="">&nbsp;<a href="https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=23339&amp;p=0" target="_blank" rel="noopener" title="East Renfrewshire Council Housing Repairs Policy">Council Housing Repairs Policy [194kb]</a></p>
-      <p><a href="https://www.eastrenfrewshire.gov.uk/article/9785/Repair-timescales" target="_blank" rel="noopener">Repair timescales</a></p>
-      <p><a href="https://www.eastrenfrewshire.gov.uk/article/6809/Dealing-with-damp-and-condensation" target="_blank" rel="noopener">Dealing with damp and condensation </a></p>
-      <p><img src="{{ asset_path }}images/ERC/pdficon.gif" style="border: none; vertical-align: middle;" alt="pdf icon"
-          title="">&nbsp;<a href="https://www.eastrenfrewshire.gov.uk/CHttpHandler.ashx?id=10472&amp;p=0" target="_blank" rel="noopener" title="This guide provides more information on repairs for Home Owners" target="_blank">Repairs and improvement guide for Home Owners [812kb]</a></p>
-
-      <hr>
-      <p class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"><span class="tag-print"></span> <a href="#">Print this page</a></p>
     </div>
-    
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-third">
+      <br>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Share this page 
+        <image src="{{ asset_path }}/images/ERC/facebook.png" alt="facebook" width="24" height="24" style="vertical-align:middle; padding-left: 10px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/twitter.png" alt="twitter" width="24" height="24" style="vertical-align:middle; padding-left: 5px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/email.png" alt="email" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 40px;" ></image>
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Print 
+        <image src="{{ asset_path }}/images/ERC/print.png" alt="print" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 10px;" ></image>
+      </p>
+    </div>
   </div>
 
 {% endblock %}

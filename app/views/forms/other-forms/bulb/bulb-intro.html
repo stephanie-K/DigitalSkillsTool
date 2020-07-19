@@ -1,0 +1,38 @@
+{% extends "layout_tool.html" %}
+
+{% block pageTitle %}
+  About this form
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+        About this form
+    </h1>
+    <a class=" button-secondary govuk-button" href="/">Back to the forms menu</a>
+<p>It looks like the real form but it's a bit different and simplified</p>
+<h2 class="govuk-heading-m">
+  Please note:
+</h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>you would normally get an account linked to your email address, no need to create one</li>
+  <li>it might be different with other energy providers</li>
+</ul>
+
+<h2 class="govuk-heading-s">
+  At any time, selecting the logo at the top left will take you back to the start (forms menu)
+</h2>
+  {{ govukButton({
+    text: "Start the form",
+    classes: "button-primary button-info",
+    href: "/forms/other-forms/bulb/bulb-signin"
+  }) }}
+
+  </div>
+  <div style="background-color: #e4228e;  margin: 20px; padding: 25px 15px; border-radius: 10px; border: solid 1px  #e4228e;"> 
+    <p style="color: white; font-weight: 600">If you see a box like this on a page, it's not part of the form.</p>
+    <p style="color: white; font-weight: 600"> It's instructions to help you.</p>
+    <p style="color: white; font-weight: 600">They look different from the other forms because the form has a dark background</p>
+  </div>
+{% endblock %}

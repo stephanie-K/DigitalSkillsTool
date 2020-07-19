@@ -1,0 +1,59 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online 
+    </h1>
+  
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Council Tax Reduction and Housing Benefit</p> 
+    <br>
+    <p>Please indicate if you receive  either of the following:</p>
+   
+    <!-- We need the from tag because we will need to test the values of the answers to know where to direct the user next-->
+    <form class="form" method="post">
+ 
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes govuk-checkboxes--small">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="fsm-benefits-extra" name="fsm-benefits-extra" type="checkbox" value="ct-reduction">
+              <label class="govuk-label govuk-checkboxes__label" for="fsm-benefits-extra">
+                Council Tax Reduction
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="fsm-benefits-extra-2" name="fsm-benefits-extra" type="checkbox" value="housing-benefit">
+              <label class="govuk-label govuk-checkboxes__label" for="fsm-benefits-extra-2">
+                Housing Benefit
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+  
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "javascript: history.go(-1)"
+      }) }}
+<!-- the routing for this form will be in route.js file -->
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary erc-alt"
+      }) }}
+    </form>
+    </div>
+  </div>
+
+{% endblock %}

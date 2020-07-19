@@ -1,0 +1,38 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Do I qualify?</p> 
+    <p class="erc-alt-dark-grey-round">You qualify for a clothing grant of £100 per pupil but not free school meals</p>
+
+    <p class="govuk-tag red govuk-!-margin-top-9 govuk-!-font-size-19">To be continued</p>
+
+    <br>
+
+    {{ govukButton({
+      text: "<< Back",
+      classes: "button-primary erc-alt",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      classes: "button-primary erc-alt",
+      href: "#"
+    }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

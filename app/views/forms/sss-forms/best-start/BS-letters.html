@@ -1,0 +1,107 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grand
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl">
+    Letters in other formats
+  </h1>
+  <p>We'll send you a letter to let you know whether you're going to be paid Best Start Grant and Best Start Foods. This letter will be in English. You can ask for the letter in another language if needed later.</p>
+  <p>If you're not able to read a letter in normal print, we can also send you an extra letter as an audio file or in:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>braille</li>
+    <li>easy read</li>
+    <li>large print</li>
+  </ul>
+
+  <form class="form" method="post">
+
+    <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Do you need one of these extra letters to be sent?
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="letters-conditional" name="letters-check" type="radio" value="yes" data-aria-controls="conditional-letters-conditional">
+            <label class="govuk-label govuk-radios__label" for="letters-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item" style="margin:0px;">
+            <input class="govuk-radios__input" id="letters-2" name="letters-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="letters-2">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-letters-conditional" style="border:none; padding:0px; margin:0px;">
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              classes: "govuk-radios--small",
+              idPrefix: "letter-type",
+              name: "letter-type",
+              fieldset: {
+                legend: {
+                  text: "Which of these letters do you need to be sent?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+              {
+                value: "braille",
+                text: "Braille"
+              },
+              {
+                value: "largePrint",
+                text: "Large Print"
+              },
+              {
+                value: "easyRead",
+                text: "Easy Read"
+              },
+              {
+                value: "audio",
+                text: "Audio"
+              },
+              {
+                value: "none",
+                text: "I do not need to be sent one of these"
+              }
+              ]
+            }) }}
+
+            <br>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Back",
+        classes: "sg-button-back",
+        href: "javascript: history.go(-1)"
+      }) }}
+
+      {{ govukButton({
+        text: "Next",
+        classes: "button-primary",
+        href: "/forms/sss-forms/best-start/BS-language",
+        isStartButton: true
+      }) }}
+
+    </form>
+
+  </div>
+
+  {% endblock %}

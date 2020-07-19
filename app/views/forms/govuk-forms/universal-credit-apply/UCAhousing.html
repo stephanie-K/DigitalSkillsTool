@@ -17,17 +17,43 @@ Housing - Universal Credit
     </div>
   </div>
   <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-    Housing
+    Housing costs
   </h1>
-<p>Under construction</p>
+  <form class="form" method="post">
+  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "housing",
+    name: "housing",
+    fieldset: {
+      legend: {
+        text: "Do you have housing costs?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: "'Housing Costs' are things like rent, mortgage payments or service charges. You definitely have housing costs if you get Housing Benefit"
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes"
+      },
+      {
+        value: "no",
+        text: "No"
+      }
+    ]
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  {{ govukButton({
+    text: "Continue",
+    href: "/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive"
+  }) }}
+</form>
 </div>
 
-
-
-
-
-  <div class="student-notes-box"> 
-    <p>On the real form, it would be your name in the last column and you would see all the things you have completed</p>
-  </div>
 
 {% endblock %}

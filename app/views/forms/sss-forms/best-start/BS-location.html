@@ -1,0 +1,66 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+  Best Start Grand
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+
+<form class="form" method="post">
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  idPrefix: "BSG-location-name",
+  name: "BSG-location-name",
+  fieldset: {
+    legend: {
+      text: "Where do you live?",
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  items: [
+    {
+      value: "scotland",
+      text: "Scotland"
+    },
+    {
+      value: "eWNI",
+      text: "England, Wales or Northern Ireland"
+    },
+    {
+      value: "Outside",
+      text: "A country outside of the UK"
+    }
+  ]
+}) }}
+
+<details class="govuk-details" data-module="govuk-details" style="margin:0px 0px 60px 0px">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      If you do not have a permanent address
+    </span>
+  </summary>
+  <div class="govuk-details__text" style="border-left: 6px solid #0065bd;">
+    <p>If you do not have a permanent address, call us on 0800 182 2222.</p>
+  </div>
+</details>
+
+  {{ govukButton({
+    text: "Back",
+    classes: "sg-button-back",
+    href: "javascript: history.go(-1)"
+  }) }}
+
+  {{ govukButton({
+    text: "Next",
+    classes: "button-primary",
+    isStartButton: true
+  }) }}
+</form>
+
+</div>
+
+{% endblock %}

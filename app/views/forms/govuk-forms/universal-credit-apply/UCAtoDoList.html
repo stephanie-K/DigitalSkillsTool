@@ -18,41 +18,139 @@ To-do list - Universal Credit
   </div>
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      {% if data['1st-display']%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Previous Address</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "nationality"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Nationality</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['nationality-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAnationality">Nationality</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "housing"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Housing</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['housing-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAhousing">Housing</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "withyou"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Who lives with you</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['withyou-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAwith">Who lives with you?</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "work"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Work and earnings</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['work-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAwork">Work and earnings</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "saving"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Saving and investments</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['saving-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAsavings">Saving and investments</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "income"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Income other than earnings</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['income-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAincome">Income other than earnings</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "education"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Education and training</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['education-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAeducation">Education and training</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "health"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Health</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['health-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAhealth">Health</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "caring"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Caring for someone</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['caring-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAcaring">Caring for someone</a>
       </div>
+      {% endif %}
+
+      {% if data['green-to-display'] === "bank"%}
+      <div class="uc-to-do-list-green">
+        <p><strong>Bank account details</strong></p>
+        <p>The task is now complete.</p>
+      </div>
+      {% endif %}
+      {% if not data['bank-done']%}
       <div class="uc-to-do-list">
         <a href="/forms/govuk-forms/universal-credit-apply/UCAbank">Bank account details</a>
       </div>
+      {% endif %}
     </div>
   </div>
   <div class="govuk-grid-row govuk-!-margin-top-9 ">
+    <div class="govuk-grid-column-full">
     <p><strong><a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">See a record of completed to-dos in your journal</a></strong></p>
   </div>
+</div>
 </div>
 
 
@@ -60,7 +158,8 @@ To-do list - Universal Credit
 
 
   <div class="student-notes-box"> 
-    <p></p>
+    <p>On the page, you will see in green the task you have just completed. Next time you come back, this task will disappear from the page</p>
+    <p>We don't know what happen once all the actions are completed...</p>
   </div>
 
 {% endblock %}

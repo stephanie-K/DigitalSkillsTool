@@ -1,0 +1,228 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Free school meals and clothing grants
+{% endblock %}
+
+
+{% block content %}
+<h1 class="govuk-heading-xl heading-title">
+  Free school meals and clothing grants
+</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p class="heading-intro">
+      Find out if you qualify for free school meals and clothing grants and apply online.
+    </p>
+    <p><image src="{{ asset_path }}/images/ERC/school-meals.jpg" alt="school child holding a tray with a school meal" width="400" height="270"></image></p>
+    <h2 class="govuk-heading-m">Who can apply?</h2>
+    <p>You can apply if your child attends an East Renfrewshire primary school or secondary school. You also need to
+      receive a qualifying benefit.</p>
+
+    <h2 class="govuk-heading-m">Applications for 2020 to 2021</h2>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Apply for free school meals and clothing grant",
+        classes: "button-primary",
+        href: "/forms/erc-forms/free-school-meals/FSMterms",
+        isStartButton: true
+      }) }}
+
+      <p>Closing date for all applications is 31 May 2021.</p>
+
+      <h2 class="govuk-heading-m">Qualifying benefits</h2>
+ 
+      <table class="govuk-table  school-meals">
+        <thead class="govuk-table__head">
+           <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Will I qualify?</th>
+            <th scope="col" class="govuk-table__header">Clothing grant</th>
+            <th scope="col" class="govuk-table__header">Free school meals</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >
+              <p>Employment and Support Allowance (Income related)</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >
+              <p>Income Support</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >
+              <p>Job Seekers Allowance (Income based)</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >
+              <p>Child Tax Credit but not Working Tax Credit with a gross or projected annual household income of less than
+                £16,105 for 2019/20 as assessed on your 2020/21 HM Revenue &amp; Customs tax credits award
+                letter ( TC602)</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >
+              <p>Child Tax Credit and Working Tax Credit with a gross annual household income of less than £7,330 for
+                2019/20 as assessed on your 2020/21 HM Revenue &amp; Customs tax credit award letter ( TC602)</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >
+              <p>Child Tax Credit and/or Working Tax Credit with a gross annual income of below £16,105 but
+                above £7,330 for year 2019/20 as assessed on your 2020/21 tax credit award letter
+                from HM Revenues and Customs (TC602)</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>No</p>
+            </td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >Support under part VI of the Immigration and Asylum Act
+              1999</td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >
+              <p>Housing benefit</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>Yes</p>
+            </td>
+            <td class="govuk-table__cell"  >
+              <p>No</p>
+            </td>
+          </tr>
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell"  >
+              <p>Universal Credit - where your maximum monthly earned income from employment does not exceed £610</p>
+            </td>
+            <td class="govuk-table__cell"  >Yes</td>
+            <td class="govuk-table__cell"  >Yes</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h2  class="govuk-heading-m">Proof of qualifying benefits</h2>
+      <p><strong>Employment and Support Allowance (income related)</strong></p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>ERC residents - we'll automatically check our benefits system</li>
+        <li>Non ERC residents - provide your current award letter</li>
+      </ul>
+      <h2  class="govuk-heading-m">Income Support</h2>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>East Renfrewshire residents - we'll automatically check our benefits system</li>
+        <li>Non East Renfrewshireresidents - provide your current award letter</li>
+      </ul>
+      <p><strong>Job Seekers Allowance (income based)</strong></p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>East Renfrewshire residents - we'll automatically check our benefits system</li>
+        <li>Non East Renfrewshire residents - provide your current award letter</li>
+      </ul>
+      <p><strong>Child Tax Credit and Working Tax Credit</strong></p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>2020/21 Tax Credit award letter showing 2019/20 assessed income</li>
+        <li>Annual review award notice for yourself and your partner (where applicable) showing your total household income. You must also provide your P60</li>
+      </ul>
+      <p><strong>Support under part VI of the Immigration and Asylum Act</strong></p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>Recent confirmation letter from Home Office. This must be no more than 3 months old</li>
+      </ul>
+      <p><strong>Housing Benefit</strong></p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>East Renfrewshire residents - we'll automatically check our benefits system</li>
+        <li>Non East Renfrewshire residents - provide your current award letter</li>
+      </ul>
+      <p><strong>Universal Credit</strong></p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>We'll automatically check our benefits system. Please note, if you're not in receipt of Council Tax Benefit from us we'll require you to provide screen shots from your online portal showing your most recent award details and earned income</li>
+      </ul>
+      <p>You must provide original documents. Please post these to:</p>
+      <p>East Renfrewshire Council HQ<br>Eastwood Park<br>Rouken Glen Road<br>Giffnock<br>G46 6UG<br><br>You can also hand deliver documents to our council offices.</p>
+      <p>Email all supporting documents to <a href="mailto:CCSBusSupportCGFSM@eastrenfrewshire.gov.uk">CCSBusSupportCGFSM@eastrenfrewshire.gov.uk</a>. Attachments must be in PDF or Tiff format.</p>
+      <h2 class="govuk-heading-m">Clothing grant value</h2>
+      <p>The rate for 2020 to 2021 is £100 per child.</p>
+      <h2  class="govuk-heading-m">What happens next?</h2>
+      <p>After you apply:</p>
+       <ul class="govuk-list govuk-list--bullet">
+        <li>Payment of £100 per child will normally be made to your bank account within 15 working days of receipt of your application. This applies to applications with full and correct information</li>
+        <li>If you're entitled to free school meals we will notify the school. We will not write to you separately to confirm this</li>
+        <li>If you've made a placing request or your child is entering P1 or S1, payment will be made when your child's details have been verified by the school. In the circumstance that your child is in S1 and lives outwith the authority or is transferring into the authority we may need to wait for the school to verify attendance</li>
+        <li>If your child is entitled to leave school a clothing grant will not be paid until confirmation has been received from school that they have returned after the summer break</li>
+      </ul>
+      <h2  class="govuk-heading-m">Increased early learning and childcare</h2>
+      <p>If you get free school meals or a clothing grant, you may also qualify for increased early learning and childcare.</p>
+      <p>2 year olds who qualify can get 600 hours of free early learning and childcare.</p>
+      <p><a  href="#">Apply for 600 hours of childcare for 2 year olds</a>.</p>
+      <p>3 and 4 olds who qualify can get 1140 hours of free early learning and childcare.</p>
+      <p><a  href="#">Apply for 1140 hours of childcare for 3 and 4 years old</a>.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-third">
+      <br>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Share this page 
+        <image src="{{ asset_path }}/images/ERC/facebook.png" alt="facebook" width="24" height="24" style="vertical-align:middle; padding-left: 10px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/twitter.png" alt="twitter" width="24" height="24" style="vertical-align:middle; padding-left: 5px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/email.png" alt="email" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 40px;" ></image>
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Print 
+        <image src="{{ asset_path }}/images/ERC/print.png" alt="print" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 10px;" ></image>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  

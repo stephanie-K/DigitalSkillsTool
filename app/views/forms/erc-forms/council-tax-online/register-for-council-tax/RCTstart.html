@@ -1,4 +1,4 @@
-{% extends "layout_erc.html" %}
+{% extends "layout_erc-old.html" %}
 
 {% block pageTitle %}
 {%if data['rctread'] === 'error' %}Error - {% endif %} Council Tax Online
@@ -8,7 +8,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l">
+    <h1 class="govuk-heading-l do-it-online">
       Do it online
     </h1>
     <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
@@ -35,7 +35,7 @@
 
     <p class="erc-alt-dark-blue-bg">Terms and Conditions</p> 
     <div class="govuk-heading-s erc-alt-light-grey">
-    <p class="govuk-!-font-size-14">Please read our <a href="https://www.eastrenfrewshire.gov.uk/privacy" target="_blank" rel="noopener">Terms and Conditions<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a>. You need to agree to these before you can carry out certain online transactions with the Council.</p>
+    <p class="govuk-!-font-size-14">Please read our <a href="https://www.eastrenfrewshire.gov.uk/privacy" target="_blank" rel="noopener" class="govuk-!-font-size-14">Terms and Conditions<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a>. You need to agree to these before you can carry out certain online transactions with the Council.</p>
     </div>
 
     <form class="form" method="post">

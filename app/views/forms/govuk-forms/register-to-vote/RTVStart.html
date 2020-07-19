@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Register To Vote
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+        Register to vote
+    </h1>
+    <p>You can use this service to:</p>
+     <ul class="govuk-list govuk-list--bullet">
+        <li>get on the electoral register so you can vote in elections or referendums</li>
+        <li>update your name, address or nationality by registering again with your new details</li>
+        <li>get on or off the <a href="/forms/govuk-forms/register-to-vote/RTVOpenRegister.html">open register</a></li>
+     </ul>   
+    <p>It usually takes about 5 minutes.</p>  
+    <h2 class="govuk-heading-m">Who can register</h2> 
+    <p>You must be aged 16 or over (or 14 or over in Scotland and Wales).</p>   
+    <p>You must also be one of the following:</p>  
+     <ul class="govuk-list govuk-list--bullet">
+        <li>a British citizen</li>
+        <li>an Irish or EU citizen living in the UK</li>
+        <li>a Commonwealth citizen who has permission to enter or stay in the UK, or who does not need permission</li>
+        <li>a citizen of another country living in Wales who has permission to enter or stay in the UK, or who does not need permission</li>
+    </ul>   
+    <p>Check which <a href="/forms/govuk-forms/register-to-vote/RTVElectionsInTHeUK.html">elections you’re eligible to vote in</a>.</p>   
+    <p>You can vote when you’re 18 or over. If you live in Scotland or Wales, you can <a href="/forms/govuk-forms/register-to-vote/RTVElectionsInTHeUK.html">vote in some elections</a> when you’re 16 or over.</p>
+    <p>You only need to register once - not for every election.</p>
+        {{ govukButton({
+            text: "Start the form",
+            classes: "button-primary button-info",
+            href: "/forms/govuk-forms/register-to-vote/RTVCountryOfResidence"
+          }) }}
+
+    <h2 class="govuk-heading-m">What you need to know</h2>
+    <p>You’ll be asked for your National Insurance number (but you can still register if you do not have one).</p>  
+    <p>After you’ve registered, your name and address will appear on the electoral register.</p> 
+    <p>There’s a different process to <a target="_blank" href="https://www.electoralcommission.org.uk/i-am-a/voter/register-vote-and-update-your-details/register-vote-anonymously">register anonymously</a>, for example if you’re concerned about your safety.</p>
+  
+    <strong>Check if you’re already registered</strong>  
+    <p> <a href="/forms/govuk-forms/register-to-vote/RTVContactElectoralRegOffice">Contact your local Electoral Registration Office</a> to find out if you’re already registered to vote.</p>
+    <h2 id="govuk-heading-m">Updating your registration</h2>   
+    <p>You can also use the <a href="/forms/govuk-forms/register-to-vote/RTVCountryOfResidence">‘Register to vote’ service</a> to:</p>   
+    <ul class="govuk-list govuk-list--bullet">
+        <li>change your name, address or nationality</li>
+        <li>get on or off the <a href="/forms/govuk-forms/register-to-vote/RTVElectoralRegister">open register</a> </li>
+    </ul>  
+    <p>To do this, you need to register again with your new details (even if you’re already registered to vote).</p>
+    <h2 id="govuk-heading-m">If you live abroad</h2>     
+    <p>You can use this service to <a href="/forms/govuk-forms/register-to-vote/RTVCountryOfResidence">register to vote</a> (or to renew or update your registration) if you both:</p>    
+    <ul class="govuk-list govuk-list--bullet">
+        <li>are a British citizen</li>
+        <li>were registered to vote within the last 15 years (or, in some cases, if you were too young to register when you were in the UK)</li>
+    </ul> 
+     <p>You may need your passport details.</p>  
+     <p>If you previously lived in Northern Ireland and want to vote there, use the <a target="_blank" href="http://www.eoni.org.uk/Register-To-Vote/Special-Category-Registration">Northern Ireland overseas elector registration form</a>.</p> 
+    <strong>If you’re a public servant posted overseas</strong>
+     <p>There’s a different service for public servants (and their spouses and civil partners) who are posted overseas as:</p>
+        
+     <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/forms/govuk-forms/register-to-vote/RTVCrownServantsBritishCouncilEmployees">Crown servants or British council employees</a></li>
+        <li>members of the <a href="/forms/govuk-forms/register-to-vote/RTVArmedForces">armed forces</a></li>
+    </ul>  
+     <h2 id="govuk-heading-m">Get help registering</h2> 
+    <p>You can get help registering from your local <a href="/forms/govuk-forms/register-to-vote/RTVContactElectoralRegOffice">Electoral Registration Office</a>.</p>   
+    <p>There’s an <a href="/forms/govuk-forms/register-to-vote/RTVEasyToReadGuide">easy read guide about registering to vote</a>.</p>
+</div>
+    
+{% endblock %}

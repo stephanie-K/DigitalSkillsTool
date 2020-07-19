@@ -17,6 +17,8 @@ $govuk-assets-path: '/govuk/assets/';
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap");
+
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .contact , .address {
@@ -156,6 +158,10 @@ $govuk-assets-path: '/govuk/assets/';
   a:hover, a:focus, a:active {
     text-decoration: underline;
   }
+  @media (max-width: 640px){
+    max-width: 280px ;
+    margin: 5px 5px 5px 20px;
+  }
 }
 
 .uc-to-do-list-grey {
@@ -169,6 +175,10 @@ $govuk-assets-path: '/govuk/assets/';
   a:hover, a:focus, a:active {
     text-decoration: underline;
   }
+  @media (max-width: 640px){
+    max-width: 280px ;
+    margin: 5px 5px 5px 20px;
+  }
 }
 
 .uc-to-do-list-red {
@@ -180,6 +190,13 @@ $govuk-assets-path: '/govuk/assets/';
   }
 }
 
+.uc-to-do-list-green {
+  border-left: 10px solid #34a393;
+  background-color: #e7f1f0;
+  padding: 15px;
+  margin: 15px 0;
+
+}
 
 .uc-to-do-list {
   border-left: 3px solid #0b0c0c; 
@@ -191,14 +208,18 @@ $govuk-assets-path: '/govuk/assets/';
 
 /* ----------------------------------------------------------------------- Helpers ---------------------------------------------- */
 .student-notes-box{
-  border: solid 1px #bcdff1;
+  border: solid 1px #008062;
   margin: 20px 0;
   padding: 25px 15px;
   border-radius: 10px;
-  color: #31708f ;
-  background-color: #d9edf7;
-  p, h3, li {
-      color: #31708f;
+  color: #008062 ; //#31708f ;
+  //background-color: #eefdfa; //#d9edf7;
+  background: url(../images/info.png) 10px center no-repeat #eefdfa;
+  p, h3, li, span, a {
+      color:#008062 ; // #31708f;
+      margin-left: 50px;
+      font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+      font-weight: 600;
   }
 }
 
@@ -227,12 +248,12 @@ $govuk-assets-path: '/govuk/assets/';
 
 }
 
+
 .govuk-tag.red {
   background-color: #b10e1e;
- // margin-left: 10px;
-  padding: 5px;
+  padding: 5px 15px;
   text-transform: none;
-
+  font-size: 1em;
 }
 
 .govuk-panel {
