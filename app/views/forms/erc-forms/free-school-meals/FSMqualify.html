@@ -1,5 +1,25 @@
 {% extends "layout_erc-old.html" %}
 
+{% block header %}
+<div class="govuk-header__container govuk-width-container erc-old">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html" id="logo-erc"><image src="{{ asset_path }}/images/ERC/erclogo.png" alt="Homepage" width="188" height="90"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+        <a href="/index.html">
+          <span class="erc-tagline-old">
+            This is a training website
+          </span>
+        </a>
+        <h1 style="float:right; margin-top:0;" class="govuk-heading-l do-it-online">
+          Do it online
+        </h1>
+    </div>
+</div>
+{% endblock %}
+
 {% block pageTitle %}
 Clothing Grants and Free School Meals
 {% endblock %}
@@ -8,12 +28,9 @@ Clothing Grants and Free School Meals
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l do-it-online">
-      Do it online
-    </h1>
-    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2> 
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2>
 
-    <p class="erc-alt-dark-blue-bg">Do I qualify?</p> 
+    <p class="erc-alt-dark-blue-bg">Do I qualify?</p>
     <p class="erc-alt-dark-grey-round govuk-!-font-size-14">You qualify for free school meals and a clothing grant of £100 per pupil</p>
     <p class="govuk-!-font-size-14">We will confirm from our records that you are in receipt of the benefits indicated. If you are not already on our benefit system we may contact you for proof.</p>
     <p class="govuk-!-font-size-14">If you qualify because you receive support under Part IV of the Immigration and Asylum Act 1999, you will need to send your Home Office letter by scanning and e-mailing it to CCSBusSupportCGFSM@eastrenfrewshire.gov.uk or by free post to</p>
@@ -21,31 +38,57 @@ Clothing Grants and Free School Meals
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-third">
         <div style="border: 1px solid #bbb; border-radius: 0.5em 0.5em 0.5em 0.5em; box-shadow: 1px 1px 5px #B8B8B8; padding: 5px 5px 5px 20px; margin-bottom: 20px" >
-          <p class="govuk-!-font-size-14" >FREEPOST RSRR-HTXY-AZEA <br>
-          East Renfrewshire Council<br>
-          Rouken Glen Road<br>
-          Giffnock<br>
-          G46 6UG</p>
+          <div style="display:flex; align-items:flex-start;">
+            <img style="padding-right:15px; " src="{{ asset_path }}/images/ERC/smlvcard.jpg"/>
+            <p class="govuk-!-font-size-14" >FREEPOST RSRR-HTXY-AZEA <br>
+            East Renfrewshire Council<br>
+            Rouken Glen Road<br>
+            Giffnock<br>
+            G46 6UG</p>
+          </div>
         </div>
         <p class="govuk-!-font-size-14">Or call in to our service centres at</p>
-        <p class="govuk-tag red govuk-!-margin-top-9 govuk-!-font-size-19">To be continued</p>
+        <div style="border: 1px solid #bbb; border-radius: 0.5em 0.5em 0.5em 0.5em; box-shadow: 1px 1px 5px #B8B8B8; padding: 5px 5px 5px 20px; margin-bottom: 20px" >
+          <div style="display:flex; align-items:flex-start;">
+            <img style="padding-right:15px; " src="{{ asset_path }}/images/ERC/smlvcard.jpg"/>
+            <p class="govuk-!-font-size-14" >
+            Eastwood Park<br>
+            Rouken Glen Road<br>
+            Giffnock<br>
+            G46 6UG</p>
+          </div>
+        </div>
+        <p class="govuk-!-font-size-14">Or</p>
+        <div style="border: 1px solid #bbb; border-radius: 0.5em 0.5em 0.5em 0.5em; box-shadow: 1px 1px 5px #B8B8B8; padding: 5px 5px 5px 20px; margin-bottom: 20px" >
+          <div style="display:flex; align-items:flex-start;">
+            <img style="padding-right:15px; " src="{{ asset_path }}/images/ERC/smlvcard.jpg"/>
+            <p class="govuk-!-font-size-14" >
+            211 Main Street<br>
+            Barrhead<br>
+            Giffnock<br>
+            G78 1SY</p>
+          </div>
+
+        </div>
       </div>
     </div>
 
-
+    <p class="govuk-!-font-size-14">Payment will normally be made to your bank account within 15 working days of receiving your application and verifying your eligibility. If your child is 16 or over, you have made a placing request, your child is entering P1 or S1 or has moved school, payment will be made after attendance at school has been confirmed.</p>
+    <p class="govuk-!-font-size-14"> For school meals, we will notify the school - we will not write to you seperately to confirm this.</p>
+    <form class="form" method="post">
       {{ govukButton({
         text: "<< Back",
+        type: button,
         classes: "button-primary erc-alt",
-        href: "javascript: history.go(-1)"
+        href: data['FSMqualify-prevPage']
       }) }}
 
       {{ govukButton({
         text: "Apply",
-        classes: "button-primary erc-alt",
-        href: "#"
+        classes: "button-primary erc-alt"
       }) }}
+    </form>
 
-    </div>
-  </div>
+</div>
 
 {% endblock %}

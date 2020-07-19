@@ -1,5 +1,25 @@
 {% extends "layout_tool.html" %}
 
+{% block header %}
+<div class="govuk-header__container govuk-width-container erc-old">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html" id="logo-erc"><image src="{{ asset_path }}/images/ERC/erclogo.png" alt="Homepage" width="188" height="90"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+        <a href="/index.html">
+          <span class="erc-tagline-old">
+            This is a training website
+          </span>
+        </a>
+        <h1 style="float:right; margin-top:0;" class="govuk-heading-l do-it-online">
+          Do it online
+        </h1>
+    </div>
+</div>
+{% endblock %}
+
 {% block pageTitle %}
   About this form
 {% endblock %}
@@ -29,7 +49,7 @@
     href: "/forms/erc-forms/free-school-meals/FSMstart"
   }) }}
 </div>
-<div class="student-notes-box"> 
+<div class="student-notes-box">
   <p>If you see a box like this on a page, it's not part of the form.</p>
   <p> It's instructions to help you.</p>
 </div>

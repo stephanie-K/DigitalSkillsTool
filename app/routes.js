@@ -497,6 +497,7 @@ router.post('/forms/erc-forms/free-school-meals/FSMbenefits', function (req, res
   var benefitNext = req.session.data['fsm-benefits-next']
 // we test if all checkboxes are empty
   if (benefit || benefitNext)  {
+    req.session.data['FSMqualify-prevPage'] = 'FSMbenefits'
     return res.redirect('/forms/erc-forms/free-school-meals/FSMqualify')
   }
   res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
@@ -513,13 +514,14 @@ if (income === 'less' ) {
     return res.redirect('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction')
   } else {
     if (tax === 'child-tax-only' || tax === 'working-tax-too') {
+      req.session.data['FSMqualify-prevPage'] = 'FSMtaxCredits'
       return res.redirect('/forms/erc-forms/free-school-meals/FSMqualify')
     }
     else {
        // give the variable a value so we know there is an error to display
         req.session.data['which-tax'] = 'tax-not-selected'
         res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
-    }  
+    }
   }
 }
 if (income === 'between' ) {
@@ -533,13 +535,92 @@ if (income === 'between' ) {
        // give the variable a value so we know there is an error to display
         req.session.data['which-tax'] = 'tax-not-selected'
         res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
-    }  
+    }
   }
 }
 // give the variables a value so we know there is an error to display
 req.session.data['income'] = 'income-not-select'
 res.redirect('/forms/erc-forms/free-school-meals/FSMtaxCredits')
 })
+
+// Ashir added routes for validation-------------------------------------------------------------
+
+router.post('/forms/erc-forms/free-school-meals/FSMqualify', function (req, res) {
+  req.session.data['FSMyourDetails-prevPage'] = 'FSMqualify'
+  res.redirect('/forms/erc-forms/free-school-meals/FSMyourDetails')
+})
+
+router.post('/forms/erc-forms/free-school-meals/FSMqualifyClothingGrant', function (req, res) {
+  req.session.data['FSMyourDetails-prevPage'] = 'FSMqualifyClothingGrant'
+  res.redirect('/forms/erc-forms/free-school-meals/FSMyourDetails')
+})
+
+
+router.post('/forms/erc-forms/free-school-meals/FSMyourDetails', function (req, res) {
+  let name = req.session.data['FSM-applicant-name']
+  let address = req.session.data['FSM-applicant-address']
+  let tel = req.session.data['FSM-applicant-tel-no']
+  let email = req.session.data['FSM-applicant-email']
+  let emailValid = true;
+  req.session.data['FSMemailValid'] = 'true';
+  let niNo = req.session.data['FSM-applicant-NI-no']
+
+  var regExpEmail = /^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+  if (email === '' || !regExpEmail.test(email))
+  {
+    emailValid = false;
+    req.session.data['FSMemailValid'] = 'false';
+  }
+
+  if(name == '' || address == '' || tel == '' || !emailValid || niNo == '') {
+    req.session.data['FSMyourDetailsError'] = 'true';
+    res.redirect('/forms/erc-forms/free-school-meals/FSMyourDetails')
+  } else {
+    req.session.data['FSMyourDetailsError'] = 'false';
+    res.redirect('/forms/erc-forms/free-school-meals/FSMbankDetails')
+  }
+})
+
+router.post('/forms/erc-forms/free-school-meals/FSMbankDetails', function (req, res) {
+  let nameOfBank = req.session.data['FSM-bank-name']
+  let accHolderName = req.session.data['FSM-acc-holder-name']
+  let sortCode = req.session.data['FSM-sort-code']
+  let accNo = req.session.data['FSM-bank-acc-no']
+
+
+  if(nameOfBank == '' || accHolderName == '' || sortCode == '' || accNo == '') {
+    req.session.data['FSMbankDetailsError'] = 'true';
+    res.redirect('/forms/erc-forms/free-school-meals/FSMbankDetails')
+  } else {
+    req.session.data['FSMbankDetailsError'] = 'false';
+    res.redirect('/forms/erc-forms/free-school-meals/FSMaboutChild')
+  }
+})
+
+router.post('/forms/erc-forms/free-school-meals/FSMaboutChild', function (req, res) {
+  let firstName = req.session.data['FSM-child-first-name']
+  let surname = req.session.data['FSM-child-surname']
+  let dob = req.session.data['FSM-child-dob']
+  let sex = req.session.data['FSM-child-sex']
+  let school = req.session.data['FSM-child-school']
+  let sexInvalid = 'false';
+  req.session.data['FSM-sexInvalid'] = 'false';
+
+  if(sex !== 'male' && sex !== 'female') {
+    sexInvalid = 'true'
+    req.session.data['FSM-sexInvalid'] = 'true';
+  }
+
+
+  if(firstName == '' || surname == '' || dob == '' || sexInvalid == 'true' || school == '') {
+    req.session.data['FSMaboutChildError'] = 'true';
+    res.redirect('/forms/erc-forms/free-school-meals/FSMaboutChild')
+  } else {
+    req.session.data['FSMaboutChildError'] = 'false';
+    res.redirect('/forms/erc-forms/free-school-meals/FSMsubmitted')
+  }
+})
+// Ashir end ------------------------------------------------------------------------------------
 
 router.post('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction', function (req, res) {
   var benefitExtra = req.session.data['fsm-benefits-extra']
