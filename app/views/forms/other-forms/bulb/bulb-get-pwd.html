@@ -47,9 +47,9 @@
                             <h1>Get a password</h1>
                             <div class="govuk-form-group">
                                 <label class="govuk-label" for="bulb-email">Email address</label>
-                                <input class="govuk-input" id="bulb-email" name="bulb-email" type="text" value="{{data['bulb-email']}}">
+                                <input class="govuk-input" id="bulb-email" name="bulb-email" type="text" value="{% if data ['bulb-email'] ==='error' %} example@gmail.com {% else %}{{ data ['bulb-email'] or "example@gmail.com"}}{% endif %}">
                             </div>
-                            <a href="#" role="button" draggable="false" class="govuk-button button-primary button-bulb" data-module="govuk-button">
+                            <a href="#" role="button" draggable="false" class="govuk-button button-primary button-bulb full-width" data-module="govuk-button">
                                 Email me a link to get a password
                             </a>
                         </div>
