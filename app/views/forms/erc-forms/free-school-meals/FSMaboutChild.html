@@ -1,0 +1,153 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container erc-old">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html" id="logo-erc"><image src="{{ asset_path }}/images/ERC/erclogo.png" alt="Homepage" width="188" height="90"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+        <a href="/index.html">
+          <span class="erc-tagline-old">
+            This is a training website
+          </span>
+        </a>
+        <h1 style="float:right; margin-top:0;" class="govuk-heading-l do-it-online">
+          Do it online
+        </h1>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <!-- this is the red error message at the top, only displayed if there is an error on that form -->
+    {% if (data['FSMaboutChildError'] === 'true')%}
+    <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
+    {% endif %}
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2>
+
+    <p class="erc-alt-dark-blue-bg">About your child / children</p>
+    <p class="erc-alt-light-grey">Please complete for each child you are claiming for.</p>
+
+    <form class="form" method="post">
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-first-name">First Name: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-child-first-name" name="FSM-child-first-name" type="text" value="{{ data ['FSM-child-first-name']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-child-first-name'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-surname">Surname: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-child-surname" name="FSM-child-surname" type="text" value="{{ data ['FSM-child-surname']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-child-surname'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-dob">Date of birth: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-child-dob" name="FSM-child-dob" type="date" value="{{ data ['FSM-child-dob']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-child-dob'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-sex">Sex: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline">
+              <div class="govuk-radios__item">
+                {% if (data ['FSM-child-sex'] === 'male') %}
+                  <input class="govuk-radios__input" id="FSM-child-sex" name="FSM-child-sex" type="radio" value="male" checked>
+                {% else %}
+                  <input class="govuk-radios__input" id="FSM-child-sex" name="FSM-child-sex" type="radio" value="male">
+                {% endif %}
+                <label class="govuk-label govuk-radios__label" for="FSM-child-sex-male">
+                  Male
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                {% if (data ['FSM-child-sex'] === 'female') %}
+                  <input class="govuk-radios__input" id="FSM-child-sex-2" name="FSM-child-sex" type="radio" value="female" checked>
+                {% else %}
+                  <input class="govuk-radios__input" id="FSM-child-sex-2" name="FSM-child-sex" type="radio" value="female">
+                {% endif %}
+                <label class="govuk-label govuk-radios__label" for="FSM-child-sex-female">
+                  Female
+                </label>
+              </div>
+            </div>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {% if (data ['FSM-sexInvalid'] === 'true') %}
+              <span class="error"> *</span>
+            {% endif %}
+          </dd>
+        </div>
+
+      </dl>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-school">School attended from August of year 2020/2021: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-child-school" name="FSM-child-school" type="text" value="{{ data ['FSM-child-school']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-child-school'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+      </dl>
+
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/free-school-meals/FSMbankDetails"
+      }) }}
+
+      {{ govukButton({
+        text: "Submit claim",
+        classes: "button-primary erc-alt"
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
