@@ -323,6 +323,13 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     visibility: visible;
   }
 
+  input[type="date" i]{
+      background-color: #fff;
+  }
+
+
+
+
 //-------------------------------------------- Buttons --------------------------------------------------- //
 
 .button-primary, .govuk-button {
