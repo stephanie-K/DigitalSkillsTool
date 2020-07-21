@@ -572,7 +572,7 @@ router.post('/forms/erc-forms/free-school-meals/FSMyourDetails', function (req, 
     req.session.data['FSMemailValid'] = 'false';
   }
 
-  if(name == '' || address == '' || tel == '' || !emailValid || niNo == '') {
+  if(name === '' || address === '' || tel === '' || !emailValid || niNo === '') {
     req.session.data['FSMyourDetailsError'] = 'true';
     res.redirect('/forms/erc-forms/free-school-meals/FSMyourDetails')
   } else {
@@ -588,7 +588,7 @@ router.post('/forms/erc-forms/free-school-meals/FSMbankDetails', function (req, 
   let accNo = req.session.data['FSM-bank-acc-no']
 
 
-  if(nameOfBank == '' || accHolderName == '' || sortCode == '' || accNo == '') {
+  if(nameOfBank === '' || accHolderName === '' || sortCode === '' || accNo === '') {
     req.session.data['FSMbankDetailsError'] = 'true';
     res.redirect('/forms/erc-forms/free-school-meals/FSMbankDetails')
   } else {
@@ -612,7 +612,7 @@ router.post('/forms/erc-forms/free-school-meals/FSMaboutChild', function (req, r
   }
 
 
-  if(firstName == '' || surname == '' || dob == '' || sexInvalid == 'true' || school == '') {
+  if(firstName === '' || surname === '' || dob === '' || sexInvalid === 'true' || school === '') {
     req.session.data['FSMaboutChildError'] = 'true';
     res.redirect('/forms/erc-forms/free-school-meals/FSMaboutChild')
   } else {
