@@ -907,12 +907,15 @@ router.post('/forms/erc-forms/housing/CBLdeclaration1', function (req, res) {
 router.post('/forms/erc-forms/housing/CBLextra-reason-medical', function (req, res) {
   res.redirect('/forms/erc-forms/housing/CBLend')
 })
+// --------------------------------------- Patient access routes ------------------------------//
 
 router.post('/forms/other-forms/patient-access/pa-register2', function (req, res) {
-  const email = req.session.data['email']
+  var email = req.session.data['pa-email']
   res.redirect('/forms/other-forms/patient-access/pa-success')
 })
 
+
+// ---------------------------------------- Best Start Grant routes ---------------------------//
 router.post('/forms/sss-forms/best-start/BS-location', function (req, res) {
   var whereYouLive = req.session.data['BSG-location-name'];
 

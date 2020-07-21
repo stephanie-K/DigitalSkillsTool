@@ -27,13 +27,20 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 }
 
 .govuk-header__content {
-    @media only screen and (min-width: 999px) {
-    border: 30px solid #fff;
-    }
+  border: none;
     a {
         text-decoration: none;
     }
 }
+
+.govuk-header__logotype { // this will affect all forms using other.scss
+  margin: 22.5px;
+  a:focus {
+    background-color: #0000;
+    box-shadow: none;
+  }
+}
+
 
 // ---------------------------- remove the Yellow focus on link as it show on images ----------------------//@extend
 
@@ -551,51 +558,42 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
 }
 
 
-/* --------------------------------- PATIENT ACCESS HOMEPAGE----------------------------------------- */
+/* --------------------------------- PATIENT ACCESS ----------------------------------------- */
 
-.govuk-header__logotype {
-  margin: 22.5px;
-}
+$pa-text-dark: #32325d;
+$pa-text-light: #6f6f8c;
+$pa-blue: #4768FD;
+$pa-pink: #D3368A;
 
-#pat-acc-logo-clean:focus {
-  background-color: white;
-  box-shadow: none;
-}
+// -------------------------------  Header
 
-.govuk-header__content {
-  border: none;
-}
-
-.pat-acc-tagline {
+.pa-tagline {
     font-size: 24px;
     color: white;
-    background-color: #32325d;
+    background-color:  $pa-text-dark;
     padding: 4px 10px;
     margin: 22.5px 22.5px 22.5px 0px;
+    @media screen and (max-width: 990px) {
+      margin: 5px;
+    }
     float: left;
     font-weight: 500;
     font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    @media only screen and (max-width: 340px) {
+      font-size:16px !important;
+  }
 }
 
-.pat-acc-header-button-container {
+.pa-header-button-container {
   width: 49%;
   float: right;
-}
-
-@media screen and (max-width: 990px) {
-  .pat-acc-header-button-container {
+  @media screen and (max-width: 990px) {
     display: none;
   }
-  .pat-acc-logo-cont {
-    width: 100%;
-  }
-  .pat-acc-tagline {
-    margin: 0px;
-  }
 }
 
 
-.pat-acc-header-sign-in-button, .pat-acc-header-register-button {
+.pa-header-sign-in-button, .pa-header-register-button {
   padding: 12px 32px;
   margin: 15px 7px 15px;
 	border-radius: 25px;
@@ -606,93 +604,126 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
   float: left;
 }
 
-.pat-acc-header-register-button {
-  border: solid 1px #4768FD;
+.pa-header-register-button {
+  border: solid 1px $pa-blue;
   a{
-    color: #4768FD;
+    color: $pa-blue;
   }
 }
+.pa-header-register-button:hover {
+  background-color: $pa-blue;
+  color: white;
+  opacity: 70%;
+}
 
-.pat-acc-header-sign-in-button {
-  border: solid 1px #D3368A;
+.pa-header-register-button:focus {
+  background-color: $pa-blue;
+  color: white;
+  box-shadow: none;
+}
+.pa-header-sign-in-button {
+  border: solid 1px $pa-pink;
   a {
-    color: #D3368A;
+    color: $pa-pink;
   }
 }
 
-.pat-acc-header-sign-in-button:hover {
-  background-color: #D3368A;
+.pa-header-sign-in-button:hover {
+  background-color: $pa-pink;
   color: white;
   opacity: 70%;
 }
 
-.pat-acc-header-register-button:hover {
-  background-color: #4768FD;
-  color: white;
-  opacity: 70%;
-}
-
-.pat-acc-header-sign-in-button:focus {
-  background-color: #D3368A;
+.pa-header-sign-in-button:focus {
+  background-color: $pa-pink;
   color: white;
   box-shadow: none;
 }
 
-.pat-acc-header-register-button:focus {
-  background-color: #4768FD;
-  color: white;
-  box-shadow: none;
+// ------------------------  Body
+
+.pa-block {
+h1, h2, h3, p, a, label, li {
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+}
+  h1 {
+    font-size: 30px;
+    line-height: 60px;
+    color: $pa-text-dark;
+    font-weight: 700;
+  }
+  h2{
+    font-size: 24px; 
+    font-weight: 900; 
+    line-height: 30px;
+    color: $pa-text-dark;
+  }
+  p, li {
+    color: $pa-text-light;
+    font-size: 18px;
+  }
+  a {
+    color: $pa-pink;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    color: #dc60a2;
+  }
+  label {
+    font-size: 18px; 
+    font-weight: 700; 
+    line-height: 30px;
+    color: $pa-text-dark;
+  }
+  // doesn't seem to change anything for the checkbox, unsure why
+  .govuk-input, .govuk-select, .govuk-checkboxes__input {
+    border: 1px solid #dedee3;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: white !important;
+  }
+  .govuk-select {
+    color: #666;
+  }
 }
 
-.pat-acc-block {
-  background-image: url('../images/PA/take-control.jpg');
-  background-size: cover;
-  position: relative;
+.pa-white-container {
+  margin:1em auto;
+  border: 1px solid #ddd;
+  padding: 64px 48px 48px 48px;
+  @media only screen and (max-width: 490px) {
+    padding: 15px;
+  }
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px;
+  text-align: left;
 }
 
-.pat-acc-homepage-content-container {
-  width: 50%;
-  margin: 0;
-  position: absolute;
-  top: 20%;
+.pa-purple-container {
+  background-color: #32325d; 
+  padding: 100px 0
 }
 
-.pat-acc-homepage-content-title {
-  font-size: 40px;
-  color: #32325d;
-  font-family: "Merriweather", "Times", sans-serif;
-  font-weight: 700;
+.pa-grey-container {
+  background-color: #f7f7fa; 
+  padding: 50px 0 100px 0;
 }
 
-.pat-acc-homepage-content-tagline-cont {
+
+.pa-homepage-content-body-cont {
   margin: 15px 0px 0px;
 }
 
-.pat-acc-homepage-content-tagline {
-  font-size: 18px;
-  font-family: "Lato", sans-serif;
-  color: #6f6f8c;
-}
-
-
-.pat-acc-homepage-content-body-cont {
-  margin: 15px 0px 0px;
-}
-
-.pat-acc-homepage-content-body {
-  font-size: 18px;
-  font-family: "Lato", sans-serif;
-  color: #6f6f8c;
-}
-
-.pat-acc-fullscreen-header {
+.pa-fullscreen-header {
   width: 100%;
   height: 76px;
   box-shadow: 2px 4px #EAE9EE;
   position: fixed;
 }
 
-.pat-acc-hero-button-container {
+.pa-hero-button-container {
   height: auto;
   width: 100%;
   margin-top: 350px;
@@ -701,7 +732,7 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
   }
 }
 
-.pat-acc-sign-in-button, .pat-acc-register-button {
+.pa-pink-button, .pa-blue-button {
   padding: 12px 32px;
   margin: 0px 14px 15px 0px;
 	border-radius: 25px;
@@ -709,565 +740,44 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
   font-size: 17px;
   text-decoration: none;
   color: #FFF;
-  float: left;
+  box-shadow: 0 2px 0 #0000;
 }
 
-.pat-acc-register-button {
-  background-color: #4768FD;
+.pa-blue-button {
+  background-color: $pa-blue;
 }
 
-.pat-acc-sign-in-button {
-  background-color: #D3368A;
+.pa-pink-button {
+  background-color: $pa-pink;
 }
 
-.pat-acc-sign-in-button:hover, .pat-acc-register-button:hover {
+.pa-pink-button:hover, .pa-blue-button:hover {
   opacity: 0.7;
 }
 
-.pat-acc-sign-in-button:focus {
-  background-color: #D3368A;
-  box-shadow: 2px 2px 4px #D3368A;
-}
-
-.pat-acc-register-button:focus {
-  background-color: #4768FD;
-  box-shadow: 2px 2px 4px #4768FD;
-}
-
-
-@media screen and (max-width: 770px) {
-  .pat-acc-sign-in-button, .pat-acc-register-button {
-    width: 95%;
-    text-align: center;
-    margin: 0px 0px 7px 0px;
-  }
-  .pat-acc-block {
-    padding: 5px;
-  }
-  .pat-acc-block {
-    background-image: none;
-    background-color: white;
-  }
-  .pat-acc-homepage-content-container {
-    width: 100%;
-    text-align: center;
-  }
-  .pat-acc-homepage-content-title {
-    font-size: 35px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .pat-acc-sign-in-button, .pat-acc-register-button {
-    width: 90%;
-    text-align: center;
-    margin: 0px 0px 7px 0px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .pat-acc-sign-in-button, .pat-acc-register-button {
-    width: 80%;
-    text-align: center;
-    margin: 0px 0px 7px 0px;
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .pat-acc-homepage-content-body {
-    font-size: 16px;
-  }
-}
-
-/* ---------------------------------HOMEPAGE END----------------------------------------- */
-
-
-/* ---------------------------------PATIENT ACCESS SIGN IN PAGE  / REGISTER----------------------------------------- */
-
-.pat-acc-signin-block {
-  background-color: #F7F7FA;
-  display: block;
-  text-align: center;
-  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
-}
-
-.pat-acc-signin-centre{
-  display: inline-block;
-}
-
-.pat-acc-signin-to-acc {
-  color: #32325d;
-  font-size: 24px;
-  font-weight: 900;
-  padding: 0px;
-  margin: 0px;
-}
-
-.pat-acc-signin-err-acc {
-  font-size: 14px;
-  padding: 0;
-  margin: 0px;
-  color: #6f6f8c;
-  a {
-    color: #D3368A;
-  }
-}
-
-.pat-acc-signin-to-acc2 {
-  color: #32325d;
-  font-size: 24px;
-  font-weight: 900;
-  padding: 0px;
-  margin: 0px;
-}
-
-.pat-acc-signin-err-acc2 {
-  font-size: 14px;
-  padding: 0;
-  margin: 0px;
-  color: #6f6f8c;
-  a {
-    color: #D3368A;
-  }
-}
-
-.pat-acc-signin-err-reg {
-  margin-left: 10px;
-  text-decoration: none;
-}
-
-.pat-acc-signin-form-container {
-  width: 355px;
-  height: auto;
-  padding: 40px 56px;
-  margin-top: 20px;
-  border-radius: 3%;
-  border: solid 1px #EAE9EE;
-  box-shadow: 0px 0px 18px #EAE9EE;
-  background-color: white;
-  color: #32325d;
-}
-
-
-@media screen and (max-width: 580px) {
-  .pat-acc-signin-form-container {
-    width: 100%;
-    padding: 0px;
-    background-color: #F7F7FA;
-    border: none;
-    box-shadow: none;
-  }
-  .pat-acc-signin-block {
-    width: 100%;
-    padding: 1px;
-    text-align: left;
-  }
-  .pat-acc-signin-centre{
-    width: 100%;
-  }
-  .pat-acc-signin-err-acc2 {
-    display: none;
-  }
-  .pat-acc-signin-to-acc2 {
-    display: none;
-  }
-  .pat-acc-signin-form-container {
-    margin-top: 0px
-  }
-}
-
-#pat-acc-label {
-  color: #32325d;
-  float: left;
-  font-weight: 700;
-  font-size: 14px;
-  margin: 0;
-}
-
-#pat-acc-label-dob {
-  color: #32325d;
-  float: left;
-  font-weight: 700;
-  font-size: 14px;
-  margin: 0;
-}
-
-#pat-acc-input {
-  padding: 9px 15px;
-  width: 100%;
-  float: left;
-}
-
-#pat-acc-input:focus {
-  outline: none;
-}
-
-#pat-acc-input::placeholder {
-  color: #b0b0b7;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.pat-acc-signin-button-form {
-  margin-top: 40px;
-}
-
-.signin-button-signin-page-container {
-  display: inline-block;
-  a {
-    color: white;
-  }
-}
-
-.signin-button-signin-page {
-  padding: 10px 140px;
-	border-radius: 25px;
-}
-
-@media screen and (max-width: 770px) {
-  .signin-button-signin-page {
-    width: 25%;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .signin-button-signin-page {
-    padding: 10px 125px;
-  }
-}
-
-@media screen and (max-width: 370px) {
-  .signin-button-signin-page {
-    padding: 10px 115px;
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .signin-button-signin-page {
-    padding: 10px 105px;
-  }
-}
-
-
-.pat-acc-signin-form-title {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-#pat-acc-select-reg {
-  padding: 9px 40px 9px 15px;
-  font-size: 16px;
-  font-weight: 700;
-  color: #b0b0b7;
-  width: 100%;
-}
-
-#pat-acc-form-group {
-  margin: 10px 0px;
-}
-
-.pat-acc-dob {
-  padding: 0;
-}
-
-#pat-acc-select-reg-year, #pat-acc-select-reg-month, #pat-acc-select-reg-day  {
-  padding: 9px 15px;
-  font-size: 14px;
-  border-color: #d3d3d3;
-  color: #676767;
-}
-
-#pat-acc-select-reg-year, #pat-acc-select-reg-day {
-  width: 25%;
-  margin: 0px 15px 0px 15px;
-}
-
-#pat-acc-select-reg-month {
-  width: 30%;
-}
-
-
-@media screen and (max-width: 380px) {
-  #pat-acc-select-reg-year, #pat-acc-select-reg-month, #pat-acc-select-reg-day  {
-    font-size: 10px;
-  }
-  #pat-acc-select-reg-year, #pat-acc-select-reg-day {
-    margin: 0px 5px 0px 5px;
-  }
-}
-
-#pat-acc-support-centre {
-  color: #676767;
-  margin: 25px;
-  font-size: 16px;
-  font-weight: 700;
-  float: right;
-}
-
-@media screen and (max-width: 990px) {
-  #pat-acc-support-centre {
-    display: none;
-  }
-}
-
-#pat-acc-support-centre:focus {
-  background-color: white;
-  box-shadow: none;
-}
-
-.pat-acc-why-we-ask {
-  background-color: #32325d;
-  opacity: 0.9;
-  padding: 50px;
-}
-
-.pat-acc-close-button {
-  margin: 0px 0px 20px 0px;
-}
-
-#pat-why-we-ask-container {
-  box-shadow: none;
-  opacity: 1;
-  width: 450px;
-  margin-top: 35px;
-  margin-left: 0px;
-}
-
-
-.pat-why-we-ask-font-align {
-  text-align: left;
-  padding-top: 20px;
-}
-
-.pat-why-we-ask-font {
-  font-size: 24x;
-}
-
-.pat-why-we-ask-font-sub {
-  font-size: 18px;
-  color: #676767;
-}
-
-@media screen and (max-width: 770px) {
-  #pat-why-we-ask-container {
-    padding: 20px;
-    width: 60%;
-  }
-  .pat-acc-why-we-ask {
-    width: 100%;
-    padding: 25px;
-  }
-}
-
-@media screen and (max-width: 660px) {
-  #pat-why-we-ask-container {
-    padding: 20px;
-    width: 80%;
-  }
-  .pat-why-we-ask-font {
-    padding: 10px
-  }
-  .pat-why-we-ask-font-sub {
-    padding: 10px
-  }
-}
-/* ---------------------------------PATIENT ACCESS SIGN IN PAGE / REGISTER END----------------------------------------- */
-
-/* ---------------------------------PATIENT ACCESS REGISTER2----------------------------------------- */
-
-.pat-acc-enter-details-cont {
-  text-align: left;
-}
-
-.pat-acc-enter-details-back-cont {
-  text-align: left;
-  font-weight: 700;
-}
-
-.pat-acc-enter-details-back {
-  margin-right: 50px;
-  color: #D3368A;
-}
-
-.pat-acc-enter-details {
-  font-size: 18px;
-  color: #32325d;
-  font-weight: 700;
-}
-
-#pat-acc-password-reqs {
-  font-size: 16px;
-  color: #6F6F8C;
-}
-
-.pat-acc-checkboxes {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 20px;
-  margin-top: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.pat-acc-checkboxes input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.pat-acc-checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
-
-.pat-acc-checkboxes:hover input ~ .pat-acc-checkmark {
-  background-color: #ccc;
-}
-
-.pat-acc-checkboxes input:checked ~ .pat-acc-checkmark {
-  background-color: blue;
-}
-
-.pat-acc-checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the pat-acc-checkmark when checked */
-.pat-acc-checkboxes input:checked ~ .pat-acc-checkmark:after {
-  display: block;
-}
-
-/* Style the pat-acc-checkmark/indicator */
-.pat-acc-checkboxes .pat-acc-checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.pat-acc-terms-cond {
-  color: #D3368A;
-}
-
-button#pat-acc-register2-create {
-  padding: 10px 10px;
-  width: 100%;
-  margin-top: 15px;
-  border: none;
-}
-
-@media screen and (max-width: 815px) {
-  .pat-acc-register2-create {
-    width: 40%;
-  }
-}
-
-
-/* ---------------------------------PATIENT ACCESS REGISTER2 END----------------------------------------- */
-
-/* ---------------------------------PATIENT ACCESS SUCCESS----------------------------------------- */
-
-.pat-acc-success-cont {
-  margin: 0;
-  margin-bottom: 40px;
-  display: inline-block;
-}
-
-.pat-acc-success-title {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-.pat-acc-success-image-cont {
-  display: block;
-  text-align: center;
-}
-
-.pat-acc-success-subtitle {
-  font-size: 16px;
-}
-
-.pat-acc-success-skip-ver {
-  font-size: 16px;
-  font-weight: 700;
-  margin-top: 30px;
-  text-align: center;
-  a {
-    text-decoration: none;
-    color: #D3368A;
-  }
-}
-
-.pat-acc-success-email {
-  font-weight: 700;
-}
-
-.pa-acc-success-message-cont {
-  width: 80%;
-  margin-bottom: 20px;
-  display: inline-block;
-}
-
-@media screen and (max-width: 387px) {
-  .pa-acc-success-message-cont {
-    width: 100%;
-  }
-}
-
-.pa-acc-success-message {
-  color: #32325d;
-  font-size: 26px;
-}
-/* ---------------------------------PATIENT ACCESS SUCCESS END----------------------------------------- */
-
-/* ---------------------------------PATIENT ACCESS ABOUT----------------------------------------- */
-
-.pa-about-block {
-  background-color: white;
-}
-
-.pat-acc-about-cont {
-  width: 100%;
-}
-
-.pat-acc-about-content-cont {
-  margin:40px 0px 40px 0px;
-  text-align:left;
-  width:85%;
-}
-
-@media screen and (max-width: 770px) {
-  .pat-acc-about-button {
-    width:75%;
-  }
-}
-
-@media screen and (max-width: 490px) {
-  .pat-acc-about-button {
-    width:65%;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .pat-acc-about-button {
-    width:55%;
-  }
+.pa-pink-button:focus, .pa-pink-button:focus:not(:active):not(:hover) {
+  background-color: $pa-pink;
+  border-color: $pa-pink;
+  color: #fff;
+  box-shadow: 0 2px 0 #fff;
+}
+
+.pa-blue-button:focus,  .pa-blue-button:focus:not(:active):not(:hover){
+  background-color: $pa-blue;
+  border-color: $pa-blue;
+  color: #fff;
+  box-shadow: 0 2px 0 #fff;
+}
+
+// -------------------------- pa helpers
+
+.dot {
+  height:2em !important;
+  width: 2em !important;
+  background-color: #D3368A ;
+  border-radius: 50%;
+  color: white;
+  text-align:center;
+  font-size: 30px;
+  margin-right: 30px;
 }

@@ -31,48 +31,31 @@
   {% endblock %}
 
   {% block pageTitle %}
-  Log in to Patient Access
+  Confirm Mobile Phone Number
   {% endblock %}
 
   {% block content %}
 
   <div class="govuk-grid-row pa-block pa-grey-container">
     <div class="govuk-grid-column-full">
-    <h1>Sign in to your account</h1>
-    <p>Don't have an account? <a href="./pa-register"> Register with Patient Access</a></p>
-      
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-quarter">
-          &nbsp;
-        </div>
-
-        <div class="govuk-grid-column-one-half">
-          <div class="pa-white-container ">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="pa-email">
-                Email or User ID
-              </label>
-              <input class="govuk-input" id="pa-email" name="pa-email" type="text" placeholder="Email Address">
-            </div>
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="pa-password">
-                Password
-              </label>
-              <input class="govuk-input" id="pa-password" name="pa-password" type="password" placeholder="Password">
-            </div>
-          
-            <a href="./pa-signedIn" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="width:100%; margin-bottom: 30px;">
-              Sign In
-            </a>
-            <p>Forgotten your <a href="./pa-confirm-mobile">Email</a>, <a href="./pa-find-practice">User ID</a> or <a href="./pa-reset-password">Password?</a></p>
-          </div>
-        </div>
-
+      <a href="./pa-signin">&lt; Back to Sign In</a>
+    <h1><span class="dot">&nbsp;1&nbsp;</span> Confirm Mobile Phone Number</h1>
+    <p>Please provide the mobile phone number associated with your account.</p>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="pa-phone">
+          Mobile Phone Number
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="pa-phone" name="pa-phone" type="text" placeholder="Mobile number">
       </div>
+      <p>I don't have a <a href="./pa-confirm-mobile2">mobile phone number</a></p>
+      <a href="./pa-signedIn" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="margin: 30px 0;">
+        Continue
+      </a>
     </div>
   </div>
   <div class="student-notes-box"> 
-    <p>You can enter anything at the moment, we are not checking</p>
+    <p>You would enter your phonenumber here and this would send you a text to remind you of your email address</p>
+
   </div>
   
   {% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo ">
+        <span class="govuk-header__logotype">
+            <a href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="go back to homepage" width="250" height="30"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+      <a href="/index.html">
+        <span class="pa-tagline">
+          This is a training website
+        </span>
+      </a>
+    </div>
+  </div>
+  {% endblock %}
+
+  {% block pageTitle %}
+  Link to your GP
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="govuk-grid-row pa-block pa-grey-container">
+    <div class="govuk-grid-column-one-half">
+      <a href="./pa-dashboard">&lt; Back</a>
+      <h2>Link To Practice</h2>
+        <p>To link to your practice, please enter the following details from your registration letter. If you do not have a registration letter, please contact your practice to obtain one.</p>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pa-email">
+            Linkage Key or PIN:
+          </label>
+          <input class="govuk-input" id="pa-email" name="pa-email" type="text">
+        </div>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pa-email">
+            ODS Code or Practice ID:
+          </label>
+          <input class="govuk-input" id="pa-email" name="pa-email" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pa-email">
+            Account ID or Access ID:
+          </label>
+          <input class="govuk-input" id="pa-email" name="pa-email" type="text">
+        </div>
+
+          <a href="#" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button">
+            Confirm
+          </a>
+      </div> 
+      <div class="govuk-grid-column-one-half">
+      <p><image src="{{ asset_path }}images/PA/pa-googlemap.png" alt="screenshot of google map for illustration" width="100%"></image></p>
+      </div>
+    </div>
+    <div class="student-notes-box"> 
+      <p>This how it would look like but we can not go further here. The button 'Confirm' doesn't work.</p>
+      <p>The map doesn't work either.</p>
+    </div>
+
+
+  
+  {% endblock %}
+
+{% block footer %}
+{% endblock %}

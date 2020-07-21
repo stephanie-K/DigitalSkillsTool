@@ -13,24 +13,17 @@
 {% endfor %}
 {% endblock %}
 
-
 {% block header %}
-<div class="govuk-header__container govuk-width-container">
-  <div class="govuk-header__logo">
-    <span class="govuk-header__logotype">
-      <a id="pat-acc-logo-clean" href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="Patient Access Logo" width="250" height="30"></image></a>
-    </span>
-  </div>
-  <div class="govuk-header__content">
-    <a href="/index.html">
-      <span class="pat-acc-tagline">
-        This is a training website
-      </span>
-    </a>
-    <a id="pat-acc-support-centre" href="https://support.patientaccess.com/">
-      <image src="{{ asset_path }}images/PA/pa-acc-support.png?0.18.3p" width="20">
-        <span>
-          Support Centre
+  <div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo ">
+        <span class="govuk-header__logotype">
+            <a href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="go back to homepage" width="250" height="30"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+      <a href="/index.html">
+        <span class="pa-tagline">
+          This is a training website
         </span>
       </a>
     </div>
@@ -38,37 +31,40 @@
   {% endblock %}
 
   {% block pageTitle %}
-  Patient Access - Sign in
+  Patient Access - Account created
   {% endblock %}
-
 
   {% block content %}
 
-  <div class="govuk-grid-row park-home">
-    <div class="park-home-black-block pat-acc-signin-block">
-      <div class="pat-acc-signin-centre">
-        <div class="pat-acc-success-image-cont">
-          <div>
-            <image  src="{{ asset_path }}images/PA/greentick.png" alt="success" width="30" height="30">
-            </div>
-            <div class="pa-acc-success-message-cont">
-              <span class="pat-acc-success-title pa-acc-success-message">Your account has been successfully created</span>
-            </div>
-          </div>
-          <div class="pat-acc-signin-form-container pat-acc-enter-details-cont pat-acc-success-cont">
-            <span class="pat-acc-success-title">Check your email inbox now</span>
-            <br>
-            <br>
-            <span class="pat-acc-success-subtitle">We’ve sent you a verification link to your email address <span class="pat-acc-success-email">{{data['email']}}</span>. Please check your email inbox and verify your email address.</span>
-            <div class="pat-acc-success-skip-ver">
-              <a id="pat-acc-logo-clean" href="./pa-complete"><span>Skip verification for now</span></a>
-            </div>
+  <div class="govuk-grid-row pa-block pa-grey-container" style="text-align: center;">
+    <div class="govuk-grid-column-full">
+    <p>&nbsp;<image  src="{{ asset_path }}images/PA/greentick.png" alt="success" width="40" height="40"></image></p>
+    <h1>Your account has been successfully created</h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="pa-white-container ">
+            <h2>Check your email inbox now</h2>
+            <p>We’ve sent you a verification link to your email address <strong>{{data['email']}}</strong>. Please check your email inbox and verify your email address.</p>
+            <a href="./pa-post-signin">Skip verification for now</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>You would receive an email at the point and in the email there would be a link to follow.</p>
+    <p>Following this link would signed you in.</p>
+    <p>The email will look like this picture below:</p>
+    <p><image src="{{ asset_path }}images/PA/verification-email-pa.png" alt="screenshot of the email to verify your account" style="width:90% ; border: 20px solid #D3368A;"></image></p>
+  </div>
 
   {% endblock %}
+
+
+  
 
   {% block footer %}
   {% endblock %}
