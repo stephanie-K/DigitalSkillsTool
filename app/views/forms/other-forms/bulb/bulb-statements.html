@@ -49,7 +49,7 @@
                               Change payments
                               </a>
                           </p>
-                          <p>Next payment on the 10 September</p>
+                          <p>Next payment on the {{ bulbNextPayment }}</p>
                         </div>
                         <div class="govuk-grid-column-one-half">
                           <p class="govuk-!-font-size-27">Account balance</p>
@@ -76,7 +76,7 @@
                           </thead>
                         <tbody class="govuk-table__body">
                           <tr class="govuk-table__row">
-                            <td class="govuk-table__cell" style="padding-left: 10px;">13 Jul 20</td>
+                            <td class="govuk-table__cell" style="padding-left: 10px;">{{ bulbPaymentDate1 }}</td>
                             <td class="govuk-table__cell"><p style="margin-bottom: 10px">Payment</p>
                               <p style="margin-bottom: 10px"><em>by Direct Debit</em></p>
                             </td>
@@ -85,9 +85,9 @@
                             <td class="govuk-table__cell">£34.61</td>
                           </tr>
                           <tr class="govuk-table__row">
-                            <td class="govuk-table__cell style="padding-left: 10px;"">10 Jul 20</td>
+                            <td class="govuk-table__cell style="padding-left: 10px;"">{{ bulbEnergyUsageDate1 }}</td>
                             <td class="govuk-table__cell"><p style="margin-bottom: 10px">Energy used</p>
-                              <p style="margin-bottom: 10px"><em>10 Jun to 09 Jul 2020</em></p>
+                              <p style="margin-bottom: 10px"><em>{{ bulbStatementDate1 }}</em></p>
                               <p style="margin-bottom: 10px"><svg xmlns="http://www.w3.org/2000/Svg" focusable="false" preserveAspectRatio="xMinYMin" viewBox="0 0 64 64" class="sc-fzokOt eDBTAL" width="20" height="20">
                                 <path style="fill:#00ab55;" d="M30.639 41.217a2 2 0 0 0 2.931.355l6.16-5.265a2 2 0 0 0-2.6-3.04l-2.235 1.91c1.143-8.348 1.248-15.095.358-24.989a2 2 0 1 0-3.984.358c.87 9.671.76 16.127-.35 24.18l-1.68-2.353a2 2 0 1 0-3.255 2.324l4.655 6.52z"></path>
                                 <path style="fill:#00ab55;" d="M7.718 40.974a2 2 0 0 1 3.985.344 445.838 445.838 0 0 0-.51 6.46 2.862 2.862 0 0 0 2.747 3.089c10.436.367 25.64.364 35.797.118a2.901 2.901 0 0 0 2.818-2.644c.204-2.184.425-4.678.645-7.36a2 2 0 0 1 3.987.329 690.544 690.544 0 0 1-.65 7.403 6.901 6.901 0 0 1-6.703 6.271c-10.217.247-25.503.251-36.035-.12-3.914-.137-6.874-3.498-6.596-7.372.158-2.193.329-4.361.515-6.518z">
@@ -101,7 +101,7 @@
                             <td class="govuk-table__cell">£1.16</td>
                           </tr>
                           <tr class="govuk-table__row">
-                            <td class="govuk-table__cell" style="padding-left: 10px;">11 Jun 20</td>
+                            <td class="govuk-table__cell" style="padding-left: 10px;">{{ bulbPaymentDate2 }}</td>
                             <td class="govuk-table__cell"><p style="margin-bottom: 10px">Payment</p>
                               <p style="margin-bottom: 10px"><em>by Direct Debit</em></p>
                             </td>
@@ -110,9 +110,9 @@
                             <td class="govuk-table__cell">£41.66</td>
                           </tr>
                           <tr class="govuk-table__row">
-                            <td class="govuk-table__cell" style="padding-left: 10px;">10 Jun 20</td>
+                            <td class="govuk-table__cell" style="padding-left: 10px;">{{ bulbEnergyUsageDate2 }}</td>
                             <td class="govuk-table__cell"><p style="margin-bottom: 10px">Energy used</p>
-                              <p style="margin-bottom: 10px"><em>10 May to 09 Jun 2020</em></p>
+                              <p style="margin-bottom: 10px"><em>{{ bulbStatementDate2 }}</em></p>
                               <p style="margin-bottom: 10px"><svg xmlns="http://www.w3.org/2000/Svg" focusable="false" preserveAspectRatio="xMinYMin" viewBox="0 0 64 64" class="sc-fzokOt eDBTAL" width="20" height="20">
                                 <path style="fill:#00ab55;" d="M30.639 41.217a2 2 0 0 0 2.931.355l6.16-5.265a2 2 0 0 0-2.6-3.04l-2.235 1.91c1.143-8.348 1.248-15.095.358-24.989a2 2 0 1 0-3.984.358c.87 9.671.76 16.127-.35 24.18l-1.68-2.353a2 2 0 1 0-3.255 2.324l4.655 6.52z"></path>
                                 <path style="fill:#00ab55;" d="M7.718 40.974a2 2 0 0 1 3.985.344 445.838 445.838 0 0 0-.51 6.46 2.862 2.862 0 0 0 2.747 3.089c10.436.367 25.64.364 35.797.118a2.901 2.901 0 0 0 2.818-2.644c.204-2.184.425-4.678.645-7.36a2 2 0 0 1 3.987.329 690.544 690.544 0 0 1-.65 7.403 6.901 6.901 0 0 1-6.703 6.271c-10.217.247-25.503.251-36.035-.12-3.914-.137-6.874-3.498-6.596-7.372.158-2.193.329-4.361.515-6.518z">
