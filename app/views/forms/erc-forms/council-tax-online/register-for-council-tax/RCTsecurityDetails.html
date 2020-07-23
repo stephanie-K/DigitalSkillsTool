@@ -15,8 +15,12 @@ Create your online profile
     <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
     <p class="erc-alt-dark-blue-bg">Create your security details</p>
     <div class="govuk-heading-s erc-alt-light-grey">
-      <p class="govuk-!-font-size-14">Your confirmation code has been successfully validated.</p>
-      <p class="govuk-!-font-size-14">Please tell us your name and address. We will match these against the details that we already hold on our customer database.</p>
+      <p class="govuk-!-font-size-14">Please choose a username and supply a memorable question and answer e.g.</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>Memorable Question = "what is my favourite colour?"</li>
+          <li>Memorable Answer = "purple"</li>
+      </ul>
+      <p class="govuk-!-font-size-14">You will be asked for the answer to your question when you produce your ID.</p>
     </div>
 
       <dl class="govuk-summary-list centred-input-fields">
@@ -60,7 +64,8 @@ Create your online profile
 
       {{ govukButton({
         text: "Continue",
-        classes: "button-primary erc-alt"
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTpasswordCreation"
       }) }}
 
     </div>
