@@ -1,0 +1,101 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Create your online profile
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
+    <p class="erc-alt-dark-blue-bg">Address Selection</p>
+    <p>Select your address <span style="color: red"> *</span></p>
+
+
+      <div class="ct-account">
+        <table class="govuk-table" style="overflow: auto;">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Flat</th>
+              <th scope="col" class="govuk-table__header">Building Name</th>
+              <th scope="col" class="govuk-table__header">House No</th>
+              <th scope="col" class="govuk-table__header">Street Name</th>
+              <th scope="col" class="govuk-table__header">Post Town</th>
+              <th scope="col" class="govuk-table__header">Postcode</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ERC45H0</td>
+              <td class="govuk-table__cell">{{ councilTaxStartDate }}</td>
+              <td class="govuk-table__cell">{{ councilTaxEndDate }}</td>
+              <td class="govuk-table__cell">313.74</td>
+              <td class="govuk-table__cell">-50.00</td>
+              <td class="govuk-table__cell">263.74</td>
+            </tr>
+          </tbody>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ERC45H0</td>
+              <td class="govuk-table__cell">{{ councilTaxStartDate }}</td>
+              <td class="govuk-table__cell">{{ councilTaxEndDate }}</td>
+              <td class="govuk-table__cell">313.74</td>
+              <td class="govuk-table__cell">-50.00</td>
+              <td class="govuk-table__cell">263.74</td>
+            </tr>
+          </tbody>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ERC45H0</td>
+              <td class="govuk-table__cell">{{ councilTaxStartDate }}</td>
+              <td class="govuk-table__cell">{{ councilTaxEndDate }}</td>
+              <td class="govuk-table__cell">313.74</td>
+              <td class="govuk-table__cell">-50.00</td>
+              <td class="govuk-table__cell">263.74</td>
+            </tr>
+          </tbody>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">ERC45H0</td>
+              <td class="govuk-table__cell">{{ councilTaxStartDate }}</td>
+              <td class="govuk-table__cell">{{ councilTaxEndDate }}</td>
+              <td class="govuk-table__cell">313.74</td>
+              <td class="govuk-table__cell">-50.00</td>
+              <td class="govuk-table__cell">263.74</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
+        <p class="govuk-!-font-size-14">If your address is not shown on the above pages, select 'Search again' to check that you have entered your details correctly, or select 'Address not shown' to send us your details so we can investigate.</p>
+      </div>
+
+      {{ govukButton({
+        text: "Search again",
+        classes: "button-primary erc-alt"
+      }) }}
+      {{ govukButton({
+        text: "Address not shown",
+        classes: "button-primary erc-alt"
+      }) }}
+      {{ govukButton({
+        text: "Confirm chosen address",
+        classes: "button-primary erc-alt"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>On the real form, you would see a long list of addresses with a circle next to it to select your address from the list.</p>
+  </div>
+{% endblock %}
