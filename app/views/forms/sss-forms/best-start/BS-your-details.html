@@ -18,7 +18,7 @@ Best Start Grant
           First name(s)
         </label>
       </h1>
-      <input class="govuk-input govuk-input--width-20" id="BSG-your-first-name" name="BSG-your-first-name" type="text">
+      <input class="govuk-input govuk-input--width-20" id="BSG-your-first-name" name="BSG-your-first-name" type="text" value="{{ data ['BSG-your-first-name']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0;">
@@ -27,7 +27,7 @@ Best Start Grant
         Last name
       </label>
     </h1>
-    <input class="govuk-input govuk-input--width-20" id="BSG-your-last-name" name="BSG-your-last-name" type="text">
+    <input class="govuk-input govuk-input--width-20" id="BSG-your-last-name" name="BSG-your-last-name" type="text" value="{{ data ['BSG-your-last-name']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0;">
@@ -46,7 +46,7 @@ Best Start Grant
               <label class="govuk-label govuk-date-input__label" for="BSG-your-dob-day">
                 <strong>Day</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-your-dob-day" name="BSG-your-dob-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-your-dob-day" name="BSG-your-dob-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-your-dob-day']}}">
             </div>
           </div>
           <div class="govuk-date-input__item">
@@ -54,7 +54,7 @@ Best Start Grant
               <label class="govuk-label govuk-date-input__label" for="BSG-your-dob-month">
                 <strong>Month</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-your-dob-month" name="BSG-your-dob-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-your-dob-month" name="BSG-your-dob-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-your-dob-month']}}">
             </div>
           </div>
           <div class="govuk-date-input__item">
@@ -62,7 +62,7 @@ Best Start Grant
               <label class="govuk-label govuk-date-input__label" for="BSG-your-dob-year">
                 <strong>Year</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-your-dob-year" name="BSG-your-dob-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-your-dob-year" name="BSG-your-dob-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-your-dob-year']}}">
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ Best Start Grant
     </h1>
     <p>It's on your National Insurance card, benefit letter, payslip or P60
     For example: QQ 12 34 56 C</p>
-    <input class="govuk-input govuk-input--width-20" id="BSG-your-ni-number" name="BSG-your-ni-number" type="text">
+    <input class="govuk-input govuk-input--width-20" id="BSG-your-ni-number" name="BSG-your-ni-number" type="text" value="{{ data ['BSG-your-ni-number']}}">
     </div>
 
     <hr style="margin:20px 0px 0px 0px">

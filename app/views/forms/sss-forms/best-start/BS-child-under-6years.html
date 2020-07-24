@@ -35,7 +35,7 @@ Best Start Grant
           First name(s)
         </label>
       </h1>
-      <input class="govuk-input govuk-input--width-20" id="BSG-child-first-name" name="BSG-child-first-name" type="text">
+      <input class="govuk-input govuk-input--width-20" id="BSG-child-first-name" name="BSG-child-first-name" type="text" value="{{ data ['BSG-child-first-name']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0;">
@@ -44,7 +44,7 @@ Best Start Grant
           Last name
         </label>
       </h1>
-      <input class="govuk-input govuk-input--width-20" id="BSG-child-last-name" name="BSG-child-last-name" type="text">
+      <input class="govuk-input govuk-input--width-20" id="BSG-child-last-name" name="BSG-child-last-name" type="text" value="{{ data ['BSG-child-last-name']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0px 0px 0px 0px;">
@@ -63,7 +63,7 @@ Best Start Grant
               <label class="govuk-label govuk-date-input__label" for="BSG-child-under-6year-day">
                 <strong>Day</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-child-under-6year-day" name="BSG-child-under-6year-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-child-under-6year-day" name="BSG-child-under-6year-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-child-under-6year-day']}}">
             </div>
           </div>
           <div class="govuk-date-input__item">
@@ -71,7 +71,7 @@ Best Start Grant
               <label class="govuk-label govuk-date-input__label" for="BSG-child-under-6year-month">
                 <strong>Month</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-child-under-6year-month" name="BSG-child-under-6year-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-child-under-6year-month" name="BSG-child-under-6year-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-child-under-6year-month']}}">
             </div>
           </div>
           <div class="govuk-date-input__item">
@@ -79,7 +79,7 @@ Best Start Grant
               <label class="govuk-label govuk-date-input__label" for="BSG-child-under-6year-year">
                 <strong>Year</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-child-under-6year-year" name="BSG-child-under-6year-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-child-under-6year-year" name="BSG-child-under-6year-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-child-under-6year-year']}}">
             </div>
           </div>
         </div>
