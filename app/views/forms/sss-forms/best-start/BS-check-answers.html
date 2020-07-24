@@ -159,7 +159,7 @@ Best Start Grant
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Pregnancy details</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['pregnant-details-check']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-pregnancy-details">Change</a></td>
               </tr>
             </tbody>
@@ -169,7 +169,7 @@ Best Start Grant
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">What is the due date?</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-baby-due-day']}}/{{data['BSG-baby-due-month']}}/{{data['BSG-baby-due-year']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-pregnancy-due-date">Change</a></td>
               </tr>
             </tbody>
@@ -180,22 +180,22 @@ Best Start Grant
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">First name(s)</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-baby-first-name']}}</td>
                 <td class="govuk-table__cell"><a href="//forms/sss-forms/best-start/BS-baby-under-6mo">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Last name</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-baby-last-name']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-baby-under-6mo">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Date of birth</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-baby-under-6mo-day']}}/{{data['BSG-baby-under-6mo-month']}}/{{data['BSG-baby-under-6mo-year']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-baby-under-6mo">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">If you signed up for a Baby Box</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-baby-box-check']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-baby-box">Change</a></td>
               </tr>
             </tbody>
@@ -206,22 +206,22 @@ Best Start Grant
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">First name(s)</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-child-first-name']}}</td>
                 <td class="govuk-table__cell"><a href=/forms/sss-forms/best-start/BS-child-under-6years>Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Last name</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-child-last-name']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-under-6years">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Date of birth</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-child-under-6year-day']}}/{{data['BSG-child-under-6year-month']}}/{{data['BSG-child-under-6year-year']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-under-6years">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Is this child named on either your or your partner's Child Benefit, Child Tax Credit, Universal Credit or Pension Credit claim?</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-child-on-benefits']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-under-6years">Change</a></td>
               </tr>
             </tbody>
@@ -231,7 +231,7 @@ Best Start Grant
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Do you have any children between 6 months and 16 years old?</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-other-child-check']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
               </tr>
             </tbody>
@@ -241,22 +241,22 @@ Best Start Grant
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">First name(s)</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-other-child-first-name']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Last name</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-other-child-last-name']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Date of birth</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-other-child-day']}}/{{data['BSG-other-child-month']}}/{{data['BSG-other-child-year']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Is this child named on either your or your partner's Child Benefit, Child Tax Credit, Universal Credit or Pension Credit claim?</th>
-                <td class="govuk-table__cell">TBC</td>
+                <td class="govuk-table__cell">{{data['BSG-other-child-on-benefits']}}</td>
                 <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
               </tr>
             </tbody>
