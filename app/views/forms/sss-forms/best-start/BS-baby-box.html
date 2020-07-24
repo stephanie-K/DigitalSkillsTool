@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -20,13 +20,13 @@ Best Start Grand
         <p><strong>Have you signed up for a Baby Box?</strong></p>
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-box-conditional" name="baby-box-check" type="radio" value="yes" data-aria-controls="conditional-baby-box-conditional">
+            <input class="govuk-radios__input" id="baby-box-conditional" name="BSG-baby-box-check" type="radio" value="Yes" data-aria-controls="conditional-baby-box-conditional">
             <label class="govuk-label govuk-radios__label" for="baby-box-conditional">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-box-2" name="baby-box-check" type="radio" value="no">
+            <input class="govuk-radios__input" id="baby-box-2" name="BSG-baby-box-check" type="radio" value="No">
             <label class="govuk-label govuk-radios__label" for="baby-box-2">
               No
             </label>
@@ -39,14 +39,14 @@ Best Start Grand
                 <p><strong>Can we use your Baby Box details to confirm your pregnancy?</strong></p>
                 <div class="govuk-radios govuk-radios--small">
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="baby-box-details" name="baby-box-details" type="radio" value="yes">
-                    <label class="govuk-label govuk-radios__label" for="baby-box-details">
+                    <input class="govuk-radios__input" id="BSG-baby-box-details" name="BSG-baby-box-details" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="BSG-baby-box-details">
                       Yes
                     </label>
                   </div>
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="baby-box-details-2" name="baby-box-details" type="radio" value="no">
-                    <label class="govuk-label govuk-radios__label" for="baby-box-details-2">
+                    <input class="govuk-radios__input" id="BSG-baby-box-details-2" name="BSG-baby-box-details" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="BSG-baby-box-details-2">
                       No
                     </label>
                   </div>
@@ -68,7 +68,6 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-child-under-6years",
       isStartButton: true
     }) }}
 

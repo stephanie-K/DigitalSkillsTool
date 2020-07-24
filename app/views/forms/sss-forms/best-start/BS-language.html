@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -24,13 +24,13 @@ Best Start Grand
         </legend>
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="language-conditional" name="language-check" type="radio" value="yes" data-aria-controls="conditional-language-conditional">
+            <input class="govuk-radios__input" id="language-conditional" name="BSG-language-check" type="radio" value="Yes" data-aria-controls="conditional-language-conditional">
             <label class="govuk-label govuk-radios__label" for="language-conditional">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item" style="margin:0px;">
-            <input class="govuk-radios__input" id="language-2" name="language-check" type="radio" value="no">
+            <input class="govuk-radios__input" id="language-2" name="BSG-language-check" type="radio" value="No">
             <label class="govuk-label govuk-radios__label" for="language-2">
               No
             </label>
@@ -135,7 +135,6 @@ Best Start Grand
       {{ govukButton({
         text: "Next",
         classes: "button-primary",
-        href: "/forms/sss-forms/best-start/BS-payment-details",
         isStartButton: true
       }) }}
 

@@ -1,0 +1,47 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl">
+      You will need to provide more evidence to get Best Start Grant and Best Start Foods
+  </h1>
+  <p style="border-left: 6px solid #0065bd; padding: 0px 0px 0px 10px">You can still apply for Best Start Grant and Best Start Foods if you do not get at least one of the benefits that show you look after the child.</p>
+  <p>To show you're the main person looking after a child, they should be named on either your or your partner's claim for:</p>
+  <ul class="govuk-list govuk-list--bullet">
+      <li>Child Benefit</li>
+      <li>Child Tax Credit</li>
+      <li>Universal Credit</li>
+      <li>Pension Credit</li>
+  </ul>
+  <p>If the child is not named on any of these benefits, you'll need to have a legal order that shows that you look after the them.</p>
+  <p>For Best Start Grant and Best Start Foods you'll need one of these:</p>
+  <ul class="govuk-list govuk-list--bullet">
+      <li>a Kinship Care Order</li>
+      <li>a Compulsory Supervision Order</li>
+      <li>a Residence Order</li>
+      <li>a Permanence Order</li>
+      <li>a Parental Order</li>
+      <li>an Adoption Order</li>
+  </ul>
+  <p>Once you've submitted your application you'll be directed to a page that tells you how to send this.</p>
+
+  {{ govukButton({
+    text: "Back",
+    classes: "sg-button-back",
+    href: "javascript: history.go(-1)"
+  }) }}
+  {{ govukButton({
+    text: "Next",
+    classes: "button-primary",
+    href: "",
+    isStartButton: true
+  }) }}
+
+</div>
+
+{% endblock %}

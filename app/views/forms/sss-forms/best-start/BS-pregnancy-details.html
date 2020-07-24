@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -18,19 +18,19 @@ Best Start Grand
         <p><strong>How many babies are you expecting?</strong></p>
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="pregnant-details-2" name="pregnant-details-check" type="radio" value="one">
+            <input class="govuk-radios__input" id="pregnant-details-2" name="BSG-pregnant-details-check" type="radio" value="One">
             <label class="govuk-label govuk-radios__label" for="pregnant-details-2">
               1
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="pregnant-details-conditional" name="pregnant-details-check" type="radio" value="moreThanOne" data-aria-controls="conditional-pregnant-details-conditional">
+            <input class="govuk-radios__input" id="pregnant-details-conditional" name="BSG-pregnant-details-check" type="radio" value="More Than One" data-aria-controls="conditional-pregnant-details-conditional">
             <label class="govuk-label govuk-radios__label" for="pregnant-details-conditional">
               More than 1
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="pregnant-details-2" name="pregnant-details-check" type="radio" value="tooEarly">
+            <input class="govuk-radios__input" id="pregnant-details-2" name="BSG-pregnant-details-check" type="radio" value="Too Early to Know">
             <label class="govuk-label govuk-radios__label" for="pregnant-details-2">
               It's too early to know
             </label>
@@ -60,7 +60,6 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-pregnancy-due-date",
       isStartButton: true
     }) }}
 

@@ -1,0 +1,36 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 30px 0px">
+    Equalities Survey
+  </h1>
+  <p>This section is not part of your application for Best Start Grant and Best Start Foods.</p>
+  <p>The answers you give in this section will be anonymous. This means we will not know who gave the answers.</p>
+  <p>Your answers to these questions will not affect the decision we make and will not be seen by anyone making decisions about your application.</p>
+  <p style="font-weight:bold;">Help us improve our service</p>
+  <p>The information you give will help us understand who is using our service, so that we can improve our service to make sure we treat everyone fairly and equally.</p>
+  <p style="font-weight:bold;">You and your data</p>
+  <p>Get more information about how Social Security Scotland uses your data by reading our <a href="https://www.mygov.scot/social-security-data/">privacy notice</a>.</p>
+
+  {{ govukButton({
+    text: "Back",
+    classes: "sg-button-back",
+    href: "javascript: history.go(-1)"
+  }) }}
+
+  {{ govukButton({
+    text: "Next",
+    classes: "button-primary",
+    href: "/forms/sss-forms/best-start/BS-ethnic-group",
+    isStartButton: true
+  }) }}
+
+</div>
+
+{% endblock %}

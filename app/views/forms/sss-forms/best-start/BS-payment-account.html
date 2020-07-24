@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -13,45 +13,45 @@ Best Start Grand
   <p>Your Best Start Grant payment can be paid into your bank account or someone else's bank account.</p>
   <p style="margin:0;">Social Security Scotland will only hold one bank account against your name.  This will mean all the benefits you receive from us will be paid into the latest bank account you have provided.</p>
 
-  <form class="form" method="psot">
+  <form class="form" method="post">
     <div class="govuk-form-group" style="margin:0;">
       <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="account-holder">
+        <label class="govuk-label govuk-label--m" for="BSG-account-holder">
           Name of account holder
         </label>
         <p>Write the name as it is shown on the bank card, chequebook or statement.</p>
       </h1>
-      <input class="govuk-input" id="account-holder" name="account-holder" type="text">
+      <input class="govuk-input" id="BSG-account-holder" name="BSG-account-holder" type="text">
     </div>
 
     <div class="govuk-form-group" style="margin:0;">
       <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="sort-code">
+        <label class="govuk-label govuk-label--m" for="BSG-sort-code">
           Sort code
         </label>
         <p>Tell us all 6 numbers, for example: 123456</p>
       </h1>
-      <input class="govuk-input" id="sort-code" name="sort-code" type="text">
+      <input class="govuk-input" id="BSG-sort-code" name="BSG-sort-code" type="text">
     </div>
 
     <div class="govuk-form-group" style="margin:0;">
       <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="account-number">
+        <label class="govuk-label govuk-label--m" for="BSG-account-number">
           Account number
         </label>
         <p>Tell us all 6 numbers, for example: 123456</p>
       </h1>
-      <input class="govuk-input" id="account-number" name="account-number" type="text">
+      <input class="govuk-input" id="BSG-account-number" name="BSG-account-number" type="text">
     </div>
 
     <div class="govuk-form-group">
       <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="building-society-ref">
+        <label class="govuk-label govuk-label--m" for="BSG-building-society-ref">
           Building society or Credit Union account reference number  <span style="font-size:18px; color:#C0C0C0">(if you know it)</span>
         </label>
         <p>You only need to tell us this if you have one of these accounts.</p>
       </h1>
-      <input class="govuk-input" id="building-society-ref" name="building-society-ref" type="text">
+      <input class="govuk-input" id="BSG-building-society-ref" name="BSG-building-society-ref" type="text">
     </div>
 
     <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
@@ -63,13 +63,13 @@ Best Start Grand
         </legend>
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
           <div class="govuk-radios__item" style="margin:0px;">
-            <input class="govuk-radios__input" id="bank-acc-1" name="bank-acc-check" type="radio" value="yes">
+            <input class="govuk-radios__input" id="bank-acc-1" name="BSG-bank-acc-check" type="radio" value="Yes">
             <label class="govuk-label govuk-radios__label" for="bank-acc-1">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item" style="margin:0px 0px 20px 0px;">
-            <input class="govuk-radios__input" id="bank-acc-conditional" name="bank-acc-check" type="radio" value="no" data-aria-controls="conditional-bank-acc-conditional">
+            <input class="govuk-radios__input" id="bank-acc-conditional" name="BSG-bank-acc-check" type="radio" value="No" data-aria-controls="conditional-bank-acc-conditional">
             <label class="govuk-label govuk-radios__label" for="bank-acc-conditional">
               No
             </label>
@@ -115,7 +115,6 @@ Best Start Grand
       {{ govukButton({
         text: "Next",
         classes: "button-primary",
-        href: "/forms/sss-forms/best-start/BS-anything-else",
         isStartButton: true
       }) }}
 

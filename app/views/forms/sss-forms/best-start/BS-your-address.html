@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -11,66 +11,68 @@ Best Start Grand
     Tell us your full address
   </h1>
 
-  <div class="govuk-form-group" style="margin:0;">
-    <h1 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--m" for="address-1">
-      Address line 1
-    </label>
-  </h1>
-  <input class="govuk-input" id="address-1" name="address-1" type="text">
-</div>
+  <form class="form" method="post">
 
-<div class="govuk-form-group" style="margin:0;">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--m" for="address-2">
-    Address line 2 <span style="font-size:18px; color:#C0C0C0">(optional)</span>
-  </label>
-</h1>
-<input class="govuk-input" id="address-2" name="address-2" type="text">
-</div>
+      <div class="govuk-form-group" style="margin:0;">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="BSG-your-address-1">
+          Address line 1
+        </label>
+      </h1>
+      <input class="govuk-input" id="BSG-your-address-1" name="BSG-your-address-1" type="text">
+    </div>
 
-  <div class="govuk-form-group" style="margin:0;">
-    <h1 class="govuk-label-wrapper">
-      <label class="govuk-label govuk-label--m" for="address-3">
-      Address line 3 <span style="font-size:18px; color:#C0C0C0">(optional)</span>
-    </label>
-  </h1>
-  <input class="govuk-input" id="address-3" name="address-3" type="text">
-</div>
+    <div class="govuk-form-group" style="margin:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="address-2">
+        Address line 2 <span style="font-size:18px; color:#C0C0C0">(optional)</span>
+      </label>
+    </h1>
+    <input class="govuk-input" id="address-2" name="address-2" type="text">
+    </div>
 
-<div class="govuk-form-group" style="margin:0;">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--m" for="town">
-    Town or city
-  </label>
-</h1>
-<input class="govuk-input" id="town" name="town" type="text">
-</div>
+      <div class="govuk-form-group" style="margin:0;">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="address-3">
+          Address line 3 <span style="font-size:18px; color:#C0C0C0">(optional)</span>
+        </label>
+      </h1>
+      <input class="govuk-input" id="address-3" name="address-3" type="text">
+    </div>
 
-<div class="govuk-form-group" style="margin:0px 0px 60px 0px;">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--m" for="postcode">
-    Postcode
-  </label>
-</h1>
-<input class="govuk-input" id="postcode" name="postcode" type="text">
-</div>
+    <div class="govuk-form-group" style="margin:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-your-town">
+        Town or city
+      </label>
+    </h1>
+    <input class="govuk-input" id="BSG-your-town" name="BSG-your-town" type="text">
+    </div>
+
+    <div class="govuk-form-group" style="margin:0px 0px 60px 0px;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-your-postcode">
+        Postcode
+      </label>
+    </h1>
+    <input class="govuk-input" id="BSG-your-postcode" name="BSG-your-postcode" type="text">
+    </div>
 
 
 
-{{ govukButton({
-  text: "Back",
-  classes: "sg-button-back",
-  href: "javascript: history.go(-1)"
-}) }}
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
 
-{{ govukButton({
-  text: "Next",
-  classes: "button-primary",
-  href: "/forms/sss-forms/best-start/BS-partner",
-  isStartButton: true
-}) }}
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
 
+  </form>
 </div>
 
 {% endblock %}
