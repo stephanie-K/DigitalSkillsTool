@@ -1,0 +1,61 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grand
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 30px 0px">
+    Things you need to agree with before you apply
+  </h1>
+  <p>Tick the boxes to show that you've read and agree with the statements. You need to do this before you can submit your form to Social Security Scotland.</p>
+  <p style="margin:0;">These declarations are only for your benefit application. You are not making any of these declarations for the answers you gave us in our equalities survey.</p>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-checkboxes govuk-checkboxes--small">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="agree" name="agree" type="checkbox" value="agree">
+            <label class="govuk-label govuk-checkboxes__label" for="agree">
+              As far as I know and believe, I declare that the information I have given in this form is correct and complete.
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item" style="margin:30px 0px;">
+            <input class="govuk-checkboxes__input" id="agree-2" name="agree" type="checkbox" value="agree2">
+            <label class="govuk-label govuk-checkboxes__label" for="agree-2">
+              I understand that I may be prosecuted if I provide details that are not complete or correct. I also understand money may be taken back from me if I'm paid too much.
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="agree-3" name="agree" type="checkbox" value="agree3">
+            <label class="govuk-label govuk-checkboxes__label" for="agree-3">
+              I agree to update Social Security Scotland if any of the details given in this form change, as this may affect any ongoing payments.
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <p style="margin:0px 0px 60px 0px">By completing this form you confirm you have read and agree to <a href="https://www.mygov.scot/social-security-data/">Social Security Scotland's privacy notice</a>.</p>
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Submit",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-your-details",
+      isStartButton: true
+    }) }}
+
+  </form>
+
+</div>
+
+{% endblock %}
