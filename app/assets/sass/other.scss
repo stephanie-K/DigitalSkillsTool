@@ -364,16 +364,16 @@ margin-top:30px;
   .govuk-label {
     font-size: 20px; font-weight: 400;
     color: #036;
-  }  
+  }
   .govuk-input, .govuk-select {
-    border: 2px solid #ccc; 
+    border: 2px solid #ccc;
     border-radius: 0.3rem;
   }
   .govuk-input.bulb-meter {
-    border: 1px solid #036; 
+    border: 1px solid #036;
   }
   .govuk-input--error {
-    border: 1px solid #e00; 
+    border: 1px solid #e00;
   }
 }
 
@@ -441,8 +441,8 @@ button.button-bulb-clear:hover, a.button-bulb-clear:hover {
 
 
 
-button.button-bulb-magic, a.button-bulb-magic, 
-button.button-bulb-magic:active, a.button-bulb-magic:active, 
+button.button-bulb-magic, a.button-bulb-magic,
+button.button-bulb-magic:active, a.button-bulb-magic:active,
 button.button-bulb-magic:link, a.button-bulb-magic:link,
 button.button-bulb-magic:visited, a.button-bulb-magic:visited{
   background-color: #fff;
@@ -495,7 +495,7 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
 }
 
 .student-notes-box-bulb {
-  background-color: #e4228e;  
+  background-color: #e4228e;
   margin: 20px 0;
   padding: 25px 15px;
   border-radius: 10px;
@@ -505,7 +505,7 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
     font-weight: 600;
     font-size: 1rem;
   }
-  image, img, svg{  
+  image, img, svg{
     @media only screen and (max-width: 490px) {
         width:100%;
     }
@@ -653,8 +653,8 @@ h1, h2, h3, p, a, label, li {
     font-weight: 700;
   }
   h2{
-    font-size: 24px; 
-    font-weight: 900; 
+    font-size: 24px;
+    font-weight: 900;
     line-height: 30px;
     color: $pa-text-dark;
   }
@@ -671,8 +671,8 @@ h1, h2, h3, p, a, label, li {
     color: #dc60a2;
   }
   label {
-    font-size: 18px; 
-    font-weight: 700; 
+    font-size: 18px;
+    font-weight: 700;
     line-height: 30px;
     color: $pa-text-dark;
   }
@@ -702,12 +702,12 @@ h1, h2, h3, p, a, label, li {
 }
 
 .pa-purple-container {
-  background-color: #32325d; 
+  background-color: #32325d;
   padding: 100px 0
 }
 
 .pa-grey-container {
-  background-color: #f7f7fa; 
+  background-color: #f7f7fa;
   padding: 50px 0 100px 0;
 }
 
