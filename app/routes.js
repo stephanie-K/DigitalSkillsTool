@@ -919,7 +919,7 @@ router.post('/forms/other-forms/patient-access/pa-register2', function (req, res
 router.post('/forms/sss-forms/best-start/BS-location', function (req, res) {
   var whereYouLive = req.session.data['BSG-location-name'];
 
-  if ((whereYouLive === 'scotland')) {
+  if ((whereYouLive === 'Scotland')) {
      res.redirect('/forms/sss-forms/best-start/BS-start');
   } else if (whereYouLive === 'eWNI') {
       res.redirect('/forms/sss-forms/best-start/BS-england');
