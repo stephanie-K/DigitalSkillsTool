@@ -13,19 +13,19 @@ Best Start Grant
   <p>The next section will ask you how you would like to be paid if your application is successful.</p>
   <br>
 
-  {{ govukButton({
-    text: "Back",
-    classes: "sg-button-back",
-    href: "javascript: history.go(-1)"
-  }) }}
+  <form class="form" method="post">
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
 
-  {{ govukButton({
-    text: "Next",
-    classes: "button-primary",
-    href: "/forms/sss-forms/best-start/BS-payment-account",
-    isStartButton: true
-  }) }}
-
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+  </form>
 </div>
 
 {% endblock %}
