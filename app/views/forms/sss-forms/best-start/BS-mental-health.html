@@ -1,0 +1,144 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grand
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 30px 0px">
+    Do you have a physical or mental health condition or illness lasting or expected to last 12 months or more?
+  </h1>
+  <p style="margin:0;">This will not affect the decision we make on your benefit application.</p>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group" style="padding:0px; margin:10px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mental-conditional" name="mental-check" type="radio" value="yes" data-aria-controls="conditional-mental-conditional">
+            <label class="govuk-label govuk-radios__label" for="mental-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mental-2" name="mental-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="mental-2">
+              No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="mental-2" name="mental-check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="mental-2">
+              Prefer not to say
+            </label>
+          </div>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mental-conditional" style="border:none; padding:0px; margin:0px;">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Does this condition or illness affect you in any of the following areas?
+                  </h1>
+                </legend>
+                <div class="govuk-form-group" style="padding:0;margin:0px;">
+                  <fieldset class="govuk-fieldset">
+                    <div class="govuk-checkboxes govuk-checkboxes--small">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check" name="mental-check" type="checkbox" value="vision">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check">
+                          Vision (for example blindness or partial sight)
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-2" name="mental-check" type="checkbox" value="hearing">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-2">
+                          Hearing (for example deafness or partial hearing)
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-3" name="mental-check" type="checkbox" value="mobility">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-3">
+                          Mobility (for example walking short distances or climbing stairs)
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-4" name="mental-check" type="checkbox" value="dexterity">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-4">
+                          Dexterity (for example lifting or carrying objects, using a keyboard)
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-5" name="mental-check" type="checkbox" value="learning">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-5">
+                          Learning or understanding or concentrating
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-6" name="mental-check" type="checkbox" value="memory">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-6">
+                          Memory
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-7" name="mental-check" type="checkbox" value="stamina">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-7">
+                          Stamina or breathing or fatigue
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-8" name="mental-check" type="checkbox" value="behaviour">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-8">
+                          Socially or behaviourally (for example associated with Autism, attention deficit disorder or Aspergers' syndrome)
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-9" name="mental-check" type="checkbox" value="none">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-9">
+                          None of the above
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-10" name="mental-check" type="checkbox" value="other">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-10">
+                          Other
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="mental-check-11" name="mental-check" type="checkbox" value="prefer">
+                        <label class="govuk-label govuk-checkboxes__label" for="mental-check-11">
+                          Prefer not to say
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <br>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      href: "/forms/sss-forms/best-start/BS-your-details",
+      isStartButton: true
+    }) }}
+
+  </form>
+
+</div>
+
+{% endblock %}
