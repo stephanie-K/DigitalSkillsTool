@@ -8,39 +8,27 @@ Best Start Grand
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
   <h1 class="govuk-heading-xl" style="margin:0px 0px 30px 0px">
-    Which best describes your ethnic group or background?
+    How would you describe your gender identity?
   </h1>
   <p style="margin:0;">This will not affect the decision we make on your benefit application.</p>
 
   <form class="form" method="post">
     {{ govukRadios({
       classes: "govuk-radios--small",
-      idPrefix: "ethnic-group-2",
-      name: "ethnic-group-2",
+      idPrefix: "gender-identity",
+      name: "gender-identity",
       items: [
         {
-          value: "scottish",
-          text: "Scottish"
+          value: "man",
+          text: "Man"
         },
         {
-          value: "otherBritish",
-          text: "Other British"
-        },
-        {
-          value: "irish",
-          text: "Irish"
-        },
-        {
-          value: "gypsy",
-          text: "Gypsy/Traveller"
-        },
-        {
-          value: "polish",
-          text: "Polish"
+          value: "woman",
+          text: "Woman"
         },
         {
           value: "other",
-          text: "Other white ethnic group"
+          text: "In another way"
         },
         {
           value: "prefer",
@@ -61,7 +49,7 @@ Best Start Grand
   {{ govukButton({
     text: "Next",
     classes: "button-primary",
-    href: "/forms/sss-forms/best-start/BS-gender-identity",
+    href: "/forms/sss-forms/best-start/BS-your-details",
     isStartButton: true
   }) }}
 
