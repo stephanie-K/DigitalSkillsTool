@@ -965,6 +965,10 @@ router.post('/forms/sss-forms/best-start/BS-your-details', function (req, res) {
 })
 
 router.post('/forms/sss-forms/best-start/BS-your-address', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-sending-letters')
+})
+
+router.post('/forms/sss-forms/best-start/BS-sending-letters', function (req, res) {
   res.redirect('/forms/sss-forms/best-start/BS-partner')
 })
 

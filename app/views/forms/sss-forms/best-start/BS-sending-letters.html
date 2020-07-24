@@ -1,0 +1,48 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0;">
+    Sending you letters
+  </h1>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h1 class="govuk-fieldset__heading">
+            Which address do you want letters sent to?
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="BSG-sending-letters" name="BSG-sending-letters" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="BSG-sending-letters">
+              Your address<br>{{data['BSG-your-address-1']}}<br>{{data['BSG-your-town']}}<br>{{data['BSG-your-postcode']}}
+            </label>
+          </div>
+      </fieldset>
+    </div>
+
+
+    {{ govukButton({
+      text: "Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+
+  </form>
+</div>
+
+{% endblock %}
