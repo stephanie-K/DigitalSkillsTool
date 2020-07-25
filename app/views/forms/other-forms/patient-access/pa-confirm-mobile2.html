@@ -1,27 +1,6 @@
-{% extends "layout.html" %}
-
-{% block headIcons %}
-  <link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
-{% endblock %}
-
-{% block head %}
-  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-
-  {% for stylesheetUrl in extensionConfig.stylesheets %}
-    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
-  {% endfor %}
-{% endblock %}
-
-{% block header %}
 {% include "../../../includes/pa-header.html"  %}
-{% endblock %}
-
-  {% block pageTitle %}
-  Confirm Mobile Phone Number
-  {% endblock %}
-
-  {% block content %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row pa-block pa-grey-container">
     <div class="govuk-grid-column-full">
@@ -33,10 +12,7 @@
     We can only remind you of your email if you have previously supplied a mobile phone number. If you know your User ID you can sign in with this instead.</p>
     </div>
   </div>
+</main>
+</div>
 
-  
-  {% endblock %}
-
-{% block footer %}
-{% include "../../../includes/generic-footer.html"  %}
-{% endblock %}
+  {% include "../../../includes/pa-footer.html"  %}

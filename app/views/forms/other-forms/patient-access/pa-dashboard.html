@@ -1,44 +1,23 @@
-{% extends "layout.html" %}
-
-{% block headIcons %}
-  <link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
-{% endblock %}
-
-{% block head %}
-  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-
-  {% for stylesheetUrl in extensionConfig.stylesheets %}
-    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
-  {% endfor %}
-{% endblock %}
-
-
-{% block header %}
 {% include "../../../includes/pa-header.html"  %}
-{% endblock %}
-
-
-{% block pageTitle %}
-Dashboard
-{% endblock %}
-
-
-{% block content %}
-
-<div class="pa-block">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-    <h1>This is not ready!</h1>
-      <p>It looks like the picture below:</p>
-      <p><image src="{{ asset_path }}images/PA/dashboard-pa.png" alt="screenshot of the dashboard" style="width:100% ; border: 20px solid #D3368A;"></image></p>
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="pa-block">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+        <h1>This is not ready!</h1>
+          <p>It looks like the picture below:</p>
+          <p><image src="{{ asset_path }}images/PA/dashboard-pa.png" alt="screenshot of the dashboard" style="width:100% ; border: 20px solid #D3368A;"></image></p>
+          <p>
+          <span class="fa fa-home fa-2x"></span>
+          <span class="fa fa-read fa-2x"></span>
+          <span class="fa fa-health-advice fa-2x"></span>
+          <span class="fa fa-calendar-check fa-2x"></span>
+          <span class="fa fa-link-practice fa-2x"></span>
+          <i class="far fa-calendar-check"></i></p>
+        </div>
+      </div>
 
     </div>
-  </div>
-
+</main>
 </div>
-{% endblock %}
-
-{% block footer %}
-{% include "../../../includes/generic-footer.html"  %}
-{% endblock %}
+{% include "../../../includes/pa-footer.html"  %}

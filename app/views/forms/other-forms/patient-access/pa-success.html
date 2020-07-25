@@ -1,28 +1,6 @@
-{% extends "layout.html" %}
-
-{% block headIcons %}
-<link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
-{% endblock %}
-
-{% block head %}
-<!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-
-{% for stylesheetUrl in extensionConfig.stylesheets %}
-<link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
-{% endfor %}
-{% endblock %}
-
-{% block header %}
 {% include "../../../includes/pa-header.html"  %}
-{% endblock %}
-
-  {% block pageTitle %}
-  Patient Access - Account created
-  {% endblock %}
-
-  {% block content %}
-
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
   <div class="govuk-grid-row pa-block pa-grey-container" style="text-align: center;">
     <div class="govuk-grid-column-full">
     <p>&nbsp;<image  src="{{ asset_path }}images/PA/greentick.png" alt="success" width="40" height="40"></image></p>
@@ -47,9 +25,7 @@
     <p>The email will look like this picture below:</p>
     <p><image src="{{ asset_path }}images/PA/verification-email-pa.png" alt="screenshot of the email to verify your account" style="width:90% ; border: 20px solid #D3368A;"></image></p>
   </div>
+</main>
+</div>
 
-  {% endblock %}
-
-  {% block footer %}
-  {% include "../../../includes/generic-footer.html"  %}
-  {% endblock %}
+  {% include "../../../includes/pa-footer.html"  %}

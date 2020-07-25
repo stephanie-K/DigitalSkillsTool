@@ -80,6 +80,23 @@ $pa-pink: #D3368A;
   }
 }
 
+.pa-footer {
+  padding-top: 0; 
+  border-top: solid 1px $pa-pink; 
+  background-color: #ededed;
+  .govuk-footer__meta {
+    margin-top:50px;
+  }
+  li {
+    padding: 16px;
+  }
+  .govuk-footer__link {
+    font-size: 16px;
+    color: $pa-pink;
+    font-weight: 500;
+  }
+}
+
 // ---------------------------- remove the Yellow focus on link as it show on images ----------------------//
 
 a:focus {
@@ -626,53 +643,6 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
   }
 }
 
-
-.pa-header-sign-in-button, .pa-header-register-button {
-  padding: 12px 32px;
-  margin: 15px 7px 15px;
-	border-radius: 25px;
-  font-family: 'Lato', sans-serif;
-  font-size: 17px;
-  text-decoration: none;
-  background-color: white;
-  float: left;
-}
-
-.pa-header-register-button {
-  border: solid 1px $pa-blue;
-  a{
-    color: $pa-blue;
-  }
-}
-.pa-header-register-button:hover {
-  background-color: $pa-blue;
-  color: white;
-  opacity: 70%;
-}
-
-.pa-header-register-button:focus {
-  background-color: $pa-blue;
-  color: white;
-  box-shadow: none;
-}
-.pa-header-sign-in-button {
-  border: solid 1px $pa-pink;
-  a {
-    color: $pa-pink;
-  }
-}
-
-.pa-header-sign-in-button:hover {
-  background-color: $pa-pink;
-  color: white;
-  opacity: 70%;
-}
-
-.pa-header-sign-in-button:focus {
-  background-color: $pa-pink;
-  color: white;
-  box-shadow: none;
-}
 
 // ------------------------  Body
 

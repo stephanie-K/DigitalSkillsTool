@@ -1,75 +1,33 @@
-{% extends "layout.html" %}
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="pa-block">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+        <h1>Take control of your healthcare</h1>
+        <p>In partnership with <image src="{{ asset_path }}images/PA/nhs.png?0.18.3p" alt="NHS Logo" width="75" height="30" style="vertical-align:middle; padding-left: 5px;"></image></p>
+        <p>Patient Access connects you to local health services when you need them most. Book GP appointments, order repeat prescriptions and discover local health services for you or your family via your mobile or home computer.</p>
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Sign In",
+          classes: "button-primary pa-pink-button",
+          href: "./pa-signin"
+        }) }}
 
-{% block headIcons %}
-  <link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
-{% endblock %}
+        {{ govukButton({
+          text: "Register",
+          classes: "button-primary pa-blue-button",
+          href: "./pa-register"
+        }) }}  
+      </div>
+        <div class="govuk-grid-column-one-third">
+          <br><br>
+          <p><image src="{{ asset_path }}/images/PA/Homehero.jpg" alt="" width="350px" height="350"></image></p>
+        </div>
+      </div>
 
-{% block head %}
-  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-
-  {% for stylesheetUrl in extensionConfig.stylesheets %}
-    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
-  {% endfor %}
-{% endblock %}
-
-
-{% block header %}
-<div class="govuk-header__container govuk-width-container">
-  <div class="govuk-header__logo ">
-      <span class="govuk-header__logotype">
-          <a href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="go back to homepage" width="250" height="30"></image></a>
-      </span>
-  </div>
-  <div class="govuk-header__content">
-    <a href="/index.html">
-      <span class="pa-tagline">
-        This is a training website
-      </span>
-    </a>
-    <div class="pa-header-button-container">
-      <a href="./pa-signin" class="pa-header-sign-in-button">Sign In</a>
-      <a href="./pa-register" class="pa-header-register-button">Register</a>
     </div>
-  </div>
+  </main>
 </div>
-{% endblock %}
 
-
-{% block pageTitle %}
-Patient Access
-{% endblock %}
-
-
-{% block content %}
-
-<div class="pa-block">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    <h1>Take control of your healthcare</h1>
-    <p>In partnership with <image src="{{ asset_path }}images/PA/nhs.png?0.18.3p" alt="NHS Logo" width="75" height="30" style="vertical-align:middle; padding-left: 5px;"></image></p>
-    <p>Patient Access connects you to local health services when you need them most. Book GP appointments, order repeat prescriptions and discover local health services for you or your family via your mobile or home computer.</p>
-    {{ govukButton({
-      text: "Sign In",
-      classes: "button-primary pa-pink-button",
-      href: "./pa-signin"
-    }) }}
-
-    {{ govukButton({
-      text: "Register",
-      classes: "button-primary pa-blue-button",
-      href: "./pa-register"
-    }) }}  
-  </div>
-    <div class="govuk-grid-column-one-third">
-      <br><br>
-      <p><image src="{{ asset_path }}/images/PA/Homehero.jpg" alt="" width="350px" height="350"></image></p>
-    </div>
-  </div>
-
-</div>
-{% endblock %}
-
-{% block footer %}
-{% include "../../../includes/generic-footer.html"  %}
-{% endblock %}
+{% include "../../../includes/pa-footer.html"  %}
