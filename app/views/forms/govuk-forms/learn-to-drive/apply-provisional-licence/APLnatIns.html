@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        <div class="orange-block">
+          <h2 class="govuk-heading-s orange-heading">Step by step</h2>
+          <p>Follow our easy step by step process to help you fill this form in quickly and accurately.</p>
+          <ol class="govuk-list govuk-list--number">
+            <li><strong>Authentication</strong></li>
+            <ul class="govuk-list">
+                <li>Authentication</li>
+                <li>Security of your data</li>
+                <li>Your details</li>
+                <li>Your addresses</li>
+                <li>Security details</li>
+                <li><strong>National Insurance number</strong></li>
+                <li>UK passport number</li>
+              </ul>
+              <li><strong>Application</strong></li>
+              <li><strong>Summary</strong></li>
+              <li><strong>Payment</strong></li>
+              <li><strong>Confirmation</strong></li>
+            </ol>
+        </div>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-m">
+            Apply for a provisional licence
+        </h1>
+        <h2 class="govuk-heading-s yellow-heading">National Insurance number</h2>
+        <div class="small-font">
+          <p><b>Providing your National Insurance number will help to process your application more quickly.
+            If you enter your National Insurance number, DVLA will attempt to verify and authenticate
+            your identity with the Department for Work and Pensions (DWP) and Her Majesty's Revenue and Customs
+             (HMRC). If DVLA are unable to verify your identity, it may result in you having to send DVLA additional
+             paper documentation such as original identity documents by post.</b></p>
+          <p>By entering your National Insurance number you will provide DVLA with consent to check your personal details
+            and National Insurance number with the Department of Work and Pensions (DWP) and Her Majesty's Revenue and Customs (HMRC).</p>
+          <p>If you do not wish to or cannot provide your National Insurance number please leave the following sections blank and click
+           'Next' to continue.</p>
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label" for="provisional-licence-ni-no">
+                National Insurance number
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <input class="govuk-input govuk-input--width-10" id="provisional-licence-ni-no" name="provisional-licence-ni-no" type="text">
+            </div>
+          </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label" for="provisional-licence-ni-no-check">
+                Re-type National Insurance number
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <input class="govuk-input govuk-input--width-10" id="provisional-licence-ni-no-check" name="provisional-licence-ni-no-check" type="text">
+            </div>
+          </div>
+          <hr>
+        </div>
+
+
+        <div class="dvla-button-row">
+            {{ govukButton({
+              text: "Previous",
+              classes: "button-primary dvla-previous-button",
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails.html"
+            }) }}
+
+            {{ govukButton({
+              text: "Cancel",
+              classes: "button-primary dvla-cancel-button",
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
+            }) }}
+            {{ govukButton({
+              text: "Next",
+              classes: "button-primary dvla-next-button",
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLpassportNo.html"
+            }) }}
+        </div>
+
+
+
+
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

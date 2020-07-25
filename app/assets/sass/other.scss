@@ -202,6 +202,12 @@ img.dvsa, image.dvsa  {
     font-weight: bold;
 }
 
+.grey-heading {
+    background-color: #e0e0e0;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+
 .small-font {
     p, li {
         font-size: 14px;
@@ -301,6 +307,30 @@ img.dvsa, image.dvsa  {
   font-weight: bold;
 }
 
+.govuk-details {
+  margin-bottom: 0px;
+}
+
+.govuk-details__summary-text {
+  font-size: 14px;
+  font-weight: bold;
+  color:#C00;
+}
+
+.govuk-details__text {
+  background-color: #FFFFCC;
+  border: none;
+}
+
+.govuk-details__summary::before {
+  font-size: 14px;
+  color: #C00;
+}
+
+.label-bold-text {
+  font-weight: bold;
+  display: inline-block;
+}
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//
 
 .park-home-tagline {
