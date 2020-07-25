@@ -35,6 +35,34 @@ router.get('forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support', func
   return res.render('forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support')
 })
 
+// Book Driving test **************************************************************************
+
+router.post('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTsector', function (req, res) {
+  var sector = req.session.data['sector'] 
+  if (sector === 'other') {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTsorry')
+  } else {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTreason')
+  }
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTreason', function (req, res) {
+  var reason = req.session.data['reason'] 
+  if (reason === 'other') {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTreason-text')
+  } else {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTjob')
+  }
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTtestbooked', function (req, res) {
+  var isCancelled = req.session.data['test-cancelled'] 
+  if (isCancelled === 'yes') {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTcancelNumber')
+  } else {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/book-driving-test/BDTtheoryNumber')
+  }
+})
 
 // Universal Credit ***************************************************************************
 
