@@ -1,0 +1,31 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Create your online profile
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
+    <p class="erc-alt-dark-blue-bg">Confirmation of online profile details</p>
+
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTpasswordCreation"
+      }) }}
+      {{ govukButton({
+        text: "Continue",
+        classes: "button-primary erc-alt"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
