@@ -52,8 +52,8 @@ $pa-pink: #D3368A;
 // ----------------------------- footer styles ------------------------------------------------------------//
 
 .generic-footer {
-  padding-top: 0; 
-  border-top: solid 2px #999; 
+  padding-top: 0;
+  border-top: solid 2px #999;
   background-color: #ededed;
   .govuk-footer__meta {
     margin-top:50px;
@@ -64,8 +64,8 @@ $pa-pink: #D3368A;
 }
 
 .bulb-footer {
-  padding-top: 0; 
-  border-top: solid 2px $bulb-green; 
+  padding-top: 0;
+  border-top: solid 2px $bulb-green;
   background-color: $bulb-green;
   .govuk-footer__meta {
     margin-top:50px;
@@ -254,6 +254,51 @@ img.dvsa, image.dvsa  {
     padding: 5px;
     text-transform: none;
 
+}
+
+.dvla-button-row {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 360px) {
+        flex-direction: column;
+        width:100%;
+        align-items: center;
+  }
+}
+
+.dvla-prov-licence-form-row-container {
+  border:.1em solid #CCC;
+  margin-bottom: .3em;
+}
+
+.dvla-prov-licence-label-container {
+  padding: .3em .6em .3em .6em;
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.dvla-prov-licence-input-container {
+  padding: .3em .6em .3em .6em;
+  select {
+    font-size: 14px;
+    padding: 0;
+    border:.1em solid black;
+    border-radius: 3px;
+  }
+  input {
+    font-size: 14px;
+    border:.1em solid black;
+    border-radius: 3px;
+  }
+}
+
+.dvla-prov-licence-label {
+  font-size: 14px;
+  font-weight: bold;
 }
 
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//

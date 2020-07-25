@@ -64,11 +64,14 @@ Motoring
         <div class="small-font">
           <p>Please complete your personal details.</p>
           <p><em>Please note: * indicates that an answer is required.</em></p>
-          <div class="govuk-form-group">
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
               <label class="govuk-label" for="sort">
                 Title *
               </label>
               <p><em>If you have a title that does not appear in the list, select 'Other'.</em></p>
+            </div>
+            <div class="dvla-prov-licence-input-container">
               <select class="govuk-select ph-input" id="sort" name="sort">
                 <option value="updated" selected></option>
                 <option value="Mr">Mr</option>
@@ -81,28 +84,140 @@ Motoring
                 <option value="other">Other</option>
               </select>
             </div>
+          </div>
 
-            <p class="govuk-tag red govuk-!-margin-top-5">Page under construction - not finished</p>
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label" for="sort">
+                ...or other title
+              </label>
+              <p><em>(only if you selected 'Other' above)</em></p>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+               <input class="govuk-input govuk-input--width-5" id="prov-licence-user-title" name="prov-licence-user-title" type="text">
+            </div>
+          </div>
 
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label" for="sort">
+                Forename(s) *
+              </label>
+              <p><em>Enter your first name, and any middle names.</em></p>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+               <input class="govuk-input govuk-input--width-10" id="prov-licence-user-forenames" name="prov-licence-user-forenames" type="text">
+            </div>
+          </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label" for="sort">
+                Surname *
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+               <input class="govuk-input govuk-input--width-10" id="prov-licence-user-surname" name="prov-licence-user-surname" type="text">
+            </div>
+          </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label" for="sort">
+                Gender *
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <select class="govuk-select" id="prov-licence-user-gender" name="prov-licence-user-gender">
+                <option value="" selected> </option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label" for="sort">
+                Date of birth *
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <fieldset class="govuk-fieldset" role="group">
+               <div class="govuk-date-input" id="dvla-prov-licence-dob">
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label dvla-prov-licence-label" for="dvla-prov-licence-dob-day">
+                       Day
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dvla-prov-licence-dob-day" name="dvla-prov-licence-dob-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                   </div>
+                 </div>
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label dvla-prov-licence-label" for="dvla-prov-licence-dob-month">
+                       Month
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dvla-prov-licence-dob-month" name="dvla-prov-licence-dob-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                   </div>
+                 </div>
+                 <div class="govuk-date-input__item">
+                   <div class="govuk-form-group">
+                     <label class="govuk-label govuk-date-input__label dvla-prov-licence-label" for="dvla-prov-licence-dob-year">
+                       Year
+                     </label>
+                     <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dvla-prov-licence-dob-year" name="dvla-prov-licence-dob-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                   </div>
+                 </div>
+               </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label" for="sort">
+                Country of birth *
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <select class="govuk-select" id="prov-licence-user-country-of-birth" name="prov-licence-user-country-of-birth">
+                <option value="" selected> </option>
+                <option value="uk">United Kingdom</option>
+                <option value="england">England</option>
+                <option value="wales">Wales</option>
+                <option value="scotland">Scotland</option>
+              </select>
+          </div>
+        </div>
+          <p style="color:red; font-weight:bold; font-size:30px;">* I need to add in the whole list of countries. *</p>
           <p>If all the details are correct please click 'Next'.</p>
           <p>Do not click the previous/next button more than once.</p>
           <hr>
         </div>
-        {{ govukButton({
-          text: "Previous",
-          classes: "button-primary dvla-previous-button",
-          href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurity-data.html"
-        }) }}
-        {{ govukButton({
-          text: "Cancel",
-          classes: "button-primary dvla-cancel-button",
-          href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-        }) }}
-        {{ govukButton({
-          text: "Next",
-          classes: "button-primary dvla-next-button",
-          href: "#.html"
-        }) }}
+
+
+        <div class="dvla-button-row">
+            {{ govukButton({
+              text: "Previous",
+              classes: "button-primary dvla-previous-button",
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurity-data.html"
+            }) }}
+
+            {{ govukButton({
+              text: "Cancel",
+              classes: "button-primary dvla-cancel-button",
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
+            }) }}
+            {{ govukButton({
+              text: "Next",
+              classes: "button-primary dvla-next-button",
+              href: "#.html"
+            }) }}
+        </div>
+
+
+
 
     </div>
 </div>
