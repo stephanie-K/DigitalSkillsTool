@@ -19,7 +19,7 @@ Best Start Grant
           Address line 1
         </label>
       </h1>
-      <input class="govuk-input" id="BSG-your-address-1" name="BSG-your-address-1" type="text">
+      <input class="govuk-input govuk-input--width-20" id="BSG-your-address-1" name="BSG-your-address-1" type="text" value="{{ data ['BSG-your-address-1']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0;">
@@ -28,7 +28,7 @@ Best Start Grant
         Address line 2 <span style="font-size:18px; color:#C0C0C0">(optional)</span>
       </label>
     </h1>
-    <input class="govuk-input" id="address-2" name="address-2" type="text">
+    <input class="govuk-input govuk-input--width-20" id="address-2" name="address-2" type="text" value="{{ data ['address-2']}}">
     </div>
 
       <div class="govuk-form-group" style="margin:0;">
@@ -37,7 +37,7 @@ Best Start Grant
           Address line 3 <span style="font-size:18px; color:#C0C0C0">(optional)</span>
         </label>
       </h1>
-      <input class="govuk-input" id="address-3" name="address-3" type="text">
+      <input class="govuk-input govuk-input--width-20" id="address-3" name="address-3" type="text" value="{{ data ['address-3']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0;">
@@ -46,7 +46,7 @@ Best Start Grant
         Town or city
       </label>
     </h1>
-    <input class="govuk-input" id="BSG-your-town" name="BSG-your-town" type="text">
+    <input class="govuk-input govuk-input--width-20" id="BSG-your-town" name="BSG-your-town" type="text" value="{{ data ['BSG-your-town']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0px 0px 60px 0px;">
@@ -55,10 +55,8 @@ Best Start Grant
         Postcode
       </label>
     </h1>
-    <input class="govuk-input" id="BSG-your-postcode" name="BSG-your-postcode" type="text">
+    <input class="govuk-input govuk-input--width-20" id="BSG-your-postcode" name="BSG-your-postcode" type="text" value="{{ data ['BSG-your-postcode']}}">
     </div>
-
-
 
     {{ govukButton({
       text: "Back",
