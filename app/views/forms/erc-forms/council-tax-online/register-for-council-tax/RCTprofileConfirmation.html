@@ -14,18 +14,54 @@ Create your online profile
 
     <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
     <p class="erc-alt-dark-blue-bg">Confirmation of online profile details</p>
+    <p class="erc-alt-dark-grey-round">My details</p>
+
+    <div class="ercWarning">
+      <p class="govuk-!-font-size-14" style="color: #782a06">By clicking 'Continue', you are confirming you are the person detailed below. Continuing if you are not the person indicated is fraudulent and may result in prosecution. If you are NOT this person, please click '<< Back' now.</p>
+    </div>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-checkboxes govuk-checkboxes--small">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+            My name is (your full name will be displayed here)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+              My address is (your address will be displayed here)
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <p class="erc-alt-dark-grey-round">My profile details</p>
+
+    <p>My username - will be confirmed in an email</p>
+    <p>My password is: (the password you created will display here)</p>
+    <p>My memorable quesion is: (the memorable question you created will display here)</p>
+    <p>My memorable answer is: (the memorable answer you created will display here)</p>
 
       {{ govukButton({
         text: "<< Back",
         classes: "button-primary erc-alt",
         href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTpasswordCreation"
       }) }}
+
       {{ govukButton({
         text: "Continue",
         classes: "button-primary erc-alt"
       }) }}
 
     </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>On the real form, your own name, address, and account security information you created will be displayed on this page. </p>
   </div>
 
 {% endblock %}
