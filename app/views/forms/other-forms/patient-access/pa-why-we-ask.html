@@ -15,21 +15,8 @@
 
 
 {% block header %}
-  <div class="govuk-header__container govuk-width-container">
-    <div class="govuk-header__logo ">
-        <span class="govuk-header__logotype">
-            <a href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="go back to homepage" width="250" height="30"></image></a>
-        </span>
-    </div>
-    <div class="govuk-header__content">
-      <a href="/index.html">
-        <span class="pa-tagline">
-          This is a training website
-        </span>
-      </a>
-    </div>
-  </div>
-  {% endblock %}
+{% include "../../../includes/pa-header.html"  %}
+{% endblock %}
 
   {% block pageTitle %}
   Patient Access - Why we ask
@@ -61,4 +48,5 @@
   {% endblock %}
 
   {% block footer %}
+  {% include "../../../includes/generic-footer.html"  %}
   {% endblock %}

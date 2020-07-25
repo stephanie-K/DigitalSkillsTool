@@ -1,82 +1,49 @@
-<!DOCTYPE html>
-<html lang="en" class="govuk-template ">
-  <head>
-    <meta charset="utf-8">
-    <title>
-        {%if data['bulb-email'] === 'error' %}Error - {% endif %}Bulb - account
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#0b0c0c"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="/public/images/bulb/favicon-bulb.ico?0.18.3" type="image/x-icon" />
-  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
-    <meta property="og:image" content="/govuk/assets/images/govuk-opengraph-image.png">
-  </head>
-  <body class="govuk-template__body bulb"><script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
-//]]></script>
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
-      <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
+{% include "../../../includes/bulb-header.html"  %}
 
-        
-        <div class="govuk-header__container govuk-width-container">
-        <div class="govuk-header__logo">
-            <span class="govuk-header__logotype">
-                <a href="/index.html"><image src="{{ asset_path }}/images/bulb/bulb-logo-clear.png" alt="go back to homepage" width="220" height="86"></image></a>
-            </span>
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+            <div class="govuk-grid-column-one-quarter">
+                &nbsp;
+            </div>
+            <div class="govuk-grid-column-one-half" style="max-width: 600px;">
+                <a href="javascript: history.go(-1)" style="color:#00ab55; text-decoration: none; font-weight: 600; font-size: 20px">&lt; Back</a>
+                <div class="bulb-white-container ">
+                    <form class="form" method="post">
+                    <h1>Sign in to your Bulb account</h1>
+                    {% if data['bulb-email'] === 'error' %}
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="bulb-email">Email address</label>
+                        <input class="govuk-input govuk-input--error" id="bulb-email" name="bulb-email" type="text">
+                        <p><span style="color: #e00; font-size: 16px">This field can't be blank.</span></p>
+                    </div>
+                    {% else %}
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="bulb-email">Email address</label>
+                        <input class="govuk-input" id="bulb-email" name="bulb-email" type="text">
+                    </div>
+                    {% endif %}
+                    <a href="/forms/other-forms/bulb/bulb-signin-with-password" role="button" draggable="false" class="govuk-button button-primary button-bulb full-width" data-module="govuk-button">
+                        Sign in with password
+                    </a>
+                    <button class="govuk-button button-primary button-bulb-magic full-width" data-module="govuk-button">
+                        Email me a link to sign in instantly
+                    </button>                
+                    </form>
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-quarter">
+                &nbsp;
+            </div>
         </div>
-        <div class="govuk-header__content">
-            <a href="/index.html">
-            <span class="bulb-tagline">
-                This is a training website
-            </span>
-            </a>  
+        <div class="student-notes-box-bulb"> 
+            <p>Enter any email and try the option "Email me a link to sign in instantly"</p>
+            <p>We are not checking your email address and we won't really send you a link'</p>
         </div>
-        </div>
+    </main>
+</div>
 
-        <div class="govuk-width-container">
-            <main class="govuk-main-wrapper">
-                <div class="govuk-grid-row govuk-!-margin-bottom-9 govuk-!-margin-top-9">
-                    <div class="govuk-grid-column-one-quarter">
-                        &nbsp;
-                    </div>
-                    <div class="govuk-grid-column-one-half" style="max-width: 600px;">
-                        <a href="javascript: history.go(-1)" style="color:#00ab55; text-decoration: none; font-weight: 600; font-size: 20px">&lt; Back</a>
-                        <div class="bulb-white-container ">
-                            <form class="form" method="post">
-                            <h1>Sign in to your Bulb account</h1>
-                            {% if data['bulb-email'] === 'error' %}
-                            <div class="govuk-form-group">
-                                <label class="govuk-label" for="bulb-email">Email address</label>
-                                <input class="govuk-input govuk-input--error" id="bulb-email" name="bulb-email" type="text">
-                                <p><span style="color: #e00; font-size: 16px">This field can't be blank.</span></p>
-                            </div>
-                            {% else %}
-                            <div class="govuk-form-group">
-                                <label class="govuk-label" for="bulb-email">Email address</label>
-                                <input class="govuk-input" id="bulb-email" name="bulb-email" type="text">
-                            </div>
-                            {% endif %}
-                            <a href="/forms/other-forms/bulb/bulb-signin-with-password" role="button" draggable="false" class="govuk-button button-primary button-bulb full-width" data-module="govuk-button">
-                                Sign in with password
-                            </a>
-                            <button class="govuk-button button-primary button-bulb-magic full-width" data-module="govuk-button">
-                                Email me a link to sign in instantly
-                            </button>                
-                            </form>
-                        </div>
-                    </div>
-                    <div class="govuk-grid-column-one-quarter">
-                        &nbsp;
-                    </div>
-                </div>
-                <div class="student-notes-box-bulb"> 
-                    <p>Enter any email and try the option "Email me a link to sign in instantly"</p>
-                    <p>We are not checking your email address and we won't really send you a link'</p>
-                </div>
-            </main>
-        </div>
+{% include "../../../includes/bulb-footer.html"  %}
 
 <!-- Javascript -->
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
