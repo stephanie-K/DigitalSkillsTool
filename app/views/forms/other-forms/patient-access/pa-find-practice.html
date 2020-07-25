@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/PA/favicon.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+{% include "../../../includes/pa-header.html"  %}
+{% endblock %}
+
+  {% block pageTitle %}
+  Confirm Mobile Phone Number
+  {% endblock %}
+
+  {% block content %}
+
+  <div class="govuk-grid-row pa-block pa-grey-container">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="./pa-signin">&lt; Back to Sign In</a>
+      <h1>Find Your Practice</h1>
+      <p style="background-color: #c9e4fd; color: #32325d;
+        border-radius: 12px; margin: 10px 10px 50px 10px;
+        padding: 24px 32px 24px 24px;">
+        This service is currently only available in England. If your practice is not located in England, please ask your practice for a copy of your registration letter which includes details of your User ID.</p>
+        <p>Please supply a postcode or the name of the practice where you are currently registered as a patient.</p>
+        <div class="govuk-form-group">
+          <input class="govuk-input govuk-!-width-two-thirds" id="pa-practice" name="pa-practice" type="text" placeholder="Postcode or name of practice" style="margin-bottom: 10px">
+          <a href="#" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="width: 120px;">
+            Search
+          </a>
+        </div>
+      </div> 
+      <div class="govuk-grid-column-one-third">
+      <p><image src="{{ asset_path }}images/PA/pa-googlemap.png" alt="screenshot of google map for illustration" width="100%"></image></p>
+      </div>
+    </div>
+    <div class="student-notes-box"> 
+      <p>This how it would look like but we can not do a search here - sorry.</p>
+      <p>The map doesn't work.</p>
+    </div>
+
+
+  
+  {% endblock %}
+
+{% block footer %}
+{% include "../../../includes/generic-footer.html"  %}
+{% endblock %}

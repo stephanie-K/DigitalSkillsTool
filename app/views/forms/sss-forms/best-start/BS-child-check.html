@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -17,16 +17,18 @@ Best Start Grand
 
     {{ govukRadios({
       classes: "govuk-radios--small",
-      idPrefix: "child-check",
-      name: "child-check",
+      idPrefix: "BSG-child-check",
+      name: "BSG-child-check",
       items: [
       {
-        value: "yes",
-        text: "Yes"
+        value: "Yes",
+        text: "Yes",
+        checked: checked("BSG-child-check", "Yes")
       },
       {
-        value: "not",
-        text: "No"
+        value: "No",
+        text: "No",
+        checked: checked("BSG-child-check", "No")
       }
       ]
     }) }}
@@ -45,7 +47,7 @@ Best Start Grand
     </details>
 
     {{ govukButton({
-      text: "Back",
+      text: " < Back",
       classes: "sg-button-back",
       href: "javascript: history.go(-1)"
     }) }}
@@ -53,7 +55,6 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-child-check-2",
       isStartButton: true
     }) }}
 

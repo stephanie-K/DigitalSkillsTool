@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -14,17 +14,18 @@ Best Start Grand
   <p><strong>Do you have a partner who lives with you?</strong></p>
   <p style="margin:0;">Someone is your partner if you live together and are a couple, married or civil partners.</p>
 
+  <form class="form" method="post">
   <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
     <fieldset class="govuk-fieldset">
       <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="partner-details-conditional" name="partner-details-check" type="radio" value="yes" data-aria-controls="conditional-partner-details-conditional">
+          <input class="govuk-radios__input" id="partner-details-conditional" name="BSG-partner-details-check" type="radio" value="Yes" data-aria-controls="conditional-partner-details-conditional">
           <label class="govuk-label govuk-radios__label" for="partner-details-conditional">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="partner-details-2" name="partner-details-check" type="radio" value="no">
+          <input class="govuk-radios__input" id="partner-details-2" name="BSG-partner-details-check" type="radio" value="No">
           <label class="govuk-label govuk-radios__label" for="partner-details-2">
             No
           </label>
@@ -36,20 +37,20 @@ Best Start Grand
           <div class="govuk-form-group" style="margin:0;">
             <p style="margin:0px 0px 30px 0px;"><strong>You must tell your partner that you are giving their details on this form. They can find out more about how their data will be handled by reading <a href="https://www.mygov.scot/social-security-data/">Social Security Scotland's privacy notice</a></strong>.</p>
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="first-name">
+              <label class="govuk-label govuk-label--m" for="BSG-partner-first-name">
                 First name(s)
               </label>
             </h1>
-            <input class="govuk-input" id="first-name" name="first-name" type="text">
+            <input class="govuk-input govuk-input--width-20" id="BSG-partner-first-name" name="BSG-partner-first-name" type="text" value="{{ data ['BSG-partner-first-name']}}">
           </div>
 
           <div class="govuk-form-group" style="margin:0;">
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="last-name">
+              <label class="govuk-label govuk-label--m" for="BSG-partner-last-name">
                 Last name
               </label>
             </h1>
-            <input class="govuk-input" id="last-name" name="last-name" type="text">
+            <input class="govuk-input govuk-input--width-20" id="BSG-partner-last-name" name="BSG-partner-last-name" type="text" value="{{ data ['BSG-partner-last-name']}}">
           </div>
 
           <div class="govuk-form-group" style="margin:0;">
@@ -65,26 +66,26 @@ Best Start Grand
               <div class="govuk-date-input" id="dob">
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="dob-day">
+                    <label class="govuk-label govuk-date-input__label" for="BSG-partner-dob-day">
                       <strong>Day</strong>
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-partner-dob-day" name="BSG-partner-dob-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-partner-dob-day']}}">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="dob-month">
+                    <label class="govuk-label govuk-date-input__label" for="BSG-partner-dob-month">
                       <strong>Month</strong>
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-partner-dob-month" name="BSG-partner-dob-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-partner-dob-month']}}">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
                   <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="dob-year">
+                    <label class="govuk-label govuk-date-input__label" for="BSG-partner-dob-year">
                       <strong>Year</strong>
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-partner-dob-year" name="BSG-partner-dob-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-partner-dob-year']}}">
                   </div>
                 </div>
               </div>
@@ -93,13 +94,13 @@ Best Start Grand
 
           <div class="govuk-form-group" style="margin:0;">
             <h1 class="govuk-label-wrapper">
-              <label class="govuk-label govuk-label--m" for="ni-number">
+              <label class="govuk-label govuk-label--m" for="BSG-partner-ni-number">
                 National Insurance number  <span style="font-size:18px; color:#C0C0C0">(if you know it)</span>
               </label>
             </h1>
             <p>It's on your National Insurance card, benefit letter, payslip or P60
               For example: QQ 12 34 56 C</p>
-              <input class="govuk-input" id="ni-number" name="ni-number" type="text">
+              <input class="govuk-input govuk-input--width-20" id="BSG-partner-ni-number" name="BSG-partner-ni-number" type="text" value="{{ data ['BSG-partner-ni-number']}}">
             </div>
 
             <hr style="margin:20px 0px 0px 0px">
@@ -113,7 +114,7 @@ Best Start Grand
       </div>
 
       {{ govukButton({
-        text: "Back",
+        text: " < Back",
         classes: "sg-button-back",
         href: "javascript: history.go(-1)"
       }) }}
@@ -121,10 +122,10 @@ Best Start Grand
       {{ govukButton({
         text: "Next",
         classes: "button-primary",
-        href: "/forms/sss-forms/best-start/BS-about-child",
         isStartButton: true
       }) }}
 
+      </form>
     </div>
 
     {% endblock %}

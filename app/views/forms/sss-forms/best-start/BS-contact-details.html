@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -19,19 +19,19 @@ Best Start Grand
         <p><strong>How should we contact you if we have any questions?</strong></p>
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-details-conditional" name="contact-details-check" type="radio" value="phone" data-aria-controls="conditional-contact-details-conditional">
+            <input class="govuk-radios__input" id="contact-details-conditional" name="BSG-contact-details-check" type="radio" value="Phone" data-aria-controls="conditional-contact-details-conditional">
             <label class="govuk-label govuk-radios__label" for="contact-details-conditional">
               Phone
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-details-2" name="contact-details-check" type="radio" value="signLanguage">
+            <input class="govuk-radios__input" id="contact-details-2" name="BSG-contact-details-check" type="radio" value="Sign Language">
             <label class="govuk-label govuk-radios__label" for="contact-details-2">
               British Sign Language video call
             </label>
           </div>
           <div class="govuk-radios__item" style="margin:0px 0px 40px 0px;">
-            <input class="govuk-radios__input" id="contact-details-2" name="contact-details-check" type="radio" value="preferNot">
+            <input class="govuk-radios__input" id="contact-details-2" name="BSG-contact-details-check" type="radio" value="Prefer Not To Be Contacted">
             <label class="govuk-label govuk-radios__label" for="contact-details-2">
               I'd prefer not to be contacted by either of these methods
             </label>
@@ -43,11 +43,11 @@ Best Start Grand
 
             <div class="govuk-form-group" style="margin:0; padding:0;">
               <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--m" for="phone-number">
+                <label class="govuk-label govuk-label--m" for="BSG-phone-number">
                   Phone Number
                 </label>
               </h1>
-              <input class="govuk-input" id="phone-number" name="phone-number" type="text">
+              <input class="govuk-input govuk-input--width-20" id="BSG-phone-number" name="BSG-phone-number" type="text" value="{{ data ['BSG-phone-number']}}">
             </div>
 
             {% from "govuk/components/radios/macro.njk" import govukRadios %}
@@ -66,11 +66,13 @@ Best Start Grand
               items: [
               {
                 value: "mobile",
-                text: "Mobile"
+                text: "Mobile",
+                checked: checked("type-of-phone", "mobile")
               },
               {
                 value: "landline",
-                text: "Landline"
+                text: "Landline",
+                checked: checked("type-of-phone", "landline")
               }
               ]
             }) }}
@@ -82,7 +84,7 @@ Best Start Grand
     </div>
 
     {{ govukButton({
-      text: "Back",
+      text: " < Back",
       classes: "sg-button-back",
       href: "javascript: history.go(-1)"
     }) }}
@@ -90,7 +92,6 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-notifications",
       isStartButton: true
     }) }}
 

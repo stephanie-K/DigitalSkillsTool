@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -14,9 +14,359 @@ Best Start Grand
   <br>
 
   <form class="form" method="post">
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading" style="padding: 10px 0px 10px 0px">
+            <span class="govuk-accordion__section-button sg" id="accordion-default-heading-1">
+                Help us work out if you can get Best Start Grant and Best Start foods
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Where do you live?</th>
+                <td class="govuk-table__cell">{{data['BSG-location-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-location">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Select all that apply:</th>
+                <td class="govuk-table__cell">{{data['BSG-benefits-payments']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-start">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Please tick this box:</th>
+                <td class="govuk-table__cell">{{data['BSG-declaration']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-start">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Do you have one or more children under 6 years old?</th>
+                <td class="govuk-table__cell">{{data['BSG-child-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-check">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Have you taken over looking after one or more children under 6 years old?</th>
+                <td class="govuk-table__cell">{{data['BSG-child-check-2']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-check-2">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Are you or your partner pregnant?</th>
+                <td class="govuk-table__cell">{{data['BSG-pregnant-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-pregnant">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Who is pregnant?</th>
+                <td class="govuk-table__cell">{{data['BSG-who-pregnant']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-pregnant">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Do you have a child who was born in the last 6 months?</th>
+                <td class="govuk-table__cell">{{data['BSG-new-born-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-check-3">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Who gave birth?</th>
+                <td class="govuk-table__cell">{{data['BSG-who-gave-birth']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-check-3">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading" style="padding: 10px 0px 10px 0px">
+            <span class="govuk-accordion__section-button sg" id="accordion-default-heading-1">
+              About you
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <table class="govuk-table">
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Your details</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">First name(s)</th>
+                <td class="govuk-table__cell">{{data['BSG-your-first-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-your-details">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Last name</th>
+                <td class="govuk-table__cell">{{data['BSG-your-last-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-your-details">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">{{data['BSG-your-dob-day']}}/{{data['BSG-your-dob-month']}}/{{data['BSG-your-dob-year']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-your-details">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">National Insurance number</th>
+                <td class="govuk-table__cell">{{data['BSG-your-ni-number']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-your-details">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Your address</th>
+                <td class="govuk-table__cell">{{data['BSG-your-address-1']}}<br>{{data['BSG-your-town']}}<br>{{data['BSG-your-postcode']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-your-address">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="govuk-table">
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">About your partner</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Do you have a partner who lives with you?</th>
+                <td class="govuk-table__cell">{{data['BSG-partner-details-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-partner-details">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">First name(s)</th>
+                <td class="govuk-table__cell">{{data['BSG-partner-first-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-partner-details">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Last name</th>
+                <td class="govuk-table__cell">{{data['BSG-partner-last-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-partner-details">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">{{data['BSG-partner-dob-day']}}/{{data['BSG-partner-dob-month']}}/{{data['BSG-partner-dob-year']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-partner-details">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">National Insurance number</th>
+                <td class="govuk-table__cell">{{data['BSG-partner-ni-number']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-partner-details">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading" style="padding: 10px 0px 10px 0px">
+            <span class="govuk-accordion__section-button sg" id="accordion-default-heading-1">
+              About the child or children you're applying for
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Pregnancy details</th>
+                <td class="govuk-table__cell">{{data['BSG-pregnant-details-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-pregnancy-details">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="govuk-table">
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Due date</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">What is the due date?</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-due-day']}}/{{data['BSG-baby-due-month']}}/{{data['BSG-baby-due-year']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-pregnancy-due-date">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="govuk-table">
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Babies under 6 months</caption>
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Baby</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">First name(s)</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-first-name']}}</td>
+                <td class="govuk-table__cell"><a href="//forms/sss-forms/best-start/BS-baby-under-6mo">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Last name</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-last-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-baby-under-6mo">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-under-6mo-day']}}/{{data['BSG-baby-under-6mo-month']}}/{{data['BSG-baby-under-6mo-year']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-baby-under-6mo">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">If you signed up for a Baby Box</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-box-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-baby-box">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="govuk-table">
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Children under 6 you've started looking after</caption>
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Child</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">First name(s)</th>
+                <td class="govuk-table__cell">{{data['BSG-child-first-name']}}</td>
+                <td class="govuk-table__cell"><a href=/forms/sss-forms/best-start/BS-child-under-6years>Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Last name</th>
+                <td class="govuk-table__cell">{{data['BSG-child-last-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-under-6years">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">{{data['BSG-child-under-6year-day']}}/{{data['BSG-child-under-6year-month']}}/{{data['BSG-child-under-6year-year']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-under-6years">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Is this child named on either your or your partner's Child Benefit, Child Tax Credit, Universal Credit or Pension Credit claim?</th>
+                <td class="govuk-table__cell">{{data['BSG-child-on-benefits']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-child-under-6years">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="govuk-table">
+              <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Children between 6 months and 6 years old</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Do you have any children between 6 months and 16 years old?</th>
+                <td class="govuk-table__cell">{{data['BSG-other-child-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="govuk-table">
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Child</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">First name(s)</th>
+                <td class="govuk-table__cell">{{data['BSG-other-child-first-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Last name</th>
+                <td class="govuk-table__cell">{{data['BSG-other-child-last-name']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">{{data['BSG-other-child-day']}}/{{data['BSG-other-child-month']}}/{{data['BSG-other-child-year']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Is this child named on either your or your partner's Child Benefit, Child Tax Credit, Universal Credit or Pension Credit claim?</th>
+                <td class="govuk-table__cell">{{data['BSG-other-child-on-benefits']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-other-children">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading" style="padding: 10px 0px 10px 0px">
+            <span class="govuk-accordion__section-button sg" id="accordion-default-heading-1">
+              If we need to contact you
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">How should we contact you if we have any questions?</th>
+                <td class="govuk-table__cell">{{data['BSG-contact-details-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-contact-details">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="govuk-table">
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Notifications</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Would you like to get text messages from us?</th>
+                <td class="govuk-table__cell">{{data['BSG-text-messages']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-notifications">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Can we use your email address?</th>
+                <td class="govuk-table__cell">{{data['BSG-contact-email-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-notifications">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Letters in other formats</th>
+                <td class="govuk-table__cell">{{data['BSG-letters-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-letters">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Language for calls and letters</th>
+                <td class="govuk-table__cell">{{data['BSG-language-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-language">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading" style="padding: 10px 0px 10px 0px">
+            <span class="govuk-accordion__section-button sg" id="accordion-default-heading-1">
+              Payment details
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Name of account holder</th>
+                <td class="govuk-table__cell">{{data['BSG-account-holder']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-payment-account">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Sort code</th>
+                <td class="govuk-table__cell">{{data['BSG-sort-code']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-payment-account">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Account number</th>
+                <td class="govuk-table__cell">{{data['BSG-account-number']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-payment-account">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Is this your bank account?</th>
+                <td class="govuk-table__cell">{{data['BSG-bank-acc-check']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-payment-account">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading" style="padding: 10px 0px 10px 0px">
+            <span class="govuk-accordion__section-button sg" id="accordion-default-heading-1">
+              Additional Information
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          <table class="govuk-table">
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">If you think there is something else we need to know</th>
+                <td class="govuk-table__cell">{{data['BSG-more-detail']}}</td>
+                <td class="govuk-table__cell"><a href="/forms/sss-forms/best-start/BS-anything-else">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
     {{ govukButton({
-      text: "Back",
+      text: " < Back",
       classes: "sg-button-back",
       href: "javascript: history.go(-1)"
     }) }}
@@ -24,7 +374,7 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-your-details",
+      href: "/forms/sss-forms/best-start/BS-equalities-survey",
       isStartButton: true
     }) }}
 

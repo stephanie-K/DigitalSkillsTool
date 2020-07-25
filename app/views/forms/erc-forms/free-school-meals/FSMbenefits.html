@@ -1,25 +1,5 @@
 {% extends "layout_erc-old.html" %}
 
-{% block header %}
-<div class="govuk-header__container govuk-width-container erc-old">
-    <div class="govuk-header__logo">
-        <span class="govuk-header__logotype">
-            <a href="/index.html" id="logo-erc"><image src="{{ asset_path }}/images/ERC/erclogo.png" alt="Homepage" width="188" height="90"></image></a>
-        </span>
-    </div>
-    <div class="govuk-header__content">
-        <a href="/index.html">
-          <span class="erc-tagline-old">
-            This is a training website
-          </span>
-        </a>
-        <h1 style="float:right; margin-top:0;" class="govuk-heading-l do-it-online">
-          Do it online
-        </h1>
-    </div>
-</div>
-{% endblock %}
-
 {% block pageTitle %}
 Clothing Grants and Free School Meals
 {% endblock %}
@@ -28,7 +8,9 @@ Clothing Grants and Free School Meals
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
+    <h1  class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
     <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2>
 
     <p class="erc-alt-dark-blue-bg">Benefits</p>

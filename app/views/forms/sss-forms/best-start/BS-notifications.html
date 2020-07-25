@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -23,14 +23,14 @@ Best Start Grand
         <p>This is so we can let you know about the progress of your application, our feedback survey, or any other Social Security Scotland benefits you might be able to get.</p>
         <div class="govuk-radios govuk-radios--small">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="text-messages" name="text-messages" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="text-messages">
+            <input class="govuk-radios__input" id="BSG-text-messages" name="BSG-text-messages" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="BSG-text-messages">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="text-messages-2" name="text-messages" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="text-messages-2">
+            <input class="govuk-radios__input" id="BSG-text-messages-2" name="BSG-text-messages" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="BSG-text-messages-2">
               No
             </label>
           </div>
@@ -48,13 +48,13 @@ Best Start Grand
         <p>We need to send your email address to allpay to set up your online Best Start Foods account. We'll also use this to let you know about the progress of your application, our feedback survey, or any other Social Security Scotland benefits you might be able to get.</p>
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-email-conditional" name="contact-email-check" type="radio" value="yes" data-aria-controls="conditional-contact-email-conditional">
+            <input class="govuk-radios__input" id="contact-email-conditional" name="BSG-contact-email-check" type="radio" value="Yes" data-aria-controls="conditional-contact-email-conditional">
             <label class="govuk-label govuk-radios__label" for="contact-email-conditional">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item" style="margin:0px 0px 30px 0px;">
-            <input class="govuk-radios__input" id="contact-email-2" name="contact-email-check" type="radio" value="no">
+            <input class="govuk-radios__input" id="contact-email-2" name="BSG-contact-email-check" type="radio" value="No">
             <label class="govuk-label govuk-radios__label" for="contact-email-2">
               No
             </label>
@@ -66,12 +66,12 @@ Best Start Grand
 
             <div class="govuk-form-group" style="margin:0; padding:0;">
               <h1 class="govuk-label-wrapper">
-                <label class="govuk-label govuk-label--m" for="email">
+                <label class="govuk-label govuk-label--m" for="BSG-email">
                   Email address
                 </label>
               </h1>
               <p>Social Security Scotland will only keep hold of the latest email address you have provided. This will mean any previous email addresses supplied will be replaced. This may affect the communications you get and access to your allpay account.</p>
-              <input class="govuk-input" id="email" name="email" type="text">
+              <input class="govuk-input govuk-input--width-20" id="BSG-email" name="BSG-email" type="text" value="{{ data ['BSG-email']}}">
             </div>
           </div>
           <br>
@@ -80,7 +80,7 @@ Best Start Grand
     </div>
 
     {{ govukButton({
-      text: "Back",
+      text: " < Back",
       classes: "sg-button-back",
       href: "javascript: history.go(-1)"
     }) }}
@@ -88,7 +88,6 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-letters",
       isStartButton: true
     }) }}
 

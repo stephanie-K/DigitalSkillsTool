@@ -572,7 +572,7 @@ router.post('/forms/erc-forms/free-school-meals/FSMyourDetails', function (req, 
     req.session.data['FSMemailValid'] = 'false';
   }
 
-  if(name == '' || address == '' || tel == '' || !emailValid || niNo == '') {
+  if(name === '' || address === '' || tel === '' || !emailValid || niNo === '') {
     req.session.data['FSMyourDetailsError'] = 'true';
     res.redirect('/forms/erc-forms/free-school-meals/FSMyourDetails')
   } else {
@@ -588,7 +588,7 @@ router.post('/forms/erc-forms/free-school-meals/FSMbankDetails', function (req, 
   let accNo = req.session.data['FSM-bank-acc-no']
 
 
-  if(nameOfBank == '' || accHolderName == '' || sortCode == '' || accNo == '') {
+  if(nameOfBank === '' || accHolderName === '' || sortCode === '' || accNo === '') {
     req.session.data['FSMbankDetailsError'] = 'true';
     res.redirect('/forms/erc-forms/free-school-meals/FSMbankDetails')
   } else {
@@ -612,7 +612,7 @@ router.post('/forms/erc-forms/free-school-meals/FSMaboutChild', function (req, r
   }
 
 
-  if(firstName == '' || surname == '' || dob == '' || sexInvalid == 'true' || school == '') {
+  if(firstName === '' || surname === '' || dob === '' || sexInvalid === 'true' || school === '') {
     req.session.data['FSMaboutChildError'] = 'true';
     res.redirect('/forms/erc-forms/free-school-meals/FSMaboutChild')
   } else {
@@ -634,6 +634,11 @@ router.post('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction', functio
 // Bulb *****************************************************************
 
 router.post('/forms/other-forms/bulb/bulb-signin', function (req, res) {
+  var email = req.session.data['bulb-email']
+  if (email === '') {
+    req.session.data['bulb-email'] = 'error'
+    res.redirect('/forms/other-forms/bulb/bulb-signin')
+  }
   res.redirect('/forms/other-forms/bulb/bulb-link-sent')
 })
 
@@ -902,16 +907,19 @@ router.post('/forms/erc-forms/housing/CBLdeclaration1', function (req, res) {
 router.post('/forms/erc-forms/housing/CBLextra-reason-medical', function (req, res) {
   res.redirect('/forms/erc-forms/housing/CBLend')
 })
+// --------------------------------------- Patient access routes ------------------------------//
 
 router.post('/forms/other-forms/patient-access/pa-register2', function (req, res) {
-  const email = req.session.data['email']
+  var email = req.session.data['pa-email']
   res.redirect('/forms/other-forms/patient-access/pa-success')
 })
 
+
+// ---------------------------------------- Best Start Grant routes ---------------------------//
 router.post('/forms/sss-forms/best-start/BS-location', function (req, res) {
   var whereYouLive = req.session.data['BSG-location-name'];
 
-  if ((whereYouLive === 'scotland')) {
+  if ((whereYouLive === 'Scotland')) {
      res.redirect('/forms/sss-forms/best-start/BS-start');
   } else if (whereYouLive === 'eWNI') {
       res.redirect('/forms/sss-forms/best-start/BS-england');
@@ -930,4 +938,104 @@ router.post('/forms/sss-forms/best-start/BS-child-check-3', function (req, res) 
       res.redirect('/forms/sss-forms/best-start/BS-about-you');
   }
 
+})
+
+router.post('/forms/sss-forms/best-start/BS-start', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-child-check')
+})
+
+router.post('/forms/sss-forms/best-start/BS-child-check', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-child-check-2')
+})
+
+router.post('/forms/sss-forms/best-start/BS-child-check-2', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-pregnant')
+})
+
+router.post('/forms/sss-forms/best-start/BS-pregnant', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-child-check-3')
+})
+
+router.post('/forms/sss-forms/best-start/BS-about-you', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-your-details')
+})
+
+router.post('/forms/sss-forms/best-start/BS-your-details', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-your-address')
+})
+
+router.post('/forms/sss-forms/best-start/BS-your-address', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-sending-letters')
+})
+
+router.post('/forms/sss-forms/best-start/BS-sending-letters', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-partner')
+})
+
+router.post('/forms/sss-forms/best-start/BS-partner', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-partner-details')
+})
+
+router.post('/forms/sss-forms/best-start/BS-partner-details', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-about-child')
+})
+
+router.post('/forms/sss-forms/best-start/BS-about-child', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-pregnancy-details')
+})
+
+router.post('/forms/sss-forms/best-start/BS-pregnancy-details', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-pregnancy-due-date')
+})
+
+router.post('/forms/sss-forms/best-start/BS-pregnancy-due-date', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-baby-under-6mo')
+})
+
+router.post('/forms/sss-forms/best-start/BS-baby-under-6mo', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-baby-box')
+})
+
+router.post('/forms/sss-forms/best-start/BS-baby-box', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-child-under-6years')
+})
+
+router.post('/forms/sss-forms/best-start/BS-child-under-6years', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-other-children')
+})
+
+router.post('/forms/sss-forms/best-start/BS-other-children', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-contact-you')
+})
+
+router.post('/forms/sss-forms/best-start/BS-contact-you', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-contact-details')
+})
+
+router.post('/forms/sss-forms/best-start/BS-contact-details', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-notifications')
+})
+
+router.post('/forms/sss-forms/best-start/BS-notifications', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-letters')
+})
+
+router.post('/forms/sss-forms/best-start/BS-letters', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-language')
+})
+
+router.post('/forms/sss-forms/best-start/BS-language', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-payment-details')
+})
+
+router.post('/forms/sss-forms/best-start/BS-payment-details', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-payment-account')
+})
+
+router.post('/forms/sss-forms/best-start/BS-payment-account', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-anything-else')
+})
+
+router.post('/forms/sss-forms/best-start/BS-anything-else', function (req, res) {
+  res.redirect('/forms/sss-forms/best-start/BS-check-answers')
 })

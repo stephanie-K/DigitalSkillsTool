@@ -15,50 +15,32 @@
 
 
 {% block header %}
-<div class="govuk-header__container govuk-width-container">
-  <div class="govuk-header__logo pat-acc-logo-cont">
-    <span class="govuk-header__logotype">
-      <a id="pat-acc-logo-clean" href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="Patient Access Logo"width="250" height="30"></image></a>
-    </span>
-  </div>
-  <div class="govuk-header__content">
-    <a href="/index.html">
-      <span class="pat-acc-tagline">
-        This is a training website
-      </span>
-    </a>
-    <a id="pat-acc-support-centre" href="https://support.patientaccess.com/">
-      <image src="{{ asset_path }}images/PA/pa-acc-support.png?0.18.3p" width="20">
-        <span>
-          Support Centre
-        </span>
-      </a>
-    </div>
-  </div>
-  {% endblock %}
+{% include "../../../includes/pa-header.html"  %}
+{% endblock %}
 
   {% block pageTitle %}
-  Patient Access - Sign in
+  Patient Access - Why we ask
   {% endblock %}
 
 
   {% block content %}
 
-  <div class="govuk-grid-row park-home">
-    <div class="park-home-black-block pat-acc-signin-block pat-acc-why-we-ask">
-      <div class="pat-acc-signin-centre">
-        <div id="pat-why-we-ask-container" class="pat-acc-signin-form-container">
-          <div class="pat-why-we-ask-font-align">
-            <span class="pat-acc-signin-to-acc pat-why-we-ask-font">Why do we ask for this information?</span>
-            <br>
-            <br>
-            <span class="pat-acc-signin-err-acc pat-why-we-ask-font-sub">In order to register your new Patient Access account we need some basic information to get you set up with your correct details and provide relevant information about the service.</span>
-            <div id="pat-why-we-ask-container" class="pat-acc-hero-button-container">
-              <a href="./pa-register" class="pat-acc-sign-in-button pat-acc-close-button">Close</a>
+  <div class="govuk-grid-row pa-block pa-purple-container">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="pa-white-container ">
+            <h1 style="font-size: 24px; font-weight: 900; line-height: 30px;">Why do we ask for this information?</h1>
+            <p>In order to register your new Patient Access account we need some basic information to get you set up with your correct details and provide relevant information about the service.</p>
+            {{ govukButton({
+              text: "Close",
+              classes: "button-primary pa-pink-button",
+              href: "./pa-register"
+            }) }}
             </div>
-            <br>
-            <br>
-          </div>
         </div>
       </div>
     </div>
@@ -66,4 +48,5 @@
   {% endblock %}
 
   {% block footer %}
+  {% include "../../../includes/generic-footer.html"  %}
   {% endblock %}

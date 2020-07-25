@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-  Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -23,8 +23,9 @@
   },
   items: [
     {
-      value: "scotland",
-      text: "Scotland"
+      value: "Scotland",
+      text: "Scotland",
+      checked: checked("BSG-location-name", "Scotland")
     },
     {
       value: "eWNI",
@@ -49,7 +50,7 @@
 </details>
 
   {{ govukButton({
-    text: "Back",
+    text: " < Back",
     classes: "sg-button-back",
     href: "javascript: history.go(-1)"
   }) }}

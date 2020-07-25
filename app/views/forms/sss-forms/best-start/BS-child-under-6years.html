@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -31,20 +31,20 @@ Best Start Grand
 
     <div class="govuk-form-group" style="margin:0; padding:0;">
       <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="child-first-name">
+        <label class="govuk-label govuk-label--m" for="BSG-child-first-name">
           First name(s)
         </label>
       </h1>
-      <input class="govuk-input" id="child-first-name" name="child-first-name" type="text">
+      <input class="govuk-input govuk-input--width-20" id="BSG-child-first-name" name="BSG-child-first-name" type="text" value="{{ data ['BSG-child-first-name']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0;">
       <h1 class="govuk-label-wrapper">
-        <label class="govuk-label govuk-label--m" for="child-last-name">
+        <label class="govuk-label govuk-label--m" for="BSG-child-last-name">
           Last name
         </label>
       </h1>
-      <input class="govuk-input" id="child-last-name" name="child-last-name" type="text">
+      <input class="govuk-input govuk-input--width-20" id="BSG-child-last-name" name="BSG-child-last-name" type="text" value="{{ data ['BSG-child-last-name']}}">
     </div>
 
     <div class="govuk-form-group" style="margin:0px 0px 0px 0px;">
@@ -60,26 +60,26 @@ Best Start Grand
         <div class="govuk-date-input" id="child-under-6year">
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="child-under-6year-day">
+              <label class="govuk-label govuk-date-input__label" for="BSG-child-under-6year-day">
                 <strong>Day</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-under-6year-day" name="child-under-6year-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-child-under-6year-day" name="BSG-child-under-6year-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-child-under-6year-day']}}">
             </div>
           </div>
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="child-under-6year-month">
+              <label class="govuk-label govuk-date-input__label" for="BSG-child-under-6year-month">
                 <strong>Month</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="child-under-6year-month" name="child-under-6year-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-child-under-6year-month" name="BSG-child-under-6year-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-child-under-6year-month']}}">
             </div>
           </div>
           <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="child-under-6year-year">
+              <label class="govuk-label govuk-date-input__label" for="BSG-child-under-6year-year">
                 <strong>Year</strong>
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="child-under-6year-year" name="child-under-6year-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-child-under-6year-year" name="BSG-child-under-6year-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-child-under-6year-year']}}">
             </div>
           </div>
         </div>
@@ -90,8 +90,8 @@ Best Start Grand
 
     {{ govukRadios({
       classes: "govuk-radios--small",
-      idPrefix: "child-on-benefits",
-      name: "child-on-benefits",
+      idPrefix: "BSG-child-on-benefits",
+      name: "BSG-child-on-benefits",
       fieldset: {
         legend: {
           text: "Is this child named on either your or your partner's Child Benefit, Child Tax Credit, Universal Credit or Pension Credit claim?",
@@ -101,18 +101,20 @@ Best Start Grand
       },
       items: [
       {
-        value: "yes",
-        text: "Yes"
+        value: "Yes",
+        text: "Yes",
+        checked: checked("BSG-child-on-benefits", "Yes")
       },
       {
-        value: "no",
-        text: "No"
+        value: "No",
+        text: "No",
+        checked: checked("BSG-child-on-benefits", "No")
       }
       ]
     }) }}
 
     {{ govukButton({
-      text: "Back",
+      text: " < Back",
       classes: "sg-button-back",
       href: "javascript: history.go(-1)"
     }) }}
@@ -120,7 +122,6 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-other-children",
       isStartButton: true
     }) }}
 

@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -16,11 +16,11 @@ Best Start Grand
   <form class="form" method="post">
 
     <div class="govuk-form-group" style="padding:0px 0px 5px;">
-      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      <textarea class="govuk-textarea" id="BSG-more-detail" name="BSG-more-detail" rows="5" aria-describedby="BSG-more-detail-hint"></textarea>
     </div>
 
     {{ govukButton({
-      text: "Back",
+      text: " < Back",
       classes: "sg-button-back",
       href: "javascript: history.go(-1)"
     }) }}
@@ -28,7 +28,6 @@ Best Start Grand
     {{ govukButton({
       text: "Next",
       classes: "button-primary",
-      href: "/forms/sss-forms/best-start/BS-check-answers",
       isStartButton: true
     }) }}
 

@@ -1,7 +1,7 @@
 {% extends "layout_sss.html" %}
 
 {% block pageTitle %}
-Best Start Grand
+Best Start Grant
 {% endblock %}
 
 
@@ -29,13 +29,13 @@ Best Start Grand
         </legend>
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="letters-conditional" name="letters-check" type="radio" value="yes" data-aria-controls="conditional-letters-conditional">
+            <input class="govuk-radios__input" id="letters-conditional" name="BSG-letters-check" type="radio" value="Yes" data-aria-controls="conditional-letters-conditional">
             <label class="govuk-label govuk-radios__label" for="letters-conditional">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item" style="margin:0px;">
-            <input class="govuk-radios__input" id="letters-2" name="letters-check" type="radio" value="no">
+            <input class="govuk-radios__input" id="letters-2" name="BSG-letters-check" type="radio" value="No">
             <label class="govuk-label govuk-radios__label" for="letters-2">
               No
             </label>
@@ -49,8 +49,8 @@ Best Start Grand
 
             {{ govukRadios({
               classes: "govuk-radios--small",
-              idPrefix: "letter-type",
-              name: "letter-type",
+              idPrefix: "BSG-letter-type",
+              name: "BSG-letter-type",
               fieldset: {
                 legend: {
                   text: "Which of these letters do you need to be sent?",
@@ -61,23 +61,28 @@ Best Start Grand
               items: [
               {
                 value: "braille",
-                text: "Braille"
+                text: "Braille",
+                checked: checked("BSG-letter-type", "braille")
               },
               {
                 value: "largePrint",
-                text: "Large Print"
+                text: "Large Print",
+                checked: checked("BSG-letter-type", "largePrint")
               },
               {
                 value: "easyRead",
-                text: "Easy Read"
+                text: "Easy Read",
+                checked: checked("BSG-letter-type", "easyRead")
               },
               {
                 value: "audio",
-                text: "Audio"
+                text: "Audio",
+                checked: checked("BSG-letter-type", "audio")
               },
               {
                 value: "none",
-                text: "I do not need to be sent one of these"
+                text: "I do not need to be sent one of these",
+                checked: checked("BSG-letter-type", "none")
               }
               ]
             }) }}
@@ -88,7 +93,7 @@ Best Start Grand
       </div>
 
       {{ govukButton({
-        text: "Back",
+        text: " < Back",
         classes: "sg-button-back",
         href: "javascript: history.go(-1)"
       }) }}
@@ -96,7 +101,6 @@ Best Start Grand
       {{ govukButton({
         text: "Next",
         classes: "button-primary",
-        href: "/forms/sss-forms/best-start/BS-language",
         isStartButton: true
       }) }}
 

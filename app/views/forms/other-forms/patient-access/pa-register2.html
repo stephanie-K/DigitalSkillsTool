@@ -15,82 +15,91 @@
 
 
 {% block header %}
-<div class="govuk-header__container govuk-width-container">
-  <div class="govuk-header__logo pat-acc-logo-cont">
-    <span class="govuk-header__logotype">
-      <a id="pat-acc-logo-clean" href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="Patient Access Logo" width="250" height="30"></image></a>
-    </span>
-  </div>
-  <div class="govuk-header__content">
-    <a href="/index.html">
-      <span class="pat-acc-tagline">
-        This is a training website
-      </span>
-    </a>
-    <a id="pat-acc-support-centre" href="https://support.patientaccess.com/">
-      <image src="{{ asset_path }}images/PA/pa-acc-support.png?0.18.3p" width="20">
-        <span>
-          Support Centre
-        </span>
-      </a>
-    </div>
-  </div>
-  {% endblock %}
+{% include "../../../includes/pa-header.html"  %}
+{% endblock %}
 
   {% block pageTitle %}
-  Patient Access - Sign in
+  Patient Access - Register
   {% endblock %}
 
 
   {% block content %}
+  <div class="govuk-grid-row pa-block pa-grey-container" style="text-align: center;">
+    <div class="govuk-grid-column-full">
+    <h1>Create your Patient Access account</h1>
+    <p>Already have an account? <a href="./pa-signin.html"> Sign in to Patient Access</a></p>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          &nbsp;
+        </div>
 
-  <div class="govuk-grid-row park-home">
-    <div class="park-home-black-block pat-acc-signin-block">
-      <div class="pat-acc-signin-centre">
-        <span class="pat-acc-signin-to-acc2">Create your Patient Access account</span>
-        <br>
-        <br>
-        <span class="pat-acc-signin-err-acc2">Already have an account?<span><a id="pat-acc-logo-clean" class="pat-acc-signin-err-reg" href="./pa-signin">Sign in to Patient Access</a></span></span>
-        <div class="pat-acc-signin-form-container pat-acc-enter-details-cont">
-          <div class="signin-button-signin-page-container">
-            <div class="pat-acc-enter-details-back-cont ">
-              <a  id="pat-acc-logo-clean" href="./pa-register"><span class="pat-acc-signin-err-acc pat-acc-enter-details-back"> &lt; Back<span></a><span class="pat-acc-enter-details">Enter account details</span>
+        <div class="govuk-grid-column-one-half">
+          <div class="pa-white-container ">
+            <p><a href="./pa-register.html">&lt; Back </a></p>
+            <h2> Enter account details</h2>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-email">
+                Email address *
+              </label>
+              <input class="govuk-input" id="pa-email" name="pa-email" type="text" placeholder="name@example.com">
             </div>
-            <form method="post">
-              <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-                <label id="pat-acc-label" class="govuk-label" for="email">
-                  Email address *
-                </label>
-                <input id="pat-acc-input" class="govuk-input ph-input" id="email" name="email" type="text" placeholder="name@example.com" required>
-              </div>
-              <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-                <label id="pat-acc-label" class="govuk-label" for="password">
-                  Password
-                </label>
-                <input id="pat-acc-input" class="govuk-input ph-input" id="password" name="password" type="text" placeholder="Password">
-              </div>
-              <span id="pat-acc-password-reqs" class="pat-acc-signin-err-acc pat-why-we-ask-font-sub">Your new password must be at least 12 characters long with a mix of numbers, uppercase and lowercase letters and should not have been previously used.</span>
-              <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-                <label id="pat-acc-label" class="govuk-label" for="mobile">
-                  Mobile number (optional)
-                </label>
-                <input id="pat-acc-input" class="govuk-input ph-input" id="mobile" name="mobile" type="text" placeholder="Mobile number">
-              </div>
-              <label class="pat-acc-checkboxes">I accept the <span><a id="pat-acc-logo-clean" class="pat-acc-signin-err-reg" style="color:#D3368A; font-weight:700; margin:0;" href="https://support.patientaccess.com/terms-of-use">Terms and Conditions</a></span>
-                <input type="checkbox">
-                <span class="pat-acc-checkmark "></span>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-pwd">
+                Password
               </label>
-              <label class="pat-acc-checkboxes">I’d like to receive marketing communications (emails, surveys and partner content) to enhance my experience of Patient Access.
-                <input type="checkbox">
-                <span class="pat-acc-checkmark "></span>
+              <input class="govuk-input" id="pa-pwd" name="pa-pwd" type="text" placeholder="Password">
+              <p>Your new password must be at least 12 characters long with a mix of numbers, uppercase and lowercase letters and should not have been previously used.</p>
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-phone">
+                Mobile number (optionnal)
               </label>
-                <button id="pat-acc-register2-create" class="pat-acc-sign-in-button signin-button-signin-page" type="submit"><span>Create Account</span></button>
-            </form>
+              <input class="govuk-input" id="pa-phone" name="pa-phone" type="text" placeholder="Mobile number">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="pa-terms" name="pa-terms" type="checkbox" >
+                    <label class="govuk-label govuk-checkboxes__label" for="pa-terms">
+                      <span style="font-weight: 400">I accept the</span> <a href="https://support.patientaccess.com/terms-of-use">Terms and Conditions</a>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="pa-marketing" name="pa-marketing" type="checkbox" >
+                    <label class="govuk-label govuk-checkboxes__label" for="pa-marketing">
+                      <span style="font-weight: 400; line-height: 20px;">I’d like to receive marketing communications (emails, surveys and partner content) to enhance my experience of Patient Access.</span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <a href="./pa-success" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="width:100%; margin-bottom: 30px;">
+              Create account
+            </a>
           </div>
         </div>
+
       </div>
     </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>You can enter anything at the moment, we are not checking</p>
+  </div>
+
+
     {% endblock %}
 
     {% block footer %}
+    {% include "../../../includes/generic-footer.html"  %}
     {% endblock %}

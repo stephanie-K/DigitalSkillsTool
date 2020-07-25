@@ -16,24 +16,25 @@
 
 {% block header %}
 <div class="govuk-header__container govuk-width-container">
-  <div class="govuk-header__logo pat-acc-logo-cont">
+  <div class="govuk-header__logo ">
       <span class="govuk-header__logotype">
-          <a id="pat-acc-logo-clean" href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="Patient Access Logo" width="250" height="30"></image></a>
+          <a href="/index.html"><image src="{{ asset_path }}images/PA/patient-access-logo.png?0.18.3p" alt="go back to homepage" width="250" height="30"></image></a>
       </span>
   </div>
   <div class="govuk-header__content">
     <a href="/index.html">
-      <span class="pat-acc-tagline">
+      <span class="pa-tagline">
         This is a training website
       </span>
     </a>
-    <div class="pat-acc-header-button-container">
-      <a href="./pa-signin" class="pat-acc-header-sign-in-button">Sign In</a>
-      <a href="./pa-register" class="pat-acc-header-register-button">Register</a>
+    <div class="pa-header-button-container">
+      <a href="./pa-signin" class="pa-header-sign-in-button">Sign In</a>
+      <a href="./pa-register" class="pa-header-register-button">Register</a>
     </div>
   </div>
 </div>
 {% endblock %}
+
 
 {% block pageTitle %}
 Patient Access
@@ -42,25 +43,33 @@ Patient Access
 
 {% block content %}
 
-<div class="govuk-grid-row park-home">
-    <div class="park-home-black-block pat-acc-block">
-      <div class="pat-acc-homepage-content-container">
-        <span class="pat-acc-homepage-content-title">Take control of your healthcare</span>
-        <div class="pat-acc-homepage-content-tagline-cont">
-          <span class="pat-acc-homepage-content-tagline">In partnership with </span>
-          <image src="{{ asset_path }}images/PA/nhs.png?0.18.3p" alt="NHS Logo" width="75" height="30"></image>
-        </div>
-        <div class="pat-acc-homepage-content-body-cont">
-          <span class="pat-acc-homepage-content-body">Patient Access connects you to local health services when you need them most. Book GP appointments, order repeat prescriptions and discover local health services for you or your family via your mobile or home computer.</span>
-        </div>
-      </div>
-      <div class="pat-acc-hero-button-container">
-        <a href="./pa-signin" class="pat-acc-sign-in-button">Sign In</a>
-        <a href="./pa-register" class="pat-acc-register-button">Register</a>
-      </div>
+<div class="pa-block">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1>Take control of your healthcare</h1>
+    <p>In partnership with <image src="{{ asset_path }}images/PA/nhs.png?0.18.3p" alt="NHS Logo" width="75" height="30" style="vertical-align:middle; padding-left: 5px;"></image></p>
+    <p>Patient Access connects you to local health services when you need them most. Book GP appointments, order repeat prescriptions and discover local health services for you or your family via your mobile or home computer.</p>
+    {{ govukButton({
+      text: "Sign In",
+      classes: "button-primary pa-pink-button",
+      href: "./pa-signin"
+    }) }}
+
+    {{ govukButton({
+      text: "Register",
+      classes: "button-primary pa-blue-button",
+      href: "./pa-register"
+    }) }}  
+  </div>
+    <div class="govuk-grid-column-one-third">
+      <br><br>
+      <p><image src="{{ asset_path }}/images/PA/Homehero.jpg" alt="" width="350px" height="350"></image></p>
     </div>
+  </div>
+
 </div>
 {% endblock %}
 
 {% block footer %}
+{% include "../../../includes/generic-footer.html"  %}
 {% endblock %}

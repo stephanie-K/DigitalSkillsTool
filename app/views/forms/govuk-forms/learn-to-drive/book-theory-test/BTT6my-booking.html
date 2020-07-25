@@ -48,7 +48,7 @@ My booking
           <div class="dvsa-white-container">
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-full">
-                <table class="govuk-table">
+                <table class="govuk-table" style="overflow: auto;">
                   <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
                       <th scope="col" class="govuk-table__header small-font-dvsa">Description</th>
@@ -78,7 +78,7 @@ My booking
                         </td>
                         <td class="govuk-table__cell small-font-dvsa">
                           <strong>Appointment</strong><br>
-                          Thursday, 3 September 2020<br>
+                          {{ bookingTheoryTestAppointment }}<br>
                           Start time: 09:15 am<br>
                           <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT5appointment" class="small-font-dvsa">Change appointment</a>
                           <br><br>
@@ -198,4 +198,5 @@ My booking
 {% endblock %}
 
 {% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
 {% endblock %}
