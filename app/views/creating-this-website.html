@@ -56,9 +56,9 @@
             </h2>
           </div>
           <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-            <p>Different forms are needed to support the classes. Some are Council forms, some are GOVUK form and others are Scottish Government forms.</p>
-            <p>Different layouts have to be created for each and even among each category, there is a variety of layouts:<br>
-               For example, the DVLA have a different layout and style compared to HMRC, or the Social Security Scotland have its own style.</p>
+            <p>Different forms are needed to support the classes. Some are Council forms, some are GOVUK forms or cottish Government forms and some are from private services like energy providers.</p>
+            <p>Different layouts have been created for each and even among each category, there is a variety of layouts:<br>
+               For example, the DVLA have a different layout and style compared to HMRC. Social Security Scotland also has its own style.</p>
           </div>
         </div>
         <div class="govuk-accordion__section ">
@@ -70,7 +70,7 @@
             </h2>
           </div>
           <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-            <p>Our code can be found in this <a href="https://github.com/stephanie-K/DigitalSkillsTool" target="_blank" rel="noopener">Github repository</a></p>
+            <p>Our code is in this <a href="https://github.com/stephanie-K/DigitalSkillsTool" target="_blank" rel="noopener">Github repository</a></p>
             
             <h3 class="govuk-heading-m">Layout files <code>in app>views></code></h3>
       
@@ -79,13 +79,13 @@
               <li><strong>layout_erc.html</strong> - customised for Council forms</li>
               <li><strong>layout_sg.htm</strong>l - customised for Scottish Government</li>
               <li><strong>layout_sss.htm</strong>l - customised for Social Security Scotland</li>
-              <li><strong>layout_tool.html</strong> - look like the council one but for high level pages of the tool, like the one you are looking at just now</li>
+              <li><strong>layout_tool.html</strong> - look like the council one but for high level pages of the tool, like the one you're reading just now</li>
             </ul>
       
             <h3 class="govuk-heading-m">CSS/SASS files <code>in app>assets>sass></code></h3>
       
             <ul class="govuk-list govuk-list--bullet">
-              <li><strong>application.scss</strong> - default GOV.UK css plus some we added for GOVUK forms</li>
+              <li><strong>application.scss</strong> - default GOV.UK plus some css we added for GOVUK forms</li>
               <li><strong>erc.scss</strong> - styles to support the  council forms</li>
               <li><strong>sg.scss</strong> - styles to support the Social Security Scotland and Scottish Government forms</li>
               <li><strong>other.scss</strong> - styles for other forms</li>
@@ -93,15 +93,12 @@
         
             <h3 class="govuk-heading-m">Each form has a folder <code>app>views>forms></code></h3>
 
-            <h3 class="govuk-heading-m">All images should be in <code>app>assets>images></code></h3>
-            <p>From there it can be in another existing folders and you can create a different one</p>
+            <h3 class="govuk-heading-m">All images are in <code>app>assets>images></code></h3>
             <p>In your code, the path will be: <code>	&lcub;&lcub; asset_path 	&rcub;&rcub;images/name-of-your-image-file</code></p>
-            <p>Both the images and the styles are copied in the <code>public</code> folder. <span style="color: #B30000;"><strong>Don't put anything there</strong></span>, it's done automatically for you.</p>
+            <p>Both the images and the styles are copied in the <code>public</code> folder. <span style="color: #B30000;"><strong>You should not put anything there</strong></span>, it's done automatically for you.</p>
 
-      
             <h3 class="govuk-heading-m">Route.js <code>app></code></h3>
-            <p>This file is key to introduce logic and validation to the forms. It is shared by all the forms.</p>
-
+            <p>This file is key to introduce navigation logic, persistance of data and validation to the forms. It is shared by all the forms.</p>
           </div>
         </div>
         <div class="govuk-accordion__section ">
@@ -117,9 +114,9 @@
               <li><a href="example-govuk">GOV.UK</a>  - basic standart page</li>
               <li><a href="forms/govuk-forms/template-govuk-explanation-page">GOV.UK</a>  - template of a page with a lot of content</li>
               <li><a href="example-step-by-step">GOV.UK</a>  - page with a step by step</li>
-              <li><a href="example-erc">Council</a> - basic examples of various potential components</li>
-              <li><a href="example-sss">Social Security Scotland</a> - basic example</li>
-              <li><a href="example-sg">Scottish Goverment</a> - basic example</li>
+              <li><a href="example-erc">Council</a> - examples of various potential components</li>
+              <li><a href="example-sss">Social Security Scotland</a> - example</li>
+              <li><a href="example-sg">Scottish Goverment</a> - example</li>
             </ul>
           </div>
         </div>
