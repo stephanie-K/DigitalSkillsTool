@@ -1,0 +1,71 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Create your online profile
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
+    <p class="erc-alt-dark-blue-bg">Your basic online profile has been created</p>
+
+    <p class="erc-alt-dark-grey-round">What happens now?</p>
+
+      <p>In order to complete the process, you will need to provide us with 2 forms of identification (one of proof of name and one of proof of address) as detailed below. Your ID can br brought into either of the main East Renfrewshire Council offices. You must also bring the details shown on this page - you can either take a screenshot / print of this page (with the 'Your details' section clearly visible) or select the option to have the details emailed to you.</p>
+
+    <p class="erc-alt-dark-grey-round">Your details</p>
+
+      <p>Self Service Id:  (an automated ID will display here)</p>
+      <p>Name:  (your name will display here)</p>
+      <p>Address: (your address will display here)</p>
+
+    <p class="erc-alt-dark-grey-round">Acceptable ID</p>
+
+    <div class="govuk-heading-s erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">Acceptable IDs for proof of name are</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>Passport</li>
+          <li>Photo drivers licence</li>
+          <li>Hologrammed pass card</li>
+      </ul>
+      <p class="govuk-!-font-size-14">Acceptable IDs for proof of address are recent</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>Bank statement</li>
+          <li>Council Tax bill</li>
+          <li>Mortgage statement</li>
+          <li>Utility bill</li>
+          <li>DWP award benefit letter</li>
+      </ul>
+    </div>
+
+
+
+      {{ govukButton({
+        text: "Screen captured",
+        classes: "button-primary erc-alt"
+      }) }}
+
+      {{ govukButton({
+        text: "Email details",
+        classes: "button-primary erc-alt"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>The form is complete at this stage.</p>
+
+    <p>'Screen Captured' button will take a screenshot of this page, and 'Email details' button will email you this page.</p>
+
+    <p>On the real form for the 'Your details' section, your previously inputted name and adrress will appear here as well as an automated Service ID</p>
+
+    <p>Once this form is completed and your online profile is completed you will need to go in-person to confirm your identity and address with the council.</p>
+  </div>
+{% endblock %}
