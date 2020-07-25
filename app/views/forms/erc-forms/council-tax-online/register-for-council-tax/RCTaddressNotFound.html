@@ -1,0 +1,46 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Create your online profile
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
+    <p class="erc-alt-dark-blue-bg">Address not found</p>
+
+      <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
+        <p class="govuk-!-font-size-14">If you are a resident of East Renfrewshire, please fillin the details below. If your house has a flat number, house name, or building name, please make sure you include these details too.</p>
+      </div>
+
+
+
+      <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
+        <p class="govuk-!-font-size-14">When you exit from this form, your name, address and contact details will be sent to our Customer Service Team, who will investigate and get back to you.</p>
+      </div>
+
+
+      {{ govukButton({
+        text: "Search again",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTnameAddress"
+      }) }}
+      {{ govukButton({
+        text: "Exit",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>On the real form, you will see a long list of addresses with your Postcode to select your address from the list.</p>
+  </div>
+{% endblock %}
