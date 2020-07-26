@@ -165,6 +165,14 @@ img.dvsa, image.dvsa  {
     background: #FFF url(../images/DVLA/helpArrowInPage.gif) no-repeat top left;
 }
 
+.red-dvla-link-dark:link,  .red-dvla-link-dark:visited,  .red-dvla-link-dark:active,  .red-dvla-link-dark:focus{
+    color: #C00;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: .8em;
+    background: #e0e0e0 url(../images/DVLA/helpArrowInPage.gif) no-repeat top left;
+}
+
 .apply-DVLA-tagline {
     font-size: 24px;
     color: #fff;
@@ -185,6 +193,20 @@ img.dvsa, image.dvsa  {
 }
 .orange-block {
     border: .1em solid #F90;
+    padding-bottom:1em;
+    p, li {
+        font-size: 14px;
+        margin: 0.7em;
+    }
+    li {
+        color: #666;
+        line-height:0.8;
+    }
+}
+
+.grey-block {
+    // border: .1em solid #F90;
+    background-color: #e0e0e0;
     padding-bottom:1em;
     p, li {
         font-size: 14px;
