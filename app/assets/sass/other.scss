@@ -662,6 +662,12 @@ h1, h2, h3, p, a, label, li {
     line-height: 30px;
     color: $pa-text-dark;
   }
+  h3{
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 26px;
+    color: $pa-text-dark;
+  }
   p, li {
     color: $pa-text-light;
     font-size: 18px;
@@ -693,7 +699,7 @@ h1, h2, h3, p, a, label, li {
 }
 
 .pa-white-container {
-  margin:1em auto;
+  margin:1em 10px;
   border: 1px solid #ddd;
   padding: 64px 48px 48px 48px;
   @media only screen and (max-width: 490px) {
@@ -712,7 +718,7 @@ h1, h2, h3, p, a, label, li {
 
 .pa-grey-container {
   background-color: #f7f7fa;
-  padding: 50px 0 100px 0;
+  padding: 50px 5px 100px 5px;
 }
 
 
@@ -773,6 +779,7 @@ h1, h2, h3, p, a, label, li {
   box-shadow: 0 2px 0 #fff;
 }
 
+
 // -------------------------- pa helpers
 
 .dot {
@@ -784,4 +791,27 @@ h1, h2, h3, p, a, label, li {
   text-align:center;
   font-size: 30px;
   margin-right: 30px;
+}
+
+.physio-banner{
+  text-decoration: none;
+  text-align: center;
+  background: #FFF url(../images/PA/online-physio-banner-pa.png) no-repeat center;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  Height: 100px;
+  margin: 20px;
+  border-radius: 12px;
+  max-width: 90%;
+}
+
+.white-label{
+  background: #FFF;
+  color: $pa-text-dark;
+  font-size:14px;
+  font-weight: 700;
+  padding: 5px 10px;
+  margin-left: 12px;
+  border-radius: 25px;
 }
