@@ -1,0 +1,67 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="pa-block">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/user.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></span></image><a href="pa-my-account" class="homepage-inactive">Your account</a></p>
+        </div>
+      </div> 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/home.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-dashboard.html" class="homepage-inactive">Home</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/covid.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-covid-info.html" class="homepage-inactive">Coronavirus Information</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/advice.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-advice.html" class="homepage-inactive">Health Advice</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/rdv.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-booking.html" class="homepage-inactive">Appointment</a></p>
+          <hr>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/Link.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-link-GP.html" class="homepage-inactive"> Link Your GP Practice</a></p>
+        </div>
+        <div class="govuk-grid-column-three-quarters pa-grey-container" >
+          <div class="govuk-grid-row" style="margin: 10px">
+            <p style="border-bottom: solid 1px #ddd">
+              <a style="border-bottom: solid 2px #D3368A; margin: auto 10px; white-space: nowrap;">Account settings</a> 
+              <a href="pa-contact-details" style="margin: auto 10px; white-space: nowrap;"class="homepage-inactive">Contact details</a> 
+              <a href="pa-payment-method" style="margin: auto 10px; white-space: nowrap;"class="homepage-inactive">Payments methods</a>
+            </p>
+            <p class="pa-salmond-block" style="font-size: 16px">Please ensure this information is up-to-date: it will be required if you forget your password.</p>
+            <h2>Account Details</h2>
+            <p><strong>Email</strong> {% if data['pa-email']%} {{data['pa-email']}} {% else%} your.email@gmail.com {% endif%} <image  src="{{ asset_path }}images/PA/greentick.png" alt="success" width="30" height="30" style="vertical-align:middle;"></image><span style="color:#008a27;">Verified</span></p>
+            <p><strong>Mobile Number</strong> {% if data['pa-phone']%} {{data['pa-phone']}} {% else%} Not specified {% endif%} </p>
+            <br>
+            <a href="pa-update-details.html">Update account details</a>
+            <p style="border-bottom: solid 1px #ddd">&nbsp;</p>
+            <h2>Password</h2>
+            <p>Follow these simple rules to keep your password safe:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Never give your password to anyone else</li>
+              <li>Never write down your password</li>
+            </ul>
+            <a href="pa-change-pwd">Change password</a>
+            <p style="border-bottom: solid 1px #ddd">&nbsp;</p>
+            <h2>Communications Preferences</h2>
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="pa-comms" name="pa-comms" type="checkbox" >
+                    <label class="govuk-label govuk-checkboxes__label" for="pa-comms">
+                      <span style="font-weight: 400; line-height: 20px; color: #6f6f8c; font-size:16px">
+                        I would like to receive marketing email communications (including newsletters, occasional surveys and partner content) to enhance my experience of Patient Access</span>
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <p style="border-bottom: solid 1px #ddd">&nbsp;</p>
+            <h2>Link a practice or user</h2>
+            <p><a href="pa-link-GP.html">Link to my practice</a></p>
+            <p><a href="pa-link-other.html">Link another patient to your account</a></p>
+        </div>
+      </div>
+    </div>
+</main>
+</div>
+{% include "../../../includes/pa-footer.html"  %}

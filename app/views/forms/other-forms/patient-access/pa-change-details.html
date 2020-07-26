@@ -1,20 +1,16 @@
 {% include "../../../includes/pa-header.html"  %}
 <div class="govuk-width-container">
   <main class="govuk-main-wrapper">
-  <div class="govuk-grid-row pa-block pa-grey-container" style="text-align: center;">
+  <div class="govuk-grid-row pa-block pa-purple-container">
     <div class="govuk-grid-column-full">
-    <h1>Create your Patient Access account</h1>
-    <p>Already have an account? <a href="./pa-signin.html"> Sign in to Patient Access</a></p>
-      
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-quarter">
           &nbsp;
         </div>
         <div class="govuk-grid-column-one-half">
           <div class="pa-white-container ">
-            <h2>Enter your personal details</h2>
+            <h1 style="font-size: 24px; font-weight: 900; line-height: 30px;">Edit contact details</h1>
             <form class="form" method="post">
-
             <div class="govuk-form-group">
               <label class="govuk-label" for="pa-first-name">
                 First name
@@ -79,21 +75,19 @@
                 <option value="not">Not Specified</option>
               </select>
               </div>
-            <p><a href="./pa-why-we-ask.html">Why do we ask for this information</a></p>
-            <button class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="width:100%; margin-bottom: 30px;">
-              Continue
-            </button>  
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+              {{ govukButton({
+                text: "Confirm",
+                classes: "button-primary pa-pink-button"
+              }) }}
             </form>
+              <p> <a href="pa-my-account.html">or Cancel</a></p>
+
           </div>
         </div>
-
       </div>
     </div>
   </div>
-  <div class="student-notes-box"> 
-    <p>You can enter anything at the moment, we are not checking for errors</p>
+  </main>
   </div>
-</main>
-</div>
-
   {% include "../../../includes/pa-footer.html"  %}

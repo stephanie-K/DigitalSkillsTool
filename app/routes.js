@@ -937,9 +937,24 @@ router.post('/forms/erc-forms/housing/CBLextra-reason-medical', function (req, r
 })
 // --------------------------------------- Patient access routes ------------------------------//
 
+router.post('/forms/other-forms/patient-access/pa-register', function (req, res) {
+  res.redirect('/forms/other-forms/patient-access/pa-register2')
+})
+
 router.post('/forms/other-forms/patient-access/pa-register2', function (req, res) {
-  var email = req.session.data['pa-email']
   res.redirect('/forms/other-forms/patient-access/pa-success')
+})
+
+router.post('/forms/other-forms/patient-access/pa-update-details', function (req, res) {
+  res.redirect('/forms/other-forms/patient-access/pa-my-account')
+})
+
+router.post('/forms/other-forms/patient-access/pa-change-pwd', function (req, res) {
+  res.redirect('/forms/other-forms/patient-access/pa-my-account')
+})
+
+router.post('/forms/other-forms/patient-access/pa-change-details', function (req, res) {
+  res.redirect('/forms/other-forms/patient-access/pa-contact-details')
 })
 
 

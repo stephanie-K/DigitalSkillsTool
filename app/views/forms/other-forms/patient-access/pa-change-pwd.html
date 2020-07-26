@@ -1,0 +1,61 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+  <div class="govuk-grid-row pa-block pa-purple-container">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="pa-white-container ">
+            <h1>Change password</h1>
+            <form class="form" method="post">
+            <h2>Please follow the rules below when changing your password.</h2>
+            <p>Your password must:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Contain at least one lower-case letter</li>
+              <li>Contain at least one upper-case letter</li>
+              <li>Contain at least one number</li>
+              <li>Contain at least one of the following supported symbols ! # $ % £ * - ? @ _ | ^ ~ : .</li>
+              <li>Must be at least 12 characters long</li>
+            </ul>
+            
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-pwdold">
+                Current Password
+              </label>
+              <input class="govuk-input" id="pa-pwdold" name="pa-pwdold" type="password" placeholder="Current Password">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-pwd2">
+                New Password
+              </label>
+              <input class="govuk-input" id="pa-pwd2" name="pa-pwd2" type="password" placeholder="New Password">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-pwd">
+                Confirm New Password
+              </label>
+              <input class="govuk-input" id="pa-pwd" name="pa-pwd" type="password" placeholder="New Password">
+            </div>
+      
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+            {{ govukButton({
+              text: "Save changes",
+              classes: "button-primary pa-pink-button"
+            }) }}
+          </form>
+            <p> <a href="pa-my-account.html">or Cancel</a></p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>You can put anything, we are not checking.</p>
+    <p>On the real form, you would need to make sure you enter the correct passwords and respect the rules.</p>
+  </div>
+  </main>
+  </div>
+  {% include "../../../includes/pa-footer.html"  %}

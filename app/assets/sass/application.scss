@@ -221,6 +221,9 @@ $govuk-assets-path: '/govuk/assets/';
       font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
       font-weight: 600;
   }
+  a {
+    margin-left: 0;
+  }
 }
 
 .govuk-tag {

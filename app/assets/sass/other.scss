@@ -677,8 +677,11 @@ h1, h2, h3, p, a, label, li {
     text-decoration: none;
     font-weight: bold;
   }
-  a:hover {
+  a:hover, a.homepage-inactive:hover {
     color: #dc60a2;
+  }
+  a.homepage-inactive {
+    color:$pa-text-dark
   }
   label {
     font-size: 18px;
@@ -695,6 +698,9 @@ h1, h2, h3, p, a, label, li {
   }
   .govuk-select {
     color: #666;
+  }
+  hr {
+    border-bottom: 1px solid #dedee3;
   }
 }
 
@@ -793,7 +799,7 @@ h1, h2, h3, p, a, label, li {
   margin-right: 30px;
 }
 
-.physio-banner{
+.pa-physio-banner{
   text-decoration: none;
   text-align: center;
   background: #FFF url(../images/PA/online-physio-banner-pa.png) no-repeat center;
@@ -806,7 +812,7 @@ h1, h2, h3, p, a, label, li {
   max-width: 90%;
 }
 
-.white-label{
+.pa-white-label{
   background: #FFF;
   color: $pa-text-dark;
   font-size:14px;
@@ -814,4 +820,21 @@ h1, h2, h3, p, a, label, li {
   padding: 5px 10px;
   margin-left: 12px;
   border-radius: 25px;
+  white-space: nowrap;
 }
+
+.pa-salmond-block{
+  background: #ffd9cb;
+  color: #32325d !important;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+
+.pa-blue-block{
+  background: #c9e4fd;
+  color: #32325d !important;
+  padding: 10px 20px;
+  border-radius: 12px;
+}
+
+
