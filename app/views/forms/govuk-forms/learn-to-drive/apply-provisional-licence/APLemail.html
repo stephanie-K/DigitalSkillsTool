@@ -40,56 +40,57 @@ Motoring
           <p>Follow our easy step by step process to help you fill this form in quickly and accurately.</p>
           <ol class="govuk-list govuk-list--number">
             <li><strong>Authentication</strong></li>
+            <li><strong>Application</strong></li>
             <ul class="govuk-list">
-                <li>Authentication</li>
-                <li>Security of your data</li>
-                <li>Your details</li>
-                <li><strong>Your addresses</strong></li>
-                <li>Security details</li>
-                <li>National Insurance number</li>
-                <li>UK passport number</li>
-              </ul>
-              <li><strong>Application</strong></li>
-              <li><strong>Summary</strong></li>
-              <li><strong>Payment</strong></li>
-              <li><strong>Confirmation</strong></li>
-            </ol>
+              <li>Are you eligible?</li>
+              <li>Your eyesight</li>
+              <li>Fitness to drive</li>
+              <li><strong>Further information</strong></li>
+              <li>Declaration</li>
+            </ul>
+            <li><strong>Summary</strong></li>
+            <li><strong>Payment</strong></li>
+            <li><strong>Confirmation</strong></li>
+          </ol>
         </div>
     </div>
     <div class="govuk-grid-column-three-quarters">
-        <h1 class="govuk-heading-m">
-            Apply for a provisional licence
-        </h1>
-        <h2 class="govuk-heading-s yellow-heading">Your addresses</h2>
+        <h1 class="govuk-heading-m">Apply for a provisional licence</h1>
+        <h2 class="govuk-heading-s yellow-heading">Further information</h2>
+        <h3 class="govuk-heading-s">Email address</h3>
         <div class="small-font">
-          <h2 class="govuk-heading-m">Your address history</h2>
-          <p>Please tell us where you have lived over the last three years.</p>
+          <p>Please enter the email address to which you would like your email confirmation sent.</p>
+          <p><em>Please note: * indicates that an answer is required.</em></p>
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label prov-licence-label" for="provisional-licence-email">
+                Email address *
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <input class="govuk-input govuk-input--width-10" id="provisional-licence-email" name="provisional-licence-email" type="text">
+            </div>
+          </div>
 
-          <h5 class="govuk-heading-s grey-heading">Address 1</h5>
-          <p></p>
-          <p><em>Where you live now</em><br>90 Mountcastle Wynd,<br>KILWINNING<br>KA13 6DH</p>
-          <p style="margin-bottom:0"><b><em>How long did you live there?</em></b></p>
-          <p>2 year(s) 3 month(s)</p>
-          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html" class="red-dvla-link">Change address 1</a></p>
-
-          <h5 class="govuk-heading-s grey-heading">Address 2</h5>
-          <p></p>
-          <p><em>Your last address</em><br>90 Mountcastle Wynd,<br>KILWINNING<br>KA13 6DH</p>
-          <p style="margin-bottom:0"><b><em>How long did you live there?</em></b></p>
-          <p>3 year(s) 9 month(s)</p>
-          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html" class="red-dvla-link">Change address 2</a></p>
-
-          <p>Do not click the previous/next button more than once.</p>
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label prov-licence-label" for="provisional-licence-email-check">
+                Confirm Email address *
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <input class="govuk-input govuk-input--width-10" id="provisional-licence-email-check" name="provisional-licence-email-check" type="text">
+            </div>
+          </div>
+          <hr>
         </div>
-        <hr>
-
 
 
         <div class="dvla-button-row">
             {{ govukButton({
               text: "Previous",
               classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived.html"
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLorgDon.html"
             }) }}
 
             {{ govukButton({
@@ -100,7 +101,7 @@ Motoring
             {{ govukButton({
               text: "Next",
               classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails.html"
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdeclare.html"
             }) }}
         </div>
 

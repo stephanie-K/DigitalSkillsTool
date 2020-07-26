@@ -281,9 +281,13 @@ img.dvsa, image.dvsa  {
 .dvla-prov-licence-label-container {
   padding: .3em .6em .3em .6em;
 
-  label {
+  .prov-licence-label {
     font-size: 14px;
     font-weight: bold;
+    margin-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
   }
 }
 
@@ -294,12 +298,17 @@ img.dvsa, image.dvsa  {
     padding: 0;
     border:.1em solid black;
     border-radius: 3px;
+    option {
+      padding:0;
+    }
   }
   input {
     font-size: 14px;
     border:.1em solid black;
     border-radius: 3px;
+    margin-right: 10px;
   }
+
 }
 
 .dvla-prov-licence-label {
@@ -328,9 +337,16 @@ img.dvsa, image.dvsa  {
 }
 
 .label-bold-text {
+  font-size: 14px;
   font-weight: bold;
   display: inline-block;
+  padding-right: 10px;
 }
+
+// .medical-list-label {
+//   font-size: 14px;
+//   font-weight: normal;
+// }
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//
 
 .park-home-tagline {

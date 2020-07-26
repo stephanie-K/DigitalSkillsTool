@@ -40,56 +40,59 @@ Motoring
           <p>Follow our easy step by step process to help you fill this form in quickly and accurately.</p>
           <ol class="govuk-list govuk-list--number">
             <li><strong>Authentication</strong></li>
+            <li><strong>Application</strong></li>
             <ul class="govuk-list">
-                <li>Authentication</li>
-                <li>Security of your data</li>
-                <li>Your details</li>
-                <li><strong>Your addresses</strong></li>
-                <li>Security details</li>
-                <li>National Insurance number</li>
-                <li>UK passport number</li>
-              </ul>
-              <li><strong>Application</strong></li>
-              <li><strong>Summary</strong></li>
-              <li><strong>Payment</strong></li>
-              <li><strong>Confirmation</strong></li>
-            </ol>
+              <li>Are you eligible?</li>
+              <li>Your eyesight</li>
+              <li>Fitness to drive</li>
+              <li>Further information</li>
+              <li><strong>Declaration</strong></li>
+            </ul>
+            <li><strong>Summary</strong></li>
+            <li><strong>Payment</strong></li>
+            <li><strong>Confirmation</strong></li>
+          </ol>
         </div>
     </div>
     <div class="govuk-grid-column-three-quarters">
-        <h1 class="govuk-heading-m">
-            Apply for a provisional licence
-        </h1>
-        <h2 class="govuk-heading-s yellow-heading">Your addresses</h2>
+        <h1 class="govuk-heading-m">Apply for a provisional licence</h1>
+        <h2 class="govuk-heading-s yellow-heading">Declaration</h2>
         <div class="small-font">
-          <h2 class="govuk-heading-m">Your address history</h2>
-          <p>Please tell us where you have lived over the last three years.</p>
+          <p>I understand that it is a criminal offence to make a false declaration or withold material information
+          in order to obtain a driving licence and that to do so can lead to presecution and a fine of up to £1,000 or
+          imprisonment for a period of up to two years or both.</p>
+          <p><em>Please note: * indicates that an answer is required.</em></p>
 
-          <h5 class="govuk-heading-s grey-heading">Address 1</h5>
-          <p></p>
-          <p><em>Where you live now</em><br>90 Mountcastle Wynd,<br>KILWINNING<br>KA13 6DH</p>
-          <p style="margin-bottom:0"><b><em>How long did you live there?</em></b></p>
-          <p>2 year(s) 3 month(s)</p>
-          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html" class="red-dvla-link">Change address 1</a></p>
-
-          <h5 class="govuk-heading-s grey-heading">Address 2</h5>
-          <p></p>
-          <p><em>Your last address</em><br>90 Mountcastle Wynd,<br>KILWINNING<br>KA13 6DH</p>
-          <p style="margin-bottom:0"><b><em>How long did you live there?</em></b></p>
-          <p>3 year(s) 9 month(s)</p>
-          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html" class="red-dvla-link">Change address 2</a></p>
-
-          <p>Do not click the previous/next button more than once.</p>
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <p><b>Please confirm this declaration by clicking in the box. *</b></p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help?
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p>It is a legal requirement that you agree to this declaration. If you do not confirm that you have read, understood
+                  and agreed to this declaration we will be unable to continue your application.</p>
+                </div>
+              </details>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="prov-licence-declaration" name="prov-licence-declaration" type="checkbox" value="prov-licence-declaration">
+                <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="prov-licence-declaration">
+                </label>
+              </div>
+            </div>
+          </div>
+          <hr>
         </div>
-        <hr>
-
 
 
         <div class="dvla-button-row">
             {{ govukButton({
               text: "Previous",
               classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived.html"
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLemail.html"
             }) }}
 
             {{ govukButton({
@@ -100,7 +103,7 @@ Motoring
             {{ govukButton({
               text: "Next",
               classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails.html"
+              href: "#"
             }) }}
         </div>
 

@@ -66,7 +66,7 @@ Motoring
           <p><em>Please note: * indicates that an answer is required.</em></p>
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label" for="sort">
+              <label class="govuk-label prov-licence-label" for="sort">
                 Title *
               </label>
               <p><em>If you have a title that does not appear in the list, select 'Other'.</em></p>
@@ -88,7 +88,7 @@ Motoring
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label" for="sort">
+              <label class="govuk-label prov-licence-label" for="sort">
                 ...or other title
               </label>
               <p><em>(only if you selected 'Other' above)</em></p>
@@ -100,7 +100,7 @@ Motoring
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label" for="sort">
+              <label class="govuk-label prov-licence-label" for="sort">
                 Forename(s) *
               </label>
               <p><em>Enter your first name, and any middle names.</em></p>
@@ -112,7 +112,7 @@ Motoring
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label" for="sort">
+              <label class="govuk-label prov-licence-label" for="sort">
                 Surname *
               </label>
             </div>
@@ -123,7 +123,7 @@ Motoring
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label" for="sort">
+              <label class="govuk-label prov-licence-label" for="sort">
                 Gender *
               </label>
             </div>
@@ -138,37 +138,26 @@ Motoring
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label" for="sort">
+              <label class="govuk-label prov-licence-label" for="sort">
                 Date of birth *
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
               <fieldset class="govuk-fieldset" role="group">
                <div class="govuk-date-input" id="dvla-prov-licence-dob">
-                 <div class="govuk-date-input__item">
-                   <div class="govuk-form-group">
-                     <label class="govuk-label govuk-date-input__label dvla-prov-licence-label" for="dvla-prov-licence-dob-day">
-                       Day
-                     </label>
-                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dvla-prov-licence-dob-day" name="dvla-prov-licence-dob-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                   </div>
-                 </div>
-                 <div class="govuk-date-input__item">
-                   <div class="govuk-form-group">
-                     <label class="govuk-label govuk-date-input__label dvla-prov-licence-label" for="dvla-prov-licence-dob-month">
-                       Month
-                     </label>
-                     <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dvla-prov-licence-dob-month" name="dvla-prov-licence-dob-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                   </div>
-                 </div>
-                 <div class="govuk-date-input__item">
-                   <div class="govuk-form-group">
-                     <label class="govuk-label govuk-date-input__label dvla-prov-licence-label" for="dvla-prov-licence-dob-year">
-                       Year
-                     </label>
-                     <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dvla-prov-licence-dob-year" name="dvla-prov-licence-dob-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                   </div>
-                 </div>
+                 <div class="dvla-prov-licence-input-container">
+                   <label class="govuk-label label-bold-text" for="dvla-prov-licence-dob-day">
+                     Day:
+                   </label>
+                   <input class="govuk-input govuk-input--width-2" id="dvla-prov-licence-dob-day" name="dvla-prov-licence-dob-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                   <label class="govuk-label label-bold-text" for="dvla-prov-licence-dob-month">
+                     Month:
+                   </label>
+                   <input class="govuk-input govuk-input--width-2" id="dvla-prov-licence-dob-month" name="dvla-prov-licence-dob-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                   <label class="govuk-label label-bold-text" for="dvla-prov-licence-dob-year">
+                     Year:
+                   </label>
+                   <input class="govuk-input govuk-input--width-2" id="dvla-prov-licence-dob-year" name="dvla-prov-licence-dob-year" type="text" pattern="[0-9]*" inputmode="numeric">
                </div>
               </fieldset>
             </div>
@@ -176,7 +165,7 @@ Motoring
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label" for="sort">
+              <label class="govuk-label prov-licence-label" for="sort">
                 Country of birth *
               </label>
             </div>
