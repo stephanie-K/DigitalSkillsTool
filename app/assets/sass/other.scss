@@ -249,7 +249,21 @@ img.dvsa, image.dvsa  {
     width: 6em;
 }
 
-.govuk-button.dvla-next-button:link, .govuk-button.dvla-next-button:visited, .govuk-button.dvla-next-button:active, .govuk-button.dvla-next-button:hover{
+// .govuk-button.dvla-next-button:link, .govuk-button.dvla-next-button:visited, .govuk-button.dvla-next-button:active, .govuk-button.dvla-next-button:hover{
+//     border-radius: 4px;
+//     margin-top:10px;
+//     background: #C00 url(../images/DVLA/butArrowRight.gif) no-repeat right;
+//     padding: .4em 1.3em .5em .5em;
+//     color: #FFF;
+//     text-decoration: none;
+//     font-weight: bold;
+//     text-align: right;
+//     border: none;
+//     width: 7em;
+// }
+
+.dvla-custom-next-button, .govuk-button.dvla-custom-next-button:visited, .govuk-button.dvla-custom-next-button:active, .govuk-button.dvla-custom-next-button:hover{
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     border-radius: 4px;
     margin-top:10px;
     background: #C00 url(../images/DVLA/butArrowRight.gif) no-repeat right;
@@ -365,10 +379,14 @@ img.dvsa, image.dvsa  {
   padding-right: 10px;
 }
 
-// .medical-list-label {
-//   font-size: 14px;
-//   font-weight: normal;
-// }
+.provlError {
+  display: block;
+  padding: 15px 10px 15px 50px !important;
+  border-radius: 3px;
+  overflow: auto;
+  background: url(../images/DVLA/error.gif) 10px center no-repeat;
+  border: 1px solid #d8000c;
+}
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//
 
 .park-home-tagline {

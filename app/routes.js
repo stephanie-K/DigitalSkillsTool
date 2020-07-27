@@ -20,6 +20,84 @@ router.post('/forms/govuk-forms/register-to-vote/RTVCountryOfResidence', functio
   res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
 })
 
+// Apply for a provisional licence ***************************************************
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails', function (req, res) {
+  req.session.data['APLdetailsError'] = false
+  let titles = true
+  let title = req.session.data['APL-user-title']
+  let titleOther = req.session.data['APL-user-title-other']
+  let forename = req.session.data['APL-user-forenames']
+  let surname = req.session.data['APL-user-surname']
+  let gender = req.session.data['APL-user-gender']
+  let dobDay = req.session.data['dvla-APL-dob-day']
+  let dobMonth = req.session.data['APL-dob-month']
+  let dobYear = req.session.data['APL-dob-year']
+  let countryOfBirth = req.session.data['APL-user-country-of-birth']
+
+  if(title === "" || (title === "other" && titleOther === "")) {
+    titles = false
+  }
+
+  if (titles === false || forename === "" || surname === "" || gender === "" || dobDay === ""
+      || dobMonth === "" || dobYear === "" || countryOfBirth === "") {
+    req.session.data['APLdetailsError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch', function (req, res) {
+  req.session.data['APLaddressSearchError'] = false
+  let houseno = req.session.data['APL-user-house-no']
+  let postcode = req.session.data['APL-user-postcode']
+
+  if (houseno === "" || postcode === "") {
+    req.session.data['APLaddressSearchError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm', function (req, res) {
+  let supInfo = req.session.data['APL-supplementary-info']
+
+  if (supInfo) {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsupInfo')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived', function (req, res) {
+  req.session.data['APLaddressYearsLivedError'] = false
+  let aplAddressYears = req.session.data['APL-address-no-years']
+  let aplAddressMonths = req.session.data['APL-address-no-months']
+
+  if (aplAddressYears === "" && aplAddressMonths === "") {
+    req.session.data['APLaddressYearsLivedError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressHistory')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsupInfo', function (req, res) {
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressHistory')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails', function (req, res) {
+  req.session.data['APLsecurityDetailsError'] = false
+  let birthSurname = req.session.data['APL-birth-surname']
+  let motherMaidenName = req.session.data['APL-mothers-maiden-name']
+  let placeOfBirth = req.session.data['APL-place-of-birth']
+
+  if (birthSurname === "" || motherMaidenName === "" || placeOfBirth === "") {
+    req.session.data['APLsecurityDetailsError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLnatIns')
+})
+
+
 // book a theory test - if other support is needed and selected, then we stop and don't do the rest of the form - we show a Thank you screen.
 
 router.post('/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support', function (req, res) {

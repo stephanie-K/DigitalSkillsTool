@@ -57,16 +57,20 @@ Motoring
         </div>
     </div>
     <div class="govuk-grid-column-one-half">
-        <h1 class="govuk-heading-m">
-            Apply for a provisional licence
-        </h1>
+      <h1 class="govuk-heading-m">
+          Apply for a provisional licence
+      </h1>
+      {% if (data['APLaddressSearchError'] === true)%}
+      <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
+      {% endif %}
+      <form class="form" method="post">
         <h2 class="govuk-heading-s yellow-heading">Your addresses</h2>
         <div class="small-font">
           <p>Please enter the address that you require on your new driving licence</p>
           <p><em>Please note: * indicates that an answer is required.</em></p>
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="prov-licence-user-house-no">
+              <label class="govuk-label prov-licence-label" for="APL-user-house-no">
                 House name or number *
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary">
@@ -93,13 +97,13 @@ Motoring
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
-              <input class="govuk-input govuk-input--width-10" id="prov-licence-user-house-no" name="prov-licence-user-house-no" type="text">
+              <input class="govuk-input govuk-input--width-10" id="APL-user-house-no" name="APL-user-house-no" value="{{ data ['APL-user-house-no']}}" type="text">
             </div>
           </div>
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="prov-licence-user-postcode">
+              <label class="govuk-label prov-licence-label" for="APL-user-postcode">
                 Postcode *
                 <details class="govuk-details" data-module="govuk-details">
                   <summary class="govuk-details__summary">
@@ -123,35 +127,21 @@ Motoring
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
-               <input class="govuk-input govuk-input--width-5" id="prov-licence-user-postcode" name="prov-licence-user-postcode" type="text">
+               <input class="govuk-input govuk-input--width-5" id="APL-user-postcode" name="APL-user-postcode" value="{{ data ['APL-user-postcode']}}" type="text">
             </div>
           </div>
-
 
           <p style="color:red; font-weight:bold; font-size:30px;">* I need to add a link to red font links *</p>
           <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry.html" class="red-dvla-link">Other ways to enter your address</a></p>
           <hr>
         </div>
 
-
         <div class="dvla-button-row">
-            {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails.html"
-            }) }}
-
-            {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-            {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm.html"
-            }) }}
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails.html">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>
+      </form>
     </div>
     <div class="govuk-grid-column-one-quarter">
         <div class="grey-block">

@@ -57,6 +57,7 @@ Motoring
         </div>
     </div>
     <div class="govuk-grid-column-three-quarters">
+      <form class="form" method="post">
         <h1 class="govuk-heading-m">
             Apply for a provisional licence
         </h1>
@@ -67,14 +68,14 @@ Motoring
 
         <h5 class="govuk-heading-s grey-heading">Address</h5>
 
-        <textarea class="govuk-textarea" id="dvla-provisional-licence-address" name="dvla-provisional-licence-address" rows="5" aria-describedby="more-detail-hint" style="resize:none"
-        >90 Mountcastle Wynd,
-KILWINNING,
-KA13 6DH</textarea>
+        <textarea disabled class="govuk-textarea" id="APL-address" name="APL-address" rows="5" aria-describedby="more-detail-hint" style="resize:none"
+        >{{ data['APL-user-house-no'] }} Example Street,
+GLASGOW,
+{{ data['APL-user-postcode'] }}</textarea>
 
         <div class="govuk-form-group dvla-prov-licence-form-row-container">
           <div class="dvla-prov-licence-label-container">
-            <label class="govuk-label prov-licence-label" for="supplementary-details">
+            <label class="govuk-label prov-licence-label" for="APL-supplementary-info">
               Add supplementary information
             </label>
             <div class="small-font">
@@ -84,8 +85,8 @@ KA13 6DH</textarea>
           <div class="dvla-prov-licence-input-container">
             <div class="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="supplementary-info" name="supplementary-info" type="checkbox" value="carcasses">
-                <label class="govuk-label govuk-checkboxes__label" for="supplementary-info">
+                <input class="govuk-checkboxes__input" id="APL-supplementary-info" name="APL-supplementary-info" type="checkbox" value="add-info">
+                <label class="govuk-label govuk-checkboxes__label" for="APL-supplementary-info">
 
                 </label>
               </div>
@@ -98,33 +99,17 @@ KA13 6DH</textarea>
           <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html" class="red-dvla-link">Search again</a></p>
           <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry.html" class="red-dvla-link">Other ways to enter your address</a></p>
         </div>
-        <p style="color:red; font-weight:bold; font-size:30px;">* I need to route this page for when supplementary info is ticked. *</p>
+
         <hr>
 
 
 
         <div class="dvla-button-row">
-            {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html"
-            }) }}
-
-            {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-            {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived.html"
-            }) }}
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>
-
-
-
-
+      </form>
     </div>
 </div>
 {% endblock %}

@@ -67,9 +67,25 @@ Motoring
 
           <h5 class="govuk-heading-s grey-heading">Address 1</h5>
           <p></p>
-          <p><em>Where you live now</em><br>90 Mountcastle Wynd,<br>KILWINNING<br>KA13 6DH</p>
+          <p>
+            <em>Where you live now</em><br>
+            {% if(data['APL-sup-details']) %} {{ data ['APL-sup-details']}},<br>{% endif %}
+            {{ data['APL-user-house-no'] }} Example Street,<br>
+            GLASGOW,<br>
+            {{ data['APL-user-postcode'] }}</p>
           <p style="margin-bottom:0"><b><em>How long did you live there?</em></b></p>
-          <p>2 year(s) 3 month(s)</p>
+          <p>
+            {% if(data['APL-address-no-years']) == "" %}
+              0 year(s)
+            {% else %}
+              {{data['APL-address-no-years']}} year(s)
+            {% endif %}
+
+            {% if(data['APL-address-no-months']) == "" %}
+              0 month(s)
+            {% else %}
+              {{data['APL-address-no-months']}} month(s)
+            {% endif %}</p>
           <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html" class="red-dvla-link">Change address 1</a></p>
 
           <h5 class="govuk-heading-s grey-heading">Address 2</h5>
@@ -77,36 +93,17 @@ Motoring
           <p><em>Your last address</em><br>90 Mountcastle Wynd,<br>KILWINNING<br>KA13 6DH</p>
           <p style="margin-bottom:0"><b><em>How long did you live there?</em></b></p>
           <p>3 year(s) 9 month(s)</p>
-          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html" class="red-dvla-link">Change address 2</a></p>
+          <p><a disabled href="#" class="red-dvla-link">Change address 2</a></p>
 
           <p>Do not click the previous/next button more than once.</p>
         </div>
         <hr>
 
-
-
         <div class="dvla-button-row">
-            {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived.html"
-            }) }}
-
-            {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-            {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails.html"
-            }) }}
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived.html">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <a class="govuk-button button-primary dvla-custom-next-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails.html">Next</a>
         </div>
-
-
-
-
     </div>
 </div>
 {% endblock %}
