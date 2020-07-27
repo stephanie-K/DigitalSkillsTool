@@ -36,12 +36,12 @@
                   Date of birth
                 </label>
                 <div class="govuk-date-input" id="pa-date-of-birth-day">
-                  <div class="govuk-date-input__item" style="margin-right: 10px">
+                  <div class="govuk-date-input__item" style="margin-right: 3px">
                     <div class="govuk-form-group">
                       <input class="govuk-input" id="pa-date-of-birth-day" name="pa-date-of-birth-day" type="text" pattern="[0-9]*" inputmode="numeric" Placeholder="Day" style="width:50px;" style="margin-right: 10px">
                     </div>
                   </div>
-                  <select class="govuk-select" id="pa-DOBmonth" name="pa-DOBmonth" style="margin-right: 10px">
+                  <select class="govuk-select" id="pa-DOBmonth" name="pa-DOBmonth" style="margin-right: 3px">
                     <option value="" selected="selected">Month</option>
                     <option value="01">January</option>
                     <option value="02">February</option>
@@ -56,9 +56,9 @@
                     <option value="11">November</option>
                     <option value="12">December</option>
                   </select>
-                  <div class="govuk-date-input__item" style="margin-right: 10px">
+                  <div class="govuk-date-input__item" style="margin-right: 3px">
                     <div class="govuk-form-group">
-                      <input class="govuk-input govuk-input--width-4" id="pa-date-of-birthd-year" name="pa-date-of-birthd-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="Year">
+                      <input class="govuk-input govuk-input--width-4" id="pa-date-of-birth-year" name="pa-date-of-birth-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="Year">
                     </div>
                   </div>
                 </div>
@@ -70,9 +70,9 @@
               </label>
               <select class="govuk-select" id="pa-gender" name="pa-gender">
                 <option value="" selected="selected">Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="not">Not Specified</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Not Specified">Not Specified</option>
               </select>
               </div>
               {% from "govuk/components/button/macro.njk" import govukButton %}

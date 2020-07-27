@@ -699,6 +699,9 @@ h1, h2, h3, p, a, label, li {
     border-radius: 6px;
     font-size: 16px;
     background-color: white !important;
+    @media only screen and (max-width: 450px) {
+      font-size: 14px;
+    }
   }
   .govuk-select {
     color: #666;

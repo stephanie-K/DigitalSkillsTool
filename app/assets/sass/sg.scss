@@ -224,6 +224,7 @@ body, p, li, ul, h1, h2, h3 {
     font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight:700;
     text-decoration: none;
+    margin-right: 40px; // prevent the text of the button to go under the chevron picture
 }
 
 .govuk-accordion__section-button.sg:hover, .govuk-accordion__section-button.sg:hover:not(:focus){
