@@ -11,7 +11,7 @@ Create your online profile
       <h1 class="govuk-heading-l do-it-online">
         Do it online
       </h1>
-      
+
     <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
     <p class="erc-alt-dark-blue-bg">Address not found</p>
 
@@ -21,6 +21,83 @@ Create your online profile
         <p class="govuk-!-font-size-14">If you are a resident of East Renfrewshire, please fillin the details below. If your house has a flat number, house name, or building name, please make sure you include these details too.</p>
       </div>
 
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="rct-name">Name: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="rct-name" name="rct-name" type="text" value="{{ data ['rct-name']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="rct-homenum">House or flat number used in search:</label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="rct-homenum" name="rct-homenum" type="text" value="{{ data ['rct-homenum']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="rct-postcode">Postcode used in search:</label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="rct-postcode" name="rct-postcode" type="text" value="{{ data ['rct-postcode']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="rct-address">Address you are searching for - include flat number, house/building name and postcode (if known): <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <textarea class="govuk-textarea govuk-!-width-full" id="rct-address" name="rct-address" rows="5" >{{ data ['rct-address']}}</textarea>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="rct-phone">Daytime phone number: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="rct-phone" name="rct-phone" type="text" value="{{ data ['rct-phone']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="rct-other">Other information:</label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <textarea class="govuk-textarea govuk-!-width-full" id="rct-other" name="rct-other" rows="5" >{{ data ['rct-other']}}</textarea>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
 
     <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
       <p class="govuk-!-font-size-14">When you exit from this form, your name, address and contact details will be sent to our Customer Service Team, who will investigate and get back to you.</p>
