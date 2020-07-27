@@ -42,8 +42,8 @@ Motoring
             <li><strong>Authentication</strong></li>
             <li><strong>Application</strong></li>
             <ul class="govuk-list">
-                <li>Are you eligible?</li>
-                <li><strong>Your eyesight</strong></li>
+                <li><strong>Are you eligible?</strong></li>
+                <li>Your eyesight</li>
                 <li>Fitness to drive</li>
                 <li>Further information</li>
                 <li>Declaration</li>
@@ -59,68 +59,69 @@ Motoring
           Apply for a provisional licence
       </h1>
       <form class="form" method="post">
-        <h2 class="govuk-heading-s yellow-heading">Your eyesight</h2>
-        <h3 class="govuk-heading-s">Eyesight</h3>
-        {% if (data['APLeyesightError'] === true)%}
-          <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
-        {% endif %}
+        <h2 class="govuk-heading-s yellow-heading">Are you eligible?</h2>
+          <h3 class="govuk-heading-s">Disqualification details</h3>
         <div class="small-font">
-          <p>Before ansering this question you must read 'The eyesight standards for driving' on the right hand side of this page.</p>
-
+          {% if (data['APLdisqualifiedError'] === true)%}
+            <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
+          {% endif %}
           <p><em>Please note: * indicates that an answer is required.</em></p>
+
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="APL-eyesight">
-                Can you meet the legal eyesight standard for driving? *
+              <label class="govuk-label prov-licence-label">
+                Disqualification date
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
-              <div class="govuk-radios govuk-radios--inline">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-eyesight" name="APL-eyesight" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label label-bold-text" for="APL-eyesight">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-eyesight-2" name="APL-eyesight" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label label-bold-text" for="APL-eyesight-2">
-                    No
-                  </label>
-                </div>
-              </div>
+              <fieldset class="govuk-fieldset" role="group">
+               <div class="govuk-date-input" id="APL-dob">
+                 <div class="dvla-prov-licence-input-container">
+                   <label class="govuk-label label-bold-text" for="APL-disqualify-day">
+                     Day:
+                   </label>
+                   <input class="govuk-input govuk-input--width-2" id="APL-disqualify-day" name="APL-disqualify-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data ['APL-disqualify-day']}}">
+                   <label class="govuk-label label-bold-text" for="APL-disqualify-month">
+                     Month:
+                   </label>
+                   <input class="govuk-input govuk-input--width-2" id="APL-disqualify-month" name="APL-disqualify-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data ['APL-disqualify-month']}}">
+                   <label class="govuk-label label-bold-text" for="APL-disqualify-year">
+                     Year:
+                   </label>
+                   <input class="govuk-input govuk-input--width-4" id="APL-disqualify-year" name="APL-disqualify-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data ['APL-disqualify-year']}}">
+               </div>
+              </fieldset>
             </div>
           </div>
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="APL-glasses">
-                Do you need to wear glasses or corrective lenses to meet this standard? *
+              <label class="govuk-label prov-licence-label">
+                Court Name
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
-              <div class="govuk-radios govuk-radios--inline">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-glasses" name="APL-glasses" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label label-bold-text" for="APL-glasses">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-glasses-2" name="APL-glasses" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label label-bold-text" for="APL-glasses-2">
-                    No
-                  </label>
-                </div>
-              </div>
+               <input class="govuk-input govuk-input--width-10" id="APL-disqualification-court-name" name="APL-disqualification-court-name" value="{{ data ['APL-disqualification-court-name']}}" type="text">
             </div>
           </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label prov-licence-label">
+                Country of disqualification *
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+               <input class="govuk-input govuk-input--width-10" id="APL-disqualification-country" name="APL-disqualification-country" value="{{ data ['APL-disqualification-country']}}" type="text">
+            </div>
+          </div>
+
           <hr>
         </div>
 
 
         <div class="dvla-button-row">
-          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeligibility.html">Previous</a>
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLpassportNo.html">Previous</a>
           <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
           <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>
@@ -129,7 +130,7 @@ Motoring
     <div class="govuk-grid-column-one-quarter">
         <div class="grey-block">
           <h2 class="govuk-heading-s orange-heading">Need more help?</h2>
-            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyeStandards.html" class="red-dvla-link-dark">The eyesight standards for driving</a></p>
+            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLotherCountries.html" class="red-dvla-link-dark">Other countries either in the EU or EEA</a></p>
         </div>
     </div>
 </div>

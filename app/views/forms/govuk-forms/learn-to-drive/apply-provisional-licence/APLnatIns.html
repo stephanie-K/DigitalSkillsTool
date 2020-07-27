@@ -57,10 +57,14 @@ Motoring
         </div>
     </div>
     <div class="govuk-grid-column-one-half">
-        <h1 class="govuk-heading-m">
-            Apply for a provisional licence
-        </h1>
+      <h1 class="govuk-heading-m">
+          Apply for a provisional licence
+      </h1>
+      <form class="form" method="post">
         <h2 class="govuk-heading-s yellow-heading">National Insurance number</h2>
+        {% if (data['APLnatInsError'] === true)%}
+          <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Re-type National Insurance number should be the same as National Insurance number. Please try again.</p>
+        {% endif %}
         <div class="small-font">
           <p><b>Providing your National Insurance number will help to process your application more quickly.
             If you enter your National Insurance number, DVLA will attempt to verify and authenticate
@@ -73,55 +77,41 @@ Motoring
            'Next' to continue.</p>
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="provisional-licence-ni-no">
+              <label class="govuk-label prov-licence-label" for="APL-ni-no">
                 National Insurance number
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
-              <input class="govuk-input govuk-input--width-10" id="provisional-licence-ni-no" name="provisional-licence-ni-no" type="text">
+              <input class="govuk-input govuk-input--width-10" id="APL-ni-no" name="APL-ni-no" value="{{data['APL-ni-no']}}" type="text">
             </div>
           </div>
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="provisional-licence-ni-no-check">
+              <label class="govuk-label prov-licence-label" for="APL-ni-no-check">
                 Re-type National Insurance number
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
-              <input class="govuk-input govuk-input--width-10" id="provisional-licence-ni-no-check" name="provisional-licence-ni-no-check" type="text">
+              <input class="govuk-input govuk-input--width-10" id="APL-ni-no-check" name="APL-ni-no-check" value="{{data['APL-ni-no-check']}}" type="text">
             </div>
           </div>
-          <p style="color:red; font-weight:bold; font-size:30px;">* I need to verify correct National insurance format *</p>
           <hr>
         </div>
 
-
         <div class="dvla-button-row">
-            {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails.html"
-            }) }}
-
-            {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-            {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLpassportNo.html"
-            }) }}
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurityDetails.html">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>
+      </form>
     </div>
     <div class="govuk-grid-column-one-quarter">
         <div class="grey-block">
           <h2 class="govuk-heading-s orange-heading">Need more help?</h2>
-            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLwhatIsNi.html" class="red-dvla-link-dark">What is a National Insurance number?</a></p>
-            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLhowToFindNi.html" class="red-dvla-link-dark">How to find your National Insurance number</a></p>
-            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLwhyGiveNi.html" class="red-dvla-link-dark">Why should you provide your National Insurance number?</a></p>
+          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLwhatIsNi.html" class="red-dvla-link-dark">What is a National Insurance number?</a></p>
+          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLhowToFindNi.html" class="red-dvla-link-dark">How to find your National Insurance number</a></p>
+          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLwhyGiveNi.html" class="red-dvla-link-dark">Why should you provide your National Insurance number?</a></p>
         </div>
     </div>
 </div>

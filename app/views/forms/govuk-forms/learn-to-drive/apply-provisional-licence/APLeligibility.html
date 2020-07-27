@@ -55,10 +55,11 @@ Motoring
         </div>
     </div>
     <div class="govuk-grid-column-one-half">
-        <h1 class="govuk-heading-m">
-            Apply for a provisional licence
-        </h1>
-        <h2 class="govuk-heading-s yellow-heading">Are you eligible</h2>
+      <h1 class="govuk-heading-m">
+          Apply for a provisional licence
+      </h1>
+      <form class="form" method="post">
+        <h2 class="govuk-heading-s yellow-heading">Are you eligible?</h2>
           <h3 class="govuk-heading-s">Residency and Disqualifications</h3>
         <div class="small-font">
           <p>You can only get a GB driving licence if you are normally resident in Great Britain.
@@ -70,24 +71,27 @@ Motoring
             <li>are in the country on a temporary basis without leave to remain either while awaiting
              a decision to stay in the UK or following a decision refusing such an application.</li>
           </ul>
+          {% if (data['APLeligibilityError'] === true)%}
+            <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
+          {% endif %}
           <p><em>Please note: * indicates that an answer is required.</em></p>
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="provisional-licence-lived-in-eu">
+              <label class="govuk-label prov-licence-label" for="APL-lived-in-eu">
                 Have you lived in another European Union or European Economic Area country other than the UK in the last 12 months? *
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="provisional-licence-lived-in-eu" name="provisional-licence-lived-in-eu" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label label-bold-text" for="provisional-licence-lived-in-eu">
+                  <input class="govuk-radios__input" id="APL-lived-in-eu" name="APL-lived-in-eu" type="radio" value="yes" {% if(data['APL-lived-in-eu'] === 'yes') %} checked {% endif %}>
+                  <label class="govuk-label govuk-radios__label label-bold-text" for="APL-lived-in-eu">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="provisional-licence-lived-in-eu-2" name="provisional-licence-lived-in-eu" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label label-bold-text" for="provisional-licence-lived-in-eu-2">
+                  <input class="govuk-radios__input" id="APL-lived-in-eu-2" name="APL-lived-in-eu" type="radio" value="no" {% if(data['APL-lived-in-eu'] === 'no') %} checked {% endif %}>
+                  <label class="govuk-label govuk-radios__label label-bold-text" for="APL-lived-in-eu-2">
                     No
                   </label>
                 </div>
@@ -97,21 +101,21 @@ Motoring
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="provisional-licence-disqualified">
+              <label class="govuk-label prov-licence-label" for="APL-disqualified">
                 Are you currently disqualified from driving in the UK (including Northern Ireland, Jersey, Guernsey and Isle of Man) or any other country? *
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="provisional-licence-disqualified" name="provisional-licence-disqualified" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label label-bold-text" for="provisional-licence-disqualified">
+                  <input class="govuk-radios__input" id="APL-disqualified" name="APL-disqualified" type="radio" value="yes" {% if(data['APL-disqualified'] === 'yes') %} checked {% endif %}>
+                  <label class="govuk-label govuk-radios__label label-bold-text" for="APL-disqualified">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="provisional-licence-disqualified-2" name="provisional-licence-disqualified" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label label-bold-text" for="provisional-licence-disqualified-2">
+                  <input class="govuk-radios__input" id="APL-disqualified-2" name="APL-disqualified" type="radio" value="no" {% if(data['APL-disqualified'] === 'no') %} checked {% endif %}>
+                  <label class="govuk-label govuk-radios__label label-bold-text" for="APL-disqualified-2">
                     No
                   </label>
                 </div>
@@ -123,23 +127,11 @@ Motoring
 
 
         <div class="dvla-button-row">
-            {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLnatIns.html"
-            }) }}
-
-            {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-            {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight.html"
-            }) }}
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLpassportNo.html">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>
+      </form>
     </div>
     <div class="govuk-grid-column-one-quarter">
         <div class="grey-block">

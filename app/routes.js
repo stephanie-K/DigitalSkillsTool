@@ -97,6 +97,192 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecu
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLnatIns')
 })
 
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLnatIns', function (req, res) {
+  req.session.data['APLnatInsError'] = false
+  let niNo = req.session.data['APL-ni-no']
+  let niNoCheck = req.session.data['APL-ni-no-check']
+
+  if (niNo !== niNoCheck) {
+    req.session.data['APLnatInsError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLnatIns')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLpassportNo')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLpassportNo', function (req, res) {
+  req.session.data['APLpassportNoError'] = false
+  let passNo = req.session.data['APL-passport-no']
+  let passNoCheck = req.session.data['APL-passport-no-check']
+
+  if (passNo !== passNoCheck) {
+    req.session.data['APLpassportNoError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLpassportNo')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeligibility')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeligibility', function (req, res) {
+  req.session.data['APLeligibilityError'] = false
+  let livedInEu = req.session.data['APL-lived-in-eu']
+  let disqualified = req.session.data['APL-disqualified']
+  let checkLivedInEu = false
+  let checkDisqualified = false
+
+  if(livedInEu === 'yes' || livedInEu === 'no') {
+    checkLivedInEu = true
+  }
+
+  if(disqualified === 'yes' || disqualified === 'no') {
+    checkDisqualified = true
+  }
+
+  if (checkLivedInEu === false || checkDisqualified === false) {
+    req.session.data['APLeligibilityError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeligibility')
+  }
+  else if(livedInEu === 'yes') {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeuResidence')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeuResidence', function (req, res) {
+  req.session.data['APLeuResidenceError'] = false
+  let euCountry = req.session.data['APL-eu-residence-country']
+  let ukStartDay = req.session.data['APL-uk-start-day']
+  let ukStartMonth = req.session.data['APL-uk-start-month']
+  let ukStartYear = req.session.data['APL-uk-start-year']
+  let disqualified = req.session.data['APL-disqualified']
+
+
+  if (euCountry === '' || ukStartDay === '' || ukStartMonth === '' || ukStartYear === '') {
+    req.session.data['APLeuResidenceError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeuResidence')
+  }
+  else if(disqualified === 'yes') {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdisqualified')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdisqualified', function (req, res) {
+  req.session.data['APLdisqualifiedError'] = false
+  let disqualifiedCountry = req.session.data['APL-disqualification-country']
+
+
+  if (disqualifiedCountry === '') {
+    req.session.data['APLdisqualifiedError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdisqualified')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight', function (req, res) {
+  req.session.data['APLeyesightError'] = false
+  let eyesight = req.session.data['APL-eyesight']
+  let glasses = req.session.data['APL-glasses']
+  let checkEyesight = false
+  let checkGlasses = false
+
+  if(eyesight === 'yes' || eyesight === 'no') {
+    checkEyesight = true
+  }
+
+  if(glasses === 'yes' || glasses === 'no') {
+    checkGlasses = true
+  }
+
+  if (checkEyesight === false || checkGlasses === false) {
+    req.session.data['APLeyesightError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight')
+  }
+  else if(eyesight === 'no') {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLminEyesight')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLfitToDrive')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLminEyesight', function (req, res) {
+  req.session.data['APLminEyesightError'] = false
+  let minEyesight = req.session.data['APL-min-eyesight']
+  let checkMinEyesight = false
+
+  if(minEyesight === 'yes' || minEyesight === 'no') {
+    checkMinEyesight = true
+  }
+
+  if (checkMinEyesight === false) {
+    req.session.data['APLminEyesightError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLminEyesight')
+  }
+  else if(minEyesight === 'no') {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLminEyesightRequirement')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLfitToDrive')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLfitToDrive', function (req, res) {
+  let medConditions = req.session.data['med-conditions']
+
+  if (!medConditions) {
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLmedDec')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLmedReferral')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLmedDec', function (req, res) {
+  req.session.data['APLmedDecError'] = false
+  let medDec = req.session.data['APL-med-declaration']
+
+  if (!medDec) {
+    req.session.data['APLmedDecError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLmedDec')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLorgDon')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLorganForm', function (req, res) {
+  req.session.data['APLorganFormError'] = false
+  let organDonation = req.session.data['APL-organ-donation']
+
+  if (!organDonation) {
+    req.session.data['APLorganFormError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLorganForm')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLemail')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLemail', function (req, res) {
+  req.session.data['APLemailError'] = false
+  req.session.data['APLemailError-mismatch'] = false
+  let email = req.session.data['APL-email']
+  let emailCheck = req.session.data['APL-email-check']
+  let emailsEntered = true
+
+  if(email === '' || emailCheck === '') {
+    req.session.data['APLemailError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLemail')
+  }
+
+  if (email !== emailCheck) {
+    req.session.data['APLemailError-mismatch'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLemail')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdeclare')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdeclare', function (req, res) {
+  req.session.data['APLdeclareError'] = false
+  let declare = req.session.data['APL-declaration']
+
+  if (!declare) {
+    req.session.data['APLdeclareError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdeclare')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLfinish')
+})
+
+
 
 // book a theory test - if other support is needed and selected, then we stop and don't do the rest of the form - we show a Thank you screen.
 

@@ -57,33 +57,37 @@ Motoring
         </div>
     </div>
     <div class="govuk-grid-column-one-half">
-        <h1 class="govuk-heading-m">
-            Apply for a provisional licence
-        </h1>
+      <h1 class="govuk-heading-m">
+          Apply for a provisional licence
+      </h1>
+      <form class="form" method="post">
         <h2 class="govuk-heading-s yellow-heading">UK passport number</h2>
+        {% if (data['APLpassportNoError'] === true)%}
+          <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Re-type passport number should be the same as passport number. Please try again.</p>
+        {% endif %}
         <div class="small-font">
           <p>Please enter your UK passport number below. You will be giving your consent to access your
           personal data (including your photo and signature) held by Her Majesty's Passport Office (HM Passport Office).</p>
           <p>The information returned from HM Passport Office will be used to check your identity.</p>
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="provisional-licence-passport-no">
+              <label class="govuk-label prov-licence-label" for="APL-passport-no">
                 Passport number
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
-              <input class="govuk-input govuk-input--width-10" id="provisional-licence-passport-no" name="provisional-licence-passport-no" type="text">
+              <input class="govuk-input govuk-input--width-10" id="APL-passport-no" name="APL-passport-no" value="{{ data['APL-passport-no'] }}" type="text">
             </div>
           </div>
 
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
             <div class="dvla-prov-licence-label-container">
-              <label class="govuk-label prov-licence-label" for="provisional-licence-passport-no-check">
+              <label class="govuk-label prov-licence-label" for="APL-passport-no-check">
                 Re-type passport number
               </label>
             </div>
             <div class="dvla-prov-licence-input-container">
-              <input class="govuk-input govuk-input--width-10" id="provisional-licence-passport-no-check" name="provisional-licence-passport-no-check" type="text">
+              <input class="govuk-input govuk-input--width-10" id="APL-passport-no-check" name="APL-passport-no-check" value="{{ data['APL-passport-no-check'] }}"type="text">
             </div>
           </div>
           <p></p>
@@ -94,23 +98,11 @@ Motoring
 
 
         <div class="dvla-button-row">
-            {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLnatIns.html"
-            }) }}
-
-            {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-            {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeligibility.html"
-            }) }}
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLnatIns.html">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>
+      </form>
     </div>
     <div class="govuk-grid-column-one-quarter">
         <div class="grey-block">
