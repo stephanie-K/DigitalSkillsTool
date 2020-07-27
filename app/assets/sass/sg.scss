@@ -227,6 +227,9 @@ body, p, li, ul, h1, h2, h3 {
     margin-right: 40px; // prevent the text of the button to go under the chevron picture
 }
 
+.govuk-accordion__section-heading.sg{
+    padding: 10px 0px
+}
 .govuk-accordion__section-button.sg:hover, .govuk-accordion__section-button.sg:hover:not(:focus){
    color: #00437e;
    text-decoration: none;
