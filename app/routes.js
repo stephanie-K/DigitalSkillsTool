@@ -957,6 +957,13 @@ router.post('/forms/other-forms/patient-access/pa-change-details', function (req
   res.redirect('/forms/other-forms/patient-access/pa-contact-details')
 })
 
+router.post('/forms/other-forms/patient-access/pa-reset-password', function (req, res) {
+  res.redirect('/forms/other-forms/patient-access/pa-link-sent')
+})
+
+router.post('/forms/other-forms/patient-access/pa-signin', function (req, res) {
+  res.redirect('/forms/other-forms/patient-access/pa-dashboard')
+})
 
 // ---------------------------------------- Best Start Grant routes ---------------------------//
 router.post('/forms/sss-forms/best-start/BS-location', function (req, res) {
