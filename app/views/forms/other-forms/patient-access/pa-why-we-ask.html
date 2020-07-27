@@ -11,6 +11,7 @@
           <div class="pa-white-container ">
             <h1 style="font-size: 24px; font-weight: 900; line-height: 30px;">Why do we ask for this information?</h1>
             <p>In order to register your new Patient Access account we need some basic information to get you set up with your correct details and provide relevant information about the service.</p>
+            {% from "govuk/components/button/macro.njk" import govukButton %}
             {{ govukButton({
               text: "Close",
               classes: "button-primary pa-pink-button",

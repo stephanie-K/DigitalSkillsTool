@@ -32,7 +32,7 @@
             <p><strong>Date of birth:</strong> 
               {% if data['pa-date-of-birth-day']%} {{data['pa-date-of-birth-day']}}/{% else %}?/{% endif%}
               {% if (data['pa-DOBmonth'] === '') or not (data['pa-DOBmonth'])%}?/{% else %}{{data['pa-DOBmonth']}}/{% endif%} 
-              {% if data['pa-date-of-birthd-year']%}{{data['pa-date-of-birthd-year']}} {% else %}?{% endif%}</p>
+              {% if data['pa-date-of-birth-year']%}{{data['pa-date-of-birth-year']}} {% else %}?{% endif%}</p>
             <p><strong>Gender:</strong> {% if (data['pa-gender'] === '') or not (data['pa-gender'])%} Not specified {% else%} {{data['pa-gender']}}{% endif%}</p>
             <p><strong>Home postcode:</strong> {% if data['pa-postcode']%} {{data['pa-postcode']}} {% else%}?{% endif%}</p>
            </div>
