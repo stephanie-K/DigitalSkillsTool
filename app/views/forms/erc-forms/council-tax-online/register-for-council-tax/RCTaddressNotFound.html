@@ -6,23 +6,12 @@ Create your online profile
 
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    <h1 class="govuk-heading-l do-it-online">
-      Do it online
-    </h1>
-
-    {% set regExpEmail = r/^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/g %}
-    {% set validEmail = regExpEmail.test(data ['RCTaddress-email']) %}
-
-    {% if (data ['RCTaddress-name'] === '') or
-          (data ['RCTaddress-flat'] === '') or
-          (data ['RCTaddress-postcode'] === '') or
-          (data ['RCTaddress-address'] === '') or
-          (data ['RCTaddress-phone'] === '') or
-          (data ['RCTaddress-otherinfo'] === '')
-           %}
-
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l do-it-online">
+        Do it online
+      </h1>
+      
     <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
     <p class="erc-alt-dark-blue-bg">Address not found</p>
 
@@ -32,85 +21,24 @@ Create your online profile
         <p class="govuk-!-font-size-14">If you are a resident of East Renfrewshire, please fillin the details below. If your house has a flat number, house name, or building name, please make sure you include these details too.</p>
       </div>
 
-      <form class="form" method="post">
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
-      <div class="govuk-summary-list__row ">
-        <dt class="govuk-summary-list__key">
-          <label class="govuk-label" for="RCTaddress-name">Name:<span style="color: red"> *</span></label>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <input class="govuk-input govuk-!-width-full" id="RCTaddress-name" name="RCTaddress-name" type="text" value="{{ data ['RCTaddress-name']}}">
-        </dd>
-        {% if (data ['RCTaddress-name'] === '') %}
-        <dd class="govuk-summary-list__actions">
-          <span class="error"> *</span>
-        </dd>
-        {% else%}
-        <dd class="govuk-summary-list__actions"></dd>
-        {% endif %}
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <label class="govuk-label" for="RCTaddress-flat">
-          House or flat number used in search:
-          </label>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <input class="govuk-input govuk-!-width-full" id="RCTaddress-flat" name="RCTaddress-flat" type="text" value="{{ data ['RCTaddress-flat']}}">
-        </dd>
-
-        {% if (data ['RCTaddress-flat'] === '') %}
-        <dd class="govuk-summary-list__actions">
-          <span class="error"> *</span>
-        </dd>
-        {% else%}
-        <dd class="govuk-summary-list__actions"></dd>
-        {% endif %}
-      </div>
-
-      <div class="govuk-summary-list__row ">
-        <dt class="govuk-summary-list__key">
-          <label class="govuk-label" for="RCTaddress-postcode">Postcode used in search:</label>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <input class="govuk-input govuk-!-width-full" id="RCTaddress-postcode" name="RCTaddress-postcode" type="text" value="{{ data ['RCTaddress-postcode']}}">
-        </dd>
-        {% if (data ['RCTaddress-postcode'] === '') %}
-        <dd class="govuk-summary-list__actions">
-          <span class="error"> *</span>
-        </dd>
-        {% else%}
-        <dd class="govuk-summary-list__actions"></dd>
-        {% endif %}
-      </div>
-      <div class="govuk-summary-list__row ">
-        <dt class="govuk-summary-list__key">
-          <label class="govuk-label" for="RCTaddress-address">Address you are searching for - include flat number, house/building name and postcode (if known):<span style="color: red"> *</span></label>
-        </dt>
-        <textarea class="govuk-textarea govuk-!-width-full" id="RCTaddress-address" name="RCTaddress-address" rows="5" >{{ data ['RCTaddress-address']}}</textarea>
-      </div>
-    </dl>
-
-      <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
-        <p class="govuk-!-font-size-14">When you exit from this form, your name, address and contact details will be sent to our Customer Service Team, who will investigate and get back to you.</p>
-      </div>
+    <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
+      <p class="govuk-!-font-size-14">When you exit from this form, your name, address and contact details will be sent to our Customer Service Team, who will investigate and get back to you.</p>
+    </div>
 
 
-      {{ govukButton({
-        text: "Search again",
-        classes: "button-primary erc-alt",
-        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTnameAddress"
-      }) }}
-      
-      {{ govukButton({
-        text: "Exit",
-        classes: "button-primary erc-alt",
-        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart"
-      }) }}
+    {{ govukButton({
+      text: "Search again",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTnameAddress"
+    }) }}
 
+    {{ govukButton({
+      text: "Exit",
+      classes: "button-primary erc-alt",
+      href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart"
+    }) }}
+
+    </div>
   </div>
-</div>
-
 {% endblock %}
