@@ -1,0 +1,73 @@
+{% set regExpEmail = r/^[a-zA-Z0-9=*!$&_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/g %}
+{% set validEmail = regExpEmail.test(data ['RCTaddress-email']) %}
+
+{% if (data ['RCTaddress-name'] === '') or
+      (data ['RCTaddress-flat'] === '') or
+      (data ['RCTaddress-postcode'] === '') or
+      (data ['RCTaddress-address'] === '') or
+      (data ['RCTaddress-phone'] === '') or
+      (data ['RCTaddress-otherinfo'] === '')
+       %}
+
+
+
+<form class="form" method="post">
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9 centred-input-fields">
+<div class="govuk-summary-list__row ">
+  <dt class="govuk-summary-list__key">
+    <label class="govuk-label" for="RCTaddress-name">Name:<span style="color: red"> *</span></label>
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <input class="govuk-input govuk-!-width-full" id="RCTaddress-name" name="RCTaddress-name" type="text" value="{{ data ['RCTaddress-name']}}">
+  </dd>
+  {% if (data ['RCTaddress-name'] === '') %}
+  <dd class="govuk-summary-list__actions">
+    <span class="error"> *</span>
+  </dd>
+  {% else%}
+  <dd class="govuk-summary-list__actions"></dd>
+  {% endif %}
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    <label class="govuk-label" for="RCTaddress-flat">
+    House or flat number used in search:
+    </label>
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <input class="govuk-input govuk-!-width-full" id="RCTaddress-flat" name="RCTaddress-flat" type="text" value="{{ data ['RCTaddress-flat']}}">
+  </dd>
+
+  {% if (data ['RCTaddress-flat'] === '') %}
+  <dd class="govuk-summary-list__actions">
+    <span class="error"> *</span>
+  </dd>
+  {% else%}
+  <dd class="govuk-summary-list__actions"></dd>
+  {% endif %}
+</div>
+
+<div class="govuk-summary-list__row ">
+  <dt class="govuk-summary-list__key">
+    <label class="govuk-label" for="RCTaddress-postcode">Postcode used in search:</label>
+  </dt>
+  <dd class="govuk-summary-list__value">
+    <input class="govuk-input govuk-!-width-full" id="RCTaddress-postcode" name="RCTaddress-postcode" type="text" value="{{ data ['RCTaddress-postcode']}}">
+  </dd>
+  {% if (data ['RCTaddress-postcode'] === '') %}
+  <dd class="govuk-summary-list__actions">
+    <span class="error"> *</span>
+  </dd>
+  {% else%}
+  <dd class="govuk-summary-list__actions"></dd>
+  {% endif %}
+</div>
+<div class="govuk-summary-list__row ">
+  <dt class="govuk-summary-list__key">
+    <label class="govuk-label" for="RCTaddress-address">Address you are searching for - include flat number, house/building name and postcode (if known):<span style="color: red"> *</span></label>
+  </dt>
+  <textarea class="govuk-textarea govuk-!-width-full" id="RCTaddress-address" name="RCTaddress-address" rows="5" >{{ data ['RCTaddress-address']}}</textarea>
+</div>
+</dl>
