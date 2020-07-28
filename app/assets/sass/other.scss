@@ -52,8 +52,8 @@ $pa-pink: #D3368A;
 // ----------------------------- footer styles ------------------------------------------------------------//
 
 .generic-footer {
-  padding-top: 0; 
-  border-top: solid 2px #999; 
+  padding-top: 0;
+  border-top: solid 2px #999;
   background-color: #ededed;
   .govuk-footer__meta {
     margin-top:50px;
@@ -64,8 +64,8 @@ $pa-pink: #D3368A;
 }
 
 .bulb-footer {
-  padding-top: 0; 
-  border-top: solid 2px $bulb-green; 
+  padding-top: 0;
+  border-top: solid 2px $bulb-green;
   background-color: $bulb-green;
   .govuk-footer__meta {
     margin-top:50px;
@@ -182,6 +182,14 @@ img.dvsa, image.dvsa  {
     background: #FFF url(../images/DVLA/helpArrowInPage.gif) no-repeat top left;
 }
 
+.red-dvla-link-dark:link,  .red-dvla-link-dark:visited,  .red-dvla-link-dark:active,  .red-dvla-link-dark:focus{
+    color: #C00;
+    text-decoration: none;
+    font-weight: bold;
+    padding-left: .8em;
+    background: #e0e0e0 url(../images/DVLA/helpArrowInPage.gif) no-repeat top left;
+}
+
 .apply-DVLA-tagline {
     font-size: 24px;
     color: #fff;
@@ -213,8 +221,28 @@ img.dvsa, image.dvsa  {
     }
 }
 
+.grey-block {
+    // border: .1em solid #F90;
+    background-color: #e0e0e0;
+    padding-bottom:1em;
+    p, li {
+        font-size: 14px;
+        margin: 0.7em;
+    }
+    li {
+        color: #666;
+        line-height:0.8;
+    }
+}
+
 .yellow-heading {
     background-color: #ffe581;
+    padding: 3px 10px;
+    font-weight: bold;
+}
+
+.grey-heading {
+    background-color: #e0e0e0;
     padding: 3px 10px;
     font-weight: bold;
 }
@@ -238,7 +266,21 @@ img.dvsa, image.dvsa  {
     width: 6em;
 }
 
-.govuk-button.dvla-next-button:link, .govuk-button.dvla-next-button:visited, .govuk-button.dvla-next-button:active, .govuk-button.dvla-next-button:hover{
+// .govuk-button.dvla-next-button:link, .govuk-button.dvla-next-button:visited, .govuk-button.dvla-next-button:active, .govuk-button.dvla-next-button:hover{
+//     border-radius: 4px;
+//     margin-top:10px;
+//     background: #C00 url(../images/DVLA/butArrowRight.gif) no-repeat right;
+//     padding: .4em 1.3em .5em .5em;
+//     color: #FFF;
+//     text-decoration: none;
+//     font-weight: bold;
+//     text-align: right;
+//     border: none;
+//     width: 7em;
+// }
+
+.dvla-custom-next-button, .govuk-button.dvla-custom-next-button:visited, .govuk-button.dvla-custom-next-button:active, .govuk-button.dvla-custom-next-button:hover{
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     border-radius: 4px;
     margin-top:10px;
     background: #C00 url(../images/DVLA/butArrowRight.gif) no-repeat right;
@@ -271,6 +313,102 @@ img.dvsa, image.dvsa  {
     padding: 5px;
     text-transform: none;
 
+}
+
+.dvla-button-row {
+  display:flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+  @media only screen and (max-width: 360px) {
+        flex-direction: column;
+        width:100%;
+        align-items: center;
+  }
+}
+
+.dvla-prov-licence-form-row-container {
+  border:.1em solid #CCC;
+  margin-bottom: .3em;
+}
+
+.dvla-prov-licence-label-container {
+  padding: .3em .6em .3em .6em;
+
+  .prov-licence-label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.dvla-prov-licence-input-container {
+  padding: .3em .6em .3em .6em;
+  select {
+    font-size: 14px;
+    padding: 0;
+    border:.1em solid black;
+    border-radius: 3px;
+    option {
+      padding:0;
+    }
+  }
+  input {
+    font-size: 14px;
+    border:.1em solid black;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+
+}
+
+.dvla-prov-licence-label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.govuk-details {
+  margin-bottom: 0px;
+}
+
+.govuk-details__summary-text {
+  font-size: 14px;
+  font-weight: bold;
+  color:#C00;
+}
+
+.govuk-details__text {
+  background-color: #FFFFCC;
+  border: none;
+}
+
+.govuk-details__summary::before {
+  font-size: 14px;
+  color: #C00;
+}
+
+.label-bold-text {
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.provlError {
+  display: block;
+  padding: 15px 10px 15px 50px !important;
+  border-radius: 3px;
+  overflow: auto;
+  background: url(../images/DVLA/error.gif) 10px center no-repeat;
+  border: 1px solid #d8000c;
+}
+
+
+.link-disabled {
+    pointer-events: none;
+    cursor: default;
 }
 
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//

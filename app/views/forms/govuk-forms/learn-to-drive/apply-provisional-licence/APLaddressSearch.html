@@ -1,0 +1,159 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        <div class="orange-block">
+          <h2 class="govuk-heading-s orange-heading">Step by step</h2>
+          <p>Follow our easy step by step process to help you fill this form in quickly and accurately.</p>
+          <ol class="govuk-list govuk-list--number">
+            <li><strong>Authentication</strong></li>
+            <ul class="govuk-list">
+                <li>Authentication</li>
+                <li>Security of your data</li>
+                <li>Your details</li>
+                <li><strong>Your addresses</strong></li>
+                <li>Security details</li>
+                <li>National Insurance number</li>
+                <li>UK passport number</li>
+              </ul>
+              <li><strong>Application</strong></li>
+              <li><strong>Summary</strong></li>
+              <li><strong>Payment</strong></li>
+              <li><strong>Confirmation</strong></li>
+            </ol>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-m">
+          Apply for a provisional licence
+      </h1>
+      {% if (data['APLaddressSearchError'] === true)%}
+      <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
+      {% endif %}
+      <form class="form" method="post">
+        <h2 class="govuk-heading-s yellow-heading">Your addresses</h2>
+        <div class="small-font">
+          <p>Please enter the address that you require on your new driving licence</p>
+          <p><em>Please note: * indicates that an answer is required.</em></p>
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label prov-licence-label" for="APL-user-house-no">
+                House name or number *
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p>When you are searching for an address, either using your postcode, or your street and town, you can optionally narrow down the search by entering one of more of the following search items:</p>
+                    <ul>
+                      <li>House number</li>
+                      <li>Building name</li>
+                      <li>Flat number/name</li>
+                    </ul>
+                    <p>If you enter more than one search item, separate them using commas.
+                      Examples:</p>
+                    <ul>
+                      <li>131</li>
+                      <li>flat 79, 12</li>
+                      <li>10B, hope-wynne tower</li>
+                    </ul>
+                  </div>
+                </details>
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <input class="govuk-input govuk-input--width-10" id="APL-user-house-no" name="APL-user-house-no" value="{{ data ['APL-user-house-no']}}" type="text">
+            </div>
+          </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label prov-licence-label" for="APL-user-postcode">
+                Postcode *
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p>When you are searching for an address, the postcode identifies a group of houses or addresses. It is designed to assist with the automated sorting of mail. Valid examples of postcodes are:</p>
+                    <ul>
+                      <li>M1 1AA</li>
+                      <li>M60 1NW</li>
+                      <li>CR2 6XH</li>
+                      <li>DN55 1PT</li>
+                      <li>W1P 1HQ</li>
+                      <li>EC1A 1BB</li>
+                    </ul>
+                    <p>If you enter your postcode, we can search for your address on the Royal Mail's address database.</p>
+                  </div>
+                </details>
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+               <input class="govuk-input govuk-input--width-5" id="APL-user-postcode" name="APL-user-postcode" value="{{ data ['APL-user-postcode']}}" type="text">
+            </div>
+          </div>
+          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry.html" class="red-dvla-link">Other ways to enter your address</a></p>
+          <hr>
+        </div>
+
+        <div class="dvla-button-row">
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails.html">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
+        </div>
+      </form>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <div class="grey-block">
+          <h2 class="govuk-heading-s orange-heading">Need more help?</h2>
+            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdontKnowPostcode.html" class="red-dvla-link-dark">If you don't know your postcode</a></p>
+            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLpoBoxAddress.html" class="red-dvla-link-dark">If you have a PO box address</a></p>
+            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLbfpoAddress.html" class="red-dvla-link-dark">If you have a BFPO address</a></p>
+            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLnoAddressInGb.html" class="red-dvla-link-dark">If you don't have an address in Great Britain</a></p>
+            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLcantFindAddress.html" class="red-dvla-link-dark">What if my postcode is right but my address can't be found</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

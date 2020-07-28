@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        <div class="orange-block">
+          <h2 class="govuk-heading-s orange-heading">Step by step</h2>
+          <p>Follow our easy step by step process to help you fill this form in quickly and accurately.</p>
+          <ol class="govuk-list govuk-list--number">
+            <li><strong>Authentication</strong></li>
+            <ul class="govuk-list">
+                <li>Authentication</li>
+                <li>Security of your data</li>
+                <li>Your details</li>
+                <li><strong>Your addresses</strong></li>
+                <li>Security details</li>
+                <li>National Insurance number</li>
+                <li>UK passport number</li>
+              </ul>
+              <li><strong>Application</strong></li>
+              <li><strong>Summary</strong></li>
+              <li><strong>Payment</strong></li>
+              <li><strong>Confirmation</strong></li>
+            </ol>
+        </div>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <form class="form" method="post">
+        <h1 class="govuk-heading-m">
+            Apply for a provisional licence
+        </h1>
+        {% if (data['APLaddressYearsLivedError'] === true)%}
+        <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
+        {% endif %}
+        <h2 class="govuk-heading-s yellow-heading">Your addresses</h2>
+        <div class="small-font">
+          <h2 class="govuk-heading-s">Time lived at address</h2>
+          <p><em>Please note: * indicates that an answer is required.</em></p>
+        </div>
+
+        <h5 class="govuk-heading-s grey-heading">Address 1</h5>
+        <p></p>
+        <p><em>Where you live now</em><br>
+          {% if(data['APL-sup-details']) %} {{ data['APL-sup-details']}},<br>{% endif %}
+          {% if(data['APL-user-house-no']!=="") %}{{ data['APL-user-house-no'] }}{% else %}1{% endif %} {% if(data['APL-user-street']!=="") %}{{ data['APL-user-street'] }}{% else %}Example Street{% endif %},<br>
+          {% if(data['APL-user-town']!=="") %}{{ data['APL-user-town'] }}{% else %}GLASGOW,{% endif %},<br>
+          {% if(data['APL-user-postcode']!=="") %}{{ data['APL-user-postcode'] }}{% else %}G1 1AA,{% endif %}
+        </p>
+
+        <div class="govuk-form-group dvla-prov-licence-form-row-container">
+          <div class="dvla-prov-licence-label-container">
+            <label class="govuk-label prov-licence-label" for="supplementary-details">
+              How long have you lived there? *
+            </label>
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help?
+                </span>
+              </summary>
+              <div class="govuk-details__text small-font">
+                <p>When you are entering an address during registration, you must tell us how long you have lived at that address. If you have lived at the address for less than a month please enter 1 in the months box below.</p>
+              </div>
+            </details>
+          </div>
+          <div>
+            <div class="dvla-prov-licence-input-container">
+              <input class="govuk-input govuk-input--width-2" id="APL-address-no-years" name="APL-address-no-years" type="number" value="{{ data ['APL-address-no-years']}}">
+              <label class="govuk-label label-bold-text" for="APL-address-no-years">year(s)</label>
+              <input class="govuk-input govuk-input--width-2" id="APL-address-no-months" name="APL-address-no-months" type="number" value="{{ data ['APL-address-no-months']}}">
+              <label class="govuk-label label-bold-text" for="APL-address-no-months">month(s)</label>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+
+
+        <div class="dvla-button-row">
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/{{data['APLaddressYearsLived-prevPage']}}">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
+        </div>
+
+
+
+      </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

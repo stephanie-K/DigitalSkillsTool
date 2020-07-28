@@ -42,9 +42,9 @@ Motoring
             <li><strong>Authentication</strong></li>
             <ul class="govuk-list">
                 <li>Authentication</li>
-                <li><strong>Security of your data</strong></li>
+                <li>Security of your data</li>
                 <li>Your details</li>
-                <li>Your addresses</li>
+                <li><strong>Your addresses</strong></li>
                 <li>Security details</li>
                 <li>National Insurance number</li>
                 <li>UK passport number</li>
@@ -57,38 +57,45 @@ Motoring
         </div>
     </div>
     <div class="govuk-grid-column-three-quarters">
+      <form class="form" method="post">
         <h1 class="govuk-heading-m">
             Apply for a provisional licence
         </h1>
-        <h2 class="govuk-heading-s yellow-heading">Security of your data</h2>
+        <h2 class="govuk-heading-s yellow-heading">Your addresses</h2>
         <div class="small-font">
-          <p>DVLA are committed to upholding the security of your data. We use industry standard security technology and practices to safeguard your data from any unauthorised access. So that you can be confident in using our service, we have prepared some information on the security of your online transactions which you can view now by clicking the link below.<br>
-             You will also find this link on the log on page.</p>
-          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsecurity-help.html" class="red-dvla-link">Ensuring your online transactions are safe and secure</a></p>
-          <p>To continue, click 'Next'.</p>
-
-          <hr>
+          <p>Sometimes our address database will not hold supplementary information about an address, such as a house name. If the address below is missing this information, you may add it now.</p>
         </div>
+
+        <div class="govuk-form-group dvla-prov-licence-form-row-container">
+          <div class="dvla-prov-licence-label-container">
+            <label class="govuk-label prov-licence-label" for="APL-sup-details">
+              Supplementary information
+            </label>
+          </div>
+          <div class="dvla-prov-licence-input-container">
+            <input class="govuk-input govuk-input--width-10" id="APL-sup-details" name="APL-sup-details" value="{{ data['APL-sup-details'] }}" type="text">
+          </div>
+        </div>
+
+        <h5 class="govuk-heading-s grey-heading">Address</h5>
+
+        <textarea disabled class="govuk-textarea" id="APL-address" name="APL-address" rows="5" aria-describedby="more-detail-hint" style="resize:none"
+        >{{ data['APL-user-house-no'] }} Example Street,
+Glasgow,
+{{ data['APL-user-postcode'] }}</textarea>
+
+        <div class="small-font">
+          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch.html" class="red-dvla-link">Search again</a></p>
+          <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry.html" class="red-dvla-link">Other ways to enter your address</a></p>
+        </div>
+        <hr>
 
         <div class="dvla-button-row">
-            {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLstart.html"
-            }) }}
-
-            {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-            {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-custom-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails.html"
-            }) }}
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm.html">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>
-
+      </form>
     </div>
 </div>
 {% endblock %}

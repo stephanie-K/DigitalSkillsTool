@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+  <h1 class="govuk-heading-l">
+      What is a National Insurance number?
+  </h1>
+
+  <p>Every National Insurance number is different. It can consist of either 8 or 9 characters and is made up of letters and numbers, in the format of AANNNNNN(A) where A is alphabetic and N is numeric, the final character is not always available. Please see the examples below:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>FD274136A or FD274136</li>
+    </ul>
+  </p>
+  <p>(Please note that this National Insurance number is <b>just</b> an example and <b>should not</b> be used as your own number.)</p>
+  <p>Your National Insurance number is your own personal number. Only you can use it.</p>
+
+
+  <br><br>
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <span class="apply-DVLA-tagline">This is a training website</span>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        <div class="orange-block">
+          <h2 class="govuk-heading-s orange-heading">Step by step</h2>
+          <p>Follow our easy step by step process to help you fill this form in quickly and accurately.</p>
+          <ol class="govuk-list govuk-list--number">
+            <li><strong>Authentication</strong></li>
+            <li><strong>Application</strong></li>
+            <ul class="govuk-list">
+                <li><strong>Are you eligible?</strong></li>
+                <li>Your eyesight</li>
+                <li>Fitness to drive</li>
+                <li>Further information</li>
+                <li>Declaration</li>
+              </ul>
+            <li><strong>Summary</strong></li>
+            <li><strong>Payment</strong></li>
+            <li><strong>Confirmation</strong></li>
+            </ol>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-m">
+          Apply for a provisional licence
+      </h1>
+      <form class="form" method="post">
+        <h2 class="govuk-heading-s yellow-heading">Are you eligible?</h2>
+          <h3 class="govuk-heading-s">Disqualification details</h3>
+        <div class="small-font">
+          {% if (data['APLdisqualifiedError'] === true)%}
+            <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
+          {% endif %}
+          <p><em>Please note: * indicates that an answer is required.</em></p>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label prov-licence-label">
+                Disqualification date
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p>Enter the date from when the disqualification started.</p>
+                  </div>
+                </details>
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+              <fieldset class="govuk-fieldset" role="group">
+               <div class="govuk-date-input" id="APL-dob">
+                 <div class="dvla-prov-licence-input-container">
+                   <label class="govuk-label label-bold-text" for="APL-disqualify-day">
+                     Day:
+                   </label>
+                   <input class="govuk-input govuk-input--width-2" id="APL-disqualify-day" name="APL-disqualify-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data ['APL-disqualify-day']}}">
+                   <label class="govuk-label label-bold-text" for="APL-disqualify-month">
+                     Month:
+                   </label>
+                   <input class="govuk-input govuk-input--width-2" id="APL-disqualify-month" name="APL-disqualify-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data ['APL-disqualify-month']}}">
+                   <label class="govuk-label label-bold-text" for="APL-disqualify-year">
+                     Year:
+                   </label>
+                   <input class="govuk-input govuk-input--width-4" id="APL-disqualify-year" name="APL-disqualify-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data ['APL-disqualify-year']}}">
+               </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label prov-licence-label">
+                Court Name
+                <details class="govuk-details" data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Help?
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p>Enter the name of the court that imposed the disqualification.</p>
+                  </div>
+                </details>
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+               <input class="govuk-input govuk-input--width-10" id="APL-disqualification-court-name" name="APL-disqualification-court-name" value="{{ data ['APL-disqualification-court-name']}}" type="text">
+            </div>
+          </div>
+
+          <div class="govuk-form-group dvla-prov-licence-form-row-container">
+            <div class="dvla-prov-licence-label-container">
+              <label class="govuk-label prov-licence-label">
+                Country of disqualification *
+              </label>
+            </div>
+            <div class="dvla-prov-licence-input-container">
+               <input class="govuk-input govuk-input--width-10" id="APL-disqualification-country" name="APL-disqualification-country" value="{{ data ['APL-disqualification-country']}}" type="text">
+            </div>
+          </div>
+
+          <hr>
+        </div>
+
+
+        <div class="dvla-button-row">
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/{{ data['APLdisqualified-prevPage'] }}">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
+        </div>
+      </form>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <div class="grey-block">
+          <h2 class="govuk-heading-s orange-heading">Need more help?</h2>
+            <p><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLotherCountries.html" class="red-dvla-link-dark">Other countries either in the EU or EEA</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}
