@@ -69,9 +69,9 @@ Motoring
         <h5 class="govuk-heading-s grey-heading">Address</h5>
 
         <textarea disabled class="govuk-textarea" id="APL-address" name="APL-address" rows="5" aria-describedby="more-detail-hint" style="resize:none"
-        >{{ data['APL-user-house-no'] }} Example Street,
-GLASGOW,
-{{ data['APL-user-postcode'] }}</textarea>
+        >{% if(data['APL-user-house-no']!=="") %}{{ data['APL-user-house-no'] }}{% else %}1{% endif %} {% if(data['APL-user-street']!=="") %}{{ data['APL-user-street'] }}{% else %}Example Street{% endif %},
+{% if(data['APL-user-town']!=="") %}{{ data['APL-user-town'] }}{% else %}GLASGOW,{% endif %},
+{% if(data['APL-user-postcode']!=="") %}{{ data['APL-user-postcode'] }}{% else %}G1 1AA,{% endif %}</textarea>
 
         <div class="govuk-form-group dvla-prov-licence-form-row-container">
           <div class="dvla-prov-licence-label-container">

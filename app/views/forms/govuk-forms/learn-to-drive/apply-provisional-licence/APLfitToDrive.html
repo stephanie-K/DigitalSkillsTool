@@ -75,135 +75,135 @@ Motoring
 
         <div class="govuk-form-group dvla-prov-licence-form-row-container">
           <div class="dvla-prov-licence-label-container">
-            {{data['med-conditions']}}
-            {{data['APL-eyes']}}
-            {{data['med-conditions'].indexOf('APL-eyes') !== -1}}
+            <!-- {{data['med-conditions']}} -->
+            <!-- {{data['APL-eyes']}} -->
+
             <h3 class="govuk-heading-s">Medical conditions</h3>
             <p><em>Please tick <b>all</b> that apply.</em></p>
             <div class="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-diabetes" name="med-conditions" type="checkbox" value="APL-diabetes" {% if(data['med-conditions']) %} checked {% endif %}>
+                <input class="govuk-checkboxes__input" id="APL-diabetes" name="med-conditions" type="checkbox" value="APL-diabetes" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-diabetes') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-diabetes">
                   1. Diabetes controlled by insulin <b>(No need to notify us if you have diabetes controlled by tablets or other
                     injections unless you experience hypoglycaemia requiring the assistance of another person)</b>
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-epilepsy" name="med-conditions" type="checkbox" value="APL-epilepsy" {% if(data['APL-epilepsy']) %} checked {% endif %}>
+                <input class="govuk-checkboxes__input" id="APL-epilepsy" name="med-conditions" type="checkbox" value="APL-epilepsy" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-epilepsy') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-epilepsy">
                   2. Epilepsy
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-3" name="med-conditions" type="checkbox" value="APL-eyes">
+                <input class="govuk-checkboxes__input" id="med-conditions-3" name="med-conditions" type="checkbox" value="APL-eyes" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-eyes') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-3">
                   3. <b>Any condition</b> affecting <b>both</b> eyes, <b>or</b> the remaining eye if you only have one eye. <b>Not including colour blindness or short or long sight</b>
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-4" name="med-conditions" type="checkbox" value="APL-stroke">
+                <input class="govuk-checkboxes__input" id="med-conditions-4" name="med-conditions" type="checkbox" value="APL-stroke" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-stroke') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-4">
                   4. Stroke, with <b>any</b> symptoms lasting longer than one month
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-5" name="med-conditions" type="checkbox" value="APL-blackouts">
+                <input class="govuk-checkboxes__input" id="med-conditions-5" name="med-conditions" type="checkbox" value="APL-blackouts" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-blackouts') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-5">
                   5. Fits or blackouts
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-6" name="med-conditions" type="checkbox" value="APL-head-injury">
+                <input class="govuk-checkboxes__input" id="med-conditions-6" name="med-conditions" type="checkbox" value="APL-head-injury" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-head-injury') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-6">
                   6. <b>Any type</b> of brain surgery, severe head injury involving <b>in-patient</b> treatment, or brain tumour
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-7" name="med-conditions" type="checkbox" value="APL-pacemaker">
+                <input class="govuk-checkboxes__input" id="med-conditions-7" name="med-conditions" type="checkbox" value="APL-pacemaker" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-pacemaker') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-7">
                   7. An implanted cardiac pacemaker
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-8" name="med-conditions" type="checkbox" value="APL-defibrillator">
+                <input class="govuk-checkboxes__input" id="med-conditions-8" name="med-conditions" type="checkbox" value="APL-defibrillator" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-defibrillator') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-8">
                   8. An implanted cardiac defibrillator (ICD)
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-9" name="med-conditions" type="checkbox" value="APL-giddiness">
+                <input class="govuk-checkboxes__input" id="med-conditions-9" name="med-conditions" type="checkbox" value="APL-giddiness" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-giddiness') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-9">
                   9. <b>Repeated</b> attacks of sudden disabling giddiness
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-10" name="med-conditions" type="checkbox" value="APL-neurological">
+                <input class="govuk-checkboxes__input" id="med-conditions-10" name="med-conditions" type="checkbox" value="APL-neurological" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-neurological') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-10">
                   10. Any other <b>chronic</b> neurological condition including Multiple Sclerosis, Motor Neurone and Huntington's disease
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-11" name="med-conditions" type="checkbox" value="APL-memory">
+                <input class="govuk-checkboxes__input" id="med-conditions-11" name="med-conditions" type="checkbox" value="APL-memory" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-memory') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-11">
                   11. A <b>serious</b> problem with memory or periods of confusion
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-12" name="med-conditions" type="checkbox" value="APL-alcohol">
+                <input class="govuk-checkboxes__input" id="med-conditions-12" name="med-conditions" type="checkbox" value="APL-alcohol" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-alcohol') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-12">
                   12. Persistent alcohol misuse or dependence
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-13" name="med-conditions" type="checkbox" value="APL-drugs">
+                <input class="govuk-checkboxes__input" id="med-conditions-13" name="med-conditions" type="checkbox" value="APL-drugs" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-drugs') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-13">
                   13. Persistent drug misuse or dependence
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-14" name="med-conditions" type="checkbox" value="APL-mental-health">
+                <input class="govuk-checkboxes__input" id="med-conditions-14" name="med-conditions" type="checkbox" value="APL-mental-health" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-mental-health') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-14">
                   14. <b>Serious</b> psychiatric illness or mental ill health
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-15" name="med-conditions" type="checkbox" value="APL-parkinsons">
+                <input class="govuk-checkboxes__input" id="med-conditions-15" name="med-conditions" type="checkbox" value="APL-parkinsons" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-parkinsons') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-15">
                   15. Parkinson's disease
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-16" name="med-conditions" type="checkbox" value="APL-sleep-apnoea">
+                <input class="govuk-checkboxes__input" id="med-conditions-16" name="med-conditions" type="checkbox" value="APL-sleep-apnoea" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-sleep-apnoea') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-16">
                   16. Sleep apnoea syndrome
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-17" name="med-conditions" type="checkbox" value="APL-narcolepsy">
+                <input class="govuk-checkboxes__input" id="med-conditions-17" name="med-conditions" type="checkbox" value="APL-narcolepsy" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-narcolepsy') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-17">
                   17. Narcolepsy
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-18" name="med-conditions" type="checkbox" value="APL-visual-field">
+                <input class="govuk-checkboxes__input" id="med-conditions-18" name="med-conditions" type="checkbox" value="APL-visual-field" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-visual-field') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-18">
                   18. <b>Any condition</b> affecting your visual field
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-19" name="med-conditions" type="checkbox" value="APL-sight">
+                <input class="govuk-checkboxes__input" id="med-conditions-19" name="med-conditions" type="checkbox" value="APL-sight" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-sight') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-19">
                   19. Total loss of sight in one eye
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-20" name="med-conditions" type="checkbox" value="APL-limb">
+                <input class="govuk-checkboxes__input" id="med-conditions-20" name="med-conditions" type="checkbox" value="APL-limb" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-limb') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-20">
                   20. <b>Any</b> persistent limb problem which needs driving to be restricted to certain types of vehicles or those with adapted controls
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-21" name="med-conditions" type="checkbox" value="APL-learning-disability">
+                <input class="govuk-checkboxes__input" id="med-conditions-21" name="med-conditions" type="checkbox" value="APL-learning-disability" {% if((data['med-conditions']) and (data['med-conditions'].indexOf('APL-learning-disability') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-21">
                   21. <b>Severe</b> learning disability
                 </label>
@@ -216,7 +216,7 @@ Motoring
 
 
       <div class="dvla-button-row">
-        <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/{{ data['APLfitToDrive-prevPage'] }}">Previous</a>
+        <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/{% if(data['APLfitToDrive-prevPage'])%}{{ data['APLfitToDrive-prevPage'] }} {% else %}APLeyesight{% endif %}">Previous</a>
         <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
         <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
       </div>

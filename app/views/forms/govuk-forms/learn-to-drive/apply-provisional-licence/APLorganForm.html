@@ -73,43 +73,43 @@ Motoring
             <p class="label-bold-text">I wish to donate the following:</p>
             <div class="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-organ-donation" name="APL-organ-donation" type="checkbox" value="all">
+                <input class="govuk-checkboxes__input" id="APL-organ-donation" name="APL-organ-donation" type="checkbox" value="all" {% if((data['APL-organ-donation']) and (data['APL-organ-donation'].indexOf('all') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="diabetes">
                   Any of my organs and tissue
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-organ-donation-2" name="APL-organ-donation" type="checkbox" value="kidneys">
+                <input class="govuk-checkboxes__input" id="APL-organ-donation-2" name="APL-organ-donation" type="checkbox" value="kidneys" {% if((data['APL-organ-donation']) and (data['APL-organ-donation'].indexOf('kidneys') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-organ-donation-2">
                   Kidneys
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-organ-donation-3" name="APL-organ-donation" type="checkbox" value="heart">
+                <input class="govuk-checkboxes__input" id="APL-organ-donation-3" name="APL-organ-donation" type="checkbox" value="heart" {% if((data['APL-organ-donation']) and (data['APL-organ-donation'].indexOf('heart') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-organ-donation-3">
                   Heart
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-organ-donation-4" name="APL-organ-donation" type="checkbox" value="liver">
+                <input class="govuk-checkboxes__input" id="APL-organ-donation-4" name="APL-organ-donation" type="checkbox" value="liver" {% if((data['APL-organ-donation']) and (data['APL-organ-donation'].indexOf('liver') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-organ-donation-4">
                   Liver
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-organ-donation-5" name="APL-organ-donation" type="checkbox" value="corneas">
+                <input class="govuk-checkboxes__input" id="APL-organ-donation-5" name="APL-organ-donation" type="checkbox" value="corneas" {% if((data['APL-organ-donation']) and (data['APL-organ-donation'].indexOf('corneas') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-organ-donation-5">
                   Corneas
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-organ-donation-6" name="APL-organ-donation" type="checkbox" value="lungs">
+                <input class="govuk-checkboxes__input" id="APL-organ-donation-6" name="APL-organ-donation" type="checkbox" value="lungs" {% if((data['APL-organ-donation']) and (data['APL-organ-donation'].indexOf('lungs') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-organ-donation-6">
                   Lungs
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="APL-organ-donation-7" name="APL-organ-donation" type="checkbox" value="pancreas">
+                <input class="govuk-checkboxes__input" id="APL-organ-donation-7" name="APL-organ-donation" type="checkbox" value="pancreas" {% if((data['APL-organ-donation']) and (data['APL-organ-donation'].indexOf('pancreas') !== -1)) %} checked {% endif %}>
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-organ-donation-7">
                   Pancreas
                 </label>

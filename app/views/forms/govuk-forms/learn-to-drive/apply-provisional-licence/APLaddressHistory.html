@@ -69,10 +69,10 @@ Motoring
           <p></p>
           <p>
             <em>Where you live now</em><br>
-            {% if(data['APL-sup-details']) %} {{ data ['APL-sup-details']}},<br>{% endif %}
-            {{ data['APL-user-house-no'] }} Example Street,<br>
-            GLASGOW,<br>
-            {{ data['APL-user-postcode'] }}</p>
+            {% if(data['APL-sup-details']) %} {{ data['APL-sup-details']}},<br>{% endif %}
+            {% if(data['APL-user-house-no']!=="") %}{{ data['APL-user-house-no'] }}{% else %}1{% endif %} {% if(data['APL-user-street']!=="") %}{{ data['APL-user-street'] }}{% else %}Example Street{% endif %},<br>
+            {% if(data['APL-user-town']!=="") %}{{ data['APL-user-town'] }}{% else %}GLASGOW,{% endif %},<br>
+            {% if(data['APL-user-postcode']!=="") %}{{ data['APL-user-postcode'] }}{% else %}G1 1AA,{% endif %}</p>
           <p style="margin-bottom:0"><b><em>How long did you live there?</em></b></p>
           <p>
             {% if(data['APL-address-no-years']) == "" %}

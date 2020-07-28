@@ -64,85 +64,92 @@ Motoring
     <h1 class="govuk-heading-m">Apply for a provisional licence</h1>
     <h2 class="govuk-heading-s yellow-heading">Your addresses</h2>
     <h3 class="govuk-heading-s">Address entry</h3>
+    {% if (data['APLstreetTownError'] === true)%}
+      <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
+    {% endif %}
+    <form class="form" method="post">
+      <div class="small-font">
+        <p><em>Please note: * indicates that an answer is required.</em></p>
+        <div class="govuk-form-group dvla-prov-licence-form-row-container">
+          <div class="dvla-prov-licence-label-container">
+            <label class="govuk-label prov-licence-label" for="APL-user-house-no">
+              House name or number *
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Help?
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p>When you are searching for an address, either using your postcode, or your street and town, you can optionally narrow down the search by entering one of more of the following search items:</p>
+                  <ul>
+                    <li>House number</li>
+                    <li>Building name</li>
+                    <li>Flat number/name</li>
+                  </ul>
+                  <p>If you enter more than one search item, separate them using commas.
+                    Examples:</p>
+                  <ul>
+                    <li>131</li>
+                    <li>flat 79, 12</li>
+                    <li>10B, hope-wynne tower</li>
+                  </ul>
+                </div>
+              </details>
+            </label>
+          </div>
+          <div class="dvla-prov-licence-input-container">
+            <input class="govuk-input govuk-input--width-10" id="APL-user-house-no" name="APL-user-house-no" type="text" value="{{ data['APL-user-house-no'] }}">
+          </div>
+        </div>
 
-    <div class="small-font">
-      <p><em>Please note: * indicates that an answer is required.</em></p>
-      <div class="govuk-form-group dvla-prov-licence-form-row-container">
-        <div class="dvla-prov-licence-label-container">
-          <label class="govuk-label prov-licence-label" for="prov-licence-user-house-no">
-            House name or number *
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  Help?
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <p>When you are searching for an address, either using your postcode, or your street and town, you can optionally narrow down the search by entering one of more of the following search items:</p>
-                <ul>
-                  <li>House number</li>
-                  <li>Building name</li>
-                  <li>Flat number/name</li>
-                </ul>
-                <p>If you enter more than one search item, separate them using commas.
-                  Examples:</p>
-                <ul>
-                  <li>131</li>
-                  <li>flat 79, 12</li>
-                  <li>10B, hope-wynne tower</li>
-                </ul>
-              </div>
-            </details>
-          </label>
+        <div class="govuk-form-group dvla-prov-licence-form-row-container">
+          <div class="dvla-prov-licence-label-container">
+            <label class="govuk-label prov-licence-label" for="APL-user-street">
+              Street *
+            </label>
+          </div>
+          <div class="dvla-prov-licence-input-container">
+             <input class="govuk-input govuk-input--width-10" id="APL-user-street" name="APL-user-street" type="text" value="{{ data['APL-user-street'] }}">
+          </div>
         </div>
-        <div class="dvla-prov-licence-input-container">
-          <input class="govuk-input govuk-input--width-10" id="prov-licence-user-house-no" name="prov-licence-user-house-no" type="text">
+
+        <div class="govuk-form-group dvla-prov-licence-form-row-container">
+          <div class="dvla-prov-licence-label-container">
+            <label class="govuk-label prov-licence-label" for="APL-user-town">
+              Town *
+            </label>
+          </div>
+          <div class="dvla-prov-licence-input-container">
+             <input class="govuk-input govuk-input--width-10" id="APL-user-town" name="APL-user-town" type="text" value="{{ data['APL-user-town'] }}">
+          </div>
         </div>
+        <hr>
       </div>
 
-      <div class="govuk-form-group dvla-prov-licence-form-row-container">
-        <div class="dvla-prov-licence-label-container">
-          <label class="govuk-label prov-licence-label" for="prov-licence-user-street">
-            Street *
-          </label>
-        </div>
-        <div class="dvla-prov-licence-input-container">
-           <input class="govuk-input govuk-input--width-5" id="prov-licence-user-street" name="prov-licence-user-street" type="text">
-        </div>
+
+      <div class="dvla-button-row">
+        <!-- {{ govukButton({
+                text: "Previous",
+                classes: "button-primary dvla-previous-button",
+                href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry.html"
+              }) }}
+
+        {{ govukButton({
+                text: "Cancel",
+                classes: "button-primary dvla-cancel-button",
+                href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
+              }) }}
+        {{ govukButton({
+                text: "Next",
+                classes: "button-primary dvla-next-button",
+                href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm.html"
+              }) }} -->
+        <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry.html">Previous</a>
+        <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+        <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
       </div>
-
-      <div class="govuk-form-group dvla-prov-licence-form-row-container">
-        <div class="dvla-prov-licence-label-container">
-          <label class="govuk-label prov-licence-label" for="prov-licence-user-town">
-            Town *
-          </label>
-        </div>
-        <div class="dvla-prov-licence-input-container">
-           <input class="govuk-input govuk-input--width-5" id="prov-licence-user-town" name="prov-licence-user-town" type="text">
-        </div>
-      </div>
-      <hr>
-    </div>
-
-
-    <div class="dvla-button-row">
-      {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry.html"
-            }) }}
-
-      {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-      {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm.html"
-            }) }}
-    </div>
+    </form>
   </div>
   <div class="govuk-grid-column-one-quarter">
     <div class="grey-block">

@@ -56,7 +56,37 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddr
     req.session.data['APLaddressSearchError'] = true
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch')
   }
+  req.session.data['APLaddressConfirm-prevPage'] = 'APLaddressSearch'
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLstreetTown', function (req, res) {
+  req.session.data['APLstreetTownError'] = false
+  let houseno = req.session.data['APL-user-house-no']
+  let street = req.session.data['APL-user-street']
+  let town = req.session.data['APL-user-town']
+
+  if (houseno === "" || street === "" || town === "") {
+    req.session.data['APLstreetTownError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLstreetTown')
+  }
+  req.session.data['APLaddressConfirm-prevPage'] = 'APLstreetTown'
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry', function (req, res) {
+  req.session.data['APLaddressEntryError'] = false
+  let addressEntry = req.session.data['APL-address-entry']
+
+  if (addressEntry !== "postcode" && addressEntry !== "street&town" && addressEntry !== "bfpo") {
+    req.session.data['APLaddressEntryError'] = true
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressEntry')
+  } else if(addressEntry === "street&town") {
+      return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLstreetTown')
+  } else if(addressEntry === "bfpo") {
+      return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLbfpoAddress')
+  }
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressSearch')
 })
 
 router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm', function (req, res) {
@@ -265,6 +295,7 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLorga
     req.session.data['APLorganFormError'] = true
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLorganForm')
   }
+  req.session.data['APLemail-prevPage'] = 'APLorganForm'
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLemail')
 })
 
