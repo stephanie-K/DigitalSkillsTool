@@ -72,7 +72,7 @@ Motoring
 
         <h5 class="govuk-heading-s grey-heading">Address 1</h5>
         <p></p>
-        <p><em>Where you live now</em><br>{{ data['APL-user-house-no'] }} Example Street,<br>GLASGOW<br>{{ data['APL-user-postcode'] }}</p>
+        <p><em>Where you live now</em><br>{% if(data['APL-sup-details']) %} {{ data['APL-sup-details']}},<br>{% endif %}{{ data['APL-user-house-no'] }} Example Street,<br>GLASGOW<br>{{ data['APL-user-postcode'] }}</p>
 
         <div class="govuk-form-group dvla-prov-licence-form-row-container">
           <div class="dvla-prov-licence-label-container">
@@ -105,25 +105,9 @@ Motoring
 
 
         <div class="dvla-button-row">
-            <!-- {{ govukButton({
-              text: "Previous",
-              classes: "button-primary dvla-previous-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm.html"
-            }) }}
-
-            {{ govukButton({
-              text: "Cancel",
-              classes: "button-primary dvla-cancel-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-            }) }}
-            {{ govukButton({
-              text: "Next",
-              classes: "button-primary dvla-next-button",
-              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressHistory.html"
-            }) }} -->
-            <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressConfirm.html">Previous</a>
-            <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
-            <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/{{data['APLaddressYearsLived-prevPage']}}">Previous</a>
+          <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
+          <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>
 
 

@@ -78,13 +78,13 @@ Motoring
             <div class="dvla-prov-licence-input-container">
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-min-eyesight" name="APL-min-eyesight" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="APL-min-eyesight" name="APL-min-eyesight" type="radio" value="yes" {% if(data['APL-min-eyesight'] === 'yes') %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label label-bold-text" for="APL-min-eyesight">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-min-eyesight-2" name="APL-min-eyesight" type="radio" value="no">
+                  <input class="govuk-radios__input" id="APL-min-eyesight-2" name="APL-min-eyesight" type="radio" value="no"  {% if(data['APL-min-eyesight'] === 'no') %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label label-bold-text" for="APL-min-eyesight-2">
                     No
                   </label>
@@ -97,7 +97,7 @@ Motoring
 
 
         <div class="dvla-button-row">
-          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeligibility.html">Previous</a>
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight.html">Previous</a>
           <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
           <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>

@@ -75,132 +75,135 @@ Motoring
 
         <div class="govuk-form-group dvla-prov-licence-form-row-container">
           <div class="dvla-prov-licence-label-container">
+            {{data['med-conditions']}}
+            {{data['APL-eyes']}}
+            {{data['med-conditions'].indexOf('APL-eyes') !== -1}}
             <h3 class="govuk-heading-s">Medical conditions</h3>
             <p><em>Please tick <b>all</b> that apply.</em></p>
             <div class="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions" name="med-conditions" type="checkbox" value="diabetes">
-                <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="diabetes">
+                <input class="govuk-checkboxes__input" id="APL-diabetes" name="med-conditions" type="checkbox" value="APL-diabetes" {% if(data['med-conditions']) %} checked {% endif %}>
+                <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-diabetes">
                   1. Diabetes controlled by insulin <b>(No need to notify us if you have diabetes controlled by tablets or other
                     injections unless you experience hypoglycaemia requiring the assistance of another person)</b>
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-2" name="med-conditions" type="checkbox" value="epilepsy">
-                <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-2">
+                <input class="govuk-checkboxes__input" id="APL-epilepsy" name="med-conditions" type="checkbox" value="APL-epilepsy" {% if(data['APL-epilepsy']) %} checked {% endif %}>
+                <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="APL-epilepsy">
                   2. Epilepsy
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-3" name="med-conditions" type="checkbox" value="eyes">
+                <input class="govuk-checkboxes__input" id="med-conditions-3" name="med-conditions" type="checkbox" value="APL-eyes">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-3">
                   3. <b>Any condition</b> affecting <b>both</b> eyes, <b>or</b> the remaining eye if you only have one eye. <b>Not including colour blindness or short or long sight</b>
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-4" name="med-conditions" type="checkbox" value="stroke">
+                <input class="govuk-checkboxes__input" id="med-conditions-4" name="med-conditions" type="checkbox" value="APL-stroke">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-4">
                   4. Stroke, with <b>any</b> symptoms lasting longer than one month
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-5" name="med-conditions" type="checkbox" value="blackouts">
+                <input class="govuk-checkboxes__input" id="med-conditions-5" name="med-conditions" type="checkbox" value="APL-blackouts">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-5">
                   5. Fits or blackouts
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-6" name="med-conditions" type="checkbox" value="head-injury">
+                <input class="govuk-checkboxes__input" id="med-conditions-6" name="med-conditions" type="checkbox" value="APL-head-injury">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-6">
                   6. <b>Any type</b> of brain surgery, severe head injury involving <b>in-patient</b> treatment, or brain tumour
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-7" name="med-conditions" type="checkbox" value="pacemaker">
+                <input class="govuk-checkboxes__input" id="med-conditions-7" name="med-conditions" type="checkbox" value="APL-pacemaker">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-7">
                   7. An implanted cardiac pacemaker
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-8" name="med-conditions" type="checkbox" value="defibrillator">
+                <input class="govuk-checkboxes__input" id="med-conditions-8" name="med-conditions" type="checkbox" value="APL-defibrillator">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-8">
                   8. An implanted cardiac defibrillator (ICD)
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-9" name="med-conditions" type="checkbox" value="giddiness">
+                <input class="govuk-checkboxes__input" id="med-conditions-9" name="med-conditions" type="checkbox" value="APL-giddiness">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-9">
                   9. <b>Repeated</b> attacks of sudden disabling giddiness
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-10" name="med-conditions" type="checkbox" value="neurological">
+                <input class="govuk-checkboxes__input" id="med-conditions-10" name="med-conditions" type="checkbox" value="APL-neurological">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-10">
                   10. Any other <b>chronic</b> neurological condition including Multiple Sclerosis, Motor Neurone and Huntington's disease
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-11" name="med-conditions" type="checkbox" value="memory">
+                <input class="govuk-checkboxes__input" id="med-conditions-11" name="med-conditions" type="checkbox" value="APL-memory">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-11">
                   11. A <b>serious</b> problem with memory or periods of confusion
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-12" name="med-conditions" type="checkbox" value="alcohol">
+                <input class="govuk-checkboxes__input" id="med-conditions-12" name="med-conditions" type="checkbox" value="APL-alcohol">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-12">
                   12. Persistent alcohol misuse or dependence
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-13" name="med-conditions" type="checkbox" value="drugs">
+                <input class="govuk-checkboxes__input" id="med-conditions-13" name="med-conditions" type="checkbox" value="APL-drugs">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-13">
                   13. Persistent drug misuse or dependence
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-14" name="med-conditions" type="checkbox" value="mental-health">
+                <input class="govuk-checkboxes__input" id="med-conditions-14" name="med-conditions" type="checkbox" value="APL-mental-health">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-14">
                   14. <b>Serious</b> psychiatric illness or mental ill health
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-15" name="med-conditions" type="checkbox" value="parkinsons">
+                <input class="govuk-checkboxes__input" id="med-conditions-15" name="med-conditions" type="checkbox" value="APL-parkinsons">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-15">
                   15. Parkinson's disease
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-16" name="med-conditions" type="checkbox" value="sleep-apnoea">
+                <input class="govuk-checkboxes__input" id="med-conditions-16" name="med-conditions" type="checkbox" value="APL-sleep-apnoea">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-16">
                   16. Sleep apnoea syndrome
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-17" name="med-conditions" type="checkbox" value="narcolepsy">
+                <input class="govuk-checkboxes__input" id="med-conditions-17" name="med-conditions" type="checkbox" value="APL-narcolepsy">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-17">
                   17. Narcolepsy
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-18" name="med-conditions" type="checkbox" value="visual-field">
+                <input class="govuk-checkboxes__input" id="med-conditions-18" name="med-conditions" type="checkbox" value="APL-visual-field">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-18">
                   18. <b>Any condition</b> affecting your visual field
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-19" name="med-conditions" type="checkbox" value="sight">
+                <input class="govuk-checkboxes__input" id="med-conditions-19" name="med-conditions" type="checkbox" value="APL-sight">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-19">
                   19. Total loss of sight in one eye
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-20" name="med-conditions" type="checkbox" value="limb">
+                <input class="govuk-checkboxes__input" id="med-conditions-20" name="med-conditions" type="checkbox" value="APL-limb">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-20">
                   20. <b>Any</b> persistent limb problem which needs driving to be restricted to certain types of vehicles or those with adapted controls
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="med-conditions-21" name="med-conditions" type="checkbox" value="learning-disability">
+                <input class="govuk-checkboxes__input" id="med-conditions-21" name="med-conditions" type="checkbox" value="APL-learning-disability">
                 <label class="govuk-label govuk-checkboxes__label small-font-dvsa" for="med-conditions-21">
                   21. <b>Severe</b> learning disability
                 </label>
@@ -213,23 +216,7 @@ Motoring
 
 
       <div class="dvla-button-row">
-        <!-- {{ govukButton({
-                text: "Previous",
-                classes: "button-primary dvla-previous-button",
-                href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight.html"
-              }) }}
-
-        {{ govukButton({
-                text: "Cancel",
-                classes: "button-primary dvla-cancel-button",
-                href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-              }) }}
-        {{ govukButton({
-                text: "Next",
-                classes: "button-primary dvla-next-button",
-                href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLmedDec.html"
-              }) }} -->
-        <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight.html">Previous</a>
+        <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/{{ data['APLfitToDrive-prevPage'] }}">Previous</a>
         <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
         <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
       </div>

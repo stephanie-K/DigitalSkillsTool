@@ -387,6 +387,13 @@ img.dvsa, image.dvsa  {
   background: url(../images/DVLA/error.gif) 10px center no-repeat;
   border: 1px solid #d8000c;
 }
+
+
+.link-disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
 //----------------------------- Park Homes - Warm Homes Discounts ----------------------------------------//
 
 .park-home-tagline {

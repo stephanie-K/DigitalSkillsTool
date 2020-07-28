@@ -65,7 +65,7 @@ Motoring
           <p class="provlError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please complete all fields marked *</p>
         {% endif %}
         <div class="small-font">
-          <p>Before ansering this question you must read 'The eyesight standards for driving' on the right hand side of this page.</p>
+          <p>Before answering this question you must read 'The eyesight standards for driving' on the right hand side of this page.</p>
 
           <p><em>Please note: * indicates that an answer is required.</em></p>
           <div class="govuk-form-group dvla-prov-licence-form-row-container">
@@ -77,13 +77,13 @@ Motoring
             <div class="dvla-prov-licence-input-container">
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-eyesight" name="APL-eyesight" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="APL-eyesight" name="APL-eyesight" type="radio" value="yes" {% if(data['APL-eyesight'] === 'yes') %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label label-bold-text" for="APL-eyesight">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-eyesight-2" name="APL-eyesight" type="radio" value="no">
+                  <input class="govuk-radios__input" id="APL-eyesight-2" name="APL-eyesight" type="radio" value="no" {% if(data['APL-eyesight'] === 'no') %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label label-bold-text" for="APL-eyesight-2">
                     No
                   </label>
@@ -101,13 +101,13 @@ Motoring
             <div class="dvla-prov-licence-input-container">
               <div class="govuk-radios govuk-radios--inline">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-glasses" name="APL-glasses" type="radio" value="yes">
+                  <input class="govuk-radios__input" id="APL-glasses" name="APL-glasses" type="radio" value="yes" {% if(data['APL-glasses'] === 'yes') %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label label-bold-text" for="APL-glasses">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="APL-glasses-2" name="APL-glasses" type="radio" value="no">
+                  <input class="govuk-radios__input" id="APL-glasses-2" name="APL-glasses" type="radio" value="no" {% if(data['APL-glasses'] === 'no') %} checked {% endif %}>
                   <label class="govuk-label govuk-radios__label label-bold-text" for="APL-glasses-2">
                     No
                   </label>
@@ -120,7 +120,7 @@ Motoring
 
 
         <div class="dvla-button-row">
-          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeligibility.html">Previous</a>
+          <a class="govuk-button button-primary dvla-previous-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/{{ data['APLeyesight-prevPage'] }}">Previous</a>
           <a class="govuk-button button-primary dvla-cancel-button" href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html">Cancel</a>
           <input class="govuk-button button-primary dvla-custom-next-button" type="submit" value="Next">
         </div>

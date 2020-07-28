@@ -65,6 +65,12 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddr
   if (supInfo) {
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsupInfo')
   }
+  req.session.data['APLaddressYearsLived-prevPage'] = 'APLaddressConfirm'
+  res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived')
+})
+
+router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLsupInfo', function (req, res) {
+  req.session.data['APLaddressYearsLived-prevPage'] = 'APLsupInfo'
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLaddressYearsLived')
 })
 
@@ -143,6 +149,11 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLelig
   else if(livedInEu === 'yes') {
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeuResidence')
   }
+  else if(disqualified === 'yes') {
+    req.session.data['APLdisqualified-prevPage'] = 'APLeligibility'
+    return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdisqualified')
+  }
+  req.session.data['APLeyesight-prevPage'] = 'APLeligibility'
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight')
 })
 
@@ -160,8 +171,10 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeuRe
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeuResidence')
   }
   else if(disqualified === 'yes') {
+    req.session.data['APLdisqualified-prevPage'] = 'APLeuResidence'
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdisqualified')
   }
+  req.session.data['APLeyesight-prevPage'] = 'APLeuResidence'
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight')
 })
 
@@ -174,6 +187,7 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdisq
     req.session.data['APLdisqualifiedError'] = true
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdisqualified')
   }
+  req.session.data['APLeyesight-prevPage'] = 'APLdisqualified'
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyesight')
 })
 
@@ -199,6 +213,7 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLeyes
   else if(eyesight === 'no') {
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLminEyesight')
   }
+  req.session.data['APLfitToDrive-prevPage'] = 'APLeyesight'
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLfitToDrive')
 })
 
@@ -218,6 +233,7 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLminE
   else if(minEyesight === 'no') {
     return res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLminEyesightRequirement')
   }
+  req.session.data['APLfitToDrive-prevPage'] = 'APLminEyesight'
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLfitToDrive')
 })
 
