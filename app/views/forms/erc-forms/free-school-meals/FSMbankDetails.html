@@ -55,8 +55,9 @@ Clothing Grants and Free School Meals
           <dt class="govuk-summary-list__key">
             <label class="govuk-label" for="FSM-sort-code">Bank sort code: <span style="color: red"> *</span></label>
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value tooltip">
             <input class="govuk-input govuk-!-width-full" id="FSM-sort-code" name="FSM-sort-code" type="number" value="{{ data ['FSM-sort-code']}}">
+            <span class="tooltiptext">6-digit bank sort code</span>
           </dd>
           <dd class="govuk-summary-list__actions">
           {% if (data ['FSM-sort-code'] === '') %}
@@ -69,8 +70,9 @@ Clothing Grants and Free School Meals
           <dt class="govuk-summary-list__key">
             <label class="govuk-label" for="FSM-bank-acc-no">Bank account number: <span style="color: red"> *</span></label>
           </dt>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value tooltip">
             <input class="govuk-input govuk-!-width-full" id="FSM-bank-acc-no" name="FSM-bank-acc-no" type="number" value="{{ data ['FSM-bank-acc-no']}}">
+            <span class="tooltiptext">8-digit bank account number</span>
           </dd>
           <dd class="govuk-summary-list__actions">
           {% if (data ['FSM-bank-acc-no'] === '') %}
@@ -93,6 +95,10 @@ Clothing Grants and Free School Meals
       }) }}
 
     </form>
+    <div class="student-notes-box">
+      <p>You don't have to enter the real name of your bank or your real sort code and account number</p>
+      <p>But the account number and  the sort code need to be made of numbers only</p>
+    </div>
   </div>
 </div>
 

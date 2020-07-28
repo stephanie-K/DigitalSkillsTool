@@ -86,8 +86,9 @@ Clothing Grants and Free School Meals
           <dt class="govuk-summary-list__key">
             <label class="govuk-label" for="FSM-applicant-NI-no">National Insurance Number: <span style="color: red"> *</span></label>
           </dt>
-          <dd class="govuk-summary-list__value">
-            <input class="govuk-input govuk-!-width-full" id="FSM-applicant-NI-no" name="FSM-applicant-NI-no" type="text" value="{{ data ['FSM-applicant-NI-no']}}">
+          <dd class="govuk-summary-list__value tooltip">
+            <input class="govuk-input govuk-!-width-full " id="FSM-applicant-NI-no" name="FSM-applicant-NI-no" type="text" value="{{ data ['FSM-applicant-NI-no']}}" >
+            <span class="tooltiptext">Must be 2 letters, 6 numbers and then a letter or a space</span>
           </dd>
           <dd class="govuk-summary-list__actions">
           {% if (data ['FSM-applicant-NI-no'] === '') %}
@@ -129,7 +130,10 @@ Clothing Grants and Free School Meals
 
     </form>
 
-
+    <div class="student-notes-box">
+      <p>The phone number is not checked but you need to enter some numbers in this field. It doesn't have to be a real phone number.</p>
+      <p>You don't have to enter your real National Insurance number here.</p>
+    </div>
   </div>
 </div>
 

@@ -297,6 +297,38 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     }
   }
 
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #666;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    width: 200px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 8px;
+    margin: 5px; 
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  input[type="date" i]{
+      background-color: #fff;
+  }
+
+
+
 
 //-------------------------------------------- Buttons --------------------------------------------------- //
 
@@ -665,14 +697,4 @@ hr.erc {
 }
 th {
     white-space: nowrap;
-}
-
-// -------------------------------------------- ERC form CBLsummary-aboutyou ------------------------------------------------- //
-
-.erc-form-label {
-  width: 27%;
-}
-
-.erc-form-input {
-  width:100%;
 }

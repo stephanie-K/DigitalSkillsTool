@@ -13,19 +13,23 @@ Create your online profile
     </h1>
 
     <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
-    <p class="erc-alt-dark-blue-bg">Name and Address</p>
+    <p class="erc-alt-dark-blue-bg">Create your security details</p>
     <div class="govuk-heading-s erc-alt-light-grey">
-      <p class="govuk-!-font-size-14">Your confirmation code has been successfully validated.</p>
-      <p class="govuk-!-font-size-14">Please tell us your name and address. We will match these against the details that we already hold on our customer database.</p>
+      <p class="govuk-!-font-size-14">Please choose a username and supply a memorable question and answer e.g.</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>Memorable Question = "what is my favourite colour?"</li>
+          <li>Memorable Answer = "purple"</li>
+      </ul>
+      <p class="govuk-!-font-size-14">You will be asked for the answer to your question when you produce your ID.</p>
     </div>
 
       <dl class="govuk-summary-list centred-input-fields">
         <div class="govuk-summary-list__row ">
           <dt class="govuk-summary-list__key">
-            <label class="govuk-label" for="rct-fullname">Full Name: <span style="color: red"> *</span></label>
+            <label class="govuk-label" for="rct-username">Choose a Username: <span style="color: red"> *</span></label>
           </dt>
           <dd class="govuk-summary-list__value">
-            <input class="govuk-input govuk-!-width-full" id="rct-fullname" name="rct-fullname" type="text" value="{{ data ['rct-fullname']}}">
+            <input class="govuk-input govuk-!-width-full" id="rct-username" name="rct-username" type="text" value="{{ data ['rct-username']}}">
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
@@ -35,10 +39,10 @@ Create your online profile
       <dl class="govuk-summary-list centred-input-fields">
         <div class="govuk-summary-list__row ">
           <dt class="govuk-summary-list__key">
-            <label class="govuk-label" for="rct-address">House/Flat Number: <span</span></label>
+            <label class="govuk-label" for="rct-memorableQ">Memorable Question:<span style="color: red"> *</span></label>
           </dt>
           <dd class="govuk-summary-list__value">
-            <input class="govuk-input govuk-!-width-full" id="rct-address" name="rct-address" type="text" value="{{ data ['rct-address']}}">
+            <input class="govuk-input govuk-!-width-full" id="rct-memorableQ" name="rct-memorableQ" type="text" value="{{ data ['rct-memorableQ']}}">
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
@@ -48,24 +52,20 @@ Create your online profile
       <dl class="govuk-summary-list centred-input-fields">
         <div class="govuk-summary-list__row ">
           <dt class="govuk-summary-list__key">
-            <label class="govuk-label" for="rct-postcode">Postcode: <span style="color: red"> *</span></label>
+            <label class="govuk-label" for="rct-memorableA">Memorable Answer: <span style="color: red">*</span></label>
           </dt>
           <dd class="govuk-summary-list__value">
-            <input class="govuk-input govuk-!-width-full" id="rct-postcode" name="rct-postcode" type="text" value="{{ data ['rct-postcode']}}">
+            <input class="govuk-input govuk-!-width-full" id="rct-memorableA" name="rct-memorableA" type="text" value="{{ data ['rct-memorableA']}}">
           </dd>
           <dd class="govuk-summary-list__actions">
           </dd>
         </div>
       </dl>
-
-      <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
-        <p class="govuk-!-font-size-14">If you're having trouble finding your address, try leaving House/Flat Number blank and searching on postcode only.'</p>
-      </div>
 
       {{ govukButton({
-        text: "Find my address",
+        text: "Continue",
         classes: "button-primary erc-alt",
-        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTaddressSelection"
+        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTpasswordCreation"
       }) }}
 
     </div>

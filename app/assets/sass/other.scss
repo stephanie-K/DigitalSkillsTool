@@ -35,6 +35,13 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
     }
 }
 
+// ---------------------------- remove the Yellow focus on link as it show on images ----------------------//@extend
+
+a:focus {
+  background-color: #0000;
+  box-shadow: 0 -2px #0000, 0 4px #0000;
+}
+
 // ---------------------------- Book a theory test --------------------------------------------------------//
 
 .dvsa-theory-header {
@@ -331,7 +338,7 @@ margin-top:30px;
   margin:1em auto;
   border: 1px solid #ddd;
   padding: 2.5em;
-  @media only screen and (max-width: 340px) {
+  @media only screen and (max-width: 490px) {
     padding: 20px 5px;
   }
   overflow: hidden;
@@ -370,11 +377,17 @@ button.button-bulb, a.button-bulb{
     border-radius: 5px;
     text-decoration: none;
     box-shadow: 0 0 0 0 ;
-    width:100%;
     font-size: 20px;
     padding: 0.8rem 1rem;
     font-weight: 700;
 }
+
+button.button-bulb.full-width, a.button-bulb.full-width,
+button.button-bulb-clear.full-width, a.button-bulb-clear.full-width,
+button.button-bulb-magic.full-width, a.button-bulb-magic.full-width {
+  width: 100%;
+}
+
 
 button.button-bulb:hover, a.button-bulb:hover{
   background-color: #00943c;
@@ -399,10 +412,12 @@ button.button-bulb-clear:visited, a.button-bulb-clear:visited {
   border-radius: 5px;
   text-decoration: none;
   box-shadow: 0 0 0 0 ;
-  width:100%;
   font-size: 20px;
   padding: 0.8rem 1rem;
   font-weight: 700;
+  @media only screen and (max-width: 490px) {
+    margin-top: 10px;
+  }
 }
 
 button.button-bulb-clear:hover, a.button-bulb-clear:hover {
@@ -429,7 +444,6 @@ button.button-bulb-magic:visited, a.button-bulb-magic:visited{
   border-radius: 5px;
   text-decoration: none;
   box-shadow: 0 0 0 0 ;
-  width:100%;
   font-size: 20px;
   padding: 0.8rem 1rem;
   font-weight: 700;
@@ -496,11 +510,22 @@ button.button-bulb-magic:focus, a.button-bulb-magic:focus{
     border-bottom: 0px solid #b1b4b6;
     color: #036;
   }
+  td p, td em, td span, td, th {
+    @media only screen and (max-width: 490px) {
+      font-size: 14px;
+    }
+  }
 }
+
 
 .bulb-table2{
   td, th {
     color: #036;
+  }
+  td p, td em, td span, td, th {
+    @media only screen and (max-width: 490px) {
+      font-size: 14px;
+    }
   }
   thead {
     background-color: #f2f2f2;
