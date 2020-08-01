@@ -972,6 +972,14 @@ router.post('/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction', functio
 
 // Bulb *****************************************************************
 
+router.post('/forms/other-forms/bulb/bulb-intro', function (req, res) {
+  var name = req.session.data['bulb-name']
+  if (name === '') {
+    res.redirect('/forms/other-forms/bulb/bulb-intro')
+  }
+  res.redirect('/forms/other-forms/bulb/bulb-signin')
+})
+
 router.post('/forms/other-forms/bulb/bulb-signin', function (req, res) {
   var email = req.session.data['bulb-email']
   if (email === '') {
@@ -1247,6 +1255,14 @@ router.post('/forms/erc-forms/housing/CBLextra-reason-medical', function (req, r
   res.redirect('/forms/erc-forms/housing/CBLend')
 })
 // --------------------------------------- Patient access routes ------------------------------//
+
+router.post('/forms/other-forms/patient-access/pa-intro', function (req, res) {
+  var name = req.session.data['pa-account-name']
+  if (name === '') {
+    res.redirect('/forms/other-forms/patient-access/pa-intro')
+  }
+  res.redirect('/forms/other-forms/patient-access/pa-homepage')
+})
 
 router.post('/forms/other-forms/patient-access/pa-register', function (req, res) {
   res.redirect('/forms/other-forms/patient-access/pa-register2')
