@@ -1,0 +1,29 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Summary of your answers in part A to C</h1>
+            <h2 class="govuk-heading-m">Coming soon</h2>
+           {% from "govuk/components/button/macro.njk" import govukButton %}
+           {{ govukButton({
+            text: "Submit",
+            href: "/forms/end-feedback"
+          }) }}
+        </div>
+        <div class="student-notes-box"> 
+            <p>If your tutor / teacher requested it, you can save this page. To do this:</p>
+            <ul>
+                <li>in your browser, go to File</li>
+                <li>select Print</li>
+                <li>select Save as PDF</li>
+                <li>this will download a PDF with all your answers</li>
+                <li>email this PDF to your tutor / teacher</li>
+            </ul>
+          </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

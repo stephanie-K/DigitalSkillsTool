@@ -1,0 +1,63 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Disability</h1>
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                      <p>The Disability Discrimination Act 1995 and Amended Regulations 2005 defines disability as follows: “any physical or mental impairment which has a substantial adverse effect on a person’s ability to carry out normal day to day activities”.  
+                        We are “Positive About Disabled People”, and as such we provide job opportunities for disabled people.  
+                        We operates <strong>a Job Interview Guarantee (JIG)</strong>, which means that if you have a disability, <strong>and meet the minimum criteria outlined within the person specification</strong>, you will be guaranteed an interview.  
+                        However, some disabled people prefer not to take this option, so please tick your preference if you are a disabled candidate. </p>
+                      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                      {{ govukRadios({
+                        classes: "govuk-radios--inline",
+                        idPrefix: "work-scheme-jig",
+                        name: "work-scheme-jig",
+                        fieldset: {
+                          legend: {
+                            text: "Do you want to participate in the guarantee scheme",
+                            classes: "govuk-fieldset__legend--m"
+                          }
+                        },
+                        items: [
+                          {
+                            value: "yes",
+                            text: "Yes"
+                          },
+                          {
+                            value: "no",
+                            text: "No"
+                          }
+                        ]
+                      }) }}
+
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+                      {{ govukInput({
+                        label: {
+                          text: "Please specify any special requirements you require if attending for interview, 
+                          eg.  Induction Loop, Wheelchair Access, Signer  ",
+                          classes: "govuk-label--s"
+                        },
+                        id: "job-date-special",
+                        name: "job-date-special"
+                      }) }}
+
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

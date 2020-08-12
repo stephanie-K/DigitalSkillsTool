@@ -1,0 +1,72 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Contact details</h1>
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+              
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+              
+                      {{ govukInput({
+                        label: {
+                          text: "Phone number day",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-phone-day",
+                        name: "job-phone-day"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Phone number evening",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-phone-evening",
+                        name: "job-phone-evening"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Mobile number",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-mobile",
+                        name: "job-mobile"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Email address (if we may use this)",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-email",
+                        name: "job-email"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "If we need to, the best way for us to contact you is by:",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-prefered-contact",
+                        name: "job-prefered-contact"
+                      }) }}
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

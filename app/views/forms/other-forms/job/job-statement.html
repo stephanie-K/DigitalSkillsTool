@@ -1,0 +1,49 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Statement in Support of Application</h1>
+    
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+                      {{ govukTextarea({
+                        name: "statement",
+                        id: "statement",
+                        rows: "15",
+                        label: {
+                          text: "Please tell us your personal qualities, skills and attributes, experience and any major achievements and show how they match those needed for this job.",
+                          classes: "govuk-label--m"
+                        }
+                      }) }}
+                      <h2 class="govuk-heading-l">Where did you see the Advertisement for this Post?</h2>
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+                      {{ govukInput({
+                        label: {
+                          text: "Newspaper or professional journal (which one?), Vacancy Bulletin, Show (NHS Scotland Website) Job Centre Plus, Other? (please specificy)",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-where",
+                        name: "job-where"
+                      }) }}
+
+
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

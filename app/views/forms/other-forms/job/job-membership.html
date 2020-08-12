@@ -1,0 +1,59 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Membership of Professional or Regulatory Bodies</h1>
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+              
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+              
+                      {{ govukInput({
+                        label: {
+                          text: "Full name of organisation(s)",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-org",
+                        name: "job-org"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Registration Number",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-reg",
+                        name: "job-reg"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Renewal date",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-renewal-date",
+                        name: "job-renewal-date"
+                      }) }}
+
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+            <div class="student-notes-box"> 
+              <p>We have simplified here: you are only asked to enter one membership if relevant.</p>
+              <p>On a real form, you would need to enter all the membership or regulatory you have.</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

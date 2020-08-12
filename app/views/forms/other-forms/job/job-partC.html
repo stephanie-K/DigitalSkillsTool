@@ -1,0 +1,19 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Part C</h1>   
+           <p><strong>Only 'Part C' of this form will be made available to short-listing panels.   Parts A, B and C would then be used by the interviewing panel if you are selected for interview.</strong></p>
+           {% from "govuk/components/button/macro.njk" import govukButton %}
+           {{ govukButton({
+            text: "Continue",
+            href: "/forms/other-forms/job/job-qualifications"
+          }) }}
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

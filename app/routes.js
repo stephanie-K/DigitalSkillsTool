@@ -1416,3 +1416,58 @@ router.post('/forms/sss-forms/best-start/BS-payment-account', function (req, res
 router.post('/forms/sss-forms/best-start/BS-anything-else', function (req, res) {
   res.redirect('/forms/sss-forms/best-start/BS-check-answers')
 })
+
+// ---------------------------------------- Job application routes ---------------------------//
+
+router.post('/forms/other-forms/job/job-personal-details', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-contact')
+})
+
+router.post('/forms/other-forms/job/job-contact', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-work-rights')
+})
+
+router.post('/forms/other-forms/job/job-work-rights', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-partB')
+})
+
+router.post('/forms/other-forms/job/job-declaration', function (req, res) {
+  var agreed = req.session.data['job-read']
+  if (agreed && agreed.includes('ok')) {
+    return res.redirect('/forms/other-forms/job/job-partC')
+  }
+  req.session.data['job-read'] = 'error'
+  res.redirect('/forms/other-forms/job/job-declaration')
+})
+
+router.post('/forms/other-forms/job/job-qualifications', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-membership')
+})
+
+router.post('/forms/other-forms/job/job-membership', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-post')
+})
+
+router.post('/forms/other-forms/job/job-post', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-history')
+})
+
+router.post('/forms/other-forms/job/job-history', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-referees')
+})
+
+router.post('/forms/other-forms/job/job-referees', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-disability')
+})
+
+router.post('/forms/other-forms/job/job-disability', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-driving')
+})
+
+router.post('/forms/other-forms/job/job-driving', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-statement')
+})
+
+router.post('/forms/other-forms/job/job-statement', function (req, res) {
+  res.redirect('/forms/other-forms/job/job-partD')
+})

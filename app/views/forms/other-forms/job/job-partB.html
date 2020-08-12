@@ -1,0 +1,40 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Part B - Declarations</h1>
+            <h2 class="govuk-heading-m">Criminal Convictions Declaration</h2>
+            <p>In September 2015 the Scottish Government made changes about what conviction information needs to be disclosed. [Some offences must always be disclosed, some offences do not need to be disclosed and some offences must be disclosed in specified circumstances.]  The rules are complicated, so it is important you read the guidance below as part of making your application.</p> 
+
+            <p>NHS Scotland is exempt from the 1974 Rehabilitation of Offenders Act (Exclusions & Exceptions) (Scotland) Order 2003. As part of any offer of employment candidates will be subject to one of the following:</p> 
+            <ul class="govuk-list govuk-list--bullet">            
+                <li>For posts in regulated work – Protection of Vulnerable Groups Scheme membership </li>
+                <li>For all other posts which are subject to a criminal conviction record check – A Police Act check </li>
+                <li>For posts not subject to a criminal conviction record check – A self-declaration</li> 
+            </ul>
+
+            <p>For more information on which category this post falls under please refer to the job pack, job description or person specification.</p> 
+
+            <p>For more information on the rules visit:<br> 
+            <<a href="https://www.mygov.scot/convictions-higher-disclosures/?via=http://www.disclosurescotland.co.uk/SummaryoftheChanges.html"target="_blank" rel="noopener">https://www.mygov.scot/convictions-higher-disclosures/?via=http://www.disclosurescotland.co.uk/SummaryoftheChanges.html</a></p> 
+
+            <p>For more information on offences which must always be disclosed:<br>  
+            <a href="https://www.mygov.scot/disclosure-types/?via=http://www.disclosurescotland.co.uk/documents/HigherLevelDisclsoure--revisedAlwaysDiscloseList--8February2016.pdf" target="_blank" rel="noopener">https://www.mygov.scot/disclosure-types/?via=http://www.disclosurescotland.co.uk/documents/HigherLevelDisclsoure--revisedAlwaysDiscloseList--8February2016.pdf</a> </p>
+
+            <p class="govuk-!-margin-bottom-9">For more information on offences which are to be disclosed subject to rules:<br>
+            <a href="https://www.mygov.scot/disclosure-types/?via=http://www.disclosurescotland.co.uk/documents/HigherLevelDisclosure--revisedRulesList--8February2016.pdf" target="_blank" rel="noopener">https://www.mygov.scot/disclosure-types/?via=http://www.disclosurescotland.co.uk/documents/HigherLevelDisclosure--revisedRulesList--8February2016.pdf</a> </p>
+
+
+           {% from "govuk/components/button/macro.njk" import govukButton %}
+           {{ govukButton({
+            text: "Continue",
+            href: "/forms/other-forms/job/job-declaration"
+          }) }}
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

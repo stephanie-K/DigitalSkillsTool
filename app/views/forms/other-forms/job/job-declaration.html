@@ -1,0 +1,66 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Declaration</h1>
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                      <p>Please read the following statements. You will be asked to sign a declaration if you are appointed: </p>
+                      <ul class="govuk-list govuk-list--bullet clear-layout">
+                        <li>I have completed Parts A to D of this application form and the details I have supplied are, to the best of my knowledge, true and complete;</li>
+
+                        <li>I understand that if appointed to this post the information on this form will be kept as part of my personal file record;</li> 
+
+                        <li>I authorise you to obtain references to support the application if I am identified as a preferred candidate;</li> 
+
+                        <li>I understand that details of educational qualifications, membership of professional bodies and referee report may be verified through the establishments and individuals I have indicated;</li>
+
+                        <li>I consent to my details being kept confidentially and used for specific and lawful purposes as specified in the Data Protection Legislation; </li>
+
+                        <li>I agree to complete a criminal convictions check or a criminal convictions declaration form, if I am identified as the preferred candidate. </li> 
+                      </ul>
+                      
+                      <div class="govuk-form-group {% if data['job-read'] === 'error' %}govuk-form-group--error{% endif%}">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" id="job-read" name="job-read" type="checkbox" value="ok">
+                              <label class="govuk-label govuk-checkboxes__label" for="ok">
+                                <strong>I have read, agreed and understood</strong>
+                              </label>
+                            </div>
+                          </div>
+                          {%if data['job-read'] === 'error' %}
+                          <span id="job-read-error" class="govuk-error-message">
+                            <span class="govuk-visually-hidden">Error:</span> You must confirm you have read, agreed and understood
+                          </span>
+                          {% endif %}
+                        </fieldset>
+                      </div>
+                      <div class="govuk-form-group {% if data['job-date'] === '' %}govuk-form-group--error{% endif%}">
+                        <label class="govuk-label govuk-label--s" for="job-date">
+                          Date:
+                        </label>
+                        {%if data['job-date'] === '' %}
+                        <span id="job-date-error" class="govuk-error-message">
+                          <span class="govuk-visually-hidden">Error:</span> Enter today's date
+                        </span>
+                        {% endif %}
+                        <input class="govuk-input govuk-!-width-one-quarter {% if data['job-date'] === '' %}govuk-input--error{% endif%}" id="job-date" name="job-date" type="text">
+                      </div>
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

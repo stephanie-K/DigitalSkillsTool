@@ -1,0 +1,80 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Personal details</h1>
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+              
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+              
+                      {{ govukInput({
+                        label: {
+                          text: "Surname",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-surname",
+                        name: "job-surname"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Forname",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-forename",
+                        name: "job-forename"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Name known by (if different)",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-othername",
+                        name: "job-othername"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Title",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-input--width-5",
+                        id: "job-title",
+                        name: "job-title"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Address",
+                          classes: "govuk-label--m"
+                        },
+                        id: "job-address",
+                        name: "job-address"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Postcode",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-postcode",
+                        name: "job-postcode"
+                      }) }}
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

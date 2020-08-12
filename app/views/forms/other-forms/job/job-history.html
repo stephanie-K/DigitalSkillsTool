@@ -1,0 +1,70 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Employment history</h1>
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                      <p>Start with your most recent employment first.  If a job supports the position applied for, 
+                        please say more about it in your Application Support Statement.</p>
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+              
+                      {{ govukInput({
+                        label: {
+                          text: "Job title",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-previous-job-title",
+                        name: "job-previous-job-title"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Employer",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-employer",
+                        name: "job-employer"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Date from",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-previous-job-date-from",
+                        name: "job-previous-job-date-from"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Date to",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-previous-job-date-to",
+                        name: "job-previous-job-date-to"
+                      }) }}
+
+   
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+            <div class="student-notes-box"> 
+              <p>We have simplified here: you are only asked to enter one previous employment if relevant.</p>
+              <p>On a real form, you might need to enter all the employments you have.</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

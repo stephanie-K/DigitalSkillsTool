@@ -1004,4 +1004,33 @@ h1, h2, h3, p, a, label, li {
   border-radius: 12px;
 }
 
+// job application
 
+.job-tagline {
+  font-size: 24px !important;
+  color: white;
+  background-color: #f47522;
+  padding: 4px 10px;
+  font-weight: 600 !important;
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+  @media only screen and (max-width: 340px) {
+      font-size:16px !important;
+  }
+}
+
+.job-footer {
+  padding-top: 0;
+  border-top: solid 2px #764B9E;
+  background-color: #764B9E;
+  .govuk-footer__meta {
+    margin-top:50px;
+  }
+  li {
+    padding: 16px;
+  }
+  .govuk-footer__link {
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+  }
+}
