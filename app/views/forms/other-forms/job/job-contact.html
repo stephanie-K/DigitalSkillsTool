@@ -19,7 +19,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-phone-day",
-                        name: "job-phone-day"
+                        name: "job-phone-day",
+                        value: data ['job-phone-day']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -28,7 +29,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-phone-evening",
-                        name: "job-phone-evening"
+                        name: "job-phone-evening",
+                        value: data ['job-phone-evening']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -37,27 +39,60 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-mobile",
-                        name: "job-mobile"
+                        name: "job-mobile",
+                        value: data ['job-mobile']
                       }) }}
                       {{ govukInput({
                         label: {
-                          text: "Email address (if we may use this)",
+                          text: "Email address (optional)",
                           classes: "govuk-label--m"
+                        },
+                        hint: {
+                          text: "Add one if you agree to for us to use it to contact you"
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-email",
-                        name: "job-email"
+                        name: "job-email",
+                        value: data ['job-email']
                       }) }}
-                      {{ govukInput({
+
+
+                      {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+                      {{ govukSelect({
+                        id: "contact-by",
+                        name: "contact-by",
                         label: {
-                          text: "If we need to, the best way for us to contact you is by:",
+                          text: "Best way to contact you",
                           classes: "govuk-label--m"
                         },
-                        classes: "govuk-!-width-one-half",
-                        id: "job-prefered-contact",
-                        name: "job-prefered-contact"
+                        hint: {
+                          text: "We might need to contact you, tell us you preferred contact method"
+                        },
+                        items: [
+                        {
+                          value: "",
+                          text: "Select"
+                        },
+                          {
+                            value: "Phone during the day",
+                            text: "Phone during the day"
+                          },
+                          {
+                            value: "Phone in the evening",
+                            text: "Phone in the evening"
+                          },
+                          {
+                            value: "Mobile",
+                            text: "Mobile"
+                          },
+                          {
+                            value: "Email",
+                            text: "Email"
+                          }
+                        ]
                       }) }}
-              
+
                         {% from "govuk/components/button/macro.njk" import govukButton %}
                         {{ govukButton({
                             text: "Continue"

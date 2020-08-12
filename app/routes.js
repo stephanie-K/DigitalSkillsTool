@@ -1433,7 +1433,7 @@ router.post('/forms/other-forms/job/job-work-rights', function (req, res) {
 
 router.post('/forms/other-forms/job/job-declaration', function (req, res) {
   var agreed = req.session.data['job-read']
-  if (agreed && agreed.includes('ok')) {
+  if (agreed && agreed.includes('Yes')) {
     return res.redirect('/forms/other-forms/job/job-partC')
   }
   req.session.data['job-read'] = 'error'

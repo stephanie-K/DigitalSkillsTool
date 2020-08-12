@@ -1034,3 +1034,13 @@ h1, h2, h3, p, a, label, li {
     font-weight: 500;
   }
 }
+
+dl.summary-no-line {
+  .govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
+      border-bottom: 0 solid #b1b4b6;
+  }
+  .govuk-summary-list__value {
+    width: 70%;
+  }
+
+}

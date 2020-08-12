@@ -9,10 +9,10 @@
             <form class="form" method="post">
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds">
-                      <p>The Disability Discrimination Act 1995 and Amended Regulations 2005 defines disability as follows: “any physical or mental impairment which has a substantial adverse effect on a person’s ability to carry out normal day to day activities”.  
-                        We are “Positive About Disabled People”, and as such we provide job opportunities for disabled people.  
-                        We operates <strong>a Job Interview Guarantee (JIG)</strong>, which means that if you have a disability, <strong>and meet the minimum criteria outlined within the person specification</strong>, you will be guaranteed an interview.  
-                        However, some disabled people prefer not to take this option, so please tick your preference if you are a disabled candidate. </p>
+                      <p>The Disability Discrimination Act 1995 and Amended Regulations 2005 defines disability as follows: “any physical or mental impairment which has a substantial adverse effect on a person’s ability to carry out normal day to day activities”. </p> 
+                       <p>We are “Positive About Disabled People”, and as such we provide job opportunities for disabled people. </p> 
+                        <p>We operates <strong>a Job Interview Guarantee (JIG)</strong>, which means that if you have a disability, <strong>and meet the minimum criteria outlined within the person specification</strong>, you will be guaranteed an interview. </p> 
+                        <p>However, some disabled people prefer not to take this option, so please tick your preference if you are a disabled candidate. </p>
                       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
                       {{ govukRadios({
@@ -40,9 +40,11 @@
                       {% from "govuk/components/input/macro.njk" import govukInput %}
                       {{ govukInput({
                         label: {
-                          text: "Please specify any special requirements you require if attending for interview, 
-                          eg.  Induction Loop, Wheelchair Access, Signer  ",
-                          classes: "govuk-label--s"
+                          text: "Please specify any special requirements you require if attending for interview",
+                          classes: "govuk-label--m"
+                        },
+                        hint: {
+                          text: "eg.  Induction Loop, Wheelchair Access, Signer"
                         },
                         id: "job-date-special",
                         name: "job-date-special"

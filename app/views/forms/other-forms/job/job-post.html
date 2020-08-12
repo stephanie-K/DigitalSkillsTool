@@ -5,7 +5,7 @@
         <div class="govuk-grid-row govuk-!-margin-bottom-9">
           <div class="govuk-grid-column-full">
             <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
-            <h1 class="govuk-heading-l">Present (or most recent) Post</h1>
+            <h1 class="govuk-heading-l">Present (or most recent) post</h1>
             <form class="form" method="post">
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-two-thirds">
@@ -53,6 +53,9 @@
                           text: "Employed from",
                           classes: "govuk-label--m"
                         },
+                        hint: {
+                          text: "Date when you started this position"
+                        },
                         classes: "govuk-input--width-10",
                         id: "job-employed-from",
                         name: "job-employed-from"
@@ -62,14 +65,20 @@
                           text: "Employed to",
                           classes: "govuk-label--m"
                         },
+                        hint: {
+                          text: "Date when you left this position if applicable"
+                        },
                         classes: "govuk-input--width-10",
                         id: "job-employed-to",
                         name: "job-employed-to"
                       }) }}
                       {{ govukInput({
                         label: {
-                          text: "Reason for leaving (if applicable)",
+                          text: "Reason for leaving",
                           classes: "govuk-label--m"
+                        },
+                        hint: {
+                          text: "If applicable"
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-reason",

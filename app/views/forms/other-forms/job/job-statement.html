@@ -21,18 +21,91 @@
                           classes: "govuk-label--m"
                         }
                       }) }}
-                      <h2 class="govuk-heading-l">Where did you see the Advertisement for this Post?</h2>
-                      {% from "govuk/components/input/macro.njk" import govukInput %}
-                      {{ govukInput({
-                        label: {
-                          text: "Newspaper or professional journal (which one?), Vacancy Bulletin, Show (NHS Scotland Website) Job Centre Plus, Other? (please specificy)",
-                          classes: "govuk-label--m"
-                        },
-                        classes: "govuk-!-width-one-half",
-                        id: "job-where",
-                        name: "job-where"
-                      }) }}
 
+
+                      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+                  
+
+                      {% set newsHtml %}
+                      {{ govukInput({
+                        id: "ad-news",
+                        name: "ad-news",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                          text: "Which one"
+                        }
+                      }) }}
+                      {% endset -%}
+
+                      {% set journalHtml %}
+                      {{ govukInput({
+                        id: "ad-journal",
+                        name: "ad-journal",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                          text: "Which one"
+                        }
+                      }) }}
+                      {% endset -%}
+
+                      {% set otherwayHtml %}
+                      {{ govukInput({
+                        id: "ad-otherway",
+                        name: "ad-otherway",
+                        classes: "govuk-!-width-one-third",
+                        label: {
+                          text: "Please specificy"
+                        }
+                      }) }}
+                      {% endset -%}
+
+                      
+                      {{ govukCheckboxes({
+                        idPrefix: "ad-post",
+                        name: "ad-post",
+                        fieldset: {
+                          legend: {
+                            text: "Where did you see the Advertisement for this Post?",
+                            classes: "govuk-fieldset__legend--m"
+                          }
+                        },
+                        items: [
+                          {
+                            value: "newspaper",
+                            text: "Newspaper",
+                            conditional: {
+                              html: newsHtml
+                            }
+                          },
+                          {
+                            value: "journal",
+                            text: "Professional journal",
+                            conditional: {
+                              html: journalHtml
+                            }
+                          },
+                          {
+                            value: "bulletin",
+                            text: "Vacancy bulletin"
+                          },
+                          {
+                            value: "jobcenter",
+                            text: "Job Centre Plus"
+                          },
+                          {
+                            value: "show",
+                            text: "Show (NHS Scotland Website)"
+                          },
+                          {
+                            value: "other",
+                            text: "Other",
+                            conditional: {
+                              html: otherwayHtml
+                            }
+                          }
+                          ]
+                        }) }}
 
               
                         {% from "govuk/components/button/macro.njk" import govukButton %}

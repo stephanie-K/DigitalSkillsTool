@@ -19,25 +19,31 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-surname",
-                        name: "job-surname"
+                        name: "job-surname",
+                        value: data ['job-surname']
                       }) }}
                       {{ govukInput({
                         label: {
-                          text: "Forname",
+                          text: "Forename",
                           classes: "govuk-label--m"
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-forename",
-                        name: "job-forename"
+                        name: "job-forename",
+                        value: data ['job-forename']
                       }) }}
                       {{ govukInput({
                         label: {
-                          text: "Name known by (if different)",
+                          text: "Name known by (optional)",
                           classes: "govuk-label--m"
+                        },
+                        hint: {
+                          text: "Only if you are known by a different name"
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-othername",
-                        name: "job-othername"
+                        name: "job-othername",
+                        value: data ['job-othername']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -46,7 +52,8 @@
                         },
                         classes: "govuk-input--width-5",
                         id: "job-title",
-                        name: "job-title"
+                        name: "job-title",
+                        value: data ['job-title']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -54,7 +61,8 @@
                           classes: "govuk-label--m"
                         },
                         id: "job-address",
-                        name: "job-address"
+                        name: "job-address",
+                        value: data ['job-address']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -63,7 +71,8 @@
                         },
                         classes: "govuk-input--width-10",
                         id: "job-postcode",
-                        name: "job-postcode"
+                        name: "job-postcode",
+                        value: data ['job-postcode']
                       }) }}
               
                         {% from "govuk/components/button/macro.njk" import govukButton %}

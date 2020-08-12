@@ -37,9 +37,11 @@
                       {% from "govuk/components/input/macro.njk" import govukInput %}
                       {{ govukInput({
                         label: {
-                          text: "If yes, which categories are you entitled to drive,
-                          eg.  B, BE, C",
-                          classes: "govuk-label--s"
+                          text: "If yes, which categories are you entitled to drive",
+                          classes: "govuk-label--m"
+                        },
+                        hint: {
+                          text: "eg.  B, BE, C"
                         },
                         classes: "govuk-!-width-one-quarter",
                         id: "job-category",

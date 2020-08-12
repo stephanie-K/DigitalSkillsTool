@@ -6,7 +6,172 @@
             <div class="govuk-grid-column-full">
             <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
             <h1 class="govuk-heading-l">Summary of your answers in part A to C</h1>
-            <h2 class="govuk-heading-m">Coming soon</h2>
+            {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <h2 class="govuk-heading-m">Part A - Personal details</h2>
+            
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Surname"
+                        },
+                        value: {
+                          text: data ['job-surname']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Forename"
+                        },
+                        value: {
+                          text: data ['job-forename']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Name known by"
+                        },
+                        value: {
+                          text: data ['job-othername']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Title"
+                        },
+                        value: {
+                          text: data ['job-title']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Address"
+                        },
+                        value: {
+                          text: data ['job-address']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Postcode"
+                        },
+                        value: {
+                          text: data ['job-postcode']
+                        }
+                      }
+                    ]
+                  }) }}
+            
+            
+                  <h2 class="govuk-heading-m">Part A - Contact details</h2>
+            
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Phone number day"
+                        },
+                        value: {
+                          text: data ['job-phone-day']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Phone number evening"
+                        },
+                        value: {
+                          text: data ['job-phone-evening']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Mobile number"
+                        },
+                        value: {
+                          text: data ['job-mobile']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Email address"
+                        },
+                        value: {
+                          text: data ['job-email']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Best way to contact you"
+                        },
+                        value: {
+                          text: data ['contact-by']
+                        }
+                      }
+                    ]
+                  }) }}
+
+                  <h2 class="govuk-heading-m">Part A - Right to work</h2>
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Do you need a work permit to take up this post?"
+                        },
+                        value: {
+                          text: data ['work-permit']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Are you eligible to work in the UK?"
+                        },
+                        value: {
+                          text: data ['work-eligible']
+                        }
+                      }
+                    ]
+                  }) }}
+
+                  <hr>
+                  <br>
+                  <h2 class="govuk-heading-m">Part B - Declarations</h2>
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "I have read, agreed and understood"
+                        },
+                        value: {
+                          text: "Yes"
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Date"
+                        },
+                        value: {
+                          text: data ['job-date']
+                        }
+                      }
+                    ]
+                  }) }}
+
+                  <hr>
+                  <br>
+                  <h2 class="govuk-heading-m">Part C - Qualifications</h2>
+
+                </div>
+              </div>
+
+            <h2 class="govuk-heading-m" style="color: red">More coming soon</h2>
            {% from "govuk/components/button/macro.njk" import govukButton %}
            {{ govukButton({
             text: "Submit",
