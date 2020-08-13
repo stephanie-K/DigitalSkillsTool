@@ -1,27 +1,93 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Not ready
+Apply for an emergency driving test if you’re a critical worker
 {% endblock %}
 
 
 {% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
     <h1 class="govuk-heading-xl">
-        This page is not ready ... Sorry!
+      Apply for an emergency driving test if you’re a critical worker
     </h1>
-    <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+            
+          <p>If <a href="/forms/govuk-forms/learn-to-drive/critical-workers">you’re classed as a critical worker</a>, for example you work in a hospital or as a carer, you can apply for a practical driving test for:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>cars</li>
+            <li>motorcycles</li>
+            <li>lorries, buses and coaches</li>
+            <li>car and trailers</li>
+          </ul>
+          <p>You must be ready to take your test at short notice when you apply.</p>
+          <p>You cannot use this service to apply for emergency compulsory basic training (CBT). CBT is a training course that’s provided by motorcycle training schools.</p>
+          <p>You cannot currently book a driving test if you’re not a critical worker. Driving tests have been suspended because of coronavirus (COVID-19).</p>
 
-  </div>
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Start now",
+            href: "/forms/govuk-forms/learn-to-drive/book-driving-test/BDTsector.html",
+            isStartButton: true
+          }) }}
+
+          <h2 class="govuk-heading-m">Before you start</h2>
+              
+          <p>You need your:</p>
+          
+          <ul class="govuk-list govuk-list--bullet">
+            <li>UK driving licence number</li>
+            <li>credit or debit card</li>
+            <li>theory test pass certificate number (if you needed to pass one)</li>
+          </ul>
+          
+          <p>If you had a driving test that was cancelled because of coronavirus, you also need the test reference number.</p>
+          <p>You can check the cost of your driving test before you start.</p>
+          
+          <p>You must have lived in England, Wales or Scotland for at least 185 days in the last 12 months before the day you take your test.</p>
+          
+          <h2 class="govuk-heading-m">When you do not need a theory test</h2>
+          <p>You must usually have passed your theory test before booking.</p>
+          
+          <p>You do not need a theory test to book a:</p>
+          
+          <ul class="govuk-list govuk-list--bullet">
+            <li>test to upgrade from automatic to manual</li>
+            <li>test to progress through the motorcycle categories (progressive access)</li>
+            <li>car and trailer test</li>
+            <li>lorry and trailer test</li>
+            <li>bus and trailer test</li>
+            <li>large lorry test, when you’ve got a medium lorry licence</li>
+            <li>large bus test, when you’ve got a medium bus licence</li>
+          </ul>
+          
+          <h2 class="govuk-heading-m">Help with your application</h2>
+          <p>Contact the Driver and Vehicle Standards Agency (DVSA) to get help booking your test.</p>
+          
+          <div class="contact">
+          <p><strong>DVSA driving test booking support</strong><br>
+          customerservices@dvsa.gov.uk<br>
+          Telephone: 0300 200 1122<br>
+          Monday to Friday, 8am to 4pm<br>
+          </p>
+          </div>
+
+      </div>
+      <div class="govuk-grid-column-one-third sidebar">
+        <h2 class="govuk-heading-s" style="border-top: 2px solid #1d70b8; padding-top:19px">
+            Related content
+        </h2>
+        <ul class="govuk-list">
+          <li><a href="#">Apply for an emergency theory test if you're a critical worker</a></li>
+          <li><a href="/forms/govuk-forms/learn-to-drive/book-driving-test/BDThome">Book your driving test</a></li>
+          <li><a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTThome">Book your theory test</a></li>
+        </ul>
+    </div>
+    </div>
+
+</div> 
 
 {% endblock %}

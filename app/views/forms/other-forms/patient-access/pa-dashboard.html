@@ -1,0 +1,54 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="pa-block">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/user.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a  href="pa-my-account" class="homepage-inactive">{{ data['pa-account-name']}}</a></p>
+        </div>
+      </div> 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/home-pink.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a>Home</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/covid.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a  href="pa-covid-info.html"class="homepage-inactive">Coronavirus Information</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/advice.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a  href="pa-advice.html" class="homepage-inactive">Health Advice</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/rdv.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-booking.html" class="homepage-inactive">Appointment</a></p>
+          <hr>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/link.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-link-GP.html" class="homepage-inactive"> Link Your GP Practice</a></p>
+        </div>
+        <div class="govuk-grid-column-three-quarters pa-grey-container  govuk-!-padding-top-1">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full pa-physio-banner">
+              <h3 class="govuk-!-margin-top-5 govuk-!-margin-bottom-1">Video physio assessments now available</h3>
+              <p class="pa-subtitle">Book a video session today. <a href="pa-physio.html" class="pa-white-label homepage-inactive">Find out more</a></p>
+            </div>
+          </div>
+          <div class="govuk-grid-row govuk-!-padding-top-5">
+            <div class="govuk-grid-column-one-half govuk-!-padding-right-1">
+              <h2 class="govuk-heading-l" style="text-align: center; font-size:20px;">Upcoming appointments</h2>
+              <div class="pa-white-container" style="text-align: center;">
+                <p><image src="{{ asset_path }}images/PA/appointments.png?0.18.3p" alt="go back to homepage" width="50" height="50"></image></p>
+                <p style="color: #32325d">You have no upcoming appointments.</p>
+                <a href="pa-booking" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="margin-bottom: 30px;">
+                  New booking
+                </a>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half govuk-!-padding-left-1 ">
+              <h2 class="govuk-heading-l" style="text-align: center; font-size:20px;">NHS self-referal services</h2>
+              <div class="pa-white-container" style="text-align: center;">
+                <p><image src="{{ asset_path }}images/PA/hands.png?0.18.3p" alt="go back to homepage" width="50" height="50"></image></p>
+                <p style="color: #32325d">Find NHS self-referral services by area, or use the NHS search directory to explore other services</p>
+                <p style="font-size: 14px"><a href="https://patient.info/treatment-medication/self-referral" target="_blank" rel="noopener" style="font-size: 15px">Find services by area </a>(goes to the real website)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+</div>
+{% include "../../../includes/pa-footer.html"  %}

@@ -31,7 +31,7 @@ My booking
 
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <span class="apply-DVLA-tagline">This is a training website</span>
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -45,7 +45,7 @@ My booking
           <div class="dvsa-white-container">
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-full">
-                <table class="govuk-table">
+                <table class="govuk-table" style="overflow: auto;">
                   <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
                       <th scope="col" class="govuk-table__header small-font-dvsa">Description</th>
@@ -84,4 +84,5 @@ My booking
 {% endblock %}
 
 {% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
 {% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
+</div>
+<div class="govuk-grid-row">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+  <h1 class="govuk-heading-l">
+    If you have a medical condition
+  </h1>
+
+  <p>You will normally need to complete a medical questionnaire. If this is required
+    our medical team will contact you shortly after you have finished this application.
+    The questionnaire also enables you to provide your consent for our Medical Adviser
+    to request medical information from your doctor(s) if this is needed.</p>
+  <p>If at all possible, we will make a decision based on the information you provide on the questionnaire.
+    However, if further information is required, then our Medical Adviser may:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Contact your own doctor and/or consultant</li>
+      <li>Arrange for you to be examined by a locally appointed medical officer or local consultant/specialist</li>
+      <li>Ask you to undergo a driving assessment, eyesight or driving test</li>
+    </ul>
+  </p>
+
+  <br><br>
+  
+
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

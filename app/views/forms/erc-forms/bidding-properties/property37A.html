@@ -17,7 +17,7 @@
     <p><img src="{{ asset_path }}images/ERC/property37A.png" alt="picture of the flat" width="50%"></p>
     <div class="govuk-grid-row" style="background-color: #efefef ; padding-top: 20px">
       <div class="govuk-grid-column-one-half">
-        <p><strong>End date:</strong> 1-Sept-2020</p>
+        <p><strong>End date:</strong> {{biddingEnddate}}</p>
       </div>
       <div class="govuk-grid-column-one-half">
         <p><strong>Weekly rent:</strong> £60.84</p>
@@ -36,7 +36,7 @@
     </div>
 
 
-    <table class="govuk-table">
+    <table class="govuk-table" style="overflow: auto;">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Bids open to Priority Pass</td>
@@ -129,6 +129,10 @@
       </p>
     </div>
   </div>
+  <div class="student-notes-box">
+    <p>You can enter anything here, but on the real form, you need to make sure you enter your reference number correctly</p>
+    <p><strong>Note</strong>: this property is not really available just now, it's only for illustration</p>
+</div>
 
 {% endblock %}
 

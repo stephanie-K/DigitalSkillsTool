@@ -49,7 +49,7 @@
         <span class="govuk-visually-hidden">Error:</span> Password should not be empty
       </span>
       {% endif %}
-      <input class="govuk-input govuk-input--width-20 {% if data ['password-sign-in'] === ''%} govuk-input--error {% endif%}" id="password-sign-in" name="password-sign-in" value="{{data ['password-sign-in']}}">
+      <input class="govuk-input govuk-input--width-20 {% if data ['password-sign-in'] === ''%} govuk-input--error {% endif%}" id="password-sign-in" name="password-sign-in" value="{{data ['password-sign-in']}}" type="password">
     </div>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}

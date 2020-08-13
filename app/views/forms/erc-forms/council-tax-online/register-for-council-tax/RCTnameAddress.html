@@ -12,17 +12,17 @@ Create your online profile
       Do it online
     </h1>
 
-    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
-    <p class="erc-alt-dark-blue-bg">Name and Address</p> 
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2>
+    <p class="erc-alt-dark-blue-bg">Name and Address</p>
     <div class="govuk-heading-s erc-alt-light-grey">
       <p class="govuk-!-font-size-14">Your confirmation code has been successfully validated.</p>
       <p class="govuk-!-font-size-14">Please tell us your name and address. We will match these against the details that we already hold on our customer database.</p>
     </div>
-   
+
       <dl class="govuk-summary-list centred-input-fields">
         <div class="govuk-summary-list__row ">
           <dt class="govuk-summary-list__key">
-            <label class="govuk-label" for="rct-fullname">Full name <span style="color: red"> *</span></label>
+            <label class="govuk-label" for="rct-fullname">Full Name: <span style="color: red"> *</span></label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="govuk-input govuk-!-width-full" id="rct-fullname" name="rct-fullname" type="text" value="{{ data ['rct-fullname']}}">
@@ -31,15 +31,41 @@ Create your online profile
           </dd>
         </div>
       </dl>
-      <p class="govuk-tag red govuk-!-margin-top-1 govuk-!-margin-bottom-1">This is a work in progress</p>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="rct-address">House/Flat Number: <span</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="rct-address" name="rct-address" type="text" value="{{ data ['rct-address']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="rct-postcode">Postcode: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="rct-postcode" name="rct-postcode" type="text" value="{{ data ['rct-postcode']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+      </dl>
 
       <div class="govuk-heading-s erc-alt-light-grey govuk-!-margin-bottom-5">
-        <p class="govuk-!-font-size-14">If you're having trouble finding your address, try leaving House/Flat Number blank and searching on postcode only.'</p>
+        <p class="govuk-!-font-size-14">If you're having trouble finding your address, try leaving House/Flat Number blank and searching on postcode only.</p>
       </div>
-  
+
       {{ govukButton({
         text: "Find my address",
-        classes: "button-primary erc-alt"
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/register-for-council-tax/RCTaddressSelection"
       }) }}
 
     </div>

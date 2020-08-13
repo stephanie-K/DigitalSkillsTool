@@ -1,0 +1,52 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+  <div class="govuk-grid-row pa-block pa-purple-container">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="pa-white-container ">
+            <h1 style="font-size: 24px; font-weight: 900; line-height: 30px;">Edit Account Details</h1>
+            <form class="form" method="post">
+            <p>In order to register your new Patient Access account we need some basic information to get you set up with your correct details and provide relevant information about the service.</p>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-email">
+                Email
+              </label>
+              <input class="govuk-input" id="pa-email" name="pa-email" type="text" placeholder="{% if data['pa-email']%} {{data['pa-email']}} {% else%} your.email@gmail.com {% endif%}">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-phone">
+                Mobile number
+              </label>
+              <input class="govuk-input" id="pa-phone" name="pa-phone" type="text" placeholder="{% if data['pa-phone']%} {{data['pa-phone']}} {% else%} Your mobile number {% endif%}">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-pwd">
+                Password
+              </label>
+              <input class="govuk-input" id="pa-pwd" name="pa-pwd" type="text" placeholder="Password">
+            </div>
+      
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+            {{ govukButton({
+              text: "Save changes",
+              classes: "button-primary pa-pink-button"
+            }) }}
+            </form>
+            <p> <a href="pa-my-account.html">or Cancel</a></p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>You can put anything, we are not checking.</p>
+    <p>On the real form, you would need to make sure you enter the correct information.</p>
+  </div>
+  </main>
+  </div>
+  {% include "../../../includes/pa-footer.html"  %}

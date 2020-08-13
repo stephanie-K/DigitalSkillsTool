@@ -1,0 +1,52 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Council Tax Online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Your Home Page</p> 
+
+    <div class="ercInformation">
+      <p style="color: #004269; font-size: 14px">The email address we have for you is your.email@gmail.com. This is where we will send your receipts if you make any payments via Council Tax Online.</p>
+      <p style="color: #004269; font-size: 14px">If this is not your most recent email address, please select 'Maintain profile' to update it.</p>
+    </div>
+    <p class="govuk-heading-s erc-alt-dark-grey-round">What would you like to do now?</p>
+    <p class="govuk-!-font-size-14">If you would like to maintain your security details, email address or home address, please select 'Maintain profile'.</p>
+    <p class="govuk-!-font-size-14">If you want to access your Council Tax information, please select 'View Council Tax'. It will take a few minutes to retrieve all of your data.</p>
+
+
+      {{ govukButton({
+        text: "Log out",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/CTstart"
+      }) }}
+
+      {{ govukButton({
+        text: "Maintain profile",
+        classes: "button-primary erc-alt",
+        href: "#"
+      }) }}
+  
+      {{ govukButton({
+        text: "View Council Tax",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTview-council-tax"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>This would be your real email address here</p>
+    <p>Maintain profile doesn't work yet</p>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+  <div class="govuk-grid-row pa-block pa-grey-container" style="text-align: center;">
+    <div class="govuk-grid-column-full">
+    <h1>Would you like to link your GP practice to your account?</h1>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="pa-white-container ">
+            <p>In partnership with <image src="{{ asset_path }}images/PA/nhs.png?0.18.3p" alt="NHS Logo" width="75" height="30" style="vertical-align:middle; padding-left: 5px;"></image></p>
+            <p  style="color: #32325d">Additional features that you'll have access to by linking your GP practice:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li style="color: #32325d">Book GP appointments</li>
+              <li style="color: #32325d">Order repeat medication</li>
+              <li style="color: #32325d">View your medical record</li>
+              <li style="color: #32325d">Act on behalf of someone</li>
+              <li style="color: #32325d">Message your GP</li>
+            </ul>
+            <p>Please bear in mind that some GP practices might not support Patient Access features.</p>
+            <a href="./pa-link-GP" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="width:100%; margin-bottom: 30px;">
+              Link your GP practice
+            </a>
+            <p style="text-align: center"><a href="./pa-dashboard.html">Skip for now</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  </div>
+
+  {% include "../../../includes/pa-footer.html"  %}

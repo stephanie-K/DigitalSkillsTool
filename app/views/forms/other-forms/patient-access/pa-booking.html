@@ -1,0 +1,40 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="pa-block">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/user.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></span></image><a href="pa-my-account" class="homepage-inactive">{{ data['pa-account-name']}}</a></p>
+        </div>
+      </div> 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/home.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-dashboard.html" class="homepage-inactive">Home</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/covid.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-covid-info.html" class="homepage-inactive">Coronavirus Information</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/advice.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-advice.html" class="homepage-inactive">Health Advice</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/rdv-pink.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a >Appointment</a></p>
+          <hr>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/link.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-link-GP.html" class="homepage-inactive"> Link Your GP Practice</a></p>
+        </div>
+        <div class="govuk-grid-column-three-quarters pa-grey-container" style="text-align: center;">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half govuk-!-padding-right-1">
+              <h2 class="govuk-heading-l" style="margin: auto 12px; font-size:20px;">Upcoming appointments</h2>
+              <div class="pa-white-container" style="text-align: center;">
+                <p><image src="{{ asset_path }}images/PA/appointments.png?0.18.3p" alt="go back to homepage" width="50" height="50"></image></p>
+                <p style="color: #32325d">You have no upcoming appointments.</p>
+                <a href="pa-bookinglist" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="margin-bottom: 30px;">
+                  Book new appointment
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+</div>
+{% include "../../../includes/pa-footer.html"  %}

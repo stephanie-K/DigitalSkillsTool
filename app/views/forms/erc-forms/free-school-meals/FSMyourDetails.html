@@ -1,0 +1,142 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1  class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <!-- this is the red error message at the top, only displayed if there is an error on that form -->
+    {% if (data['FSMyourDetailsError'] === 'true')%}
+    <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
+    {% endif %}
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2>
+
+    <p class="erc-alt-dark-blue-bg">Please supply your details</p>
+    <p class="erc-alt-dark-grey-round govuk-!-font-size-14">About you - the applicant</p>
+    <p class="govuk-!-font-size-14">You can find out how we use your information in our <a href="https://www.eastrenfrewshire.gov.uk/privacy" class="govuk-!-font-size-14">privacy statement<img src="{{ asset_path }}images/ERC/pop-up.gif" style="padding: 0 5px" alt="open a new window"></a> on our website</p>
+
+    <form class="form" method="post">
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-applicant-name">Name: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-applicant-name" name="FSM-applicant-name" type="text" value="{{ data ['FSM-applicant-name']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-applicant-name'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-applicant-address">Address: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <textarea style="max-height: 400px;" class="govuk-textarea govuk-!-width-full" id="FSM-applicant-address" name="FSM-applicant-address" rows="8" >{{ data ['FSM-applicant-address']}}</textarea>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-applicant-address'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-applicant-tel-no">Contact telephone number: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="applicant-tel-no" name="FSM-applicant-tel-no" type="number" value="{{ data ['FSM-applicant-tel-no']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-applicant-tel-no'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-applicant-email">Email address: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="applicant-email" name="FSM-applicant-email" type="text" value="{{ data ['FSM-applicant-email']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-applicant-email'] === '') %}
+            <span class="error"> *</span>
+          {% elseif (data ['FSMemailValid'] === 'false')%}
+            <span class="error">* Enter a valid email address.</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-applicant-NI-no">National Insurance Number: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value tooltip">
+            <input class="govuk-input govuk-!-width-full " id="FSM-applicant-NI-no" name="FSM-applicant-NI-no" type="text" value="{{ data ['FSM-applicant-NI-no']}}" >
+            <span class="tooltiptext">Must be 2 letters, 6 numbers and then a letter or a space</span>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-applicant-NI-no'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+      </dl>
+
+
+      <p class="erc-alt-dark-grey-round govuk-!-font-size-14">About your partner</p>
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-partners-name">Your partner's name (if appropriate): </label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-partners-name" name="FSM-partners-name" type="text" value="{{ data ['FSM-partners-name']}}">
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+      </dl>
+
+
+        {{ govukButton({
+          text: "<< Back",
+          type: button,
+          classes: "button-primary erc-alt",
+          href: data['FSMyourDetails-prevPage']
+        }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          classes: "button-primary erc-alt"
+        }) }}
+
+    </form>
+
+    <div class="student-notes-box">
+      <p>"Name" means you enter your full name: this is your first name + your last name</p>
+      <p>The phone number is not checked but you need to enter some numbers in this field. It doesn't have to be a real phone number.</p>
+      <p>You don't have to enter your real National Insurance number here.</p>
+      <p>"if appropriate" means you don't have to add your partner's name, this is optional</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

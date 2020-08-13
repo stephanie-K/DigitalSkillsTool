@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
+</div>
+<div class="govuk-grid-row">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+  <h1 class="govuk-heading-l">
+    What will happen next?
+  </h1>
+
+  <p>DVLA supports the NHS organ donor registration scheme.</p>
+  <p>DVLA is pleased to facilitate the scheme, passing your name, address, date of
+    birth and gender to NHS Blood and Transplant (NHSBT) for the purpose of recording
+    your wishes to become an organ donor on the NHS Organ Donor Register.</p>
+  <p>NHSBT will match your details with your NHS number, add your name to the NHS Organ
+    Donor Register and write to you to confirm this.</p>
+  <p>It occasionally happens that people have forgotten registering on a previous occasion.
+    If NHSBT already hold your details they will update your current entry from the information
+    given today, but to keep down administrative costs, will not write to confirm this to you.</p>
+  <p>For further information, please visit www.organdonation.nhs.uk or call 0300 123 23 23.</p>
+  <p>Thank you again for registering and please do discuss organ donation with family and friends
+    so they are aware of your wishes.</p>
+
+  <br><br>
+  
+
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

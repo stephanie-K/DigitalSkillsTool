@@ -1,0 +1,33 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl">
+    My baby or babies were stillborn or have died
+  </h1>
+  <p>We're sorry to hear your baby or babies have died. You're still able to apply for Best Start Grant.</p>
+  <p>You can use the payment to help pay for anything you might need.</p>
+  <p>If you want to apply by phone, you can speak to someone who's trained to help you apply for the Best Start Grant on 0800 182 2222. The adviser will help you complete the form at your own pace.</p>
+  <br>
+
+  {{ govukButton({
+    text: " < Back",
+    classes: "sg-button-back",
+    href: "javascript: history.go(-1)"
+  }) }}
+
+  {{ govukButton({
+    text: "Next",
+    classes: "button-primary",
+    href: "/forms/sss-forms/best-start/BS-bad-3",
+    isStartButton: true
+  }) }}
+
+</div>
+
+{% endblock %}

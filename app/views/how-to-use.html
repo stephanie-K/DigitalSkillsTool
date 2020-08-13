@@ -1,0 +1,59 @@
+
+{% extends "layout_tool.html" %}
+
+{% block pageTitle %}
+  How to use this website
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl heading-title">
+        How to use this website
+      </h1>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <a class=" button-secondary govuk-button" href="/">Go to the forms menu</a>
+      <p>Watch this video or <a href="{{ asset_path }}images/help/Using_the_digital_skills_website.pdf" target="_blank" rel="noopener">look at the PDF</a> if you prefer.</p>
+    <p><iframe width="560" height="315" src="https://www.youtube.com/embed/9JQ7CNYQrpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+    <h2 class="govuk-heading-l">Using Zoom during the class</h2>
+    <p>Classes will be on Zoom initially. You will receive a link before the meeting.</p>
+    <p><a href="/help.html"><strong>Get help with Zoom</strong></a></p>
+          
+    <h2 class="govuk-heading-l">Going back to forms menu</h2>      
+    <p>You can go back to the homepage where you can find the forms menu at any time by clicking or tapping on the <strong>logo at the top left</strong>  or the "<strong>This is a training website</strong>" tag or by selecting <strong>Home</strong> in the footer.</p>
+    <p>Note that <strong>the top left logo will be different on some forms </strong>but it will still take you back on the homepage.</p>
+   
+    <h2 class="govuk-heading-l">Using a form</h2>
+    <p>You can select a form from the menu on the Homepage. It will take you to an <strong>introduction page</strong>. We will tell you what is different from the real form and will inform you if the form is not finished yet.</p>
+    <p>The form will be different from the real one. We have simplified it.</p>
+    <p>On some pages, you will see a <strong>box with some explanations below the form</strong>. They are not part of the real form. They were added to give you a bit more information about how we have changed the form.</p>
+    
+    <div class="student-notes-box">
+        <p>This is an example of explanation box</p>
+    </div>
+
+    <p>Please note that <strong>the real live form might have changed since we reproduced it here</strong>. A lot of these services are constantly improved.</p>
+    <p>Please <a href="contact.html">contact us</a> if you notice something is wrong.</p>
+    
+    <h2 class="govuk-heading-l">Clear the data</h2>  
+    <p>Anything you enter in the form is not sent anywhere but it will be 'memorised' during the session.</p>
+    <p>You should clear the data when a different person is using the same device (phone or computer). To do this, follow the link '<strong>Clear the data</strong>' in the footer.</p>
+    <p><strong>You might also want to clear the browser cache</strong> if you are not using your own device: some of the data you have entered during the session might still appear in the autocomplete functionality of your browser (Internet Explorer, Chrome, Safari for example).</p>
+    <p>If you are not sure how to do this, you can <a href="https://www.lifewire.com/how-to-clear-cache-2617980" target="_blank" rel="noopener">read this article explaining how to clear the cache of your browser</a></p>
+
+
+    <h2 class="govuk-heading-l">Any other question or feedback?</h2> 
+    <p>Please get in touch:</p>
+    <ul class="govuk-list govuk-list--bullet">
+        <li><a href="mailto:Juman.Almusawi@eastrenfrewshire.gov.uk?Subject=Digital%20Skills%20Tool%20-%20Get%20in%20touch" target="_blank" rel="noopener">Jumana Almusawi</a> for East Renfrewshire Council and any question about the classes</li>
+        <li><a href="mailto:french@chezleskrus.com?Subject=Digital%20Skills%20Tool%20-%20Get%20in%20touch" target="_blank" rel="noopener">Stéphanie Krus</a> for any question about the website and the code</li>
+      </ul>
+    </div>
+</div>
+
+{% endblock %}

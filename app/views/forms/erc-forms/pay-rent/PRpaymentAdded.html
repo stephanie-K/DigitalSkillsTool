@@ -1,0 +1,191 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Pay your council house rent
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      Rents Payment
+    </h1>
+    <p class="govuk-!-font-size-14">Please note - information on this page will time-out after 15 minutes of inactivity<br>
+      <strong>*</strong> = Mandatory Field</p>
+    
+      {% if
+      (data ['pr-reference'] === '') or
+      (data ['pr-amount'] === '') or
+      (data ['pr-name'] === '') or  
+      (data ['pr-houseno'] === '') or  
+      (data ['pr-street'] === '') or
+      (data ['pr-town'] === '') or
+      (data ['pr-postcode'] === '')
+       %}
+    <h2 class="govuk-heading-m" style="color: #0051B8;">
+      Please check the following
+    </h2>
+    <div class="payment-error">
+    <ol class="govuk-list govuk-list--number ">
+      {% if (data ['pr-reference'] === '') %} <li>Please enter a reference</li>                                       {% endif %}
+      {% if (data ['pr-amount'] === '') %}    <li>Please enter a valid amount, e.g. £50 must be entered as 50.00</li> {% endif %}
+      {% if (data ['pr-houseno'] === '') %}   <li>A building name/number must be entered</li>                         {% endif %}
+      {% if (data ['pr-name'] === '') %}      <li>A Name must be entered</li>                                         {% endif %}
+      {% if (data ['pr-street'] === '') %}    <li>A street must be entered</li>                                       {% endif %}
+      {% if (data ['pr-town'] === '') %}      <li>A town must be entered</li>                                         {% endif %}
+      {% if (data ['pr-postcode'] === '')%}     <li>A postcode must be entered</li>                                     {% endif %}
+    </ol>
+    </div>
+    {% endif %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third payment">
+        <p class="erc-payment-blue-bg">Payment type</p>
+        <p>Council Tax</a></p>
+        <p class="selected"><a href="#">Rents</a></p>
+        <p><a href="#">ER Culture and Leisure Invoice</a></p>
+        <p><a href="#">Invoice Payments</a></p>
+        <p><a href="#">Building Standards Services</a></p>
+        <p><a href="#">Planning services</a></p>
+        <p><a href="#">Housing Benefit Overpayment</a></p>
+      </div>
+      <div class="govuk-grid-column-two-thirds payment">
+        <p class="erc-payment-blue-bg">Payment entry</p>
+        <p>Please enter the reference of the account you wish to pay</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-reference">
+            Reference *
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="pr-reference" name="pr-reference" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-amount">
+            Amount (£)*
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="pr-amount" name="pr-amount" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-name">
+            Name *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="pr-name" name="pr-name" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-houseno">
+            House No OR House Name *
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="pr-houseno" name="pr-houseno" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-street">
+            Street *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="pr-street" name="pr-street" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-area">
+            Area
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="pr-area" name="pr-area" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-town">
+            Town *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="pr-town" name="pr-town" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-county">
+            County
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="pr-county" name="pr-county" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-postcode">
+            Postcode *
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="pr-postcode" name="pr-postcode" type="text">
+        </div>
+        <br>
+        {{ govukButton({
+          text: "Add to list",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+    
+        <button class="govuk-button button-primary erc-payment" data-module="govuk-button">
+          Cancel
+        </button>
+
+        {{ govukButton({
+          text: "Back to top",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+
+        <form class="form" method="post">
+
+        <h2 class="govuk-heading-m" style="color: #0051B8;">
+          Payment Review
+        </h2>
+        <div class="payment">
+          <p class="govuk-!-margin-bottom-4">To modify a payment click the Modify link. To remove a payment click the Delete link<br>
+          To make a payment, click Pay. You will be redirected to a holding page while your request is processed. You will then be directed to the next step in the payment process</p>
+
+          <table class="govuk-table" style="overflow: auto;">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Account Type</th>
+                <th scope="col" class="govuk-table__header">Amount (£)</th>
+                <th scope="col" class="govuk-table__header">Description</th>
+                <th scope="col" class="govuk-table__header">Reference</th>
+                <th scope="col" class="govuk-table__header">VAT</th>
+                <th scope="col" class="govuk-table__header"></th>
+                <th scope="col" class="govuk-table__header"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+  
+                <td class="govuk-table__cell">individual</td>
+                <td class="govuk-table__cell">{{data['pr-amount']}}</td>
+                <td class="govuk-table__cell">Rent payment</td>
+                <td class="govuk-table__cell">{{data['pr-reference']}}</td>
+                <td class="govuk-table__cell">10.00</td>
+                <td class="govuk-table__cell"><a href="/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry"><u>Modify</u></a></td>
+                <td class="govuk-table__cell"><a href="/forms/erc-forms/council-tax-online/pay-council-tax/PCTpaymentEntry"><u>Remove</u></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+
+        {{ govukButton({
+          text: "Pay",
+          classes: "button-primary erc-payment",
+          href: "/forms/erc-forms/pay-rent/PRpayment"
+        }) }}
+
+        {{ govukButton({
+          text: "Back to top",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+        </form>
+
+      </div>
+    </div>
+   
+    </div> 
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  

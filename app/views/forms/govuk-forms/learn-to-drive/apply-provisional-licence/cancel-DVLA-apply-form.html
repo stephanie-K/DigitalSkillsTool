@@ -31,7 +31,7 @@ Motoring
 
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <span class="apply-DVLA-tagline">This is a training website</span>
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
@@ -58,7 +58,7 @@ Motoring
 
           <p>If you really want to cancel, use the 'Cancel my transaction' link below to return to the motoring home page.</p>
           
-          <p><a href="/" class="red-dvla-link">Cancel my transaction</a></p>
+          <p><a href="/forms/end-feedback" class="red-dvla-link">Cancel my transaction</a></p>
           <p>If you do not wish to cancel use the 'Go back to my transaction' link below.</p>
           
           <p><a href="javascript: history.go(-1)" class="red-dvla-link">Go back to my transaction</a></p>
@@ -68,4 +68,5 @@ Motoring
 {% endblock %}
 
 {% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
 {% endblock %}

@@ -1,0 +1,37 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="pa-block">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/user.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></span></image><a href="pa-my-account" class="homepage-inactive">{{ data['pa-account-name']}}</a></p>
+        </div>
+      </div> 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/home.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-dashboard.html" class="homepage-inactive">Home</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/covid.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-covid-info.html" class="homepage-inactive">Coronavirus Information</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/advice.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-advice.html" class="homepage-inactive">Health Advice</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/rdv.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-booking.html" class="homepage-inactive">Appointment</a></p>
+          <hr>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/link.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-link-GP.html" class="homepage-inactive"> Link Your GP Practice</a></p>
+        </div>
+        <div class="govuk-grid-column-three-quarters pa-grey-container" >
+          <div class="govuk-grid-row" style="margin: 10px">
+            <p style="border-bottom: solid 1px #ddd">
+              <span class="pa-sub-menus"><a href="pa-my-account.html" class="homepage-inactive">Account settings</a></span> 
+              <span class="pa-sub-menus"><a href="pa-contact-details.html" class="homepage-inactive">Contact details</a> </span>
+              <span class="pa-sub-menus"><a>Payments methods</a></span>
+            </p>
+           <p style="font-size: 16px">Patient Access now provides access to a wider choice of healthcare services from partners that you can pay for online. You can manage your payment details below.</p>
+           <p style="font-size: 16px" class="pa-blue-block">You can add new payment methods when booking a paid appointment.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+</main>
+</div>
+{% include "../../../includes/pa-footer.html"  %}

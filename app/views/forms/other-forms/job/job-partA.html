@@ -1,0 +1,23 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <div class="govuk-grid-column-full">
+                <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+                <h1 class="govuk-heading-l">Part A</h1>
+                <p>No applicant will be unfairly discriminated against.  We are particularly alert to eliminating discrimination on account of age, cultural/religious/political belief, disability, ethnicity, gender, race, relationship status, sexual orientation, and/or Trade Union membership or stewardship.</p>
+                <p><strong>Only 'Part C' of this form will be made available to short-listing panels.</p>
+                <p class="govuk-!-margin-bottom-9">Parts A, B and C would then be used by the interviewing panel if you are selected for interview.</strong></p>
+                {% from "govuk/components/button/macro.njk" import govukButton %}
+                {{ govukButton({
+                    text: "Continue",
+                    href: "/forms/other-forms/job/job-personal-details"
+                }) }}
+            </div>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

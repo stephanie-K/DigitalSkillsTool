@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
+</div>
+<div class="govuk-grid-row">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+  <h1 class="govuk-heading-l">
+      Using your personal details
+  </h1>
+  <h2 class="govuk-heading-m">What we do about security</h2>
+  <h3 class="govuk-heading-s">Secure connections and encryption</h3>
+  <p>DVLA needs these personal details to complete this transaction. Your personal details are used to:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>check your identity</li>
+      <li>check if a driver record exists for you</li>
+      <li>create your photocard licence when all validation checks have been completed</li>
+    </ul></p>
+  <p>Your personal details include:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>title - select one of the options on the list - if the option you need does not appear on the list, select 'Other' and enter the title you need</li>
+      <li>surname - enter your last name here</li>
+      <li>forename(s) - enter your first name here - if you have middle name(s), enter them here leaving a space between each name</li>
+      <li>gender - select one of the options on the list</li>
+      <li>date of birth - select the day, month and year in which you were born</li>
+      <li>country of birth - select the country where you were born</li>
+    </ul>
+  </p>
+
+
+  <br><br>
+  
+
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

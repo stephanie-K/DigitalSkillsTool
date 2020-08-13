@@ -1,0 +1,77 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl">
+    If you signed up for a Baby Box
+  </h1>
+  <p style="margin:0px 0px 20px 0px;">We can contact Baby Box to confirm the details of your pregnancy. If you agree to this, you do not need to contact Baby Box, or send us any forms or documents about your pregnancy. We'll do this for you.</p>
+  <p>If you do not want us to contact Baby Box, you'll need to send us a document, such as a Maternity B1 (MATB1) certificate.</p>
+
+  <form class="form" method="post">
+
+    <div class="govuk-form-group" style="padding:0px; margin:40px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <p><strong>Have you signed up for a Baby Box?</strong></p>
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-box-conditional" name="BSG-baby-box-check" type="radio" value="Yes" data-aria-controls="conditional-baby-box-conditional">
+            <label class="govuk-label govuk-radios__label" for="baby-box-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-box-2" name="BSG-baby-box-check" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="baby-box-2">
+              No
+            </label>
+          </div>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-baby-box-conditional" style="border:none; padding:0px; margin:0px;">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <p><strong>Can we use your Baby Box details to confirm your pregnancy?</strong></p>
+                <div class="govuk-radios govuk-radios--small">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="BSG-baby-box-details" name="BSG-baby-box-details" type="radio" value="Yes">
+                    <label class="govuk-label govuk-radios__label" for="BSG-baby-box-details">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="BSG-baby-box-details-2" name="BSG-baby-box-details" type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="BSG-baby-box-details-2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <br>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukButton({
+      text: " < Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+
+  </form>
+</div>
+
+{% endblock %}

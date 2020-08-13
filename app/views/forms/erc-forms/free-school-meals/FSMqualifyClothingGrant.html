@@ -1,0 +1,42 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1  class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2>
+
+    <p class="erc-alt-dark-blue-bg">Do I qualify?</p>
+    <p class="erc-alt-dark-grey-round">You qualify for a clothing grant of £100 per pupil but not free school meals</p>
+
+    <p class="govuk-!-font-size-14">We will confirm from our records that you are in receipt of the benefits indicated. If you are not already on our benefit system we may contact you for proof.</p>
+    <p class="govuk-!-font-size-14">Payment will normally be made to your bank account within 15 working days of receiving your application and verifying your eligibility. If your child is 16 or over, you have made a placing request, your child is entering P1 or S1 or has moved school, payment will be made after attendance at school has been confirmed.</p>
+
+
+    <br>
+    <form method="post">
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/free-school-meals/FSMcouncilTaxReduction"
+      }) }}
+
+      {{ govukButton({
+        text: "Apply",
+        classes: "button-primary erc-alt"
+      }) }}
+
+    </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -39,12 +39,13 @@ Account created
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "Start claim"
+        text: "Start claim",
+        classes: "govuk-button--secondary"
       }) }}
     </main>
   </div>
 
-  <p><a href="/">Return to the form menu</a></p>
+  <p><a class="govuk-!-padding-left-5 govuk-!-padding-right-5 govuk-body govuk-!-margin-bottom-9 button-primary govuk-button" href="/forms/end-feedback">Next</a></p>
 
   <div class="student-notes-box"> 
     <p>This is the end of the exercice where you create an account for now.</p>

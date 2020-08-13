@@ -1,0 +1,90 @@
+{% include "../../../includes/bulb-header.html"  %}
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+        <div class="govuk-grid-column-full">
+            <a href="javascript: history.go(-1)" style="color:#00ab55; text-decoration: none; font-weight: 600; font-size: 20px">&lt; Back</a>
+            <h1>Payment details</h1>
+            <div class="bulb-white-container ">
+              <p class="govuk-!-font-size-27">Payment settings</p>
+              <p>This is when your payment comes out, and how much you pay each month.</p>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="payment-date">
+                  Payment date
+                </label>
+                <select class="govuk-select" id="payment-date" name="payment-date">
+                  <option value="1">1st</option>
+                  <option value="2">2nd</option>
+                  <option value="3">3rd</option>
+                  <option value="4">4th</option>
+                  <option value="5">5th</option>
+                  <option value="6">6th</option>
+                  <option value="7">7th</option>
+                  <option value="8">8th</option>
+                  <option value="9">9th</option>
+                  <option value="10">10th</option>
+                  <option value="11">11th</option>
+                  <option value="12">12th</option>
+                  <option value="13">13th</option>
+                  <option value="14">14th</option>
+                  <option value="15">15th</option>
+                  <option value="16">16th</option>
+                  <option value="17">17th</option>
+                  <option value="18">18th</option>
+                  <option value="19">19th</option>
+                  <option value="20">20th</option>
+                  <option value="21">21st</option>
+                  <option value="22">22nd</option>
+                  <option value="23">23rd</option>
+                  <option value="24">24th</option>
+                  <option value="25">25th</option>
+                  <option value="26">26th</option>
+                  <option value="27">27th</option>
+                  <option value="28">28th</option>
+                </select>
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="bulb-monthly-pay">Monthly payment amount</label>
+                <p class="govuk-!-font-size-16">We recommend £35.00 a month, based on your usage.</p>
+                <input class="govuk-input govuk-input--width-5" id="bulb-monthly-pay" name="bulb-monthly-pay" type="text" placeholder="£ 35.00">
+              </div>
+              <p class="govuk-!-font-size-16">Minimum amount £35.00. This is to stop your account from building up a lot of debit. Get in touch if you think this amount is too high, or if you are having trouble paying.</p>
+              <p>Your pending payment of £50.00 will still go through. Changes take five days to come into effect.</p>
+              <a href="#" role="button" draggable="false" class="govuk-button button-primary button-bulb" data-module="govuk-button" >
+                Update payment settings
+              </a>
+            </div>
+          
+            <div class="bulb-white-container ">
+              <p class="govuk-!-font-size-27">Payment method</p>
+              <div style="background-color: #f2f2f2; padding: 20px">
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-one-third">
+                    <p style="padding-top: 20px"><image src="{{ asset_path }}/images/bulb/dd.png" alt="go back to homepage" width="149" height="45"></image></p>
+                  </div>
+                  <div class="govuk-grid-column-one-third">
+                    <p><strong>Account holder name</strong></p>
+                    <p>Sam McTest</p>
+                  </div>
+                  <div class="govuk-grid-column-one-third">
+                    <p><strong>Account number</strong></p>
+                    <p>*****702</p>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <a href="#" role="button" draggable="false" class="govuk-button button-primary button-bulb" data-module="govuk-button" >
+                Change payment method
+              </a>
+            </div>
+
+        </div>
+      </div>
+      <div class="student-notes-box-bulb"> 
+        <p>This is just for illustration - not real values.</p>
+        <p>The buttons don't work, this page is just to give you an idea of the options you would have on the real form.</p>
+      </div>
+  </main>
+</div>
+
+{% include "../../../includes/bulb-footer.html"  %}

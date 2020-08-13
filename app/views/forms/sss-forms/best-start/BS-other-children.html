@@ -1,0 +1,152 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl">
+    Other children between 6 months and 16 years old
+  </h1>
+  <p>We need to know about all your children aged between 6 months and 16 years old so that we can make sure we pay you the right amount of Best Start Grant.</p>
+  <p>We'll check whether you can get:</p>
+  <ul class="govuk-list govuk-list--bullet" style="margin:0px 0px 20px">
+    <li>the Early Learning Payment for children aged between 2 years and 3 years 6 months old</li>
+    <li>the School Age Payment for children aged around 4 or 5 years old</li>
+    <li>the Best Start Foods payment for children under 3 years old</li>
+  </ul>
+
+  <form class="form" method="post">
+
+    <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <p><strong>Do you have any children between 6 months and 16 years old?</strong></p>
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="other-child-conditional" name="BSG-other-child-check" type="radio" value="Yes" data-aria-controls="conditional-other-child-conditional">
+            <label class="govuk-label govuk-radios__label" for="other-child-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item" style="margin:0px 0px 40px 0px;">
+            <input class="govuk-radios__input" id="other-child-2" name="BSG-other-child-check" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="other-child-2">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-other-child-conditional" style="border:none; padding:0px; margin:0px;">
+            <h1 class="govuk-heading-m">
+              Child
+            </h1>
+
+            <div class="govuk-form-group" style="margin:0; padding:0;">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="BSG-other-child-first-name">
+                  First name(s)
+                </label>
+              </h1>
+              <input class="govuk-input govuk-input--width-20" id="BSG-other-child-first-name" name="BSG-other-child-first-name" type="text" value="{{ data ['BSG-other-child-first-name']}}">
+            </div>
+
+            <div class="govuk-form-group" style="margin:0;">
+              <h1 class="govuk-label-wrapper">
+                <label class="govuk-label govuk-label--m" for="BSG-other-child-last-name">
+                  Last name
+                </label>
+              </h1>
+              <input class="govuk-input govuk-input--width-20" id="BSG-other-child-last-name" name="BSG-other-child-last-name" type="text" value="{{ data ['BSG-other-child-last-name']}}">
+            </div>
+
+            <div class="govuk-form-group" style="margin:0px 0px 0px 0px;">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="other-child-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  <h1 class="govuk-fieldset__heading">
+                    Date of birth
+                  </h1>
+                </legend>
+                <span id="other-child-hint" class="govuk-hint" style="color:black;">
+                  Enter like this: 31 10 2018
+                </span>
+                <div class="govuk-date-input" id="other-child">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="BSG-other-child-day">
+                        <strong>Day</strong>
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-other-child-day" name="BSG-other-child-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-other-child-day']}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="BSG-other-child-month">
+                        <strong>Month</strong>
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-other-child-month" name="BSG-other-child-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-other-child-month']}}">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="BSG-other-child-year">
+                        <strong>Year</strong>
+                      </label>
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-other-child-year" name="BSG-other-child-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-other-child-year']}}">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
+              classes: "govuk-radios--small",
+              idPrefix: "BSG-other-child-on-benefits",
+              name: "BSG-other-child-on-benefits",
+              fieldset: {
+                legend: {
+                  text: "Is this child named on either your or your partner's Child Benefit, Child Tax Credit, Universal Credit or Pension Credit claim?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+              {
+                value: "Yes",
+                text: "Yes",
+                checked: checked("BSG-other-child-on-benefits", "Yes")
+              },
+              {
+                value: "No",
+                text: "No",
+                checked: checked("BSG-other-child-on-benefits", "No")
+              }
+              ]
+            }) }}
+
+          </div>
+          <br>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukButton({
+      text: " < Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+
+  </form>
+</div>
+
+{% endblock %}

@@ -146,11 +146,26 @@ To-do list - Universal Credit
       {% endif %}
     </div>
   </div>
+  {% if  data['nationality-done']
+  and data['housing-done']
+  and data['withyou-done']
+  and data['work-done']
+  and data['saving-done']
+  and data['income-done']
+  and data['education-done']
+  and data['health-done']
+  and data['caring-done']
+  and data['bank-done']
+  %}
+<p>  We don't know what happen once all the actions are completed...</p>
+<p><a class="govuk-!-padding-left-5 govuk-!-padding-right-5 govuk-body govuk-!-margin-bottom-9 button-primary govuk-button" href="/forms/end-feedback">Next</a></p>
+  {% else %}
   <div class="govuk-grid-row govuk-!-margin-top-9 ">
     <div class="govuk-grid-column-full">
     <p><strong><a href="/forms/govuk-forms/universal-credit-apply/UCAjournal">See a record of completed to-dos in your journal</a></strong></p>
   </div>
 </div>
+{% endif %}
 </div>
 
 
@@ -158,7 +173,7 @@ To-do list - Universal Credit
 
 
   <div class="student-notes-box"> 
-    <p>On the page, you will see in green the task you have just completed. Next time you come back, this action will disappear from the page</p>
+    <p>On the page, you will see in green the task you have just completed. Next time you come back, this task will disappear from the page</p>
     <p>We don't know what happen once all the actions are completed...</p>
   </div>
 

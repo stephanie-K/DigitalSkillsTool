@@ -1,0 +1,104 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0;">
+    Your details
+  </h1>
+
+  <form class="form" method="post">
+      <div class="govuk-form-group" style="margin:0;">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="BSG-your-first-name">
+          First name(s)
+        </label>
+      </h1>
+      <input class="govuk-input govuk-input--width-20" id="BSG-your-first-name" name="BSG-your-first-name" type="text" value="{{ data ['BSG-your-first-name']}}">
+    </div>
+
+    <div class="govuk-form-group" style="margin:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-your-last-name">
+        Last name
+      </label>
+    </h1>
+    <input class="govuk-input govuk-input--width-20" id="BSG-your-last-name" name="BSG-your-last-name" type="text" value="{{ data ['BSG-your-last-name']}}">
+    </div>
+
+    <div class="govuk-form-group" style="margin:0;">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Date of birth
+          </h1>
+        </legend>
+        <span id="dob-hint" class="govuk-hint" style="color:black;">
+          Enter like this: 31 03 1980
+        </span>
+        <div class="govuk-date-input" id="dob">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-your-dob-day">
+                <strong>Day</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-your-dob-day" name="BSG-your-dob-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-your-dob-day']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-your-dob-month">
+                <strong>Month</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-your-dob-month" name="BSG-your-dob-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-your-dob-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-your-dob-year">
+                <strong>Year</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-your-dob-year" name="BSG-your-dob-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-your-dob-year']}}">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-form-group" style="margin:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-your-ni-number">
+        National Insurance number  <span style="font-size:18px; color:#C0C0C0">(if you know it)</span>
+      </label>
+    </h1>
+    <p>It's on your National Insurance card, benefit letter, payslip or P60
+    For example: QQ 12 34 56 C</p>
+    <input class="govuk-input govuk-input--width-20" id="BSG-your-ni-number" name="BSG-your-ni-number" type="text" value="{{ data ['BSG-your-ni-number']}}">
+    </div>
+
+    <hr style="margin:20px 0px 0px 0px">
+    <p><image src="{{ asset_path }}/images/SG/note.png" alt="information"></image>
+      <span style="font-size:17px; padding-left:10px; margin:40px 0px 0px 0px">If you do not let us know your National Insurance number, it may take longer for us to process your application.</span></p>
+    <hr style="margin:0px 0px 60px 0px">
+
+
+    {{ govukButton({
+      text: " < Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="pa-block">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/user.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></span></image><a href="pa-my-account" class="homepage-inactive">{{ data['pa-account-name']}}</a></p>
+        </div>
+      </div> 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/home.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-dashboard.html" class="homepage-inactive">Home</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/covid.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-covid-info.html" class="homepage-inactive">Coronavirus Information</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/advice-pink.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a>Health Advice</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/rdv.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-booking.html" class="homepage-inactive">Appointment</a></p>
+          <hr>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/link.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-link-GP.html" class="homepage-inactive"> Link Your GP Practice</a></p>
+        </div>
+        <div class="govuk-grid-column-three-quarters pa-grey-container" style="text-align: center;">
+          <h1>This is how it would look like</h1>
+          <a>Below is a screenshot of the real screen<br>There is too much to re-create the page here sorry!</a>
+          <p><image src="{{ asset_path }}images/PA/advices.png?0.18.3p" alt="screenshot of the real page, there is a search box and categories to pick from in alphabatical order" width="100%"></image></p>
+        </div>
+      </div>
+    </div>
+    <div class="student-notes-box"> 
+      <p>There is too much to re-create the page, you can <a href="pa-dashboard.html">go back to the dashboard</a> to try something else.</p>
+    </div>
+</main>
+</div>
+{% include "../../../includes/pa-footer.html"  %}

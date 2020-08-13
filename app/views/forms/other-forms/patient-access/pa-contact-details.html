@@ -1,0 +1,52 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="pa-block">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/user.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></span></image><a href="pa-my-account" class="homepage-inactive">{{ data['pa-account-name']}}</a></p>
+        </div>
+      </div> 
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/home.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-dashboard.html" class="homepage-inactive">Home</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/covid.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-covid-info.html" class="homepage-inactive">Coronavirus Information</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/advice.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-advice.html" class="homepage-inactive">Health Advice</a></p>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/rdv.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-booking.html" class="homepage-inactive">Appointment</a></p>
+          <hr>
+          <p style="font-size: 15px"><span style="padding-right: 10px"><image src="{{ asset_path }}images/PA/link.png?0.18.3p" alt="" width="30" height="30" style="vertical-align:middle;"></image></span><a href="pa-link-GP.html" class="homepage-inactive"> Link Your GP Practice</a></p>
+        </div>
+        <div class="govuk-grid-column-three-quarters pa-grey-container" >
+          <div class="govuk-grid-row" style="margin: 10px">
+            <p style="border-bottom: solid 1px #ddd">
+              <span class="pa-sub-menus"><a href="pa-my-account.html" class="homepage-inactive">Account settings</a></span> 
+              <span class="pa-sub-menus"><a>Contact details</a></span> 
+              <span class="pa-sub-menus"><a href="pa-payment-method" class="homepage-inactive">Payments methods</a></span>
+            </p>
+           <h1>Contact details</h1>
+           <div class="pa-white-container">
+            <p><strong>Name:</strong> {% if data['pa-first-name']%} {{data['pa-first-name']}} {% else %} ? {% endif%} {% if data['pa-last-name']%} {{data['pa-last-name']}} {% else%} ? {% endif%} </p>
+            <p><strong>Date of birth:</strong> 
+              {% if data['pa-date-of-birth-day']%} {{data['pa-date-of-birth-day']}}/{% else %}?/{% endif%}
+              {% if (data['pa-DOBmonth'] === '') or not (data['pa-DOBmonth'])%}?/{% else %}{{data['pa-DOBmonth']}}/{% endif%} 
+              {% if data['pa-date-of-birth-year']%}{{data['pa-date-of-birth-year']}} {% else %}?{% endif%}</p>
+            <p><strong>Gender:</strong> {% if (data['pa-gender'] === '') or not (data['pa-gender'])%} Not specified {% else%} {{data['pa-gender']}}{% endif%}</p>
+            <p><strong>Home postcode:</strong> {% if data['pa-postcode']%} {{data['pa-postcode']}} {% else%}?{% endif%}</p>
+           </div>
+           {% from "govuk/components/button/macro.njk" import govukButton %}
+           {{ govukButton({
+             text: "Edit",
+             classes: "button-primary pa-pink-button",
+             href: "pa-change-details"
+           }) }}
+
+        </div>
+      </div>
+      </div>
+    </div>
+</main>
+</div>
+{% include "../../../includes/pa-footer.html"  %}

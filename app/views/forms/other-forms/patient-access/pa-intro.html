@@ -1,0 +1,55 @@
+{% extends "layout_tool.html" %}
+
+{% block pageTitle %}
+  About this form
+{% endblock %}
+
+
+{% block content %}
+
+<h1 class="govuk-heading-xl heading-title">
+  About this form
+</h1>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+
+  <a class=" button-secondary govuk-button" href="/">Go to the forms menu</a>
+
+  <p>It looks like the real website but it's a bit different and simplified</p>
+  <h2 class="govuk-heading-m">
+    Please note:
+  </h2>
+<ul class="govuk-list govuk-list--bullet">
+  <li>You can see how to create and managed your account and how to sign in</li>
+  <li>making a booking is not ready</li>
+</ul>
+
+<h2 class="govuk-heading-s">
+  At any time, selecting the logo at the top left will take you back to the start (forms menu)
+</h2>
+<p>On the dashboard of the real website, your name is displayed.</p>
+
+<form class="form" method="post" novalidate>
+<div class="govuk-form-group {% if data ['pa-account-name'] === '' %} govuk-form-group--error {% endif %}">
+  <label class="govuk-label" for="pa-account-name">
+    Enter your full name here so we can display it on the dashboard later
+  </label>
+  {% if data ['pa-account-name'] === '' %}  
+  <span id="pa-account-name-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Enter your full name
+  </span>
+  {% endif %}
+  <input class="govuk-input govuk-input--width-20" {% if data ['pa-account-name'] === '' %} style="border: 4px solid #d4351c;"{% endif %} id="pa-account-name" name="pa-account-name" type="text">
+</div>
+  {{ govukButton({
+    text: "Start the form",
+    classes: "button-primary button-info"
+  }) }}
+  </form>
+</div>
+<div class="student-notes-box"> 
+  <p>If you see a box like this on a page, it's not part of the real website.</p>
+  <p> It's instructions to help you.</p>
+</div>
+
+
+{% endblock %}

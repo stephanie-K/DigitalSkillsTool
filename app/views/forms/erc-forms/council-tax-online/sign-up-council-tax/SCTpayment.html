@@ -1,0 +1,145 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Council Tax Online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Make a payment </p> 
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds payment">
+        <p class="erc-payment-blue-bg">Card Details</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-cardnumber">
+            Enter card number without spaces *
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="sct-cardnumber" name="sct-cardnumber" type="text" value="{{data['sct-cardnumber']}}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-expiry">
+            Expiry date (month, year) *
+          </label>
+          <select class="govuk-select" id="expiry-month" name="expiry-month" style="border: 1px solid #1a1a1a; height: 2rem; font-size: 14px;">
+            <option value="-1" style="color: #999;" selected="selected"></option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+
+          <select class="govuk-select" id="expiry-year" name="expiry-year" style="border: 1px solid #1a1a1a; height: 2rem; font-size: 14px;">
+            <option value="-1" style="color: #999;" selected="selected"></option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+          </select>
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-issue-number">
+            Issue Number (Switch/Maestro Card only)
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="sct-issue-number" name="sct-issue-number" type="text" value="{{data['sct-issue-number']}}">
+        </div>
+        <div class="govuk-form-group govuk-!-margin-bottom-9">
+          <label class="govuk-label" for="sct-security-code">
+            Security code *
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="sct-security-code" name="sct-security-code" type="text" value="{{data['sct-security-code']}}">
+        </div>
+
+
+        <p class="erc-payment-blue-bg">Card Account Details</p>
+        <div class="govuk-form-group">
+          <p>Enter cardholder name and address details:</p>
+          <label class="govuk-label" for="sct-name-on-card">
+            Name appearing on card *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="sct-name-on-card" name="sct-name-on-card" type="text" value="{{data['sct-name-on-card']}}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-houseno-on-card">
+            House number / name *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="sct-houseno-on-card" name="sct-houseno-on-card" type="text" value="{{data['sct-houseno-on-card']}}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-street-on-card">
+            Street *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="sct-street-on-card" name="sct-street-on-card" type="text" value="{{data['sct-street-on-card']}}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-area-on-card">
+            Area
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="sct-area-on-card" name="sct-area-on-card" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-town-on-card">
+            Town *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="sct-town-on-card" name="sct-town-on-card" type="text" value="{{data['sct-town-on-card']}}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-county-on-card">
+            County
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="sct-county-on-card" name="sct-county-on-card" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sct-postcode-on-card">
+            Postcode *
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="sct-postcode-on-card" name="sct-postcode-on-card" type="text" value="{{data['sct-postcode-on-card']}}">
+        </div>
+        <br>
+
+        {{ govukButton({
+          text: "Back",
+          classes: "button-primary erc-payment",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+        {{ govukButton({
+          text: "Submit",
+          classes: "button-primary erc-payment",
+          href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTpayment-processed"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel Payment",
+          classes: "button-primary erc-payment",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+
+      </div>
+    </div>
+
+    <div class="student-notes-box"> 
+      <p>This might not look at al like the real form - we didn't see it</p>
+      <p>You can enter anything here.</p>
+    </div>
+
+    </div>
+  </div>
+
+{% endblock %}

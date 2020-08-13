@@ -1,0 +1,172 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1  class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <!-- this is the red error message at the top, only displayed if there is an error on that form -->
+    {% if (data['FSMaboutChildError'] === 'true')%}
+    <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
+    {% endif %}
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2>
+
+    <p class="erc-alt-dark-blue-bg">About your child / children</p>
+    <p class="erc-alt-light-grey">Please complete for each child you are claiming for.</p>
+
+    <form class="form" method="post">
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-first-name">First Name: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-child-first-name" name="FSM-child-first-name" type="text" value="{{ data ['FSM-child-first-name']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-child-first-name'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-surname">Surname: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-child-surname" name="FSM-child-surname" type="text" value="{{ data ['FSM-child-surname']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-child-surname'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-dob">Date of birth: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <input class="govuk-input govuk-!-width-full" id="FSM-child-dob" name="FSM-child-dob" type="date" value="{{ data ['FSM-child-dob']}}">
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          {% if (data ['FSM-child-dob'] === '') %}
+            <span class="error"> *</span>
+          {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-sex">Sex: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <div class="govuk-radios govuk-radios--small govuk-radios--inline">
+              <div class="govuk-radios__item">
+                {% if (data ['FSM-child-sex'] === 'male') %}
+                  <input class="govuk-radios__input" id="FSM-child-sex" name="FSM-child-sex" type="radio" value="male" checked>
+                {% else %}
+                  <input class="govuk-radios__input" id="FSM-child-sex" name="FSM-child-sex" type="radio" value="male">
+                {% endif %}
+                <label class="govuk-label govuk-radios__label" for="FSM-child-sex-male">
+                  Male
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                {% if (data ['FSM-child-sex'] === 'female') %}
+                  <input class="govuk-radios__input" id="FSM-child-sex-2" name="FSM-child-sex" type="radio" value="female" checked>
+                {% else %}
+                  <input class="govuk-radios__input" id="FSM-child-sex-2" name="FSM-child-sex" type="radio" value="female">
+                {% endif %}
+                <label class="govuk-label govuk-radios__label" for="FSM-child-sex-female">
+                  Female
+                </label>
+              </div>
+            </div>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            {% if (data ['FSM-sexInvalid'] === 'true') %}
+              <span class="error"> *</span>
+            {% endif %}
+          </dd>
+        </div>
+
+      </dl>
+
+      <dl class="govuk-summary-list centred-input-fields">
+        <div class="govuk-summary-list__row ">
+          <dt class="govuk-summary-list__key">
+            <label class="govuk-label" for="FSM-child-school">School attended from August of year 2020/2021: <span style="color: red"> *</span></label>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <select id="FSM-child-school" name="FSM-child-school"  class="govuk-select">
+              <option value="default" title=""></option>
+              <option value="Barrhead High" title="Barrhead High">Barrhead High</option>
+              <option value="Braidbar Primary" title="Braidbar Primary">Braidbar Primary</option>
+              <option value="Busby Primary" title="Busby Primary">Busby Primary</option>
+              <option value="Calderwood Lodge Primary" title="Calderwood Lodge Primary">Calderwood Lodge Primary</option>
+              <option value="Carlibar Primary" title="Carlibar Primary">Carlibar Primary</option>
+              <option value="Carolside Primary" title="Carolside Primary">Carolside Primary</option>
+              <option value="Crookfur Primary" title="Crookfur Primary">Crookfur Primary</option>
+              <option value="Cross Arthurlie Primary" title="Cross Arthurlie Primary">Cross Arthurlie Primary</option>
+              <option value="Eaglesham Primary" title="Eaglesham Primary">Eaglesham Primary</option>
+              <option value="Eastwood High" title="Eastwood High">Eastwood High</option>
+              <option value="Giffnock Primary" title="Giffnock Primary">Giffnock Primary</option>
+              <option value="Hillview Primary" title="Hillview Primary">Hillview Primary</option>
+              <option value="Isobel Mair School" title="Isobel Mair School">Isobel Mair School</option>
+              <option value="Kirkhill Primary" title="Kirkhill Primary">Kirkhill Primary</option>
+              <option value="Maidenhill Primary" title="Maidenhill Primary">Maidenhill Primary</option>
+              <option value="Mary Russell" title="Mary Russell">Mary Russell</option>
+              <option value="Mearns Castle High" title="Mearns Castle High">Mearns Castle High</option>
+              <option value="Mearns Primary" title="Mearns Primary">Mearns Primary</option>
+              <option value="Neilston Primary" title="Neilston Primary">Neilston Primary</option>
+              <option value="Netherlee Primary" title="Netherlee Primary">Netherlee Primary</option>
+              <option value="Our Lady of the Missions Primary" title="Our Lady of the Missions Primary">Our Lady of the Missions Primary</option>
+              <option value="Robslee Primary" title="Robslee Primary">Robslee Primary</option>
+              <option value="Spark of Genius" title="Spark of Genius">Spark of Genius</option>
+              <option value="St Cadoc's Primary" title="St Cadoc's Primary">St Cadoc's Primary</option>
+              <option value="St Clare's Primary" title="St Clare's Primary">St Clare's Primary</option>
+              <option value="St John's Primary" title="St John's Primary">St John's Primary</option>
+              <option value="St Joseph's Primary" title="St Joseph's Primary">St Joseph's Primary</option>
+              <option value="St Luke's High" title="St Luke's High">St Luke's High</option>
+              <option value="St Mark's Primary" title="St Mark's Primary">St Mark's Primary</option>
+              <option value="St Ninian's High" title="St Ninian's High">St Ninian's High</option>
+              <option value="St Thomas' Primary" title="St Thomas' Primary">St Thomas' Primary</option>
+              <option value="Thornliebank Primary" title="Thornliebank Primary">Thornliebank Primary</option>
+              <option value="Uplawmoor Primary" title="Uplawmoor Primary">Uplawmoor Primary</option>
+              <option value="Williamwood High" title="Williamwood High">Williamwood High</option>
+              <option value="Woodfarm High" title="Woodfarm High">Woodfarm High</option></select>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+          </dd>
+        </div>
+
+      </dl>
+
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/free-school-meals/FSMbankDetails"
+      }) }}
+
+      {{ govukButton({
+        text: "Submit claim",
+        classes: "button-primary erc-alt"
+      }) }}
+    </form>
+  </div>
+</div>
+<div class="student-notes-box">
+  <p>For the date of birth you can select the date, or if you prefer, you can type the date like that for example: 02/03/2014 </p>
+
+</div>
+
+{% endblock %}

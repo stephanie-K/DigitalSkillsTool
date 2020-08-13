@@ -1,0 +1,26 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+  Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl">
+      You will not be able to get Best Start Grant and Best Start Foods
+  </h1>
+  <p style="border-left: 6px solid #0065bd; padding: 0px 0px 0px 10px">You can only get Best start Grant and Best Start Foods if you live in Scotland.</p>
+  <p>As you've told us you live in England, Wales or Northern Ireland, you will not be able to get Best Start Grant and Best Start Foods. If you've made a mistake in answering our question(s) on this application, please go back to correct your answer.</p>
+  <p>If you live in England or Wales, you may be able to get the <a href="https://www.gov.uk/sure-start-maternity-grant">Sure Start Maternity Grant</a> and <a href="https://www.healthystart.nhs.uk/">Healthy Start vouchers</a>.</p>
+  <p>If you think we've got this wrong, call us free on 0800 182 2222.</p>
+  <p style="margin:0px 0px 40px 0px"><a href="/forms/sss-forms/best-start/BS-start-apply">Find out who should apply and when</a></p>
+
+  {{ govukButton({
+    text: " < Back",
+    classes: "sg-button-back",
+    href: "javascript: history.go(-1)"
+  }) }}
+</div>
+
+{% endblock %}

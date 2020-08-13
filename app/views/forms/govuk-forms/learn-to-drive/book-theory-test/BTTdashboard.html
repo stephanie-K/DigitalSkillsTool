@@ -31,7 +31,7 @@ Booking home page
 
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <span class="apply-DVLA-tagline">This is a training website</span>
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -46,7 +46,7 @@ Booking home page
             <h2 class="govuk-heading-m">Select a test</h2>
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-one-half">
-                  <table class="govuk-table">
+                  <table class="govuk-table" style="overflow: auto;">
                       <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
                           <th scope="col" class="govuk-table__header">Test name</th>
@@ -84,4 +84,5 @@ Booking home page
 {% endblock %}
 
 {% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
 {% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+        <div class="orange-block">
+          <h2 class="govuk-heading-s orange-heading">Step by step</h2>
+          <p>Follow our easy step by step process to help you fill this form in quickly and accurately.</p>
+          <ol class="govuk-list govuk-list--number">
+            <li><strong>Authentication</strong></li>
+            <li><strong>Application</strong></li>
+            <ul class="govuk-list">
+              <li>Are you eligible?</li>
+              <li>Your eyesight</li>
+              <li>Fitness to drive</li>
+              <li>Further information</li>
+              <li><strong>Declaration</strong></li>
+            </ul>
+            <li><strong>Summary</strong></li>
+            <li><strong>Payment</strong></li>
+            <li><strong>Confirmation</strong></li>
+          </ol>
+        </div>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-heading-m">Apply for a provisional licence</h1>
+      <h2 class="govuk-heading-s yellow-heading">Form complete for now</h2>
+
+      <div class="small-font">
+       
+        <div class="dvla-button-row">
+          <a class="govuk-!-padding-left-5 govuk-!-padding-right-5 govuk-body govuk-!-margin-bottom-9 govuk-!-margin-top-9 button-primary govuk-button" href="/forms/end-feedback">Next</a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="student-notes-box"> 
+  <p>We can not show you the rest of the form as we didn't have access to it, but you have completed most of it. Well done!</p>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

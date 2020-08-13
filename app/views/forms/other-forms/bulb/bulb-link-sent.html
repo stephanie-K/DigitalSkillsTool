@@ -1,0 +1,38 @@
+{% include "../../../includes/bulb-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+        <div class="govuk-grid-column-one-quarter">
+            &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-half" style="max-width: 600px;">
+            <a href="javascript: history.go(-1)" style="color:#00ab55; text-decoration: none; font-weight: 600; font-size: 20px">&lt; Back</a>
+            <div class="bulb-white-container ">
+                <h1 style="text-align: center;">Check your inbox</h1>
+                <p style="text-align: center;">We've emailed a link to <strong>{{ data ['bulb-email'] or "example@gmail.com"}} </strong></p>
+                <p style="padding: 20px"><image src="{{ asset_path }}/images/bulb/bulb-plane.png"  width="100%" ></image></p>
+                <p style="text-align: center;">Not received the link?</p>
+                <a href="#" role="button" draggable="false" class="govuk-button button-primary button-bulb" data-module="govuk-button">
+                    Send another link
+                </a>
+                <a href="/forms/other-forms/bulb/bulb-signin-with-password" role="button" draggable="false" class="govuk-button button-primary button-bulb-magic" data-module="govuk-button">
+                    Sign in with password instead
+                </a>               
+            </div>
+        </div>
+        <div class="govuk-grid-column-one-quarter">
+            &nbsp;
+        </div>
+    </div>
+    <div class="student-notes-box-bulb"> 
+        <p>You would have received an email and in it, there is a link to click which would just sign you in directly</p>
+        <p><a href="/forms/other-forms/bulb/bulb-dashboard">Follow this link</a> instead to get signed in</p>
+        <p>The email looks like that:</p>
+        <p style="padding: 20px"><image src="{{ asset_path }}/images/bulb/email-magic.png" style="border: 4px solid white" ></image></p>
+    </div>
+    </main>
+</div>
+
+{% include "../../../includes/bulb-footer.html"  %}
+

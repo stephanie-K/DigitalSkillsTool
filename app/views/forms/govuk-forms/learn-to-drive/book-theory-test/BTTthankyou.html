@@ -31,7 +31,7 @@ Book, check, change or cancel your theory driving test online
 
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <span class="apply-DVLA-tagline">This is a training website</span>
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -50,7 +50,7 @@ Book, check, change or cancel your theory driving test online
           {{ govukButton({
             text: "Log out",
             classes: "button-primary",
-            href: "https://www.gov.uk/browse/driving"
+            href: "/forms/end-feedback"
           }) }}
       </div>
     </div>
@@ -58,4 +58,5 @@ Book, check, change or cancel your theory driving test online
 {% endblock %}
 
 {% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
 {% endblock %}
