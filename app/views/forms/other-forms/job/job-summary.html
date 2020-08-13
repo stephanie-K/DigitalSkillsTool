@@ -16,7 +16,7 @@
                     rows: [
                       {
                         key: {
-                          text: "Surname"
+                          text: "Surname:"
                         },
                         value: {
                           text: data ['job-surname']
@@ -24,7 +24,7 @@
                       },
                       {
                         key: {
-                          text: "Forename"
+                          text: "Forename:"
                         },
                         value: {
                           text: data ['job-forename']
@@ -32,7 +32,7 @@
                       },
                       {
                         key: {
-                          text: "Name known by"
+                          text: "Name known by:"
                         },
                         value: {
                           text: data ['job-othername']
@@ -48,7 +48,7 @@
                       },
                       {
                         key: {
-                          text: "Address"
+                          text: "Address:"
                         },
                         value: {
                           text: data ['job-address']
@@ -56,7 +56,7 @@
                       },
                       {
                         key: {
-                          text: "Postcode"
+                          text: "Postcode:"
                         },
                         value: {
                           text: data ['job-postcode']
@@ -73,7 +73,7 @@
                     rows: [
                       {
                         key: {
-                          text: "Phone number day"
+                          text: "Phone number day:"
                         },
                         value: {
                           text: data ['job-phone-day']
@@ -81,7 +81,7 @@
                       },
                       {
                         key: {
-                          text: "Phone number evening"
+                          text: "Phone number evening:"
                         },
                         value: {
                           text: data ['job-phone-evening']
@@ -89,7 +89,7 @@
                       },
                       {
                         key: {
-                          text: "Mobile number"
+                          text: "Mobile number:"
                         },
                         value: {
                           text: data ['job-mobile']
@@ -97,7 +97,7 @@
                       },
                       {
                         key: {
-                          text: "Email address"
+                          text: "Email address:"
                         },
                         value: {
                           text: data ['job-email']
@@ -105,7 +105,7 @@
                       },
                       {
                         key: {
-                          text: "Best way to contact you"
+                          text: "Best way to contact you:"
                         },
                         value: {
                           text: data ['contact-by']
@@ -147,7 +147,7 @@
                     rows: [
                       {
                         key: {
-                          text: "I have read, agreed and understood"
+                          text: "I have read, agreed and understood:"
                         },
                         value: {
                           text: "Yes"
@@ -155,7 +155,7 @@
                       },
                       {
                         key: {
-                          text: "Date"
+                          text: "Date:"
                         },
                         value: {
                           text: data ['job-date']
@@ -167,11 +167,415 @@
                   <hr>
                   <br>
                   <h2 class="govuk-heading-m">Part C - Qualifications</h2>
+                  <h3 class="govuk-heading-s">Qualifications achieved</h3>
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Subjects:"
+                        },
+                        value: {
+                          text: data ['job-subject-achieved']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Type of qualification:"
+                        },
+                        value: {
+                          text: data ['job-type-achieved']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Grade achieved:"
+                        },
+                        value: {
+                          text: data ['job-grade-achieved']
+                        }
+                      }
+                    ]
+                  }) }}
+                  <h3 class="govuk-heading-s">Qualifications currently studying or working towards</h3>
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Subjects:"
+                        },
+                        value: {
+                          text: data ['subject-towards']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Type of qualification:"
+                        },
+                        value: {
+                          text: data ['job-type-towards']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Grade anticipated:"
+                        },
+                        value: {
+                          text: data ['job-grade-towards']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Date anticipated:"
+                        },
+                        value: {
+                          text: data ['job-date-towards']
+                        }
+                      }
+                    ]
+                  }) }}
+
+                  <br>
+                  <h2 class="govuk-heading-m">Part C - Membership of Professional or Regulatory Bodies</h2>
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Full name of organisation(s):"
+                        },
+                        value: {
+                          text: data ['job-org']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Registration Number:"
+                        },
+                        value: {
+                          text: data ['job-reg']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Renewal date:"
+                        },
+                        value: {
+                          text: data ['job-renewal-date']
+                        }
+                      }
+                    ]
+                  }) }}
+                  <br>
+                  <h2 class="govuk-heading-m">Part C - Present (or most recent) post</h2>
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Job title:"
+                        },
+                        value: {
+                          text: data ['job-post-title']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Grade:"
+                        },
+                        value: {
+                          text: data ['job-grade']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Date of starting grade:"
+                        },
+                        value: {
+                          text: data ['job-starting-grade']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Employer:"
+                        },
+                        value: {
+                          text: data ['job-employer']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Employed from:"
+                        },
+                        value: {
+                          text: data ['job-employed-from']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Employed to:"
+                        },
+                        value: {
+                          text: data ['job-employed-to']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Reason for leaving:"
+                        },
+                        value: {
+                          text: data ['job-reason']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Notice period:"
+                        },
+                        value: {
+                          text: data ['job-notice']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Current salary:"
+                        },
+                        value: {
+                          text: data ['job-salary']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Role purpose / Summary of responsibilities:"
+                        },
+                        value: {
+                          text: data ['role-purpose']
+                        }
+                      }
+                    ]
+                  }) }}
+                  <br>
+                  <h2 class="govuk-heading-m">Part C - Employment history</h2>
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Job title:"
+                        },
+                        value: {
+                          text: data ['job-previous-job-title']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Employer:"
+                        },
+                        value: {
+                          text: data ['job-employer']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Date from:"
+                        },
+                        value: {
+                          text: data ['job-previous-job-date-from']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Date to:"
+                        },
+                        value: {
+                          text: data ['job-previous-job-date-to']
+                        }
+                      }
+                    ]
+                  }) }}
+                  <br>
+                  <h2 class="govuk-heading-m">Part C - Referees</h2>
+                  <h3 class="govuk-heading-s">Referee 1</h3>
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Name 1:"
+                        },
+                        value: {
+                          text: data ['job-ref-name1']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Designation:"
+                        },
+                        value: {
+                          text: data ['job-ref-designation1']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Address:"
+                        },
+                        value: {
+                          text: data ['job-ref-add1']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Postcode:"
+                        },
+                        value: {
+                          text: data ['job-ref-postcode1']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Telephone:"
+                        },
+                        value: {
+                          text: data ['job-ref-phone1']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Email:"
+                        },
+                        value: {
+                          text: data ['job-ref-email1']
+                        }
+                      }
+                    ]
+                  }) }}
+                  <h3 class="govuk-heading-s">Referee 2</h3>
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Name 2:"
+                        },
+                        value: {
+                          text: data ['job-ref-name2']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Designation:"
+                        },
+                        value: {
+                          text: data ['job-ref-designation2']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Address:"
+                        },
+                        value: {
+                          text: data ['job-ref-add2']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Postcode:"
+                        },
+                        value: {
+                          text: data ['job-ref-postcode2']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Telephone:"
+                        },
+                        value: {
+                          text: data ['job-ref-phone2']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Email:"
+                        },
+                        value: {
+                          text: data ['job-ref-email2']
+                        }
+                      }
+                    ]
+                  }) }}
+                  <br>
+                  <h2 class="govuk-heading-m">Part C - Disability</h2>
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Do you want to participate in the guarantee scheme?"
+                        },
+                        value: {
+                          text: data ['work-scheme-jig']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "Please specify any special requirements you require if attending for interview"
+                        },
+                        value: {
+                          text: data ['job-special']
+                        }
+                      }
+                    ]
+                  }) }}
+
+                  <br>
+                  <h2 class="govuk-heading-m">Part C - Driving licence</h2>
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Do you have a driving licence?"
+                        },
+                        value: {
+                          text: data ['job-driving-licence']
+                        }
+                      },
+                      {
+                        key: {
+                          text: "If yes, which categories are you entitled to drive:"
+                        },
+                        value: {
+                          text: data ['job-category']
+                        }
+                      }
+                    ]
+                  }) }}
+
+                  <br>
+                  <h2 class="govuk-heading-m">Part C - Statement in support of application</h2>
+
+                  {{ govukSummaryList({
+                    classes: 'govuk-!-margin-bottom-9 summary-no-line',
+                    rows: [
+                      {
+                        key: {
+                          text: "Statement:"
+                        },
+                        value: {
+                          text: data ['statement']
+                        }
+                      }
+                    ]
+                  }) }}
 
                 </div>
               </div>
 
-            <h2 class="govuk-heading-m" style="color: red">More coming soon</h2>
            {% from "govuk/components/button/macro.njk" import govukButton %}
            {{ govukButton({
             text: "Submit",

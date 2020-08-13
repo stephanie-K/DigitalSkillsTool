@@ -5,7 +5,7 @@
         <div class="govuk-grid-row govuk-!-margin-bottom-9">
           <div class="govuk-grid-column-full">
             <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
-            <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Driving Licence </h1>
+            <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Driving licence </h1>
             <p class="govuk-!-margin-top-1">(see Job Description - only complete if a driving licence is essential)</p>
             <form class="form" method="post">
                 <div class="govuk-grid-row">
@@ -24,11 +24,11 @@
                         },
                         items: [
                           {
-                            value: "yes",
+                            value: "Yes",
                             text: "Yes"
                           },
                           {
-                            value: "no",
+                            value: "No",
                             text: "No"
                           }
                         ]
@@ -45,7 +45,8 @@
                         },
                         classes: "govuk-!-width-one-quarter",
                         id: "job-category",
-                        name: "job-category"
+                        name: "job-category",
+                        value: data ['job-category']
                       }) }}
 
               

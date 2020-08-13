@@ -20,7 +20,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-subject-achieved",
-                        name: "job-subject-achieved"
+                        name: "job-subject-achieved",
+                        value: data ['job-subject-achieved']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -29,7 +30,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-type-achieved",
-                        name: "job-type-achieved"
+                        name: "job-type-achieved",
+                        value: data ['job-type-achieved']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -38,7 +40,8 @@
                         },
                         classes: "govuk-!-width-one-half govuk-!-margin-bottom-9",
                         id: "job-grade-achieved",
-                        name: "job-grade-achieved"
+                        name: "job-grade-achieved",
+                        value: data ['job-grade-achieved']
                       }) }}
 
                       <h2 class="govuk-heading-m govuk-!-margin-top-9">Qualifications currently studying or working towards</h2>
@@ -50,7 +53,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-subject-towards",
-                        name: "subject-towards"
+                        name: "subject-towards",
+                        value: data ['subject-towards']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -59,7 +63,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-type-towards",
-                        name: "job-type-towards"
+                        name: "job-type-towards",
+                        value: data ['job-type-towards']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -68,16 +73,18 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-grade-towards",
-                        name: "job-grade-towards"
+                        name: "job-grade-towards",
+                        value: data ['job-grade-towards']
                       }) }}
                       {{ govukInput({
                         label: {
                           text: "Date anticipated",
                           classes: "govuk-label--s"
                         },
-                        classes: "govuk-!-width-one-half",
+                        classes: "govuk-!-width-one-quarter",
                         id: "job-date-towards",
-                        name: "job-date-towards"
+                        name: "job-date-towards",
+                        value: data ['job-date-towards']
                       }) }}
    
               

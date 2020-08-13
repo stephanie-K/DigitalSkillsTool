@@ -19,7 +19,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-org",
-                        name: "job-org"
+                        name: "job-org",
+                        value: data ['job-org']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -28,16 +29,18 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-reg",
-                        name: "job-reg"
+                        name: "job-reg",
+                        value: data ['job-reg']
                       }) }}
                       {{ govukInput({
                         label: {
                           text: "Renewal date",
                           classes: "govuk-label--s"
                         },
-                        classes: "govuk-input--width-10",
+                        classes: "govuk-!-width-one-quarter",
                         id: "job-renewal-date",
-                        name: "job-renewal-date"
+                        name: "job-renewal-date",
+                        value: data ['job-renewal-date']
                       }) }}
 
               

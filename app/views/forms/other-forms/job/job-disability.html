@@ -21,17 +21,17 @@
                         name: "work-scheme-jig",
                         fieldset: {
                           legend: {
-                            text: "Do you want to participate in the guarantee scheme",
+                            text: "Do you want to participate in the guarantee scheme?",
                             classes: "govuk-fieldset__legend--m"
                           }
                         },
                         items: [
                           {
-                            value: "yes",
+                            value: "Yes",
                             text: "Yes"
                           },
                           {
-                            value: "no",
+                            value: "No",
                             text: "No"
                           }
                         ]
@@ -46,8 +46,9 @@
                         hint: {
                           text: "eg.  Induction Loop, Wheelchair Access, Signer"
                         },
-                        id: "job-date-special",
-                        name: "job-date-special"
+                        id: "job-special",
+                        name: "job-special",
+                        value: data ['job-special']
                       }) }}
 
               

@@ -5,7 +5,7 @@
         <div class="govuk-grid-row govuk-!-margin-bottom-9">
           <div class="govuk-grid-column-full">
             <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
-            <h1 class="govuk-heading-l">Statement in Support of Application</h1>
+            <h1 class="govuk-heading-l">Statement in support of application</h1>
     
             <form class="form" method="post">
                 <div class="govuk-grid-row">
@@ -18,7 +18,8 @@
                         rows: "15",
                         label: {
                           text: "Please tell us your personal qualities, skills and attributes, experience and any major achievements and show how they match those needed for this job.",
-                          classes: "govuk-label--m"
+                          classes: "govuk-label--m",
+                          value: data ['statement']
                         }
                       }) }}
 
@@ -60,52 +61,6 @@
                       }) }}
                       {% endset -%}
 
-                      
-                      {{ govukCheckboxes({
-                        idPrefix: "ad-post",
-                        name: "ad-post",
-                        fieldset: {
-                          legend: {
-                            text: "Where did you see the Advertisement for this Post?",
-                            classes: "govuk-fieldset__legend--m"
-                          }
-                        },
-                        items: [
-                          {
-                            value: "newspaper",
-                            text: "Newspaper",
-                            conditional: {
-                              html: newsHtml
-                            }
-                          },
-                          {
-                            value: "journal",
-                            text: "Professional journal",
-                            conditional: {
-                              html: journalHtml
-                            }
-                          },
-                          {
-                            value: "bulletin",
-                            text: "Vacancy bulletin"
-                          },
-                          {
-                            value: "jobcenter",
-                            text: "Job Centre Plus"
-                          },
-                          {
-                            value: "show",
-                            text: "Show (NHS Scotland Website)"
-                          },
-                          {
-                            value: "other",
-                            text: "Other",
-                            conditional: {
-                              html: otherwayHtml
-                            }
-                          }
-                          ]
-                        }) }}
 
               
                         {% from "govuk/components/button/macro.njk" import govukButton %}

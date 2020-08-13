@@ -19,7 +19,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-post-title",
-                        name: "job-post-title"
+                        name: "job-post-title",
+                        value: data ['job-post-title']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -28,16 +29,18 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-grade",
-                        name: "job-grade"
+                        name: "job-grade",
+                        value: data ['job-grade']
                       }) }}
                       {{ govukInput({
                         label: {
                           text: "Date of starting grade",
                           classes: "govuk-label--m"
                         },
-                        classes: "govuk-input--width-10",
+                        classes: "govuk-!-width-one-quarter",
                         id: "job-starting-grade",
-                        name: "job-starting-grade"
+                        name: "job-starting-grade",
+                        value: data ['job-starting-grade']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -46,7 +49,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-employer",
-                        name: "job-employer"
+                        name: "job-employer",
+                        value: data ['job-employer']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -56,9 +60,10 @@
                         hint: {
                           text: "Date when you started this position"
                         },
-                        classes: "govuk-input--width-10",
+                        classes: "govuk-!-width-one-quarter",
                         id: "job-employed-from",
-                        name: "job-employed-from"
+                        name: "job-employed-from",
+                        value: data ['job-employed-from']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -68,9 +73,10 @@
                         hint: {
                           text: "Date when you left this position if applicable"
                         },
-                        classes: "govuk-input--width-10",
+                        classes: "govuk-!-width-one-quarter",
                         id: "job-employed-to",
-                        name: "job-employed-to"
+                        name: "job-employed-to",
+                        value: data ['job-employed-to']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -82,7 +88,8 @@
                         },
                         classes: "govuk-!-width-one-half",
                         id: "job-reason",
-                        name: "job-reason"
+                        name: "job-reason",
+                        value: data ['job-reason']
                       }) }}
                       {{ govukInput({
                         label: {
@@ -91,16 +98,18 @@
                         },
                         classes: "govuk-input--width-10",
                         id: "job-notice",
-                        name: "job-notice"
+                        name: "job-notice",
+                        value: data ['job-notice']
                       }) }}
                       {{ govukInput({
                         label: {
                           text: "Current salary",
                           classes: "govuk-label--m"
                         },
-                        classes: "govuk-input--width-10",
+                        classes: "govuk-!-width-one-quarter",
                         id: "job-salary",
-                        name: "job-salary"
+                        name: "job-salary",
+                        value: data ['job-salary']
                       }) }}
                       {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 
@@ -109,7 +118,8 @@
                         id: "role-purpose",
                         label: {
                           text: "Role purpose / Summary of responsibilities",
-                          classes: "govuk-label--m"
+                          classes: "govuk-label--m",
+                          value: data ['role-purpose']
                         }
                       }) }}
               
