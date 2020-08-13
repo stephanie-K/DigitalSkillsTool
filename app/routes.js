@@ -14,9 +14,13 @@ router.post('/forms/govuk-forms/register-to-vote/RTVCountryOfResidence', functio
   if (wheredoyouliveSelected  === 'england','scotland','wales', 'northern-ireland') {
       return res.redirect('/forms/govuk-forms/register-to-vote/RTVNationality')
   }
-  if (wheredoyouliveSelected  === 'abroad-england','abroad-scotland','abroad-wales', 'abroad-northern-ireland') {
-    return res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
+  if (wheredoyouliveSelected  === 'abroad') {
+      return res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
 }
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVNationality', function (req, res) {
   res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
 })
 
@@ -328,8 +332,6 @@ router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdecl
   }
   res.redirect('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLfinish')
 })
-
-
 
 // book a theory test - if other support is needed and selected, then we stop and don't do the rest of the form - we show a Thank you screen.
 
