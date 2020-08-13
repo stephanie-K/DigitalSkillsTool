@@ -13,7 +13,6 @@ Country of Residence
 {{ govukRadios({
     idPrefix: "other-country",
     name: "other-country",
-    type: "abroad",
     classes: "govuk-!-width-one-third",
     fieldset: {
         legend: {
@@ -24,19 +23,19 @@ Country of Residence
     },
     items:[
       {
-        value: "abroad-england",
+        value: "England",
         text: "England"
       },
       {
-        value: "abroad-scotland",
+        value: "Scotland",
         text: "Scotland"
       },
       {
-        value: "abroad-wales",
+        value: "Wales",
         text: "Wales"
       },
       {
-        value: "abroad-northern-ireland",
+        value: "Northern Ireland",
         text: "Northern Ireland"
       }
     ]
@@ -55,26 +54,26 @@ Country of Residence
     },
     items: [
       {
-        value: "england",
+        value: "England",
         text: "England"
       },
       {
-        value: "scotland",
+        value: "Scotland",
         text: "Scotland"
       },
       {
-        value: "wales",
+        value: "Wales",
         text: "Wales"
       },
       {
-        value: "northern-ireland",
+        value: "Northern-Ireland",
         text: "Northern Ireland"
       },
       {
         divider: "or"
       },
       {
-        value: "abroad",
+        value: "British Citizen living in another country",
         text: "British Citizen living in another country",
         hint: {
             text: "including the Channel Islands or Isle of Man."

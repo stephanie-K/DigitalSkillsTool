@@ -10,20 +10,16 @@ module.exports = router
 
 // Register to Vote ****************************************************************************
 router.post('/forms/govuk-forms/register-to-vote/RTVCountryOfResidence', function (req, res) {
-  var wheredoyouliveSelected = req.session.data['where-do-you-live']
-  if (wheredoyouliveSelected  === 'england','scotland','wales', 'northern-ireland') {
-      return res.redirect('/forms/govuk-forms/register-to-vote/RTVNationality')
-  }
-  if (wheredoyouliveSelected  === 'abroad') {
-      return res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
-}
-  res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
+res.redirect('/forms/govuk-forms/register-to-vote/RTVNationality')
 })
 
 router.post('/forms/govuk-forms/register-to-vote/RTVNationality', function (req, res) {
   res.redirect('/forms/govuk-forms/register-to-vote/RTVDateOfBirth')
 })
 
+router.post('/forms/govuk-forms/register-to-vote/RTVDateOfBirth', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVName')
+})
 // Apply for a provisional licence ***************************************************
 
 router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails', function (req, res) {
