@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Name
+{% endblock %}
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <form class="form" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+
+{% call govukFieldset({
+    legend: {
+    text: "What is your full name name?",
+    subtext:"Enter your name in full, as it appears on official documents",
+    classes: "govuk-fieldset__legend--l",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: "First Name" 
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "first-name",
+    name: "first-name"
+  }) }}
+
+
+  {{ govukInput({
+    label: {
+      text: "Middle Name (optional)"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "middle-name",
+    name: "middle-name"
+  }) }}
+
+
+  {{ govukInput({
+    label: {
+      text: "Last Name (optional)"
+    },
+    classes: "govuk-!-width-two-thirds",
+    id: "last-name",
+    name: "last-name"
+  }) }}
+
+{% endcall %}
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set namechangeHtml %}
+
+
+{{ govukInput({
+  id: "previous-first-name",
+  name: "yes-namechange",
+  type: "yes-namechange",
+  spellcheck: false,
+  classes: "govuk-!-width-one-third",
+  label: {
+    text: "What was your previous name"
+  },
+  hint: {
+    text: "You don’t have to tell us your previous name but it will help us identify you, and you might need to send us copies of identity documents if you don’t.
+    If you changed your name more than once, enter your most recent previous name."
+  }
+}) }}
+
+{{ govukInput({
+    id: "previous-middle-name",
+    name: "yes-namechange",
+    type: "yes-namechange",
+    spellcheck: false,
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "Previous middle names(optional)"
+    }
+  }) }}
+
+  {{ govukInput({
+    id: "previous-last-name",
+    name: "yes-namechange",
+    type: "yes-namechange",
+    spellcheck: false,
+    classes: "govuk-!-width-one-third",
+    label: {
+      text: "Previous last name(optional)"
+    }
+  }) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "previus-name-conditional",
+  name: "previous-name",
+  fieldset: {
+    legend: {
+      text: "Have you changed your name?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "For example:marriage, deed poll"
+  },
+  items: [
+    {
+      value: "no-namechange",
+      text: "No, I haven't changed my name"
+    },
+    {
+      value: "yes-namechange",
+      text: "Yes, I changed my name",
+      conditional: {
+        html: namechangeHtml
+      }
+    },
+    {
+      value: "not-say",
+      text: "Prefer not to say"
+    }
+  ]
+}) }}
+
+{% endblock %}
