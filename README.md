@@ -2,7 +2,6 @@
 
 This is the code for a website to support classes to help refugees and other participants to improve their digital skills by training on prototyped forms of exisiting services.
 
-This is a work in progress.
 
 **There is about 1 in 7 people in Scotland who can’t get online** (that’s about 800,000 people)
 
@@ -18,9 +17,9 @@ The course is developed for the **East Renfrewshire Council** and the website su
 
 This is using the [**GOV.UK Prototype kit**](https://govuk-prototype-kit.herokuapp.com/docs)
 
-You can visit the website here: [**https://erc-tool.herokuapp.com/**](https://erc-tool.herokuapp.com/) you will be asked for a username and password, both are: erc-tool
+You can visit the website here: [**https://erc-tool.herokuapp.com/**](https://erc-tool.herokuapp.com/) you will be asked for a username and password, both are: **erc-tool**
 
-You can also [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/05/06/improving-digital-skills-building-a-tool-with-the-govuk-prototype-kit)
+You can also [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/08/01/improving-digital-skills-a-tool-using-the-gov-uk-prototype-kit-part-2/)
 
 
 

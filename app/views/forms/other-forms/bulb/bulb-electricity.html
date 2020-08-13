@@ -1,0 +1,84 @@
+{% include "../../../includes/bulb-header.html"  %}
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+    <div class="govuk-grid-row govuk-!-margin-bottom-9 govuk-!-margin-top-9">
+        <div class="govuk-grid-column-full">
+            <a href="javascript: history.go(-1)" style="color:#00ab55; text-decoration: none; font-weight: 600; font-size: 20px">&lt; Back</a>
+            <h1>Submit a meter reading</h1>
+            <div class="bulb-white-container ">
+                <p class="govuk-!-font-size-36">
+                    <svg color="inherit" xmlns="http://www.w3.org/2000/Svg" focusable="false" preserveAspectRatio="xMinYMin" viewBox="0 0 64 64" class="sc-fzokOt kXneqm" width="100" height="100">
+                        <path style="fill:#036;" d="M32.06 8.16c8.5-.08 14.55 8.32 13.21 17.05a24.84 24.84 0 0 1-10.21 16.83 8.7 8.7 0 0 1-.96-2.58 5.03 5.03 0 0 1 .32-2.73c.28-.77.66-1.5 1.13-2.45l.64-1.26a32.19 32.19 0 0 0 2.22-5.73 2 2 0 0 0-2.2-2.52 53 53 0 0 0-7.45 1.62c.51-.74 1.12-1.46 1.8-2.12 1.86-1.86 4.1-3.15 6.25-3.5a2 2 0 1 0-.65-3.95c-3.18.52-6.14 2.34-8.42 4.6a17.37 17.37 0 0 0-4.75 8.03 2 2 0 0 0 2.78 2.27 39.88 39.88 0 0 1 7.71-2.4c-.29.69-.59 1.33-.88 1.93l-.52 1.03a30.23 30.23 0 0 0-1.41 3.07 9.01 9.01 0 0 0-.5 4.77c.29 1.75 1.1 3.59 2.5 5.7.19.31.46.54.76.7a2 2 0 0 0 2.1 0 28.9 28.9 0 0 0 13.7-20.7c1.61-10.58-5.68-21.76-17.2-21.66-11.34.1-18.33 10.04-18.2 21.32.1 8.02 5.06 16.28 10.04 21.92a2 2 0 1 0 3-2.65c-4.74-5.36-8.95-12.72-9.03-19.32-.13-9.8 5.77-17.2 14.22-17.27zM34.26 59.56a2 2 0 0 0-.8-3.92c-2.09.43-4.28.47-5.8.04a2 2 0 0 0-1.09 3.85c2.35.66 5.25.53 7.7.03zM37.79 50.82a2 2 0 0 1-1.44 2.44c-4.28 1.1-7.68 1.09-11.51-.15a2 2 0 1 1 1.23-3.8c3.01.97 5.63 1.01 9.28.07a2 2 0 0 1 2.44 1.44z"></path>
+                    </svg>
+                    Electricity reading - <span>Meter serial number: 3321N09002</span>
+                </p>
+                <p>We don't need any numbers in red or after the decimal place</p>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-quarter">
+                        <p><strong>Previous</strong></p>
+                        <p>{{ bulbEnergyUsageDate1Extended }}</p>
+                    </div>
+                    <div class="govuk-grid-column-three-quarters">
+                        <div class="govuk-form-group">
+                            <input aria-label="digit 1" disabled autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter-disabled" id="1st-digit-elec" name="1st-digit-elec" value="1">
+                            <input aria-label="digit 2" disabled autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter-disabled" id="2nd-digit-elec" name="2nd-digit-elec" value="0">
+                            <input aria-label="digit 3" disabled autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter-disabled" id="3rd-digit-elec" name="3rd-digit-elec" value="2">
+                            <input aria-label="digit 4" disabled autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter-disabled" id="4th-digit-elec" name="4th-digit-elec" value="4">
+                            <input aria-label="digit 5" disabled autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter-disabled" id="5th-digit-elec" name="5th-digit-elec" value="6">
+                            <span style="font-size: 40px; font-weight:800">.</span>
+                            <input aria-label="digit 6" disabled autocomplete ="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter-disabled" id="6th-digit-elec" name="6th-digit-elec" value="X">
+                          </div>
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-quarter">
+                        <p><strong>New</strong></p>
+                        <p>Today</p>
+                    </div>
+                    <div class="govuk-grid-column-three-quarters">
+                        <div class="govuk-form-group">
+                            <input aria-label="digit entered 1" autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter" id="1st-digit-electri" name="1st-digit-electri" maxlength="1">
+                            <input aria-label="digit entered 2" autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter" id="2nd-digit-electri" name="2nd-digit-electri" maxlength="1">
+                            <input aria-label="digit entered 3" autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter" id="3rd-digit-electri" name="3rd-digit-electri" maxlength="1">
+                            <input aria-label="digit entered 4" autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter" id="4th-digit-electri" name="4th-digit-electri" maxlength="1">
+                            <input aria-label="digit entered 5" autocomplete="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter" id="5th-digit-electri" name="5th-digit-electri" maxlength="1">
+                            <span style="font-size: 40px; font-weight:800">.</span>
+                            <input aria-label="digit 6" disabled autocomplete ="off" type="text" class="govuk-input govuk-input--width-2 bulb-meter" id="6th-digit-electri" name="6th-digit-electri" value="X">
+                          </div>
+                    </div>
+                </div>
+                <a href="/forms/other-forms/bulb/bulb-elect-reading-submitted" role="button" draggable="false" class="govuk-button button-primary button-bulb" data-module="govuk-button">
+                    Submit
+                </a>
+                <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        How do I read my meter?
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Meters come in all shapes and sizes. You can find out how to read yours in <a href="/forms/other-forms/bulb/bulb-meter-help">our extensive meter reading guide</a>.
+                    </div>
+                  </details>
+                  <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                      <span class="govuk-details__summary-text">
+                        How are my readings used to calculate my bill?
+                      </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <p>Meter readings you submit three days before your payment are used directly to calculate your bill.</p>
+                        <p>If you submit a meter reading at another time, we use it to adjust your estimated usage. The more meter readings you submit, the more accurate this estimate can be. Submitting meter readings every month ensures this estimate will be very close to your actual usage.</p>
+                    </div>
+                  </details>
+            </div>
+        </div>
+    </div>
+    <div class="student-notes-box-bulb"> 
+        <p>You can enter anything and submit. On the real form, your would have an error if you don't enter all the 5 numbers needed</p>
+  </div>
+</main>
+</div>
+
+{% include "../../../includes/bulb-footer.html"  %}

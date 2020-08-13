@@ -1,0 +1,94 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 30px 0px">
+    Babies under 6 months
+  </h1>
+  <p style="margin:0px 0px 40px 0px;">We'll check whether you can be paid the Pregnancy and Baby Payment part of Best Start Grant and Best Start Foods for any babies you have under 6 months old.</p>
+
+  <form class="form" method="post">
+
+    <h1 class="govuk-heading-m">
+      Baby
+    </h1>
+
+    <div class="govuk-form-group" style="margin:0; padding:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-baby-first-name">
+        First name(s)
+      </label>
+    </h1>
+    <input class="govuk-input govuk-input--width-20" id="BSG-baby-first-name" name="BSG-baby-first-name" type="text" value="{{ data ['BSG-baby-first-name']}}">
+  </div>
+
+  <div class="govuk-form-group" style="margin:0;">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--m" for="BSG-baby-last-name">
+      Last name
+    </label>
+  </h1>
+  <input class="govuk-input govuk-input--width-20" id="BSG-baby-last-name" name="BSG-baby-last-name" type="text" value="{{ data ['BSG-baby-last-name']}}">
+  </div>
+
+    <div class="govuk-form-group" style="margin:0px 0px 60px 0px;">
+
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="baby-under-6mo-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h1 class="govuk-fieldset__heading">
+            What is the due date?
+          </h1>
+        </legend>
+        <span id="baby-under-6mo-hint" class="govuk-hint" style="color:black;">
+          Enter like this: 31 10 2018
+        </span>
+        <div class="govuk-date-input" id="baby-under-6mo">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-day">
+                <strong>Day</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-baby-under-6mo-day" name="BSG-baby-under-6mo-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-baby-under-6mo-day']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-month">
+                <strong>Month</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-baby-under-6mo-month" name="BSG-baby-under-6mo-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-baby-under-6mo-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-year">
+                <strong>Year</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-baby-under-6mo-year" name="BSG-baby-under-6mo-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-baby-under-6mo-year']}}">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukButton({
+      text: " < Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+
+  </form>
+</div>
+
+{% endblock %}

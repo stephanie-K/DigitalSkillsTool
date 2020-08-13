@@ -1,0 +1,220 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Payment
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">
+      Make a payment
+    </h1>
+    <p class="govuk-!-font-size-14">Please note - information on this page will time-out after 15 minutes of inactivity<br>
+      <strong>*</strong> = Mandatory Field</p>
+
+      {% set regExpMoneyAmount = r/[0-9]+(\.[0-9][0-9])?$/g %}
+      {% set ValidAmount = regExpMoneyAmount.test(data ['pr-amount']) %}
+      <p>Payment Amount: £{% if  ValidAmount %} {{data ['pr-amount'] }} {% else %}50.00 {% endif %}</p>
+
+      {% if
+        (data ['pr-cardnumber'] === '') or
+        (data ['pr-security-code'] === '') or
+        (data ['pr-name-on-card'] === '') or  
+        (data ['pr-houseno-on-card'] === '') or  
+        (data ['pr-street-on-card'] === '') or
+        (data ['pr-town-on-card'] === '') or
+        (data ['pr-postcode-on-card'] === '')
+         %}
+      <h2 class="govuk-heading-m" style="color: #0051B8;">
+        Please check the following
+      </h2>
+      <div class="payment-error">
+      <ol class="govuk-list govuk-list--number ">
+        {% if (data ['pr-cardnumber'] === '') %} <li>Please enter your card number</li>                                       {% endif %}
+        {% if (data ['pr-security-code'] === '') %}    <li>Please enter your security code</li> {% endif %}
+        {% if (data ['pr-houseno-on-card'] === '') %}   <li>A building name/number must be entered</li>                         {% endif %}
+        {% if (data ['pr-name-on-card'] === '') %}      <li>A Name must be entered</li>                                         {% endif %}
+        {% if (data ['pr-street-on-card'] === '') %}    <li>A street must be entered</li>                                       {% endif %}
+        {% if (data ['pr-town-on-card'] === '') %}      <li>A town must be entered</li>                                         {% endif %}
+        {% if (data ['pr-postcode-on-card'] === '') %}  <li>A postcode must be entered</li>                                     {% endif %}
+      </ol>
+      </div>
+      {% endif %}
+    
+
+    <div class="govuk-grid-row">
+      <form class="form" method="post">
+      <div class="govuk-grid-column-two-thirds payment">
+        <p class="erc-payment-blue-bg">Card Details</p>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-cardnumber">
+            Enter card number without spaces *
+          </label>
+          {% if (data ['pr-cardnumber'] === '')%}
+          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-10" id="pr-cardnumber" name="pr-cardnumber" type="text">
+          {% else %}
+          <input class="govuk-input govuk-input--width-10" id="pr-cardnumber" name="pr-cardnumber" type="text" value="{{data['pr-cardnumber']}}">
+          {% endif %}
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-expiry">
+            Expiry date (month, year) *
+          </label>
+          <select class="govuk-select" id="expiry-month" name="expiry-month" style="border: 1px solid #1a1a1a; height: 2rem; font-size: 14px;">
+            <option value="-1" style="color: #999;" selected="selected"></option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+
+          <select class="govuk-select" id="expiry-year" name="expiry-year" style="border: 1px solid #1a1a1a; height: 2rem; font-size: 14px;">
+            <option value="-1" style="color: #999;" selected="selected"></option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+          </select>
+        </div>
+
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-issue-number">
+            Issue Number (Switch/Maestro Card only)
+          </label>
+          <input class="govuk-input govuk-input--width-5" id="pr-issue-number" name="pr-issue-number" type="text" value="{{data['pr-issue-number']}}">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-security-code">
+            Security code *
+          </label>
+          {% if (data ['pr-security-code'] === '')%}
+          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-5" id="pr-security-code" name="pr-security-code" type="text">
+          {% else %}
+          <input class="govuk-input govuk-input--width-5" id="pr-security-code" name="pr-security-code" type="text" value="{{data['pr-security-code']}}">
+          {% endif %}
+        </div>
+        {{ govukButton({
+          text: "Back to top",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+
+        <p class="erc-payment-blue-bg">Card Account Details</p>
+        <div class="govuk-form-group">
+          <p>Enter cardholder name and address details:</p>
+          <label class="govuk-label" for="pr-name-on-card">
+            Name appearing on card *
+          </label>
+          {% if (data ['pr-name-on-card'] === '')%}
+          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-20" id="pr-name-on-card" name="pr-name-on-card" type="text">
+          {% else %}
+          <input class="govuk-input govuk-input--width-20" id="pr-name-on-card" name="pr-name-on-card" type="text" value="{{data['pr-name-on-card']}}">
+          {% endif %}
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-houseno-on-card">
+            House number / name *
+          </label>
+          {% if (data ['pr-houseno-on-card'] === '')%}
+          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-20" id="pr-houseno-on-card" name="pr-houseno-on-card" type="text">
+          {% else %}
+          <input class="govuk-input govuk-input--width-20" id="pr-houseno-on-card" name="pr-houseno-on-card" type="text" value="{{data['pr-houseno-on-card']}}">
+          {% endif %}
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-street-on-card">
+            Street *
+          </label>
+          {% if (data ['pr-street-on-card'] === '')%}
+          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-20" id="pr-street-on-card" name="pr-street-on-card" type="text">
+          {% else %}
+          <input class="govuk-input govuk-input--width-20" id="pr-street-on-card" name="pr-street-on-card" type="text" value="{{data['pr-street-on-card']}}">
+          {% endif %}
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-area-on-card">
+            Area
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="pr-area-on-card" name="pr-area-on-card" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-town-on-card">
+            Town *
+          </label>
+          {% if (data ['pr-town-on-card'] === '')%}
+          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-20" id="pr-town-on-card" name="pr-town-on-card" type="text">
+          {% else %}
+          <input class="govuk-input govuk-input--width-20" id="pr-town-on-card" name="pr-town-on-card" type="text" value="{{data['pr-town-on-card']}}">
+          {% endif %}
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-county-on-card">
+            County
+          </label>
+          <input class="govuk-input govuk-input--width-20" id="pr-county-on-card" name="pr-county-on-card" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pr-postcode-on-card">
+            Postcode *
+          </label>
+          {% if (data ['pr-postcode-on-card'] === '')%}
+          <span style="color: red; padding-right:5px;">!</span><input style="background-color:#ccffff; border: 2px solid #004269;" class="govuk-input govuk-input--width-20" id="pr-postcode-on-card" name="pr-postcode-on-card" type="text">
+          {% else %}
+          <input class="govuk-input govuk-input--width-20" id="pr-postcode-on-card" name="pr-postcode-on-card" type="text" value="{{data['pr-postcode-on-card']}}">
+          {% endif %}
+        </div>
+        <br>
+
+        {{ govukButton({
+          text: "Back",
+          classes: "button-primary erc-payment",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+        {{ govukButton({
+          text: "Submit",
+          classes: "button-primary erc-payment"
+        }) }}
+
+        {{ govukButton({
+          text: "Cancel Payment",
+          classes: "button-primary erc-payment",
+          href: "javascript: window.history.go(-1)"
+        }) }}
+
+        {{ govukButton({
+          text: "Back to top",
+          classes: "button-primary erc-payment",
+          href: "#"
+        }) }}
+
+
+      </div>
+
+      </form>
+    </div>
+
+    <div class="student-notes-box"> 
+      <p>On the real form, on this page, you also have the option to select your address from a list, but we didn't do it here.</p>
+      <p>You can enter anything here, on the real form they would check that you are entering the correct information</p>
+    </div>
+
+    </div> 
+  </div>
+
+{% endblock %}
+
+
+
+ 
+  

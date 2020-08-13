@@ -1,0 +1,126 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl">
+    Payment details
+  </h1>
+  <p>Your Best Start Grant payment can be paid into your bank account or someone else's bank account.</p>
+  <p style="margin:0;">Social Security Scotland will only hold one bank account against your name.  This will mean all the benefits you receive from us will be paid into the latest bank account you have provided.</p>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group" style="margin:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-account-holder">
+          Name of account holder
+        </label>
+        <p>Write the name as it is shown on the bank card, chequebook or statement.</p>
+      </h1>
+      <input class="govuk-input govuk-input--width-20" id="BSG-account-holder" name="BSG-account-holder" type="text" value="{{ data ['BSG-account-holder']}}">
+    </div>
+
+    <div class="govuk-form-group" style="margin:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-sort-code">
+          Sort code
+        </label>
+        <p>Tell us all 6 numbers, for example: 123456</p>
+      </h1>
+      <input class="govuk-input govuk-input--width-20" id="BSG-sort-code" name="BSG-sort-code" type="text" value="{{ data ['BSG-sort-code']}}">
+    </div>
+
+    <div class="govuk-form-group" style="margin:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-account-number">
+          Account number
+        </label>
+        <p>Tell us all 6 numbers, for example: 123456</p>
+      </h1>
+      <input class="govuk-input govuk-input--width-20" id="BSG-account-number" name="BSG-account-number" type="text" value="{{ data ['BSG-account-number']}}">
+    </div>
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-building-society-ref">
+          Building society or Credit Union account reference number  <span style="font-size:18px; color:#C0C0C0">(if you know it)</span>
+        </label>
+        <p>You only need to tell us this if you have one of these accounts.</p>
+      </h1>
+      <input class="govuk-input govuk-input--width-20" id="BSG-building-society-ref" name="BSG-building-society-ref" type="text" value="{{ data ['BSG-building-society-ref']}}">
+    </div>
+
+    <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h1 class="govuk-fieldset__heading">
+            Is this your bank account?
+          </h1>
+        </legend>
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item" style="margin:0px;">
+            <input class="govuk-radios__input" id="bank-acc-1" name="BSG-bank-acc-check" type="radio" value="Yes">
+            <label class="govuk-label govuk-radios__label" for="bank-acc-1">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item" style="margin:0px 0px 20px 0px;">
+            <input class="govuk-radios__input" id="bank-acc-conditional" name="BSG-bank-acc-check" type="radio" value="No" data-aria-controls="conditional-bank-acc-conditional">
+            <label class="govuk-label govuk-radios__label" for="bank-acc-conditional">
+              No
+            </label>
+          </div>
+          <br>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-bank-acc-conditional" style="border:none; padding:0px; margin:0px;">
+            <p style="margin:0px;">If you're using someone else's bank account, you need to make sure they agree. You should also be sure you’ll be able to access payment(s) made into their account. If they want to know more about how their bank account data will be handled, they can find out by reading <a href="https://www.mygov.scot/social-security-data/">Social Security Scotland's privacy notice</a>.</p>
+
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+            {{ govukCheckboxes({
+              idPrefix: "bank-declaration",
+              name: "bank-declaration",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "Select if you agree with this statement:",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+              {
+                value: "agree",
+                text: "I'm using someone else's bank account and they've agreed to let me use it.",
+                checked: checked("bank-declaration", "agree")
+              }
+              ]
+            }) }}
+
+            <br>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: " < Back",
+        classes: "sg-button-back",
+        href: "javascript: history.go(-1)"
+      }) }}
+
+      {{ govukButton({
+        text: "Next",
+        classes: "button-primary",
+        isStartButton: true
+      }) }}
+
+    </form>
+
+  </div>
+
+  {% endblock %}

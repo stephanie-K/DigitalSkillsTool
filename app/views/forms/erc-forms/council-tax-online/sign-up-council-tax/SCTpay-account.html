@@ -1,0 +1,50 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Council Tax Online
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <h2 class="govuk-heading-l erc-alt-double-lines">Council Tax Online</h2> 
+
+    <p class="erc-alt-dark-blue-bg">Make a payment</p> 
+
+    <div class="erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">The balance outstanding on account ERC45H0 is £263.74</p>
+      <p class="govuk-!-font-size-14">We accept all major credit and debit cards with the exception of American Express, Diners and JCB cards.</strong>.</p>
+      <p class="govuk-!-font-size-14">Enter the amount as pounds and pence e.g. 50.00</p>
+    </div>
+    <p class="govuk-!-font-size-14"></p>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="sct-payment">
+        Payment amount £<span style="color: red;">*</span>
+      <input class="govuk-input govuk-input--width-10" id="sct-payment" name="sct-payment" type="text">
+    </label>
+    </div>
+
+
+      {{ govukButton({
+        text: "Abandon payment",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTview-council-tax"
+      }) }}
+
+      {{ govukButton({
+        text: "Take my card details",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTpayment"
+      }) }}
+
+    </div>
+  </div>
+
+  <div class="student-notes-box">
+    <p>You would see your own account reference and the amount left to pay for you.</p>
+</div>
+{% endblock %}

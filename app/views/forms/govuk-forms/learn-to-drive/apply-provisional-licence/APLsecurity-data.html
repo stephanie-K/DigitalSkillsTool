@@ -31,7 +31,7 @@ Motoring
 
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <span class="apply-DVLA-tagline">This is a training website</span>
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-quarter">
@@ -69,25 +69,30 @@ Motoring
 
           <hr>
         </div>
-        {{ govukButton({
-          text: "Previous",
-          classes: "button-primary dvla-previous-button",
-          href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLstart.html"
-        }) }}
-        {{ govukButton({
-          text: "Cancel",
-          classes: "button-primary dvla-cancel-button",
-          href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
-        }) }}
-        {{ govukButton({
-          text: "Next",
-          classes: "button-primary dvla-next-button",
-          href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails.html"
-        }) }}
+
+        <div class="dvla-button-row">
+            {{ govukButton({
+              text: "Previous",
+              classes: "button-primary dvla-previous-button",
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLstart.html"
+            }) }}
+
+            {{ govukButton({
+              text: "Cancel",
+              classes: "button-primary dvla-cancel-button",
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/cancel-DVLA-apply-form.html"
+            }) }}
+            {{ govukButton({
+              text: "Next",
+              classes: "button-primary dvla-custom-next-button",
+              href: "/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails.html"
+            }) }}
+        </div>
 
     </div>
 </div>
 {% endblock %}
 
 {% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
 {% endblock %}

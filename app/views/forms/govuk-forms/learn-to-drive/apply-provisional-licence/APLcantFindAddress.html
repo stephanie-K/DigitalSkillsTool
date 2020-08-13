@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/DVLA/DVLA_Logo.gif" alt="DVLA Logo" width="593" height="50"></image></a>
+      </span>
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+Motoring
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row govuk-!-margin-bottom-9">
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
+</div>
+<div class="govuk-grid-row">
+
+  <a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+
+  <h1 class="govuk-heading-l">
+      What if my postcode is right but my address can't be found?
+  </h1>
+
+  <p>If you live in a new development, a newly built property, or if the Royal Mail have recently updated your post code, we may not be able to find your address.</p>
+  <p>If this is the case, you can attempt to manually enter your address by leaving the house name/number blank, and only entering your post code; you can then enter each line of your address manually.</p>
+  <p>If your post code is not recognised, you will not be able to continue with your online application at the present time. You will need to complete form D1 'Application for a driving licence', available from the <a href="https://www.gov.uk/dvlaforms">DVLA form ordering service</a> or most Post Offices.</p>
+  <p></p>
+
+  <br><br>
+  
+
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
+{% endblock %}

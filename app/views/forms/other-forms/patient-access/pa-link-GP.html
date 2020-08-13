@@ -1,0 +1,31 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row pa-block pa-grey-container">
+    <div class="govuk-grid-column-two-thirds">
+      <a href="./pa-dashboard">&lt; Back</a>
+      <h1>1. Your Practice</h1>
+        
+        <p>Please supply a postcode or the name of the practice where you are currently registered as a patient.</p>
+        <p><span style="color: #D3368A;">* </span> If your practice is not located in England <a href="./pa-link-GP-Scotland.html"><strong>click here </strong></a>instead.</p>
+        <div class="govuk-form-group">
+          <input class="govuk-input govuk-!-width-two-thirds" id="pa-practice" name="pa-practice" type="text" placeholder="Postcode or name of practice" style="margin-bottom: 10px">
+          <a href="#" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button" style="width: 120px;">
+            Search
+          </a>
+        </div>
+      </div> 
+      <div class="govuk-grid-column-one-third">
+      <p><image src="{{ asset_path }}images/PA/pa-googlemap.png" alt="screenshot of google map for illustration" width="100%"></image></p>
+      </div>
+    </div>
+    <div class="student-notes-box"> 
+      <p>This is how it would look like but we can not do a search here - sorry.</p>
+      <p>If you live in Scotland you need to follow the pink link "click here".</p>
+      <p>The map doesn't work</p>
+    </div>
+</main>
+</div>
+
+  {% include "../../../includes/pa-footer.html"  %}

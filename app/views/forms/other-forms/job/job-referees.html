@@ -1,0 +1,147 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+          <div class="govuk-grid-column-full">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-2)">Back</a>
+            <h1 class="govuk-heading-l">Referees</h1>
+            <p>Your referees will include your present (or most recent) employer.  
+              Please identify below the person in your organisation. </p>
+              <p>Please identify a second referee who may have closer knowledge of your skills, knowledge and abilities and who may offer opinion on your suitability for this post.</p>  
+              <p><strong>You should not use family members or friends.</strong>  
+              Our pre-employment screening also includes, where appropriate, health and fitness for work, criminal records, qualifications and professional registration.</p>
+              <p><strong>Note that references will only be taken up for Preferred Candidates following interview.</strong></p>
+            
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+              
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+              
+                      {{ govukInput({
+                        label: {
+                          text: "Name 1",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-ref-name1",
+                        name: "job-ref-name1"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Designation",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-ref-designation1",
+                        name: "job-ref-designation1"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Address",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-ref-add1",
+                        name: "job-ref-add1"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Postcode",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "ggovuk-input--width-10",
+                        id: "job-ref-postcode1",
+                        name: "job-ref-postcode1"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Telephone",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-ref-phone1",
+                        name: "job-ref-phone1"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Email",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half govuk-!-margin-bottom-9",
+                        id: "job-ref-email1",
+                        name: "job-ref-email1"
+                      }) }}
+<hr class="govuk-!-margin-bottom-9">
+
+                      {{ govukInput({
+                        label: {
+                          text: "Name 2",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-ref-name2",
+                        name: "job-ref-name2"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Designation",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-ref-designation2",
+                        name: "job-ref-designation2"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Address",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-ref-add2",
+                        name: "job-ref-add2"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Postcode",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "ggovuk-input--width-10",
+                        id: "job-ref-postcode2",
+                        name: "job-ref-postcode2"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Telephone",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-ref-phone2",
+                        name: "job-ref-phone2"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Email",
+                          classes: "govuk-label--s"
+                        },
+                        classes: "govuk-!-width-one-half govuk-!-margin-bottom-9",
+                        id: "job-ref-email2",
+                        name: "job-ref-email2"
+                      }) }}
+   
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

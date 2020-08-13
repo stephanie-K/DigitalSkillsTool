@@ -1,0 +1,104 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 20px 0px">
+    Do you have a child who was born in the last 6 months?
+  </h1>
+
+  <form class="form" method="post">
+    <div class="govuk-form-group" style="padding:0px; margin:0px 0px 40px 0px;">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="new-born-conditional" name="BSG-new-born-check" type="radio" value="Yes" data-aria-controls="conditional-new-born-conditional">
+            <label class="govuk-label govuk-radios__label" for="new-born-conditional">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="new-born-2" name="BSG-new-born-check" type="radio" value="No">
+            <label class="govuk-label govuk-radios__label" for="new-born-2">
+              No
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="new-born-3" name="BSG-new-born-check" type="radio" value="Other">
+            <label class="govuk-label govuk-radios__label" for="new-born-3">
+              Yes, my baby was born within the last 6 months and either died or was stillborn
+            </label>
+          </div>
+          <br>
+
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-new-born-conditional" style="border:none; padding:0px; margin:0px;">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Who gave birth?
+                  </h1>
+                </legend>
+                <div class="govuk-radios govuk-radios--small">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="BSG-who-gave-birth" name="BSG-who-gave-birth" type="radio" value="Me">
+                    <label class="govuk-label govuk-radios__label" for="BSG-who-gave-birth">
+                      Me
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="BSG-who-gave-birth-2" name="BSG-who-gave-birth" type="radio" value="My Partner">
+                    <label class="govuk-label govuk-radios__label" for="BSG-who-gave-birth-2">
+                      My partner
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="BSG-who-gave-birth-2" name="BSG-who-gave-birth" type="radio" value="Someone Else">
+                    <label class="govuk-label govuk-radios__label" for="BSG-who-gave-birth-2">
+                      Someone who's not my current partner
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <br>
+        </div>
+      </fieldset>
+    </div>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          If you've given birth to twins or triplets and one baby died
+        </span>
+      </summary>
+      <div class="govuk-details__text" style="border-left: 6px solid #0065bd;">
+        <p>We're sorry to hear your baby died.</p>
+        <p>Unfortunately, you cannot apply online at this time. This is because our online form is unable to do some tasks yet.</p>
+        <p>You can still apply over the phone or by filling in a paper form.</p>
+        <p>Call Social Security Scotland freephone on 0800 182 2222 to work out the best way to apply..</p>
+      </div>
+    </details>
+
+    {{ govukButton({
+      text: " < Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+
+  </form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Which critical sector do you work in?
+{% endblock %}
+
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <h1 class="govuk-heading-xl">
+      Which critical sector do you work in?
+    </h1>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          <form class="form" method="post">
+          <p>You have to be classed as a critical worker to be able to apply for an emergency test.</p>
+
+          {% set healthHtml %}
+          <span class="govuk-hint">
+            This includes doctors, nurses, midwives, paramedics, social workers, care workers, and other frontline health and social care staff and volunteers.
+          </span>
+          <span class="govuk-hint">
+            It also includes anyone in the health and social care supply chain, such as medicine, medical and personal protective equipment producers and distributors.
+          </span>
+          {% endset -%}
+          {% set educHtml %}
+          <span class="govuk-hint">
+            This includes childcare, support and teaching staff, social workers and specialist education professionals who cannot work from home.
+          </span>
+          {% endset -%}
+          {% set keyHtml %}
+          <span class="govuk-hint">
+            This includes anyone essential to the running of the justice system, religious staff, charities and workers providing essential frontline services, anyone managing the deceased, and journalists and broadcasters who provide public service broadcasting.
+          </span>
+          {% endset -%}
+          {% set govHtml %}
+          <span class="govuk-hint">
+            This only includes people in administrative occupations that are essential to the coronavirus response, or anyone in local or national government providing essential public services, such as paying benefits.
+          </span>
+          {% endset -%}
+          {% set foodHtml %}
+          <span class="govuk-hint">
+            This includes anyone involved in producing, processing, distributing, delivering and selling food, as well as anyone essential to the provision of other key goods (for example hygienic and veterinary medicines).
+          </span>
+          {% endset -%}
+          {% set secureHtml %}
+          <span class="govuk-hint">
+            This includes police and support staff, Ministry of Defence civilians, contractor and armed forces personnel (those critical to providing essential defence and national security, and those essential to the coronavirus reponse), fire and rescue service staff, National Crime Agency staff, anyone maintaining border security, prison and probation staff and other national security roles.
+          </span>
+          {% endset -%}
+          {% set transHtml %}
+          <span class="govuk-hint">
+            This includes anyone keeping air, water, road and rail passenger and freight transport operating during the coronavirus response, including anyone working on transport systems used in supply chains.
+          </span>
+          {% endset -%}
+          {% set utilityHtml %}
+          <span class="govuk-hint">
+            This includes anyone working in banks, building societies and financial markets, the energy and water sectors, the IT and data infrastructure sector, primary industries where their supplies continue during the coronavirus response, and essential staff working in the civil nuclear, chemicals, telecommunications, postal services and delivery, payments providers and waste disposal sectors.
+          </span>
+          {% endset -%}
+
+          {{ govukRadios({
+            idPrefix: "sector-conditional",
+            name: "sector",
+            hint: {
+              text: "Select the one that applies."
+            },
+            items: [
+              {
+                value: "health",
+                text: "Health and social care",
+                conditional: {
+                  html: healthHtml
+                }
+              },
+              {
+                value: "educ",
+                text: "Education and childcare",
+                conditional: {
+                  html: educHtml
+                }
+              },
+              {
+                value: "key",
+                text: "Key public services",
+                conditional: {
+                  html: keyHtml
+                }
+              },
+              {
+                value: "gov",
+                text: "Local and national government",
+                conditional: {
+                  html: govHtml
+                }
+              },
+              {
+                value: "food",
+                text: "Food and other necessary goods",
+                conditional: {
+                  html: foodHtml
+                }
+              },
+              {
+                value: "security",
+                text: "Public safety and national security",
+                conditional: {
+                  html: secureHtml
+                }
+              },
+              {
+                value: "trans",
+                text: "Transport",
+                conditional: {
+                  html: transHtml
+                }
+              },
+              {
+                value: "utility",
+                text: "Utilities, communication and financial services",
+                conditional: {
+                  html: utilityHtml
+                }
+              },
+              {
+                value: "other",
+                text: "Other"
+              }
+            ]
+          }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary"
+          }) }}
+        </form>
+      </div>
+    </div>
+
+</div> 
+
+{% endblock %}

@@ -26,7 +26,7 @@ Bid for a council house
       href:"/forms/erc-forms/housing/CBLstart"
     }) }}
 
-   <p>Our list of available properties will be added on Wednesday, the 26th of August at 12pm, with bidding closing on Tuesday, the 1st September at 9am.</p>
+   <p>Our list of available properties will be added on Wednesday, the {{ biddingStart}} at 12pm, with bidding closing on Tuesday, the {{biddingEnd}} at 9am.</p>
    <p class="govuk-!-margin-top-9 govuk-!-margin-bottom-9">There are 3 results</p>
   </div>
 </div>
@@ -37,7 +37,7 @@ Bid for a council house
   <p><img src="{{ asset_path }}images/ERC/property86D.png" alt="picture of the flat" width="100%"></p>
   <p>2 bedroom property - open to Priority Pass A, B, C, D, E</p>
   <p><strong>Weekly rent:</strong> £80.84</p>
-  <p><strong>End date:</strong> 1 September 2020</p>
+  <p><strong>End date:</strong> {{biddingEnd}} 2020</p>
   <p><strong>Bedrooms:</strong> 2 bedrooms</p>
   <p><strong>Priority pass:</strong> A, B, C, D, E</p>
   {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -52,7 +52,7 @@ Bid for a council house
   <p><img src="{{ asset_path }}images/ERC/property54E.png" alt="picture of the flat" width="100%"></p>
    <p>2 bedroom property - open to Priority Pass A, B, C, D, E</p>
    <p><strong>Weekly rent:</strong> £88.84</p>
-   <p><strong>End date:</strong> 1 September 2020</p>
+   <p><strong>End date:</strong> {{biddingEnd}} 2020</p>
    <p><strong>Bedrooms:</strong> 2 bedrooms</p>
    <p><strong>Priority pass:</strong> A, B, C, D, E</p>
   {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -70,7 +70,7 @@ Bid for a council house
     <p><img src="{{ asset_path }}images/ERC/property37A.png" alt="picture of the flat" width="100%"></p>
     <p>1 Bedroom Sheltered Property - open to priority pass A, B, C, D, E - restricted to applicants aged 60 and over</p>
     <p><strong>Weekly rent:</strong> £60.84</p>
-    <p><strong>End date:</strong> 1 September 2020</p>
+    <p><strong>End date:</strong> {{biddingEnd}} 2020</p>
     <p><strong>Bedrooms:</strong> 1 bedroom</p>
     <p><strong>Priority pass:</strong> A, B, C, D, E</p>
     {% from "govuk/components/button/macro.njk" import govukButton %}

@@ -31,7 +31,7 @@ Candidate log in
 
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <span class="apply-DVLA-tagline">This is a training website</span>
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -122,7 +122,7 @@ Candidate log in
                   <option value="January">January</option>
                   <option value="February">February</option>
                   <option value="March">March</option>
-                  <option value="April"></option>
+                  <option value="April">April</option>
                   <option value="May">May</option>
                   <option value="June">June</option>
                   <option value="July">July</option>
@@ -308,4 +308,5 @@ Candidate log in
 {% endblock %}
 
 {% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
 {% endblock %}

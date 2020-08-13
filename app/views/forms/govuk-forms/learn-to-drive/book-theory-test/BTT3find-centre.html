@@ -31,7 +31,7 @@ Find a test centre near you
 
 {% block content %}
 <div class="govuk-grid-row govuk-!-margin-bottom-9">
-    <span class="apply-DVLA-tagline">This is a training website</span>
+    <a href="/index.html" style="text-decoration: none;"><span class="apply-DVLA-tagline">This is a training website</span></a>
 </div>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -59,7 +59,7 @@ Find a test centre near you
 
       <div class="student-notes-box"> 
         <p>This is not working like the real form</p>
-        <p>Every postcode will take you to the same page, even if you do not enter anything</p>
+        <p>Every postcode will take you to the same page here, even if you do not enter anything</p>
       </div>
 
       
@@ -68,4 +68,5 @@ Find a test centre near you
 {% endblock %}
 
 {% block footer %}
+{% include "../../../../includes/generic-footer.html"  %}
 {% endblock %}

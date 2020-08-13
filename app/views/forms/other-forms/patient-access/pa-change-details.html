@@ -1,0 +1,93 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+  <div class="govuk-grid-row pa-block pa-purple-container">
+    <div class="govuk-grid-column-full">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          &nbsp;
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <div class="pa-white-container ">
+            <h1 style="font-size: 24px; font-weight: 900; line-height: 30px;">Edit contact details</h1>
+            <form class="form" method="post">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-first-name">
+                First name
+              </label>
+              <input class="govuk-input" id="pa-first-name" name="pa-first-name" type="text" placeholder="First name">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-last-name">
+                Last name
+              </label>
+              <input class="govuk-input" id="pa-last-name" name="pa-last-name" type="text" placeholder="Last name">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-postcode">
+                Your home postcode
+              </label>
+              <input class="govuk-input" id="pa-postcode" name="pa-postcode" type="text" placeholder="Postcode">
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" role="group" aria-describedby="pa-date-of-birth">
+                <label class="govuk-label" for="pa-date-of-birth">
+                  Date of birth
+                </label>
+                <div class="govuk-date-input" id="pa-date-of-birth-day">
+                  <div class="govuk-date-input__item" style="margin-right: 3px">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input" id="pa-date-of-birth-day" name="pa-date-of-birth-day" type="text" pattern="[0-9]*" inputmode="numeric" Placeholder="Day" style="width:50px;" style="margin-right: 10px">
+                    </div>
+                  </div>
+                  <select class="govuk-select" id="pa-DOBmonth" name="pa-DOBmonth" style="margin-right: 3px">
+                    <option value="" selected="selected">Month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                  <div class="govuk-date-input__item" style="margin-right: 3px">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-input--width-4" id="pa-date-of-birth-year" name="pa-date-of-birth-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="Year">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="pa-gender">
+                Gender (optional)
+              </label>
+              <select class="govuk-select" id="pa-gender" name="pa-gender">
+                <option value="" selected="selected">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Not Specified">Not Specified</option>
+              </select>
+              </div>
+              {% from "govuk/components/button/macro.njk" import govukButton %}
+              {{ govukButton({
+                text: "Confirm",
+                classes: "button-primary pa-pink-button"
+              }) }}
+            </form>
+              <p> <a href="pa-my-account.html">or Cancel</a></p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  </div>
+  {% include "../../../includes/pa-footer.html"  %}

@@ -1,0 +1,116 @@
+{% extends "layout_erc.html" %}
+
+{% block pageTitle %}
+Pay your council house rent
+{% endblock %}
+
+
+{% block content %}
+<h1 class="govuk-heading-xl heading-title">
+  Pay your council house rent
+</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <p class="heading-intro">
+      Pay online and other ways to pay your council house rent.
+    </p>
+
+    <h2 class="govuk-heading-m">Pay online</h2>
+  
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Make a rent payment online",
+      classes: "button-primary",
+      isStartButton: true,
+      href: "/forms/erc-forms/pay-rent/PRpaymentEntry"
+    }) }}
+
+    <h2 class="govuk-heading-m">Standing order</h2>
+    <p><img src="{{ asset_path }}images/ERC/pdficon.gif" style="border: none; vertical-align: middle;" alt="pdf icon"
+      title="">&nbsp;<a href="https://www.eastrenfrewshire.gov.uk/media/522/Rent-standing-order-mandate/pdf/Rent_standing_order_form.pdf?m=637279229095370000" title="Rent standing order mandate : opens on new browser window or tab" target="_blank" rel="noopener">Download a rent standing order form [119.59KB]</a></p>
+
+
+      <h2 class="govuk-heading-m">Telephone</h2>
+      <p>Phone 0141 577 3030, 24 hours a day.</p>
+
+      <h2 class="govuk-heading-m">Post office</h2>
+      <p>You must bring your rent card.</p>
+
+      <h2 class="govuk-heading-m">Post</h2>
+      <p>Make cheques payable to East Renfrewshire Council.</p>
+      <p>Write your name, address and rent account number on the back of the cheque.</p>
+
+      <h2 class="govuk-heading-m">In person</h2>
+      <p>Pay by cash or debit card by calling into one of our offices.</p>
+      <p>We are open Monday to Friday, 9am to 4.15pm.</p>
+      <p>Between 1pm and 2pm, only debit or credit card payments can be taken.</p>
+
+      <h2 class="govuk-heading-m">Help paying your rent</h2>
+      <p>If you claim Department of Work and Pensions (DWP) benefits or are on a low income, you might be able to claim Housing Benefit or other benefits.</p>
+      <p><a href="#">Find out if you're getting the benefits you're entitled to.</a></p> 
+      <p>If you're an East Renfrewshire Council or Barrhead Housing tenant and claim Universal Credit (UC) you can request a free Money Management Account with Pioneer Mutual Credit Union.</p>     
+      <p><a href="#">Visit the Pioneer Mutual Credit Union website.</a></p>   
+      <p>Please note, following this year's rent increase, those who receive UC will complete their claim for the increase in housing costs through their online journal on or after 6 April 2020.</p>  
+      <p>If you need advice or assistance, you can contact any of the following:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Your Work Coach</li>
+        <li>Jobcentre Plus</li>
+        <li>Money Advice and Rights team (MART)</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Discretionary housing payment</h2>
+      <p>If you get Housing Benefit you might qualify for extra help with your rent.</p>
+      <p>You might qualify if:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your Housing Benefit is reduced because of the benefit cap or spare room subsidy</li>
+        <li>you need help to stop you becoming homeless</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">How to apply</h2>
+      <p>Email: <a href="mailto:welfarereform@eastrenfrewshire.gov.uk">welfarereform@eastrenfrewshire.gov.uk</a></p>
+
+      <h2 class="govuk-heading-m">Council tenant rent responsibilities</h2>
+      <p>You need to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>pay your full rent and other charges in advance as it says in your tenancy agreement</li>
+        <li>tell us about changes that could affect any Housing Benefit or Council Tax reduction</li>
+        <li>tell the DWP about changes that could affect help with housing costs</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Rent arrears</h2>
+      <p>If you're having problems paying your rent, it's important you tell us as soon as possible.</p>
+      <p>The sooner you tell us the more chance we have to help you.</p>
+      <p>If you don't pay your rent you may be evicted from your home.</p>
+
+      <h2 class="govuk-heading-m">Contact us</h2>
+      <p>Email: <a href="mailto:rents@eastrenfrewshire.gov.uk">rents@eastrenfrewshire.gov.uk</a></p>
+      
+      <p>Phone: 0141 577 3664 / 3707</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+    <div class="govuk-grid-column-one-third">
+      <br>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Share this page 
+        <image src="{{ asset_path }}/images/ERC/facebook.png" alt="facebook" width="24" height="24" style="vertical-align:middle; padding-left: 10px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/twitter.png" alt="twitter" width="24" height="24" style="vertical-align:middle; padding-left: 5px;" ></image>
+        <image src="{{ asset_path }}/images/ERC/email.png" alt="email" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 40px;" ></image>
+      </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <p>Print 
+        <image src="{{ asset_path }}/images/ERC/print.png" alt="print" width="24" height="24" style="vertical-align:middle; padding-left: 5px; padding-right: 10px;" ></image>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+ 
+  

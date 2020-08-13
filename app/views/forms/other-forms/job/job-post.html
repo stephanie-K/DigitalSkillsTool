@@ -1,0 +1,129 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+          <div class="govuk-grid-column-full">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Present (or most recent) post</h1>
+            <form class="form" method="post">
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+              
+                      {% from "govuk/components/input/macro.njk" import govukInput %}
+              
+                      {{ govukInput({
+                        label: {
+                          text: "Job title",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-post-title",
+                        name: "job-post-title"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Grade",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-grade",
+                        name: "job-grade"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Date of starting grade",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-starting-grade",
+                        name: "job-starting-grade"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Employer",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-employer",
+                        name: "job-employer"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Employed from",
+                          classes: "govuk-label--m"
+                        },
+                        hint: {
+                          text: "Date when you started this position"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-employed-from",
+                        name: "job-employed-from"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Employed to",
+                          classes: "govuk-label--m"
+                        },
+                        hint: {
+                          text: "Date when you left this position if applicable"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-employed-to",
+                        name: "job-employed-to"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Reason for leaving",
+                          classes: "govuk-label--m"
+                        },
+                        hint: {
+                          text: "If applicable"
+                        },
+                        classes: "govuk-!-width-one-half",
+                        id: "job-reason",
+                        name: "job-reason"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Notice period",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-notice",
+                        name: "job-notice"
+                      }) }}
+                      {{ govukInput({
+                        label: {
+                          text: "Current salary",
+                          classes: "govuk-label--m"
+                        },
+                        classes: "govuk-input--width-10",
+                        id: "job-salary",
+                        name: "job-salary"
+                      }) }}
+                      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+                      {{ govukTextarea({
+                        name: "role-purpose",
+                        id: "role-purpose",
+                        label: {
+                          text: "Role purpose / Summary of responsibilities",
+                          classes: "govuk-label--m"
+                        }
+                      }) }}
+              
+                        {% from "govuk/components/button/macro.njk" import govukButton %}
+                        {{ govukButton({
+                            text: "Continue"
+                        }) }}
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

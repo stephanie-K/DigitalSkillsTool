@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Why do you need an emergency driving test?
+{% endblock %}
+
+
+{% block content %}
+<a class="govuk-back-link" href="javascript: history.go(-1)">Back</a>
+
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+        {{ govukTextarea({
+          name: "more-detail",
+          id: "more-detail",
+          label: {
+            text: "Why do you need an emergency driving test?",
+            classes: "govuk-label--xl",
+            isPageHeading: true
+          },
+          hint: {
+            text: "Tell us why you need an emergency driving test. For example, you need a driving licence to drive an ambulance."
+          }
+        }) }}
+
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+          {{ govukButton({
+            text: "Continue",
+            classes: "button-primary",
+            href: "/forms/govuk-forms/learn-to-drive/book-driving-test/BDTname"
+          }) }}
+
+      </div>
+    </div>
+
+</div> 
+
+{% endblock %}

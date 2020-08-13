@@ -27,7 +27,7 @@ Housing - Universal Credit
     name: "housing",
     fieldset: {
       legend: {
-        text: "Do you have hosuing costs?",
+        text: "Do you have housing costs?",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
@@ -49,17 +49,11 @@ Housing - Universal Credit
 
   {% from "govuk/components/button/macro.njk" import govukButton %}
   {{ govukButton({
-    text: "Continue"
+    text: "Continue",
+    href: "/forms/govuk-forms/universal-credit-apply/UCAhousingWhereYouLive"
   }) }}
 </form>
 </div>
 
-
-
-
-
-  <div class="student-notes-box">
-    <p></p>
-  </div>
 
 {% endblock %}

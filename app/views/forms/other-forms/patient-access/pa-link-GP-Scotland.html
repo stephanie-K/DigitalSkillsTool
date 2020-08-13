@@ -1,0 +1,46 @@
+{% include "../../../includes/pa-header.html"  %}
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+  <div class="govuk-grid-row pa-block pa-grey-container">
+    <div class="govuk-grid-column-one-half">
+      <a href="./pa-dashboard">&lt; Back</a>
+      <h2>Link To Practice</h2>
+        <p>To link to your practice, please enter the following details from your registration letter. If you do not have a registration letter, please contact your practice to obtain one.</p>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pa-email">
+            Linkage Key or PIN:
+          </label>
+          <input class="govuk-input" id="pa-email" name="pa-email" type="text">
+        </div>
+      
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pa-email">
+            ODS Code or Practice ID:
+          </label>
+          <input class="govuk-input" id="pa-email" name="pa-email" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="pa-email">
+            Account ID or Access ID:
+          </label>
+          <input class="govuk-input" id="pa-email" name="pa-email" type="text">
+        </div>
+
+          <a href="#" role="button" draggable="false" class="govuk-button button-primary pa-pink-button" data-module="govuk-button">
+            Confirm
+          </a>
+      </div> 
+      <div class="govuk-grid-column-one-half">
+      <p><image src="{{ asset_path }}images/PA/pa-googlemap.png" alt="screenshot of google map for illustration" width="100%"></image></p>
+      </div>
+    </div>
+    <div class="student-notes-box"> 
+      <p>This is how it would look like but we can not go further here. The button 'Confirm' doesn't work.</p>
+      <p>The map doesn't work either.</p>
+    </div>
+</main>
+</div>
+
+  {% include "../../../includes/pa-footer.html"  %}

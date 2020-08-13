@@ -1,0 +1,482 @@
+{% include "../../../includes/job-header.html"  %}
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row govuk-!-margin-bottom-9">
+            <div class="govuk-grid-column-full">
+            <a class="govuk-back-link govuk-!-margin-bottom-8" href="javascript: history.go(-1)">Back</a>
+            <h1 class="govuk-heading-l">Equal Opportunities Monitoring</h1>
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukRadios({
+              classes: "govuk-radios--inline govuk-radios--small",
+              idPrefix: "promotion",
+              name: "promotion",
+              fieldset: {
+                legend: {
+                  text: "1 - If you are currently one of our employees, will getting this job be a promotion?",
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes"
+                },
+                {
+                  value: "no",
+                  text: "No"
+                }
+              ]
+            }) }}
+
+            {% set genderHtml %}
+            {{ govukInput({
+              id: "gender-description",
+              name: "gender-description",
+              value: data['gender-description'],
+              classes: "govuk-!-width-one-third",
+              label: {
+                text: "If you describe your gender with another term, tell us here"
+              }
+            }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+                classes: "govuk-radios--inline govuk-radios--small",
+                idPrefix: "gender",
+                name: "gender",
+                fieldset: {
+                  legend: {
+                    text: "2 - Which one of the following best describes your gender?",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                  {
+                    value: "male",
+                    text: "Male"
+                  },
+                  {
+                    value: "female",
+                    text: "Female"
+                  },
+                  {
+                    value: "other",
+                    text: "In another way",
+                    conditional: {
+                      html: genderHtml
+                    }
+                  },
+                  {
+                    value: "no",
+                    text: "Prefer not to say"
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                classes: "govuk-radios--inline govuk-radios--small",
+                idPrefix: "trans",
+                name: "trans",
+                fieldset: {
+                  legend: {
+                    text: "3 - Do you consider yourself to be a trans person?",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                    text: "Trans is an umbrella term to describe people whose gender is not the same as the sex they were assigned at birth."
+                  },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes"
+                  },
+                  {
+                    value: "no",
+                    text: "No"
+                  },
+                  {
+                    value: "not-say",
+                    text: "Prefer not to say"
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                classes: "govuk-radios govuk-radios--small",
+                idPrefix: "age",
+                name: "age",
+                fieldset: {
+                  legend: {
+                    text: "4 - What is your age?",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                  {
+                    value: "0-15",
+                    text: "0 to 15"
+                  },
+                  {
+                    value: "16-24",
+                    text: "16 to 24"
+                  },
+                  {
+                    value: "25-39",
+                    text: "25 to 39"
+                  },
+                  {
+                    value: "40-49",
+                    text: "40 to 49"
+                  },
+                  {
+                    value: "50-59",
+                    text: "50 to 59"
+                  },
+                  {
+                    value: "60-over",
+                    text: "60 or over"
+                  },
+                  {
+                    value: "no say",
+                    text: "Prefer not to say"
+                  }
+                ]
+              }) }}
+
+              {{ govukRadios({
+                classes: "govuk-radios--inline govuk-radios--small",
+                idPrefix: "disability",
+                name: "disability",
+                fieldset: {
+                  legend: {
+                    text: "5 - Do you have a physical or mental health condition or disability that",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                hint: {
+                    classes: "govuk-!-font-weight-bold",
+                    text: "has a substantial effect on your ability to carry out day to day activities and
+                     has lasted or is expected to last 12 months or more?"
+                  },
+                items: [
+                  {
+                    value: "yes",
+                    text: "Yes"
+                  },
+                  {
+                    value: "no",
+                    text: "No"
+                  },
+                  {
+                    value: "not-say",
+                    text: "Prefer not to say"
+                  }
+                ]
+              }) }}  
+
+
+              {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+
+              {% set otherdisabilityHtml %}
+              {{ govukInput({
+                id: "otherdisability",
+                name: "otherdisability",
+                classes: "govuk-!-width-one-third",
+                label: {
+                  text: "Please specificy"
+                }
+              }) }}
+              {% endset -%}
+
+              
+              {{ govukCheckboxes({
+                classes: "govuk-checkboxes--small",
+                idPrefix: "what-disability",
+                name: "what-disability",
+                fieldset: {
+                  legend: {
+                    text: "If you answered ‘yes’ please tick if it is either of the following:",
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: [
+                  {
+                    value: "learning",
+                    text: "Learning disability"
+                  },
+                  {
+                    value: "long",
+                    text: "Long standing illness"
+                  },
+                  {
+                    value: "mental",
+                    text: "Mental health condition"
+                  },
+                  {
+                    value: "physical",
+                    text: "Physical impairment"
+                  },
+                  {
+                    value: "sensory",
+                    text: "Sensory impairment"
+                  },
+                  {
+                    value: "other",
+                    text: "Other",
+                    conditional: {
+                      html: otherdisabilityHtml 
+                    }
+                  }
+                  ]
+                }) }}
+                <h2 class="govuk-heading-m">6 - What is your nationality?</h2>
+                {{ govukInput({
+                    label: {
+                      text: "Nationality at birth",
+                      classes: "govuk-label--m"
+                    },
+                    classes: "govuk-!-width-one-half",
+                    id: "nationality-birth",
+                    name: "nationality-birth"
+                  }) }}
+                  {{ govukInput({
+                    label: {
+                      text: "Present nationality",
+                      classes: "govuk-label--m"
+                    },
+                    classes: "govuk-!-width-one-half",
+                    id: "nationality-present",
+                    name: "nationality-present"
+                  }) }}
+
+
+
+        {% set multipleHtml %}
+        {{ govukInput({
+        id: "multiple",
+        name: "multiple",
+        classes: "govuk-!-width-one-third",
+        label: {
+            text: "Describe mixed"
+        }
+        }) }}
+    {% endset -%}
+
+
+        {% set otherEthnicHtml %}
+        {{ govukInput({
+        id: "other-ethnic",
+        name: "other-ethnic",
+        value: data['other-ethnic'],
+        classes: "govuk-!-width-one-third",
+        label: {
+            text: "Describe your ethnic group"
+        }
+        }) }}
+        {% endset -%}
+
+
+        {{ govukRadios({
+        classes: "govuk-radios--small",    
+        idPrefix: "ethnic",
+        name: "ethnic",
+        fieldset: {
+            legend: {
+            text: "7 - What is your ethnic group?",
+            classes: "govuk-fieldset__legend--m"
+            }
+        },
+        items: [
+            {
+            value: "Arab",
+            text: "Arab"
+            },
+            {
+            value: "asian",
+            text: "Asian"
+            },
+            {
+            value: "black",
+            text: "Black"
+            },
+            {
+            value: "white",
+            text: "White"
+            },
+            {
+            value: "mixed",
+            text: "Mixed",
+            conditional: {
+                html: multipleHtml
+              }
+            },
+            {
+            value: "other ethnic",
+            text: "Other",
+            conditional: {
+                html: otherEthnicHtml
+              }
+            },
+            {
+            value: "no",
+            text: "Prefer not to say"
+            }
+        ]
+        }) }}
+
+        {% set otherReligionHtml %}
+        {{ govukInput({
+          id: "rel",
+          name: "rel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Describe your religion"
+          }
+        }) }}
+        {% endset -%}
+
+        {% set christianHtml %}
+        {{ govukRadios({
+            idPrefix: "christian",
+            name: "christian",
+            items: [
+                {
+                value: "catholic",
+                text: "Roman Catholic"
+                },
+                {
+                value: "other Christian",
+                text: "Other Christian"
+                }
+            ]
+            }) }}
+        {% endset -%}
+  
+        {{ govukRadios({
+          classes: "govuk-radios govuk-radios--small",
+          idPrefix: "religion-conditional",
+          name: "status",
+          fieldset: {
+            legend: {
+              text: "8 - To which religion, religious denomination or body do you actively belong?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "None",
+              text: "None"
+            },
+            {
+              value: "atheist",
+              text: "Atheist"
+            },
+            {
+              value: "Buddhist",
+              text: "Buddhist"
+            },
+            {
+              value: "Christian",
+              text: "Christian"
+            },
+            {
+              value: "Hindu",
+              text: "Hindu"
+            },
+            {
+              value: "Jewish",
+              text: "Jewish"
+            },
+            {
+              value: "Muslim",
+              text: "Muslim"
+            },
+            {
+              value: "Roman Catholic",
+              text: "Roman Catholic"
+            },
+            {
+              value: "Sikh",
+              text: "Sikh"
+            },
+            {
+              value: "Another",
+              text: "Another religion",
+              conditional: {
+                html: otherReligionHtml
+              }
+            },
+            {
+              value: "no",
+              text: "Prefer not to say"
+            }
+          ]
+        }) }}
+
+        {% set otherOrientationHtml %}
+        {{ govukInput({
+          id: "orien",
+          name: "orien",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Describe your sexual orientation"
+          }
+        }) }}
+        {% endset -%}
+        {{ govukRadios({
+          classes: "govuk-radios govuk-radios--small",
+          idPrefix: "orientation-conditional",
+          name: "orientation",
+          fieldset: {
+            legend: {
+              text: "9 - Which of the following best describes your sexual orientation?",
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "Bisexual",
+              text: "Bisexual"
+            },
+            {
+              value: "Gay or lesbian",
+              text: "Gay or lesbian"
+            },
+            {
+              value: "Heterosexual",
+              text: "Heterosexual/Straight"
+            },
+            {
+              value: "Other",
+              text: "Other",
+              conditional: {
+                html: otherOrientationHtml
+              }
+            },
+            {
+              value: "Prefer not to say",
+              text: "Prefer not to say"
+            }
+          ]
+        }) }}
+
+<br>
+<br>
+
+           {% from "govuk/components/button/macro.njk" import govukButton %}
+           {{ govukButton({
+            text: "Continue",
+            href: "/forms/other-forms/job/job-summary"
+          }) }}
+        </div>
+    </div>
+    </main>
+</div>
+
+{% include "../../../includes/job-footer.html"  %}
+

@@ -1,0 +1,97 @@
+{% extends "layout_erc-old.html" %}
+
+{% block pageTitle %}
+Clothing Grants and Free School Meals
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l do-it-online">
+      Do it online
+    </h1>
+    <!-- this is the red error message at the top, only displayed if there is an error on that form -->
+    {% if (data['which-tax'] === 'tax-not-selected') or (data['income'] === 'income-not-select')%}
+    <p class="ercError" style="font-weight: 700; line-height: 1.5; font-size: 14px">Please supply a valid value for the fields marked with a <span style="color: red; border: 1px solid red; padding: 5px; background-color: #fff">*</span></p>
+    {% endif %}
+
+    <h2 class="govuk-heading-l erc-alt-double-lines">Clothing Grants and Free School Meals</h2>
+
+    <p class="erc-alt-dark-blue-bg">Tax credits and income</p>
+    <br>
+    <form class="form" method="post">
+    <p>What you receive - please indicate: <span style="color: red"> *</span></p>
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="which-tax" name="which-tax" type="radio" value="child-tax-only">
+            <label class="govuk-label govuk-radios__label" for="which-tax">
+              Child Tax Credit only
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="which-tax-2" name="which-tax" type="radio" value="working-tax-too">
+            <label class="govuk-label govuk-radios__label" for="which-tax-2">
+              Working Tax Credit and Child Tax Credit
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="which-tax-2" name="which-tax" type="radio" value="neither">
+            <label class="govuk-label govuk-radios__label" for="which-tax-3">
+              Neither of the above
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="erc-alt-light-grey">
+      <p class="govuk-!-font-size-14">What is your gross household income for year 2019/20 or projected income for year 2020/21? For year 2020/21 this should be the projected annual income for year 2020/21 as assessed on your tax credit award letter for 2020/21 from HM Revenue and Customs (TC602).</p>
+    </div>
+    <br>
+    <p>My income is: <span style="color: red"> *</span></p>
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-radios govuk-radios--small">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="income" name="income" type="radio" value="more">
+            <label class="govuk-label govuk-radios__label" for="income">
+              More than £16,105
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="income-2" name="income" type="radio" value="between">
+            <label class="govuk-label govuk-radios__label" for="income-2">
+              Between £16,105 and £7,330
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="income-2" name="income" type="radio" value="less">
+            <label class="govuk-label govuk-radios__label" for="income-3">
+              Less than £7,330
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+
+      {{ govukButton({
+        text: "<< Back",
+        classes: "button-primary erc-alt",
+        href: "/forms/erc-forms/free-school-meals/FSMbenefits"
+      }) }}
+
+      {{ govukButton({
+        text: "Apply",
+        classes: "button-primary erc-alt"
+      }) }}
+    </form>
+    </div>
+  </div>
+
+{% endblock %}
