@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you want to apply for a postal vote?
+{% endblock %}
+
+{% block content %}
+<p><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></p>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      
+      {% set sendFormHtml %}
+      {{ govukRadios({
+        idPrefix: "registered-abroad",
+        name: "registered-abroad",
+        fieldset: {
+          legend: {
+            text: "You’ll need to sign and return the postal vote application form. How should we send you the form?",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "Email it to me",
+            text: "Email it to me"
+          },
+          {
+            value: "Post it to me",
+            text: "Post it to me"
+          }
+        ]
+      }) }}
+      {% endset -%}
+      
+    
+      {{ govukRadios({
+        idPrefix: "rtv-postal-vote-conditional",
+        name: "rtv-postal-vote",
+        fieldset: {
+          legend: {
+            text: "Do you want to apply for a postal vote?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "No, I prefer to vote in person",
+            text: "No, I prefer to vote in person"
+          },
+          {
+            value: "No, I already have a postal vote",
+            text: "No, I already have a postal vote"
+          },
+          {
+            value: "Yes, send me a postal vote application form",
+            text: "Yes, send me a postal vote application form",
+            conditional: {
+              html: sendFormHtml
+            }
+          }
+        ]
+      }) }}
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a postal vote?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>We’ll send your ballot paper to the address you choose. Then you fill it in and return it by post.</p>
+
+          <p>Anyone can apply for a postal vote. You don’t need to give a reason.</p>
+          
+          <p>If you’re not sure whether you want a postal vote, you can complete your registration now and apply for a postal vote later.</p>
+        </div>
+      </details>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    </div>
+  </div>
+ </div> 
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you also live at a second address?
+{% endblock %}
+
+{% block content %}
+<p><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></p>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      
+      {% set twoHomesHtml %}
+      <p>You may be able to register at both addresses (though you can only vote once in any election).</p>
+        <p>If you want to register in two places, make two separate applications through this service. Your local Electoral Registration Office will look at each application and tell you whether you’re allowed to register.</p>
+      {% endset -%}
+      
+      {% set StudentHtml %}
+      <p>Students can register to vote at their home and term time addresses.</p>
+      <p>If you’re not already registered at your other address, you can make a separate application through this service.</p>
+      {% endset -%}
+    
+      {{ govukRadios({
+        idPrefix: "rtv-2nd-add-conditional",
+        name: "rtv-2nd-add",
+        fieldset: {
+          legend: {
+            text: "Do you also live at a second address?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        items: [
+          {
+            value: "No",
+            text: "No"
+          },
+          {
+            value: "Yes, I spend time living at two homes",
+            text: "Yes, I spend time living at two homes",
+            conditional: {
+              html: twoHomesHtml
+            }
+          },
+          {
+            value: "Yes, I’m a student with home and term-time addresses",
+            text: "Yes, I’m a student with home and term-time addresses",
+            conditional: {
+              html: StudentHtml
+            }
+          }
+        ]
+      }) }}
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    </div>
+  </div>
+ </div> 
+
+{% endblock %}

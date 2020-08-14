@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Do you want to opt out of the ‘open register’?
+{% endblock %}
+
+{% block content %}
+<p><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></p>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      <h1 class="govuk-heading-xl">Do you want to opt out of the ‘open register’?</h1>
+      <p>The electoral register lists the name and address of everyone who’s registered to vote.</p>
+
+      <p>There are 2 versions of the electoral register - the full version and the ‘open register’ (‘edited register’ in Northern Ireland).</p>
+      
+      <p>You can opt out of the open register. This is the version of the register that’s available to anyone who wants to buy a copy.</p>
+      
+      <p>Opting out will not affect your right to vote.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="want-to-opt-out" name="want-to-opt-out" type="checkbox" value="Yes">
+              <label class="govuk-label govuk-checkboxes__label" for="ok">
+                <strong>I do not want my name and address to appear in the open register</strong>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            About the 2 versions of the electoral register
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h2 class="govuk-heading-l">The full version</h2>
+          <p>If you register to vote, your name and address will appear in the full version of the electoral register. The full version is only used for:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>elections and electoral activities</li>
+          <li>preventing and detecting crime</li>
+          <li>checking applications for loans or credit</li>
+          <li>jury summoning in England, Wales and Northern Ireland</li>
+        </ul>
+          <h2 class="govuk-heading-l">The open register</h2>
+          <p>The open register can be bought by any person, company or organisation. For example, businesses and charities use it to confirm contact details.</p>
+          
+          <p>If you do not want your name and address to appear on the open register, you can opt out.</p>
+        </div>
+      </details>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    </div>
+  </div>
+ </div> 
+
+{% endblock %}

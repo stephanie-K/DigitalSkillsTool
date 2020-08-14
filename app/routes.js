@@ -31,6 +31,39 @@ router.post('/forms/govuk-forms/register-to-vote/RTVNInumber', function (req, re
 router.post('/forms/govuk-forms/register-to-vote/RTVaddress', function (req, res) {
   res.redirect('/forms/govuk-forms/register-to-vote/RTVaddressNext')
 })
+
+router.post('/forms/govuk-forms/register-to-vote/RTVaddressNext', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVaddress2nd')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVaddressFull', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVaddress2nd')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVaddress2nd', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVmoved')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVmoved', function (req, res) {
+  var moved = req.session.data['rtv-moved']
+  if (moved === "Yes, from a UK address") {
+return res.redirect('/forms/govuk-forms/register-to-vote/RTVpreviousUKadd')
+  }
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVoptOut')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVoptOut', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVpostalVote')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVpostalVote', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVcontact')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVcontact', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVsummary')
+})
+
 // Apply for a provisional licence ***************************************************
 
 router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails', function (req, res) {
