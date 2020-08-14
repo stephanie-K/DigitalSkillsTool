@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your address
+{% endblock %}
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">What is your address?</h1>
+    <p>Enter the postcode where you live and where you would like to register to vote.</p>
+    <form class="form" method="post">
+      {{ govukInput({
+        label: {
+          text: "Postcode",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-10",
+        id: "rtv-postcode",
+        name: "rtv-postcode",
+        value: data['rtv-postcode']
+      }) }}
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I don’t know what postcode to use
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+        <p>If you can’t find your postcode on a letter or other document, try entering your address into a search engine website.</p>
+         <p><strong>If you have more than one address</strong></p>
+          <p>It’s sometimes possible to register at two addresses (though you can only vote once in any election).</p>
+
+          <p>For example, if you’re a student living away from home, you may be able to register at both your home and term time addresses.</p>
+
+          <p>If you want to register at two addresses, make two separate applications through this service. Your local Electoral Registration Office will look at each application and tell you whether you’re allowed to register.</p>
+
+          <p><strong>If you don’t have a permanent address</strong></p>
+          <p>If you’re homeless and living in temporary accommodation (for example, a long term hostel), use that address.</p>
+
+          <p>If you’re a long term patient in a psychiatric hospital, use the address of the hospital.</p>
+
+          <p>If you’re a prisoner on long term remand, use the address of the prison.</p>
+
+          <p><strong>If you can’t provide an address</strong></p>
+          <p>If you can’t provide an address, <a href="/forms/govuk-forms/register-to-vote/RTVContactElectoralRegOffice">contact your local Electoral Registration Office (link opens in a new window)</a> for advice. </p>
+        </div>
+      </details>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Find address"
+      }) }}
+    </form>
+    <p><a href="javascript: history.go(-1)">Back</a></p>
+    </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>You can enter your real postcode, but we are going to use a fake address here after this page.</p>
+  </div>
+ </div> 
+
+{% endblock %}

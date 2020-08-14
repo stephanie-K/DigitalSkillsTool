@@ -7,111 +7,115 @@ Nationality
 
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
-    <form class="form" method="post">
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-      {% from "govuk/components/input/macro.njk" import govukInput %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
 
-      {% set otherCountryHtml %}
-      {{ govukInput({
-        id: "other-country-name",
-        name: "other-country-name",
-        classes: "govuk-!-width-one-third",
-        label: {
-          text: "Country name",
-          value: data['other-country-name']
-        }
-      }) }}
-      {% endset -%}
-
-
-      {{ govukCheckboxes({
-        idPrefix: "nationality",
-        name: "nationality",
-        fieldset: {
-          legend: {
-            text: "What is your nationality?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
+        {% set otherCountryHtml %}
+        {{ govukInput({
+          id: "other-country-name",
+          name: "other-country-name",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Country name",
+            value: data['other-country-name']
           }
-        },
-        hint: {
-          text: "Select all options that are relevant to you."
-        },
-        items: [
-          {
-            value: "British",
-            text: "British",
-            hint: {
-              text: "including English, Scottish, Welsh and Northern Irish"
+        }) }}
+        {% endset -%}
+
+
+        {{ govukCheckboxes({
+          idPrefix: "nationality",
+          name: "nationality",
+          fieldset: {
+            legend: {
+              text: "What is your nationality?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
             }
           },
-          {
-            value: "Irish",
-            text: "Irish"
+          hint: {
+            text: "Select all options that are relevant to you."
           },
-          {
-            value: "Citizen of a different country",
-            text: "Citizen of a different country",
-            conditional: {
-              html: otherCountryHtml
+          items: [
+            {
+              value: "British",
+              text: "British",
+              hint: {
+                text: "including English, Scottish, Welsh and Northern Irish"
+              }
+            },
+            {
+              value: "Irish",
+              text: "Irish"
+            },
+            {
+              value: "Citizen of a different country",
+              text: "Citizen of a different country",
+              conditional: {
+                html: otherCountryHtml
+              }
             }
-          }
-        ]
-      }) }}
-      <div class="govuk-grid-row">
-      <details class="govuk-details govuk-grid-column-two-thirds" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Help with nationality
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
-          <ul class="govuk-list govuk-list--bullet">
-            <li>a British citizen (including English, Scottish, Welsh or from Northern Ireland)</li>
-            <li>an Irish or European Union citizen living in the UK</li>
-            <li>a Commonwealth citizen who has permission to enter or stay in the UK, or who does not need permission</li>
-            <li>a foreign citizen, living in Wales, who has leave to enter or remain in the UK or does not require such leave</li>
-          </ul>
-          <p>We may need additional evidence about your nationality or we may check your nationality or immigration status against government records. If you have more than one nationality, please include them all. 
-            If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
-            We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post. This could delay your name getting on the electoral register.</p>
-            <details class="govuk-details" data-module="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  I can't provide my nationality
-                </span>
-              </summary>
-            
-              <fieldset class="govuk-fieldset">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="provide-nationality">
-                    Why can’t you provide your nationality?
-                  </label>
-                  <input class="govuk-input" id="provide-nationality" name="provide-nationality" type="text" value="{{ data['provide-nationality']}}">
-                </div>
-                </fieldset>
+          ]
+        }) }}
+        <div class="govuk-grid-row">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with nationality
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post.
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a British citizen (including English, Scottish, Welsh or from Northern Ireland)</li>
+              <li>an Irish or European Union citizen living in the UK</li>
+              <li>a Commonwealth citizen who has permission to enter or stay in the UK, or who does not need permission</li>
+              <li>a foreign citizen, living in Wales, who has leave to enter or remain in the UK or does not require such leave</li>
+            </ul>
+            <p>We may need additional evidence about your nationality or we may check your nationality or immigration status against government records. If you have more than one nationality, please include them all. 
+              If you’re not sure about your nationality, try to find out from an official document like a passport or national ID card.
+              We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post. This could delay your name getting on the electoral register.</p>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    I can't provide my nationality
+                  </span>
+                </summary>
+              
                 <fieldset class="govuk-fieldset">
                   <div class="govuk-form-group">
-                    <label class="govuk-label" for="provide-email">
-                      It will be easier to contact you if you provide your email address (optional)
+                    <label class="govuk-label" for="provide-nationality">
+                      Why can’t you provide your nationality?
                     </label>
-                    <input class="govuk-input govuk-!-width-one-third" id="provide-email" name="provide-email" type="text" value="{{ data['provide-email']}}">
+                    <input class="govuk-input" id="provide-nationality" name="provide-nationality" type="text" value="{{ data['provide-nationality']}}">
                   </div>
                   </fieldset>
-            </div>
-    </details>
-  </div>
+                  <fieldset class="govuk-fieldset">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="provide-email">
+                        It will be easier to contact you if you provide your email address (optional)
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="provide-email" name="provide-email" type="text" value="{{ data['provide-email']}}">
+                    </div>
+                    </fieldset>
+              </div>
+      </details>
+    </div>
 
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-  {{ govukButton({
-    text: "Continue"
-  }) }}
-  </form>
-<p><a href="javascript: history.go(-1)">Back</a></p>
-</div>
-<div class="student-notes-box"> 
-  <p>On the real form you can add more than one country for your nationality.</p>
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+    </form>
+    <p><a href="javascript: history.go(-1)">Back</a></p>
+    </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>On the real form you can add more than one country for your nationality.</p>
+  </div>
 </div>
 
 {% endblock %}

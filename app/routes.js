@@ -20,6 +20,17 @@ router.post('/forms/govuk-forms/register-to-vote/RTVNationality', function (req,
 router.post('/forms/govuk-forms/register-to-vote/RTVDateOfBirth', function (req, res) {
   res.redirect('/forms/govuk-forms/register-to-vote/RTVName')
 })
+
+router.post('/forms/govuk-forms/register-to-vote/RTVName', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVNInumber')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVNInumber', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVaddress')
+})
+router.post('/forms/govuk-forms/register-to-vote/RTVaddress', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVaddressNext')
+})
 // Apply for a provisional licence ***************************************************
 
 router.post('/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLdetails', function (req, res) {

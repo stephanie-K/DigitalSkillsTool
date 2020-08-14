@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+National Insurance number
+{% endblock %}
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "What is your National Insurance number?",
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        },
+        hint: {
+          text: "For example, ‘QQ 12 34 56 C’."
+        },
+        classes: "govuk-input--width-10",
+        id: "national-insurance-number",
+        name: "national-insurance-number",
+        value: data['national-insurance-number']
+      }) }}
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I don’t know my National Insurance number
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>look for your National Insurance number on payslips or official letters about tax, pensions or benefits</li>
+            <li><a href="/forms/govuk-forms/register-to-vote/RTVhelpNI">I need help finding my National Insurance number</a></li>
+          </ul>
+          <p>If you can’t provide a National Insurance number you will need to explain why. You’ll also need to send copies of identity documents through the post. This could delay your name getting on the electoral register.</p>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I can’t provide my National Insurance number
+              </span>
+            </summary>
+            <div class="govuk-!-margin-top-3">
+              {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+              {{ govukTextarea({
+                name: "more-detail-about-ni",
+                id: "more-detail-about-ni",
+                value: data['more-detail-about-ni'],
+                rows: "5",
+                label: {
+                  text: "Why can’t you provide your National Insurance number?",
+                  classes: "govuk-label--s"
+                }
+              }) }}
+              {% from "govuk/components/input/macro.njk" import govukInput %}
+
+              {{ govukInput({
+                label: {
+                  text: "It will be easier to contact you if you provide your email address (optional)",
+                  classes: "govuk-label--s"
+                },
+                id: "email-for-ni",
+                name: "email-for-ni",
+                value: data['email-for-ni']
+              }) }}
+            </div>
+          </details>
+        </div>
+      </details>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    <p><a href="javascript: history.go(-1)">Back</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

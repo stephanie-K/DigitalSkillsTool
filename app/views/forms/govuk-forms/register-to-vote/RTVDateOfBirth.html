@@ -6,95 +6,99 @@ Nationality
 
 {% block content %}
 <div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
 
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-{{ govukDateInput({
-  id: "date-of-birth",
-  namePrefix: "date-of-birth",
-  fieldset: {
-    legend: {
-      text: "What is your date of birth?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: "For example, 01 04 1993"
-  }
-}) }}
+        {{ govukDateInput({
+          id: "date-of-birth",
+          namePrefix: "date-of-birth",
+          fieldset: {
+            legend: {
+              text: "What is your date of birth?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "For example, 01 04 1993"
+          }
+        }) }}
 
-<details class="govuk-details" data-module="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Help with date of birth
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>If you don’t know your exact date of birth, use the one you put on official documents (for example, your passport or driving licence). If you can’t provide your date of birth you may have to send copies of identity documents through the post. This could delay your name getting on the electoral register.</p>
-    <details id="cant-provide-details" class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Why can’t you provide your date of birth?
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <div class="govuk-form-group">
-          <textarea class="govuk-textarea" id="reason-not-provided" name="reason-not-provided" rows="5">{{data['reason-not-provided']}}</textarea>
-        </div> 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend">
-            What age group do you belong to?
-          </legend>
-          
-          <div class="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="age-group" name="age-group" type="radio" value="Between 14 and 15 years old">
-              <label class="govuk-label govuk-radios__label" for="age-group">
-                Between 14 and 15 years old
-              </label> 
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-group-2" name="age-group" type="radio" value="Between 16 and 17 years old">
-                  <label class="govuk-label govuk-radios__label" for="age-group-2">
-                Between 16 and 17 years old
-              </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-group-3" name="age-group" type="radio" value="18 years old or over">
-                  <label class="govuk-label govuk-radios__label" for="age-group-3">
-                18 years old or over
-              </label> 
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="age-group-4" name="age-group" type="radio" value="Don’t know">
-                  <label class="govuk-label govuk-radios__label" for="age-group-4">
-                Don’t know
-              </label>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with date of birth
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>If you don’t know your exact date of birth, use the one you put on official documents (for example, your passport or driving licence). If you can’t provide your date of birth you may have to send copies of identity documents through the post. This could delay your name getting on the electoral register.</p>
+            <details id="cant-provide-details" class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Why can’t you provide your date of birth?
+                </span>
+              </summary>
+              <div>
+                <div class="govuk-form-group govuk-!-margin-top-3">
+                  <textarea class="govuk-textarea" id="reason-not-provided" name="reason-not-provided" rows="5">{{data['reason-not-provided']}}</textarea>
+                </div> 
+                <div class="govuk-form-group">
+                  <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend">
+                    What age group do you belong to?
+                  </legend>
+                  
+                  <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="age-group" name="age-group" type="radio" value="Between 14 and 15 years old">
+                      <label class="govuk-label govuk-radios__label" for="age-group">
+                        Between 14 and 15 years old
+                      </label> 
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="age-group-2" name="age-group" type="radio" value="Between 16 and 17 years old">
+                          <label class="govuk-label govuk-radios__label" for="age-group-2">
+                        Between 16 and 17 years old
+                      </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="age-group-3" name="age-group" type="radio" value="18 years old or over">
+                          <label class="govuk-label govuk-radios__label" for="age-group-3">
+                        18 years old or over
+                      </label> 
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="age-group-4" name="age-group" type="radio" value="Don’t know">
+                          <label class="govuk-label govuk-radios__label" for="age-group-4">
+                        Don’t know
+                      </label>
+                        </div>  
+                  </div>
+                  </fieldset>
                 </div>  
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-email">
+                    It will be easier to contact you if you provide your email address (optional)
+                  </label>
+                  <input class="govuk-input govuk-!-width-one-third" id="contact-email" name="contact-email" type="email" value="{{data['contact-email']}}">
+                </div>
+              </div>
+            </details> 
           </div>
-          </fieldset>
-        </div>  
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-email">
-            It will be easier to contact you if you provide your email address (optional)
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="contact-email" name="contact-email" type="email" value="{{data['contact-email']}}">
-        </div>
+        </details>
+
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+        </form>     
+        <p><a href="javascript: history.go(-1)">Back</a></p>
       </div>
-    </details> 
-  </div>
-</details>
-
-
-{% from "govuk/components/button/macro.njk" import govukButton %}
-{{ govukButton({
-  text: "Continue"
-}) }}
-</form>
-<p><a href="javascript: history.go(-1)">Back</a></p>
+    </div>
 </div>
 
 {% endblock %}
