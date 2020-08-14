@@ -356,3 +356,8 @@ app.locals.bulbEnergyUsageDate2= '10 Jun 20'
 app.locals.bulbPaymentDate2= '11 Jun 2020'
 app.locals.bulbStatementDate2= '10 May to 09 Jun 2020'
 app.locals.bulbEnergyUsageDate3= '10 May 20'
+
+// Place variable depending on what council is using this
+app.locals.postcode= 'G78 1SY'
+app.locals.town= 'Barrhead'
+app.locals.council= 'East Renfrewshire Council' 
