@@ -11,7 +11,81 @@ Check your answers before sending your application
     <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
 
-    <p>Summary is not ready yet</p>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Name</dt>
+        <dd class="govuk-summary-list__value">{{ data['first-name']}} {{ data['middle-name']}} {{ data['last-name']}}</dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="RTVName">Change<span class="govuk-visually-hidden"> name</span></a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Previous name</dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['previous-name'] === "Yes, I changed my name" %}
+          {{ data['previous-first-name']}} {{ data['previous-middle-name']}} {{ data['previous-last-name']}}
+          {% else %}
+          {{ data['previous-name'] }}
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="RTVName">Change<span class="govuk-visually-hidden">previous name</span></a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Date of birth</dt>
+        <dd class="govuk-summary-list__value">
+          {% if data ['rtv-dob-day']%}{{ data ['rtv-dob-day']}}{% else %}01{% endif %}/{% if data ['rtv-dob-month']%}{{ data ['rtv-dob-month']}}{% else %}01{% endif %}/{% if data ['rtv-dob-year']%}{{ data ['rtv-dob-year']}}{% else %}1970{% endif %}</dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="RTVDateOfBirth">Change<span class="govuk-visually-hidden">date of birth</span></a></dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['rtv-address-list']%} {{data['rtv-address-list']}}, {{data ['rtv-postcode']}} {% else %}
+          {{ data ['rtv-address-line-1']}} {{ data ['rtv-address-line-2']}} <br>
+          {{ data ['rtv-address-town']}} {{ data ['rtv-council']}} 
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="RTVaddress">Change<span class="govuk-visually-hidden">address</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Second address</dt>
+        <dd class="govuk-summary-list__value">{{ data ['rtv-2nd-add']}}</dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="RTVaddress2nd">Change<span class="govuk-visually-hidden">second address</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Open register</dt>
+        <dd class="govuk-summary-list__value">
+          {% if data ['want-to-opt-out'] %} I do not want my name and address to appear in the open register {% else %}
+          I agree for my name and address to appear in the open register{% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="RTVoptOut">Change<span class="govuk-visually-hidden">open register</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Voting options</dt>
+        <dd class="govuk-summary-list__value">
+          {{ data ['rtv-postal-vote']}}
+          {% if data ['rtv-postal-vote'] ===  "Yes, send me a postal vote application form" %}<br>
+          {{ data ['registered-abroad']}} {% if (data['send-email'] and (data ['registered-abroad'] === "Email it to me"))%}: {{data['send-email']}} {% endif %}
+          {% endif%}
+        </dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="RTVpostalVote">Change<span class="govuk-visually-hidden"> voting options</span></a></dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">How should we contact you?</dt>
+        <dd class="govuk-summary-list__value">
+          {% if data ['preferred-contact']%}
+          {% for item in data['preferred-contact'] %}
+          {%  if item === "Post" %}By Post<br>{% endif %}
+          {%  if item === "Email" %}By email{% if data['contact-by-email']%}: {{data['contact-by-email']}} {% endif%}<br>{% endif %}
+          {%  if item === "Phone" %}By phone{% if data['contact-by-phone']%}: {{data['contact-by-phone']}} {% endif%}<br>{% endif %}
+          {% endfor %}
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions"><a class="govuk-link" href="RTVcontact">Change<span class="govuk-visually-hidden">how should we contact you</span></a></dd>
+      </div>
+
+    </dl>
+
 
     <h2 class="govuk-heading-l">Send your application</h2>
     <p>By sending your application you confirm that the information you have provided is true.

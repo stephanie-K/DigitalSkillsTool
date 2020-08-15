@@ -14,8 +14,8 @@ Nationality
         {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
         {{ govukDateInput({
-          id: "date-of-birth",
-          namePrefix: "date-of-birth",
+          id: "rtv-dob",
+          namePrefix: "rtv-dob",
           fieldset: {
             legend: {
               text: "What is your date of birth?",
@@ -25,7 +25,24 @@ Nationality
           },
           hint: {
             text: "For example, 01 04 1993"
-          }
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['rtv-dob-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['rtv-dob-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['rtv-dob-year']
+            }
+          ]
         }) }}
 
         <details class="govuk-details" data-module="govuk-details">

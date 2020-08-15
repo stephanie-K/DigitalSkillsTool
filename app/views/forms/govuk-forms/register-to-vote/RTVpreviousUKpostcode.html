@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What was your last UK address before moving abroad?
+{% endblock %}
+
+{% block content %}
+<p><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></p>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">What was your last UK address before moving abroad?</h1>
+    <form class="form" method="post">
+      {{ govukInput({
+        label: {
+          text: "Postcode",
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-10",
+        id: "rtv-postcode-before",
+        name: "rtv-postcode=before",
+        value: data['rtv-postcode-before']
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Find address"
+      }) }}
+    </form>
+    </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>You can enter rthe real postcode, but we are going to use a fake address here after this page.</p>
+  </div>
+ </div> 
+
+{% endblock %}

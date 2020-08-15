@@ -27,11 +27,13 @@ Have you permanently moved out of another address in the last 12 months?
         items: [
           {
             value: "Yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked ("registered-abroad", "Yes")
           },
           {
             value: "No",
-            text: "No"
+            text: "No",
+            checked: checked ("registered-abroad", "No")
           }
         ]
       }) }}
@@ -54,15 +56,18 @@ Have you permanently moved out of another address in the last 12 months?
         items: [
           {
             value: "No",
-            text: "No"
+            text: "No",
+            checked: checked ("rtv-moved", "No")
           },
           {
             value: "Yes, from a UK address",
-            text: "Yes, from a UK address"
+            text: "Yes, from a UK address",
+            checked: checked ("rtv-moved", "Yes, from a UK address")
           },
           {
             value: "Yes, from abroad",
             text: "Yes, from abroad",
+            checked: checked ("rtv-moved", "Yes, from abroad"),
             conditional: {
               html: RegisteredHtml
             }

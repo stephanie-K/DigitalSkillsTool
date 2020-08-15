@@ -35,11 +35,13 @@ Do you also live at a second address?
         items: [
           {
             value: "No",
-            text: "No"
+            text: "No",
+            checked: checked ("rtv-2nd-add", "No")
           },
           {
             value: "Yes, I spend time living at two homes",
             text: "Yes, I spend time living at two homes",
+            checked: checked ("rtv-2nd-add", "Yes, I spend time living at two homes"),
             conditional: {
               html: twoHomesHtml
             }
@@ -47,6 +49,7 @@ Do you also live at a second address?
           {
             value: "Yes, I’m a student with home and term-time addresses",
             text: "Yes, I’m a student with home and term-time addresses",
+            checked: checked ("rtv-2nd-add", "Yes, I’m a student with home and term-time addresses"),
             conditional: {
               html: StudentHtml
             }

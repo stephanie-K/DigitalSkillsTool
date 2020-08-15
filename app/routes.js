@@ -46,9 +46,27 @@ router.post('/forms/govuk-forms/register-to-vote/RTVaddress2nd', function (req, 
 
 router.post('/forms/govuk-forms/register-to-vote/RTVmoved', function (req, res) {
   var moved = req.session.data['rtv-moved']
+  var hadUKadd = req.session.data['registered-abroad']
+  
   if (moved === "Yes, from a UK address") {
 return res.redirect('/forms/govuk-forms/register-to-vote/RTVpreviousUKadd')
+  } else {
+    if ((moved === "Yes, from abroad" ) && (hadUKadd ==="Yes")) {
+      res.redirect('/forms/govuk-forms/register-to-vote/RTVpreviousUKpostcode')
+    }
   }
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVoptOut')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVpreviousUKpostcode', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVpreviousUKaddNext')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVpreviousUKadd', function (req, res) {
+  res.redirect('/forms/govuk-forms/register-to-vote/RTVpreviousUKaddNext')
+})
+
+router.post('/forms/govuk-forms/register-to-vote/RTVpreviousUKaddNext', function (req, res) {
   res.redirect('/forms/govuk-forms/register-to-vote/RTVoptOut')
 })
 

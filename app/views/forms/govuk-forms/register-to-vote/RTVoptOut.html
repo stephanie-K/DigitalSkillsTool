@@ -19,18 +19,23 @@ Do you want to opt out of the ‘open register’?
       
       <p>Opting out will not affect your right to vote.</p>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <div class="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="want-to-opt-out" name="want-to-opt-out" type="checkbox" value="Yes">
-              <label class="govuk-label govuk-checkboxes__label" for="ok">
-                <strong>I do not want my name and address to appear in the open register</strong>
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "want-to-opt-out",
+        name: "want-to-opt-out",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "ok",
+            text: "I do not want my name and address to appear in the open register",
+            checked: checked ("want-to-opt-out", "ok")
+          }
+        ]
+      }) }}
+      checked: checked ("registered-abroad", "Email it to me"),
 
       <details class="govuk-details" data-module="govuk-details">
         <summary class="govuk-details__summary">

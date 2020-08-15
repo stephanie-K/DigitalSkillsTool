@@ -111,18 +111,21 @@ Name
         items: [
           {
             value: "No, I haven't changed my name",
-            text: "No, I haven't changed my name"
+            text: "No, I haven't changed my name",
+            checked: checked ("previous-name", "No, I haven't changed my name")
           },
           {
             value: "Yes, I changed my name",
             text: "Yes, I changed my name",
+            checked: checked ("previous-name", "Yes, I changed my name"),
             conditional: {
               html: namechangeHtml
             }
           },
           {
             value: "Prefer not to say",
-            text: "Prefer not to say"
+            text: "Prefer not to say",
+            checked: checked ("previous-name", "Prefer not to say")
           }
         ]
       }) }}

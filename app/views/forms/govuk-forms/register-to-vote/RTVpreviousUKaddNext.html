@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What was your previous address?
+{% endblock %}
+
+{% block content %}
+<p><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></p>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">What is your address?</h1>
+    <p>Postcode</p>
+    <p><strong style="padding-right: 30px">KA12 6HH</strong> <a href="RTVaddress">Change</a></p>
+    <form class="form" method="post">
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+      {{ govukSelect({
+        id: "rtv-address-list",
+        name: "rtv-address-list",
+        label: {
+          text: "Address"
+        },
+        items: [
+          {
+            value: "",
+            text: "4 addresses found"
+          },
+          {
+            value: "2 High street",
+            text: "2 High street"
+          },
+          {
+            value: "4 High street",
+            text: "4 High street"
+          },
+          {
+            value: "6 High street",
+            text: "6 High street"
+          },
+          {
+            value: "8 High street",
+            text: "8 High street"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>We are using a fake postcode, select any address in the list.</p>
+    <p>On the real form you would have a list where you would find your previous address or you would be able to enter it if not found via your postcode.</p>
+  </div>
+ </div> 
+
+{% endblock %}

@@ -35,13 +35,15 @@ Do you want to apply for a postal vote?
           {
             value: "Email it to me",
             text: "Email it to me",
+            checked: checked ("registered-abroad", "Email it to me"),
             conditional: {
               html: sendEmailHtml
             }
           },
           {
             value: "Post it to me",
-            text: "Post it to me"
+            text: "Post it to me",
+            checked: checked ("registered-abroad", "Post it to me")
           }
         ]
       }) }}
@@ -61,11 +63,13 @@ Do you want to apply for a postal vote?
         items: [
           {
             value: "No, I prefer to vote in person",
-            text: "No, I prefer to vote in person"
+            text: "No, I prefer to vote in person",
+            checked: checked ("rtv-postal-vote", "No, I prefer to vote in person")
           },
           {
             value: "No, I already have a postal vote",
             text: "No, I already have a postal vote",
+            checked: checked ("rtv-postal-vote", "No, I already have a postal vote"),
             conditional: {
               html: "<p>If you've changed your address you'll need to apply for a new postal vote</p>"
             }
@@ -73,6 +77,7 @@ Do you want to apply for a postal vote?
           {
             value: "Yes, send me a postal vote application form",
             text: "Yes, send me a postal vote application form",
+            checked: checked ("rtv-postal-vote", "Yes, send me a postal vote application form"),
             conditional: {
               html: sendFormHtml
             }

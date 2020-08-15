@@ -27,19 +27,23 @@ Country of Residence
           items:[
             {
               value: "England",
-              text: "England"
+              text: "England",
+              checked: checked ("other-country", "England")
             },
             {
               value: "Scotland",
-              text: "Scotland"
+              text: "Scotland",
+              checked: checked ("other-country", "Scotland")
             },
             {
               value: "Wales",
-              text: "Wales"
+              text: "Wales",
+              checked: checked ("other-country", "Wales")
             },
             {
               value: "Northern Ireland",
-              text: "Northern Ireland"
+              text: "Northern Ireland",
+              checked: checked ("other-country", "Northern Ireland")
             }
           ]
         }) }}
@@ -58,19 +62,23 @@ Country of Residence
           items: [
             {
               value: "England",
-              text: "England"
+              text: "England",
+              checked: checked ("where-do-you-live", "England")
             },
             {
               value: "Scotland",
-              text: "Scotland"
+              text: "Scotland",
+              checked: checked ("where-do-you-live", "Scotland")
             },
             {
               value: "Wales",
-              text: "Wales"
+              text: "Wales",
+              checked: checked ("where-do-you-live", "Wales")
             },
             {
-              value: "Northern-Ireland",
-              text: "Northern Ireland"
+              value: "Northern Ireland",
+              text: "Northern Ireland",
+              checked: checked ("where-do-you-live", "Northern Ireland")
             },
             {
               divider: "or"
@@ -78,6 +86,7 @@ Country of Residence
             {
               value: "British Citizen living in another country",
               text: "British Citizen living in another country",
+              checked: checked ("where-do-you-live", "British Citizen living in another country"),
               hint: {
                   text: "including the Channel Islands or Isle of Man."
                 },

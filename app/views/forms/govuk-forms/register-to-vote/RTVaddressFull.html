@@ -48,6 +48,361 @@ Your address
           <label class="govuk-label" for="rtv-council">
             Local Authority
           </label>
+
+          {% if data ['where-do-you-live'] === "Northern Ireland" %}
+          <select class="govuk-select" id="rtv-council" name="rtv-council">
+            <option value="">Select your county</option>
+            <option value="Antrim">Antrim</option>
+            <option value="Armagh">Armagh</option>
+            <option value="Down">Down</option>
+            <option value="Fermanagh">Fermanagh</option>
+            <option value="Londonderry">Londonderry</option>
+            <option value="Tyone">Tyone</option>
+          </select>
+          {% elseif (data ['where-do-you-live'] === "England") or (data ['where-do-you-live'] === "Wales") %}
+          <select class="govuk-select" id="rtv-council" name="rtv-council">
+            <option value="">Select your local council</option>
+            <option value="Adur" data-county="West Sussex">Adur</option>
+            <option value="Allerdale" data-county="Cumbria">Allerdale</option>
+            <option value="Amber Valley" data-county="Derbyshire">Amber Valley</option>
+            <option value="Arun" data-county="West Sussex">Arun</option>
+            <option value="Ashfield" data-county="Nottinghamshire">Ashfield</option>
+            <option value="Ashford" data-county="Kent">Ashford</option>
+            <option value="Aylesbury Vale" data-county="Buckinghamshire">Aylesbury Vale</option>
+            <option value="Babergh" data-county="Suffolk">Babergh</option>
+            <option value="Barking and Dagenham" data-county="Greater London">Barking and Dagenham</option>
+            <option value="Barnet" data-county="Greater London">Barnet</option>
+            <option value="Barnsley" data-county="South Yorkshire">Barnsley</option>
+            <option value="Barrow-In-Furness" data-county="Cumbria">Barrow-In-Furness</option>
+            <option value="Basildon" data-county="Essex">Basildon</option>
+            <option value="Basingstoke and Deane" data-county="Hampshire">Basingstoke and Deane</option>
+            <option value="Bassetlaw" data-county="Nottinghamshire">Bassetlaw</option>
+            <option value="Bath and North East Somerset" data-county="Somerset">Bath and North East Somerset</option>
+            <option value="Bedford" data-county="Bedfordshire">Bedford</option>
+            <option value="Bexley" data-county="Greater London">Bexley</option>
+            <option value="Birmingham" data-county="West Midlands">Birmingham</option>
+            <option value="Blaby" data-county="Leicestershire">Blaby</option>
+            <option value="Blackburn" data-county="Lancashire">Blackburn</option>
+            <option value="Blackpool" data-county="Lancashire">Blackpool</option>
+            <option value="Blaenau Gwent" data-county="Gwent">Blaenau Gwent</option>
+            <option value="Bolsover" data-county="Derbyshire">Bolsover</option>
+            <option value="Bolton" data-county="Greater Manchester">Bolton</option>
+            <option value="Boston" data-county="Lincolnshire">Boston</option>
+            <option value="Bournemouth Christchurch and Poole" data-county="Dorset">Bournemouth Christchurch and Poole</option>
+            <option value="Bracknell Forest" data-county="Berkshire">Bracknell Forest</option>
+            <option value="Bradford" data-county="West Yorkshire">Bradford</option>
+            <option value="Braintree" data-county="Essex">Braintree</option>
+            <option value="Breckland" data-county="Norfolk">Breckland</option>
+            <option value="Brent" data-county="Greater London">Brent</option>
+            <option value="Brentwood" data-county="Essex">Brentwood</option>
+            <option value="Bridgend" data-county="Mid Glamorgan">Bridgend</option>
+            <option value="Brighton and Hove" data-county="East Sussex">Brighton and Hove</option>
+            <option value="Bristol City" data-county="Bristol">Bristol City</option>
+            <option value="Broadland" data-county="Norfolk">Broadland</option>
+            <option value="Bromley" data-county="Greater London">Bromley</option>
+            <option value="Bromsgrove" data-county="Worcestershire">Bromsgrove</option>
+            <option value="Broxbourne" data-county="Hertfordshire">Broxbourne</option>
+            <option value="Broxtowe" data-county="Nottinghamshire">Broxtowe</option>
+            <option value="Burnley" data-county="Lancashire">Burnley</option>
+            <option value="Bury" data-county="Greater Manchester">Bury</option>
+            <option value="Caerphilly" data-county="Gwent">Caerphilly</option>
+            <option value="Calderdale" data-county="West Yorkshire">Calderdale</option>
+            <option value="Cambridge" data-county="Cambridgeshire">Cambridge</option>
+            <option value="Camden" data-county="Greater London">Camden</option>
+            <option value="Cannock Chase" data-county="Staffordshire">Cannock Chase</option>
+            <option value="Canterbury" data-county="Kent">Canterbury</option>
+            <option value="Cardiff" data-county="South Glamorgan">Cardiff</option>
+            <option value="Carlisle" data-county="Cumbria">Carlisle</option>
+            <option value="Carmarthenshire" data-county="Dyfed">Carmarthenshire</option>
+            <option value="Castle Point" data-county="Essex">Castle Point</option>
+            <option value="Central Bedfordshire" data-county="Bedfordshire">Central Bedfordshire</option>
+            <option value="Ceredigion" data-county="Dyfed">Ceredigion</option>
+            <option value="Charnwood" data-county="Leicestershire">Charnwood</option>
+            <option value="Chelmsford" data-county="Essex">Chelmsford</option>
+            <option value="Cheltenham" data-county="Gloucestershire">Cheltenham</option>
+            <option value="Cherwell" data-county="Oxfordshire">Cherwell</option>
+            <option value="Cheshire East" data-county="Cheshire">Cheshire East</option>
+            <option value="Cheshire West and Chester" data-county="Cheshire">Cheshire West and Chester</option>
+            <option value="Chesterfield" data-county="Derbyshire">Chesterfield</option>
+            <option value="Chichester" data-county="West Sussex">Chichester</option>
+            <option value="Chiltern" data-county="Buckinghamshire">Chiltern</option>
+            <option value="Chorley" data-county="Lancashire">Chorley</option>
+            <option value="City of Derby" data-county="Derbyshire">City of Derby</option>
+            <option value="City of Kingston Upon Hull" data-county="East Riding of Yorkshire">City of Kingston Upon Hull</option>
+            <option value="City of Leicester" data-county="Leicestershire">City of Leicester</option>
+            <option value="City of London" data-county="Greater London">City of London</option>
+            <option value="City of Peterborough" data-county="Cambridgeshire">City of Peterborough</option>
+            <option value="City of Plymouth" data-county="Devon">City of Plymouth</option>
+            <option value="City of Portsmouth" data-county="Hampshire">City of Portsmouth</option>
+            <option value="City of Southampton" data-county="Hampshire">City of Southampton</option>
+            <option value="City of Stoke-On-Trent" data-county="Staffordshire">City of Stoke-On-Trent</option>
+            <option value="City of Westminster" data-county="Greater London">City of Westminster</option>
+            <option value="Colchester" data-county="Essex">Colchester</option>
+            <option value="Conwy" data-county="Clwyd">Conwy</option>
+            <option value="Copeland" data-county="Cumbria">Copeland</option>
+            <option value="Corby" data-county="Northamptonshire">Corby</option>
+            <option value="Cornwall" data-county="Cornwall">Cornwall</option>
+            <option value="Cotswold" data-county="Gloucestershire">Cotswold</option>
+            <option value="Coventry" data-county="West Midlands">Coventry</option>
+            <option value="Craven" data-county="North Yorkshire">Craven</option>
+            <option value="Crawley" data-county="West Sussex">Crawley</option>
+            <option value="Croydon" data-county="Greater London">Croydon</option>
+            <option value="Dacorum" data-county="Hertfordshire">Dacorum</option>
+            <option value="Darlington" data-county="Durham">Darlington</option>
+            <option value="Dartford" data-county="Kent">Dartford</option>
+            <option value="Daventry" data-county="Northamptonshire">Daventry</option>
+            <option value="Denbighshire" data-county="Clwyd">Denbighshire</option>
+            <option value="Derbyshire Dales" data-county="Derbyshire">Derbyshire Dales</option>
+            <option value="Doncaster" data-county="South Yorkshire">Doncaster</option>
+            <option value="Dorset" data-county="Dorset">Dorset</option>
+            <option value="Dover" data-county="Kent">Dover</option>
+            <option value="Dudley" data-county="West Midlands">Dudley</option>
+             <option value="Durham" data-county="Durham">Durham</option>
+             <option value="Ealing" data-county="Greater London">Ealing</option>
+             <option value="East Cambridgeshire" data-county="Cambridgeshire">East Cambridgeshire</option>
+            <option value="East Devon" data-county="Devon">East Devon</option>
+            <option value="East Hampshire" data-county="Hampshire">East Hampshire</option>
+             <option value="East Hertfordshire" data-county="Hertfordshire">East Hertfordshire</option>
+             <option value="East Lindsey" data-county="Lincolnshire">East Lindsey</option>
+            <option value="East Northamptonshire" data-county="Northamptonshire">East Northamptonshire</option>
+             <option value="East Riding of Yorkshire" data-county="East Riding of Yorkshire">East Riding of Yorkshire</option>
+            <option value="East Staffordshire" data-county="Staffordshire">East Staffordshire</option>
+            <option value="East Suffolk" data-county="Suffolk">East Suffolk</option>
+             <option value="Eastbourne" data-county="East Sussex">Eastbourne</option>
+            <option value="Eastleigh" data-county="Hampshire">Eastleigh</option>
+            <option value="Eden" data-county="Cumbria">Eden</option>
+             <option value="Elmbridge" data-county="Surrey">Elmbridge</option>
+            <option value="Enfield" data-county="Greater London">Enfield</option>
+             <option value="Epping Forest" data-county="Essex">Epping Forest</option>
+            <option value="Epsom and Ewell" data-county="Surrey">Epsom and Ewell</option>
+            <option value="Erewash" data-county="Derbyshire">Erewash</option>
+            <option value="Exeter" data-county="Devon">Exeter</option>
+            <option value="Fareham" data-county="Hampshire">Fareham</option>
+            <option value="Fenland" data-county="Cambridgeshire">Fenland</option>
+            <option value="Flintshire" data-county="Clwyd">Flintshire</option>
+            <option value="Folkestone and Hythe" data-county="Kent">Folkestone and Hythe</option>
+            <option value="Forest of Dean" data-county="Gloucestershire">Forest of Dean</option>
+            <option value="Fylde" data-county="Lancashire">Fylde</option>
+             <option value="Gateshead" data-county="Tyne &amp; Wear">Gateshead</option>
+            <option value="Gedling" data-county="Nottinghamshire">Gedling</option>
+            <option value="Gloucester" data-county="Gloucestershire">Gloucester</option>
+            <option value="Gosport" data-county="Hampshire">Gosport</option>
+            <option value="Gravesham" data-county="Kent">Gravesham</option>
+             <option value="Great Yarmouth" data-county="Norfolk">Great Yarmouth</option>
+            <option value="Greenwich" data-county="Greater London">Greenwich</option>
+            <option value="Guildford" data-county="Surrey">Guildford</option>
+            <option value="Gwynedd" data-county="Gwynedd">Gwynedd</option>
+            <option value="Hackney" data-county="Greater London">Hackney</option>
+             <option value="Halton" data-county="Cheshire">Halton</option>
+             <option value="Hambleton" data-county="North Yorkshire">Hambleton</option>
+            <option value="Hammersmith and Fulham" data-county="Greater London">Hammersmith and Fulham</option>
+             <option value="Harborough" data-county="Leicestershire">Harborough</option>
+             <option value="Haringey" data-county="Greater London">Haringey</option>
+             <option value="Harlow" data-county="Essex">Harlow</option>
+             <option value="Harrogate" data-county="North Yorkshire">Harrogate</option>
+             <option value="Harrow" data-county="Greater London">Harrow</option>
+             <option value="Hart" data-county="Hampshire">Hart</option>
+            <option value="Hartlepool" data-county="Durham">Hartlepool</option>
+            <option value="Hastings" data-county="East Sussex">Hastings</option>
+             <option value="Havant" data-county="Hampshire">Havant</option>
+            <option value="Havering" data-county="Greater London">Havering</option>
+            <option value="Herefordshire" data-county="Herefordshire">Herefordshire</option>
+             <option value="Hertsmere" data-county="Hertfordshire">Hertsmere</option>
+             <option value="High Peak" data-county="Derbyshire">High Peak</option>
+             <option value="Hillingdon" data-county="Greater London">Hillingdon</option>
+             <option value="Hinckley and Bosworth" data-county="Leicestershire">Hinckley and Bosworth</option>
+             <option value="Horsham" data-county="West Sussex">Horsham</option>
+             <option value="Hounslow" data-county="Greater London">Hounslow</option>
+             <option value="Huntingdonshire" data-county="Cambridgeshire">Huntingdonshire</option>
+             <option value="Hyndburn" data-county="Lancashire">Hyndburn</option>
+            <option value="Ipswich" data-county="Suffolk">Ipswich</option>
+            <option value="Isle of Anglesey" data-county="Gwynedd">Isle of Anglesey</option>
+            <option value="Isle of Wight" data-county="Isle of Wight">Isle of Wight</option>
+            <option value="Isles of Scilly" data-county="Cornwall">Isles of Scilly</option>
+             <option value="Islington" data-county="Greater London">Islington</option>
+            <option value="Kensington and Chelsea" data-county="Greater London">Kensington and Chelsea</option>
+            <option value="Kettering" data-county="Northamptonshire">Kettering</option>
+             <option value="Kings Lynn and West Norfolk" data-county="Norfolk">Kings Lynn and West Norfolk</option>
+            <option value="Kingston Upon Thames" data-county="Greater London">Kingston Upon Thames</option>
+            <option value="Kirklees" data-county="West Yorkshire">Kirklees</option>
+            <option value="Knowsley" data-county="Merseyside">Knowsley</option>
+            <option value="Lambeth" data-county="Greater London">Lambeth</option>
+            <option value="Lancaster City" data-county="Lancashire">Lancaster City</option>
+            <option value="Leeds" data-county="West Yorkshire">Leeds</option>
+            <option value="Lewes" data-county="East Sussex">Lewes</option>
+             <option value="Lewisham" data-county="Greater London">Lewisham</option>
+             <option value="Lichfield" data-county="Staffordshire">Lichfield</option>
+            <option value="Lincoln" data-county="Lincolnshire">Lincoln</option>
+            <option value="Liverpool" data-county="Merseyside">Liverpool</option>
+            <option value="Luton" data-county="Bedfordshire">Luton</option>
+             <option value="Maidstone" data-county="Kent">Maidstone</option>
+            <option value="Maldon" data-county="Essex">Maldon</option>
+             <option value="Malvern Hills" data-county="Worcestershire">Malvern Hills</option>
+            <option value="Manchester" data-county="Greater Manchester">Manchester</option>
+             <option value="Mansfield" data-county="Nottinghamshire">Mansfield</option>
+            <option value="Medway" data-county="Kent">Medway</option>
+             <option value="Melton" data-county="Leicestershire">Melton</option>
+             <option value="Mendip" data-county="Somerset">Mendip</option>
+            <option value="Merthyr Tydfil" data-county="Mid Glamorgan">Merthyr Tydfil</option>
+            <option value="Merton" data-county="Greater London">Merton</option>
+            <option value="Mid Devon" data-county="Devon">Mid Devon</option>
+            <option value="Mid Suffolk" data-county="Suffolk">Mid Suffolk</option>
+            <option value="Mid Sussex" data-county="West Sussex">Mid Sussex</option>
+            <option value="Middlesbrough" data-county="North Yorkshire">Middlesbrough</option>
+            <option value="Milton Keynes" data-county="Buckinghamshire">Milton Keynes</option>
+            <option value="Mole Valley" data-county="Surrey">Mole Valley</option>
+            <option value="Monmouthshire" data-county="Gwent">Monmouthshire</option>
+             <option value="Neath Port Talbot" data-county="West Glamorgan">Neath Port Talbot</option>
+            <option value="New Forest" data-county="Hampshire">New Forest</option>
+             <option value="Newark and Sherwood" data-county="Nottinghamshire">Newark and Sherwood</option>
+            <option value="Newcastle City" data-county="Tyne &amp; Wear">Newcastle City</option>
+            <option value="Newcastle-Under-Lyme" data-county="Staffordshire">Newcastle-Under-Lyme</option>
+             <option value="Newham" data-county="Greater London">Newham</option>
+             <option value="Newport" data-county="Gwent">Newport</option>
+            <option value="North Devon" data-county="Devon">North Devon</option>
+            <option value="North East Derbyshire" data-county="Derbyshire">North East Derbyshire</option>
+            <option value="North East Lincolnshire" data-county="Lincolnshire">North East Lincolnshire</option>
+            <option value="North Hertfordshire" data-county="Hertfordshire">North Hertfordshire</option>
+            <option value="North Kesteven" data-county="Lincolnshire">North Kesteven</option>
+             <option value="North Lincolnshire" data-county="Lincolnshire">North Lincolnshire</option>
+            <option value="North Norfolk" data-county="Norfolk">North Norfolk</option>
+            <option value="North Somerset" data-county="Somerset">North Somerset</option>
+             <option value="North Tyneside" data-county="Tyne &amp; Wear">North Tyneside</option>
+             <option value="North Warwickshire" data-county="Warwickshire">North Warwickshire</option>
+            <option value="North West Leicestershire" data-county="Leicestershire">North West Leicestershire</option>
+            <option value="Northampton" data-county="Northamptonshire">Northampton</option>
+            <option value="Northumberland" data-county="Northumberland">Northumberland</option>
+            <option value="Norwich" data-county="Norfolk">Norwich</option>
+            <option value="Nottingham City" data-county="Nottinghamshire">Nottingham City</option>
+            <option value="Nuneaton and Bedworth" data-county="Warwickshire">Nuneaton and Bedworth</option>
+            <option value="Oadby and Wigston" data-county="Leicestershire">Oadby and Wigston</option>
+            <option value="Oldham" data-county="Greater Manchester">Oldham</option>
+            <option value="Oxford" data-county="Oxfordshire">Oxford</option>
+            <option value="Pembrokeshire" data-county="Dyfed">Pembrokeshire</option>
+            <option value="Pendle" data-county="Lancashire">Pendle</option>
+            <option value="Powys" data-county="Powys">Powys</option>
+             <option value="Preston" data-county="Lancashire">Preston</option>
+            <option value="Reading" data-county="Berkshire">Reading</option>
+            <option value="Redbridge" data-county="Greater London">Redbridge</option>
+            <option value="Redcar and Cleveland" data-county="North Yorkshire">Redcar and Cleveland</option>
+            <option value="Redditch" data-county="Worcestershire">Redditch</option>
+            <option value="Reigate and Banstead" data-county="Surrey">Reigate and Banstead</option>
+             <option value="Rhondda Cynon Taf" data-county="Mid Glamorgan">Rhondda Cynon Taf</option>
+            <option value="Ribble Valley" data-county="Lancashire">Ribble Valley</option>
+            <option value="Richmond Upon Thames" data-county="Greater London">Richmond Upon Thames</option>
+            <option value="Richmondshire" data-county="North Yorkshire">Richmondshire</option>
+            <option value="Rochdale" data-county="Greater Manchester">Rochdale</option>
+            <option value="Rochford" data-county="Essex">Rochford</option>
+            <option value="Rossendale" data-county="Lancashire">Rossendale</option>
+            <option value="Rother" data-county="East Sussex">Rother</option>
+            <option value="Rotherham" data-county="South Yorkshire">Rotherham</option>
+            <option value="Rugby" data-county="Warwickshire">Rugby</option>
+            <option value="Runnymede" data-county="Surrey">Runnymede</option>
+            <option value="Rushcliffe" data-county="Nottinghamshire">Rushcliffe</option>
+            <option value="Rushmoor" data-county="Hampshire">Rushmoor</option>
+            <option value="Rutland" data-county="Rutland">Rutland</option>
+            <option value="Ryedale" data-county="North Yorkshire">Ryedale</option>
+            <option value="Salford" data-county="Greater Manchester">Salford</option>
+             <option value="Sandwell" data-county="West Midlands">Sandwell</option>
+            <option value="Scarborough" data-county="North Yorkshire">Scarborough</option>
+            <option value="Sedgemoor" data-county="Somerset">Sedgemoor</option>
+            <option value="Sefton" data-county="Merseyside">Sefton</option>
+            <option value="Selby" data-county="North Yorkshire">Selby</option>
+            <option value="Sevenoaks" data-county="Kent">Sevenoaks</option>
+            <option value="Sheffield" data-county="South Yorkshire">Sheffield</option>
+             <option value="Shropshire" data-county="Shropshire">Shropshire</option>
+            <option value="Slough" data-county="Berkshire">Slough</option>
+            <option value="Solihull" data-county="West Midlands">Solihull</option>
+            <option value="Somerset West and Taunton" data-county="Somerset">Somerset West and Taunton</option>
+            <option value="South Bucks" data-county="Buckinghamshire">South Bucks</option>
+            <option value="South Cambridgeshire" data-county="Cambridgeshire">South Cambridgeshire</option>
+            <option value="South Derbyshire" data-county="Derbyshire">South Derbyshire</option>
+            <option value="South Gloucestershire" data-county="Gloucestershire">South Gloucestershire</option>
+            <option value="South Hams" data-county="Devon">South Hams</option>
+            <option value="South Holland" data-county="Lincolnshire">South Holland</option>
+            <option value="South Kesteven" data-county="Lincolnshire">South Kesteven</option>
+            <option value="South Lakeland" data-county="Cumbria">South Lakeland</option>
+            <option value="South Norfolk" data-county="Norfolk">South Norfolk</option>
+             <option value="South Northamptonshire" data-county="Northamptonshire">South Northamptonshire</option>
+            <option value="South Oxfordshire" data-county="Oxfordshire">South Oxfordshire</option>
+            <option value="South Ribble" data-county="Lancashire">South Ribble</option>
+            <option value="South Somerset" data-county="Somerset">South Somerset</option>
+            <option value="South Staffordshire" data-county="Staffordshire">South Staffordshire</option>
+            <option value="South Tyneside" data-county="Tyne &amp; Wear">South Tyneside</option>
+            <option value="Southend-On-Sea" data-county="Essex">Southend-On-Sea</option>
+            <option value="Southwark" data-county="Greater London">Southwark</option>
+            <option value="Spelthorne" data-county="Surrey">Spelthorne</option>
+            <option value="St Albans" data-county="Hertfordshire">St Albans</option>
+            <option value="St Helens" data-county="Merseyside">St Helens</option>
+            <option value="Stafford" data-county="Staffordshire">Stafford</option>
+            <option value="Staffordshire Moorlands" data-county="Staffordshire">Staffordshire Moorlands</option>
+             <option value="Stevenage" data-county="Hertfordshire">Stevenage</option>
+            <option value="Stockport" data-county="Greater Manchester">Stockport</option>
+            <option value="Stockton-On-Tees" data-county="Durham">Stockton-On-Tees</option>
+            <option value="Stratford-On-Avon" data-county="Warwickshire">Stratford-On-Avon</option>
+            <option value="Stroud" data-county="Gloucestershire">Stroud</option>
+            <option value="Sunderland" data-county="Tyne &amp; Wear">Sunderland</option>
+             <option value="Surrey Heath" data-county="Surrey">Surrey Heath</option>
+            <option value="Sutton" data-county="Greater London">Sutton</option>
+            <option value="Swale" data-county="Kent">Swale</option>
+            <option value="Swansea" data-county="West Glamorgan">Swansea</option>
+            <option value="Swindon" data-county="Wiltshire">Swindon</option>
+            <option value="Tameside" data-county="Greater Manchester">Tameside</option>
+             <option value="Tamworth" data-county="Staffordshire">Tamworth</option>
+             <option value="Tandridge" data-county="Surrey">Tandridge</option>
+            <option value="Teignbridge" data-county="Devon">Teignbridge</option>
+             <option value="Telford" data-county="Shropshire">Telford</option>
+            <option value="Tendring" data-county="Essex">Tendring</option>
+            <option value="Test Valley" data-county="Hampshire">Test Valley</option>
+            <option value="Tewkesbury" data-county="Gloucestershire">Tewkesbury</option>
+            <option value="Thanet District" data-county="Kent">Thanet District</option>
+             <option value="The Vale of Glamorgan" data-county="South Glamorgan">The Vale of Glamorgan</option>
+            <option value="Three Rivers" data-county="Hertfordshire">Three Rivers</option>
+            <option value="Thurrock" data-county="Essex">Thurrock</option>
+            <option value="Tonbridge and Malling" data-county="Kent">Tonbridge and Malling</option>
+            <option value="Torbay" data-county="Devon">Torbay</option>
+            <option value="Torfaen" data-county="Gwent">Torfaen</option>
+            <option value="Torridge" data-county="Devon">Torridge</option>
+            <option value="Tower Hamlets" data-county="Greater London">Tower Hamlets</option>
+            <option value="Trafford" data-county="Greater Manchester">Trafford</option>
+            <option value="Tunbridge Wells" data-county="Kent">Tunbridge Wells</option>
+             <option value="Uttlesford" data-county="Essex">Uttlesford</option>
+            <option value="Vale of White Horse" data-county="Oxfordshire">Vale of White Horse</option>
+            <option value="Wakefield" data-county="West Yorkshire">Wakefield</option>
+             <option value="Walsall" data-county="West Midlands">Walsall</option>
+            <option value="Waltham Forest" data-county="Greater London">Waltham Forest</option>
+            <option value="Wandsworth" data-county="Greater London">Wandsworth</option>
+            <option value="Warrington" data-county="Cheshire">Warrington</option>
+            <option value="Warwick" data-county="Warwickshire">Warwick</option>
+            <option value="Watford" data-county="Hertfordshire">Watford</option>
+            <option value="Waverley" data-county="Surrey">Waverley</option>
+            <option value="Wealden" data-county="East Sussex">Wealden</option>
+            <option value="Wellingborough" data-county="Northamptonshire">Wellingborough</option>
+            <option value="Welwyn Hatfield" data-county="Hertfordshire">Welwyn Hatfield</option>
+            <option value="West Berkshire" data-county="Berkshire">West Berkshire</option>
+            <option value="West Devon" data-county="Devon">West Devon</option>
+            <option value="West Lancashire" data-county="Lancashire">West Lancashire</option>
+            <option value="West Lindsey" data-county="Lincolnshire">West Lindsey</option>
+            <option value="West Oxfordshire" data-county="Oxfordshire">West Oxfordshire</option>
+            <option value="West Suffolk" data-county="Suffolk">West Suffolk</option>
+            <option value="Wigan" data-county="Greater Manchester">Wigan</option>
+            <option value="Wiltshire" data-county="Wiltshire">Wiltshire</option>
+            <option value="Winchester" data-county="Hampshire">Winchester</option>
+            <option value="Windsor and Maidenhead" data-county="Berkshire">Windsor and Maidenhead</option>
+            <option value="Wirral" data-county="Merseyside">Wirral</option>
+            <option value="Woking" data-county="Surrey">Woking</option>
+            <option value="Wokingham" data-county="Berkshire">Wokingham</option>
+            <option value="Wolverhampton" data-county="West Midlands">Wolverhampton</option>
+            <option value="Worcester" data-county="Worcestershire">Worcester</option>
+            <option value="Worthing" data-county="West Sussex">Worthing</option>
+            <option value="Wrexham" data-county="Clwyd">Wrexham</option>
+            <option value="Wychavon" data-county="Worcestershire">Wychavon</option>
+            <option value="Wycombe" data-county="Buckinghamshire">Wycombe</option>
+            <option value="Wyre" data-county="Lancashire">Wyre</option>
+            <option value="Wyre Forest" data-county="Worcestershire">Wyre Forest</option>
+            <option value="York" data-county="North Yorkshire">York</option>
+        </select>
+          {% else %}
           <select class="govuk-select" id="rtv-council" name="rtv-council">
             <option value="">Select your local council</option>
             <option value="Aberdeen City" data-county="SCOTTISH">Aberdeen City</option>
@@ -83,12 +438,8 @@ Your address
             <option value="West Dunbartonshire" data-county="SCOTTISH">West Dunbartonshire</option>
             <option value="West Lothian" data-county="SCOTTISH">West Lothian</option>
           </select>
+          {% endif %}
 
-
-
-
-
-          </select>
         </div>
       
 
