@@ -14,9 +14,9 @@ Confirmation
         titleText: "Your application has been received and is being processed",
         html: "Your reference number<br><strong>HDJ2123F</strong>"
       }) }}
-      <p>We have sent you a confirmation email.</p>
+      <p>We have sent you a confirmation email. {{ data ['rtv-council']}}</p>
       <hr>
-      <p><strong>{{localAuthority}} Electoral Registration Office</strong> will email or write to you within 10 days. If an election is taking place in your area, it might take longer. If you need to discuss your application, contact your <a href="RTVContactElectoralRegOffice">local Electoral Registration Office (link opens in a new window)</a>.</p>
+      <p><strong> {% if (not data ['rtv-council'])  and  (data ['rtv-council'] === "") %}{{localAuthority}} {% else %} {{ data ['rtv-council']}} {% endif %} Electoral Registration Office</strong> will email or write to you within 10 days. If an election is taking place in your area, it might take longer. If you need to discuss your application, contact your <a href="RTVContactElectoralRegOffice">local Electoral Registration Office (link opens in a new window)</a>.</p>
       <p class="govuk-!-margin-bottom-9">You can also find out about <a href="RTVContactElectoralRegOffice">what happen next</a></p>
 
     
@@ -27,6 +27,13 @@ Confirmation
       }) }}
 
     </div>
+  </div>
+  <div class="student-notes-box"> 
+    {% if (not data ['rtv-council'] ) and  (data ['rtv-council'] === "") %}
+    <p>This page mentions East Renfrewshire Electoral Registration Office because this is done to support classes done in this area. The real form would display the Electoral Registration Office of your postal address.  </p>
+    {% else %}
+    <p>This page mentions the local Authority you have selected when you entered your address - it only works for Scotland.</p>
+    {% endif %}
   </div>
  </div> 
 

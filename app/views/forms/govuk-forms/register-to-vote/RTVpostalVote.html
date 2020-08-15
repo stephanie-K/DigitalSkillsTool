@@ -14,9 +14,9 @@ Do you want to apply for a postal vote?
       {% set sendEmailHtml %}
       <div class="govuk-form-group">
         <label class="govuk-label" for="send-email">
-          It will be easier to contact you if you provide your email address (optional)
+          Email address
         </label>
-        <input class="govuk-input govuk-!-width-one-half" id="send-email" name="send-email" type="email" value="{{data['send-email']}}">
+        <input class="govuk-input" id="send-email" name="send-email" type="email" value="{{data['send-email']}}">
       </div>
       {% endset -%}
 
