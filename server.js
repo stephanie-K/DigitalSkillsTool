@@ -360,4 +360,4 @@ app.locals.bulbEnergyUsageDate3= '10 May 20'
 // Place variable depending on what council is using this
 app.locals.postcode= 'G78 1SY'
 app.locals.town= 'Barrhead'
-app.locals.council= 'East Renfrewshire Council' 
+app.locals.localAuthority= 'East Renfrewshire' 
