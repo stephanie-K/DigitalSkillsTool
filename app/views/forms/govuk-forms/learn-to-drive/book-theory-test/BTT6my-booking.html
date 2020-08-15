@@ -66,12 +66,12 @@ My booking
                             Average test length: 60 minutes<br>
                             <br>
                             Additional support: {% if data['support'] === 'no' %} None <br>
-                            <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support" class="small-font-dvsa">Add addtional support</a>
+                            <a href="BTT2support" class="small-font-dvsa">Add addtional support</a>
                             {% else %}
                             <br>
                             {% if data['support-bsl'] === 'yes-bsl' %}British Sign Language (BSL): On Screen video <br>{% endif %}
                             {% if data['support-voice'] === 'yes-voice' %}Hear voiceover  <br> {% endif %}
-                            <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT2support" class="small-font-dvsa">Change addtional support</a>
+                            <a href="BTT2support" class="small-font-dvsa">Change addtional support</a>
                             {% endif %}
                           </p>
                        
@@ -80,7 +80,7 @@ My booking
                           <strong>Appointment</strong><br>
                           {{ bookingTheoryTestAppointment }}<br>
                           Start time: 09:15 am<br>
-                          <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT5appointment" class="small-font-dvsa">Change appointment</a>
+                          <a href="BTT5appointment" class="small-font-dvsa">Change appointment</a>
                           <br><br>
                           <strong>Location</strong><br>
                           Pearson Centre - Glasgow<br>
@@ -88,9 +88,9 @@ My booking
                           36-38 Washington Street<br>
                           Glasgow<br>
                           G3 8AZ<br>
-                          <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT4select-centre" class="small-font-dvsa">Change centre</a>
+                          <a href="BTT4select-centre" class="small-font-dvsa">Change centre</a>
                         </td>
-                        <td class="govuk-table__cell small-font-dvsa">23.00 <a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTT7my-booking-empty">Remove test</a></td>
+                        <td class="govuk-table__cell small-font-dvsa">23.00 <a href="BTT7my-booking-empty">Remove test</a></td>
                       </tr>
                     </tbody>
                 </table>
@@ -189,7 +189,7 @@ My booking
             {{ govukButton({
               text: "Proceed to checkout",
               classes: "button-primary",
-              href: "/forms/govuk-forms/learn-to-drive/book-theory-test/BTT8checkout"
+              href: "BTT8checkout"
             }) }}
           </div>
         </div>

@@ -11,7 +11,7 @@ Your address
     <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">What is your address?</h1>
     <p>Postcode</p>
-    <p><strong style="padding-right: 30px">{{postcode}}</strong> <a href="/forms/govuk-forms/register-to-vote/RTVaddress">Change</a></p>
+    <p><strong style="padding-right: 30px">{{postcode}}</strong> <a href="RTVaddress">Change</a></p>
     <form class="form" method="post">
       {% from "govuk/components/select/macro.njk" import govukSelect %}
 
@@ -48,7 +48,7 @@ Your address
           }
         ]
       }) }}
-    <p><a href="/forms/govuk-forms/register-to-vote/RTVaddressFull">I can't find my address on the list</a></p>
+    <p><a href="RTVaddressFull">I can't find my address on the list</a></p>
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
         text: "Continue"
