@@ -11,6 +11,15 @@ Do you want to apply for a postal vote?
     <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% set sendEmailHtml %}
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="send-email">
+          It will be easier to contact you if you provide your email address (optional)
+        </label>
+        <input class="govuk-input govuk-!-width-one-half" id="send-email" name="send-email" type="email" value="{{data['send-email']}}">
+      </div>
+      {% endset -%}
+
       
       {% set sendFormHtml %}
       {{ govukRadios({
@@ -25,7 +34,10 @@ Do you want to apply for a postal vote?
         items: [
           {
             value: "Email it to me",
-            text: "Email it to me"
+            text: "Email it to me",
+            conditional: {
+              html: sendEmailHtml
+            }
           },
           {
             value: "Post it to me",
@@ -53,7 +65,10 @@ Do you want to apply for a postal vote?
           },
           {
             value: "No, I already have a postal vote",
-            text: "No, I already have a postal vote"
+            text: "No, I already have a postal vote",
+            conditional: {
+              html: "<p>If you've changed your address you'll need to apply for a new postal vote</p>"
+            }
           },
           {
             value: "Yes, send me a postal vote application form",

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your address
+{% endblock %}
+
+{% block content %}
+<p><a href="javascript: history.go(-1)" class="govuk-back-link">Back</a></p>
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Contact</h1>
+    <p>Enter the postcode where you live and where you would like to register to vote.</p>
+    <form class="form" method="post">
+    
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+    </div>
+  </div>
+  <div class="student-notes-box"> 
+    <p>You can enter your real postcode, but we are going to use a fake address here after this page.</p>
+  </div>
+ </div> 
+
+{% endblock %}
