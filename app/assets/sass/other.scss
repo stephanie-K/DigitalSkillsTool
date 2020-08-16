@@ -383,11 +383,10 @@ img.dvsa, image.dvsa  {
   background-color: #FFFFCC;
   border: none;
 }
-// This was created just for Apply for provisional licence but is affecting all all forms using this CSS.
-// we would need to create a new class wherever this is used in that specific form. - changed to black which is more neutral
-.govuk-details__summary::before {
+
+.govuk-details__summary.apl-red::before {
   font-size: 14px;
-  color: #000000; // #C00;
+  color: #C00;
 } 
 
 .label-bold-text {
