@@ -742,7 +742,7 @@ router.post('/forms/erc-forms/report-repair/RRonlineRepairDetails', function (re
 
 router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTstart', function (req, res) {
   var hasRead = req.session.data['rctread']
-  if (hasRead == "read") {
+  if (hasRead && hasRead.includes('read')) {
     return res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTemailaddress')
   }
   req.session.data['rctread'] = 'error'
