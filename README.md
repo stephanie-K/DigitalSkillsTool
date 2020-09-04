@@ -21,10 +21,8 @@ You can visit the website here: [**https://erc-tool.herokuapp.com/**](https://er
 
 You can also [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/08/01/improving-digital-skills-a-tool-using-the-gov-uk-prototype-kit-part-2/)
 
-
-
-![East Renfrewshire Council Logo](/app/assets/images/ERC/erclogo.png)
-
+Watch this video or [look at this PDF](/app/assets/images/help/Using_the_digital_skills_website.pdf) if you prefer.
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/9JQ7CNYQrpY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 
 ## How we are using the tool
