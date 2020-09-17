@@ -334,28 +334,28 @@ module.exports = app
 // Add variables that are available in all views
 
 // This is where we sent various dates for the forms so it's easy to update them:
-app.locals.biddingStart= '26th of August'
-app.locals.biddingEnd= '1st September'
-app.locals.biddingEnddate= '1-Sept-2020'
+app.locals.biddingStart= '16th of September'
+app.locals.biddingEnd= '6th October'
+app.locals.biddingEnddate= '6-Oct-2020'
 
 app.locals.councilTaxStartDate= '01/04/2020'
 app.locals.councilTaxEndDate= '31/03/2021'
 app.locals.councilTaxStartDateShort= '01-APR-2020'
 app.locals.councilTaxEndDateShort= '31-MAR-2021'
 
-app.locals.universalCreditJournal= '22 July 2020'
+app.locals.universalCreditJournal= '16 September 2020'
 
-app.locals.bookingTheoryTestAppointment= "Friday, 4 September 2020"
+app.locals.bookingTheoryTestAppointment= "Monday, 5 October 2020"
 
-app.locals.bulbNextPayment= '10 August'
-app.locals.bulbEnergyUsageDate1= '10 Jul 20'
-app.locals.bulbEnergyUsageDate1Extended= '10 July 2020'
-app.locals.bulbPaymentDate1= '11 Jul 2020'
-app.locals.bulbStatementDate1= '10 Jun to 09 Jul 2020'
-app.locals.bulbEnergyUsageDate2= '10 Jun 20'
-app.locals.bulbPaymentDate2= '11 Jun 2020'
-app.locals.bulbStatementDate2= '10 May to 09 Jun 2020'
-app.locals.bulbEnergyUsageDate3= '10 May 20'
+app.locals.bulbNextPayment= '10 October'
+app.locals.bulbEnergyUsageDate1= '10 Sept 20'
+app.locals.bulbEnergyUsageDate1Extended= '10 September 2020'
+app.locals.bulbPaymentDate1= '11 Sept 2020'
+app.locals.bulbStatementDate1= '10 Aug to 09 Sept 2020'
+app.locals.bulbEnergyUsageDate2= '10 Aug 20'
+app.locals.bulbPaymentDate2= '11 Aug 2020'
+app.locals.bulbStatementDate2= '10 Jul to 09 Aug 2020'
+app.locals.bulbEnergyUsageDate3= '10 Jul 20'
 
 // Place variable depending on what council is using this
 app.locals.postcode= 'G78 1SY'
