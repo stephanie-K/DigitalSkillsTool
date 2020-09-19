@@ -334,9 +334,9 @@ module.exports = app
 // Add variables that are available in all views
 
 // This is where we sent various dates for the forms so it's easy to update them:
-app.locals.biddingStart= '16th of September'
-app.locals.biddingEnd= '6th October'
-app.locals.biddingEnddate= '6-Oct-2020'
+app.locals.biddingStart= '30th of September'
+app.locals.biddingEnd= '20th October'
+app.locals.biddingEnddate= '20-Oct-2020'
 
 app.locals.councilTaxStartDate= '01/04/2020'
 app.locals.councilTaxEndDate= '31/03/2021'
