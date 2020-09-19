@@ -16,7 +16,7 @@ Create your online profile
     <p class="erc-alt-dark-blue-bg">Address Selection</p>
     <p>Select your address <span style="color: red"> *</span></p>
 
-
+    <form class="form" method="post">
       <div class="ct-account">
         <table class="govuk-table" style="overflow: auto;">
           <thead class="govuk-table__head">
@@ -32,7 +32,7 @@ Create your online profile
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><input type="radio"></td>
+              <td class="govuk-table__cell"><input id="housenumber1" name="housenumber" type="radio" value="24"></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell">24</td>
@@ -44,7 +44,7 @@ Create your online profile
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><input type="radio"></td>
+              <td class="govuk-table__cell"><input id="housenumber2" name="housenumber" type="radio" value="25"></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell">25</td>
@@ -56,7 +56,7 @@ Create your online profile
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><input type="radio"></td>
+              <td class="govuk-table__cell"><input id="housenumber3" name="housenumber" type="radio" value="26"></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell">26</td>
@@ -68,7 +68,7 @@ Create your online profile
 
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><input type="radio"></td>
+              <td class="govuk-table__cell"><input id="housenumber4" name="housenumber" type="radio" value="27"></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell"></td>
               <td class="govuk-table__cell">27</td>
@@ -96,14 +96,14 @@ Create your online profile
       }) }}
       {{ govukButton({
         text: "Confirm chosen address",
-        classes: "button-primary erc-alt",
-        href: "RCTsecurityDetails"
+        classes: "button-primary erc-alt"
       }) }}
-
+      </form>
     </div>
   </div>
 
   <div class="student-notes-box">
     <p>On the real form, you will see a long list of addresses with your Postcode to select your address from the list.</p>
+    <p>You can pick any address in the list here, it's just an example.</p>
   </div>
 {% endblock %}

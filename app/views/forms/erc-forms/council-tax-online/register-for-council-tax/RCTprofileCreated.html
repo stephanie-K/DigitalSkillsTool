@@ -21,20 +21,20 @@ Create your online profile
 
     <p class="erc-alt-dark-grey-round">Your details</p>
 
-      <p>Self Service Id:  (an automated ID will display here)</p>
-      <p>Name:  (your name will display here)</p>
-      <p>Address: (your address will display here)</p>
+      <p>Self Service Id:  UD45p078</p>
+      <p>Name:  {% if data['rct-fullname'] %} {{data['rct-fullname']}}  {% else %} <em>[it would say your name here]</em>  {% endif %}</p>
+      <p>Address: {% if data['housenumber'] %} {{data['housenumber']}} {% endif %} Thistle St, Barrhead G78 2QR</p>
 
     <p class="erc-alt-dark-grey-round">Acceptable ID</p>
 
     <div class="govuk-heading-s erc-alt-light-grey">
-      <p class="govuk-!-font-size-14">Acceptable IDs for proof of name are</p>
+      <p>Acceptable IDs for proof of name are</p>
       <ul class="govuk-list govuk-list--bullet">
           <li>Passport</li>
           <li>Photo drivers licence</li>
           <li>Hologrammed pass card</li>
       </ul>
-      <p class="govuk-!-font-size-14">Acceptable IDs for proof of address are recent</p>
+      <p>Acceptable IDs for proof of address are recent</p>
       <ul class="govuk-list govuk-list--bullet">
           <li>Bank statement</li>
           <li>Council Tax bill</li>
@@ -61,12 +61,12 @@ Create your online profile
   </div>
 
   <div class="student-notes-box">
-    <p>The form is complete at this stage.</p>
 
     <p>'Screen Captured' button will take a screenshot of this page, and 'Email details' button will email you this page.</p>
 
-    <p>On the real form for the 'Your details' section, your previously inputted name and adrress will appear here as well as an automated Service ID</p>
+    <p>On the real form for the 'Your details' section, your name and address will appear here as well as an automated Service ID</p>
 
-    <p>Once this form is completed and your online profile is completed you will need to go in-person to confirm your identity and address with the council.</p>
+    <p>Once you finish the real form and your online profile is complete, you will need to go in-person to confirm your identity and address with the council.</p>
+    <p>Select 'Next' to finish the form.</p>
   </div>
 {% endblock %}

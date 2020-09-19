@@ -22,7 +22,7 @@ Create your online profile
       </ul>
       <p class="govuk-!-font-size-14">You will be asked for the answer to your question when you produce your ID.</p>
     </div>
-
+    <form class="form" method="post">
       <dl class="govuk-summary-list centred-input-fields">
         <div class="govuk-summary-list__row ">
           <dt class="govuk-summary-list__key">
@@ -64,10 +64,9 @@ Create your online profile
 
       {{ govukButton({
         text: "Continue",
-        classes: "button-primary erc-alt",
-        href: "RCTpasswordCreation"
+        classes: "button-primary erc-alt"
       }) }}
-
+    </form>
     </div>
   </div>
 {% endblock %}

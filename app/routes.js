@@ -759,6 +759,22 @@ router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTema
   }
 })
 
+router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTnameAddress', function (req, res) {
+  res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTaddressSelection')
+})
+
+router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTaddressSelection', function (req, res) {
+  res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTsecurityDetails')
+})
+
+router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTsecurityDetails', function (req, res) {
+  res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTpasswordCreation')
+})
+
+router.post('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTpasswordCreation', function (req, res) {
+  res.redirect('/forms/erc-forms/council-tax-online/register-for-council-tax/RCTprofileConfirmation')
+})
+
 // Council tax form - sign up *****************************************************************
 
 router.post('/forms/erc-forms/council-tax-online/sign-up-council-tax/SCTstart', function (req, res) {

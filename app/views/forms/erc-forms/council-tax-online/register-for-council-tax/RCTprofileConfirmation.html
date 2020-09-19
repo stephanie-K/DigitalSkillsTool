@@ -26,13 +26,13 @@ Create your online profile
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
             <label class="govuk-label govuk-checkboxes__label" for="organisation">
-            My name is (your full name will be displayed here)
+            My name is {% if data['rct-fullname'] %} {{data['rct-fullname']}}  {% else %} <em>[it would say your name here]</em>  {% endif %}
             </label>
           </div>
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
             <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
-              My address is (your address will be displayed here)
+              My address is {% if data['housenumber'] %} {{data['housenumber']}} {% endif %} Thistle St, Barrhead G78 2QR
             </label>
           </div>
         </div>
@@ -42,9 +42,9 @@ Create your online profile
     <p class="erc-alt-dark-grey-round">My profile details</p>
 
     <p>My username - will be confirmed in an email</p>
-    <p>My password is: (the password you created will display here)</p>
-    <p>My memorable quesion is: (the memorable question you created will display here)</p>
-    <p>My memorable answer is: (the memorable answer you created will display here)</p>
+    <p>My password is: {% if data['rct-password'] %} {{data['rct-password']}}  {% else %} <em>[it would show your password here]</em>  {% endif %}</p>
+    <p>My memorable quesion is: {% if data['rct-memorableA'] %} {{data['rct-memorableQ']}}  {% else %} <em>[the memorable question you created will display here]</em> {% endif %}</p>
+    <p>My memorable answer is: {% if data['rct-memorableA'] %} {{data['rct-memorableA']}}  {% else %} <em>[the memorable answer you created will display here]</em> {% endif %}</p>
 
       {{ govukButton({
         text: "<< Back",

@@ -18,7 +18,7 @@ Create your online profile
       <p class="govuk-!-font-size-14">Your confirmation code has been successfully validated.</p>
       <p class="govuk-!-font-size-14">Please tell us your name and address. We will match these against the details that we already hold on our customer database.</p>
     </div>
-
+    <form class="form" method="post">
       <dl class="govuk-summary-list centred-input-fields">
         <div class="govuk-summary-list__row ">
           <dt class="govuk-summary-list__key">
@@ -64,10 +64,9 @@ Create your online profile
 
       {{ govukButton({
         text: "Find my address",
-        classes: "button-primary erc-alt",
-        href: "RCTaddressSelection"
+        classes: "button-primary erc-alt"
       }) }}
-
+      </form>
     </div>
   </div>
 {% endblock %}
