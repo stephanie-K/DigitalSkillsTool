@@ -18,6 +18,7 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 $sac-text : #0b0c0c; 
 $sac-blue: #00559c;
 $sac-yellow:#ffc300;
+$sac-light-grey: #e5e5e5;
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
@@ -92,7 +93,9 @@ $sac-yellow:#ffc300;
 //---------------------------------------- HEADER ------------------------------------------------//
 
 .govuk-header__container {
-    border-bottom: 0px;
+    border-bottom: 20px solid $sac-blue;
+    background-color: $sac-blue;
+    border-top: 20px solid $sac-blue;
 }
 .sac-tagline {
     font-size: 24px;
@@ -100,18 +103,22 @@ $sac-yellow:#ffc300;
     font-family: "Noto Sans", Arial, sans-serif;
     background-color: $sac-yellow;
     padding: 4px 10px;
-    font-weight: 500;
+    font-weight: 600;
     @media only screen and (max-width: 340px) {
         font-size:18px;
     }
 }
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
-    border: 10px solid #fff;
+    border: 10px solid $sac-blue;
     }
     a {
         text-decoration: none;
     }
+}
+
+.govuk-header__logotype {
+  padding: 0 20px;
 }
 
 
@@ -145,7 +152,31 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
     background-color: #0071BA;
 }
 
+.govuk-main-wrapper--auto-spacing:first-child {
+  padding-top: 0;
+}
 
+.heading-title {
+  background-color: $sac-light-grey;
+  font-size: 36px;
+  font-weight: 800;
+  padding: 20px;
+  @media only screen and (max-width: 395px) {
+      font-size:40px;
+  }
+}
+
+.tag-banner {
+  font-size: 20px;
+  color:$sac-text; 
+  font-family: "Noto Sans", Arial, sans-serif;
+  background-color: $sac-yellow;
+  padding: 20px 20px 10px 20px;
+  font-weight: 400;
+  @media only screen and (max-width: 340px) {
+      font-size:18px;
+  }
+}
 
 //---------------------------------------- FOOTER ------------------------------------------------//
 .govuk-footer {
