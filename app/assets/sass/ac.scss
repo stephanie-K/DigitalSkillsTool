@@ -15,99 +15,37 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
-$sac-text : #0b0c0c; 
-$sac-blue: #00559c;
-$sac-yellow:#ffc300;
-$sac-light-grey: #e5e5e5;
+$ac-text : #333; 
+$ac-blue: #004990;
+$ac-yellow:#FFD744;
+$ac-light-grey: #f5f5f5;
+$ac-red: #BE3535;
+$ac-warning-bg: #fcf8e3;
+$ac-warning-br: #FFD744;
+$ac-callout-bg: #ecf9ff;
+$ac-callout-br: #9acfea;
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-/* South Ayrshire Council (https://www.south-ayrshire.gov.uk) - taken from their website to have the correct font and the social media icons */
-@font-face {
-  font-family: "Noto Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Noto Sans"), local("NotoSans"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.woff2")
-      format("woff2"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.woff")
-      format("woff"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.ttf")
-      format("truetype"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.svg#NotoSans")
-      format("svg");
-  src: url("/themes/bootstrap/fonts/noto-sans-v7-latin-regular.eot");
-  unicode-range: U+000-5FF;
-}
-@font-face {
-  font-family: "Noto Sans";
-  font-style: normal;
-  font-weight: 700;
-  src: local("Noto Sans Bold"), local("NotoSans-Bold"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.woff2") format("woff2"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.woff") format("woff"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.ttf") format("truetype"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.svg#NotoSans")
-      format("svg");
-  src: url("/themes/bootstrap/fonts/noto-sans-v7-latin-700.eot");
-  unicode-range: U+000-5FF;
-}
-@font-face {
-  font-family: "Noto Serif";
-  font-style: normal;
-  font-weight: 400;
-  src: url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.eot");
-  src: local("Noto Serif"), local("NotoSerif"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.woff2")
-      format("woff2"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.woff")
-      format("woff"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.ttf")
-      format("truetype"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-regular.svg#NotoSerif")
-      format("svg");
-}
-@font-face {
-  font-family: "Noto Serif";
-  font-style: normal;
-  font-weight: 700;
-  src: url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.eot");
-  src: local("Noto Serif Bold"), local("NotoSerif-Bold"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.eot?#iefix")
-      format("embedded-opentype"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.woff2") format("woff2"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.woff") format("woff"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.ttf")
-      format("truetype"),
-    url("/themes/bootstrap/fonts/noto-serif-v6-latin-700.svg#NotoSerif")
-      format("svg");
-} 
-
 //---------------------------------------- HEADER ------------------------------------------------//
 
 .govuk-header__container {
-    border-bottom: 20px solid $sac-blue;
-    background-color: $sac-blue;
-    border-top: 20px solid $sac-blue;
+    border-bottom: 40px solid $ac-blue;
+    background-color: white;
+    padding: 25px 0;
 }
-.sac-tagline {
+.ac-tagline {
     font-size: 1.5em;
-    color:$sac-text; 
-    font-family: "Noto Sans", Arial, sans-serif;
-    background-color: $sac-yellow;
+    color:$ac-text; 
+    font-family: Verdana, sans-serif;
+    background-color: $ac-yellow;
     padding: 4px 10px;
     font-weight: 600;
 }
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
-    border: 10px solid $sac-blue;
+    border: 10px solid white;
     }
     a {
         text-decoration: none;
@@ -122,14 +60,18 @@ $sac-light-grey: #e5e5e5;
 //---------------------------------------- FOOTER ------------------------------------------------//
 .govuk-footer {
     font-size: 1em;
-    background-color: #f5f5f5;
+    background-color: $ac-blue;
     p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
-        color:  #464a4c;
+        color:  white;
     }
+}
+.govuk-footer__link:hover, .govuk-footer__link:active {
+  text-decoration: underline;
 }
 .govuk-footer__link{
     font-size: 1em;
     font-weight: 500;
+    text-decoration: none;
 }
 .govuk-footer__inline-list-item{
     padding: 1em;
@@ -140,12 +82,7 @@ $sac-light-grey: #e5e5e5;
 .govuk-footer__link:focus{
     background-color: #f5f5f5;
     outline: 3px solid #fd0;
-}
-
-.back-to-top{
-    background-color: #e5e5e5; 
-    text-align: center; 
-    padding: 10px;
+    text-decoration: underline;
 }
 
 .footer-icon span{
@@ -155,7 +92,7 @@ $sac-light-grey: #e5e5e5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 2em;
-    color: #464a4c;
+    color: white;
     margin: 0 2vw;
     @media (min-width: 0) and (max-width: 767px) {
         display: inline-block;
@@ -165,11 +102,6 @@ $sac-light-grey: #e5e5e5;
       }
 }
 
-.footer-icon {
-    text-align: center;
-}
-
-
 
 //---------------------------------------- BODY------------------------------------------------//
 
@@ -177,8 +109,8 @@ body p, ul, li , a, span, .govuk-link,
 .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
 .govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
 .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
-    color: $sac-text;
-    font-family: "Noto Sans", Arial, sans-serif !important;
+    color: $ac-text;
+    font-family: Verdana, sans-serif !important;
 }
 
 body p, ul, li , a, span, .govuk-link, .govuk-list,
@@ -199,33 +131,35 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
 }
 
 .heading-title {
-  background-color: $sac-light-grey;
+  background-color: $ac-light-grey;
   font-size: 2.5em;
   font-weight: 800;
   padding: 20px;
+  color: $ac-blue !important;
 }
 
 .tag-banner {
   font-size: 1.2em;
-  color:$sac-text; 
-  font-family: "Noto Sans", Arial, sans-serif;
-  background-color: $sac-yellow;
+  color:$ac-text; 
+  border: solid 2px #23BEE7;
+  font-family: Verdana, sans-serif;
+  background-color: $ac-callout-bg;
   padding: 20px 20px 10px 20px;
   font-weight: 400;
 }
  /* Accordion:  will need to be revisited - TODO */
 .govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
 color: white; 
-background-color:#0071BA; 
+background-color:$ac-blue; 
 padding: 5px;
 box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 }
 
 .js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
-    background-color: #0071BA;
+    background-color: $ac-blue; 
 }
 
-.govuk-tag.red-sac {
+.govuk-tag.red-ac {
     background-color: #b10e1e;
    // margin-left: 10px;
     padding: 20px;
@@ -238,37 +172,34 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
-    color: $sac-text;
+    color: $ac-text;
     margin-bottom: 2em;
 }
 
 .govuk-textarea, .govuk-input{
-    border: 2px solid $sac-text;
+    border: 2px solid $ac-text;
 }
 
-.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .sac-text , table{
-    color: $sac-text;
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .ac-text , table{
+    color: $ac-text;
 }
 
-.govuk-link, a, .govuk-link:link, a:link {
-    color: 	#2a5db0;
+.govuk-link, a, .govuk-link:link, a:link, .govuk-link:visited, a:visited{
+    color: 	#1d50a9
 }
 
-.govuk-link:visited, a:visited{
-    color: 	#609;
-}
 
 .govuk-link:hover, a:hover{
-    color: 	#1a0dab;
+    color: 	#2a6496;
 }
 .govuk-link:focus, a:focus {
-    color: #464a4c;
-    background-color: #f5f5f5;
-    box-shadow: 0 -2px #f5f5f5, 0 4px #fff;
+    color: #2a6496;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset:-2px;
     text-decoration: underline;
 }
 
-#logo-sac:focus{
+#logo-ac:focus{
     background-color: #0000;  // was putting a thick yellow layer at the bottom of the ERC logo
 }
 

@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/other-councils/ac/ac.ico" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/ac.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html" id="logo-ac"><image src="{{ asset_path }}/images/other-councils/ac/ac-logo.png" alt="Go to Homepage" width="200" height="45"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+        <a href="/index.html">
+          <span class="ac-tagline">
+            This is a training website
+          </span>
+        </a>  
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo" style="padding-top: 0; border-top: solid 5px #1a1a1a;">
+
+<div class="govuk-width-container govuk-!-margin-top-9 ">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+      <ul class="govuk-footer__inline-list" style="text-align: center;">
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/index.html">Home</a>
+        </li>
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/how-to-use.html">How to use</a>
+        </li>
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/about.html">About</a>
+        </li>
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/creating-this-website.html">Creating this website</a>
+        </li>
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+        </li>
+        <li class="govuk-footer__inline-list-item ">
+          <a class="govuk-footer__link" href="/prototype-admin/clear-data">Clear the data</a>
+        </li>
+      </ul>
+      <br>
+    </div>
+  </div>
+
+    <hr class="govuk-footer__section-break">
+
+    <p class="govuk-!-margin-bottom-9 footer-icon">
+      <span class="fa fa-facebook fa-2x"></span>
+      <span class="fa fa-twitter fa-2x"></span>
+      <span class="fa fa-linkedin fa-2x"></span>
+      <span class="fa fa-youtube fa-2x"></span>
+    </p>
+    <p>This website is for training - <a class="govuk-footer__link" href="https://www.aberdeenshire.gov.uk/" target="_blank" rel="noopener">Follow this link for the Aberdeenshire Council website</a></p>
+  </div>
+</footer>
+{% endblock %}

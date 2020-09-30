@@ -15,12 +15,15 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
-$scvo-text : #244B5A; 
-$scvo-blue: #244B5A;
-$scvo-yellow:#FFDB02;
-$scvo-light-grey: #e6eef1;
-$scvo-red: #FF595A;
-$scvo-red-selection: #C5143D;
+$wdc-text : #333; 
+$wdc-dark-blue: #0c1832;
+$wdc-blue: #1D3C7B;
+$wdc-yellow:#FFDB02;
+$wdc-alert-bg: #f2dede;
+$wdc-alert-text: #ae3f3d;
+$wdc-info-bg:  #d9edf7;
+$wdc-info-text: #31708f;
+
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
@@ -28,15 +31,15 @@ $scvo-red-selection: #C5143D;
 //---------------------------------------- HEADER ------------------------------------------------//
 
 .govuk-header__container {
-    border-bottom: 20px solid $scvo-blue;
-    background-color: $scvo-blue;
-    border-top: 20px solid $scvo-blue;
+    border-bottom: 20px solid $wdc-dark-blue;
+    background-color: $wdc-dark-blue;
+    border-top: 20px solid $wdc-dark-blue;
 }
-.scvo-tagline {
+.wdc-tagline {
     font-size: 1.5em;
-    color: #ffffff; 
-    font-family: "Ingra", Arial, sans-serif;
-    background-color: $scvo-red;
+    color: $wdc-alert-text; 
+    font-family: "Segoe UI", Calibri, Tahoma, Geneva, sans-serif;
+    background-color: $wdc-alert-bg;
     padding: 4px 10px;
     font-weight: 600;
     @media only screen and (max-width: 395px) {
@@ -46,7 +49,7 @@ $scvo-red-selection: #C5143D;
 
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
-    border: 10px solid $scvo-blue;
+    border: 10px solid $wdc-dark-blue;
     }
     a {
         text-decoration: none;
@@ -61,7 +64,7 @@ $scvo-red-selection: #C5143D;
 .govuk-footer {
     padding-top: 1em;
     font-size: 1.1em;
-    background-color: $scvo-blue;
+    background-color: $wdc-blue;
     p, .govuk-footer__link:link, .govuk-footer__link:visited {
         color:  #ffffff;
         font-weight:600;
@@ -69,7 +72,8 @@ $scvo-red-selection: #C5143D;
 }
 
 a.govuk-footer__link:hover, a.govuk-footer__link:active {
-  color: $scvo-red !important;
+  color: white !important;
+  text-decoration: underline;
 }
 
 .govuk-footer__link{
@@ -84,10 +88,10 @@ a.govuk-footer__link:hover, a.govuk-footer__link:active {
     margin-bottom: 0;
 }
 .govuk-footer__link:focus{
-    background-color: $scvo-yellow;
-    outline: 3px solid $scvo-red;
+    background-color: $wdc-yellow;
+    outline: 3px solid white;
     padding: 0.5em; 
-    color: $scvo-text !important;
+    color: $wdc-text !important;
 }
 
 //---------------------------------------- BODY------------------------------------------------//
@@ -96,8 +100,8 @@ body p, ul, li , a, span, .govuk-link,
 .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
 .govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
 .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
-    color: $scvo-text;
-    font-family: "Ingra", Arial, sans-serif !important;
+    color: $wdc-text;
+    font-family: "Segoe UI", Calibri, Tahoma, Geneva, sans-serif !important;
 }
 
 body p, ul, li , a, span, .govuk-link, .govuk-list,
@@ -118,17 +122,18 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
 }
 
   .heading-title {
-    background-color: $scvo-light-grey;
+    background-color: $wdc-blue;
     font-size: 2.5em;
     font-weight: 800;
     padding: 20px;
+    color: #fff !important;
   }
   
   .tag-banner {
     font-size: 1.2em;
-    color:$scvo-text; 
-    font-family: "Ingra", Arial, sans-serif;
-    background-color: $scvo-yellow;
+    color: #400; 
+    font-family: "Segoe UI", Calibri, Tahoma, Geneva, sans-serif;
+    background-color: $wdc-info-bg;
     padding: 20px 20px 10px 20px;
     font-weight: 400;
   }
@@ -136,17 +141,17 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
    /* Accordion:  will need to be revisited - TODO */
  .govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
   color: white; 
-  background-color:$scvo-red; 
+  background-color:$wdc-blue; 
   padding: 5px;
   box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
   }
   
   .js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
-      background-color: $scvo-red;
+      background-color: $wdc-blue;
   }
 
-.govuk-tag.red-scvo {
-    background-color: $scvo-red-selection;
+.govuk-tag.red-wdc {
+    background-color: $wdc-alert-text;
    // margin-left: 10px;
     padding: 20px;
     text-transform: none;
@@ -157,37 +162,35 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
-    color: $scvo-text;
+    color: $wdc-text;
     margin-bottom: 2em;
 }
 
 .govuk-textarea, .govuk-input{
-    border: 2px solid $scvo-text;
+    border: 2px solid $wdc-text;
 }
 
-.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .scvo-text , table{
-    color: $scvo-text;
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .wdc-text , table{
+    color: $wdc-text;
 }
 
-.govuk-link, a, .govuk-link:link, a:link {
-    color: 	$scvo-red;
-}
-
-.govuk-link:visited, a:visited{
-    color: $scvo-red;
+.govuk-link, a, .govuk-link:link, a:link, .govuk-link:visited, a:visited{
+    color: 	$wdc-blue;
+    text-decoration: none;
 }
 
 .govuk-link:hover, a:hover{
-    color: 	$scvo-red-selection;
+    color: 	#000;
+    text-decoration: underline;
 }
 .govuk-link:focus, a:focus {
-    color: #464a4c;;
+    color: #23527c;
     background-color: #f5f5f5;
-    box-shadow: 0 -2px #f5f5f5, 0 4px #fff;
+   outline: 5px auto -webkit-focus-ring-color;
     text-decoration: underline;
 }
 
-#logo-scvo:focus{
+#logo-wdc:focus{
     background-color: #0000;  // was putting a thick yellow layer at the bottom of the ERC logo
 }
 
