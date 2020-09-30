@@ -98,15 +98,12 @@ $sac-light-grey: #e5e5e5;
     border-top: 20px solid $sac-blue;
 }
 .sac-tagline {
-    font-size: 24px;
+    font-size: 1.5em;
     color:$sac-text; 
     font-family: "Noto Sans", Arial, sans-serif;
     background-color: $sac-yellow;
     padding: 4px 10px;
     font-weight: 600;
-    @media only screen and (max-width: 340px) {
-        font-size:18px;
-    }
 }
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
@@ -121,62 +118,6 @@ $sac-light-grey: #e5e5e5;
   padding: 0 20px;
 }
 
-
-//---------------------------------------- BODY------------------------------------------------//
-
-body p, ul, li , a, span, .govuk-link, 
-.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
-.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
-.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
-    color: $sac-text;
-    font-family: "Noto Sans", Arial, sans-serif ;
-}
-
-.govuk-heading-l {
-   margin-top: 50px; 
-}
-
-.govuk-heading-m {
-    margin-top: 30px; 
- }
-
- /* Accordion:  will need to be revisited - TODO */
-.govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
-color: white; 
-background-color:#0071BA; 
-padding: 5px;
-box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
-}
-
-.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
-    background-color: #0071BA;
-}
-
-.govuk-main-wrapper--auto-spacing:first-child {
-  padding-top: 0;
-}
-
-.heading-title {
-  background-color: $sac-light-grey;
-  font-size: 36px;
-  font-weight: 800;
-  padding: 20px;
-  @media only screen and (max-width: 395px) {
-      font-size:40px;
-  }
-}
-
-.tag-banner {
-  font-size: 20px;
-  color:$sac-text; 
-  font-family: "Noto Sans", Arial, sans-serif;
-  background-color: $sac-yellow;
-  padding: 20px 20px 10px 20px;
-  font-weight: 400;
-  @media only screen and (max-width: 340px) {
-      font-size:18px;
-  }
-}
 
 //---------------------------------------- FOOTER ------------------------------------------------//
 .govuk-footer {
@@ -240,6 +181,11 @@ body p, ul, li , a, span, .govuk-link,
     font-family: "Noto Sans", Arial, sans-serif !important;
 }
 
+body p, ul, li , a, span, .govuk-link, .govuk-list,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text{
+  font-size:1em;
+}
+
 .govuk-heading-l {
    margin-top: 50px; 
 }
@@ -248,6 +194,25 @@ body p, ul, li , a, span, .govuk-link,
     margin-top: 30px; 
  }
 
+ .govuk-main-wrapper--auto-spacing:first-child {
+  padding-top: 0;
+}
+
+.heading-title {
+  background-color: $sac-light-grey;
+  font-size: 2.5em;
+  font-weight: 800;
+  padding: 20px;
+}
+
+.tag-banner {
+  font-size: 1.2em;
+  color:$sac-text; 
+  font-family: "Noto Sans", Arial, sans-serif;
+  background-color: $sac-yellow;
+  padding: 20px 20px 10px 20px;
+  font-weight: 400;
+}
  /* Accordion:  will need to be revisited - TODO */
 .govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
 color: white; 
@@ -304,7 +269,7 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 }
 
 #logo-sac:focus{
-    background-color: 	#fff; // was putting a thick yellow layer at the bottom of the ERC logo
+    background-color: #0000;  // was putting a thick yellow layer at the bottom of the ERC logo
 }
 
 

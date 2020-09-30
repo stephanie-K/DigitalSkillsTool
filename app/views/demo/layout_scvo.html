@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/SCVO/scvo.ico" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/scvo.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+    @font-face {
+    font-family: 'Asap';
+    src: url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/Asap-Bold.eot?version=0.0.793');
+    src: url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/Asap-Bold.eot?#iefix?version=0.0.793') format('embedded-opentype'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/Asap-Bold.woff2?version=0.0.793') format('woff2'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/Asap-Bold.woff?version=0.0.793') format('woff'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/Asap-Bold.ttf?version=0.0.793') format('truetype'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/Asap-Bold.svg#Asap-Bold?version=0.0.793') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'Ingra';
+    src: url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-Regular.eot?version=0.0.793');
+    src: url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-Regular.eot?#iefix?version=0.0.793') format('embedded-opentype'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-Regular.woff2?version=0.0.793') format('woff2'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-Regular.woff?version=0.0.793') format('woff'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-Regular.ttf?version=0.0.793') format('truetype'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-Regular.svg#IngraSCVO-Regular?version=0.0.793') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+    @font-face {
+    font-family: 'Ingra';
+    src: url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-SemiBold.eot?version=0.0.793');
+    src: url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-SemiBold.eot?#iefix?version=0.0.793') format('embedded-opentype'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-SemiBold.woff2?version=0.0.793') format('woff2'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-SemiBold.woff?version=0.0.793') format('woff'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-SemiBold.ttf?version=0.0.793') format('truetype'),
+         url('https://storage.googleapis.com/scvo-assets/test/scvo/fonts/IngraSCVO-SemiBold.svg#IngraSCVO-SemiBold?version=0.0.793') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    }
+    </style>
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html" id="logo-scvo">
+              <image src="{{ asset_path }}/images/SCVO/scvo-logo-red-blue.png" alt="Go to Homepage" width="280" height="100"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+        <a href="/index.html">
+          <span class="scvo-tagline">
+            This is a training website
+          </span>
+        </a>  
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo" style="padding-top: 1em; border-top: solid 5px #FF595A">
+<div class="govuk-width-container">
+
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <ul class="govuk-footer__inline-list" style="text-align: center;">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/index.html">Home</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/how-to-use.html">How to use</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/about.html">About</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/creating-this-website.html">Creating this website</a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+          </li>
+          <li class="govuk-footer__inline-list-item ">
+            <a class="govuk-footer__link" href="/prototype-admin/clear-data">Clear the data</a>
+          </li>
+        </ul>
+        <br>
+      </div>
+    </div>
+    <p>This website is for training - <a class="govuk-footer__link" href="https://scvo.org.uk/" target="_blank" rel="noopener">Follow this link for the Scottish Council for Voluntary Organisations (SCVO)  website</a></p>
+  </div>
+</footer>
+{% endblock %}

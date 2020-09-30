@@ -38,7 +38,7 @@ $erc-grey-bg: #e5e5e5;
 }
 
 .erc-tagline {
-    font-size: 24px;
+    font-size: 1.5em;
     color: white;
     background-color: $erc-text;
     padding: 4px 10px;
@@ -46,7 +46,7 @@ $erc-grey-bg: #e5e5e5;
     font-weight: 500;
     font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     @media only screen and (max-width: 395px) {
-        font-size:18px;
+        font-size:1.2em;
     }
 }
 
@@ -61,7 +61,7 @@ $erc-grey-bg: #e5e5e5;
     }
 }
 .erc-tagline-old {
-    font-size: 24px;
+    font-size: 1.5em;
     color: white;
     background-color: $erc-logo-blue;
     padding: 4px 10px;
@@ -69,7 +69,7 @@ $erc-grey-bg: #e5e5e5;
     font-weight: 500;
     font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     @media only screen and (max-width: 395px) {
-        font-size:18px;
+        font-size:1.2em;
     }
 }
 
@@ -144,9 +144,9 @@ body p, ul, li , a, span, .govuk-link, .govuk-hint,
     font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 }
 
-body p, ul, li , a, span, .govuk-link,
+body p, ul, li , a, span, .govuk-link, .govuk-list,
 .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
-    font-size: 16px;
+    font-size: 1em; //16px;
 }
 
 .do-it-online {
@@ -170,7 +170,7 @@ padding-bottom: 5px;
 .govuk-accordion__section-button, .govuk-accordion__section-heading,
 .js-enabled .govuk-accordion__section-button:focus, .js-enabled .govuk-accordion__section-button {
 color: white;
-font-size: 20px;
+font-size: 1.2em;
 font-family: "Montserrat","HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 background-color:$erc-green;
 padding: 5px;
@@ -186,16 +186,16 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 
 .heading-title {
     background-color: $erc-grey-bg;
-    font-size: 60px;
+    font-size: 3em;
     font-weight: 800;
     padding: 60px 20px 30px 20px;
     @media only screen and (max-width: 395px) {
-        font-size:40px;
+        font-size:2em;
     }
 }
 
 .heading-intro {
-    font-size: 28px;
+    font-size: 1.8em;
     font-weight: 700;
     padding-bottom: 40px;
     margin-bottom: 40px;

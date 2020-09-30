@@ -1,0 +1,203 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/templates/blank-unbranded
+
+// Import settings first so we can override them before importing all of GOV.UK Frontend
+// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
+@import "node_modules/govuk-frontend/govuk/settings/all";
+
+// Override the default GOV.UK Frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "application";
+
+$scvo-text : #244B5A; 
+$scvo-blue: #244B5A;
+$scvo-yellow:#FFDB02;
+$scvo-light-grey: #e6eef1;
+$scvo-red: #FF595A;
+$scvo-red-selection: #C5143D;
+
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+//---------------------------------------- HEADER ------------------------------------------------//
+
+.govuk-header__container {
+    border-bottom: 20px solid $scvo-blue;
+    background-color: $scvo-blue;
+    border-top: 20px solid $scvo-blue;
+}
+.scvo-tagline {
+    font-size: 1.5em;
+    color: #ffffff; 
+    font-family: "Ingra", Arial, sans-serif;
+    background-color: $scvo-red;
+    padding: 4px 10px;
+    font-weight: 600;
+}
+
+.govuk-header__content {
+    @media only screen and (min-width: 169px) { 
+    border: 10px solid $scvo-blue;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+.govuk-header__logotype {
+  padding: 0 20px;
+}
+
+
+//---------------------------------------- FOOTER ------------------------------------------------//
+.govuk-footer {
+    padding-top: 1em;
+    font-size: 1.1em;
+    background-color: $scvo-blue;
+    p, .govuk-footer__link:link, .govuk-footer__link:visited {
+        color:  #ffffff;
+        font-weight:600;
+    }
+}
+
+a.govuk-footer__link:hover, a.govuk-footer__link:active {
+  color: $scvo-red !important;
+}
+
+.govuk-footer__link{
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+}
+.govuk-footer__inline-list-item{
+    padding: 1em;
+}
+.govuk-footer__meta-item {
+    margin-bottom: 0;
+}
+.govuk-footer__link:focus{
+    background-color: $scvo-yellow;
+    outline: 3px solid $scvo-red;
+    padding: 0.5em; 
+    color: $scvo-text !important;
+}
+
+//---------------------------------------- BODY------------------------------------------------//
+
+body p, ul, li , a, span, .govuk-link, 
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
+.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
+    color: $scvo-text;
+    font-family: "Ingra", Arial, sans-serif !important;
+}
+
+body p, ul, li , a, span, .govuk-link, .govuk-list,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text{
+  font-size:1em;
+}
+
+.govuk-heading-l {
+   margin-top: 50px; 
+}
+
+.govuk-heading-m {
+    margin-top: 30px; 
+ }
+
+ .govuk-main-wrapper--auto-spacing:first-child {
+  padding-top: 0;
+}
+
+  .heading-title {
+    background-color: $scvo-light-grey;
+    font-size: 2.5em;
+    font-weight: 800;
+    padding: 20px;
+  }
+  
+  .tag-banner {
+    font-size: 1.2em;
+    color:$scvo-text; 
+    font-family: "Ingra", Arial, sans-serif;
+    background-color: $scvo-yellow;
+    padding: 20px 20px 10px 20px;
+    font-weight: 400;
+  }
+
+   /* Accordion:  will need to be revisited - TODO */
+ .govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
+  color: white; 
+  background-color:$scvo-red; 
+  padding: 5px;
+  box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
+  }
+  
+  .js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
+      background-color: $scvo-red;
+  }
+
+.govuk-tag.red-scvo {
+    background-color: $scvo-red-selection;
+   // margin-left: 10px;
+    padding: 20px;
+    text-transform: none;
+    font-size: 1.5em;
+  }
+
+// ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
+
+// back button/link
+.govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
+    color: $scvo-text;
+    margin-bottom: 2em;
+}
+
+.govuk-textarea, .govuk-input{
+    border: 2px solid $scvo-text;
+}
+
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .scvo-text , table{
+    color: $scvo-text;
+}
+
+.govuk-link, a, .govuk-link:link, a:link {
+    color: 	$scvo-red;
+}
+
+.govuk-link:visited, a:visited{
+    color: $scvo-red;
+}
+
+.govuk-link:hover, a:hover{
+    color: 	$scvo-red-selection;
+}
+.govuk-link:focus, a:focus {
+    color: #464a4c;;
+    background-color: #f5f5f5;
+    box-shadow: 0 -2px #f5f5f5, 0 4px #fff;
+    text-decoration: underline;
+}
+
+#logo-scvo:focus{
+    background-color: #0000;  // was putting a thick yellow layer at the bottom of the ERC logo
+}
+
+
+.govuk-error-message, .govuk-error-summary, .govuk-input--error {
+    color: #B30000 
+}
+.govuk-form-group--error {
+    border-left: 5px solid #B30000;
+}
+
+// -------------------------------------------- Helpers ------------------------------------------------- //
+
+
+
+//-------------------------------------------- Buttons --------------------------------------------------- /
