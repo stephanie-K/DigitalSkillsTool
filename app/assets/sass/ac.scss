@@ -45,7 +45,7 @@ $ac-callout-br: #9acfea;
 }
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
-    border: 10px solid white;
+    border: 10px solid #0000;
     }
     a {
         text-decoration: none;
@@ -172,7 +172,7 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
-    color: $ac-text;
+    color: #1d50a9;
     margin-bottom: 2em;
 }
 
@@ -185,7 +185,7 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 }
 
 .govuk-link, a, .govuk-link:link, a:link, .govuk-link:visited, a:visited{
-    color: 	#1d50a9
+    color: 	#1d50a9;
 }
 
 

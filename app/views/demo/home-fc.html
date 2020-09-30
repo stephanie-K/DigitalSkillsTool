@@ -1,0 +1,83 @@
+
+{% extends "demo/layout_fc.html" %}
+
+{% block pageTitle %}
+  Home - Digital skills tool
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl heading-title">
+          Improving digital skills
+      </h1>
+
+      <a  class="govuk-back-link" href="demo">Back to demo homepage</a>
+      <div class="tag-banner"> <image src="{{ asset_path }}/images/other-councils/FC/warning.png" alt="warning" width="35" height="28" style="vertical-align: top; padding-right: 0.3em"></image>For illustration only - wording, layout and menus can be changed</div>
+
+      <h2 class="govuk-heading-m" style="font-weight: 800;">Learn about</h2>
+      <ul class="govuk-list govuk-list--bullet clear-layout">
+        <li><a href="/about.html">Background</a></li>
+        <li><a href="/how-to-use.html">How to use this website</a></li>
+        <li><a href="/creating-this-website.html">How we created it</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-l" style="font-weight: 800;">Forms menu</h2>
+
+      <h3 class="govuk-heading-m">
+          Fife Council online services
+      </h3>
+     <p>This is where you would have the list of forms for your council</p>
+
+     <h3 class="govuk-heading-m govuk-!-margin-top-9">
+       UK Government and Scottish Government online forms 
+      </h3>
+      <ul class="govuk-list govuk-list--bullet clear-layout">
+        <li><a href="/forms/govuk-forms/universal-credit/UCintro"><strong>Universal Credit, create an account, forgot username or password</strong></a> </li>
+        <li><a href="/forms/govuk-forms/universal-credit-apply/UCAintro"><strong>Universal Credit, apply once you have created your account</strong></a>  - or see this <a href="https://www.learnmyway.com/courses/universal-credit-a-how-to-guide/" target="_blank" rel="noopener"><strong>'How to' guide</strong></a> from Learn My Way</li>
+        <li><a href="/forms/govuk-forms/warm-home-discount/warm-home-intro"><strong>Warm Home Discount</strong></a> - or start direct on <a href="/forms/govuk-forms/warm-home-discount/park-homes">Park Homes Warm Home Discount</a></li>
+        <li><a href="/forms/govuk-forms/learn-to-drive/apply-provisional-licence/APLintro"><strong>Apply for provisional driving licence</strong></a> </li>
+        <li><a href="/forms/govuk-forms/learn-to-drive/book-theory-test/BTTintro"><strong>Book your theory test</strong></a></li>
+        <li><a href="/forms/govuk-forms/learn-to-drive/book-driving-test/BDTintro"><strong>Book your driving test</strong></a></li>
+        <li><a href="/forms/govuk-forms/register-to-vote/RTVIntro"><strong>Register to vote</strong></a></li>
+        <li><a href="/forms/sss-forms/best-start/BS-intro"><strong>Best Start Grant and Best Start Foods</strong></a> (Scottish Government)</li>
+      </ul>
+
+      <h3 class="govuk-heading-m govuk-!-margin-top-9">
+          Others
+      </h3>
+      <ul class="govuk-list govuk-list--bullet clear-layout">
+        <li><a href="/forms/other-forms/patient-access/pa-intro"><strong>Patient access</strong></a> (mini website) </li>
+        <li><a href="/forms/other-forms/bulb/bulb-intro"><strong>Bulb - energy provider example</strong></a> (mini website)</li>
+        <li><a href="/forms/other-forms/job/job-Intro"><strong>Apply for a job</strong></a></li>
+      </ul>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">
+            CAPTCHA
+          </h3>
+          <p>Some forms will sometime ask you to prove that you are <strong>'not a robot'</strong>. You can try by using the form below. Don't worry, this is not a real form. On the form you will need to:</p>
+          <p>Check the box:</p>
+          <p><image src="{{ asset_path }}images/captcha.png?0.18.3p" alt="screenshot of the captcha part of a form" style="max-width: 100%" ></image></p>
+          <p>You will see instrutions and pictures to select.</p>
+          <p>If you answer correctly, at the end you will see a green tick in the box, like on the image below:</p>
+          <p><image src="{{ asset_path }}images/captcha2.png?0.18.3p" alt="screenshot of the captcha part of a form" style="max-width: 100%" ></image></p>
+          <p><a href="https://google.com/recaptcha/api2/demo" target="_blank" rel="noopener"><strong>Go to the form and try a CAPTCHA</strong></a> (This will open in another tab and takes you away from this website).</p>
+
+          <h3 class="govuk-heading-m govuk-!-margin-top-9">
+            Entering a date
+          </h3>
+          <p>In some forms to enter a date, it might look like a calendar you need to navigate to find the right date.</p>
+          <p>You can practice in the field below.</p>
+          <p>It will look different on a mobile, a table or a laptop.</p>
+          <label class="govuk-label govuk-!-font-weight-bold" for="DOB-training">Try to enter your date of birth or any other date:</span></label>
+          <input class="govuk-input govuk-!-width-one-third" id="DOB-training" name="DOB-training" type="date" >
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

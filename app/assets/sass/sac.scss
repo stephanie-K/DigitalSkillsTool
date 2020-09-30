@@ -107,7 +107,7 @@ $sac-light-grey: #e5e5e5;
 }
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
-    border: 10px solid $sac-blue;
+    border: 10px solid  #0000;
     }
     a {
         text-decoration: none;
@@ -238,7 +238,7 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
-    color: $sac-text;
+    color: #2a5db0;
     margin-bottom: 2em;
 }
 

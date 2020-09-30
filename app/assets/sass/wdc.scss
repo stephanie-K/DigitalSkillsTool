@@ -49,7 +49,7 @@ $wdc-info-text: #31708f;
 
 .govuk-header__content {
     @media only screen and (min-width: 169px) { 
-    border: 10px solid $wdc-dark-blue;
+    border: 10px solid #0000;
     }
     a {
         text-decoration: none;
@@ -162,7 +162,7 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
-    color: $wdc-text;
+    color: $wdc-blue;
     margin-bottom: 2em;
 }
 
