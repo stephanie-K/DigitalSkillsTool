@@ -14,8 +14,17 @@ Security question
     <form class="form" method="post">
       <div class="govuk-form-group">
         <label class="govuk-label govuk-!-font-size-24 govuk-!-font-weight-bold" for="security-sign-in">
-          Where were you born?
+          {% if (data['question1'] === 'Q1')%} Where were you born? 
+          {% elseif (data['question1'] === 'Q2') %} What colour was your first car?
+          {% elseif (data['question1'] === 'Q3') %} What is or was your father's main job?
+          {% elseif (data['question1'] === 'Q4') %} What was the first concert or gig you went to?
+          {% elseif (data['question1'] === 'Q5') %} What was the name of the street you grew up on?
+          {% elseif (data['question1'] === 'Q6') %} What was your first job?
+          {% else %}
+          Where were you born? 
+          {% endif %}
         </label>
+
         <input class="govuk-input govuk-input--width-20" id="security-sign-in" name="security-sign-in" value="{{data ['security-sign-in']}}">
       </div>
 
