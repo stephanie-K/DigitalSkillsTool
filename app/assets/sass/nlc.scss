@@ -15,15 +15,11 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 @import "application";
 
-$ac-text : #333; 
-$ac-blue: #004990;
-$ac-yellow:#FFD744;
-$ac-light-grey: #f5f5f5;
-$ac-red: #BE3535;
-$ac-warning-bg: #fcf8e3;
-$ac-warning-br: #FFD744;
-$ac-callout-bg: #ecf9ff;
-$ac-callout-br: #9acfea;
+$nlc-text : #193828; 
+$nlc-dark-grey: #4b4b4b;
+$nlc-yellow:#FFBF47;
+$nlc-light-grey: #EFEBEF;
+$nlc-red: #BD0029;
 
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
@@ -31,15 +27,15 @@ $ac-callout-br: #9acfea;
 //---------------------------------------- HEADER ------------------------------------------------//
 
 .govuk-header__container {
-    border-bottom: 40px solid $ac-blue;
-    background-color: white;
+    border-bottom: 10px solid $nlc-red;
+    background-color:$nlc-light-grey;
     padding: 25px 0;
 }
-.ac-tagline {
+.nlc-tagline {
     font-size: 1.5em;
-    color:$ac-text; 
-    font-family: Verdana, sans-serif;
-    background-color: $ac-yellow;
+    color: white; 
+    font-family: 'Droid Sans', sans-serif;
+    background-color: $nlc-dark-grey;
     padding: 4px 10px;
     font-weight: 600;
     @media only screen and (max-width: 395px) {
@@ -47,6 +43,7 @@ $ac-callout-br: #9acfea;
     }
 }
 .govuk-header__content {
+    margin-top: 40px;
     @media only screen and (min-width: 169px) { 
     border: 10px solid #0000;
     }
@@ -63,7 +60,7 @@ $ac-callout-br: #9acfea;
 //---------------------------------------- FOOTER ------------------------------------------------//
 .govuk-footer {
     font-size: 1em;
-    background-color: $ac-blue;
+    background-color: $nlc-dark-grey;
     p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
         color:  white;
     }
@@ -113,8 +110,8 @@ body p, ul, li , a, span, .govuk-link,
 .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
 .govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
 .govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
-    color: $ac-text;
-    font-family: Verdana, sans-serif !important;
+    color: $nlc-text;
+    font-family: 'Droid Sans', sans-serif !important;
 }
 
 body p, ul, li , a, span, .govuk-link, .govuk-list,
@@ -135,36 +132,36 @@ body p, ul, li , a, span, .govuk-link, .govuk-list,
 }
 
 .heading-title {
-  background-color: $ac-light-grey;
+  background-color: $nlc-red;
   font-size: 2.5em;
   font-weight: 800;
   padding: 20px;
-  color: $ac-blue !important;
+  color:white !important;
 }
 
 .tag-banner {
   font-size: 1.2em;
-  color:$ac-text; 
-  border: solid 2px #23BEE7;
-  font-family: Verdana, sans-serif;
-  background-color: $ac-callout-bg;
-  padding: 20px 20px 10px 20px;
+  color:$nlc-dark-grey; 
+  border: solid 1px $nlc-red;
+  font-family: 'Droid Sans', sans-serif;
+  background-color: $nlc-light-grey;
+  padding: 1em;
   font-weight: 400;
 }
  /* Accordion:  will need to be revisited - TODO */
 .govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
 color: white; 
-background-color:$ac-blue; 
+background-color:$nlc-red; 
 padding: 5px;
 box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 }
 
 .js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
-    background-color: $ac-blue; 
+    background-color: $nlc-red; 
 }
 
 .govuk-tag.red-ac {
-    background-color: #b10e1e;
+    background-color: $nlc-red;
    // margin-left: 10px;
     padding: 20px;
     text-transform: none;
@@ -176,30 +173,31 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 
 // back button/link
 .govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
-    color: #1d50a9;
+    color: $nlc-red;
     margin-bottom: 2em;
 }
 
 .govuk-textarea, .govuk-input{
-    border: 2px solid $ac-text;
+    border: 2px solid $nlc-text;
 }
 
-.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .ac-text , table{
-    color: $ac-text;
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .nlc-text , table{
+    color: $nlc-text;
 }
 
 .govuk-link, a, .govuk-link:link, a:link, .govuk-link:visited, a:visited{
-    color: 	#1d50a9;
+    color: 	$nlc-text;
+    text-decoration: none;
 }
-
 
 .govuk-link:hover, a:hover{
-    color: 	#2a6496;
+    color: 	#385C4A;
+    text-decoration: underline;
 }
 .govuk-link:focus, a:focus {
-    color: #2a6496;
-    outline: 5px auto -webkit-focus-ring-color;
-    outline-offset:-2px;
+    color: #000000;
+    background-color: $nlc-yellow;
+    box-shadow: 0 -2px $nlc-yellow, 0 4px $nlc-yellow;
     text-decoration: underline;
 }
 
@@ -209,10 +207,10 @@ box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
 
 
 .govuk-error-message, .govuk-error-summary, .govuk-input--error {
-    color: #B30000 
+    color: $nlc-red;
 }
 .govuk-form-group--error {
-    border-left: 5px solid #B30000;
+    border-left: 5px solid $nlc-red;
 }
 
 // -------------------------------------------- Helpers ------------------------------------------------- //

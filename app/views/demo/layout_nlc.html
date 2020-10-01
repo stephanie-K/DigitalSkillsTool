@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/other-councils/NLC/nlc.ico" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/nlc.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+  {% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+    <div class="govuk-header__logo">
+        <span class="govuk-header__logotype">
+            <a href="/index.html" id="logo-ac"><image src="{{ asset_path }}/images/other-councils/NLC/nlc-logo.png" alt="Go to Homepage" width="350" height="35"></image></a>
+        </span>
+    </div>
+    <div class="govuk-header__content">
+        <a href="/index.html">
+          <span class="nlc-tagline">
+            This is a training website
+          </span>
+        </a>  
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer" role="contentinfo" style="padding-top: 0; border-top: solid 5px #bd0029;">
+
+<div class="govuk-width-container">
+  <div class="govuk-footer__meta">
+    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+      <ul class="govuk-footer__inline-list" style="text-align: center;">
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/index.html">Home</a>
+        </li>
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/how-to-use.html">How to use</a>
+        </li>
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/about.html">About</a>
+        </li>
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/creating-this-website.html">Creating this website</a>
+        </li>
+        <li class="govuk-footer__inline-list-item">
+          <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+        </li>
+        <li class="govuk-footer__inline-list-item ">
+          <a class="govuk-footer__link" href="/prototype-admin/clear-data">Clear the data</a>
+        </li>
+      </ul>
+      <p style="text-align: center;"><image src="{{ asset_path }}/images/other-councils/NLC/logos-footer.png" alt="logos of social media - don't take your anywhere" width="341" height="127"></image></p>
+      <p><image src="{{ asset_path }}/images/other-councils/NLC/nlc-logo-white.png" alt="North Lanarkshire logo" width="198" height="109"></image></p>
+    </div>
+  </div>
+
+    <p>This website is for training - <a class="govuk-footer__link" href="https://www.northlanarkshire.gov.uk/" target="_blank" rel="noopener">Follow this link for the North Lanarkshire Council website</a></p>
+  </div>
+</footer>
+{% endblock %}
