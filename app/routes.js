@@ -694,6 +694,19 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAincome', function (req
   res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
 
+router.post('/forms/govuk-forms/universal-credit-apply/UCAwork', function (req, res) {
+var UCAworking = req.session.data['work-check']
+if (UCAworking === 'no'){
+  req.session.data['work-done'] = true
+  req.session.data['1st-display'] = false
+  req.session.data['green-to-display'] = "work"
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
+}
+else {
+  res.redirect('/forms/govuk-forms/universal-credit-apply/UCAworkStatus')
+}
+})
+
 router.post('/forms/govuk-forms/universal-credit-apply/UCAworkEarnings', function (req, res) {
   req.session.data['work-done'] = true
   req.session.data['1st-display'] = false
@@ -708,6 +721,15 @@ router.post('/forms/govuk-forms/universal-credit-apply/UCAhealthSupport', functi
   res.redirect('/forms/govuk-forms/universal-credit-apply/UCAtoDoList')
 })
 
+router.post('/forms/govuk-forms/universal-credit-apply/UCAhealthConditions', function (req, res) {
+  var UCAHasHealthConditions = req.session.data['has-conditions']
+  if (UCAHasHealthConditions === 'no'){
+    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhealthPregnancy')
+  }
+  else {
+    res.redirect('/forms/govuk-forms/universal-credit-apply/UCAhealthWhatConditions')
+  }
+  })
 
 // Report a repair ******************************************************************************
 

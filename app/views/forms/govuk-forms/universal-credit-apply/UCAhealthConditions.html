@@ -25,8 +25,8 @@ Health - Universal Credit
 
     {{ govukRadios({
       classes: "govuk-radios--inline",
-      idPrefix: "conditions-name",
-      name: "conditions-name",
+      idPrefix: "has-conditions",
+      name: "has-conditions",
       fieldset: {
         legend: {
           text: "Do you have any illnesses, disabilities or ongoing conditions?",
@@ -48,8 +48,7 @@ Health - Universal Credit
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
     {{ govukButton({
-      text: "Continue",
-      href: "UCAhealthWhatConditions"
+      text: "Continue"
     }) }}
 
   </form>
