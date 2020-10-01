@@ -1,0 +1,226 @@
+// The unbranded stylesheet is used if you need to create pages in your
+// prototype without the GOV.UK branding.
+//
+// See localhost:3000/docs/templates/blank-unbranded
+
+// Import settings first so we can override them before importing all of GOV.UK Frontend
+// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
+@import "node_modules/govuk-frontend/govuk/settings/all";
+
+// Override the default GOV.UK Frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+@import "application";
+
+$wlc-text : #040f1e; 
+$wlc-dark-grey: #353535;
+$wlc-yellow:#ffb81c;
+$wlc-light-grey: #EFEBEF;
+$wlc-red: #BD0029;
+$wlc-green: #2f7276;
+$wlc-light-green: #e1eaec;
+$wlc-purple: #9c258f; 
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap");
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+//---------------------------------------- HEADER ------------------------------------------------//
+
+.govuk-header__container {
+    border-bottom: 10px solid $wlc-dark-grey;
+    background-color:$wlc-dark-grey;
+    padding: 25px 0;
+}
+.wlc-tagline {
+    font-size: 1.5em;
+    color: white; 
+    font-family: "Montserrat", sans-serif;
+    background-color: $wlc-purple;
+    padding: 4px 10px;
+    font-weight: 600;
+    @media only screen and (max-width: 395px) {
+        font-size:1.2em;
+    }
+}
+.govuk-header__content {
+    margin-top: 40px;
+    @media only screen and (min-width: 169px) { 
+    border: 10px solid #0000;
+    }
+    a {
+        text-decoration: none;
+    }
+}
+
+.govuk-header__logotype {
+  padding: 0 20px;
+}
+
+
+//---------------------------------------- FOOTER ------------------------------------------------//
+.govuk-footer {
+    font-size: 1em;
+    background-color: #000000;
+    p, .govuk-footer__link:link, .govuk-footer__link:visited, .govuk-footer__link:hover, .govuk-footer__link:active {
+        color:  white;
+    }
+}
+.govuk-footer__link:hover, .govuk-footer__link:active {
+  text-decoration: underline;
+}
+.govuk-footer__link{
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+}
+.govuk-footer__inline-list-item{
+    padding: 1em;
+}
+.govuk-footer__meta-item {
+    margin-bottom: 0;
+}
+.govuk-footer__link:focus{
+    background-color: #f5f5f5;
+    outline: 3px solid #fd0;
+    text-decoration: underline;
+    color: #000000 !important;
+}
+
+.footer-icon span{
+    font-family: FontAwesome !important;
+    display: inline-block;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 2em;
+    color: white;
+    margin: 0 2vw;
+    @media (min-width: 0) and (max-width: 767px) {
+        display: inline-block;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        margin: 0;
+      }
+}
+
+footer {
+    padding-bottom: 0 !important;
+}
+
+//---------------------------------------- BODY------------------------------------------------//
+
+body p, ul, li , a, span, .govuk-link, 
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s,
+.govuk-body-xl, .govuk-body-l, .govuk-body-m, .govuk-body-s,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text {
+    color: $wlc-text;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+body p, ul, li , a, span, .govuk-link, .govuk-list,
+.govuk-label, .govuk-fieldset, .govuk-fieldset__legend, .govuk-table, .govuk-warning-text,.govuk-warning-text__text{
+  font-size:1em;
+}
+
+.govuk-heading-l {
+   margin-top: 50px; 
+}
+
+.govuk-heading-m {
+    margin-top: 30px; 
+ }
+
+ .govuk-main-wrapper--auto-spacing:first-child {
+  padding-top: 0;
+}
+
+.heading-title {
+  background-color: $wlc-light-green;
+  font-size: 2.5em;
+  font-weight: 800;
+  padding: 20px;
+  color:$wlc-purple !important;
+}
+
+.tag-banner {
+  font-size: 1.2em;
+  color: $wlc-text; 
+  font-family: "Montserrat", sans-serif;
+  background-color: $wlc-yellow;
+  padding: 1em;
+  font-weight: 400;
+}
+ /* Accordion:  will need to be revisited - TODO */
+.govuk-accordion__section-button, .govuk-accordion__section-heading, .js-enabled .govuk-accordion__section-button:focus {
+color: white; 
+background-color:$wlc-red; 
+padding: 5px;
+box-shadow: 0 0 0 0 // this is to overide govuk focus for the accordion
+}
+
+.js-enabled .govuk-accordion__icon:after, .js-enabled .govuk-accordion__icon:before {
+    background-color: $wlc-red; 
+}
+
+.govuk-tag.red-ac {
+    background-color: $wlc-red;
+   // margin-left: 10px;
+    padding: 20px;
+    text-transform: none;
+    font-size: 1.5em;
+  }
+
+
+// ------------------------------------------- GOVUK changes for colours ------------------------------------------------- //
+
+// back button/link
+.govuk-back-link:link,  .govuk-back-link:active, .govuk-back-link:hover, .govuk-back-link:focus, .govuk-back-link:visited {
+    color: $wlc-purple;
+    margin-bottom: 2em;
+}
+
+.govuk-textarea, .govuk-input{
+    border: 2px solid $wlc-text;
+}
+
+.govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-list , .wlc-text , table{
+    color: $wlc-text;
+}
+
+.govuk-link, a, .govuk-link:link, a:link, .govuk-link:visited, a:visited{
+    color: 	$wlc-text;
+    text-decoration: none;
+}
+
+.govuk-link:hover, a:hover{
+    color: 	#385C4A;
+    text-decoration: underline;
+}
+.govuk-link:focus, a:focus {
+    color: #000000;
+    background-color: $wlc-yellow;
+    box-shadow: 0 -2px $wlc-yellow, 0 4px $wlc-yellow;
+    text-decoration: underline;
+}
+
+#logo-ac:focus{
+    background-color: #0000;  // was putting a thick yellow layer at the bottom of the ERC logo
+}
+
+
+.govuk-error-message, .govuk-error-summary, .govuk-input--error {
+    color: $wlc-red;
+}
+.govuk-form-group--error {
+    border-left: 5px solid $wlc-red;
+}
+
+// -------------------------------------------- Helpers ------------------------------------------------- //
+
+
+
+//-------------------------------------------- Buttons --------------------------------------------------- /
