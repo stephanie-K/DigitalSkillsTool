@@ -16,7 +16,7 @@ Council Tax Online
     <p class="erc-alt-dark-blue-bg">Your Home Page</p> 
 
     <div class="ercInformation">
-      <p style="color: #004269; font-size: 14px">The email address we have for you is your.email@gmail.com. This is where we will send your receipts if you make any payments via Council Tax Online.</p>
+      <p style="color: #004269; font-size: 14px">The email address we have for you is <strong>{% if (data ['registering-email']) %} {{ data ['registering-email'] }}{% else %}your.email@gmail.com{% endif %}</strong>. This is where we will send your receipts if you make any payments via Council Tax Online.</p>
       <p style="color: #004269; font-size: 14px">If this is not your most recent email address, please select 'Maintain profile' to update it.</p>
     </div>
     <p class="govuk-heading-s erc-alt-dark-grey-round">What would you like to do now?</p>
