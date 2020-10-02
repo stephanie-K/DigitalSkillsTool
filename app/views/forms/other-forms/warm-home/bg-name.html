@@ -1,0 +1,228 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/BG-warm-home/bg.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/BG-warm-home/bg-logo.png" alt="go back to homepage" width="250" height="97"></image></a>
+      </span>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/index.html">
+      <span class="warm-home-tagline">
+        This is a training website
+      </span>
+    </a>  
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+British Gas - Warm Home Discount
+{% endblock %}
+
+
+{% block content %}
+
+<div class="warm-home">
+    <div class="govuk-grid-row  warm-home-white-block">
+      <h1>Warm Home Discount</h1>
+      <p>The government and energy suppliers are running a scheme to help those at risk from fuel poverty in England, Scotland and Wales get a rebate from their electricity bill. If you are eligible, the Warm Home Discount will offer you a benefit of £140 (inclusive of VAT) against your electricity bill in 2020/21.</p>
+    </div>
+    <div class="govuk-grid-row warm-home-black-block">
+      <h2>Apply Now...</h2>
+      <p style="font-size: 12px; margin-bottom: 0;">All questions marked with an asterisk (*) are mandatory</p>
+      <h3>Account</h3>
+
+      {% set electAccountHtml %}
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        <label class="govuk-label" for="elect-account">
+          Electricity Account Number*
+        </label>
+        <div id="elect-account-hint" class="govuk-hint govuk-!-font-size-16">
+          Your electricity account number can be found on your electricity bill, it is 12 digits long and starts with 85 e.g. 851111111111
+        </div>
+        <input class="govuk-input ph-input" id="elect-account" name="elect-account" type="text" placeholder="Electricity Account Number">
+      </div>
+      {% endset -%}
+
+      {% set gasAccountHtml %}
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        <label class="govuk-label" for="gas-account">
+          Gas Account Number*
+        </label>
+        <div id="gas-account-hint" class="govuk-hint govuk-!-font-size-16">
+          Your gas account number can be found on your gas bill, it is 12 digits long and starts with 85 e.g. 851111111111
+        </div>
+        <input class="govuk-input ph-input" id="gas-account" name="gas-account" type="text" placeholder="GasAccount Number">
+      </div>
+      {% endset -%}
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {% set applyGasHtml %}
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "apply-gas-conditional",
+        name: "apply-gas",
+        fieldset: {
+          legend: {
+            text: "Do you want your Warm Home Discount payment applied to your GAS account?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: gasAccountHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% endset -%}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-is-elec-supplier-conditional",
+        name: "bg-is-elec-supplier",
+        fieldset: {
+          legend: {
+            text: "Is your electricity supplied by British Gas?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: electAccountHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-is-gas-supplier",
+        name: "bg-is-gas-supplier",
+        fieldset: {
+          legend: {
+            text: "Is your gas supplied by British Gas?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            conditional: {
+              html: applyGasHtml
+            }
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <hr>
+      <h3>Name</h3>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+          Title *
+        </label>
+        <select class="govuk-select ph-input" id="sort" name="sort">
+          <option value="updated" selected>Select Title</option>
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Ms">Ms</option>
+          <option value="Miss">Miss</option>
+          <option value="Mx">Mx</option>
+        </select>
+      </div>
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        <label class="govuk-label" for="first-name">
+          First Name *
+        </label>
+        <input class="govuk-input ph-input" id="first-name" name="first-name" type="text" placeholder="First Name">
+      </div>
+      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
+        <label class="govuk-label" for="Last-name">
+          Last Name *
+        </label>
+        <input class="govuk-input ph-input" id="Last-name" name="Last-name" type="text" placeholder="Last Name">
+      </div>
+      <hr>
+
+          {{ govukButton({
+            text: "Next",
+            classes: "ph-button",
+            href: "bg-address.html"
+          }) }}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer warm-home-footer" role="contentinfo" style="padding-top: 0; border-top: solid 10px #005eb8;">
+  <div class="govuk-width-container">
+  
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/index.html">Home</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/how-to-use.html">How to use</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/about.html">About</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/creating-this-website.html">Creating this website</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+            </li>
+            <li class="govuk-footer__inline-list-item ">
+              <a class="govuk-footer__link" href="/prototype-admin/clear-data">Clear the data</a>
+            </li>
+          </ul>
+          <span class="govuk-header__logotype">
+            <image src="{{ asset_path }}/images/BG-warm-home/bg-white-blue.png" alt="British Gas logo" width="144" height="59">
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock %}
