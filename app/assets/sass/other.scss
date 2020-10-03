@@ -459,19 +459,12 @@ img.dvsa, image.dvsa  {
     font-size: 1em;
     font-weight: 300;
     color:#fff;
-    text-decoration: none;
-    border-top: 1px solid #dbdbdb;
-    background-color: #00000067;
     padding: 10px;
   }
 
-  .govuk-details__summary-text.bg-no-line{
-    border-top: 0px solid #dbdbdb;
-    background-color: #0000;
-  }
   
   .govuk-details__text {
-    background-color: #0000;
+    background-color: #000;
     border: none;
     ul, li {
       color: white;
@@ -480,13 +473,12 @@ img.dvsa, image.dvsa  {
   }
   
   .govuk-details__summary {
-  padding-left: 0;
   margin-bottom: 1em;
   } 
 
   .govuk-details__summary::before {
     font-size: 0.8em;
-    color: #0000;
+    color: #fff;
   } 
 
   .govuk-details__summary:focus {
@@ -516,7 +508,8 @@ img.dvsa, image.dvsa  {
 }
 
 .warm-home-black-block{
-  background-color: #000c!important;
+  background-color: #000;
+  opacity: 0.9;
   transition: 1s max-height;
   color: white;
   margin: 1em;
