@@ -54,7 +54,7 @@ British Gas - Warm Home Discount
         <span id="phone-hint" class="govuk-hint govuk-!-font-size-16" style="margin-bottom: 0;">
           If you leave your mobile number, we can send you regular updates by text
         </span>
-        <input class="govuk-input ph-input" id="phone" name="phone" type="text" placeholder="Phone Number">
+        <input class="govuk-input warm-home-input" id="phone" name="phone" type="text" placeholder="Phone Number">
       </div>
       <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
           <label class="govuk-label" for="email">
@@ -63,15 +63,21 @@ British Gas - Warm Home Discount
           <span id="email-hint" class="govuk-hint govuk-!-font-size-16" style="margin-bottom: 0;">
               We will use your email details to contact you if we require further information
             </span>
-          <input class="govuk-input ph-input" id="email" name="email" type="text" placeholder="Email Address">
+          <input class="govuk-input warm-home-input" id="email" name="email" type="text" placeholder="Email Address">
         </div>
         <hr>
 
-          {{ govukButton({
-            text: "Next",
-            classes: "ph-button",
-            href: "bg-contact.html"
-          }) }}
+        {{ govukButton({
+          text: "Back",
+          classes: "warm-home-back-button",
+          href: "bg-address.html"
+        }) }}
+
+        {{ govukButton({
+          text: "Next",
+          classes: "warm-home-button",
+          href: "bg-criteria1.html"
+        }) }}
     </div>
 </div>
 

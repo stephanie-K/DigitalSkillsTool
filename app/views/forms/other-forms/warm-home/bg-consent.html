@@ -37,8 +37,9 @@ British Gas - Warm Home Discount
 
 
 {% block content %}
+
 <div class="warm-home">
-    <div class="govuk-grid-row warm-home-white-block">
+    <div class="govuk-grid-row  warm-home-white-block">
       <h1>Warm Home Discount</h1>
       <p>The government and energy suppliers are running a scheme to help those at risk from fuel poverty in England, Scotland and Wales get a rebate from their electricity bill. If you are eligible, the Warm Home Discount will offer you a benefit of £140 (inclusive of VAT) against your electricity bill in 2020/21.</p>
     </div>
@@ -46,50 +47,44 @@ British Gas - Warm Home Discount
       <h2>Apply Now...</h2>
       <p style="font-size: 12px; margin-bottom: 0;">All questions marked with an asterisk (*) are mandatory</p>
 
-      <h3>Address</h3>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="postcode">
-          Postcode * 
-        </label>
-        <input class="govuk-input warm-home-input" id="postcode" name="postcode" type="text" placeholder="Postcode">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="line1">
-          Line 1 *
-        </label>
-        <input class="govuk-input warm-home-input" id="line1" name="line1" type="text" placeholder="Line 1">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="line2">
-          Line 2 
-        </label>
-        <input class="govuk-input warm-home-input" id="line2" name="line2" type="text" placeholder="Line 2">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="town">
-          Town/City *
-        </label>
-        <input class="govuk-input warm-home-input" id="town" name="town" type="text" placeholder="Town or City">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="county">
-          County
-        </label>
-        <input class="govuk-input warm-home-input" id="county" name="line2" type=county" placeholder="County">
-      </div>
+      <h3>Consent</h3>
+      <p>I understand British Gas might need to check that I am eligible for the Warm Home Discount Scheme by asking the Department for Work and Pensions to confirm whether I am in receipt of a qualifying benefit.</p>
+      <p>If the Department for Work and Pensions cannot confirm that I receive the qualifying benefits to be eligible to receive the discount I may need to send British Gas copies of my benefit letters. British Gas use a third party, Charis Grants, to support them in carrying out these eligibility checks</p>
+      <p>If I change electricity supplier before my discount is paid I will no longer be eligible.</p>
+      <p><strong>Payments will be made between January and March 2021</strong></p>
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "bg-consent",
+        name: "bg-consent",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "consenting",
+            text: "I confirm, I have read and agree to the above statement"
+          }
+        ]
+      }) }}
       <hr>
 
       {{ govukButton({
         text: "Back",
         classes: "warm-home-back-button",
-        href: "bg-name.html"
+        href: "bg-criteria1.html"
       }) }}
 
-        {{ govukButton({
-          text: "Next",
-          classes: "warm-home-button",
-          href: "bg-contact.html"
-        }) }}
+      {{ govukButton({
+        text: "Submit",
+        classes: "warm-home-button",
+        href: "bg-sent.html"
+      }) }}
     </div>
 </div>
 

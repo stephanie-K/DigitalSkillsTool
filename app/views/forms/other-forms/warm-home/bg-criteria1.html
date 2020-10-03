@@ -1,0 +1,302 @@
+{% extends "layout.html" %}
+
+{% block headIcons %}
+  <link rel="shortcut icon" href="{{ asset_path }}images/BG-warm-home/bg.ico?0.18.3" type="image/x-icon" />
+{% endblock %}
+
+{% block head %}
+  <!--[if lte IE 8]><link href="/public/stylesheets/unbranded-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+  <!--[if gt IE 8]><!--><link href="/public/stylesheets/other.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+  {% for stylesheetUrl in extensionConfig.stylesheets %}
+    <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+  {% endfor %}
+{% endblock %}
+
+
+{% block header %}
+<div class="govuk-header__container govuk-width-container">
+  <div class="govuk-header__logo">
+      <span class="govuk-header__logotype">
+          <a href="/index.html"><image src="{{ asset_path }}/images/BG-warm-home/bg-logo.png" alt="go back to homepage" width="250" height="97"></image></a>
+      </span>
+  </div>
+  <div class="govuk-header__content">
+    <a href="/index.html">
+      <span class="warm-home-tagline">
+        This is a training website
+      </span>
+    </a>  
+  </div>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+British Gas - Warm Home Discount
+{% endblock %}
+
+
+{% block content %}
+
+<div class="warm-home">
+    <div class="govuk-grid-row  warm-home-white-block">
+      <h1>Warm Home Discount</h1>
+      <p>The government and energy suppliers are running a scheme to help those at risk from fuel poverty in England, Scotland and Wales get a rebate from their electricity bill. If you are eligible, the Warm Home Discount will offer you a benefit of £140 (inclusive of VAT) against your electricity bill in 2020/21.</p>
+    </div>
+    <div class="govuk-grid-row warm-home-black-block">
+      <h2>Apply Now...</h2>
+      <p style="font-size: 12px; margin-bottom: 0;">All questions marked with an asterisk (*) are mandatory</p>
+      <h3>Criteria: Primary</h3>
+
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-pension-credit",
+        name: "bg-pension-credit",
+        fieldset: {
+          legend: {
+            text: "Are you (or Partner) in receipt of Pension Credit Guarantee & Savings or Pension Credit Savings Only?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-income-related-allowance",
+        name: "bg-income-related-allowance",
+        fieldset: {
+          legend: {
+            text: "Do you (or partner) receive Income Related Employment and Support Allowance (ESA) that includes a Work Related Activity or Support Component?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-JSA",
+        name: "bg-JSA",
+        fieldset: {
+          legend: {
+            text: "Do you (or Partner) receive Income Based Job Seekers Allowance (JSA) or Income Support?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-UC-not-working",
+        name: "bg-UC-not-working",
+        fieldset: {
+          legend: {
+            text: "Are you (or Partner) in receipt of Universal Credit (UC) and not in work or not self- employed?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-UC-and-working",
+        name: "bg-UC-and-working",
+        fieldset: {
+          legend: {
+            text: "Are you (or Partner) in receipt of Universal Credit (UC) and in work or self-employed with monthly net earnings (after tax and deductions) not exceeding £1,349?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Gross Annual Household Income 
+          </span>
+          <span class="govuk-details__summary-text bg-no-line"> - Read Guidance</span>
+        </summary>
+        <div class="govuk-details__text">
+          <p><strong>Gross Household Income (before tax and deductions) for all household members<br>
+            INCLUDES:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>DWP benefits (unless shown in exclusions below)</li>
+              <li>Wages / Self-employed Income</li>
+              <li>Working Tax Credit</li>
+              <li>State Pension / Private Pension</li>
+              <li>Dividends / Annuities</li>
+              <li>Rental Income</li>
+              <li>War Disablement Pension</li>
+              <li>Disablement Pension Allowance</li>
+              <li>Students: &nbsp;Maintenance loans</li>
+              <li>Any other income that is not listed in exclusions below</li>
+          </ul>
+          <p><strong>Gross Household Income (before tax and deductions) for all household members<br>
+            EXCLUDES:</strong></p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Council Tax Benefit / Council Tax Support</li>
+              <li>Housing Benefit / Housing Element for Universal Credit</li>
+              <li>Attendance Allowance (AA)</li>
+              <li>Disability Living Allowance (DLA) or Personal Independence Payment (PIP)</li>
+              <li>Child Tax Credit / Child Element for Universal Credit</li>
+              <li>Child Benefit</li>
+              <li>Child Maintenance</li>
+              <li>Students: &nbsp;Tuition fee loans</li>
+          </ul>
+        </div>
+      </details>
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-GAH",
+        name: "bg-GAH",
+        fieldset: {
+          legend: {
+            text: "Your Gross Annual Household income (before tax and deductions) is less than £16,190?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-child-tax-credit",
+        name: "bg-child-tax-credit",
+        fieldset: {
+          legend: {
+            text: "Are you (or Partner) In receipt of Child Tax Credit by virtue of an award which is based on an annual income not exceeding £16,190?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <hr>
+
+      {{ govukButton({
+        text: "Back",
+        classes: "warm-home-back-button",
+        href: "bg-contact.html"
+      }) }}
+
+      {{ govukButton({
+        text: "Next",
+        classes: "warm-home-button",
+        href: "bg-criteria2.html"
+      }) }}
+    </div>
+</div>
+<div class="student-notes-box"> 
+  <p>Depending on your answers here, you might not see the second page of criteria</p>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="govuk-footer warm-home-footer" role="contentinfo" style="padding-top: 0; border-top: solid 10px #005eb8;">
+  <div class="govuk-width-container">
+  
+      <div class="govuk-footer__meta">
+        <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+          <ul class="govuk-footer__inline-list">
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/index.html">Home</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/how-to-use.html">How to use</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/about.html">About</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/creating-this-website.html">Creating this website</a>
+            </li>
+            <li class="govuk-footer__inline-list-item">
+              <a class="govuk-footer__link" href="/contact.html">Get in touch</a>
+            </li>
+            <li class="govuk-footer__inline-list-item ">
+              <a class="govuk-footer__link" href="/prototype-admin/clear-data">Clear the data</a>
+            </li>
+          </ul>
+          <span class="govuk-header__logotype">
+            <image src="{{ asset_path }}/images/BG-warm-home/bg-white-blue.png" alt="British Gas logo" width="144" height="59">
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

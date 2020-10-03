@@ -37,60 +37,49 @@ British Gas - Warm Home Discount
 
 
 {% block content %}
+
 <div class="warm-home">
-    <div class="govuk-grid-row warm-home-white-block">
+    <div class="govuk-grid-row  warm-home-white-block">
       <h1>Warm Home Discount</h1>
       <p>The government and energy suppliers are running a scheme to help those at risk from fuel poverty in England, Scotland and Wales get a rebate from their electricity bill. If you are eligible, the Warm Home Discount will offer you a benefit of £140 (inclusive of VAT) against your electricity bill in 2020/21.</p>
     </div>
     <div class="govuk-grid-row warm-home-black-block">
-      <h2>Apply Now...</h2>
-      <p style="font-size: 12px; margin-bottom: 0;">All questions marked with an asterisk (*) are mandatory</p>
-
-      <h3>Address</h3>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="postcode">
-          Postcode * 
-        </label>
-        <input class="govuk-input warm-home-input" id="postcode" name="postcode" type="text" placeholder="Postcode">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="line1">
-          Line 1 *
-        </label>
-        <input class="govuk-input warm-home-input" id="line1" name="line1" type="text" placeholder="Line 1">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="line2">
-          Line 2 
-        </label>
-        <input class="govuk-input warm-home-input" id="line2" name="line2" type="text" placeholder="Line 2">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="town">
-          Town/City *
-        </label>
-        <input class="govuk-input warm-home-input" id="town" name="town" type="text" placeholder="Town or City">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="county">
-          County
-        </label>
-        <input class="govuk-input warm-home-input" id="county" name="line2" type=county" placeholder="County">
-      </div>
-      <hr>
-
-      {{ govukButton({
-        text: "Back",
-        classes: "warm-home-back-button",
-        href: "bg-name.html"
-      }) }}
-
-        {{ govukButton({
-          text: "Next",
-          classes: "warm-home-button",
-          href: "bg-contact.html"
-        }) }}
+      <h2>Submitted</h2>
+      <h2 style="font-weight: 600;">Warm Home Discount</h2>
+      <h2 style="font-size: 2.5em">Success! You'll get it.</h2>
+      <p style="font-size:1.2em; font-weight:600">When will I get it?</p>
+      <p>We’re working hard to credit all Warm Home Discounts between January and March 2021 If you’ve got a prepay meter, we’ll send you a voucher to take to the Post Office. And for everyone else, you’ll see a Warm Home Discount credit on your bill or statement.</p>
+      <p style="font-size:1.2em ; font-weight:600">Do I need to send any documents?</p>
+      <p>For security, our system randomly picks some customers to provide evidence of their benefits and income. Don’t worry if that includes you.</p>
+      <p>You’ll get an email or letter with full details of what we need and how to provide it. Just be sure to keep an eye on your inbox and spam folder if you’ve given us an email address.</p>
+      <p style="font-size:1.2em; font-weight:600">Can I change which fuel gets the discount?</p>
+      <p>Yes. But please wait until after you’ve received the credit, then let us know if you want to transfer it to your other fuel. You can do that by starting a <a href="#">Live Chat from our website.</a></p>
+      <p style="font-size:1.2em; font-weight:600">What if I change supplier?</p>
+      <p>The Warm Home Discount Scheme is run by your electricity supplier (even if you ask for the credit on your gas account). So if you change electricity supplier before you get the credit from us, you'll need to reapply to your new provider.</p>
+      <p style="font-size:1.2em; font-weight:600">PLEASE SAVE THIS PAGE FOR YOUR RECORDS Your reference number is 851111111111</p>
     </div>
+
+    <div class="govuk-grid-row warm-home-black-block">
+      <h2>Submitted</h2>
+      <h2 style="font-weight: 600;">Warm Home Discount</h2>
+      <h2 style="font-size: 2.5em">Sorry, you don’t qualify right now</h2>
+      <p>Unfortunately there’s nothing we can do to alter the decision because we have to apply the <a href="https://www.gov.uk/the-warm-home-discount-scheme" target="_blank" rel="noopener">strict rules set by the Government</a>. So although our agents are happy to help you with anything else, please don’t contact them about this – there’s nothing they can do.</p>
+      <p style="font-size:1.2em">What if my income or benefits change?</p>
+      <p>You can always reapply at <a href="bg-name.html">britishgaswarmhomediscount.com</a> to see if you qualify based on your new circumstances.</p>
+      <p style="font-size:1.2em">If you’re struggling, we’re here for you</p>
+      <p>Remember, there are lots of <a href="https://www.britishgas.co.uk/energy/help-if-youre-struggling-to-pay.html" target="_blank" rel="noopener">ways we can help you with your fuel bills.</a></p>
+    </div>
+</div>
+<br>
+<br>
+{{ govukButton({
+  text: "Finish",
+  href: "/forms/end-feedback.html"
+}) }}
+
+<div class="student-notes-box"> 
+  <p>You can see both screens on this page: 'success' or 'sorry you don't qualify'.</p>
+  <p>On the real form, you would only see one of the screen depending on your answers to all the questions on the Criteria pages.</p>
 </div>
 
 {% endblock %}

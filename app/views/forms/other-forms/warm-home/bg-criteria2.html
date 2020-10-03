@@ -46,80 +46,25 @@ British Gas - Warm Home Discount
     <div class="govuk-grid-row warm-home-black-block">
       <h2>Apply Now...</h2>
       <p style="font-size: 12px; margin-bottom: 0;">All questions marked with an asterisk (*) are mandatory</p>
-      <h3>Account</h3>
-
-      {% set electAccountHtml %}
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="elect-account">
-          Electricity Account Number*
-        </label>
-        <div id="elect-account-hint" class="govuk-hint govuk-!-font-size-16">
-          Your electricity account number can be found on your electricity bill, it is 12 digits long and starts with 85 e.g. 851111111111
-        </div>
-        <input class="govuk-input warm-home-input" id="elect-account" name="elect-account" type="text" placeholder="Electricity Account Number">
-      </div>
-      {% endset -%}
-
-      {% set gasAccountHtml %}
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="gas-account">
-          Gas Account Number*
-        </label>
-        <div id="gas-account-hint" class="govuk-hint govuk-!-font-size-16">
-          Your gas account number can be found on your gas bill, it is 12 digits long and starts with 85 e.g. 851111111111
-        </div>
-        <input class="govuk-input warm-home-input" id="gas-account" name="gas-account" type="text" placeholder="GasAccount Number">
-      </div>
-      {% endset -%}
+      <h3>Criteria: Secondary</h3>
 
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-      {% set applyGasHtml %}
       {{ govukRadios({
         classes: "govuk-radios--inline govuk-radios--small",
-        idPrefix: "apply-gas-conditional",
-        name: "apply-gas",
+        idPrefix: "bg-child-responsability",
+        name: "bg-child-responsability",
         fieldset: {
           legend: {
-            text: "Do you want your Warm Home Discount payment applied to your GAS account?*",
+            text: "Do you (or Partner) have parental responsibility for a child under the age of 5 years who lives with you?*",
             classes: "govuk-fieldset__legend--s"
           }
         },
         items: [
           {
             value: "yes",
-            text: "Yes",
-            conditional: {
-              html: gasAccountHtml
-            }
-          },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-      {% endset -%}
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline govuk-radios--small",
-        idPrefix: "bg-is-elec-supplier-conditional",
-        name: "bg-is-elec-supplier",
-        fieldset: {
-          legend: {
-            text: "Is your electricity supplied by British Gas?*",
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes",
-            conditional: {
-              html: electAccountHtml
-            }
+            text: "Yes"
           },
           {
             value: "no",
@@ -130,21 +75,131 @@ British Gas - Warm Home Discount
 
       {{ govukRadios({
         classes: "govuk-radios--inline govuk-radios--small",
-        idPrefix: "bg-is-gas-supplier",
-        name: "bg-is-gas-supplier",
+        idPrefix: "bg-state-pension",
+        name: "bg-state-pension",
         fieldset: {
           legend: {
-            text: "Is your gas supplied by British Gas?*",
+            text: "Are you (or Partner) In receipt of State Pension?*",
             classes: "govuk-fieldset__legend--s"
           }
         },
         items: [
           {
             value: "yes",
-            text: "Yes",
-            conditional: {
-              html: applyGasHtml
-            }
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-constant-care",
+        name: "bg-constant-care",
+        fieldset: {
+          legend: {
+            text: "Do you (or household member) require constant care?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-rely-on-power",
+        name: "bg-rely-on-power",
+        fieldset: {
+          legend: {
+            text: "Do you (or household member) rely on mains powered medical equipment?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-long-term",
+        name: "bg-long-term",
+        fieldset: {
+          legend: {
+            text: "Do you (or household member) suffer from long term /chronic ill health or mental illness?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-disable",
+        name: "bg-disable",
+        fieldset: {
+          legend: {
+            text: "Do you (or household member) receive disability benefits or are registered disabled?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline govuk-radios--small",
+        idPrefix: "bg-more-10",
+        name: "bg-more-10",
+        fieldset: {
+          legend: {
+            text: "Are your household fuel bills for heating more than 10% of gross annual household income?*",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
           },
           {
             value: "no",
@@ -154,40 +209,22 @@ British Gas - Warm Home Discount
       }) }}
 
       <hr>
-      <h3>Name</h3>
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="sort">
-          Title *
-        </label>
-        <select class="govuk-select warm-home-input" id="sort" name="sort">
-          <option value="updated" selected>Select Title</option>
-          <option value="Mr">Mr</option>
-          <option value="Mrs">Mrs</option>
-          <option value="Ms">Ms</option>
-          <option value="Miss">Miss</option>
-          <option value="Mx">Mx</option>
-        </select>
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="first-name">
-          First Name *
-        </label>
-        <input class="govuk-input warm-home-input" id="first-name" name="first-name" type="text" placeholder="First Name">
-      </div>
-      <div class="govuk-form-group govuk-!-margin-top-2 govuk-!-margin-bottom-2">
-        <label class="govuk-label" for="Last-name">
-          Last Name *
-        </label>
-        <input class="govuk-input warm-home-input" id="Last-name" name="Last-name" type="text" placeholder="Last Name">
-      </div>
-      <hr>
 
-          {{ govukButton({
-            text: "Next",
-            classes: "warm-home-button",
-            href: "bg-address.html"
-          }) }}
+      {{ govukButton({
+        text: "Back",
+        classes: "warm-home-back-button",
+        href: "bg-criteria1.html"
+      }) }}
+
+      {{ govukButton({
+        text: "Next",
+        classes: "warm-home-button",
+        href: "bg-consent.html"
+      }) }}
     </div>
+</div>
+<div class="student-notes-box"> 
+  <p>Depending on your answers here and on the page before, you might or might not get the discount.</p>
 </div>
 
 {% endblock %}
