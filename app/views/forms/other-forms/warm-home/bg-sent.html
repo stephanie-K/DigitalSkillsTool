@@ -44,6 +44,7 @@ British Gas - Warm Home Discount
       <p>The government and energy suppliers are running a scheme to help those at risk from fuel poverty in England, Scotland and Wales get a rebate from their electricity bill. If you are eligible, the Warm Home Discount will offer you a benefit of £140 (inclusive of VAT) against your electricity bill in 2020/21.</p>
     </div>
     <div class="govuk-grid-row warm-home-black-block">
+      {% if data['eligible-for-warm-home-discount'] %}
       <h2>Submitted</h2>
       <h2 style="font-weight: 600;">Warm Home Discount</h2>
       <h2 style="font-size: 2.5em">Success! You'll get it.</h2>
@@ -56,10 +57,10 @@ British Gas - Warm Home Discount
       <p>Yes. But please wait until after you’ve received the credit, then let us know if you want to transfer it to your other fuel. You can do that by starting a <a href="#">Live Chat from our website.</a></p>
       <p style="font-size:1.2em; font-weight:600">What if I change supplier?</p>
       <p>The Warm Home Discount Scheme is run by your electricity supplier (even if you ask for the credit on your gas account). So if you change electricity supplier before you get the credit from us, you'll need to reapply to your new provider.</p>
-      <p style="font-size:1.2em; font-weight:600">PLEASE SAVE THIS PAGE FOR YOUR RECORDS Your reference number is 851111111111</p>
-    </div>
+      <p style="font-size:1.2em; font-weight:600">PLEASE SAVE THIS PAGE FOR YOUR RECORDS Your reference number is {% if data['elect-account']%} {{data['elect-account']}} {% else %} 90786443 {% endif %}</p>
 
-    <div class="govuk-grid-row warm-home-black-block">
+      {% else %}
+
       <h2>Submitted</h2>
       <h2 style="font-weight: 600;">Warm Home Discount</h2>
       <h2 style="font-size: 2.5em">Sorry, you don’t qualify right now</h2>
@@ -68,6 +69,7 @@ British Gas - Warm Home Discount
       <p>You can always reapply at <a href="bg-name.html">britishgaswarmhomediscount.com</a> to see if you qualify based on your new circumstances.</p>
       <p style="font-size:1.2em">If you’re struggling, we’re here for you</p>
       <p>Remember, there are lots of <a href="https://www.britishgas.co.uk/energy/help-if-youre-struggling-to-pay.html" target="_blank" rel="noopener">ways we can help you with your fuel bills.</a></p>
+      {% endif %}
     </div>
 </div>
 <br>
@@ -78,10 +80,6 @@ British Gas - Warm Home Discount
   href: "/forms/end-feedback.html"
 }) }}
 
-<div class="student-notes-box"> 
-  <p>You can see both screens on this page: 'success' or 'sorry you don't qualify'.</p>
-  <p>On the real form, you would only see one of the screen depending on your answers to all the questions on the Criteria pages.</p>
-</div>
 
 {% endblock %}
 

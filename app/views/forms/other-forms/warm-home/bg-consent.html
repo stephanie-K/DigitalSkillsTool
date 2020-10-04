@@ -32,7 +32,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-British Gas - Warm Home Discount
+{%if data['bg-bg-consent'] === 'error' %}Error - {% endif %}  British Gas - Warm Home Discount
 {% endblock %}
 
 
@@ -52,7 +52,7 @@ British Gas - Warm Home Discount
       <p>If the Department for Work and Pensions cannot confirm that I receive the qualifying benefits to be eligible to receive the discount I may need to send British Gas copies of my benefit letters. British Gas use a third party, Charis Grants, to support them in carrying out these eligibility checks</p>
       <p>If I change electricity supplier before my discount is paid I will no longer be eligible.</p>
       <p><strong>Payments will be made between January and March 2021</strong></p>
-
+      <form class="form" method="post" novalidate>
       {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
@@ -72,6 +72,11 @@ British Gas - Warm Home Discount
           }
         ]
       }) }}
+      {% if (data['bg-consent'] === 'error') %}
+      <span id="bg-consent" class="govuk-error-message govuk-!-font-size-14">
+        <span class="govuk-visually-hidden">Error:</span> You must consent to the above to be eligible
+      </span>
+      {% endif %}
       <hr>
 
       {{ govukButton({
@@ -82,9 +87,9 @@ British Gas - Warm Home Discount
 
       {{ govukButton({
         text: "Submit",
-        classes: "warm-home-button",
-        href: "bg-sent.html"
+        classes: "warm-home-button"
       }) }}
+      </form>
     </div>
 </div>
 

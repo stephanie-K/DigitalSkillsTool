@@ -48,7 +48,7 @@ British Gas - Warm Home Discount
       <p style="font-size: 12px; margin-bottom: 0;">All questions marked with an asterisk (*) are mandatory</p>
       <h3>Criteria: Secondary</h3>
 
-
+      <form class="form" method="post" novalidate>
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
@@ -64,14 +64,21 @@ British Gas - Warm Home Discount
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("bg-child-responsability", "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: checked("bg-child-responsability", "no")
           }
         ]
       }) }}
+      {% if (data['bg-child-responsability'] === 'error') %}
+      <span id="bg-child-responsability" class="govuk-error-message govuk-!-font-size-14">
+        <span class="govuk-visually-hidden">Error:</span> Please provide an answer
+      </span>
+      {% endif %}
 
       {{ govukRadios({
         classes: "govuk-radios--inline govuk-radios--small",
@@ -86,14 +93,21 @@ British Gas - Warm Home Discount
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("bg-state-pension", "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: checked("bg-state-pension", "no")
           }
         ]
       }) }}
+      {% if (data['bg-state-pension'] === 'error') %}
+      <span id="bg-state-pension" class="govuk-error-message govuk-!-font-size-14">
+        <span class="govuk-visually-hidden">Error:</span> Please provide an answer
+      </span>
+      {% endif %}
 
       {{ govukRadios({
         classes: "govuk-radios--inline govuk-radios--small",
@@ -108,14 +122,21 @@ British Gas - Warm Home Discount
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("bg-constant-care", "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: checked("bg-constant-care", "no")
           }
         ]
       }) }}
+      {% if (data['bg-constant-care'] === 'error') %}
+      <span id="bg-constant-care" class="govuk-error-message govuk-!-font-size-14">
+        <span class="govuk-visually-hidden">Error:</span> Please provide an answer
+      </span>
+      {% endif %}
 
       {{ govukRadios({
         classes: "govuk-radios--inline govuk-radios--small",
@@ -130,14 +151,21 @@ British Gas - Warm Home Discount
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("bg-rely-on-power", "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: checked("bg-rely-on-power", "no")
           }
         ]
       }) }}
+      {% if (data['bg-rely-on-power'] === 'error') %}
+      <span id="bg-rely-on-power" class="govuk-error-message govuk-!-font-size-14">
+        <span class="govuk-visually-hidden">Error:</span> Please provide an answer
+      </span>
+      {% endif %}
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -154,14 +182,21 @@ British Gas - Warm Home Discount
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("bg-long-term", "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: checked("bg-long-term", "no")
           }
         ]
       }) }}
+      {% if (data['bg-long-term'] === 'error') %}
+      <span id="bg-long-term" class="govuk-error-message govuk-!-font-size-14">
+        <span class="govuk-visually-hidden">Error:</span> Please provide an answer
+      </span>
+      {% endif %}
 
 
       {{ govukRadios({
@@ -177,14 +212,21 @@ British Gas - Warm Home Discount
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("bg-disable", "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: checked("bg-disable", "no")
           }
         ]
       }) }}
+      {% if (data['bg-disable'] === 'error') %}
+      <span id="bg-disable" class="govuk-error-message govuk-!-font-size-14">
+        <span class="govuk-visually-hidden">Error:</span> Please provide an answer
+      </span>
+      {% endif %}
 
       {{ govukRadios({
         classes: "govuk-radios--inline govuk-radios--small",
@@ -199,15 +241,21 @@ British Gas - Warm Home Discount
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Yes",
+            checked: checked("bg-more-10", "yes")
           },
           {
             value: "no",
-            text: "No"
+            text: "No",
+            checked: checked("bg-more-10", "no")
           }
         ]
       }) }}
-
+      {% if (data['bg-more-10'] === 'error') %}
+      <span id="bg-more-10" class="govuk-error-message govuk-!-font-size-14">
+        <span class="govuk-visually-hidden">Error:</span> Please provide an answer
+      </span>
+      {% endif %}
       <hr>
 
       {{ govukButton({
@@ -218,13 +266,14 @@ British Gas - Warm Home Discount
 
       {{ govukButton({
         text: "Next",
-        classes: "warm-home-button",
-        href: "bg-consent.html"
+        classes: "warm-home-button"
       }) }}
+      </form>
     </div>
 </div>
 <div class="student-notes-box"> 
   <p>Depending on your answers here and on the page before, you might or might not get the discount.</p>
+  <p>You need to answer 'Yes' to at least one question.</p>
 </div>
 
 {% endblock %}

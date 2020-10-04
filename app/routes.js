@@ -8,6 +8,88 @@ module.exports = router
 
 //  enter your new routes here *****************************************************************
 
+// Warm home discount *************************************************************************
+
+router.post('/forms/other-forms/warm-home/bg-name', function (req, res) {
+  var electricitySupplier = req.session.data['bg-is-elec-supplier']
+  if (electricitySupplier === 'yes'){
+    return res.redirect('/forms/other-forms/warm-home/bg-address')
+  } else {
+    req.session.data['bg-is-elec-supplier'] = 'error'
+  res.redirect('/forms/other-forms/warm-home/bg-name')
+  }
+  })
+
+  router.post('/forms/other-forms/warm-home/bg-criteria1', function (req, res) {
+    // for each question on that page, if one answer is Yes, you are eligible and asked for another group of criteria, if one question is not answered, you stay on that page
+    // if you answered No to all, you go directly to the consent page
+    var pensionCredit = req.session.data['bg-pension-credit']
+    var incomeRelated = req.session.data['bg-income-related-allowance']
+    var JSA = req.session.data['bg-JSA']
+    var UCnotWorking = req.session.data['bg-UC-not-working']
+    var UCandWorking = req.session.data['bg-UC-and-working']
+    var GAH = req.session.data['bg-GAH']
+    var childTaxCredit = req.session.data['bg-child-tax-credit']
+    // setting a session data variable to display the correct message on the last page - smight be set to true on criteria2 page submit
+    req.session.data['eligible-for-warm-home-discount'] = false
+    var eligible1 = false
+    var criteria1Error = false
+    if (pensionCredit === 'yes') {eligible1 = true} else {if (pensionCredit !== 'no') {req.session.data['bg-pension-credit'] = 'error'; criteria1Error = true} }
+    if (incomeRelated === 'yes') {eligible1 = true} else {if (incomeRelated !== 'no') {req.session.data['bg-income-related-allowance'] = 'error'; criteria1Error = true} }
+    if (JSA === 'yes') {eligible1 = true} else {if (JSA != 'no') {req.session.data['bg-JSA'] = 'error'; criteria1Error = true} }
+    if (UCnotWorking === 'yes') {eligible1 = true} else {if (UCnotWorking !== 'no') {req.session.data['bg-UC-not-working'] = 'error'; criteria1Error = true} }
+    if (UCandWorking === 'yes') {eligible1 = true} else {if (UCandWorking !== 'no') {req.session.data['bg-UC-and-working'] = 'error'; criteria1Error = true} }
+    if (GAH === 'yes') {eligible1 = true} else {if (GAH != 'no') {req.session.data['bg-GAH'] = 'error'; criteria1Error = true} }
+    if (childTaxCredit === 'yes') {eligible1 = true} else {if (childTaxCredit!== 'no') {req.session.data['bg-child-tax-credit'] = 'error'; criteria1Error = true} }
+
+    if (criteria1Error){ return res.redirect('/forms/other-forms/warm-home/bg-criteria1')}
+    else {
+      if (eligible1){return res.redirect('/forms/other-forms/warm-home/bg-criteria2')}
+      else {
+      res.redirect('/forms/other-forms/warm-home/bg-consent')
+      }
+    }
+    })
+
+    router.post('/forms/other-forms/warm-home/bg-criteria2', function (req, res) {
+      // for each question on that page, if one answer is Yes, you are eligible, if one question is not answered, you stay on that page
+      // if you answered No to all, you go directly to the consent page first and then will see a not eligible message on the final page
+      var childResp = req.session.data['bg-child-responsability']
+      var statePension = req.session.data['bg-state-pension']
+      var constantCare = req.session.data['bg-constant-care']
+      var relyOnPower = req.session.data['bg-rely-on-power']
+      var longTerm = req.session.data['bg-long-term']
+      var disabled = req.session.data['bg-disable']
+      var moreThan10 = req.session.data['bg-more-10']
+      var eligible2 = false
+      var criteria2Error = false
+      if (childResp === 'yes') {eligible2 = true} else {if (childResp !== 'no') {req.session.data['bg-child-responsability'] = 'error'; criteria2Error = true} }
+      if (statePension === 'yes') {eligible2 = true} else {if (statePension !== 'no') {req.session.data['bg-state-pension'] = 'error'; criteria2Error = true} }
+      if (constantCare === 'yes') {eligible2 = true} else {if (constantCare != 'no') {req.session.data['bg-constant-care'] = 'error'; criteria2Error = true} }
+      if (relyOnPower === 'yes') {eligible2 = true} else {if (relyOnPower !== 'no') {req.session.data['bg-rely-on-power'] = 'error'; criteria2Error = true} }
+      if (longTerm === 'yes') {eligible2 = true} else {if (longTerm !== 'no') {req.session.data['bg-long-term'] = 'error'; criteria2Error = true} }
+      if (disabled === 'yes') {eligible2 = true} else {if (disabled != 'no') {req.session.data['bg-disable'] = 'error'; criteria2Error = true} }
+      if (moreThan10 === 'yes') {eligible2 = true} else {if (moreThan10 !== 'no') {req.session.data['bg-more-10'] = 'error'; criteria2Error = true} }
+  
+      if (criteria2Error){ return res.redirect('/forms/other-forms/warm-home/bg-criteria2')}
+      else {
+        if (eligible2){req.session.data['eligible-for-warm-home-discount'] = true}
+        res.redirect('/forms/other-forms/warm-home/bg-consent')
+        }
+      })
+
+   
+router.post('/forms/other-forms/warm-home/bg-consent', function (req, res) {
+  var hasConsent = req.session.data['bg-consent']
+  if (hasConsent && hasConsent.includes('consenting')) {
+    return res.redirect('/forms/other-forms/warm-home/bg-sent')
+  } else {
+    req.session.data['bg-consent'] = 'error'
+  res.redirect('/forms/other-forms/warm-home/bg-consent')
+  }
+  })
+     
+  
 // Register to Vote ****************************************************************************
 router.post('/forms/govuk-forms/register-to-vote/RTVCountryOfResidence', function (req, res) {
 res.redirect('/forms/govuk-forms/register-to-vote/RTVNationality')
