@@ -63,7 +63,12 @@ Best Start Grant
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header">Do you have a child who was born in the last 6 months?</th>
-                <td class="govuk-table__cell">{{data['BSG-new-born-check']}}</td>
+                <td class="govuk-table__cell">
+                  {% if (data['BSG-new-born-check'] === 'yesBut')%} Yes 
+                  {% else %}
+                  {{data['BSG-new-born-check']}}
+                  {% endif %}
+                </td>
                 <td class="govuk-table__cell"><a href="BS-child-check-3">Change</a></td>
               </tr>
               <tr class="govuk-table__row">
@@ -155,6 +160,7 @@ Best Start Grant
           </h2>
         </div>
         <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+          {% if  (data['BSG-pregnant-check'] === 'Yes' )%}
           <table class="govuk-table">
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
@@ -174,6 +180,8 @@ Best Start Grant
               </tr>
             </tbody>
           </table>
+          {% endif %}
+          {% if  (data['BSG-new-born-check'] === 'Yes' )%}
           <table class="govuk-table">
             <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Babies under 6 months</caption>
             <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Baby</caption>
@@ -200,6 +208,36 @@ Best Start Grant
               </tr>
             </tbody>
           </table>
+          {% endif %}
+          {% if  (data['BSG-new-born-check'] === 'yesBut' )%}
+          <table class="govuk-table">
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Baby's details</caption>
+            <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Baby</caption>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">First name(s)</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-first-name-died']}}</td>
+                <td class="govuk-table__cell"><a href="/BS-baby-under-6mo-died">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Last name</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-last-name-died']}}</td>
+                <td class="govuk-table__cell"><a href="BS-baby-under-6mo-died">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of birth</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-under-6mo-day']}}/{{data['BSG-baby-under-6mo-month']}}/{{data['BSG-baby-under-6mo-year']}}</td>
+                <td class="govuk-table__cell"><a href="BS-baby-under-6mo-died">Change</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Date of death</th>
+                <td class="govuk-table__cell">{{data['BSG-baby-under-6mo-day-died-dod']}}/{{data['BSG-baby-under-6mo-month-died-dod']}}/{{data['BSG-baby-under-6mo-year-died-dod']}}</td>
+                <td class="govuk-table__cell"><a href="BS-baby-under-6mo-died">Change</a></td>
+              </tr>
+            </tbody>
+          </table>
+          {% endif %}
+          {% if  (data['BSG-child-check'] === 'Yes' )%}
           <table class="govuk-table">
             <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Children under 6 you've started looking after</caption>
             <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Child</caption>
@@ -226,6 +264,8 @@ Best Start Grant
               </tr>
             </tbody>
           </table>
+          {% endif %}
+          {% if  (data['BSG-child-check2'] === 'Yes' )%}
           <table class="govuk-table">
               <caption style="padding: 0px 0px 15px 0px; color:#0065BD" class="govuk-table__caption">Children between 6 months and 6 years old</caption>
             <tbody class="govuk-table__body">
@@ -261,6 +301,7 @@ Best Start Grant
               </tr>
             </tbody>
           </table>
+          {% endif %}
         </div>
       </div>
       <div class="govuk-accordion__section ">

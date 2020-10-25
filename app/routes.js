@@ -1476,23 +1476,12 @@ router.post('/forms/other-forms/patient-access/pa-signin', function (req, res) {
 router.post('/forms/sss-forms/best-start/BS-location', function (req, res) {
   var whereYouLive = req.session.data['BSG-location-name'];
 
-  if ((whereYouLive === 'Scotland')) {
-     res.redirect('/forms/sss-forms/best-start/BS-start');
+  if (whereYouLive === 'Scotland') {
+     return res.redirect('/forms/sss-forms/best-start/BS-start');
   } else if (whereYouLive === 'eWNI') {
-      res.redirect('/forms/sss-forms/best-start/BS-england');
+      return res.redirect('/forms/sss-forms/best-start/BS-england');
   } else {
-      res.redirect('/forms/sss-forms/best-start/BS-outside');
-  }
-
-})
-
-router.post('/forms/sss-forms/best-start/BS-child-check-3', function (req, res) {
-  var childCheck = req.session.data['pregnant-check'];
-
-  if ((childCheck === 'yesBut')) {
-     res.redirect('/forms/sss-forms/best-start/BS-bad');
-  } else {
-      res.redirect('/forms/sss-forms/best-start/BS-about-you');
+      return res.redirect('/forms/sss-forms/best-start/BS-outside');
   }
 
 })
@@ -1511,6 +1500,17 @@ router.post('/forms/sss-forms/best-start/BS-child-check-2', function (req, res) 
 
 router.post('/forms/sss-forms/best-start/BS-pregnant', function (req, res) {
   res.redirect('/forms/sss-forms/best-start/BS-child-check-3')
+})
+
+router.post('/forms/sss-forms/best-start/BS-child-check-3', function (req, res) {
+  var childCheck = req.session.data['BSG-new-born-check'];
+
+  if (childCheck === 'yesBut') {
+     return res.redirect('/forms/sss-forms/best-start/BS-bad');
+  } else {
+      return res.redirect('/forms/sss-forms/best-start/BS-about-you');
+  }
+
 })
 
 router.post('/forms/sss-forms/best-start/BS-about-you', function (req, res) {
@@ -1538,7 +1538,22 @@ router.post('/forms/sss-forms/best-start/BS-partner-details', function (req, res
 })
 
 router.post('/forms/sss-forms/best-start/BS-about-child', function (req, res) {
-  res.redirect('/forms/sss-forms/best-start/BS-pregnancy-details')
+  var pregnantCheck = req.session.data['BSG-pregnant-check'];
+  var newbornCheck = req.session.data['BSG-new-born-check'];
+  var childCheck = req.session.data['BSG-child-check'];
+  if (pregnantCheck === 'Yes') {
+     return res.redirect('/forms/sss-forms/best-start/BS-pregnancy-details');
+  }
+  if (newbornCheck === 'Yes') {
+      return res.redirect('/forms/sss-forms/best-start/BS-baby-under-6mo')
+  }
+  if (newbornCheck === 'yesBut'){ 
+      return res.redirect('/forms/sss-forms/best-start/BS-baby-under-6mo-died')
+  }
+  if (childCheck === 'Yes'){
+    return res.redirect('/forms/sss-forms/best-start/BS-child-under-6years')
+  } 
+  return res.redirect('/forms/sss-forms/best-start/BS-other-children')
 })
 
 router.post('/forms/sss-forms/best-start/BS-pregnancy-details', function (req, res) {
@@ -1546,7 +1561,22 @@ router.post('/forms/sss-forms/best-start/BS-pregnancy-details', function (req, r
 })
 
 router.post('/forms/sss-forms/best-start/BS-pregnancy-due-date', function (req, res) {
-  res.redirect('/forms/sss-forms/best-start/BS-baby-under-6mo')
+  var newbornCheck2 = req.session.data['BSG-new-born-check'];
+  var childCheck2 = req.session.data['BSG-child-check'];
+  var otherChildCheck2 = req.session.data['BSG-child-check-2'];
+  if (newbornCheck2 === 'Yes') {
+    return res.redirect('/forms/sss-forms/best-start/BS-baby-under-6mo')
+  }
+  if (newbornCheck2 === 'yesBut') {
+    return res.redirect('/forms/sss-forms/best-start/BS-baby-under-6mo-died')
+  }
+  if (childCheck2 === 'Yes') {
+    return res.redirect('/forms/sss-forms/best-start/BS-child-under-6years')
+  }
+  if (otherChildCheck2 === 'Yes') {
+    return res.redirect('/forms/sss-forms/best-start/BS-other-children')
+  }
+  return res.redirect('/forms/sss-forms/best-start/BS-contact-you')
 })
 
 router.post('/forms/sss-forms/best-start/BS-baby-under-6mo', function (req, res) {
@@ -1554,11 +1584,35 @@ router.post('/forms/sss-forms/best-start/BS-baby-under-6mo', function (req, res)
 })
 
 router.post('/forms/sss-forms/best-start/BS-baby-box', function (req, res) {
-  res.redirect('/forms/sss-forms/best-start/BS-child-under-6years')
+  var childCheck3 = req.session.data['BSG-child-check'];
+  var otherChildCheck3 = req.session.data['BSG-child-check-2'];
+  if (childCheck3 === 'Yes') {
+    return res.redirect('/forms/sss-forms/best-start/BS-child-under-6years')
+  }
+  if (otherChildCheck3 === 'Yes') {
+    return res.redirect('/forms/sss-forms/best-start/BS-other-children')
+  }
+  return res.redirect('/forms/sss-forms/best-start/BS-contact-you')
+})
+
+router.post('/forms/sss-forms/best-start/BS-baby-certificate', function (req, res) {
+  var childCheck4 = req.session.data['BSG-child-check'];
+  var otherChildCheck4 = req.session.data['BSG-child-check-2'];
+  if (childCheck4 === 'Yes') {
+    return res.redirect('/forms/sss-forms/best-start/BS-child-under-6years')
+  }
+  if (otherChildCheck4 === 'Yes') {
+    return res.redirect('/forms/sss-forms/best-start/BS-other-children')
+  }
+  return res.redirect('/forms/sss-forms/best-start/BS-contact-you')
 })
 
 router.post('/forms/sss-forms/best-start/BS-child-under-6years', function (req, res) {
-  res.redirect('/forms/sss-forms/best-start/BS-other-children')
+  var otherChildCheck5 = req.session.data['BSG-child-check-2'];
+  if (otherChildCheck5 === 'Yes') {
+    return res.redirect('/forms/sss-forms/best-start/BS-other-children')
+  }
+  return res.redirect('/forms/sss-forms/best-start/BS-contact-you')
 })
 
 router.post('/forms/sss-forms/best-start/BS-other-children', function (req, res) {

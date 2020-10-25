@@ -1,0 +1,38 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 30px 0px">
+    We need to confirm details of the birth
+  </h1>
+  <p>You'll need to send a copy of <strong>one</strong> of these certificates for each baby:</p>
+ <ul class="govuk-list govuk-list--bullet clear-layout">
+   <li>Maternity B1 (MATB1) Certificate</li>
+   <li>birth certificate</li>
+   <li>death certificate</li>
+ </ul>
+  <p>Once you've submitted your application you'll be directed to a page that tells you how to send this.</p>
+  <br>
+
+  <form class="form" method="post">
+    {{ govukButton({
+      text: " < Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true
+    }) }}
+  </form>
+
+</div>
+
+{% endblock %}

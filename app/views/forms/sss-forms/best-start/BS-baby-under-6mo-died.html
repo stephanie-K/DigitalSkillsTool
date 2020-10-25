@@ -1,0 +1,137 @@
+{% extends "layout_sss.html" %}
+
+{% block pageTitle %}
+Best Start Grant
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-9 govuk-body govuk-!-margin-bottom-9">
+  <h1 class="govuk-heading-xl" style="margin:0px 0px 30px 0px">
+    Baby's details
+  </h1>
+  <p style="margin:0px 0px 40px 0px;">Tell us about the baby or babies who died between birth and 6 months old.</p>
+
+    <h1 class="govuk-heading-m">
+      Baby
+    </h1>
+
+    <div class="govuk-form-group" style="margin:0; padding:0;">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="BSG-baby-first-name-died">
+        First name(s)
+      </label>
+    </h1>
+    <input class="govuk-input govuk-input--width-20" id="BSG-baby-first-name-died" name="BSG-baby-first-name-died" type="text" value="{{ data ['BSG-baby-first-name-died']}}">
+  </div>
+
+  <div class="govuk-form-group" style="margin:0;">
+    <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--m" for="BSG-baby-last-name-died">
+      Last name
+    </label>
+  </h1>
+  <input class="govuk-input govuk-input--width-20" id="BSG-baby-last-name-died" name="BSG-baby-last-name-died" type="text" value="{{ data ['BSG-baby-last-name-died']}}">
+  </div>
+
+    <div class="govuk-form-group">
+
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="baby-under-6mo-died-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h1 class="govuk-fieldset__heading">
+            Date of birth
+          </h1>
+        </legend>
+        <span id="baby-under-6mo-died-hint" class="govuk-hint" style="color:black;">
+          Enter like this: 31 10 2018
+        </span>
+        <div class="govuk-date-input" id="baby-under-6mo-died">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-died-day">
+                <strong>Day</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-baby-under-6mo-died-day" name="BSG-baby-under-6mo-died-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-baby-under-6mo-died-day']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-died-month">
+                <strong>Month</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-baby-under-6mo-died-month" name="BSG-baby-under-6mo-died-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-baby-under-6mo-died-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-died-year">
+                <strong>Year</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-baby-under-6mo-died-year" name="BSG-baby-under-6mo-died-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-baby-under-6mo-died-year']}}">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+
+    <div class="govuk-form-group" style="margin:0px 0px 60px 0px;">
+
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="baby-under-6mo-died-dod-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+          <h1 class="govuk-fieldset__heading">
+            Date of Death
+          </h1>
+        </legend>
+        <span id="baby-under-6mo-died-dod-hint" class="govuk-hint" style="color:black;">
+          Enter like this: 31 10 2018
+        </span>
+        <div class="govuk-date-input" id="baby-under-6mo-died-dod">
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-died-dod-day">
+                <strong>Day</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-baby-under-6mo-died-dod-day" name="BSG-baby-under-6mo-died-dod-day" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="DD" value="{{ data ['BSG-baby-under-6mo-died-dod-day']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-died-dod-month">
+                <strong>Month</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="BSG-baby-under-6mo-died-dod-month" name="BSG-baby-under-6mo-died-dod-month" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="MM" value="{{ data ['BSG-baby-under-6mo-died-dod-month']}}">
+            </div>
+          </div>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="BSG-baby-under-6mo-died-dod-year">
+                <strong>Year</strong>
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="BSG-baby-under-6mo-died-dod-year" name="BSG-baby-under-6mo-died-dod-year" type="text" pattern="[0-9]*" inputmode="numeric" placeholder="YYYY" value="{{ data ['BSG-baby-under-6mo-died-dod-year']}}">
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    {{ govukButton({
+      text: " < Back",
+      classes: "sg-button-back",
+      href: "javascript: history.go(-1)"
+    }) }}
+
+    {{ govukButton({
+      text: "Next",
+      classes: "button-primary",
+      isStartButton: true,
+      href: "/forms/sss-forms/best-start/BS-baby-certificate"
+    }) }}
+
+</div>
+
+<div class="student-notes-box">
+  <p>On the real form, you can add more babies if needed.</p>
+</div>
+
+{% endblock %}
