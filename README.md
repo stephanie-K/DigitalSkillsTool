@@ -1,5 +1,7 @@
 # Digital Skills Tool
 
+## This code is not deployed on Heroku anymore and is using an old version of the GOV.UK prototype toolkit - please check this new repository instead [Digital Skills Tool 2022](https://github.com/stephanie-K/Digital-Skills-Tool-2022)
+
 This is the code for a website to support classes to help refugees and other participants to improve their digital skills by training on prototyped forms of exisiting services.
 
 
@@ -17,9 +19,7 @@ The course is developed for the **East Renfrewshire Council** and the website su
 
 This is using the [**GOV.UK Prototype kit**](https://govuk-prototype-kit.herokuapp.com/docs)
 
-You can visit the website here: [**https://erc-tool.herokuapp.com/**](https://erc-tool.herokuapp.com/) you will be asked for a username and password, both are: **erc-tool**
-
-You can also [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/08/01/improving-digital-skills-a-tool-using-the-gov-uk-prototype-kit-part-2/)
+You can [**learn more about the project in this blog post**](https://blog.chezleskrus.com/2020/08/01/improving-digital-skills-a-tool-using-the-gov-uk-prototype-kit-part-2/)
 
 [**Watch this video**](https://www.youtube.com/embed/9JQ7CNYQrpY) or [look at this PDF](/app/assets/images/help/Using_the_digital_skills_website.pdf) if you prefer.
 
